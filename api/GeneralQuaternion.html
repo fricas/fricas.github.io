@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GeneralQuaternion(R, p, q) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="GeneralSparseTable(Key, Entry, Tbl, dent)" href="GeneralSparseTable.html" />
+    <link rel="prev" title="GeneralPolynomialSet(R, E, VarSet, P)" href="GeneralPolynomialSet.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="GeneralSparseTable.html" title="GeneralSparseTable(Key, Entry, Tbl, dent)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GeneralPolynomialSet.html" title="GeneralPolynomialSet(R, E, VarSet, P)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="generalquaternion-r-p-q">
+<span id="l-general-quaternion"></span><span id="index-0"></span><h1>GeneralQuaternion(R, p, q)<a class="headerlink" href="#generalquaternion-r-p-q" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//quat.spad#L180">quat.spad line 180</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></li>
+<li>p: R</li>
+<li>q: R</li>
+</ul>
+<p><a class="reference internal" href="#l-general-quaternion"><em>GeneralQuaternion</em></a> implements general quaternions over a commutative ring. The main constructor function is <span class="spadfun">quatern</span> which takes 4 arguments: the real part, the <tt class="docutils literal"><span class="pre">i</span></tt> imaginary part, the <tt class="docutils literal"><span class="pre">j</span></tt> imaginary part and the <tt class="docutils literal"><span class="pre">k</span></tt> imaginary part.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><em>0</em></a>: % if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="Monoid.html#l-monoid-1"><em>1</em></a>: % if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="SemiGroup.html#id1"><em>*</em></a>: (%, %) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a> or R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></dd>
+<dt><a class="reference internal" href="RightModule.html#id1"><em>*</em></a>: (%, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd>from <a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="RightModule.html#id1"><em>*</em></a>: (%, R) -&gt; %</dt>
+<dd>from <a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> R</dd>
+<dt><a class="reference internal" href="LeftModule.html#id1"><em>*</em></a>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd>from <a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; % if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#id1"><em>*</em></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, %) -&gt; % if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, %) -&gt; % if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
+<dt><a class="reference internal" href="LeftModule.html#id1"><em>*</em></a>: (R, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> R</dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id2"><em>+</em></a>: (%, %) -&gt; % if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: % -&gt; % if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: (%, %) -&gt; % if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id1"><em>&lt;</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id2"><em>&lt;=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id3"><em>&gt;</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id4"><em>&gt;=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="DivisionRing.html#id1"><em>^</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd>from <a class="reference internal" href="DivisionRing.html#l-division-ring"><em>DivisionRing</em></a></dd>
+<dt><a class="reference internal" href="Monoid.html#id1"><em>^</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="SemiGroup.html#id2"><em>^</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; % if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="QuaternionCategory.html#l-quaternion-category-abs"><em>abs</em></a>: % -&gt; R if R has <a class="reference internal" href="RealNumberSystem.html#l-real-number-system"><em>RealNumberSystem</em></a></dt>
+<dd>from <a class="reference internal" href="QuaternionCategory.html#l-quaternion-category"><em>QuaternionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="Rng.html#l-rng-annihilate"><em>annihilate?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="Rng.html#l-rng"><em>Rng</em></a></dd>
+<dt><a class="reference internal" href="EntireRing.html#l-entire-ring-associates"><em>associates?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd>from <a class="reference internal" href="EntireRing.html#l-entire-ring"><em>EntireRing</em></a></dd>
+<dt><a class="reference internal" href="Ring.html#l-ring-characteristic"><em>characteristic</em></a>: () -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></dd>
+<dt><a class="reference internal" href="CharacteristicNonZero.html#l-characteristic-non-zero-charth-root"><em>charthRoot</em></a>: % -&gt; Union(%, failed) if R has <a class="reference internal" href="CharacteristicNonZero.html#l-characteristic-non-zero"><em>CharacteristicNonZero</em></a></dt>
+<dd>from <a class="reference internal" href="CharacteristicNonZero.html#l-characteristic-non-zero"><em>CharacteristicNonZero</em></a></dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="Algebra.html#l-algebra-coerce"><em>coerce</em></a>: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; % if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd>from <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-coerce"><em>coerce</em></a>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; % if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-coerce"><em>coerce</em></a>: R -&gt; %</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> R</dd>
+<dt><a class="reference internal" href="QuaternionCategory.html#l-quaternion-category-conjugate"><em>conjugate</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="QuaternionCategory.html#l-quaternion-category"><em>QuaternionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="ConvertibleTo.html#l-convertible-to-convert"><em>convert</em></a>: % -&gt; <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a> if R has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a></dt>
+<dd>from <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a></dd>
+<dt><a class="reference internal" href="DifferentialRing.html#l-differential-ring-d"><em>D</em></a>: % -&gt; % if R has <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><em>DifferentialRing</em></a></dt>
+<dd>from <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><em>DifferentialRing</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-d"><em>D</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; % if R has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-d"><em>D</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if R has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="DifferentialRing.html#l-differential-ring-d"><em>D</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if R has <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><em>DifferentialRing</em></a></dt>
+<dd>from <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><em>DifferentialRing</em></a></dd>
+<dt><a class="reference internal" href="DifferentialExtension.html#l-differential-extension-d"><em>D</em></a>: (%, R -&gt; R) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DifferentialExtension.html#l-differential-extension"><em>DifferentialExtension</em></a> R</dd>
+<dt><a class="reference internal" href="DifferentialExtension.html#l-differential-extension-d"><em>D</em></a>: (%, R -&gt; R, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DifferentialExtension.html#l-differential-extension"><em>DifferentialExtension</em></a> R</dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-d"><em>D</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; % if R has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-d"><em>D</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if R has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="DifferentialRing.html#l-differential-ring-differentiate"><em>differentiate</em></a>: % -&gt; % if R has <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><em>DifferentialRing</em></a></dt>
+<dd>from <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><em>DifferentialRing</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-differentiate"><em>differentiate</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; % if R has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-differentiate"><em>differentiate</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if R has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="DifferentialRing.html#l-differential-ring-differentiate"><em>differentiate</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if R has <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><em>DifferentialRing</em></a></dt>
+<dd>from <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><em>DifferentialRing</em></a></dd>
+<dt><a class="reference internal" href="DifferentialExtension.html#l-differential-extension-differentiate"><em>differentiate</em></a>: (%, R -&gt; R) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DifferentialExtension.html#l-differential-extension"><em>DifferentialExtension</em></a> R</dd>
+<dt><a class="reference internal" href="DifferentialExtension.html#l-differential-extension-differentiate"><em>differentiate</em></a>: (%, R -&gt; R, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DifferentialExtension.html#l-differential-extension"><em>DifferentialExtension</em></a> R</dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-differentiate"><em>differentiate</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; % if R has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-differentiate"><em>differentiate</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if R has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="Eltable.html#l-eltable-elt"><em>elt</em></a>: (%, R) -&gt; % if R has <a class="reference internal" href="Eltable.html#l-eltable"><em>Eltable</em></a>(R, R)</dt>
+<dd>from <a class="reference internal" href="Eltable.html#l-eltable"><em>Eltable</em></a>(R, %)</dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> R) -&gt; % if R has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> R) -&gt; % if R has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> R, <a class="reference internal" href="List.html#l-list"><em>List</em></a> R) -&gt; % if R has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(R, R)</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> R) -&gt; % if R has <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, R)</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, R)</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, R, R) -&gt; % if R has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(R, R)</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, R) -&gt; % if R has <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, R)</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, R)</dd>
+<dt><a class="reference internal" href="EntireRing.html#l-entire-ring-exquo"><em>exquo</em></a>: (%, %) -&gt; Union(%, failed) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd>from <a class="reference internal" href="EntireRing.html#l-entire-ring"><em>EntireRing</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="QuaternionCategory.html#l-quaternion-category-imag-i"><em>imagI</em></a>: % -&gt; R</dt>
+<dd>from <a class="reference internal" href="QuaternionCategory.html#l-quaternion-category"><em>QuaternionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="QuaternionCategory.html#l-quaternion-category-imag-j"><em>imagJ</em></a>: % -&gt; R</dt>
+<dd>from <a class="reference internal" href="QuaternionCategory.html#l-quaternion-category"><em>QuaternionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="QuaternionCategory.html#l-quaternion-category-imag-k"><em>imagK</em></a>: % -&gt; R</dt>
+<dd>from <a class="reference internal" href="QuaternionCategory.html#l-quaternion-category"><em>QuaternionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="DivisionRing.html#l-division-ring-inv"><em>inv</em></a>: % -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd>from <a class="reference internal" href="DivisionRing.html#l-division-ring"><em>DivisionRing</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="FullyEvalableOver.html#l-fully-evalable-over-map"><em>map</em></a>: (R -&gt; R, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FullyEvalableOver.html#l-fully-evalable-over"><em>FullyEvalableOver</em></a> R</dd>
+<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-max"><em>max</em></a>: (%, %) -&gt; % if R has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
+<dd>from <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dd>
+<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-min"><em>min</em></a>: (%, %) -&gt; % if R has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
+<dd>from <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dd>
+<dt><a class="reference internal" href="QuaternionCategory.html#l-quaternion-category-norm"><em>norm</em></a>: % -&gt; R</dt>
+<dd>from <a class="reference internal" href="QuaternionCategory.html#l-quaternion-category"><em>QuaternionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="Monoid.html#l-monoid-one"><em>one?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-opposite"><em>opposite?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="QuaternionCategory.html#l-quaternion-category-quatern"><em>quatern</em></a>: (R, R, R, R) -&gt; %</dt>
+<dd>from <a class="reference internal" href="QuaternionCategory.html#l-quaternion-category"><em>QuaternionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="QuaternionCategory.html#l-quaternion-category-rational"><em>rational</em></a>: % -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if R has <a class="reference internal" href="IntegerNumberSystem.html#l-integer-number-system"><em>IntegerNumberSystem</em></a></dt>
+<dd>from <a class="reference internal" href="QuaternionCategory.html#l-quaternion-category"><em>QuaternionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="QuaternionCategory.html#id1"><em>rational?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="IntegerNumberSystem.html#l-integer-number-system"><em>IntegerNumberSystem</em></a></dt>
+<dd>from <a class="reference internal" href="QuaternionCategory.html#l-quaternion-category"><em>QuaternionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="QuaternionCategory.html#l-quaternion-category-rational-if-can"><em>rationalIfCan</em></a>: % -&gt; Union(<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, failed) if R has <a class="reference internal" href="IntegerNumberSystem.html#l-integer-number-system"><em>IntegerNumberSystem</em></a></dt>
+<dd>from <a class="reference internal" href="QuaternionCategory.html#l-quaternion-category"><em>QuaternionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="QuaternionCategory.html#l-quaternion-category-real"><em>real</em></a>: % -&gt; R</dt>
+<dd>from <a class="reference internal" href="QuaternionCategory.html#l-quaternion-category"><em>QuaternionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="Monoid.html#l-monoid-recip"><em>recip</em></a>: % -&gt; Union(%, failed) if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over-reduced-system"><em>reducedSystem</em></a>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> %, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> %) -&gt; Record(mat: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, vec: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over-reduced-system"><em>reducedSystem</em></a>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> %, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> %) -&gt; Record(mat: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, vec: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R)</dt>
+<dd>from <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> R</dd>
+<dt><a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over-reduced-system"><em>reducedSystem</em></a>: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over-reduced-system"><em>reducedSystem</em></a>: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd>from <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> R</dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract"><em>retract</em></a>: % -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract"><em>retract</em></a>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract"><em>retract</em></a>: % -&gt; R</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> R</dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract-if-can"><em>retractIfCan</em></a>: % -&gt; Union(<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, failed) if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract-if-can"><em>retractIfCan</em></a>: % -&gt; Union(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, failed) if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract-if-can"><em>retractIfCan</em></a>: % -&gt; Union(R, failed)</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> R</dd>
+<dt><a class="reference internal" href="Monoid.html#l-monoid-sample"><em>sample</em></a>: % if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="Comparable.html#l-comparable-smaller"><em>smaller?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
+<dd>from <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dd>
+<dt><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid-subtract-if-can"><em>subtractIfCan</em></a>: (%, %) -&gt; Union(%, failed) if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="EntireRing.html#l-entire-ring-unit"><em>unit?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd>from <a class="reference internal" href="EntireRing.html#l-entire-ring"><em>EntireRing</em></a></dd>
+<dt><a class="reference internal" href="EntireRing.html#l-entire-ring-unit-canonical"><em>unitCanonical</em></a>: % -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd>from <a class="reference internal" href="EntireRing.html#l-entire-ring"><em>EntireRing</em></a></dd>
+<dt><a class="reference internal" href="EntireRing.html#l-entire-ring-unit-normal"><em>unitNormal</em></a>: % -&gt; Record(unit: %, canonical: %, associate: %) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd>from <a class="reference internal" href="EntireRing.html#l-entire-ring"><em>EntireRing</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-zero"><em>zero?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+</dl>
+<p><a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a> if R has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a> or % has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a> and R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a> or % has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a> and R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or R has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a> or R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a> or R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></p>
+<p><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or R has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> or % has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> and R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a> or R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or % has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> and R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or R has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> or R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a> or R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></p>
+<p><a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></p>
+<p><a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></p>
+<p><a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> R</p>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="BiModule.html#l-bi-module"><em>BiModule</em></a>(%, %) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></p>
+<p><a class="reference internal" href="BiModule.html#l-bi-module"><em>BiModule</em></a>(<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></p>
+<p><a class="reference internal" href="BiModule.html#l-bi-module"><em>BiModule</em></a>(R, R)</p>
+<p><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="CharacteristicNonZero.html#l-characteristic-non-zero"><em>CharacteristicNonZero</em></a> if R has <a class="reference internal" href="CharacteristicNonZero.html#l-characteristic-non-zero"><em>CharacteristicNonZero</em></a></p>
+<p><a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a> if R has <a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a> if R has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></p>
+<p><a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a> if R has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a></p>
+<p><a class="reference internal" href="DifferentialExtension.html#l-differential-extension"><em>DifferentialExtension</em></a> R</p>
+<p><a class="reference internal" href="DifferentialRing.html#l-differential-ring"><em>DifferentialRing</em></a> if R has <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><em>DifferentialRing</em></a></p>
+<p><a class="reference internal" href="DivisionRing.html#l-division-ring"><em>DivisionRing</em></a> if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></p>
+<p><a class="reference internal" href="Eltable.html#l-eltable"><em>Eltable</em></a>(R, %) if R has <a class="reference internal" href="Eltable.html#l-eltable"><em>Eltable</em></a>(R, R)</p>
+<p><a class="reference internal" href="EntireRing.html#l-entire-ring"><em>EntireRing</em></a> if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a> or R has <a class="reference internal" href="EntireRing.html#l-entire-ring"><em>EntireRing</em></a></p>
+<p><a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R if R has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</p>
+<p><a class="reference internal" href="FullyEvalableOver.html#l-fully-evalable-over"><em>FullyEvalableOver</em></a> R</p>
+<p><a class="reference internal" href="FullyLinearlyExplicitRingOver.html#l-fully-linearly-explicit-ring-over"><em>FullyLinearlyExplicitRingOver</em></a> R</p>
+<p><a class="reference internal" href="FullyRetractableTo.html#l-fully-retractable-to"><em>FullyRetractableTo</em></a> R</p>
+<p><a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(R, R) if R has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</p>
+<p><a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, R) if R has <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, R)</p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> % if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> R</p>
+<p><a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> R</p>
+<p><a class="reference internal" href="Module.html#l-module"><em>Module</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></p>
+<p><a class="reference internal" href="Module.html#l-module"><em>Module</em></a> R</p>
+<p><a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="noZeroDivisors.html#l-no-zero-divisors"><em>noZeroDivisors</em></a> if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></p>
+<p><a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> if R has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></p>
+<p><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a> if R has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></p>
+<p><a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a> if R has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></p>
+<p><a class="reference internal" href="QuaternionCategory.html#l-quaternion-category"><em>QuaternionCategory</em></a> R</p>
+<p><a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> R</p>
+<p><a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></p>
+<p><a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></p>
+<p><a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> R</p>
+<p><a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></p>
+<p><a class="reference internal" href="Rng.html#l-rng"><em>Rng</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="SemiRing.html#l-semi-ring"><em>SemiRing</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="SemiRng.html#l-semi-rng"><em>SemiRng</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> if R has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> or R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="unitsKnown.html#l-units-known"><em>unitsKnown</em></a> if R has <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="GeneralPolynomialSet.html"
+                        title="previous chapter">GeneralPolynomialSet(R, E, VarSet, P)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="GeneralSparseTable.html"
+                        title="next chapter">GeneralSparseTable(Key, Entry, Tbl, dent)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/GeneralQuaternion.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="GeneralSparseTable.html" title="GeneralSparseTable(Key, Entry, Tbl, dent)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GeneralPolynomialSet.html" title="GeneralPolynomialSet(R, E, VarSet, P)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

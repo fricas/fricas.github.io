@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>NormalizedTriangularSetCategory(R, E, V, P) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Categories" href="Categories.html" />
+    <link rel="next" title="noZeroDivisors" href="noZeroDivisors.html" />
+    <link rel="prev" title="NonAssociativeRng" href="NonAssociativeRng.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="noZeroDivisors.html" title="noZeroDivisors"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="NonAssociativeRng.html" title="NonAssociativeRng"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="normalizedtriangularsetcategory-r-e-v-p">
+<span id="l-normalized-triangular-set-category"></span><span id="index-0"></span><h1>NormalizedTriangularSetCategory(R, E, V, P)<a class="headerlink" href="#normalizedtriangularsetcategory-r-e-v-p" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//nregset.spad#L1">nregset.spad line 1</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><em>GcdDomain</em></a></li>
+<li>E: <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a></li>
+<li>V: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></li>
+<li>P: <a class="reference internal" href="RecursivePolynomialCategory.html#l-recursive-polynomial-category"><em>RecursivePolynomialCategory</em></a>(R, E, V)</li>
+</ul>
+<p>The category of normalized triangular sets. A triangular set <tt class="docutils literal"><span class="pre">ts</span></tt> is said normalized if for every algebraic variable <tt class="docutils literal"><span class="pre">v</span></tt> of <tt class="docutils literal"><span class="pre">ts</span></tt> the polynomial <tt class="docutils literal"><span class="pre">select(ts,</span> <span class="pre">v)</span></tt> is normalized <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. every polynomial in <tt class="docutils literal"><span class="pre">collectUnder(ts,</span> <span class="pre">v)</span></tt>. A polynomial <tt class="docutils literal"><span class="pre">p</span></tt> is said normalized <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. a non-constant polynomial <tt class="docutils literal"><span class="pre">q</span></tt> if <tt class="docutils literal"><span class="pre">p</span></tt> is constant or <tt class="docutils literal"><span class="pre">degree(p,</span> <span class="pre">mdeg(q))</span> <span class="pre">=</span> <span class="pre">0</span></tt> and <tt class="docutils literal"><span class="pre">init(p)</span></tt> is normalized <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. <tt class="docutils literal"><span class="pre">q</span></tt>. One of the important features of normalized triangular sets is that they are regular sets.newline</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="Aggregate.html#id1"><em>#</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-algebraic"><em>algebraic?</em></a>: (V, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-algebraic-coefficients"><em>algebraicCoefficients?</em></a>: (P, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-algebraic-variables"><em>algebraicVariables</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> V</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-any"><em>any?</em></a>: (P -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> P</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-augment"><em>augment</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-augment"><em>augment</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-augment"><em>augment</em></a>: (P, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-augment"><em>augment</em></a>: (P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-auto-reduced"><em>autoReduced?</em></a>: (%, (P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> P) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-basic-set"><em>basicSet</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, (P, P) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; Union(Record(bas: %, top: <a class="reference internal" href="List.html#l-list"><em>List</em></a> P), failed)</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-basic-set"><em>basicSet</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, P -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, (P, P) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; Union(Record(bas: %, top: <a class="reference internal" href="List.html#l-list"><em>List</em></a> P), failed)</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> P</dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> P</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-co-height"><em>coHeight</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if V has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a></dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-collect"><em>collect</em></a>: (%, V) -&gt; %</dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-collect-quasi-monic"><em>collectQuasiMonic</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-collect-under"><em>collectUnder</em></a>: (%, V) -&gt; %</dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-collect-upper"><em>collectUpper</em></a>: (%, V) -&gt; %</dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-construct"><em>construct</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> P -&gt; %</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> P</dd>
+<dt><a class="reference internal" href="ConvertibleTo.html#l-convertible-to-convert"><em>convert</em></a>: % -&gt; <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a> if P has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a></dt>
+<dd>from <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><em>copy</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><em>count</em></a>: (P -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> P</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><em>count</em></a>: (P, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if P has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> P</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-degree"><em>degree</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><em>empty</em></a>: () -&gt; %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#id2"><em>empty?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-eq"><em>eq?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> P) -&gt; % if P has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and P has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> P</dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> P</dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> P) -&gt; % if P has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and P has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> P</dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> P</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> P) -&gt; % if P has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and P has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> P</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(P, P)</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, P, P) -&gt; % if P has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and P has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> P</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(P, P)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-every"><em>every?</em></a>: (P -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> P</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-extend"><em>extend</em></a>: (%, P) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-extend"><em>extend</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-extend"><em>extend</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-extend"><em>extend</em></a>: (P, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-extend"><em>extend</em></a>: (P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-extend-if-can"><em>extendIfCan</em></a>: (%, P) -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-find"><em>find</em></a>: (P -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; Union(P, failed)</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> P</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-first"><em>first</em></a>: % -&gt; Union(P, failed)</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-head-reduce"><em>headReduce</em></a>: (P, %) -&gt; P</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-head-reduced"><em>headReduced?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-head-reduced"><em>headReduced?</em></a>: (P, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-head-remainder"><em>headRemainder</em></a>: (P, %) -&gt; Record(num: P, den: R) if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-iexact-quo"><em>iexactQuo</em></a>: (R, R) -&gt; R if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-inf-ritt-wu"><em>infRittWu?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-initially-reduce"><em>initiallyReduce</em></a>: (P, %) -&gt; P</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-initially-reduced"><em>initiallyReduced?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-initially-reduced"><em>initiallyReduced?</em></a>: (P, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-initials"><em>initials</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> P</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-internal-augment"><em>internalAugment</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-internal-augment"><em>internalAugment</em></a>: (P, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-intersect"><em>intersect</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-intersect"><em>intersect</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-intersect"><em>intersect</em></a>: (P, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-intersect"><em>intersect</em></a>: (P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-invertible"><em>invertible?</em></a>: (P, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-invertible"><em>invertible?</em></a>: (P, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(val: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, tower: %)</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-invertible-else-split"><em>invertibleElseSplit?</em></a>: (P, %) -&gt; Union(<a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %)</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-invertible-set"><em>invertibleSet</em></a>: (P, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-last"><em>last</em></a>: % -&gt; Union(P, failed)</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-last-sub-resultant"><em>lastSubResultant</em></a>: (P, P, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(val: P, tower: %)</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-last-sub-resultant-else-split"><em>lastSubResultantElseSplit</em></a>: (P, P, %) -&gt; Union(P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %)</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-less"><em>less?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-main-variable"><em>mainVariable?</em></a>: (V, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-main-variables"><em>mainVariables</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> V</dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><em>map!</em></a>: (P -&gt; P, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> P</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#id1"><em>map</em></a>: (P -&gt; P, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> P</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><em>member?</em></a>: (P, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if P has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> P</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-members"><em>members</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> P</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> P</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-more"><em>more?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-mvar"><em>mvar</em></a>: % -&gt; V</dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-normalized"><em>normalized?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-normalized"><em>normalized?</em></a>: (P, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-parts"><em>parts</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> P</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> P</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-purely-algebraic"><em>purelyAlgebraic?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-purely-algebraic"><em>purelyAlgebraic?</em></a>: (P, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-purely-algebraic-leading-monomial"><em>purelyAlgebraicLeadingMonomial?</em></a>: (P, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-purely-transcendental"><em>purelyTranscendental?</em></a>: (P, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-quasi-component"><em>quasiComponent</em></a>: % -&gt; Record(close: <a class="reference internal" href="List.html#l-list"><em>List</em></a> P, open: <a class="reference internal" href="List.html#l-list"><em>List</em></a> P)</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><em>reduce</em></a>: ((P, P) -&gt; P, %) -&gt; P</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> P</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><em>reduce</em></a>: ((P, P) -&gt; P, %, P) -&gt; P</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> P</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><em>reduce</em></a>: ((P, P) -&gt; P, %, P, P) -&gt; P if P has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> P</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-reduce"><em>reduce</em></a>: (P, %, (P, P) -&gt; P, (P, P) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; P</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-reduce-by-quasi-monic"><em>reduceByQuasiMonic</em></a>: (P, %) -&gt; P</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-reduced"><em>reduced?</em></a>: (P, %, (P, P) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-remainder"><em>remainder</em></a>: (P, %) -&gt; Record(rnum: R, polnum: P, den: R) if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-remove"><em>remove</em></a>: (P -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> P</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-remove"><em>remove</em></a>: (P, %) -&gt; % if P has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> P</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-remove-duplicates"><em>removeDuplicates</em></a>: % -&gt; % if P has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> P</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-remove-zero"><em>removeZero</em></a>: (P, %) -&gt; P</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-rest"><em>rest</em></a>: % -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RetractableFrom.html#l-retractable-from-retract"><em>retract</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> P -&gt; %</dt>
+<dd>from <a class="reference internal" href="RetractableFrom.html#l-retractable-from"><em>RetractableFrom</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> P</dd>
+<dt><a class="reference internal" href="RetractableFrom.html#l-retractable-from-retract-if-can"><em>retractIfCan</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> P -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="RetractableFrom.html#l-retractable-from"><em>RetractableFrom</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> P</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-rewrite-ideal-with-head-remainder"><em>rewriteIdealWithHeadRemainder</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> P if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-rewrite-ideal-with-remainder"><em>rewriteIdealWithRemainder</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> P if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-rewrite-set-with-reduction"><em>rewriteSetWithReduction</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, %, (P, P) -&gt; P, (P, P) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> P</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-rough-base"><em>roughBase?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-rough-equal-ideals"><em>roughEqualIdeals?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-rough-sub-ideal"><em>roughSubIdeal?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-rough-unit-ideal"><em>roughUnitIdeal?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-sample"><em>sample</em></a>: %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-select"><em>select</em></a>: (%, V) -&gt; Union(P, failed)</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-select"><em>select</em></a>: (P -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> P</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-size"><em>size?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-sort"><em>sort</em></a>: (%, V) -&gt; Record(under: %, floor: %, upper: %)</dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-square-free-part"><em>squareFreePart</em></a>: (P, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(val: P, tower: %)</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-strongly-reduce"><em>stronglyReduce</em></a>: (P, %) -&gt; P</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-strongly-reduced"><em>stronglyReduced?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-strongly-reduced"><em>stronglyReduced?</em></a>: (P, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-triangular"><em>triangular?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-trivial-ideal"><em>trivialIdeal?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category-variables"><em>variables</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> V</dt>
+<dd>from <a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category-zero-set-split"><em>zeroSetSplit</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-zero-set-split"><em>zeroSetSplit</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> P -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+<dt><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category-zero-set-split-into-triangular-systems"><em>zeroSetSplitIntoTriangularSystems</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> P -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(close: %, open: <a class="reference internal" href="List.html#l-list"><em>List</em></a> P)</dt>
+<dd>from <a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</dd>
+</dl>
+<p><a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></p>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> P</p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> P</p>
+<p><a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a> if P has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a></p>
+<p><a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> P if P has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and P has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> P</p>
+<p><a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></p>
+<p><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> P</p>
+<p><a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(P, P) if P has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and P has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> P</p>
+<p><a class="reference internal" href="PolynomialSetCategory.html#l-polynomial-set-category"><em>PolynomialSetCategory</em></a>(R, E, V, P)</p>
+<p><a class="reference internal" href="RegularTriangularSetCategory.html#l-regular-triangular-set-category"><em>RegularTriangularSetCategory</em></a>(R, E, V, P)</p>
+<p><a class="reference internal" href="RetractableFrom.html#l-retractable-from"><em>RetractableFrom</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> P</p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+<p><a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></p>
+<p><a class="reference internal" href="TriangularSetCategory.html#l-triangular-set-category"><em>TriangularSetCategory</em></a>(R, E, V, P)</p>
+<p><a class="reference internal" href="Type.html#l-type"><em>Type</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="NonAssociativeRng.html"
+                        title="previous chapter">NonAssociativeRng</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="noZeroDivisors.html"
+                        title="next chapter">noZeroDivisors</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/NormalizedTriangularSetCategory.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="noZeroDivisors.html" title="noZeroDivisors"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="NonAssociativeRng.html" title="NonAssociativeRng"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

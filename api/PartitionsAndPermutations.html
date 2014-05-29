@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PartitionsAndPermutations &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="PathArrayPackage R" href="PathArrayPackage.html" />
+    <link rel="prev" title="PartialFractionPackage R" href="PartialFractionPackage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="PathArrayPackage.html" title="PathArrayPackage R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PartialFractionPackage.html" title="PartialFractionPackage R"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="partitionsandpermutations">
+<span id="l-partitions-and-permutations"></span><span id="index-0"></span><h1>PartitionsAndPermutations<a class="headerlink" href="#partitionsandpermutations" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//partperm.spad#L1">partperm.spad line 1</a></p>
+<p>PartitionsAndPermutations contains functions for generating streams of integer partitions, and streams of sequences of integers composed from a multi-set.</p>
+<span class="target" id="l-partitions-and-permutations-conjugate"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">conjugate</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">conjugate(pt)</span></tt> is the conjugate of the partition <tt class="docutils literal"><span class="pre">pt</span></tt>.</dd>
+</dl>
+<span class="target" id="l-partitions-and-permutations-conjugates"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">conjugates</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">conjugates(lp)</span></tt> is the stream of conjugates of a stream of partitions <tt class="docutils literal"><span class="pre">lp</span></tt>.</dd>
+</dl>
+<span class="target" id="l-partitions-and-permutations-partitions"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">partitions</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">partitions(p,</span> <span class="pre">l)</span></tt> is the stream of all partitions whose number of parts and largest part are no greater than <tt class="docutils literal"><span class="pre">p</span></tt> and <tt class="docutils literal"><span class="pre">l</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">partitions</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">partitions(p,</span> <span class="pre">l,</span> <span class="pre">n)</span></tt> is the stream of partitions of <tt class="docutils literal"><span class="pre">n</span></tt> whose number of parts is no greater than <tt class="docutils literal"><span class="pre">p</span></tt> and whose largest part is no greater than <tt class="docutils literal"><span class="pre">l</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">partitions</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">partitions(n)</span></tt> is the stream of all partitions of <tt class="docutils literal"><span class="pre">n</span></tt>.</dd>
+</dl>
+<span class="target" id="l-partitions-and-permutations-permutations"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">permutations</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">permutations(n)</span></tt> is the stream of permutations formed from <tt class="docutils literal"><span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">...,</span> <span class="pre">n</span></tt>.</dd>
+</dl>
+<span class="target" id="l-partitions-and-permutations-sequences"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">sequences</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">sequences(l1,</span> <span class="pre">l2)</span></tt> is the stream of all sequences that can be composed from the multiset defined from two lists of integers <tt class="docutils literal"><span class="pre">l1</span></tt> and <tt class="docutils literal"><span class="pre">l2</span></tt>. For example, the pair <tt class="docutils literal"><span class="pre">([1,</span> <span class="pre">2,</span> <span class="pre">4],</span> <span class="pre">[2,</span> <span class="pre">3,</span> <span class="pre">5])</span></tt> represents multi-set with 1 <tt class="docutils literal"><span class="pre">2</span></tt>, 2 <tt class="docutils literal"><span class="pre">3</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt>, and 4 <tt class="docutils literal"><span class="pre">5</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-8">
+<dt><span class="spadfun">sequences</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">sequences([l0,</span> <span class="pre">l1,</span> <span class="pre">l2,</span> <span class="pre">..,</span> <span class="pre">ln])</span></tt> is the set of all sequences formed from <tt class="docutils literal"><span class="pre">l0</span></tt> 0<tt class="docutils literal"><span class="pre">'s</span></tt>, <tt class="docutils literal"><span class="pre">l1</span></tt> 1<tt class="docutils literal"><span class="pre">'s</span></tt>, <tt class="docutils literal"><span class="pre">l2</span></tt> 2<tt class="docutils literal"><span class="pre">'s</span></tt>, ..., <tt class="docutils literal"><span class="pre">ln</span></tt> <tt class="docutils literal"><span class="pre">n</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt>.</dd>
+</dl>
+<span class="target" id="l-partitions-and-permutations-shuffle"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">shuffle</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">shuffle(l1,</span> <span class="pre">l2)</span></tt> forms the stream of all shuffles of <tt class="docutils literal"><span class="pre">l1</span></tt> and <tt class="docutils literal"><span class="pre">l2</span></tt>, i.e. all sequences that can be formed from merging <tt class="docutils literal"><span class="pre">l1</span></tt> and <tt class="docutils literal"><span class="pre">l2</span></tt>.</dd>
+</dl>
+<span class="target" id="l-partitions-and-permutations-shufflein"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">shufflein</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">shufflein(l,</span> <span class="pre">st)</span></tt> maps shuffle(<tt class="docutils literal"><span class="pre">l</span></tt>, <tt class="docutils literal"><span class="pre">u</span></tt>) on to all members <tt class="docutils literal"><span class="pre">u</span></tt> of st, concatenating the results.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="PartialFractionPackage.html"
+                        title="previous chapter">PartialFractionPackage R</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PathArrayPackage.html"
+                        title="next chapter">PathArrayPackage R</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/PartitionsAndPermutations.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="PathArrayPackage.html" title="PathArrayPackage R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="PartialFractionPackage.html" title="PartialFractionPackage R"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

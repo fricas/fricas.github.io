@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GenerateUnivariatePowerSeries(R, FE) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="GenExEuclid(R, BP)" href="GenExEuclid.html" />
+    <link rel="prev" title="GeneralPolynomialGcdPackage(E, OV, R, P)" href="GeneralPolynomialGcdPackage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="GenExEuclid.html" title="GenExEuclid(R, BP)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GeneralPolynomialGcdPackage.html" title="GeneralPolynomialGcdPackage(E, OV, R, P)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="generateunivariatepowerseries-r-fe">
+<span id="l-generate-univariate-power-series"></span><span id="index-0"></span><h1>GenerateUnivariatePowerSeries(R, FE)<a class="headerlink" href="#generateunivariatepowerseries-r-fe" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//genups.spad#L1">genups.spad line 1</a></p>
+<ul class="simple">
+<li>R: Join(<a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a>, <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</li>
+<li>FE: Join(<a class="reference internal" href="AlgebraicallyClosedField.html#l-algebraically-closed-field"><em>AlgebraicallyClosedField</em></a>, <a class="reference internal" href="TranscendentalFunctionCategory.html#l-transcendental-function-category"><em>TranscendentalFunctionCategory</em></a>, <a class="reference internal" href="FunctionSpace.html#l-function-space"><em>FunctionSpace</em></a> R)</li>
+</ul>
+<p><a class="reference internal" href="#l-generate-univariate-power-series"><em>GenerateUnivariatePowerSeries</em></a> provides functions that create power series from explicit formulas for their <tt class="docutils literal"><span class="pre">n</span></tt>th coefficient.</p>
+<span class="target" id="l-generate-univariate-power-series-laurent"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">laurent</span>: (FE, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> FE, <a class="reference internal" href="UniversalSegment.html#l-universal-segment"><em>UniversalSegment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">laurent(a(n),</span> <span class="pre">n,</span> <span class="pre">x=a,</span> <span class="pre">n0..)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">n0..,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>; <tt class="docutils literal"><span class="pre">laurent(a(n),</span> <span class="pre">n,</span> <span class="pre">x=a,</span> <span class="pre">n0..n1)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">n0..n1,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">laurent</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; FE, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> FE, <a class="reference internal" href="UniversalSegment.html#l-universal-segment"><em>UniversalSegment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">laurent(n</span> <span class="pre">+-&gt;</span> <span class="pre">a(n),</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">n0..)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">n0..,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>; <tt class="docutils literal"><span class="pre">laurent(n</span> <span class="pre">+-&gt;</span> <span class="pre">a(n),</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">n0..n1)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">n0..n1,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-generate-univariate-power-series-puiseux"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">puiseux</span>: (FE, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> FE, <a class="reference internal" href="UniversalSegment.html#l-universal-segment"><em>UniversalSegment</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">puiseux(a(n),</span> <span class="pre">n,</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">r0..,</span> <span class="pre">r)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">r0,</span> <span class="pre">r0</span> <span class="pre">+</span> <span class="pre">r,</span> <span class="pre">r0</span> <span class="pre">+</span> <span class="pre">2*r...,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>; <tt class="docutils literal"><span class="pre">puiseux(a(n),</span> <span class="pre">n,</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">r0..r1,</span> <span class="pre">r)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">r0</span> <span class="pre">+</span> <span class="pre">k*r</span> <span class="pre">while</span> <span class="pre">n</span> <span class="pre">&lt;=</span> <span class="pre">r1,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">puiseux</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; FE, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> FE, <a class="reference internal" href="UniversalSegment.html#l-universal-segment"><em>UniversalSegment</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">puiseux(n</span> <span class="pre">+-&gt;</span> <span class="pre">a(n),</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">r0..,</span> <span class="pre">r)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">r0,</span> <span class="pre">r0</span> <span class="pre">+</span> <span class="pre">r,</span> <span class="pre">r0</span> <span class="pre">+</span> <span class="pre">2*r...,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>; <tt class="docutils literal"><span class="pre">puiseux(n</span> <span class="pre">+-&gt;</span> <span class="pre">a(n),</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">r0..r1,</span> <span class="pre">r)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">r0</span> <span class="pre">+</span> <span class="pre">k*r</span> <span class="pre">while</span> <span class="pre">n</span> <span class="pre">&lt;=</span> <span class="pre">r1,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-generate-univariate-power-series-series"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">series</span>: (FE, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> FE) -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">series(a(n),</span> <span class="pre">n,</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">0..,</span> <span class="pre">a(n)*(x-a)^n)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt><span class="spadfun">series</span>: (FE, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> FE, <a class="reference internal" href="UniversalSegment.html#l-universal-segment"><em>UniversalSegment</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">series(a(n),</span> <span class="pre">n,</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">r0..,</span> <span class="pre">r)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">r0,</span> <span class="pre">r0</span> <span class="pre">+</span> <span class="pre">r,</span> <span class="pre">r0</span> <span class="pre">+</span> <span class="pre">2*r...,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>; <tt class="docutils literal"><span class="pre">series(a(n),</span> <span class="pre">n,</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">r0..r1,</span> <span class="pre">r)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">r0</span> <span class="pre">+</span> <span class="pre">k*r</span> <span class="pre">while</span> <span class="pre">n</span> <span class="pre">&lt;=</span> <span class="pre">r1,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-7">
+<dt><span class="spadfun">series</span>: (FE, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> FE, <a class="reference internal" href="UniversalSegment.html#l-universal-segment"><em>UniversalSegment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">series(a(n),</span> <span class="pre">n,</span> <span class="pre">x=a,</span> <span class="pre">n0..)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">n0..,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>; <tt class="docutils literal"><span class="pre">series(a(n),</span> <span class="pre">n,</span> <span class="pre">x=a,</span> <span class="pre">n0..n1)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">n0..n1,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-8">
+<dt><span class="spadfun">series</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; FE, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> FE, <a class="reference internal" href="UniversalSegment.html#l-universal-segment"><em>UniversalSegment</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">series(n</span> <span class="pre">+-&gt;</span> <span class="pre">a(n),</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">r0..,</span> <span class="pre">r)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">r0,</span> <span class="pre">r0</span> <span class="pre">+</span> <span class="pre">r,</span> <span class="pre">r0</span> <span class="pre">+</span> <span class="pre">2*r...,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>; <tt class="docutils literal"><span class="pre">series(n</span> <span class="pre">+-&gt;</span> <span class="pre">a(n),</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">r0..r1,</span> <span class="pre">r)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">r0</span> <span class="pre">+</span> <span class="pre">k*r</span> <span class="pre">while</span> <span class="pre">n</span> <span class="pre">&lt;=</span> <span class="pre">r1,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-9">
+<dt><span class="spadfun">series</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; FE, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> FE) -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">series(n</span> <span class="pre">+-&gt;</span> <span class="pre">a(n),</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">0..,</span> <span class="pre">a(n)*(x-a)^n)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-10">
+<dt><span class="spadfun">series</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; FE, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> FE, <a class="reference internal" href="UniversalSegment.html#l-universal-segment"><em>UniversalSegment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">series(n</span> <span class="pre">+-&gt;</span> <span class="pre">a(n),</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">n0..)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">n0..,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>; <tt class="docutils literal"><span class="pre">series(n</span> <span class="pre">+-&gt;</span> <span class="pre">a(n),</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">n0..n1)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">n0..n1,</span> <span class="pre">a(n)</span> <span class="pre">*</span> <span class="pre">(x</span> <span class="pre">-</span> <span class="pre">a)^n)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-generate-univariate-power-series-taylor"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">taylor</span>: (FE, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> FE) -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">taylor(a(n),</span> <span class="pre">n,</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">0..,</span> <span class="pre">a(n)*(x-a)^n)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-12">
+<dt><span class="spadfun">taylor</span>: (FE, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> FE, <a class="reference internal" href="UniversalSegment.html#l-universal-segment"><em>UniversalSegment</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">taylor(a(n),</span> <span class="pre">n,</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">n0..)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">n0..,</span> <span class="pre">a(n)*(x-a)^n)</span></tt>; <tt class="docutils literal"><span class="pre">taylor(a(n),</span> <span class="pre">n,</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">n0..n1)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">n0..,</span> <span class="pre">a(n)*(x-a)^n)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-13">
+<dt><span class="spadfun">taylor</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; FE, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> FE) -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">taylor(n</span> <span class="pre">+-&gt;</span> <span class="pre">a(n),</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">0..,</span> <span class="pre">a(n)*(x-a)^n)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-14">
+<dt><span class="spadfun">taylor</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; FE, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> FE, <a class="reference internal" href="UniversalSegment.html#l-universal-segment"><em>UniversalSegment</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">taylor(n</span> <span class="pre">+-&gt;</span> <span class="pre">a(n),</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">n0..)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n=n0..,</span> <span class="pre">a(n)*(x-a)^n)</span></tt>; <tt class="docutils literal"><span class="pre">taylor(n</span> <span class="pre">+-&gt;</span> <span class="pre">a(n),</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a,</span> <span class="pre">n0..n1)</span></tt> returns <tt class="docutils literal"><span class="pre">sum(n</span> <span class="pre">=</span> <span class="pre">n0..,</span> <span class="pre">a(n)*(x-a)^n)</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="GeneralPolynomialGcdPackage.html"
+                        title="previous chapter">GeneralPolynomialGcdPackage(E, OV, R, P)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="GenExEuclid.html"
+                        title="next chapter">GenExEuclid(R, BP)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/GenerateUnivariatePowerSeries.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="GenExEuclid.html" title="GenExEuclid(R, BP)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GeneralPolynomialGcdPackage.html" title="GeneralPolynomialGcdPackage(E, OV, R, P)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

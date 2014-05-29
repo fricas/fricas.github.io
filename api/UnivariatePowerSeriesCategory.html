@@ -1,0 +1,346 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>UnivariatePowerSeriesCategory(Coef, Expon) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Categories" href="Categories.html" />
+    <link rel="next" title="UnivariatePuiseuxSeriesCategory Coef" href="UnivariatePuiseuxSeriesCategory.html" />
+    <link rel="prev" title="UnivariatePolynomialCategory R" href="UnivariatePolynomialCategory.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="UnivariatePuiseuxSeriesCategory.html" title="UnivariatePuiseuxSeriesCategory Coef"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="UnivariatePolynomialCategory.html" title="UnivariatePolynomialCategory R"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="univariatepowerseriescategory-coef-expon">
+<span id="l-univariate-power-series-category"></span><span id="index-0"></span><h1>UnivariatePowerSeriesCategory(Coef, Expon)<a class="headerlink" href="#univariatepowerseriescategory-coef-expon" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//pscat.spad#L60">pscat.spad line 60</a></p>
+<ul class="simple">
+<li>Coef: <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></li>
+<li>Expon: <a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a></li>
+</ul>
+<p><a class="reference internal" href="#l-univariate-power-series-category"><em>UnivariatePowerSeriesCategory</em></a> is the most general univariate power series category with exponents in an ordered abelian monoid. Note: this category exports a substitution function if it is possible to multiply exponents. Note: this category exports a derivative operation if it is possible to multiply coefficients by exponents.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><em>0</em></a>: % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="Monoid.html#l-monoid-1"><em>1</em></a>: % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="LeftModule.html#id1"><em>*</em></a>: (%, %) -&gt; % if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a> or Coef has (Expon, Coef) -&gt; Coef or Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> %</dd>
+<dt><a class="reference internal" href="RightModule.html#id1"><em>*</em></a>: (%, Coef) -&gt; % if Coef has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> Coef</dd>
+<dt><a class="reference internal" href="RightModule.html#id1"><em>*</em></a>: (%, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; % if Coef has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="LeftModule.html#id1"><em>*</em></a>: (Coef, %) -&gt; % if Coef has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> Coef</dd>
+<dt><a class="reference internal" href="LeftModule.html#id1"><em>*</em></a>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; % if Coef has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#id1"><em>*</em></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, %) -&gt; % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, %) -&gt; % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id2"><em>+</em></a>: (%, %) -&gt; % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: % -&gt; % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: (%, %) -&gt; % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoidRing.html#id1"><em>/</em></a>: (%, Coef) -&gt; % if Coef has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring"><em>AbelianMonoidRing</em></a>(Coef, Expon)</dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="Monoid.html#id1"><em>^</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="SemiGroup.html#id2"><em>^</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="Rng.html#l-rng-annihilate"><em>annihilate?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="Rng.html#l-rng"><em>Rng</em></a></dd>
+</dl>
+<span class="target" id="l-univariate-power-series-category-approximate"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">approximate</span>: (%, Expon) -&gt; Coef if Coef has <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a> -&gt; Coef and Coef has (Coef, Expon) -&gt; Coef</dt>
+<dd><tt class="docutils literal"><span class="pre">approximate(f)</span></tt> returns a truncated power series with the series variable viewed as an element of the coefficient domain.</dd>
+<dt><a class="reference internal" href="EntireRing.html#l-entire-ring-associates"><em>associates?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="EntireRing.html#l-entire-ring"><em>EntireRing</em></a></dd>
+</dl>
+<span class="target" id="l-univariate-power-series-category-center"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">center</span>: % -&gt; Coef</dt>
+<dd><tt class="docutils literal"><span class="pre">center(f)</span></tt> returns the point about which the series <tt class="docutils literal"><span class="pre">f</span></tt> is expanded.</dd>
+<dt><a class="reference internal" href="Ring.html#l-ring-characteristic"><em>characteristic</em></a>: () -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></dd>
+<dt><a class="reference internal" href="CharacteristicNonZero.html#l-characteristic-non-zero-charth-root"><em>charthRoot</em></a>: % -&gt; Union(%, failed) if Coef has <a class="reference internal" href="CharacteristicNonZero.html#l-characteristic-non-zero"><em>CharacteristicNonZero</em></a></dt>
+<dd>from <a class="reference internal" href="CharacteristicNonZero.html#l-characteristic-non-zero"><em>CharacteristicNonZero</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring-coefficient"><em>coefficient</em></a>: (%, Expon) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring"><em>AbelianMonoidRing</em></a>(Coef, Expon)</dd>
+<dt><a class="reference internal" href="Algebra.html#l-algebra-coerce"><em>coerce</em></a>: % -&gt; % if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> %</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="Algebra.html#l-algebra-coerce"><em>coerce</em></a>: Coef -&gt; % if Coef has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> Coef</dd>
+<dt><a class="reference internal" href="Algebra.html#l-algebra-coerce"><em>coerce</em></a>: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; % if Coef has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="Ring.html#l-ring-coerce"><em>coerce</em></a>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></dd>
+<dt><a class="reference internal" href="PowerSeriesCategory.html#l-power-series-category-complete"><em>complete</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="PowerSeriesCategory.html#l-power-series-category"><em>PowerSeriesCategory</em></a>(Coef, Expon, <a class="reference internal" href="SingletonAsOrderedSet.html#l-singleton-as-ordered-set"><em>SingletonAsOrderedSet</em></a>)</dd>
+<dt><a class="reference internal" href="DifferentialRing.html#l-differential-ring-d"><em>D</em></a>: % -&gt; % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><em>DifferentialRing</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-d"><em>D</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; % if Coef has (Expon, Coef) -&gt; Coef and Coef has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-d"><em>D</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if Coef has (Expon, Coef) -&gt; Coef and Coef has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="DifferentialRing.html#l-differential-ring-d"><em>D</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><em>DifferentialRing</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-d"><em>D</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; % if Coef has (Expon, Coef) -&gt; Coef and Coef has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-d"><em>D</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if Coef has (Expon, Coef) -&gt; Coef and Coef has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring-degree"><em>degree</em></a>: % -&gt; Expon</dt>
+<dd>from <a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring"><em>AbelianMonoidRing</em></a>(Coef, Expon)</dd>
+<dt><a class="reference internal" href="DifferentialRing.html#l-differential-ring-differentiate"><em>differentiate</em></a>: % -&gt; % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><em>DifferentialRing</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-differentiate"><em>differentiate</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; % if Coef has (Expon, Coef) -&gt; Coef and Coef has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-differentiate"><em>differentiate</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if Coef has (Expon, Coef) -&gt; Coef and Coef has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="DifferentialRing.html#l-differential-ring-differentiate"><em>differentiate</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><em>DifferentialRing</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-differentiate"><em>differentiate</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; % if Coef has (Expon, Coef) -&gt; Coef and Coef has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-differentiate"><em>differentiate</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if Coef has (Expon, Coef) -&gt; Coef and Coef has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="Eltable.html#l-eltable-elt"><em>elt</em></a>: (%, %) -&gt; % if Expon has <a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></dt>
+<dd>from <a class="reference internal" href="Eltable.html#l-eltable"><em>Eltable</em></a>(%, %)</dd>
+</dl>
+<span class="target" id="l-univariate-power-series-category-elt"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">elt</span>: (%, Expon) -&gt; Coef</dt>
+<dd><tt class="docutils literal"><span class="pre">elt(f(x),</span> <span class="pre">r)</span></tt> returns the coefficient of the term of degree <tt class="docutils literal"><span class="pre">r</span></tt> in <tt class="docutils literal"><span class="pre">f(x)</span></tt>. This is the same as the function <span class="spadfun">coefficient</span>.</dd>
+</dl>
+<span class="target" id="l-univariate-power-series-category-eval"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">eval</span>: (%, Coef) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> Coef if Coef has (Coef, Expon) -&gt; Coef</dt>
+<dd><tt class="docutils literal"><span class="pre">eval(f,</span> <span class="pre">a)</span></tt> evaluates a power series at a value in the ground ring by returning a stream of partial sums.</dd>
+<dt><a class="reference internal" href="EntireRing.html#l-entire-ring-exquo"><em>exquo</em></a>: (%, %) -&gt; Union(%, failed) if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="EntireRing.html#l-entire-ring"><em>EntireRing</em></a></dd>
+</dl>
+<span class="target" id="l-univariate-power-series-category-extend"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">extend</span>: (%, Expon) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">extend(f,</span> <span class="pre">n)</span></tt> causes all terms of <tt class="docutils literal"><span class="pre">f</span></tt> of degree <tt class="docutils literal"><span class="pre">&lt;=</span></tt> <tt class="docutils literal"><span class="pre">n</span></tt> to be computed.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a> if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a> if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a> if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring-leading-coefficient"><em>leadingCoefficient</em></a>: % -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring"><em>AbelianMonoidRing</em></a>(Coef, Expon)</dd>
+<dt><a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring-leading-monomial"><em>leadingMonomial</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring"><em>AbelianMonoidRing</em></a>(Coef, Expon)</dd>
+<dt><a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring-map"><em>map</em></a>: (Coef -&gt; Coef, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring"><em>AbelianMonoidRing</em></a>(Coef, Expon)</dd>
+<dt><a class="reference internal" href="PowerSeriesCategory.html#l-power-series-category-monomial"><em>monomial</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="SingletonAsOrderedSet.html#l-singleton-as-ordered-set"><em>SingletonAsOrderedSet</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> Expon) -&gt; %</dt>
+<dd>from <a class="reference internal" href="PowerSeriesCategory.html#l-power-series-category"><em>PowerSeriesCategory</em></a>(Coef, Expon, <a class="reference internal" href="SingletonAsOrderedSet.html#l-singleton-as-ordered-set"><em>SingletonAsOrderedSet</em></a>)</dd>
+<dt><a class="reference internal" href="PowerSeriesCategory.html#l-power-series-category-monomial"><em>monomial</em></a>: (%, <a class="reference internal" href="SingletonAsOrderedSet.html#l-singleton-as-ordered-set"><em>SingletonAsOrderedSet</em></a>, Expon) -&gt; %</dt>
+<dd>from <a class="reference internal" href="PowerSeriesCategory.html#l-power-series-category"><em>PowerSeriesCategory</em></a>(Coef, Expon, <a class="reference internal" href="SingletonAsOrderedSet.html#l-singleton-as-ordered-set"><em>SingletonAsOrderedSet</em></a>)</dd>
+<dt><a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring-monomial"><em>monomial</em></a>: (Coef, Expon) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring"><em>AbelianMonoidRing</em></a>(Coef, Expon)</dd>
+<dt><a class="reference internal" href="AbelianMonoidRing.html#id2"><em>monomial?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring"><em>AbelianMonoidRing</em></a>(Coef, Expon)</dd>
+</dl>
+<span class="target" id="l-univariate-power-series-category-multiply-exponents"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">multiplyExponents</span>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">multiplyExponents(f,</span> <span class="pre">n)</span></tt> multiplies all exponents of the power series <tt class="docutils literal"><span class="pre">f</span></tt> by the positive integer <tt class="docutils literal"><span class="pre">n</span></tt>.</dd>
+<dt><a class="reference internal" href="Monoid.html#l-monoid-one"><em>one?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-opposite"><em>opposite?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+</dl>
+<span class="target" id="l-univariate-power-series-category-order"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">order</span>: % -&gt; Expon</dt>
+<dd><tt class="docutils literal"><span class="pre">order(f)</span></tt> is the degree of the lowest order non-zero term in <tt class="docutils literal"><span class="pre">f</span></tt>. This will result in an infinite loop if <tt class="docutils literal"><span class="pre">f</span></tt> has no non-zero terms.</dd>
+</dl>
+<dl class="docutils" id="index-8">
+<dt><span class="spadfun">order</span>: (%, Expon) -&gt; Expon</dt>
+<dd><tt class="docutils literal"><span class="pre">order(f,</span> <span class="pre">n)</span> <span class="pre">=</span> <span class="pre">min(m,</span> <span class="pre">n)</span></tt>, where <tt class="docutils literal"><span class="pre">m</span></tt> is the degree of the lowest order non-zero term in <tt class="docutils literal"><span class="pre">f</span></tt>.</dd>
+<dt><a class="reference internal" href="PowerSeriesCategory.html#l-power-series-category-pole"><em>pole?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="PowerSeriesCategory.html#l-power-series-category"><em>PowerSeriesCategory</em></a>(Coef, Expon, <a class="reference internal" href="SingletonAsOrderedSet.html#l-singleton-as-ordered-set"><em>SingletonAsOrderedSet</em></a>)</dd>
+<dt><a class="reference internal" href="Monoid.html#l-monoid-recip"><em>recip</em></a>: % -&gt; Union(%, failed) if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring-reductum"><em>reductum</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring"><em>AbelianMonoidRing</em></a>(Coef, Expon)</dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-sample"><em>sample</em></a>: % if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid-subtract-if-can"><em>subtractIfCan</em></a>: (%, %) -&gt; Union(%, failed) if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a></dd>
+</dl>
+<span class="target" id="l-univariate-power-series-category-terms"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">terms</span>: % -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> Record(k: Expon, c: Coef)</dt>
+<dd><tt class="docutils literal"><span class="pre">terms(f(x))</span></tt> returns a stream of non-zero terms, where a a term is an exponent-coefficient pair. The terms in the stream are ordered by increasing order of exponents.</dd>
+</dl>
+<span class="target" id="l-univariate-power-series-category-truncate"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">truncate</span>: (%, Expon) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">truncate(f,</span> <span class="pre">k)</span></tt> returns a (finite) power series consisting of the sum of all terms of <tt class="docutils literal"><span class="pre">f</span></tt> of degree <tt class="docutils literal"><span class="pre">&lt;=</span> <span class="pre">k</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-11">
+<dt><span class="spadfun">truncate</span>: (%, Expon, Expon) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">truncate(f,</span> <span class="pre">k1,</span> <span class="pre">k2)</span></tt> returns a (finite) power series consisting of the sum of all terms of <tt class="docutils literal"><span class="pre">f</span></tt> of degree <tt class="docutils literal"><span class="pre">d</span></tt> with <tt class="docutils literal"><span class="pre">k1</span> <span class="pre">&lt;=</span> <span class="pre">d</span> <span class="pre">&lt;=</span> <span class="pre">k2</span></tt>.</dd>
+<dt><a class="reference internal" href="EntireRing.html#l-entire-ring-unit"><em>unit?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="EntireRing.html#l-entire-ring"><em>EntireRing</em></a></dd>
+<dt><a class="reference internal" href="EntireRing.html#l-entire-ring-unit-canonical"><em>unitCanonical</em></a>: % -&gt; % if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="EntireRing.html#l-entire-ring"><em>EntireRing</em></a></dd>
+<dt><a class="reference internal" href="EntireRing.html#l-entire-ring-unit-normal"><em>unitNormal</em></a>: % -&gt; Record(unit: %, canonical: %, associate: %) if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="EntireRing.html#l-entire-ring"><em>EntireRing</em></a></dd>
+</dl>
+<span class="target" id="l-univariate-power-series-category-variable"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">variable</span>: % -&gt; <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">variable(f)</span></tt> returns the (unique) power series variable of the power series <tt class="docutils literal"><span class="pre">f</span></tt>.</dd>
+<dt><a class="reference internal" href="PowerSeriesCategory.html#l-power-series-category-variables"><em>variables</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="SingletonAsOrderedSet.html#l-singleton-as-ordered-set"><em>SingletonAsOrderedSet</em></a></dt>
+<dd>from <a class="reference internal" href="PowerSeriesCategory.html#l-power-series-category"><em>PowerSeriesCategory</em></a>(Coef, Expon, <a class="reference internal" href="SingletonAsOrderedSet.html#l-singleton-as-ordered-set"><em>SingletonAsOrderedSet</em></a>)</dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-zero"><em>zero?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if Coef has (Expon, Coef) -&gt; Coef</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+</dl>
+<p><a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a> if % has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a> and Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a> or Coef has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or Coef has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a> and Coef has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a> or Coef has (Expon, Coef) -&gt; Coef or % has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a> and Coef has (Expon, Coef) -&gt; Coef or Coef has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or Coef has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a> and Coef has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> if Coef has (Expon, Coef) -&gt; Coef or % has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> and Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a> or Coef has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or Coef has (Expon, Coef) -&gt; Coef or Coef has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> and Coef has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a> or % has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> and Coef has (Expon, Coef) -&gt; Coef or Coef has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or Coef has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> and Coef has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="AbelianMonoidRing.html#l-abelian-monoid-ring"><em>AbelianMonoidRing</em></a>(Coef, Expon)</p>
+<p><a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a> if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a> or Coef has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or Coef has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a> or Coef has (Expon, Coef) -&gt; Coef or Coef has (Expon, Coef) -&gt; Coef or Coef has (Expon, Coef) -&gt; Coef or Coef has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or Coef has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> % if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></p>
+<p><a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> Coef if Coef has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if Coef has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> if Coef has (Expon, Coef) -&gt; Coef</p>
+<p><a class="reference internal" href="BiModule.html#l-bi-module"><em>BiModule</em></a>(%, %) if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></p>
+<p><a class="reference internal" href="BiModule.html#l-bi-module"><em>BiModule</em></a>(Coef, Coef)</p>
+<p><a class="reference internal" href="BiModule.html#l-bi-module"><em>BiModule</em></a>(<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) if Coef has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a> if Coef has <a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a> or Coef has (Expon, Coef) -&gt; Coef</p>
+<p><a class="reference internal" href="CharacteristicNonZero.html#l-characteristic-non-zero"><em>CharacteristicNonZero</em></a> if Coef has <a class="reference internal" href="CharacteristicNonZero.html#l-characteristic-non-zero"><em>CharacteristicNonZero</em></a></p>
+<p><a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a> if Coef has <a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if Coef has (Expon, Coef) -&gt; Coef</p>
+<p><a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a> if Coef has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a> or Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></p>
+<p><a class="reference internal" href="CommutativeStar.html#l-commutative-star"><em>CommutativeStar</em></a> if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></p>
+<p><a class="reference internal" href="DifferentialRing.html#l-differential-ring"><em>DifferentialRing</em></a> if Coef has (Expon, Coef) -&gt; Coef</p>
+<p><a class="reference internal" href="Eltable.html#l-eltable"><em>Eltable</em></a>(%, %) if Expon has <a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></p>
+<p><a class="reference internal" href="EntireRing.html#l-entire-ring"><em>EntireRing</em></a> if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></p>
+<p><a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a> if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> % if Coef has (Expon, Coef) -&gt; Coef or Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> Coef if Coef has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if Coef has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="Module.html#l-module"><em>Module</em></a> % if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></p>
+<p><a class="reference internal" href="Module.html#l-module"><em>Module</em></a> Coef if Coef has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="Module.html#l-module"><em>Module</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if Coef has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a> if Coef has (Expon, Coef) -&gt; Coef</p>
+<p><a class="reference internal" href="noZeroDivisors.html#l-no-zero-divisors"><em>noZeroDivisors</em></a> if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></p>
+<p><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a> if Coef has (Expon, Coef) -&gt; Coef and Coef has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></p>
+<p><a class="reference internal" href="PowerSeriesCategory.html#l-power-series-category"><em>PowerSeriesCategory</em></a>(Coef, Expon, <a class="reference internal" href="SingletonAsOrderedSet.html#l-singleton-as-ordered-set"><em>SingletonAsOrderedSet</em></a>)</p>
+<p><a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> % if Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></p>
+<p><a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> Coef if Coef has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if Coef has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a> if Coef has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a> or Coef has <a class="reference internal" href="CharacteristicNonZero.html#l-characteristic-non-zero"><em>CharacteristicNonZero</em></a> or Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a> or Coef has <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a> or Coef has <a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a> or Coef has (Expon, Coef) -&gt; Coef or Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a> or Coef has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> or Coef has (Expon, Coef) -&gt; Coef and Coef has <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a> or Coef has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></p>
+<p><a class="reference internal" href="Rng.html#l-rng"><em>Rng</em></a> if Coef has (Expon, Coef) -&gt; Coef</p>
+<p><a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a> if Coef has (Expon, Coef) -&gt; Coef</p>
+<p><a class="reference internal" href="SemiRing.html#l-semi-ring"><em>SemiRing</em></a> if Coef has (Expon, Coef) -&gt; Coef or Coef has <a class="reference internal" href="SemiRing.html#l-semi-ring"><em>SemiRing</em></a></p>
+<p><a class="reference internal" href="SemiRng.html#l-semi-rng"><em>SemiRng</em></a></p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> if Coef has (Expon, Coef) -&gt; Coef</p>
+<p><a class="reference internal" href="unitsKnown.html#l-units-known"><em>unitsKnown</em></a> if Coef has (Expon, Coef) -&gt; Coef</p>
+<p><a class="reference internal" href="VariablesCommuteWithCoefficients.html#l-variables-commute-with-coefficients"><em>VariablesCommuteWithCoefficients</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="UnivariatePolynomialCategory.html"
+                        title="previous chapter">UnivariatePolynomialCategory R</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="UnivariatePuiseuxSeriesCategory.html"
+                        title="next chapter">UnivariatePuiseuxSeriesCategory Coef</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/UnivariatePowerSeriesCategory.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="UnivariatePuiseuxSeriesCategory.html" title="UnivariatePuiseuxSeriesCategory Coef"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="UnivariatePolynomialCategory.html" title="UnivariatePolynomialCategory R"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

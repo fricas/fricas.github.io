@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>InnerTrigonometricManipulations(R, F, FG) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="InputFormFunctions1 R" href="InputFormFunctions1.html" />
+    <link rel="prev" title="InnerPolySum(E, V, R, P)" href="InnerPolySum.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="InputFormFunctions1.html" title="InputFormFunctions1 R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="InnerPolySum.html" title="InnerPolySum(E, V, R, P)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="innertrigonometricmanipulations-r-f-fg">
+<span id="l-inner-trigonometric-manipulations"></span><span id="index-0"></span><h1>InnerTrigonometricManipulations(R, F, FG)<a class="headerlink" href="#innertrigonometricmanipulations-r-f-fg" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//efstruc.spad#L730">efstruc.spad line 730</a></p>
+<ul class="simple">
+<li>R: Join(<a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a>, <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a>)</li>
+<li>F: Join(<a class="reference internal" href="FunctionSpace.html#l-function-space"><em>FunctionSpace</em></a> R, <a class="reference internal" href="RadicalCategory.html#l-radical-category"><em>RadicalCategory</em></a>, <a class="reference internal" href="TranscendentalFunctionCategory.html#l-transcendental-function-category"><em>TranscendentalFunctionCategory</em></a>)</li>
+<li>FG: Join(<a class="reference internal" href="FunctionSpace.html#l-function-space"><em>FunctionSpace</em></a> <a class="reference internal" href="Complex.html#l-complex"><em>Complex</em></a> R, <a class="reference internal" href="RadicalCategory.html#l-radical-category"><em>RadicalCategory</em></a>, <a class="reference internal" href="TranscendentalFunctionCategory.html#l-transcendental-function-category"><em>TranscendentalFunctionCategory</em></a>)</li>
+</ul>
+<p>This package provides transformations from trigonometric functions to exponentials and logarithms, and back. <tt class="docutils literal"><span class="pre">F</span></tt> and <tt class="docutils literal"><span class="pre">FG</span></tt> should be the same type of function space.</p>
+<span class="target" id="l-inner-trigonometric-manipulations-do-liou"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">do_liou</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Complex.html#l-complex"><em>Complex</em></a> F) -&gt; <a class="reference internal" href="Complex.html#l-complex"><em>Complex</em></a> F</dt>
+<dd><tt class="docutils literal"><span class="pre">do_liou(op,</span> <span class="pre">lf)</span></tt> should be local but conditional.</dd>
+</dl>
+<span class="target" id="l-inner-trigonometric-manipulations-explogs2trigs"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">explogs2trigs</span>: FG -&gt; <a class="reference internal" href="Complex.html#l-complex"><em>Complex</em></a> F</dt>
+<dd><tt class="docutils literal"><span class="pre">explogs2trigs(f)</span></tt> rewrites all the complex logs and exponentials appearing in <tt class="docutils literal"><span class="pre">f</span></tt> in terms of trigonometric functions.</dd>
+</dl>
+<span class="target" id="l-inner-trigonometric-manipulations-f2-f-g"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">F2FG</span>: F -&gt; FG</dt>
+<dd><tt class="docutils literal"><span class="pre">F2FG(a</span> <span class="pre">+</span> <span class="pre">sqrt(-1)</span> <span class="pre">b)</span></tt> returns <tt class="docutils literal"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">i</span> <span class="pre">b</span></tt>.</dd>
+</dl>
+<span class="target" id="l-inner-trigonometric-manipulations-f-g2-f"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">FG2F</span>: FG -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">FG2F(a</span> <span class="pre">+</span> <span class="pre">i</span> <span class="pre">b)</span></tt> returns <tt class="docutils literal"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">sqrt(-1)</span> <span class="pre">b</span></tt>.</dd>
+</dl>
+<span class="target" id="l-inner-trigonometric-manipulations-g-f2-f-g"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">GF2FG</span>: <a class="reference internal" href="Complex.html#l-complex"><em>Complex</em></a> F -&gt; FG</dt>
+<dd><tt class="docutils literal"><span class="pre">GF2FG(a</span> <span class="pre">+</span> <span class="pre">i</span> <span class="pre">b)</span></tt> returns <tt class="docutils literal"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">i</span> <span class="pre">b</span></tt> viewed as a function with the <tt class="docutils literal"><span class="pre">i</span></tt> pushed down into the coefficient domain.</dd>
+</dl>
+<span class="target" id="l-inner-trigonometric-manipulations-trigs2explogs"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">trigs2explogs</span>: (FG, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> FG) -&gt; FG</dt>
+<dd><tt class="docutils literal"><span class="pre">trigs2explogs(f,</span> <span class="pre">[k1,</span> <span class="pre">...,</span> <span class="pre">kn])</span></tt> rewrites all the trigonometric functions appearing in <tt class="docutils literal"><span class="pre">f</span></tt> in terms of complex logarithms and exponentials. A kernel of the form <tt class="docutils literal"><span class="pre">tan(u)</span></tt> is expressed using <tt class="docutils literal"><span class="pre">exp(u)^2</span></tt> if it is one of the <tt class="docutils literal"><span class="pre">ki's</span></tt>, in terms of <tt class="docutils literal"><span class="pre">exp(2*u)</span></tt> otherwise.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="InnerPolySum.html"
+                        title="previous chapter">InnerPolySum(E, V, R, P)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="InputFormFunctions1.html"
+                        title="next chapter">InputFormFunctions1 R</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/InnerTrigonometricManipulations.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="InputFormFunctions1.html" title="InputFormFunctions1 R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="InnerPolySum.html" title="InnerPolySum(E, V, R, P)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

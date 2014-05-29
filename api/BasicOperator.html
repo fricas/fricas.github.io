@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>BasicOperator &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="BinaryExpansion" href="BinaryExpansion.html" />
+    <link rel="prev" title="BalancedPAdicRational p" href="BalancedPAdicRational.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="BinaryExpansion.html" title="BinaryExpansion"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="BalancedPAdicRational.html" title="BalancedPAdicRational p"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="basicoperator">
+<span id="l-basic-operator"></span><span id="index-0"></span><h1>BasicOperator<a class="headerlink" href="#basicoperator" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//op.spad#L1">op.spad line 1</a></p>
+<p>A basic operator is an object that can be applied to a list of arguments from a set, the result being a kernel over that set.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="PartialOrder.html#id1"><em>&lt;</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id2"><em>&lt;=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id3"><em>&gt;</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id4"><em>&gt;=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+</dl>
+<span class="target" id="l-basic-operator-arity"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">arity</span>: % -&gt; Union(<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">arity(op)</span></tt> returns <tt class="docutils literal"><span class="pre">n</span></tt> if <tt class="docutils literal"><span class="pre">op</span></tt> is <tt class="docutils literal"><span class="pre">n</span></tt>-ary, and &#8220;failed&#8221; if <tt class="docutils literal"><span class="pre">op</span></tt> has arbitrary arity.</dd>
+</dl>
+<span class="target" id="l-basic-operator-assert"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">assert</span>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">assert(op,</span> <span class="pre">s)</span></tt> attaches property <tt class="docutils literal"><span class="pre">s</span></tt> to <tt class="docutils literal"><span class="pre">op</span></tt>. Argument <tt class="docutils literal"><span class="pre">op</span></tt> is modified &#8220;in place&#8221;, i.e. no copy is made.</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+</dl>
+<span class="target" id="l-basic-operator-comparison"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">comparison</span>: (%, (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">comparison(op,</span> <span class="pre">foo?)</span></tt> attaches foo? as the &#8220;%less?&#8221; property to <tt class="docutils literal"><span class="pre">op</span></tt>. If <tt class="docutils literal"><span class="pre">op1</span></tt> and <tt class="docutils literal"><span class="pre">op2</span></tt> have the same name, and one of them has a &#8220;%less?&#8221; property <tt class="docutils literal"><span class="pre">f</span></tt>, then <tt class="docutils literal"><span class="pre">f(op1,</span> <span class="pre">op2)</span></tt> is called to decide whether <tt class="docutils literal"><span class="pre">op1</span> <span class="pre">&lt;</span> <span class="pre">op2</span></tt>.</dd>
+</dl>
+<span class="target" id="l-basic-operator-copy"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">copy</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">copy(op)</span></tt> returns a copy of <tt class="docutils literal"><span class="pre">op</span></tt>.</dd>
+</dl>
+<span class="target" id="l-basic-operator-delete-property"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">deleteProperty!</span>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">deleteProperty!(op,</span> <span class="pre">s)</span></tt> unattaches property <tt class="docutils literal"><span class="pre">s</span></tt> from <tt class="docutils literal"><span class="pre">op</span></tt>. Argument <tt class="docutils literal"><span class="pre">op</span></tt> is modified &#8220;in place&#8221;, i.e. no copy is made.</dd>
+</dl>
+<span class="target" id="l-basic-operator-display"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">display</span>: % -&gt; Union(<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a>, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">display(op)</span></tt> returns the &#8220;%display&#8221; property of <tt class="docutils literal"><span class="pre">op</span></tt> if it has one attached, and &#8220;failed&#8221; otherwise.</dd>
+</dl>
+<dl class="docutils" id="index-7">
+<dt><span class="spadfun">display</span>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">display(op,</span> <span class="pre">foo)</span></tt> attaches foo as the &#8220;%display&#8221; property of <tt class="docutils literal"><span class="pre">op</span></tt>. If <tt class="docutils literal"><span class="pre">op</span></tt> has a &#8220;%display&#8221; property <tt class="docutils literal"><span class="pre">f</span></tt>, then <tt class="docutils literal"><span class="pre">op(a1,...,an)</span></tt> gets converted to OutputForm as <tt class="docutils literal"><span class="pre">f(a1,</span> <span class="pre">...,</span> <span class="pre">an)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-8">
+<dt><span class="spadfun">display</span>: (%, <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">display(op,</span> <span class="pre">foo)</span></tt> attaches foo as the &#8220;%display&#8221; property of <tt class="docutils literal"><span class="pre">op</span></tt>. If <tt class="docutils literal"><span class="pre">op</span></tt> has a &#8220;%display&#8221; property <tt class="docutils literal"><span class="pre">f</span></tt>, then <tt class="docutils literal"><span class="pre">op(a)</span></tt> gets converted to OutputForm as <tt class="docutils literal"><span class="pre">f(a)</span></tt>. Argument <tt class="docutils literal"><span class="pre">op</span></tt> must be unary.</dd>
+</dl>
+<span class="target" id="l-basic-operator-equality"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">equality</span>: (%, (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">equality(op,</span> <span class="pre">foo?)</span></tt> attaches foo? as the &#8220;%equal?&#8221; property to <tt class="docutils literal"><span class="pre">op</span></tt>. If <tt class="docutils literal"><span class="pre">op1</span></tt> and <tt class="docutils literal"><span class="pre">op2</span></tt> have the same name, and one of them has an &#8220;%equal?&#8221; property <tt class="docutils literal"><span class="pre">f</span></tt>, then <tt class="docutils literal"><span class="pre">f(op1,</span> <span class="pre">op2)</span></tt> is called to decide whether <tt class="docutils literal"><span class="pre">op1</span></tt> and <tt class="docutils literal"><span class="pre">op2</span></tt> should be considered equal.</dd>
+</dl>
+<span class="target" id="l-basic-operator-has"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">has?</span>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">has?(op,</span> <span class="pre">s)</span></tt> tests if property <tt class="docutils literal"><span class="pre">s</span></tt> is attached to <tt class="docutils literal"><span class="pre">op</span></tt>.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-basic-operator-input"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">input</span>: % -&gt; Union(<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a> -&gt; <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a>, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">input(op)</span></tt> returns the &#8220;%input&#8221; property of <tt class="docutils literal"><span class="pre">op</span></tt> if it has one attached, &#8220;failed&#8221; otherwise.</dd>
+</dl>
+<dl class="docutils" id="index-12">
+<dt><span class="spadfun">input</span>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a> -&gt; <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">input(op,</span> <span class="pre">foo)</span></tt> attaches foo as the &#8220;%input&#8221; property of <tt class="docutils literal"><span class="pre">op</span></tt>. If <tt class="docutils literal"><span class="pre">op</span></tt> has a &#8220;%input&#8221; property <tt class="docutils literal"><span class="pre">f</span></tt>, then <tt class="docutils literal"><span class="pre">op(a1,...,an)</span></tt> gets converted to InputForm as <tt class="docutils literal"><span class="pre">f(a1,</span> <span class="pre">...,</span> <span class="pre">an)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-basic-operator-is"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">is?</span>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">is?(op,</span> <span class="pre">s)</span></tt> tests if the name of <tt class="docutils literal"><span class="pre">op</span></tt> is <tt class="docutils literal"><span class="pre">s</span></tt>.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-max"><em>max</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dd>
+<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-min"><em>min</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dd>
+</dl>
+<span class="target" id="l-basic-operator-name"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">name</span>: % -&gt; <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">name(op)</span></tt> returns the name of <tt class="docutils literal"><span class="pre">op</span></tt>.</dd>
+</dl>
+<span class="target" id="l-basic-operator-nary"></span><dl class="docutils" id="index-15">
+<dt><span class="spadfun">nary?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">nary?(op)</span></tt> tests if <tt class="docutils literal"><span class="pre">op</span></tt> has arbitrary arity.</dd>
+</dl>
+<span class="target" id="l-basic-operator-nullary"></span><dl class="docutils" id="index-16">
+<dt><span class="spadfun">nullary?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">nullary?(op)</span></tt> tests if <tt class="docutils literal"><span class="pre">op</span></tt> is nullary.</dd>
+</dl>
+<span class="target" id="l-basic-operator-operator"></span><dl class="docutils" id="index-17">
+<dt><span class="spadfun">operator</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">operator(f,</span> <span class="pre">n)</span></tt> makes <tt class="docutils literal"><span class="pre">f</span></tt> into an <tt class="docutils literal"><span class="pre">n</span></tt>-ary operator.</dd>
+</dl>
+<dl class="docutils" id="index-18">
+<dt><span class="spadfun">operator</span>: <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a> -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">operator(f)</span></tt> makes <tt class="docutils literal"><span class="pre">f</span></tt> into an operator with arbitrary arity.</dd>
+</dl>
+<span class="target" id="l-basic-operator-properties"></span><dl class="docutils" id="index-19">
+<dt><span class="spadfun">properties</span>: % -&gt; <a class="reference internal" href="AssociationList.html#l-association-list"><em>AssociationList</em></a>(<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="None.html#l-none"><em>None</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">properties(op)</span></tt> returns the list of all the properties currently attached to <tt class="docutils literal"><span class="pre">op</span></tt>.</dd>
+</dl>
+<span class="target" id="l-basic-operator-property"></span><dl class="docutils" id="index-20">
+<dt><span class="spadfun">property</span>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Union(<a class="reference internal" href="None.html#l-none"><em>None</em></a>, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">property(op,</span> <span class="pre">s)</span></tt> returns the value of property <tt class="docutils literal"><span class="pre">s</span></tt> if it is attached to <tt class="docutils literal"><span class="pre">op</span></tt>, and &#8220;failed&#8221; otherwise.</dd>
+</dl>
+<span class="target" id="l-basic-operator-set-properties"></span><dl class="docutils" id="index-21">
+<dt><span class="spadfun">setProperties</span>: (%, <a class="reference internal" href="AssociationList.html#l-association-list"><em>AssociationList</em></a>(<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="None.html#l-none"><em>None</em></a>)) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">setProperties(op,</span> <span class="pre">l)</span></tt> sets the property list of <tt class="docutils literal"><span class="pre">op</span></tt> to <tt class="docutils literal"><span class="pre">l</span></tt>. Argument <tt class="docutils literal"><span class="pre">op</span></tt> is modified &#8220;in place&#8221;, i.e. no copy is made.</dd>
+</dl>
+<span class="target" id="l-basic-operator-set-property"></span><dl class="docutils" id="index-22">
+<dt><span class="spadfun">setProperty</span>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="None.html#l-none"><em>None</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">setProperty(op,</span> <span class="pre">s,</span> <span class="pre">v)</span></tt> attaches property <tt class="docutils literal"><span class="pre">s</span></tt> to <tt class="docutils literal"><span class="pre">op</span></tt>, and sets its value to <tt class="docutils literal"><span class="pre">v</span></tt>. Argument <tt class="docutils literal"><span class="pre">op</span></tt> is modified &#8220;in place&#8221;, i.e. no copy is made.</dd>
+<dt><a class="reference internal" href="Comparable.html#l-comparable-smaller"><em>smaller?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dd>
+</dl>
+<span class="target" id="l-basic-operator-unary"></span><dl class="docutils" id="index-23">
+<dt><span class="spadfun">unary?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">unary?(op)</span></tt> tests if <tt class="docutils literal"><span class="pre">op</span></tt> is unary.</dd>
+</dl>
+<span class="target" id="l-basic-operator-weight"></span><dl class="docutils" id="index-24">
+<dt><span class="spadfun">weight</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">weight(op)</span></tt> returns the weight attached to <tt class="docutils literal"><span class="pre">op</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-25">
+<dt><span class="spadfun">weight</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">weight(op,</span> <span class="pre">n)</span></tt> attaches the weight <tt class="docutils literal"><span class="pre">n</span></tt> to <tt class="docutils literal"><span class="pre">op</span></tt>.</dd>
+</dl>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></p>
+<p><a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></p>
+<p><a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="BalancedPAdicRational.html"
+                        title="previous chapter">BalancedPAdicRational p</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="BinaryExpansion.html"
+                        title="next chapter">BinaryExpansion</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/BasicOperator.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="BinaryExpansion.html" title="BinaryExpansion"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="BalancedPAdicRational.html" title="BalancedPAdicRational p"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

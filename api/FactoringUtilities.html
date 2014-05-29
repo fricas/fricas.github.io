@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FactoringUtilities(E, OV, R, P) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="FGLMIfCanPackage(R, ls)" href="FGLMIfCanPackage.html" />
+    <link rel="prev" title="FactoredFunctionUtilities R" href="FactoredFunctionUtilities.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="FGLMIfCanPackage.html" title="FGLMIfCanPackage(R, ls)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="FactoredFunctionUtilities.html" title="FactoredFunctionUtilities R"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="factoringutilities-e-ov-r-p">
+<span id="l-factoring-utilities"></span><span id="index-0"></span><h1>FactoringUtilities(E, OV, R, P)<a class="headerlink" href="#factoringutilities-e-ov-r-p" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//facutil.spad#L1">facutil.spad line 1</a></p>
+<ul class="simple">
+<li>E: <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a></li>
+<li>OV: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></li>
+<li>R: <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></li>
+<li>P: <a class="reference internal" href="PolynomialCategory.html#l-polynomial-category"><em>PolynomialCategory</em></a>(R, E, OV)</li>
+</ul>
+<p>This package provides utilities used by the factorizers which operate on polynomials represented as univariate polynomials with multivariate coefficients.</p>
+<span class="target" id="l-factoring-utilities-complete-eval"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">completeEval</span>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> OV, <a class="reference internal" href="List.html#l-list"><em>List</em></a> R) -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">completeEval(upoly,</span> <span class="pre">lvar,</span> <span class="pre">lval)</span></tt> evaluates the polynomial <tt class="docutils literal"><span class="pre">upoly</span></tt> with each variable in <tt class="docutils literal"><span class="pre">lvar</span></tt> replaced by the corresponding value in lval. Substitutions are done for all variables in <tt class="docutils literal"><span class="pre">upoly</span></tt> producing a univariate polynomial over <tt class="docutils literal"><span class="pre">R</span></tt>.</dd>
+</dl>
+<span class="target" id="l-factoring-utilities-degree"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">degree</span>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> OV) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">degree(upoly,</span> <span class="pre">lvar)</span></tt> returns a list containing the maximum degree for each variable in lvar.</dd>
+</dl>
+<span class="target" id="l-factoring-utilities-lower-polynomial"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">lowerPolynomial</span>: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">lowerPolynomial(upoly)</span></tt> converts <tt class="docutils literal"><span class="pre">upoly</span></tt> to be a univariate polynomial over <tt class="docutils literal"><span class="pre">R</span></tt>. An error if the coefficients contain variables.</dd>
+</dl>
+<span class="target" id="l-factoring-utilities-normal-deriv"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">normalDeriv</span>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P</dt>
+<dd><tt class="docutils literal"><span class="pre">normalDeriv(poly,</span> <span class="pre">i)</span></tt> computes the <tt class="docutils literal"><span class="pre">i</span></tt>th derivative of <tt class="docutils literal"><span class="pre">poly</span></tt> divided by i!.</dd>
+</dl>
+<span class="target" id="l-factoring-utilities-raise-polynomial"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">raisePolynomial</span>: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P</dt>
+<dd><tt class="docutils literal"><span class="pre">raisePolynomial(rpoly)</span></tt> converts <tt class="docutils literal"><span class="pre">rpoly</span></tt> from a univariate polynomial over <tt class="docutils literal"><span class="pre">r</span></tt> to be a univariate polynomial with polynomial coefficients.</dd>
+</dl>
+<span class="target" id="l-factoring-utilities-ran"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">ran</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; R</dt>
+<dd><tt class="docutils literal"><span class="pre">ran(k)</span></tt> computes a random integer between <tt class="docutils literal"><span class="pre">-k</span></tt> and <tt class="docutils literal"><span class="pre">k</span></tt> as a member of <tt class="docutils literal"><span class="pre">R</span></tt>.</dd>
+</dl>
+<span class="target" id="l-factoring-utilities-variables"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">variables</span>: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> OV</dt>
+<dd><tt class="docutils literal"><span class="pre">variables(upoly)</span></tt> returns the list of variables for the coefficients of <tt class="docutils literal"><span class="pre">upoly</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="FactoredFunctionUtilities.html"
+                        title="previous chapter">FactoredFunctionUtilities R</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="FGLMIfCanPackage.html"
+                        title="next chapter">FGLMIfCanPackage(R, ls)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/FactoringUtilities.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="FGLMIfCanPackage.html" title="FGLMIfCanPackage(R, ls)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="FactoredFunctionUtilities.html" title="FactoredFunctionUtilities R"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Plot &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="Plot3D" href="Plot3D.html" />
+    <link rel="prev" title="PlaneAlgebraicCurvePlot" href="PlaneAlgebraicCurvePlot.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Plot3D.html" title="Plot3D"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PlaneAlgebraicCurvePlot.html" title="PlaneAlgebraicCurvePlot"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="plot">
+<span id="l-plot"></span><span id="index-0"></span><h1>Plot<a class="headerlink" href="#plot" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//plot.spad#L1">plot.spad line 1</a></p>
+<p>The Plot domain supports plotting of functions defined over a real number system. A real number system is a model for the real numbers and as such may be an approximation. For example floating point numbers and infinite continued fractions. The facilities at this point are limited to 2-dimensional plots or either a single function or a parametric function.</p>
+<span class="target" id="l-plot-adaptive"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">adaptive?</span>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">adaptive?()</span></tt> determines whether plotting be done adaptively</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+</dl>
+<span class="target" id="l-plot-debug"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">debug</span>: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">debug(true)</span></tt> turns debug mode on <tt class="docutils literal"><span class="pre">debug(false)</span></tt> turns debug mode off</dd>
+<dt><a class="reference internal" href="PlottablePlaneCurveCategory.html#l-plottable-plane-curve-category-list-branches"><em>listBranches</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a></dt>
+<dd>from <a class="reference internal" href="PlottablePlaneCurveCategory.html#l-plottable-plane-curve-category"><em>PlottablePlaneCurveCategory</em></a></dd>
+</dl>
+<span class="target" id="l-plot-max-points"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">maxPoints</span>: () -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">maxPoints()</span></tt> returns the maximum number of points in a plot</dd>
+</dl>
+<span class="target" id="l-plot-min-points"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">minPoints</span>: () -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">minPoints()</span></tt> returns the minimum number of points in a plot</dd>
+</dl>
+<span class="target" id="l-plot-num-fun-evals"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">numFunEvals</span>: () -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">numFunEvals()</span></tt> returns the number of points computed</dd>
+</dl>
+<span class="target" id="l-plot-parametric"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">parametric?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">parametric?</span> <span class="pre">determines</span></tt> whether it is a parametric plot?</dd>
+</dl>
+<span class="target" id="l-plot-plot"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">plot</span>: (%, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">plot(x,</span> <span class="pre">r)</span></tt> undocumented</dd>
+</dl>
+<dl class="docutils" id="index-8">
+<dt><span class="spadfun">plot</span>: (<a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">plot(f,</span> <span class="pre">g,</span> <span class="pre">a..b)</span></tt> plots the parametric curve <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">f(t)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">g(t)</span></tt> as <tt class="docutils literal"><span class="pre">t</span></tt> ranges over the interval <tt class="docutils literal"><span class="pre">[a,</span> <span class="pre">b]</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-9">
+<dt><span class="spadfun">plot</span>: (<a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">plot(f,</span> <span class="pre">g,</span> <span class="pre">a..b,</span> <span class="pre">c..d,</span> <span class="pre">e..f)</span></tt> plots the parametric curve <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">f(t)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">g(t)</span></tt> as <tt class="docutils literal"><span class="pre">t</span></tt> ranges over the interval <tt class="docutils literal"><span class="pre">[a,</span> <span class="pre">b]</span></tt>; <tt class="docutils literal"><span class="pre">x</span></tt>-range of <tt class="docutils literal"><span class="pre">[c,</span> <span class="pre">d]</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt>-range of <tt class="docutils literal"><span class="pre">[e,</span> <span class="pre">f]</span></tt> are noted in Plot object.</dd>
+</dl>
+<dl class="docutils" id="index-10">
+<dt><span class="spadfun">plot</span>: (<a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">plot(f,</span> <span class="pre">a..b)</span></tt> plots the function <tt class="docutils literal"><span class="pre">f(x)</span></tt> on the interval <tt class="docutils literal"><span class="pre">[a,</span> <span class="pre">b]</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-11">
+<dt><span class="spadfun">plot</span>: (<a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">plot(f,</span> <span class="pre">a..b,</span> <span class="pre">c..d)</span></tt> plots the function <tt class="docutils literal"><span class="pre">f(x)</span></tt> on the interval <tt class="docutils literal"><span class="pre">[a,</span> <span class="pre">b]</span></tt>; <tt class="docutils literal"><span class="pre">y</span></tt>-range of <tt class="docutils literal"><span class="pre">[c,</span> <span class="pre">d]</span></tt> is noted in Plot object.</dd>
+</dl>
+<dl class="docutils" id="index-12">
+<dt><span class="spadfun">plot</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">plot([f1,</span> <span class="pre">...,</span> <span class="pre">fm],</span> <span class="pre">a..b)</span></tt> plots the functions <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">f1(x)</span></tt>, ..., <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">fm(x)</span></tt> on the interval <tt class="docutils literal"><span class="pre">a..b</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-13">
+<dt><span class="spadfun">plot</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">plot([f1,</span> <span class="pre">...,</span> <span class="pre">fm],</span> <span class="pre">a..b,</span> <span class="pre">c..d)</span></tt> plots the functions <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">f1(x)</span></tt>, ..., <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">fm(x)</span></tt> on the interval <tt class="docutils literal"><span class="pre">a..b</span></tt>; <tt class="docutils literal"><span class="pre">y</span></tt>-range of <tt class="docutils literal"><span class="pre">[c,</span> <span class="pre">d]</span></tt> is noted in Plot object.</dd>
+</dl>
+<span class="target" id="l-plot-plot-polar"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">plotPolar</span>: (<a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">plotPolar(f,</span> <span class="pre">a..b)</span></tt> plots the polar curve <tt class="docutils literal"><span class="pre">r</span> <span class="pre">=</span> <span class="pre">f(theta)</span></tt> as theta ranges over the interval <tt class="docutils literal"><span class="pre">[a,</span> <span class="pre">b]</span></tt>; this is the same as the parametric curve <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">f(t)</span> <span class="pre">*</span> <span class="pre">cos(t)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">f(t)</span> <span class="pre">*</span> <span class="pre">sin(t)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-15">
+<dt><span class="spadfun">plotPolar</span>: <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">plotPolar(f)</span></tt> plots the polar curve <tt class="docutils literal"><span class="pre">r</span> <span class="pre">=</span> <span class="pre">f(theta)</span></tt> as theta ranges over the interval <tt class="docutils literal"><span class="pre">[0,</span> <span class="pre">2*\%pi]</span></tt>; this is the same as the parametric curve <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">f(t)</span> <span class="pre">*</span> <span class="pre">cos(t)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">f(t)</span> <span class="pre">*</span> <span class="pre">sin(t)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-plot-point-plot"></span><dl class="docutils" id="index-16">
+<dt><span class="spadfun">pointPlot</span>: (<a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">pointPlot(t</span> <span class="pre">+-&gt;</span> <span class="pre">(f(t),</span> <span class="pre">g(t)),</span> <span class="pre">a..b)</span></tt> plots the parametric curve <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">f(t)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">g(t)</span></tt> as <tt class="docutils literal"><span class="pre">t</span></tt> ranges over the interval <tt class="docutils literal"><span class="pre">[a,</span> <span class="pre">b]</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-17">
+<dt><span class="spadfun">pointPlot</span>: (<a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">pointPlot(t</span> <span class="pre">+-&gt;</span> <span class="pre">(f(t),</span> <span class="pre">g(t)),</span> <span class="pre">a..b,</span> <span class="pre">c..d,</span> <span class="pre">e..f)</span></tt> plots the parametric curve <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">f(t)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">g(t)</span></tt> as <tt class="docutils literal"><span class="pre">t</span></tt> ranges over the interval <tt class="docutils literal"><span class="pre">[a,</span> <span class="pre">b]</span></tt>; <tt class="docutils literal"><span class="pre">x</span></tt>-range of <tt class="docutils literal"><span class="pre">[c,</span> <span class="pre">d]</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt>-range of <tt class="docutils literal"><span class="pre">[e,</span> <span class="pre">f]</span></tt> are noted in Plot object.</dd>
+</dl>
+<span class="target" id="l-plot-refine"></span><dl class="docutils" id="index-18">
+<dt><span class="spadfun">refine</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">refine(p)</span></tt> performs a refinement on the plot <tt class="docutils literal"><span class="pre">p</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-19">
+<dt><span class="spadfun">refine</span>: (%, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">refine(x,</span> <span class="pre">r)</span></tt> undocumented</dd>
+</dl>
+<span class="target" id="l-plot-screen-resolution"></span><dl class="docutils" id="index-20">
+<dt><span class="spadfun">screenResolution</span>: () -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">screenResolution()</span></tt> returns the screen resolution</dd>
+</dl>
+<span class="target" id="l-plot-set-adaptive"></span><dl class="docutils" id="index-21">
+<dt><span class="spadfun">setAdaptive</span>: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">setAdaptive(true)</span></tt> turns adaptive plotting on <tt class="docutils literal"><span class="pre">setAdaptive(false)</span></tt> turns adaptive plotting off</dd>
+</dl>
+<span class="target" id="l-plot-set-max-points"></span><dl class="docutils" id="index-22">
+<dt><span class="spadfun">setMaxPoints</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">setMaxPoints(i)</span></tt> sets the maximum number of points in a plot to <tt class="docutils literal"><span class="pre">i</span></tt></dd>
+</dl>
+<span class="target" id="l-plot-set-min-points"></span><dl class="docutils" id="index-23">
+<dt><span class="spadfun">setMinPoints</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">setMinPoints(i)</span></tt> sets the minimum number of points in a plot to <tt class="docutils literal"><span class="pre">i</span></tt></dd>
+</dl>
+<span class="target" id="l-plot-set-screen-resolution"></span><dl class="docutils" id="index-24">
+<dt><span class="spadfun">setScreenResolution</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">setScreenResolution(i)</span></tt> sets the screen resolution to <tt class="docutils literal"><span class="pre">i</span></tt></dd>
+</dl>
+<span class="target" id="l-plot-t-range"></span><dl class="docutils" id="index-25">
+<dt><span class="spadfun">tRange</span>: % -&gt; <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">tRange(p)</span></tt> returns the range of the parameter in a parametric plot <tt class="docutils literal"><span class="pre">p</span></tt></dd>
+<dt><a class="reference internal" href="PlottablePlaneCurveCategory.html#l-plottable-plane-curve-category-x-range"><em>xRange</em></a>: % -&gt; <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a></dt>
+<dd>from <a class="reference internal" href="PlottablePlaneCurveCategory.html#l-plottable-plane-curve-category"><em>PlottablePlaneCurveCategory</em></a></dd>
+<dt><a class="reference internal" href="PlottablePlaneCurveCategory.html#l-plottable-plane-curve-category-y-range"><em>yRange</em></a>: % -&gt; <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a></dt>
+<dd>from <a class="reference internal" href="PlottablePlaneCurveCategory.html#l-plottable-plane-curve-category"><em>PlottablePlaneCurveCategory</em></a></dd>
+</dl>
+<span class="target" id="l-plot-zoom"></span><dl class="docutils" id="index-26">
+<dt><span class="spadfun">zoom</span>: (%, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">zoom(x,</span> <span class="pre">r)</span></tt> undocumented</dd>
+</dl>
+<dl class="docutils" id="index-27">
+<dt><span class="spadfun">zoom</span>: (%, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">zoom(x,</span> <span class="pre">r,</span> <span class="pre">s)</span></tt> undocumented</dd>
+</dl>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="PlottablePlaneCurveCategory.html#l-plottable-plane-curve-category"><em>PlottablePlaneCurveCategory</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="PlaneAlgebraicCurvePlot.html"
+                        title="previous chapter">PlaneAlgebraicCurvePlot</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Plot3D.html"
+                        title="next chapter">Plot3D</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/Plot.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Plot3D.html" title="Plot3D"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="PlaneAlgebraicCurvePlot.html" title="PlaneAlgebraicCurvePlot"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

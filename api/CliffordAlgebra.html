@@ -1,0 +1,281 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>CliffordAlgebra(n, K, bLin) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="Color" href="Color.html" />
+    <link rel="prev" title="CharacterClass" href="CharacterClass.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Color.html" title="Color"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="CharacterClass.html" title="CharacterClass"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="cliffordalgebra-n-k-blin">
+<span id="l-clifford-algebra"></span><span id="index-0"></span><h1>CliffordAlgebra(n, K, bLin)<a class="headerlink" href="#cliffordalgebra-n-k-blin" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//clifford.spad#L349">clifford.spad line 349</a></p>
+<ul class="simple">
+<li>n: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a></li>
+<li>K: <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></li>
+<li>bLin: <a class="reference internal" href="SquareMatrix.html#l-square-matrix"><em>SquareMatrix</em></a>(n, K)</li>
+</ul>
+<p>CliffordAlgebra(<tt class="docutils literal"><span class="pre">n</span></tt>, <tt class="docutils literal"><span class="pre">K</span></tt>, bLin) defines a module of dimension <tt class="docutils literal"><span class="pre">2^n</span></tt> over <tt class="docutils literal"><span class="pre">K</span></tt>, given a bilinear form bLin on <tt class="docutils literal"><span class="pre">K^n</span></tt>. blankline Examples of Clifford Algebras are: gaussians, quaternions, exterior algebras and spin algebras.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><em>0</em></a>: %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="Monoid.html#l-monoid-1"><em>1</em></a>: %</dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="LeftModule.html#id1"><em>*</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> %</dd>
+<dt><a class="reference internal" href="RightModule.html#id1"><em>*</em></a>: (%, K) -&gt; %</dt>
+<dd>from <a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> K</dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="LeftModule.html#id1"><em>*</em></a>: (K, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> K</dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#id1"><em>*</em></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id2"><em>+</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+</dl>
+<span class="target" id="id1"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">/\</span>: (%, %) -&gt; %</dt>
+<dd>Implement exterior grassmann product operator need to check precidence when used as an infix operator</dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+</dl>
+<span class="target" id="id2"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">\/</span>: (%, %) -&gt; %</dt>
+<dd>Implement regressive inner, meet product operator need to check precidence when used as an infix operator</dd>
+<dt><a class="reference internal" href="Monoid.html#id1"><em>^</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="SemiGroup.html#id2"><em>^</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></dd>
+</dl>
+<span class="target" id="id3"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">~</span>: % -&gt; %</dt>
+<dd>reverse, complement, canonical dual basis</dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="Rng.html#l-rng-annihilate"><em>annihilate?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Rng.html#l-rng"><em>Rng</em></a></dd>
+<dt><a class="reference internal" href="Ring.html#l-ring-characteristic"><em>characteristic</em></a>: () -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></dd>
+</dl>
+<span class="target" id="l-clifford-algebra-coefficient"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">coefficient</span>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; K</dt>
+<dd><tt class="docutils literal"><span class="pre">coefficient(x,</span> <span class="pre">[i1,</span> <span class="pre">i2,</span> <span class="pre">...,</span> <span class="pre">iN])</span></tt> extracts the coefficient of <tt class="docutils literal"><span class="pre">e(i1)*e(i2)*...*e(iN)</span></tt> in <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="Ring.html#l-ring-coerce"><em>coerce</em></a>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; %</dt>
+<dd>from <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></dd>
+<dt><a class="reference internal" href="Algebra.html#l-algebra-coerce"><em>coerce</em></a>: K -&gt; %</dt>
+<dd>from <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> K</dd>
+</dl>
+<span class="target" id="l-clifford-algebra-conj"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">conj</span>: % -&gt; %</dt>
+<dd>implements Clifford conjugate for a multivector by involution and reverse of each term separately using: grade: 0 1 2 3... multi: 1 <tt class="docutils literal"><span class="pre">-1</span></tt> <tt class="docutils literal"><span class="pre">-1</span></tt> 1...</dd>
+</dl>
+<span class="target" id="l-clifford-algebra-e"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">e</span>: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a> -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">e(n)</span></tt> produces phi(e_i) where e_i is <tt class="docutils literal"><span class="pre">i</span></tt>-th basis vector in <tt class="docutils literal"><span class="pre">K^n</span></tt> and phi is canonical embedding of <tt class="docutils literal"><span class="pre">K^n</span></tt> into Clifford algebra.</dd>
+</dl>
+<span class="target" id="l-clifford-algebra-ee"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">ee</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a> -&gt; %</dt>
+<dd>to allow entries like: ee[1, 2]</dd>
+</dl>
+<span class="target" id="l-clifford-algebra-e-from-binary-map"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">eFromBinaryMap</span>: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">eFromBinaryMap(n)</span></tt> sets the appropriate Grassmann basis, for example: eFromBinaryMap(0) = 1 (scalar) eFromBinaryMap(1) = <tt class="docutils literal"><span class="pre">e1</span></tt> eFromBinaryMap(2) = <tt class="docutils literal"><span class="pre">e2</span></tt> eFromBinaryMap(3) = e1/e2</dd>
+</dl>
+<span class="target" id="l-clifford-algebra-e-pseudoscalar"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">ePseudoscalar</span>: () -&gt; %</dt>
+<dd>unit pseudoscalar</dd>
+</dl>
+<span class="target" id="l-clifford-algebra-grade"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">grade</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>return the max grade of multivector, for example 1 is grade 0 <tt class="docutils literal"><span class="pre">e1</span></tt> is grade 1 e1/e2 is grade 2 and so on</dd>
+</dl>
+<span class="target" id="l-clifford-algebra-grade-involution"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">gradeInvolution</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">x</span></tt> = ((<tt class="docutils literal"><span class="pre">-1</span></tt>)^grade(<tt class="docutils literal"><span class="pre">x</span></tt>))<tt class="docutils literal"><span class="pre">*x</span></tt></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-clifford-algebra-lc"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">lc</span>: (%, %) -&gt; %</dt>
+<dd>left contraction inner product</dd>
+</dl>
+<span class="target" id="l-clifford-algebra-monomial"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">monomial</span>: (K, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">monomial(c,</span> <span class="pre">[i1,</span> <span class="pre">i2,</span> <span class="pre">...,</span> <span class="pre">iN])</span></tt> produces the value given by <tt class="docutils literal"><span class="pre">c*e(i1)*e(i2)*...*e(iN)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-clifford-algebra-multivector"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">multivector</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> K -&gt; %</dt>
+<dd>to allow entries like: 1+2*e1+3*e2+4*e1e2 = multivector[1, 2, 3, 4]</dd>
+<dt><a class="reference internal" href="Monoid.html#l-monoid-one"><em>one?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-opposite"><em>opposite?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+</dl>
+<span class="target" id="l-clifford-algebra-rc"></span><dl class="docutils" id="index-15">
+<dt><span class="spadfun">rc</span>: (%, %) -&gt; %</dt>
+<dd>right contraction inner product</dd>
+</dl>
+<span class="target" id="l-clifford-algebra-recip"></span><dl class="docutils" id="index-16">
+<dt><span class="spadfun">recip</span>: % -&gt; Union(%, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">recip(x)</span></tt> tries to compute the multiplicative inverse for <tt class="docutils literal"><span class="pre">x</span></tt> or &#8220;failed&#8221; if it cannot find the inverse (see unitsKnown).</dd>
+</dl>
+<span class="target" id="l-clifford-algebra-reverse"></span><dl class="docutils" id="index-17">
+<dt><span class="spadfun">reverse</span>: % -&gt; %</dt>
+<dd>implements reverse for a single term by using: grade: 0 1 2 3... multi: 1 1 <tt class="docutils literal"><span class="pre">-1</span></tt> <tt class="docutils literal"><span class="pre">-1</span></tt>...</dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-sample"><em>sample</em></a>: %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+</dl>
+<span class="target" id="l-clifford-algebra-set-mode"></span><dl class="docutils" id="index-18">
+<dt><span class="spadfun">setMode</span>: (<a class="reference internal" href="String.html#l-string"><em>String</em></a>, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>allows override of parameters such as orthogonal used for debugging</dd>
+<dt><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid-subtract-if-can"><em>subtractIfCan</em></a>: (%, %) -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a></dd>
+</dl>
+<span class="target" id="l-clifford-algebra-to-table"></span><dl class="docutils" id="index-19">
+<dt><span class="spadfun">toTable</span>: % -&gt; % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> %</dt>
+<dd>displays table of unary function such as inverse, reverse, complement, or dual basis could have returned type &#8216;List List %&#8217; but matrix displays better</dd>
+</dl>
+<dl class="docutils" id="index-20">
+<dt><span class="spadfun">toTable</span>: (%, %) -&gt; % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> %</dt>
+<dd>displays multiplication table for binary operation which is represented as a function with two parameters. row number represents first operand in binary order column number represents second operand in binary order could have returned type &#8216;List List %&#8217; but matrix displays better</dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-zero"><em>zero?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+</dl>
+<p><a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></p>
+<p><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></p>
+<p><a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></p>
+<p><a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> K</p>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="BiModule.html#l-bi-module"><em>BiModule</em></a>(K, K)</p>
+<p><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> %</p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> K</p>
+<p><a class="reference internal" href="Module.html#l-module"><em>Module</em></a> K</p>
+<p><a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></p>
+<p><a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> K</p>
+<p><a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></p>
+<p><a class="reference internal" href="Rng.html#l-rng"><em>Rng</em></a></p>
+<p><a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></p>
+<p><a class="reference internal" href="SemiRing.html#l-semi-ring"><em>SemiRing</em></a></p>
+<p><a class="reference internal" href="SemiRng.html#l-semi-rng"><em>SemiRng</em></a></p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+<p><a class="reference internal" href="unitsKnown.html#l-units-known"><em>unitsKnown</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="CharacterClass.html"
+                        title="previous chapter">CharacterClass</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Color.html"
+                        title="next chapter">Color</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/CliffordAlgebra.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Color.html" title="Color"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="CharacterClass.html" title="CharacterClass"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

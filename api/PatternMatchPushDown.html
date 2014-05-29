@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PatternMatchPushDown(S, A, B) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="PatternMatchQuotientFieldCategory(S, R, Q)" href="PatternMatchQuotientFieldCategory.html" />
+    <link rel="prev" title="PatternMatchPolynomialCategory(S, E, V, R, P)" href="PatternMatchPolynomialCategory.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="PatternMatchQuotientFieldCategory.html" title="PatternMatchQuotientFieldCategory(S, R, Q)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PatternMatchPolynomialCategory.html" title="PatternMatchPolynomialCategory(S, E, V, R, P)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="patternmatchpushdown-s-a-b">
+<span id="l-pattern-match-push-down"></span><span id="index-0"></span><h1>PatternMatchPushDown(S, A, B)<a class="headerlink" href="#patternmatchpushdown-s-a-b" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//patmatch1.spad#L318">patmatch1.spad line 318</a></p>
+<ul class="simple">
+<li>S: <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></li>
+<li>A: <a class="reference internal" href="PatternMatchable.html#l-pattern-matchable"><em>PatternMatchable</em></a> S</li>
+<li>B: Join(<a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> A)</li>
+</ul>
+<p>This packages provides tools for matching recursively in type towers.</p>
+<span class="target" id="l-pattern-match-push-down-fix-predicate"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">fixPredicate</span>: B -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> -&gt; A -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">fixPredicate(f)</span></tt> returns <tt class="docutils literal"><span class="pre">g</span></tt> defined by <tt class="docutils literal"><span class="pre">g</span></tt>(a) = <tt class="docutils literal"><span class="pre">f</span></tt>(a::B).</dd>
+</dl>
+<span class="target" id="l-pattern-match-push-down-pattern-match"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">patternMatch</span>: (A, <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> S, <a class="reference internal" href="PatternMatchResult.html#l-pattern-match-result"><em>PatternMatchResult</em></a>(S, B)) -&gt; <a class="reference internal" href="PatternMatchResult.html#l-pattern-match-result"><em>PatternMatchResult</em></a>(S, B)</dt>
+<dd><tt class="docutils literal"><span class="pre">patternMatch(expr,</span> <span class="pre">pat,</span> <span class="pre">res)</span></tt> matches the pattern <tt class="docutils literal"><span class="pre">pat</span></tt> to the expression <tt class="docutils literal"><span class="pre">expr</span></tt>; res contains the variables of <tt class="docutils literal"><span class="pre">pat</span></tt> which are already matched and their matches. Note: this function handles type towers by changing the predicates and calling the matching function provided by <tt class="docutils literal"><span class="pre">A</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="PatternMatchPolynomialCategory.html"
+                        title="previous chapter">PatternMatchPolynomialCategory(S, E, V, R, P)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PatternMatchQuotientFieldCategory.html"
+                        title="next chapter">PatternMatchQuotientFieldCategory(S, R, Q)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/PatternMatchPushDown.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="PatternMatchQuotientFieldCategory.html" title="PatternMatchQuotientFieldCategory(S, R, Q)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="PatternMatchPolynomialCategory.html" title="PatternMatchPolynomialCategory(S, E, V, R, P)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

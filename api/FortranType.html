@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FortranType &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="FourierComponent E" href="FourierComponent.html" />
+    <link rel="prev" title="FortranTemplate" href="FortranTemplate.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="FourierComponent.html" title="FourierComponent E"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="FortranTemplate.html" title="FortranTemplate"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="fortrantype">
+<span id="l-fortran-type"></span><span id="index-0"></span><h1>FortranType<a class="headerlink" href="#fortrantype" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//forttyp.spad#L148">forttyp.spad line 148</a></p>
+<p>Creates and manipulates objects which correspond to FORTRAN data types, including array dimensions.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+</dl>
+<span class="target" id="l-fortran-type-coerce"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">coerce(a)</span></tt> transforms a into an element of <tt class="docutils literal"><span class="pre">S</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">coerce</span>: <a class="reference internal" href="FortranScalarType.html#l-fortran-scalar-type"><em>FortranScalarType</em></a> -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">coerce(t)</span></tt> creates an element from a scalar type</dd>
+</dl>
+<span class="target" id="l-fortran-type-construct"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">construct</span>: (Union(fst: <a class="reference internal" href="FortranScalarType.html#l-fortran-scalar-type"><em>FortranScalarType</em></a>, void: void), <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">construct(type,</span> <span class="pre">dims)</span></tt> creates an element of FortranType</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">construct</span>: (Union(fst: <a class="reference internal" href="FortranScalarType.html#l-fortran-scalar-type"><em>FortranScalarType</em></a>, void: void), <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">construct(type,</span> <span class="pre">dims)</span></tt> creates an element of FortranType</dd>
+</dl>
+<span class="target" id="l-fortran-type-dimensions-of"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">dimensionsOf</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">dimensionsOf(t)</span></tt> returns the dimensions of <tt class="docutils literal"><span class="pre">t</span></tt></dd>
+</dl>
+<span class="target" id="l-fortran-type-external"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">external?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">external?(u)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if <tt class="docutils literal"><span class="pre">u</span></tt> is declared to be EXTERNAL</dd>
+</dl>
+<span class="target" id="l-fortran-type-fortran-character"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">fortranCharacter</span>: () -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">fortranCharacter()</span></tt> returns CHARACTER, an element of FortranType</dd>
+</dl>
+<span class="target" id="l-fortran-type-fortran-complex"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">fortranComplex</span>: () -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">fortranComplex()</span></tt> returns COMPLEX, an element of FortranType</dd>
+</dl>
+<span class="target" id="l-fortran-type-fortran-double"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">fortranDouble</span>: () -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">fortranDouble()</span></tt> returns DOUBLE PRECISION, an element of FortranType</dd>
+</dl>
+<span class="target" id="l-fortran-type-fortran-double-complex"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">fortranDoubleComplex</span>: () -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">fortranDoubleComplex()</span></tt> returns DOUBLE COMPLEX, an element of FortranType</dd>
+</dl>
+<span class="target" id="l-fortran-type-fortran-integer"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">fortranInteger</span>: () -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">fortranInteger()</span></tt> returns INTEGER, an element of FortranType</dd>
+</dl>
+<span class="target" id="l-fortran-type-fortran-logical"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">fortranLogical</span>: () -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">fortranLogical()</span></tt> returns LOGICAL, an element of FortranType</dd>
+</dl>
+<span class="target" id="l-fortran-type-fortran-real"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">fortranReal</span>: () -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">fortranReal()</span></tt> returns REAL, an element of FortranType</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-fortran-type-scalar-type-of"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">scalarTypeOf</span>: % -&gt; Union(fst: <a class="reference internal" href="FortranScalarType.html#l-fortran-scalar-type"><em>FortranScalarType</em></a>, void: void)</dt>
+<dd><tt class="docutils literal"><span class="pre">scalarTypeOf(t)</span></tt> returns the FORTRAN data type of <tt class="docutils literal"><span class="pre">t</span></tt></dd>
+</dl>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="FortranTemplate.html"
+                        title="previous chapter">FortranTemplate</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="FourierComponent.html"
+                        title="next chapter">FourierComponent E</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/FortranType.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="FourierComponent.html" title="FourierComponent E"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="FortranTemplate.html" title="FortranTemplate"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

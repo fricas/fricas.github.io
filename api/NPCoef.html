@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>NPCoef(BP, E, OV, R, P) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="NumberFieldIntegralBasis(UP, F)" href="NumberFieldIntegralBasis.html" />
+    <link rel="prev" title="NormRetractPackage(F, ExtF, SUEx, ExtP, n)" href="NormRetractPackage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="NumberFieldIntegralBasis.html" title="NumberFieldIntegralBasis(UP, F)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="NormRetractPackage.html" title="NormRetractPackage(F, ExtF, SUEx, ExtP, n)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="npcoef-bp-e-ov-r-p">
+<span id="l-n-p-coef"></span><span id="index-0"></span><h1>NPCoef(BP, E, OV, R, P)<a class="headerlink" href="#npcoef-bp-e-ov-r-p" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//npcoef.spad#L1">npcoef.spad line 1</a></p>
+<ul class="simple">
+<li>BP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> R</li>
+<li>E: <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a></li>
+<li>OV: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></li>
+<li>R: <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></li>
+<li>P: <a class="reference internal" href="PolynomialCategory.html#l-polynomial-category"><em>PolynomialCategory</em></a>(R, E, OV)</li>
+</ul>
+<p>Package for the determination of the coefficients in the lifting process. Used by <a class="reference internal" href="MultivariateLifting.html#l-multivariate-lifting"><em>MultivariateLifting</em></a>. This package will work for every integral domain <tt class="docutils literal"><span class="pre">R</span></tt> which has property <tt class="docutils literal"><span class="pre">F</span></tt>, i.e. there exists a factor operation in <tt class="docutils literal"><span class="pre">R[x]</span></tt>.</p>
+<span class="target" id="l-n-p-coef-npcoef"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">npcoef</span>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> BP, <a class="reference internal" href="List.html#l-list"><em>List</em></a> P) -&gt; Record(deter: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P, dterm: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(expt: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, pcoef: P), nfacts: <a class="reference internal" href="List.html#l-list"><em>List</em></a> BP, nlead: <a class="reference internal" href="List.html#l-list"><em>List</em></a> P)</dt>
+<dd><tt class="docutils literal"><span class="pre">npcoef(p,</span> <span class="pre">lmf,</span> <span class="pre">lcf)</span></tt> tries to determine some coefficients of factors of <tt class="docutils literal"><span class="pre">p</span></tt> assuming that <tt class="docutils literal"><span class="pre">lcf</span></tt> gives <tt class="docutils literal"><span class="pre">true</span></tt> leading coefficients of the factors and that sparsity pattern of modular factors <tt class="docutils literal"><span class="pre">lmf</span></tt> is the same as sparsity pattern of <tt class="docutils literal"><span class="pre">true</span></tt> factors. If <tt class="docutils literal"><span class="pre">res</span></tt> is the result, then <tt class="docutils literal"><span class="pre">res.deter</span></tt> gives fully determined factors, <tt class="docutils literal"><span class="pre">res.dterm</span></tt> gives determined terms of partially determinaed factors, <tt class="docutils literal"><span class="pre">res.nfacts</span></tt> and <tt class="docutils literal"><span class="pre">res.nlead</span></tt> give modular factors and leading coefficients corresponding to undetermined factors.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="NormRetractPackage.html"
+                        title="previous chapter">NormRetractPackage(F, ExtF, SUEx, ExtP, n)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="NumberFieldIntegralBasis.html"
+                        title="next chapter">NumberFieldIntegralBasis(UP, F)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/NPCoef.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="NumberFieldIntegralBasis.html" title="NumberFieldIntegralBasis(UP, F)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="NormRetractPackage.html" title="NormRetractPackage(F, ExtF, SUEx, ExtP, n)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TheSymbolTable &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="ThreeDimensionalMatrix R" href="ThreeDimensionalMatrix.html" />
+    <link rel="prev" title="TextFile" href="TextFile.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ThreeDimensionalMatrix.html" title="ThreeDimensionalMatrix R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="TextFile.html" title="TextFile"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="thesymboltable">
+<span id="l-the-symbol-table"></span><span id="index-0"></span><h1>TheSymbolTable<a class="headerlink" href="#thesymboltable" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//forttyp.spad#L433">forttyp.spad line 433</a></p>
+<p>Creates and manipulates one global symbol table for FORTRAN code generation, containing details of types, dimensions, and argument lists.</p>
+<span class="target" id="l-the-symbol-table-argument-list"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">argumentList!</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">argumentList!(f,</span> <span class="pre">l)</span></tt> declares that the argument list for subprogram <tt class="docutils literal"><span class="pre">f</span></tt> in the global symbol table is <tt class="docutils literal"><span class="pre">l</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">argumentList!</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, %) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">argumentList!(f,</span> <span class="pre">l,</span> <span class="pre">tab)</span></tt> declares that the argument list for subprogram <tt class="docutils literal"><span class="pre">f</span></tt> in symbol table tab is <tt class="docutils literal"><span class="pre">l</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">argumentList!</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a> -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">argumentList!(l)</span></tt> declares that the argument list for the current subprogram in the global symbol table is <tt class="docutils literal"><span class="pre">l</span></tt>.</dd>
+</dl>
+<span class="target" id="l-the-symbol-table-argument-list-of"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">argumentListOf</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">argumentListOf(f,</span> <span class="pre">tab)</span></tt> returns the argument list of <tt class="docutils literal"><span class="pre">f</span></tt></dd>
+</dl>
+<span class="target" id="l-the-symbol-table-clear-the-symbol-table"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">clearTheSymbolTable</span>: () -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">clearTheSymbolTable()</span></tt> clears the current symbol table.</dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt><span class="spadfun">clearTheSymbolTable</span>: <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a> -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">clearTheSymbolTable(x)</span></tt> removes the symbol <tt class="docutils literal"><span class="pre">x</span></tt> from the table</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+</dl>
+<span class="target" id="l-the-symbol-table-current-sub-program"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">currentSubProgram</span>: () -&gt; <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">currentSubProgram()</span></tt> returns the name of the current subprogram being processed</dd>
+</dl>
+<span class="target" id="l-the-symbol-table-declare"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">declare!</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="FortranType.html#l-fortran-type"><em>FortranType</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, %) -&gt; <a class="reference internal" href="FortranType.html#l-fortran-type"><em>FortranType</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">declare!(u,</span> <span class="pre">t,</span> <span class="pre">asp,</span> <span class="pre">tab)</span></tt> declares the parameters <tt class="docutils literal"><span class="pre">u</span></tt> of subprogram <tt class="docutils literal"><span class="pre">asp</span></tt> to have type <tt class="docutils literal"><span class="pre">t</span></tt> in symbol table tab.</dd>
+</dl>
+<dl class="docutils" id="index-9">
+<dt><span class="spadfun">declare!</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="FortranType.html#l-fortran-type"><em>FortranType</em></a>) -&gt; <a class="reference internal" href="FortranType.html#l-fortran-type"><em>FortranType</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">declare!(u,</span> <span class="pre">t)</span></tt> declares the parameter <tt class="docutils literal"><span class="pre">u</span></tt> to have type <tt class="docutils literal"><span class="pre">t</span></tt> in the current level of the symbol table.</dd>
+</dl>
+<dl class="docutils" id="index-10">
+<dt><span class="spadfun">declare!</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="FortranType.html#l-fortran-type"><em>FortranType</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="FortranType.html#l-fortran-type"><em>FortranType</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">declare!(u,</span> <span class="pre">t,</span> <span class="pre">asp)</span></tt> declares the parameter <tt class="docutils literal"><span class="pre">u</span></tt> to have type <tt class="docutils literal"><span class="pre">t</span></tt> in asp.</dd>
+</dl>
+<dl class="docutils" id="index-11">
+<dt><span class="spadfun">declare!</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="FortranType.html#l-fortran-type"><em>FortranType</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, %) -&gt; <a class="reference internal" href="FortranType.html#l-fortran-type"><em>FortranType</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">declare!(u,</span> <span class="pre">t,</span> <span class="pre">asp,</span> <span class="pre">tab)</span></tt> declares the parameter <tt class="docutils literal"><span class="pre">u</span></tt> of subprogram <tt class="docutils literal"><span class="pre">asp</span></tt> to have type <tt class="docutils literal"><span class="pre">t</span></tt> in symbol table tab.</dd>
+</dl>
+<span class="target" id="l-the-symbol-table-empty"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">empty</span>: () -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">empty()</span></tt> creates a new, empty symbol table.</dd>
+</dl>
+<span class="target" id="l-the-symbol-table-end-sub-program"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">endSubProgram</span>: () -&gt; <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">endSubProgram()</span></tt> asserts that we are no longer processing the current subprogram.</dd>
+</dl>
+<span class="target" id="l-the-symbol-table-new-sub-program"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">newSubProgram</span>: <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a> -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">newSubProgram(f)</span></tt> asserts that from now on type declarations are part of subprogram <tt class="docutils literal"><span class="pre">f</span></tt>.</dd>
+</dl>
+<span class="target" id="l-the-symbol-table-print-header"></span><dl class="docutils" id="index-15">
+<dt><span class="spadfun">printHeader</span>: () -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">printHeader()</span></tt> produces the FORTRAN header for the current subprogram in the global symbol table on the current FORTRAN output stream.</dd>
+</dl>
+<dl class="docutils" id="index-16">
+<dt><span class="spadfun">printHeader</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, %) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">printHeader(f,</span> <span class="pre">tab)</span></tt> produces the FORTRAN header for subprogram <tt class="docutils literal"><span class="pre">f</span></tt> in symbol table tab on the current FORTRAN output stream.</dd>
+</dl>
+<dl class="docutils" id="index-17">
+<dt><span class="spadfun">printHeader</span>: <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a> -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">printHeader(f)</span></tt> produces the FORTRAN header for subprogram <tt class="docutils literal"><span class="pre">f</span></tt> in the global symbol table on the current FORTRAN output stream.</dd>
+</dl>
+<span class="target" id="l-the-symbol-table-print-types"></span><dl class="docutils" id="index-18">
+<dt><span class="spadfun">printTypes</span>: <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a> -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">printTypes(tab)</span></tt> produces FORTRAN type declarations from <tt class="docutils literal"><span class="pre">tab</span></tt>, on the current FORTRAN output stream</dd>
+</dl>
+<span class="target" id="l-the-symbol-table-return-type"></span><dl class="docutils" id="index-19">
+<dt><span class="spadfun">returnType!</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, Union(fst: <a class="reference internal" href="FortranScalarType.html#l-fortran-scalar-type"><em>FortranScalarType</em></a>, void: void)) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">returnType!(f,</span> <span class="pre">t)</span></tt> declares that the return type of subprogram <tt class="docutils literal"><span class="pre">f</span></tt> in the global symbol table is <tt class="docutils literal"><span class="pre">t</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-20">
+<dt><span class="spadfun">returnType!</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, Union(fst: <a class="reference internal" href="FortranScalarType.html#l-fortran-scalar-type"><em>FortranScalarType</em></a>, void: void), %) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">returnType!(f,</span> <span class="pre">t,</span> <span class="pre">tab)</span></tt> declares that the return type of subprogram <tt class="docutils literal"><span class="pre">f</span></tt> in symbol table tab is <tt class="docutils literal"><span class="pre">t</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-21">
+<dt><span class="spadfun">returnType!</span>: Union(fst: <a class="reference internal" href="FortranScalarType.html#l-fortran-scalar-type"><em>FortranScalarType</em></a>, void: void) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">returnType!(t)</span></tt> declares that the return type of he current subprogram in the global symbol table is <tt class="docutils literal"><span class="pre">t</span></tt>.</dd>
+</dl>
+<span class="target" id="l-the-symbol-table-return-type-of"></span><dl class="docutils" id="index-22">
+<dt><span class="spadfun">returnTypeOf</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, %) -&gt; Union(fst: <a class="reference internal" href="FortranScalarType.html#l-fortran-scalar-type"><em>FortranScalarType</em></a>, void: void)</dt>
+<dd><tt class="docutils literal"><span class="pre">returnTypeOf(f,</span> <span class="pre">tab)</span></tt> returns the type of the object returned by <tt class="docutils literal"><span class="pre">f</span></tt></dd>
+</dl>
+<span class="target" id="l-the-symbol-table-show-the-symbol-table"></span><dl class="docutils" id="index-23">
+<dt><span class="spadfun">showTheSymbolTable</span>: () -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">showTheSymbolTable()</span></tt> returns the current symbol table.</dd>
+</dl>
+<span class="target" id="l-the-symbol-table-symbol-table-of"></span><dl class="docutils" id="index-24">
+<dt><span class="spadfun">symbolTableOf</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, %) -&gt; <a class="reference internal" href="SymbolTable.html#l-symbol-table"><em>SymbolTable</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">symbolTableOf(f,</span> <span class="pre">tab)</span></tt> returns the symbol table of <tt class="docutils literal"><span class="pre">f</span></tt></dd>
+</dl>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="TextFile.html"
+                        title="previous chapter">TextFile</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ThreeDimensionalMatrix.html"
+                        title="next chapter">ThreeDimensionalMatrix R</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/TheSymbolTable.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ThreeDimensionalMatrix.html" title="ThreeDimensionalMatrix R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="TextFile.html" title="TextFile"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PatternMatchIntegration(R, F) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="PatternMatchKernel(S, E)" href="PatternMatchKernel.html" />
+    <link rel="prev" title="PatternMatchIntegerNumberSystem I" href="PatternMatchIntegerNumberSystem.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="PatternMatchKernel.html" title="PatternMatchKernel(S, E)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PatternMatchIntegerNumberSystem.html" title="PatternMatchIntegerNumberSystem I"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="patternmatchintegration-r-f">
+<span id="l-pattern-match-integration"></span><span id="index-0"></span><h1>PatternMatchIntegration(R, F)<a class="headerlink" href="#patternmatchintegration-r-f" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//intpm.spad#L1">intpm.spad line 1</a></p>
+<ul class="simple">
+<li>R: Join(<a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><em>GcdDomain</em></a>, <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</li>
+<li>F: Join(<a class="reference internal" href="AlgebraicallyClosedField.html#l-algebraically-closed-field"><em>AlgebraicallyClosedField</em></a>, <a class="reference internal" href="TranscendentalFunctionCategory.html#l-transcendental-function-category"><em>TranscendentalFunctionCategory</em></a>, <a class="reference internal" href="FunctionSpace.html#l-function-space"><em>FunctionSpace</em></a> R)</li>
+</ul>
+<p><a class="reference internal" href="#l-pattern-match-integration"><em>PatternMatchIntegration</em></a> provides functions that use the pattern matcher to find some indefinite and definite integrals involving special functions and found in the literature.</p>
+<span class="target" id="l-pattern-match-integration-pm-complexintegrate"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">pmComplexintegrate</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Union(Record(special: F, integrand: F), failed) if R has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> and R has <a class="reference internal" href="PatternMatchable.html#l-pattern-matchable"><em>PatternMatchable</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> and F has <a class="reference internal" href="LiouvillianFunctionCategory.html#l-liouvillian-function-category"><em>LiouvillianFunctionCategory</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">pmComplexintegrate(f,</span> <span class="pre">x)</span></tt> returns either &#8220;failed&#8221; or <tt class="docutils literal"><span class="pre">[g,</span> <span class="pre">h]</span></tt> such that <tt class="docutils literal"><span class="pre">integrate(f,</span> <span class="pre">x)</span> <span class="pre">=</span> <span class="pre">g</span> <span class="pre">+</span> <span class="pre">integrate(h,</span> <span class="pre">x)</span></tt>. It only looks for special complex integrals that pmintegrate does not return.</dd>
+</dl>
+<span class="target" id="l-pattern-match-integration-pmintegrate"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">pmintegrate</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Union(Record(special: F, integrand: F), failed) if R has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> and R has <a class="reference internal" href="PatternMatchable.html#l-pattern-matchable"><em>PatternMatchable</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> and F has <a class="reference internal" href="LiouvillianFunctionCategory.html#l-liouvillian-function-category"><em>LiouvillianFunctionCategory</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">pmintegrate(f,</span> <span class="pre">x)</span></tt> returns either &#8220;failed&#8221; or <tt class="docutils literal"><span class="pre">[g,h]</span></tt> such that <tt class="docutils literal"><span class="pre">integrate(f,</span> <span class="pre">x)</span> <span class="pre">=</span> <span class="pre">g</span> <span class="pre">+</span> <span class="pre">integrate(h,</span> <span class="pre">x)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">pmintegrate</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="OrderedCompletion.html#l-ordered-completion"><em>OrderedCompletion</em></a> F, <a class="reference internal" href="OrderedCompletion.html#l-ordered-completion"><em>OrderedCompletion</em></a> F) -&gt; Union(F, failed) if R has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> and R has <a class="reference internal" href="PatternMatchable.html#l-pattern-matchable"><em>PatternMatchable</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> and F has <a class="reference internal" href="SpecialFunctionCategory.html#l-special-function-category"><em>SpecialFunctionCategory</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">pmintegrate(f,</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">a..b)</span></tt> returns the integral of <tt class="docutils literal"><span class="pre">f(x)dx</span></tt> from a to <tt class="docutils literal"><span class="pre">b</span></tt> if it can be found by the built-in pattern matching rules.</dd>
+</dl>
+<span class="target" id="l-pattern-match-integration-split-constant"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">splitConstant</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Record(const: F, nconst: F)</dt>
+<dd><tt class="docutils literal"><span class="pre">splitConstant(f,</span> <span class="pre">x)</span></tt> returns <tt class="docutils literal"><span class="pre">[c,</span> <span class="pre">g]</span></tt> such that <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">c</span> <span class="pre">*</span> <span class="pre">g</span></tt> and <tt class="docutils literal"><span class="pre">c</span></tt> does not involve <tt class="docutils literal"><span class="pre">t</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="PatternMatchIntegerNumberSystem.html"
+                        title="previous chapter">PatternMatchIntegerNumberSystem I</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PatternMatchKernel.html"
+                        title="next chapter">PatternMatchKernel(S, E)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/PatternMatchIntegration.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="PatternMatchKernel.html" title="PatternMatchKernel(S, E)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="PatternMatchIntegerNumberSystem.html" title="PatternMatchIntegerNumberSystem I"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

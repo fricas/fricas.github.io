@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SplittingNode(V, C) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="SplittingTree(V, C)" href="SplittingTree.html" />
+    <link rel="prev" title="SplitHomogeneousDirectProduct(dimtot, dim1, S)" href="SplitHomogeneousDirectProduct.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="SplittingTree.html" title="SplittingTree(V, C)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="SplitHomogeneousDirectProduct.html" title="SplitHomogeneousDirectProduct(dimtot, dim1, S)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="splittingnode-v-c">
+<span id="l-splitting-node"></span><span id="index-0"></span><h1>SplittingNode(V, C)<a class="headerlink" href="#splittingnode-v-c" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//newdata.spad#L149">newdata.spad line 149</a></p>
+<ul class="simple">
+<li>V: Join(<a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a>, <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a>)</li>
+<li>C: Join(<a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a>, <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a>)</li>
+</ul>
+<p>This domain exports a modest implementation for the vertices of splitting trees. These vertices are called here splitting nodes. Every of these nodes store 3 informations. The first one is its value, that is the current expression to evaluate. The second one is its condition, that is the hypothesis under which the value has to be evaluated. The last one is its status, that is a boolean flag which is <tt class="docutils literal"><span class="pre">true</span></tt> iff the value is the result of its evaluation under its condition. Two splitting vertices are equal iff they have the sane values and the same conditions (so their status do not matter).</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+</dl>
+<span class="target" id="l-splitting-node-condition"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">condition</span>: % -&gt; C</dt>
+<dd><tt class="docutils literal"><span class="pre">condition(n)</span></tt> returns the condition of the node <tt class="docutils literal"><span class="pre">n</span></tt>.</dd>
+</dl>
+<span class="target" id="l-splitting-node-construct"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">construct</span>: (V, C) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">construct(v,</span> <span class="pre">t)</span></tt> returns the same as <tt class="docutils literal"><span class="pre">construct(v,</span> <span class="pre">t,</span> <span class="pre">false)</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">construct</span>: (V, C, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">construct(v,</span> <span class="pre">t,</span> <span class="pre">b)</span></tt> returns the non-empty node with value <tt class="docutils literal"><span class="pre">v</span></tt>, condition <tt class="docutils literal"><span class="pre">t</span></tt> and flag <tt class="docutils literal"><span class="pre">b</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">construct</span>: (V, <a class="reference internal" href="List.html#l-list"><em>List</em></a> C) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd><tt class="docutils literal"><span class="pre">construct(v,</span> <span class="pre">lt)</span></tt> returns the same as <tt class="docutils literal"><span class="pre">[construct(v,</span> <span class="pre">t)</span> <span class="pre">for</span> <span class="pre">t</span> <span class="pre">in</span> <span class="pre">lt]</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">construct</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(val: V, tower: C) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd><tt class="docutils literal"><span class="pre">construct(lvt)</span></tt> returns the same as <tt class="docutils literal"><span class="pre">[construct(vt.val,</span> <span class="pre">vt.tower)</span> <span class="pre">for</span> <span class="pre">vt</span> <span class="pre">in</span> <span class="pre">lvt]</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt><span class="spadfun">construct</span>: Record(val: V, tower: C) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">construct(vt)</span></tt> returns the same as <tt class="docutils literal"><span class="pre">construct(vt.val,</span> <span class="pre">vt.tower)</span></tt></dd>
+</dl>
+<span class="target" id="l-splitting-node-copy"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">copy</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">copy(n)</span></tt> returns a copy of <tt class="docutils literal"><span class="pre">n</span></tt>.</dd>
+</dl>
+<span class="target" id="l-splitting-node-empty"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">empty</span>: () -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">empty()</span></tt> returns the same as <tt class="docutils literal"><span class="pre">[empty()\$V,</span> <span class="pre">empty()\$C,</span> <span class="pre">false]\$\%</span></tt></dd>
+</dl>
+<span class="target" id="id1"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">empty?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">empty?(n)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> iff the node <tt class="docutils literal"><span class="pre">n</span></tt> is <tt class="docutils literal"><span class="pre">empty()\$\%</span></tt>.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-splitting-node-inf-lex"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">infLex?</span>: (%, %, (V, V) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, (C, C) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">infLex?(n1,</span> <span class="pre">n2,</span> <span class="pre">o1,</span> <span class="pre">o2)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> iff <tt class="docutils literal"><span class="pre">o1(value(n1),</span> <span class="pre">value(n2))</span></tt> or <tt class="docutils literal"><span class="pre">value(n1)</span> <span class="pre">=</span> <span class="pre">value(n2)</span></tt> and <tt class="docutils literal"><span class="pre">o2(condition(n1),</span> <span class="pre">condition(n2))</span></tt>.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-splitting-node-set-condition"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">setCondition!</span>: (%, C) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">setCondition!(n,</span> <span class="pre">t)</span></tt> returns <tt class="docutils literal"><span class="pre">n</span></tt> whose condition has been replaced by <tt class="docutils literal"><span class="pre">t</span></tt> if it is not empty, else an error is produced.</dd>
+</dl>
+<span class="target" id="l-splitting-node-set-empty"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">setEmpty!</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">setEmpty!(n)</span></tt> replaces <tt class="docutils literal"><span class="pre">n</span></tt> by <tt class="docutils literal"><span class="pre">empty()\$\%</span></tt>.</dd>
+</dl>
+<span class="target" id="l-splitting-node-set-status"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">setStatus!</span>: (%, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">setStatus!(n,</span> <span class="pre">b)</span></tt> returns <tt class="docutils literal"><span class="pre">n</span></tt> whose status has been replaced by <tt class="docutils literal"><span class="pre">b</span></tt> if it is not empty, else an error is produced.</dd>
+</dl>
+<span class="target" id="l-splitting-node-set-value"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">setValue!</span>: (%, V) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">setValue!(n,</span> <span class="pre">v)</span></tt> returns <tt class="docutils literal"><span class="pre">n</span></tt> whose value has been replaced by <tt class="docutils literal"><span class="pre">v</span></tt> if it is not empty, else an error is produced.</dd>
+</dl>
+<span class="target" id="l-splitting-node-status"></span><dl class="docutils" id="index-15">
+<dt><span class="spadfun">status</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">status(n)</span></tt> returns the status of the node <tt class="docutils literal"><span class="pre">n</span></tt>.</dd>
+</dl>
+<span class="target" id="l-splitting-node-sub-node"></span><dl class="docutils" id="index-16">
+<dt><span class="spadfun">subNode?</span>: (%, %, (C, C) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">subNode?(n1,</span> <span class="pre">n2,</span> <span class="pre">o2)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> iff <tt class="docutils literal"><span class="pre">value(n1)</span> <span class="pre">=</span> <span class="pre">value(n2)</span></tt> and <tt class="docutils literal"><span class="pre">o2(condition(n1),</span> <span class="pre">condition(n2))</span></tt></dd>
+</dl>
+<span class="target" id="l-splitting-node-value"></span><dl class="docutils" id="index-17">
+<dt><span class="spadfun">value</span>: % -&gt; V</dt>
+<dd><tt class="docutils literal"><span class="pre">value(n)</span></tt> returns the value of the node <tt class="docutils literal"><span class="pre">n</span></tt>.</dd>
+</dl>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="SplitHomogeneousDirectProduct.html"
+                        title="previous chapter">SplitHomogeneousDirectProduct(dimtot, dim1, S)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="SplittingTree.html"
+                        title="next chapter">SplittingTree(V, C)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/SplittingNode.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="SplittingTree.html" title="SplittingTree(V, C)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="SplitHomogeneousDirectProduct.html" title="SplitHomogeneousDirectProduct(dimtot, dim1, S)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

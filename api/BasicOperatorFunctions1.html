@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>BasicOperatorFunctions1 A &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="BezoutMatrix(R, UP, M, Row, Col)" href="BezoutMatrix.html" />
+    <link rel="prev" title="BalancedFactorisation(R, UP)" href="BalancedFactorisation.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="BezoutMatrix.html" title="BezoutMatrix(R, UP, M, Row, Col)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="BalancedFactorisation.html" title="BalancedFactorisation(R, UP)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="basicoperatorfunctions1-a">
+<span id="l-basic-operator-functions1"></span><span id="index-0"></span><h1>BasicOperatorFunctions1 A<a class="headerlink" href="#basicoperatorfunctions1-a" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//op.spad#L185">op.spad line 185</a></p>
+<ul class="simple">
+<li>A: <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></li>
+</ul>
+<p>This package exports functions to set some commonly used properties of operators, including properties which contain functions.</p>
+<span class="target" id="l-basic-operator-functions1-constant-operator"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">constantOperator</span>: A -&gt; <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">constantOperator(a)</span></tt> returns a nullary operator op such that <tt class="docutils literal"><span class="pre">op()</span></tt> always evaluate to <tt class="docutils literal"><span class="pre">a</span></tt>.</dd>
+</dl>
+<span class="target" id="l-basic-operator-functions1-constant-op-if-can"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">constantOpIfCan</span>: <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a> -&gt; Union(A, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">constantOpIfCan(op)</span></tt> returns <tt class="docutils literal"><span class="pre">a</span></tt> if <tt class="docutils literal"><span class="pre">op</span></tt> is the constant nullary operator always returning <tt class="docutils literal"><span class="pre">a</span></tt>, &#8220;failed&#8221; otherwise.</dd>
+</dl>
+<span class="target" id="l-basic-operator-functions1-derivative"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">derivative</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, A -&gt; A) -&gt; <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">derivative(op,</span> <span class="pre">foo)</span></tt> attaches foo as the &#8220;%diff&#8221; property of <tt class="docutils literal"><span class="pre">op</span></tt>. If <tt class="docutils literal"><span class="pre">op</span></tt> has an &#8220;%diff&#8221; property <tt class="docutils literal"><span class="pre">f</span></tt>, then applying a derivation <tt class="docutils literal"><span class="pre">D</span></tt> to <tt class="docutils literal"><span class="pre">op</span></tt>(a) returns <tt class="docutils literal"><span class="pre">f(a)</span> <span class="pre">*</span> <span class="pre">D(a)</span></tt>. Argument <tt class="docutils literal"><span class="pre">op</span></tt> must be unary.</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">derivative</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> A -&gt; A) -&gt; <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">derivative(op,</span> <span class="pre">[foo1,</span> <span class="pre">...,</span> <span class="pre">foon])</span></tt> attaches [<tt class="docutils literal"><span class="pre">foo1</span></tt>, ..., foon] as the &#8220;%diff&#8221; property of <tt class="docutils literal"><span class="pre">op</span></tt>. If <tt class="docutils literal"><span class="pre">op</span></tt> has an &#8220;%diff&#8221; property <tt class="docutils literal"><span class="pre">[f1,</span> <span class="pre">...,</span> <span class="pre">fn]</span></tt> then applying a derivation <tt class="docutils literal"><span class="pre">D</span></tt> to <tt class="docutils literal"><span class="pre">op(a1,</span> <span class="pre">...,</span> <span class="pre">an)</span></tt> returns <tt class="docutils literal"><span class="pre">f1(a1,</span> <span class="pre">...,</span> <span class="pre">an)</span> <span class="pre">*</span> <span class="pre">D(a1)</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">fn(a1,</span> <span class="pre">...,</span> <span class="pre">an)</span> <span class="pre">*</span> <span class="pre">D(an)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">derivative</span>: <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a> -&gt; Union(<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> A -&gt; A, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">derivative(op)</span></tt> returns the value of the &#8220;%diff&#8221; property of <tt class="docutils literal"><span class="pre">op</span></tt> if it has one, and &#8220;failed&#8221; otherwise.</dd>
+</dl>
+<span class="target" id="l-basic-operator-functions1-evaluate"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">evaluate</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, A -&gt; A) -&gt; <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">evaluate(op,</span> <span class="pre">foo)</span></tt> attaches foo as the &#8220;%eval&#8221; property of <tt class="docutils literal"><span class="pre">op</span></tt>. If <tt class="docutils literal"><span class="pre">op</span></tt> has an &#8220;%eval&#8221; property <tt class="docutils literal"><span class="pre">f</span></tt>, then applying <tt class="docutils literal"><span class="pre">op</span></tt> to a returns the result of <tt class="docutils literal"><span class="pre">f(a)</span></tt>. Argument <tt class="docutils literal"><span class="pre">op</span></tt> must be unary.</dd>
+</dl>
+<dl class="docutils" id="index-7">
+<dt><span class="spadfun">evaluate</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> A -&gt; A) -&gt; <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">evaluate(op,</span> <span class="pre">foo)</span></tt> attaches foo as the &#8220;%eval&#8221; property of <tt class="docutils literal"><span class="pre">op</span></tt>. If <tt class="docutils literal"><span class="pre">op</span></tt> has an &#8220;%eval&#8221; property <tt class="docutils literal"><span class="pre">f</span></tt>, then applying <tt class="docutils literal"><span class="pre">op</span></tt> to <tt class="docutils literal"><span class="pre">(a1,</span> <span class="pre">...,</span> <span class="pre">an)</span></tt> returns the result of <tt class="docutils literal"><span class="pre">f(a1,</span> <span class="pre">...,</span> <span class="pre">an)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-8">
+<dt><span class="spadfun">evaluate</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> A) -&gt; Union(A, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">evaluate(op,</span> <span class="pre">[a1,...,an])</span></tt> checks if <tt class="docutils literal"><span class="pre">op</span></tt> has an &#8220;%eval&#8221; property <tt class="docutils literal"><span class="pre">f</span></tt>. If it has, then <tt class="docutils literal"><span class="pre">f(a1,</span> <span class="pre">...,</span> <span class="pre">an)</span></tt> is returned, and &#8220;failed&#8221; otherwise.</dd>
+</dl>
+<dl class="docutils" id="index-9">
+<dt><span class="spadfun">evaluate</span>: <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a> -&gt; Union(<a class="reference internal" href="List.html#l-list"><em>List</em></a> A -&gt; A, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">evaluate(op)</span></tt> returns the value of the &#8220;%eval&#8221; property of <tt class="docutils literal"><span class="pre">op</span></tt> if it has one, and &#8220;failed&#8221; otherwise.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="BalancedFactorisation.html"
+                        title="previous chapter">BalancedFactorisation(R, UP)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="BezoutMatrix.html"
+                        title="next chapter">BezoutMatrix(R, UP, M, Row, Col)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/BasicOperatorFunctions1.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="BezoutMatrix.html" title="BezoutMatrix(R, UP, M, Row, Col)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="BalancedFactorisation.html" title="BalancedFactorisation(R, UP)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

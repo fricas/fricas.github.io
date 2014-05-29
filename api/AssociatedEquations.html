@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>AssociatedEquations(R, L) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="AttachPredicates D" href="AttachPredicates.html" />
+    <link rel="prev" title="ApplyUnivariateSkewPolynomial(R, M, P)" href="ApplyUnivariateSkewPolynomial.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="AttachPredicates.html" title="AttachPredicates D"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ApplyUnivariateSkewPolynomial.html" title="ApplyUnivariateSkewPolynomial(R, M, P)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="associatedequations-r-l">
+<span id="l-associated-equations"></span><span id="index-0"></span><h1>AssociatedEquations(R, L)<a class="headerlink" href="#associatedequations-r-l" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//lodof.spad#L237">lodof.spad line 237</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></li>
+<li>L: <a class="reference internal" href="LinearOrdinaryDifferentialOperatorCategory.html#l-linear-ordinary-differential-operator-category"><em>LinearOrdinaryDifferentialOperatorCategory</em></a> R</li>
+</ul>
+<p><a class="reference internal" href="#l-associated-equations"><em>AssociatedEquations</em></a> provides functions to compute the associated equations needed for factoring operators</p>
+<span class="target" id="l-associated-equations-associated-equations"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">associatedEquations</span>: (L, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; Record(minor: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, eq: L, minors: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, ops: <a class="reference internal" href="List.html#l-list"><em>List</em></a> L) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">associatedEquations(op,</span> <span class="pre">m)</span></tt> returns <tt class="docutils literal"><span class="pre">[w,</span> <span class="pre">eq,</span> <span class="pre">lw,</span> <span class="pre">lop]</span></tt> such that <tt class="docutils literal"><span class="pre">eq(w)</span> <span class="pre">=</span> <span class="pre">0</span></tt> where <tt class="docutils literal"><span class="pre">w</span></tt> is the given minor, and <tt class="docutils literal"><span class="pre">lw_i</span> <span class="pre">=</span> <span class="pre">lop_i(w)</span></tt> for all the other minors.</dd>
+</dl>
+<span class="target" id="l-associated-equations-associated-system"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">associatedSystem</span>: (L, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; Record(mat: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, vec: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">associatedSystem(op,</span> <span class="pre">m)</span></tt> returns <tt class="docutils literal"><span class="pre">[M,</span> <span class="pre">w]</span></tt> such that the <tt class="docutils literal"><span class="pre">m</span></tt>-th associated equation system to <tt class="docutils literal"><span class="pre">L</span></tt> is <tt class="docutils literal"><span class="pre">w'</span> <span class="pre">=</span> <span class="pre">M</span> <span class="pre">w</span></tt>.</dd>
+</dl>
+<span class="target" id="l-associated-equations-uncoupling-matrices"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">uncouplingMatrices</span>: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R -&gt; <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">uncouplingMatrices(M)</span></tt> returns <tt class="docutils literal"><span class="pre">[A_1,</span> <span class="pre">...,</span> <span class="pre">A_n]</span></tt> such that if <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">[y_1,</span> <span class="pre">...,</span> <span class="pre">y_n]</span></tt> is a solution of <tt class="docutils literal"><span class="pre">y'</span> <span class="pre">=</span> <span class="pre">M</span> <span class="pre">y</span></tt>, then <tt class="docutils literal"><span class="pre">[\$y_j',</span> <span class="pre">y_j'',</span> <span class="pre">...,</span> <span class="pre">y_j^{(n)}\$]</span> <span class="pre">=</span> <span class="pre">\$A_j</span> <span class="pre">y\$</span></tt> for all <tt class="docutils literal"><span class="pre">j</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ApplyUnivariateSkewPolynomial.html"
+                        title="previous chapter">ApplyUnivariateSkewPolynomial(R, M, P)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="AttachPredicates.html"
+                        title="next chapter">AttachPredicates D</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/AssociatedEquations.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="AttachPredicates.html" title="AttachPredicates D"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ApplyUnivariateSkewPolynomial.html" title="ApplyUnivariateSkewPolynomial(R, M, P)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

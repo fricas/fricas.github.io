@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>BalancedBinaryTree S &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="BalancedPAdicInteger p" href="BalancedPAdicInteger.html" />
+    <link rel="prev" title="Automorphism R" href="Automorphism.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="BalancedPAdicInteger.html" title="BalancedPAdicInteger p"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Automorphism.html" title="Automorphism R"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="balancedbinarytree-s">
+<span id="l-balanced-binary-tree"></span><span id="index-0"></span><h1>BalancedBinaryTree S<a class="headerlink" href="#balancedbinarytree-s" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//tree.spad#L474">tree.spad line 474</a></p>
+<ul class="simple">
+<li>S: <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></li>
+</ul>
+<p><em class="xref std std-ref">BalancedBinaryTree(S)</em> is the domain of balanced binary trees (bbtree). A balanced binary tree of <tt class="docutils literal"><span class="pre">2^k</span></tt> leaves, for some <tt class="docutils literal"><span class="pre">k</span> <span class="pre">&gt;</span> <span class="pre">0</span></tt>, is symmetric, that is, the left and right subtree of each interior node have identical shape. In general, the left and right subtree of a given node can differ by at most leaf node.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="Aggregate.html#id1"><em>#</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-any"><em>any?</em></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+</dl>
+<span class="target" id="l-balanced-binary-tree-balanced-binary-tree"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">balancedBinaryTree</span>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, S) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">balancedBinaryTree(n,</span> <span class="pre">s)</span></tt> creates a balanced binary tree with <tt class="docutils literal"><span class="pre">n</span></tt> nodes each with value <tt class="docutils literal"><span class="pre">s</span></tt>.</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-child"><em>child?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-children"><em>children</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><em>copy</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><em>count</em></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><em>count</em></a>: (S, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-cyclic"><em>cyclic?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-distance"><em>distance</em></a>: (%, %) -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate-elt"><em>elt</em></a>: (%, left) -&gt; %</dt>
+<dd>from <a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate"><em>BinaryRecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate-elt"><em>elt</em></a>: (%, right) -&gt; %</dt>
+<dd>from <a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate"><em>BinaryRecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-elt"><em>elt</em></a>: (%, value) -&gt; S</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><em>empty</em></a>: () -&gt; %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#id2"><em>empty?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-eq"><em>eq?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="List.html#l-list"><em>List</em></a> S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(S, S)</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, S, S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(S, S)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-every"><em>every?</em></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-leaf"><em>leaf?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-leaves"><em>leaves</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate-left"><em>left</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate"><em>BinaryRecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-less"><em>less?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><em>map!</em></a>: (S -&gt; S, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#id1"><em>map</em></a>: (S -&gt; S, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+</dl>
+<span class="target" id="l-balanced-binary-tree-map-down"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">mapDown!</span>: (%, S, (S, S) -&gt; S) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">mapDown!(t,p,f)</span></tt> returns <tt class="docutils literal"><span class="pre">t</span></tt> after traversing <tt class="docutils literal"><span class="pre">t</span></tt> in &#8220;preorder&#8221; (node then left then right) fashion replacing the successive interior nodes as follows. The root value <tt class="docutils literal"><span class="pre">x</span></tt> is replaced by <tt class="docutils literal"><span class="pre">q</span></tt> <tt class="docutils literal"><span class="pre">:=</span></tt> <tt class="docutils literal"><span class="pre">f</span></tt>(<tt class="docutils literal"><span class="pre">p</span></tt>, <tt class="docutils literal"><span class="pre">x</span></tt>). The mapDown!(<tt class="docutils literal"><span class="pre">l</span></tt>, <tt class="docutils literal"><span class="pre">q</span></tt>, <tt class="docutils literal"><span class="pre">f</span></tt>) and mapDown!(<tt class="docutils literal"><span class="pre">r</span></tt>, <tt class="docutils literal"><span class="pre">q</span></tt>, <tt class="docutils literal"><span class="pre">f</span></tt>) are evaluated for the left and right subtrees <tt class="docutils literal"><span class="pre">l</span></tt> and <tt class="docutils literal"><span class="pre">r</span></tt> of <tt class="docutils literal"><span class="pre">t</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">mapDown!</span>: (%, S, (S, S, S) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">mapDown!(t,p,f)</span></tt> returns <tt class="docutils literal"><span class="pre">t</span></tt> after traversing <tt class="docutils literal"><span class="pre">t</span></tt> in &#8220;preorder&#8221; (node then left then right) fashion replacing the successive interior nodes as follows. Let <tt class="docutils literal"><span class="pre">l</span></tt> and <tt class="docutils literal"><span class="pre">r</span></tt> denote the left and right subtrees of <tt class="docutils literal"><span class="pre">t</span></tt>. The root value <tt class="docutils literal"><span class="pre">x</span></tt> of <tt class="docutils literal"><span class="pre">t</span></tt> is replaced by <tt class="docutils literal"><span class="pre">p</span></tt>. Then <tt class="docutils literal"><span class="pre">f</span></tt>(value <tt class="docutils literal"><span class="pre">l</span></tt>, value <tt class="docutils literal"><span class="pre">r</span></tt>, <tt class="docutils literal"><span class="pre">p</span></tt>), where <tt class="docutils literal"><span class="pre">l</span></tt> and <tt class="docutils literal"><span class="pre">r</span></tt> denote the left and right subtrees of <tt class="docutils literal"><span class="pre">t</span></tt>, is evaluated producing two values <tt class="docutils literal"><span class="pre">pl</span></tt> and <tt class="docutils literal"><span class="pre">pr</span></tt>. Then <tt class="docutils literal"><span class="pre">mapDown!(l,</span> <span class="pre">pl,</span> <span class="pre">f)</span></tt> and <tt class="docutils literal"><span class="pre">mapDown!(l,</span> <span class="pre">pr,</span> <span class="pre">f)</span></tt> are evaluated.</dd>
+</dl>
+<span class="target" id="l-balanced-binary-tree-map-up"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">mapUp!</span>: (%, %, (S, S, S, S) -&gt; S) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">mapUp!(t,t1,f)</span></tt> traverses <tt class="docutils literal"><span class="pre">t</span></tt> in an &#8220;endorder&#8221; (left then right then node) fashion returning <tt class="docutils literal"><span class="pre">t</span></tt> with the value at each successive interior node of <tt class="docutils literal"><span class="pre">t</span></tt> replaced by <tt class="docutils literal"><span class="pre">f</span></tt>(<tt class="docutils literal"><span class="pre">l</span></tt>, <tt class="docutils literal"><span class="pre">r</span></tt>, <tt class="docutils literal"><span class="pre">l1</span></tt>, <tt class="docutils literal"><span class="pre">r1</span></tt>) where <tt class="docutils literal"><span class="pre">l</span></tt> and <tt class="docutils literal"><span class="pre">r</span></tt> are the values at the immediate left and right nodes. Values <tt class="docutils literal"><span class="pre">l1</span></tt> and <tt class="docutils literal"><span class="pre">r1</span></tt> are values at the corresponding nodes of a balanced binary tree <tt class="docutils literal"><span class="pre">t1</span></tt>, of identical shape at <tt class="docutils literal"><span class="pre">t</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">mapUp!</span>: (%, (S, S) -&gt; S) -&gt; S</dt>
+<dd><tt class="docutils literal"><span class="pre">mapUp!(t,f)</span></tt> traverses balanced binary tree <tt class="docutils literal"><span class="pre">t</span></tt> in an &#8220;endorder&#8221; (left then right then node) fashion returning <tt class="docutils literal"><span class="pre">t</span></tt> with the value at each successive interior node of <tt class="docutils literal"><span class="pre">t</span></tt> replaced by <tt class="docutils literal"><span class="pre">f</span></tt>(<tt class="docutils literal"><span class="pre">l</span></tt>, <tt class="docutils literal"><span class="pre">r</span></tt>) where <tt class="docutils literal"><span class="pre">l</span></tt> and <tt class="docutils literal"><span class="pre">r</span></tt> are the values at the immediate left and right nodes.</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><em>member?</em></a>: (S, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-members"><em>members</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-more"><em>more?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="BinaryTreeCategory.html#l-binary-tree-category-node"><em>node</em></a>: (%, S, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="BinaryTreeCategory.html#l-binary-tree-category"><em>BinaryTreeCategory</em></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-node"><em>node?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-nodes"><em>nodes</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-parts"><em>parts</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate-right"><em>right</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate"><em>BinaryRecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-sample"><em>sample</em></a>: %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-setchildren"><em>setchildren!</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate-setelt"><em>setelt!</em></a>: (%, left, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate"><em>BinaryRecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate-setelt"><em>setelt!</em></a>: (%, right, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate"><em>BinaryRecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-setelt"><em>setelt!</em></a>: (%, value, S) -&gt; S</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+</dl>
+<span class="target" id="l-balanced-binary-tree-setleaves"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">setleaves!</span>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> S) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">setleaves!(t,</span> <span class="pre">ls)</span></tt> sets the leaves of <tt class="docutils literal"><span class="pre">t</span></tt> in left-to-right order to the elements of <tt class="docutils literal"><span class="pre">ls</span></tt>.</dd>
+<dt><a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate-setleft"><em>setleft!</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate"><em>BinaryRecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate-setright"><em>setright!</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate"><em>BinaryRecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-setvalue"><em>setvalue!</em></a>: (%, S) -&gt; S</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-size"><em>size?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-value"><em>value</em></a>: % -&gt; S</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+</dl>
+<p><a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></p>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> or S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="BinaryRecursiveAggregate.html#l-binary-recursive-aggregate"><em>BinaryRecursiveAggregate</em></a> S</p>
+<p><a class="reference internal" href="BinaryTreeCategory.html#l-binary-tree-category"><em>BinaryTreeCategory</em></a> S</p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> or S has <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</p>
+<p><a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></p>
+<p><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</p>
+<p><a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(S, S) if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</p>
+<p><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+<p><a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></p>
+<p><a class="reference internal" href="Type.html#l-type"><em>Type</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Automorphism.html"
+                        title="previous chapter">Automorphism R</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="BalancedPAdicInteger.html"
+                        title="next chapter">BalancedPAdicInteger p</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/BalancedBinaryTree.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="BalancedPAdicInteger.html" title="BalancedPAdicInteger p"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Automorphism.html" title="Automorphism R"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

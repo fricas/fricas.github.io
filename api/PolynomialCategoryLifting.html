@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PolynomialCategoryLifting(E, Vars, R, P, S) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="PolynomialCategoryQuotientFunctions(E, V, R, P, F)" href="PolynomialCategoryQuotientFunctions.html" />
+    <link rel="prev" title="PolynomialAN2Expression" href="PolynomialAN2Expression.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="PolynomialCategoryQuotientFunctions.html" title="PolynomialCategoryQuotientFunctions(E, V, R, P, F)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PolynomialAN2Expression.html" title="PolynomialAN2Expression"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="polynomialcategorylifting-e-vars-r-p-s">
+<span id="l-polynomial-category-lifting"></span><span id="index-0"></span><h1>PolynomialCategoryLifting(E, Vars, R, P, S)<a class="headerlink" href="#polynomialcategorylifting-e-vars-r-p-s" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//polycat.spad#L668">polycat.spad line 668</a></p>
+<ul>
+<li><p class="first">E: <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a></p>
+</li>
+<li><p class="first">Vars: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></p>
+</li>
+<li><p class="first">R: <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></p>
+</li>
+<li><p class="first">P: <a class="reference internal" href="PolynomialCategory.html#l-polynomial-category"><em>PolynomialCategory</em></a>(R, E, Vars)</p>
+</li>
+<li><p class="first">S: <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> with</p>
+<blockquote>
+<div><p><span class="spadfun">*</span>: (%, %) -&gt; %</p>
+<p><span class="spadfun">+</span>: (%, %) -&gt; %</p>
+<p><span class="spadfun">^</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</p>
+</div></blockquote>
+</li>
+</ul>
+<p>This package provides a very general map function, which given a set <tt class="docutils literal"><span class="pre">S</span></tt> and polynomials over <tt class="docutils literal"><span class="pre">R</span></tt> with maps from the variables into <tt class="docutils literal"><span class="pre">S</span></tt> and the coefficients into <tt class="docutils literal"><span class="pre">S</span></tt>, maps polynomials into <tt class="docutils literal"><span class="pre">S</span></tt>. <tt class="docutils literal"><span class="pre">S</span></tt> is assumed to support <tt class="docutils literal"><span class="pre">+</span></tt>, <tt class="docutils literal"><span class="pre">*</span></tt> and <tt class="docutils literal"><span class="pre">^</span></tt>.</p>
+<span class="target" id="l-polynomial-category-lifting-map"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">map</span>: (Vars -&gt; S, R -&gt; S, P) -&gt; S</dt>
+<dd><tt class="docutils literal"><span class="pre">map(varmap,</span> <span class="pre">coefmap,</span> <span class="pre">p)</span></tt> takes a <tt class="docutils literal"><span class="pre">varmap</span></tt>, a mapping from the variables of polynomial <tt class="docutils literal"><span class="pre">p</span></tt> into <tt class="docutils literal"><span class="pre">S</span></tt>, <tt class="docutils literal"><span class="pre">coefmap</span></tt>, a mapping from coefficients of <tt class="docutils literal"><span class="pre">p</span></tt> into <tt class="docutils literal"><span class="pre">S</span></tt>, and <tt class="docutils literal"><span class="pre">p</span></tt>, and produces a member of <tt class="docutils literal"><span class="pre">S</span></tt> using the corresponding arithmetic. in <tt class="docutils literal"><span class="pre">S</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="PolynomialAN2Expression.html"
+                        title="previous chapter">PolynomialAN2Expression</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PolynomialCategoryQuotientFunctions.html"
+                        title="next chapter">PolynomialCategoryQuotientFunctions(E, V, R, P, F)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/PolynomialCategoryLifting.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="PolynomialCategoryQuotientFunctions.html" title="PolynomialCategoryQuotientFunctions(E, V, R, P, F)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="PolynomialAN2Expression.html" title="PolynomialAN2Expression"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PolynomialFactorizationByRecursion(R, E, VarSet, S) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="PolynomialFactorizationByRecursionUnivariate(R, S)" href="PolynomialFactorizationByRecursionUnivariate.html" />
+    <link rel="prev" title="PolynomialDecomposition(UP, F)" href="PolynomialDecomposition.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="PolynomialFactorizationByRecursionUnivariate.html" title="PolynomialFactorizationByRecursionUnivariate(R, S)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PolynomialDecomposition.html" title="PolynomialDecomposition(UP, F)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="polynomialfactorizationbyrecursion-r-e-varset-s">
+<span id="l-polynomial-factorization-by-recursion"></span><span id="index-0"></span><h1>PolynomialFactorizationByRecursion(R, E, VarSet, S)<a class="headerlink" href="#polynomialfactorizationbyrecursion-r-e-varset-s" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//pfbr.spad#L242">pfbr.spad line 242</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="PolynomialFactorizationExplicit.html#l-polynomial-factorization-explicit"><em>PolynomialFactorizationExplicit</em></a></li>
+<li>E: <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a></li>
+<li>VarSet: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></li>
+<li>S: <a class="reference internal" href="PolynomialCategory.html#l-polynomial-category"><em>PolynomialCategory</em></a>(R, E, VarSet)</li>
+</ul>
+<p>PolynomialFactorizationByRecursion(<tt class="docutils literal"><span class="pre">R</span></tt>, <tt class="docutils literal"><span class="pre">E</span></tt>, <tt class="docutils literal"><span class="pre">VarSet</span></tt>, <tt class="docutils literal"><span class="pre">S</span></tt>) is used for factorization of sparse univariate polynomials over a domain <tt class="docutils literal"><span class="pre">S</span></tt> of multivariate polynomials over <tt class="docutils literal"><span class="pre">R</span></tt>.</p>
+<span class="target" id="l-polynomial-factorization-by-recursion-bivariate-s-l-p-e-b-r"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">bivariateSLPEBR</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> S, <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> S, VarSet) -&gt; Union(<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> S, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">bivariateSLPEBR(lp,</span> <span class="pre">p,</span> <span class="pre">v)</span></tt> implements the bivariate case of <strong>solveLinearPolynomialEquationByRecursion</strong>; its implementation depends on <tt class="docutils literal"><span class="pre">R</span></tt></dd>
+</dl>
+<span class="target" id="l-polynomial-factorization-by-recursion-factor-by-recursion"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">factorByRecursion</span>: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> S -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">factorByRecursion(p)</span></tt> factors polynomial <tt class="docutils literal"><span class="pre">p</span></tt>. This function performs the recursion step for factorPolynomial, as defined in <span class="spadfun">PolynomialFactorizationExplicit</span> category (see <span class="spadfun">factorPolynomial</span>)</dd>
+</dl>
+<span class="target" id="l-polynomial-factorization-by-recursion-factor-s-f-b-rlc-unit"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">factorSFBRlcUnit</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> VarSet, <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> S) -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">factorSFBRlcUnit(p)</span></tt> returns the square free factorization of polynomial <tt class="docutils literal"><span class="pre">p</span></tt> (see <span class="spadfun">factorSquareFreeByRecursion</span>{PolynomialFactorizationByRecursionUnivariate}) in the case where the leading coefficient of <tt class="docutils literal"><span class="pre">p</span></tt> is a unit.</dd>
+</dl>
+<span class="target" id="l-polynomial-factorization-by-recursion-factor-square-free-by-recursion"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">factorSquareFreeByRecursion</span>: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> S -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">factorSquareFreeByRecursion(p)</span></tt> returns the square free factorization of <tt class="docutils literal"><span class="pre">p</span></tt>. This functions performs the recursion step for factorSquareFreePolynomial, as defined in <span class="spadfun">PolynomialFactorizationExplicit</span> category (see <span class="spadfun">factorSquareFreePolynomial</span>).</dd>
+</dl>
+<span class="target" id="l-polynomial-factorization-by-recursion-random-r"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">randomR</span>: () -&gt; R</dt>
+<dd><tt class="docutils literal"><span class="pre">randomR</span> <span class="pre">produces</span></tt> a random element of <tt class="docutils literal"><span class="pre">R</span></tt></dd>
+</dl>
+<span class="target" id="l-polynomial-factorization-by-recursion-solve-linear-polynomial-equation-by-recursion"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">solveLinearPolynomialEquationByRecursion</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> S, <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> S) -&gt; Union(<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> S, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">solveLinearPolynomialEquationByRecursion([p1,</span> <span class="pre">...,</span> <span class="pre">pn],</span> <span class="pre">p)</span></tt> returns the list of polynomials <tt class="docutils literal"><span class="pre">[q1,</span> <span class="pre">...,</span> <span class="pre">qn]</span></tt> such that <tt class="docutils literal"><span class="pre">sum</span> <span class="pre">qi/pi</span> <span class="pre">=</span> <span class="pre">p</span> <span class="pre">/</span> <span class="pre">prod</span> <span class="pre">pi</span></tt>, a recursion step for solveLinearPolynomialEquation as defined in <span class="spadfun">PolynomialFactorizationExplicit</span> category (see <span class="spadfun">solveLinearPolynomialEquation</span>). If no such list of <tt class="docutils literal"><span class="pre">qi</span></tt> exists, then &#8220;failed&#8221; is returned.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="PolynomialDecomposition.html"
+                        title="previous chapter">PolynomialDecomposition(UP, F)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PolynomialFactorizationByRecursionUnivariate.html"
+                        title="next chapter">PolynomialFactorizationByRecursionUnivariate(R, S)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/PolynomialFactorizationByRecursion.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="PolynomialFactorizationByRecursionUnivariate.html" title="PolynomialFactorizationByRecursionUnivariate(R, S)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="PolynomialDecomposition.html" title="PolynomialDecomposition(UP, F)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

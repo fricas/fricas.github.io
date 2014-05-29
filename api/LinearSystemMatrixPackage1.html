@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>LinearSystemMatrixPackage1 F &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="LinearSystemPolynomialPackage(R, E, OV, P)" href="LinearSystemPolynomialPackage.html" />
+    <link rel="prev" title="LinearSystemMatrixPackage(F, Row, Col, M)" href="LinearSystemMatrixPackage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="LinearSystemPolynomialPackage.html" title="LinearSystemPolynomialPackage(R, E, OV, P)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="LinearSystemMatrixPackage.html" title="LinearSystemMatrixPackage(F, Row, Col, M)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="linearsystemmatrixpackage1-f">
+<span id="l-linear-system-matrix-package1"></span><span id="index-0"></span><h1>LinearSystemMatrixPackage1 F<a class="headerlink" href="#linearsystemmatrixpackage1-f" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//solvelin.spad#L92">solvelin.spad line 92</a></p>
+<ul class="simple">
+<li>F: <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></li>
+</ul>
+<p>This package solves linear system in the matrix form <tt class="docutils literal"><span class="pre">AX</span> <span class="pre">=</span> <span class="pre">B</span></tt>. It is essentially a particular instantiation of the package <a class="reference internal" href="LinearSystemMatrixPackage.html#l-linear-system-matrix-package"><em>LinearSystemMatrixPackage</em></a> for Matrix and Vector. This package<tt class="docutils literal"><span class="pre">'s</span></tt> existence makes it easier to use <span class="spadfun">solve</span> in the FriCAS interpreter.</p>
+<span class="target" id="l-linear-system-matrix-package1-has-solution"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">hasSolution?</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> F, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">hasSolution?(A,</span> <span class="pre">B)</span></tt> tests if the linear system <tt class="docutils literal"><span class="pre">AX</span> <span class="pre">=</span> <span class="pre">B</span></tt> has a solution.</dd>
+</dl>
+<span class="target" id="l-linear-system-matrix-package1-particular-solution"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">particularSolution</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> F, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F) -&gt; Union(<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">particularSolution(A,</span> <span class="pre">B)</span></tt> finds a particular solution of the linear system <tt class="docutils literal"><span class="pre">AX</span> <span class="pre">=</span> <span class="pre">B</span></tt>.</dd>
+</dl>
+<span class="target" id="l-linear-system-matrix-package1-rank"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">rank</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> F, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">rank(A,</span> <span class="pre">B)</span></tt> computes the rank of the complete matrix <tt class="docutils literal"><span class="pre">(A|B)</span></tt> of the linear system <tt class="docutils literal"><span class="pre">AX</span> <span class="pre">=</span> <span class="pre">B</span></tt>.</dd>
+</dl>
+<span class="target" id="l-linear-system-matrix-package1-solve"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">solve</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(particular: Union(<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F, failed), basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F)</dt>
+<dd><tt class="docutils literal"><span class="pre">solve(A,</span> <span class="pre">LB)</span></tt> finds a particular soln of the systems <tt class="docutils literal"><span class="pre">AX</span> <span class="pre">=</span> <span class="pre">B</span></tt> and a basis of the associated homogeneous systems <tt class="docutils literal"><span class="pre">AX</span> <span class="pre">=</span> <span class="pre">0</span></tt> where <tt class="docutils literal"><span class="pre">B</span></tt> varies in the list of column vectors <tt class="docutils literal"><span class="pre">LB</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">solve</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> F, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F) -&gt; Record(particular: Union(<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F, failed), basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F)</dt>
+<dd><tt class="docutils literal"><span class="pre">solve(A,</span> <span class="pre">B)</span></tt> finds a particular solution of the system <tt class="docutils literal"><span class="pre">AX</span> <span class="pre">=</span> <span class="pre">B</span></tt> and a basis of the associated homogeneous system <tt class="docutils literal"><span class="pre">AX</span> <span class="pre">=</span> <span class="pre">0</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt><span class="spadfun">solve</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(particular: Union(<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F, failed), basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F)</dt>
+<dd><tt class="docutils literal"><span class="pre">solve(A,</span> <span class="pre">LB)</span></tt> finds a particular soln of the systems <tt class="docutils literal"><span class="pre">AX</span> <span class="pre">=</span> <span class="pre">B</span></tt> and a basis of the associated homogeneous systems <tt class="docutils literal"><span class="pre">AX</span> <span class="pre">=</span> <span class="pre">0</span></tt> where <tt class="docutils literal"><span class="pre">B</span></tt> varies in the list of column vectors <tt class="docutils literal"><span class="pre">LB</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-7">
+<dt><span class="spadfun">solve</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> F, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F) -&gt; Record(particular: Union(<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F, failed), basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F)</dt>
+<dd><tt class="docutils literal"><span class="pre">solve(A,</span> <span class="pre">B)</span></tt> finds a particular solution of the system <tt class="docutils literal"><span class="pre">AX</span> <span class="pre">=</span> <span class="pre">B</span></tt> and a basis of the associated homogeneous system <tt class="docutils literal"><span class="pre">AX</span> <span class="pre">=</span> <span class="pre">0</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="LinearSystemMatrixPackage.html"
+                        title="previous chapter">LinearSystemMatrixPackage(F, Row, Col, M)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="LinearSystemPolynomialPackage.html"
+                        title="next chapter">LinearSystemPolynomialPackage(R, E, OV, P)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/LinearSystemMatrixPackage1.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="LinearSystemPolynomialPackage.html" title="LinearSystemPolynomialPackage(R, E, OV, P)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="LinearSystemMatrixPackage.html" title="LinearSystemMatrixPackage(F, Row, Col, M)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

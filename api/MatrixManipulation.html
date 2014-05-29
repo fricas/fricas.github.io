@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MatrixManipulation(R, Row, Col, M) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="MergeThing S" href="MergeThing.html" />
+    <link rel="prev" title="MatrixLinearAlgebraFunctions(R, Row, Col, M)" href="MatrixLinearAlgebraFunctions.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="MergeThing.html" title="MergeThing S"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="MatrixLinearAlgebraFunctions.html" title="MatrixLinearAlgebraFunctions(R, Row, Col, M)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="matrixmanipulation-r-row-col-m">
+<span id="l-matrix-manipulation"></span><span id="index-0"></span><h1>MatrixManipulation(R, Row, Col, M)<a class="headerlink" href="#matrixmanipulation-r-row-col-m" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//mama.spad#L1">mama.spad line 1</a></p>
+<ul class="simple">
+<li>R: Join(<a class="reference internal" href="SemiRng.html#l-semi-rng"><em>SemiRng</em></a>, <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a>)</li>
+<li>Row: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><em>FiniteLinearAggregate</em></a> R</li>
+<li>Col: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><em>FiniteLinearAggregate</em></a> R</li>
+<li>M: <a class="reference internal" href="MatrixCategory.html#l-matrix-category"><em>MatrixCategory</em></a>(R, Row, Col)</li>
+</ul>
+<p>Some functions for manipulating (dense) matrices. Supported are various kinds of slicing, splitting and stacking of matrices. The functions resemble operations often used in numerical linear algebra algorithms.</p>
+<span class="target" id="l-matrix-manipulation-band-matrix"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">bandMatrix</span>: (M, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; M</dt>
+<dd><tt class="docutils literal"><span class="pre">bandMatrix</span></tt> returns multiple diagonals out of a matrix. The diagonals are put into a matrix of same shape as the original one. Positive integer arguments select upper off-diagonals, negative ones lower off-diagonals.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">bandMatrix</span>: (M, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; M</dt>
+<dd><tt class="docutils literal"><span class="pre">bandMatrix</span></tt> returns multiple diagonals out of a matrix. The diagonals are put into a matrix of same shape as the original one. Positive integer arguments select upper off-diagonals, negative ones lower off-diagonals.</dd>
+</dl>
+<span class="target" id="l-matrix-manipulation-block-split"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">blockSplit</span>: (M, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> M</dt>
+<dd><tt class="docutils literal"><span class="pre">blockSplit</span></tt> splits a matrix into multiple submatrices row and column wise, dividing a matrix into blocks.</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">blockSplit</span>: (M, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> M</dt>
+<dd><tt class="docutils literal"><span class="pre">blockSplit</span></tt> splits a matrix into multiple submatrices row and column wise, dividing a matrix into blocks.</dd>
+</dl>
+<span class="target" id="l-matrix-manipulation-column-matrix"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">columnMatrix</span>: (M, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; M</dt>
+<dd><tt class="docutils literal"><span class="pre">columnMatrix</span></tt> returns a single column out of a matrix. The column is put into a one by <tt class="docutils literal"><span class="pre">N</span></tt> matrix.</dd>
+</dl>
+<span class="target" id="l-matrix-manipulation-columns"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">columns</span>: (M, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; M</dt>
+<dd><tt class="docutils literal"><span class="pre">columns</span></tt> returns several columns out of a matrix. The columns are stacked into a matrix.</dd>
+</dl>
+<dl class="docutils" id="index-7">
+<dt><span class="spadfun">columns</span>: (M, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; M</dt>
+<dd><tt class="docutils literal"><span class="pre">columns</span></tt> returns several columns out of a matrix. The columns are stacked into a matrix.</dd>
+</dl>
+<span class="target" id="l-matrix-manipulation-diagonal-matrix"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">diagonalMatrix</span>: (M, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; M</dt>
+<dd><tt class="docutils literal"><span class="pre">diagonalMatrix</span></tt> returns a diagonal out of a matrix. The diagonal is put into a matrix of same shape as the original one. Positive integer arguments select upper off-diagonals, negative ones lower off-diagonals.</dd>
+</dl>
+<dl class="docutils" id="index-9">
+<dt><span class="spadfun">diagonalMatrix</span>: M -&gt; M</dt>
+<dd><tt class="docutils literal"><span class="pre">diagonalMatrix</span></tt> returns the main diagonal out of a matrix. The diagonal is put into a matrix of same shape as the original one.</dd>
+</dl>
+<span class="target" id="l-matrix-manipulation-element"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">element</span>: (M, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; M</dt>
+<dd><tt class="docutils literal"><span class="pre">element</span></tt> returns a single element out of a matrix. The element is put into a one by one matrix.</dd>
+</dl>
+<span class="target" id="l-matrix-manipulation-row-matrix"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">rowMatrix</span>: (M, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; M</dt>
+<dd><tt class="docutils literal"><span class="pre">rowMatrix</span></tt> returns a single row out of a matrix. The row is put into a one by <tt class="docutils literal"><span class="pre">N</span></tt> matrix.</dd>
+</dl>
+<span class="target" id="l-matrix-manipulation-rows"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">rows</span>: (M, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; M</dt>
+<dd><tt class="docutils literal"><span class="pre">rows</span></tt> returns several rows out of a matrix. The rows are stacked into a matrix.</dd>
+</dl>
+<dl class="docutils" id="index-13">
+<dt><span class="spadfun">rows</span>: (M, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; M</dt>
+<dd><tt class="docutils literal"><span class="pre">rows</span></tt> returns several rows out of a matrix. The rows are stacked into a matrix.</dd>
+</dl>
+<span class="target" id="l-matrix-manipulation-sub-matrix"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">subMatrix</span>: (M, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; M</dt>
+<dd><tt class="docutils literal"><span class="pre">subMatrix</span></tt> returns several elements out of a matrix. The elements are stacked into a submatrix.</dd>
+</dl>
+<dl class="docutils" id="index-15">
+<dt><span class="spadfun">subMatrix</span>: (M, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; M</dt>
+<dd><tt class="docutils literal"><span class="pre">subMatrix</span></tt> returns several elements out of a matrix. The elements are stacked into a submatrix.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="MatrixLinearAlgebraFunctions.html"
+                        title="previous chapter">MatrixLinearAlgebraFunctions(R, Row, Col, M)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="MergeThing.html"
+                        title="next chapter">MergeThing S</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/MatrixManipulation.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="MergeThing.html" title="MergeThing S"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="MatrixLinearAlgebraFunctions.html" title="MatrixLinearAlgebraFunctions(R, Row, Col, M)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

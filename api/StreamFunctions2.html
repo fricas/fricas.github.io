@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>StreamFunctions2(A, B) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="StreamFunctions3(A, B, C)" href="StreamFunctions3.html" />
+    <link rel="prev" title="StreamFunctions1 S" href="StreamFunctions1.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="StreamFunctions3.html" title="StreamFunctions3(A, B, C)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="StreamFunctions1.html" title="StreamFunctions1 S"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="streamfunctions2-a-b">
+<span id="l-stream-functions2"></span><span id="index-0"></span><h1>StreamFunctions2(A, B)<a class="headerlink" href="#streamfunctions2-a-b" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//stream.spad#L1133">stream.spad line 1133</a></p>
+<ul class="simple">
+<li>A: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
+<li>B: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
+</ul>
+<p>Functions defined on streams with entries in two sets.</p>
+<span class="target" id="l-stream-functions2-map"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">map</span>: (A -&gt; B, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> B</dt>
+<dd><tt class="docutils literal"><span class="pre">map(f,</span> <span class="pre">s)</span></tt> returns a stream whose elements are the function <tt class="docutils literal"><span class="pre">f</span></tt> applied to the corresponding elements of <tt class="docutils literal"><span class="pre">s</span></tt>. Note: <tt class="docutils literal"><span class="pre">map(f,</span> <span class="pre">[x0,</span> <span class="pre">x1,</span> <span class="pre">x2,</span> <span class="pre">...])</span> <span class="pre">=</span> <span class="pre">[f(x0),</span> <span class="pre">f(x1),</span> <span class="pre">f(x2),</span> <span class="pre">..]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-functions2-reduce"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">reduce</span>: (B, (A, B) -&gt; B, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; B</dt>
+<dd><tt class="docutils literal"><span class="pre">reduce(b,</span> <span class="pre">f,</span> <span class="pre">u)</span></tt>, where <tt class="docutils literal"><span class="pre">u</span></tt> is a finite stream <tt class="docutils literal"><span class="pre">[x0,</span> <span class="pre">x1,</span> <span class="pre">...,</span> <span class="pre">xn]</span></tt>, returns the value <tt class="docutils literal"><span class="pre">r(n)</span></tt> computed as follows: <tt class="docutils literal"><span class="pre">r0</span> <span class="pre">=</span> <span class="pre">f(x0,</span> <span class="pre">b),</span> <span class="pre">r1</span> <span class="pre">=</span> <span class="pre">f(x1,</span> <span class="pre">r0),</span> <span class="pre">...,</span> <span class="pre">r(n)</span> <span class="pre">=</span> <span class="pre">f(xn,</span> <span class="pre">r(n-1))</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-functions2-scan"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">scan</span>: (B, (A, B) -&gt; B, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> B</dt>
+<dd><tt class="docutils literal"><span class="pre">scan(b,</span> <span class="pre">h,</span> <span class="pre">[x0,</span> <span class="pre">x1,</span> <span class="pre">x2,</span> <span class="pre">...])</span></tt> returns <tt class="docutils literal"><span class="pre">[y0,</span> <span class="pre">y1,</span> <span class="pre">y2,</span> <span class="pre">...]</span></tt>, where <tt class="docutils literal"><span class="pre">y0</span> <span class="pre">=</span> <span class="pre">h(x0,</span> <span class="pre">b)</span></tt>, <tt class="docutils literal"><span class="pre">y1</span> <span class="pre">=</span> <span class="pre">h(x1,</span> <span class="pre">y0)</span></tt>, <tt class="docutils literal"><span class="pre">...</span></tt> <tt class="docutils literal"><span class="pre">yn</span> <span class="pre">=</span> <span class="pre">h(xn,</span> <span class="pre">y(n-1))</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="StreamFunctions1.html"
+                        title="previous chapter">StreamFunctions1 S</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="StreamFunctions3.html"
+                        title="next chapter">StreamFunctions3(A, B, C)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/StreamFunctions2.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="StreamFunctions3.html" title="StreamFunctions3(A, B, C)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="StreamFunctions1.html" title="StreamFunctions1 S"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

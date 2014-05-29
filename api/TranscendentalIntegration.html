@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TranscendentalIntegration(F, UP) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="TranscendentalManipulations(R, F)" href="TranscendentalManipulations.html" />
+    <link rel="prev" title="TranscendentalHermiteIntegration(F, UP)" href="TranscendentalHermiteIntegration.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="TranscendentalManipulations.html" title="TranscendentalManipulations(R, F)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="TranscendentalHermiteIntegration.html" title="TranscendentalHermiteIntegration(F, UP)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="transcendentalintegration-f-up">
+<span id="l-transcendental-integration"></span><span id="index-0"></span><h1>TranscendentalIntegration(F, UP)<a class="headerlink" href="#transcendentalintegration-f-up" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//intrf.spad#L301">intrf.spad line 301</a></p>
+<ul class="simple">
+<li>F: <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></li>
+<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> F</li>
+</ul>
+<p>This package provides functions for the transcendental case of the Risch algorithm.</p>
+<span class="target" id="l-transcendental-integration-expextendedint"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">expextendedint</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP, (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, F) -&gt; Record(ans: F, right: F, sol?: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>), <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Union(Record(answer: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, a0: F), Record(ratpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, coeff: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP), failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">expextendedint(f,</span> <span class="pre">',</span> <span class="pre">foo,</span> <span class="pre">g)</span></tt> returns either <tt class="docutils literal"><span class="pre">[v,</span> <span class="pre">c]</span></tt> such that <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">v'</span> <span class="pre">+</span> <span class="pre">c</span> <span class="pre">g</span></tt> and <tt class="docutils literal"><span class="pre">c'</span> <span class="pre">=</span> <span class="pre">0</span></tt>, or <tt class="docutils literal"><span class="pre">[v,</span> <span class="pre">a]</span></tt> such that <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">g'</span> <span class="pre">+</span> <span class="pre">a</span></tt>, and <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">0</span></tt> or <tt class="docutils literal"><span class="pre">a</span></tt> has no integral in <tt class="docutils literal"><span class="pre">F</span></tt>. Returns &#8220;failed&#8221; if neither case can hold. Argument <tt class="docutils literal"><span class="pre">foo</span></tt> is a Risch differential equation function on <tt class="docutils literal"><span class="pre">F</span></tt>.</dd>
+</dl>
+<span class="target" id="l-transcendental-integration-expintegrate"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">expintegrate</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP -&gt; Record(answer: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, logpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, ir: <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP), (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, F) -&gt; Record(ans: F, right: F, primpart: F, sol?: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>)) -&gt; Record(answer: <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, a0: F)</dt>
+<dd><tt class="docutils literal"><span class="pre">expintegrate(f,</span> <span class="pre">',</span> <span class="pre">foo)</span></tt> returns <tt class="docutils literal"><span class="pre">[g,</span> <span class="pre">a]</span></tt> such that <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">g'</span> <span class="pre">+</span> <span class="pre">a</span></tt>, and <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">0</span></tt> or <tt class="docutils literal"><span class="pre">a</span></tt> has no integral in <tt class="docutils literal"><span class="pre">F</span></tt>; Argument foo is a Risch differential equation solver on <tt class="docutils literal"><span class="pre">F</span></tt>.</dd>
+</dl>
+<span class="target" id="l-transcendental-integration-expintfldpoly"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">expintfldpoly</span>: (<a class="reference internal" href="LaurentPolynomial.html#l-laurent-polynomial"><em>LaurentPolynomial</em></a>(F, UP), (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, F) -&gt; Record(ans: F, right: F, sol?: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>)) -&gt; Union(<a class="reference internal" href="LaurentPolynomial.html#l-laurent-polynomial"><em>LaurentPolynomial</em></a>(F, UP), failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">expintfldpoly(p,</span> <span class="pre">foo)</span></tt> returns <tt class="docutils literal"><span class="pre">q</span></tt> such that <tt class="docutils literal"><span class="pre">p'</span> <span class="pre">=</span> <span class="pre">q</span></tt> or &#8220;failed&#8221; if no such <tt class="docutils literal"><span class="pre">q</span></tt> exists. Argument foo is a Risch differential equation function on <tt class="docutils literal"><span class="pre">F</span></tt>.</dd>
+</dl>
+<span class="target" id="l-transcendental-integration-explogint"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">explogint</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP, (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, F) -&gt; Record(ans: F, right: F, sol?: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>), <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Union(Record(answer: Record(mainpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, limitedlogs: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(coeff: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, logand: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP)), a0: F), failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">explogint(f,</span> <span class="pre">',</span> <span class="pre">foo,</span> <span class="pre">[u1,</span> <span class="pre">...,</span> <span class="pre">un])</span></tt> returns <tt class="docutils literal"><span class="pre">[v,</span> <span class="pre">[c1,</span> <span class="pre">...,</span> <span class="pre">cn],</span> <span class="pre">a]</span></tt> such that <tt class="docutils literal"><span class="pre">ci'</span> <span class="pre">=</span> <span class="pre">0</span></tt>, <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">v'</span> <span class="pre">+</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">reduce(+,</span> <span class="pre">[ci</span> <span class="pre">*</span> <span class="pre">ui'/ui])</span></tt>, and <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">0</span></tt> or <tt class="docutils literal"><span class="pre">a</span></tt> has no integral in <tt class="docutils literal"><span class="pre">F</span></tt>. Returns &#8220;failed&#8221; if no such <tt class="docutils literal"><span class="pre">v</span></tt>, <tt class="docutils literal"><span class="pre">ci</span></tt>, a exist. Argument <tt class="docutils literal"><span class="pre">foo</span></tt> is a Risch differential equation function on <tt class="docutils literal"><span class="pre">F</span></tt>.</dd>
+</dl>
+<span class="target" id="l-transcendental-integration-lambintegrate"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">lambintegrate</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, F, F -&gt; F, UP -&gt; UP, F -&gt; Union(Record(ratpart: F, coeff: F), failed), F -&gt; <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> F) -&gt; Record(answer: <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, a0: <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> F)</dt>
+<dd>like tanintegrate</dd>
+</dl>
+<span class="target" id="l-transcendental-integration-monomial-integrate"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">monomialIntegrate</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP) -&gt; Record(ir: <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, specpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, polypart: UP)</dt>
+<dd><tt class="docutils literal"><span class="pre">monomialIntegrate(f,</span> <span class="pre">')</span></tt> returns <tt class="docutils literal"><span class="pre">[ir,</span> <span class="pre">s,</span> <span class="pre">p]</span></tt> such that <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">ir'</span> <span class="pre">+</span> <span class="pre">s</span> <span class="pre">+</span> <span class="pre">p</span></tt> and all the squarefree factors of the denominator of <tt class="docutils literal"><span class="pre">s</span></tt> are special <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt> the derivation &#8216;.</dd>
+</dl>
+<span class="target" id="l-transcendental-integration-monomial-int-poly"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">monomialIntPoly</span>: (UP, UP -&gt; UP) -&gt; Record(answer: UP, polypart: UP)</dt>
+<dd><tt class="docutils literal"><span class="pre">monomialIntPoly(p,</span> <span class="pre">')</span></tt> returns [<tt class="docutils literal"><span class="pre">q</span></tt>, <tt class="docutils literal"><span class="pre">r</span></tt>] such that <tt class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">q'</span> <span class="pre">+</span> <span class="pre">r</span></tt> and <tt class="docutils literal"><span class="pre">degree(r)</span> <span class="pre">&lt;</span> <span class="pre">degree(t')</span></tt>. Error if <tt class="docutils literal"><span class="pre">degree(t')</span> <span class="pre">&lt;</span> <span class="pre">2</span></tt>.</dd>
+</dl>
+<span class="target" id="l-transcendental-integration-primextendedint"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">primextendedint</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP, F -&gt; Union(Record(ratpart: F, coeff: F), failed), <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Union(Record(answer: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, a0: F), Record(ratpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, coeff: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP), failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">primextendedint(f,</span> <span class="pre">',</span> <span class="pre">foo,</span> <span class="pre">g)</span></tt> returns either <tt class="docutils literal"><span class="pre">[v,</span> <span class="pre">c]</span></tt> such that <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">v'</span> <span class="pre">+</span> <span class="pre">c</span> <span class="pre">g</span></tt> and <tt class="docutils literal"><span class="pre">c'</span> <span class="pre">=</span> <span class="pre">0</span></tt>, or <tt class="docutils literal"><span class="pre">[v,</span> <span class="pre">a]</span></tt> such that <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">g'</span> <span class="pre">+</span> <span class="pre">a</span></tt>, and <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">0</span></tt> or <tt class="docutils literal"><span class="pre">a</span></tt> has no integral in UP. Returns &#8220;failed&#8221; if neither case can hold. Argument <tt class="docutils literal"><span class="pre">foo</span></tt> is an extended integration function on <tt class="docutils literal"><span class="pre">F</span></tt>.</dd>
+</dl>
+<span class="target" id="l-transcendental-integration-primextintfrac"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">primextintfrac</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Union(Record(ratpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, coeff: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP), failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">primextintfrac(f,</span> <span class="pre">',</span> <span class="pre">g)</span></tt> returns <tt class="docutils literal"><span class="pre">[v,</span> <span class="pre">c]</span></tt> such that <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">v'</span> <span class="pre">+</span> <span class="pre">c</span> <span class="pre">g</span></tt> and <tt class="docutils literal"><span class="pre">c'</span> <span class="pre">=</span> <span class="pre">0</span></tt>. Error: if <tt class="docutils literal"><span class="pre">degree</span> <span class="pre">numer</span> <span class="pre">f</span> <span class="pre">&gt;=</span> <span class="pre">degree</span> <span class="pre">denom</span> <span class="pre">f</span></tt> or if <tt class="docutils literal"><span class="pre">degree</span> <span class="pre">numer</span> <span class="pre">g</span> <span class="pre">&gt;=</span> <span class="pre">degree</span> <span class="pre">denom</span> <span class="pre">g</span></tt> or if <tt class="docutils literal"><span class="pre">denom</span> <span class="pre">g</span></tt> is not squarefree.</dd>
+</dl>
+<span class="target" id="l-transcendental-integration-primintegrate"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">primintegrate</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP -&gt; Record(answer: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, logpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, ir: <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP), F -&gt; Union(Record(ratpart: F, coeff: F), failed)) -&gt; Record(answer: <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, a0: F)</dt>
+<dd><tt class="docutils literal"><span class="pre">primintegrate(f,</span> <span class="pre">',</span> <span class="pre">foo)</span></tt> returns <tt class="docutils literal"><span class="pre">[g,</span> <span class="pre">a]</span></tt> such that <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">g'</span> <span class="pre">+</span> <span class="pre">a</span></tt>, and <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">0</span></tt> or <tt class="docutils literal"><span class="pre">a</span></tt> has no integral in UP. Argument foo is an extended integration function on <tt class="docutils literal"><span class="pre">F</span></tt>.</dd>
+</dl>
+<span class="target" id="l-transcendental-integration-primintfldpoly"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">primintfldpoly</span>: (UP, F -&gt; Union(Record(ratpart: F, coeff: F), failed), F) -&gt; Union(UP, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">primintfldpoly(p,</span> <span class="pre">',</span> <span class="pre">t')</span></tt> returns <tt class="docutils literal"><span class="pre">q</span></tt> such that <tt class="docutils literal"><span class="pre">p'</span> <span class="pre">=</span> <span class="pre">q</span></tt> or &#8220;failed&#8221; if no such <tt class="docutils literal"><span class="pre">q</span></tt> exists. Argument <tt class="docutils literal"><span class="pre">t'</span></tt> is the derivative of the primitive generating the extension.</dd>
+</dl>
+<span class="target" id="l-transcendental-integration-primlogint"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">primlogint</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP, F -&gt; Union(Record(ratpart: F, coeff: F), failed), <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Union(Record(answer: Record(mainpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, limitedlogs: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(coeff: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, logand: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP)), a0: F), failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">primlogint(f,</span> <span class="pre">',</span> <span class="pre">foo,</span> <span class="pre">[u1,</span> <span class="pre">...,</span> <span class="pre">un])</span></tt> returns <tt class="docutils literal"><span class="pre">[v,</span> <span class="pre">[c1,</span> <span class="pre">...,</span> <span class="pre">cn],</span> <span class="pre">a]</span></tt> such that <tt class="docutils literal"><span class="pre">ci'</span> <span class="pre">=</span> <span class="pre">0</span></tt>, <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">v'</span> <span class="pre">+</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">reduce(+,</span> <span class="pre">[ci</span> <span class="pre">*</span> <span class="pre">ui'/ui])</span></tt>, and <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">0</span></tt> or <tt class="docutils literal"><span class="pre">a</span></tt> has no integral in UP. Returns &#8220;failed&#8221; if no such <tt class="docutils literal"><span class="pre">v</span></tt>, <tt class="docutils literal"><span class="pre">ci</span></tt>, a exist. Argument <tt class="docutils literal"><span class="pre">foo</span></tt> is an extended integration function on <tt class="docutils literal"><span class="pre">F</span></tt>.</dd>
+</dl>
+<span class="target" id="l-transcendental-integration-primlogintfrac"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">primlogintfrac</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Union(Record(mainpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, limitedlogs: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(coeff: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, logand: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP)), failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">primlogintfrac(f,</span> <span class="pre">',</span> <span class="pre">[u1,</span> <span class="pre">...,</span> <span class="pre">un])</span></tt> returns <tt class="docutils literal"><span class="pre">[v,</span> <span class="pre">[c1,</span> <span class="pre">...,</span> <span class="pre">cn]]</span></tt> such that <tt class="docutils literal"><span class="pre">ci'</span> <span class="pre">=</span> <span class="pre">0</span></tt> and <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">v'</span> <span class="pre">+</span> <span class="pre">+/[ci</span> <span class="pre">*</span> <span class="pre">ui'/ui]</span></tt>. Error: if <tt class="docutils literal"><span class="pre">degree</span> <span class="pre">numer</span> <span class="pre">f</span> <span class="pre">&gt;=</span> <span class="pre">degree</span> <span class="pre">denom</span> <span class="pre">f</span></tt>.</dd>
+</dl>
+<span class="target" id="l-transcendental-integration-tanintegrate"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">tanintegrate</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP, (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, F, F) -&gt; Union(<a class="reference internal" href="List.html#l-list"><em>List</em></a> F, failed)) -&gt; Record(answer: <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, a0: F)</dt>
+<dd><tt class="docutils literal"><span class="pre">tanintegrate(f,</span> <span class="pre">',</span> <span class="pre">foo)</span></tt> returns <tt class="docutils literal"><span class="pre">[g,</span> <span class="pre">a]</span></tt> such that <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">g'</span> <span class="pre">+</span> <span class="pre">a</span></tt>, and <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">0</span></tt> or <tt class="docutils literal"><span class="pre">a</span></tt> has no integral in <tt class="docutils literal"><span class="pre">F</span></tt>; Argument foo is a Risch differential system solver on <tt class="docutils literal"><span class="pre">F</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="TranscendentalHermiteIntegration.html"
+                        title="previous chapter">TranscendentalHermiteIntegration(F, UP)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="TranscendentalManipulations.html"
+                        title="next chapter">TranscendentalManipulations(R, F)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/TranscendentalIntegration.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="TranscendentalManipulations.html" title="TranscendentalManipulations(R, F)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="TranscendentalHermiteIntegration.html" title="TranscendentalHermiteIntegration(F, UP)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SKICombinators UT &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="SmallOrdinal" href="SmallOrdinal.html" />
+    <link rel="prev" title="SingletonAsOrderedSet" href="SingletonAsOrderedSet.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="SmallOrdinal.html" title="SmallOrdinal"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="SingletonAsOrderedSet.html" title="SingletonAsOrderedSet"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="skicombinators-ut">
+<span id="l-s-k-i-combinators"></span><span id="index-0"></span><h1>SKICombinators UT<a class="headerlink" href="#skicombinators-ut" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//computation.spad#L2449">computation.spad line 2449</a></p>
+<ul class="simple">
+<li>UT: <a class="reference internal" href="VarCat.html#l-var-cat"><em>VarCat</em></a></li>
+</ul>
+<p>parse result includes term returned and new index</p>
+<span class="target" id="id1"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">=</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>return <tt class="docutils literal"><span class="pre">true</span></tt> if equal (deep search) that is: all terms at all levels in tree must be equal to return <tt class="docutils literal"><span class="pre">true</span></tt> all terms must be exactly equal, not just equivalent, that is SKK=I will return <tt class="docutils literal"><span class="pre">false</span></tt> even though &#8216;SKK&#8217; and &#8216;I&#8217; have the same effect</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-atom"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">atom?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>returns <tt class="docutils literal"><span class="pre">true</span></tt> if this is an atom, that is a leaf node otherwise return <tt class="docutils literal"><span class="pre">false</span></tt> if this is a compound term</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-coerce"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">coerce(a)</span></tt> transforms a into an element of <tt class="docutils literal"><span class="pre">S</span></tt>.</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-free-variable"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">freeVariable?</span>: (%, UT) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>the variable indicated by <tt class="docutils literal"><span class="pre">'s'</span></tt> is free if it does not appear in node <tt class="docutils literal"><span class="pre">'n'</span></tt> or any of its subnodes.</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-get-children"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">getChildren</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>returns child nodes if this is a compound term otherwise returns []</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-get-variable"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">getVariable</span>: % -&gt; UT</dt>
+<dd>returns the variable, if this is not a variable then return <tt class="docutils literal"><span class="pre">I</span></tt></dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-i"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">I</span>: () -&gt; %</dt>
+<dd>Constructs a <tt class="docutils literal"><span class="pre">I</span></tt> combinator</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-is-i"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">isI?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>returns <tt class="docutils literal"><span class="pre">true</span></tt> if this is an <tt class="docutils literal"><span class="pre">I</span></tt> combinator node</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-is-k"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">isK?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>returns <tt class="docutils literal"><span class="pre">true</span></tt> if this is a <tt class="docutils literal"><span class="pre">K</span></tt> combinator node</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-is-s"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">isS?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>returns <tt class="docutils literal"><span class="pre">true</span></tt> if this is a <tt class="docutils literal"><span class="pre">S</span></tt> combinator node</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-k"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">K</span>: () -&gt; %</dt>
+<dd>Constructs a <tt class="docutils literal"><span class="pre">K</span></tt> combinator</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-parse-ski"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">parseSki</span>: <a class="reference internal" href="String.html#l-string"><em>String</em></a> -&gt; %</dt>
+<dd>Constructs combinators from a string</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-parse-term"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">parseTerm</span>: (<a class="reference internal" href="String.html#l-string"><em>String</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; Record(rft: %, pout: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>)</dt>
+<dd>parseTerm is used by parseSki. It would rarely be called externally but it is here to allow it to call parseSki that is to allow circular calls</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-redux"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">redux</span>: % -&gt; %</dt>
+<dd>weak reduction - apply this combinator to rearange its subnodes then apply recusivly to its subnodes</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-s"></span><dl class="docutils" id="index-15">
+<dt><span class="spadfun">S</span>: () -&gt; %</dt>
+<dd>Constructs a <tt class="docutils literal"><span class="pre">S</span></tt> combinator</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-ski"></span><dl class="docutils" id="index-16">
+<dt><span class="spadfun">ski</span>: (%, %) -&gt; %</dt>
+<dd>Constructs a node combinator over combinators</dd>
+</dl>
+<dl class="docutils" id="index-17">
+<dt><span class="spadfun">ski</span>: UT -&gt; %</dt>
+<dd>Constructs variable combinator</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-to-string"></span><dl class="docutils" id="index-18">
+<dt><span class="spadfun">toString</span>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>output</dd>
+</dl>
+<span class="target" id="l-s-k-i-combinators-variable"></span><dl class="docutils" id="index-19">
+<dt><span class="spadfun">variable?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>returns <tt class="docutils literal"><span class="pre">true</span></tt> if this is an variable</dd>
+</dl>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="SingletonAsOrderedSet.html"
+                        title="previous chapter">SingletonAsOrderedSet</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="SmallOrdinal.html"
+                        title="next chapter">SmallOrdinal</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/SKICombinators.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="SmallOrdinal.html" title="SmallOrdinal"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="SingletonAsOrderedSet.html" title="SingletonAsOrderedSet"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

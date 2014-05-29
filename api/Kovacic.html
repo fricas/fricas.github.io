@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Kovacic(F, UP) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="LaplaceTransform(R, F)" href="LaplaceTransform.html" />
+    <link rel="prev" title="KernelFunctions2(R, S)" href="KernelFunctions2.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="LaplaceTransform.html" title="LaplaceTransform(R, F)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="KernelFunctions2.html" title="KernelFunctions2(R, S)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="kovacic-f-up">
+<span id="l-kovacic"></span><span id="index-0"></span><h1>Kovacic(F, UP)<a class="headerlink" href="#kovacic-f-up" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//kovacic.spad#L1">kovacic.spad line 1</a></p>
+<ul class="simple">
+<li>F: Join(<a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a>, <a class="reference internal" href="AlgebraicallyClosedField.html#l-algebraically-closed-field"><em>AlgebraicallyClosedField</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</li>
+<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> F</li>
+</ul>
+<p><a class="reference internal" href="#l-kovacic"><em>Kovacic</em></a> provides a modified Kovacic<tt class="docutils literal"><span class="pre">'s</span></tt> algorithm for solving explicitely irreducible 2nd order linear ordinary differential equations.</p>
+<span class="target" id="l-kovacic-kovacic"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">kovacic</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Union(<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">kovacic(a_0,a_1,a_2)</span></tt> returns either &#8220;failed&#8221; or <tt class="docutils literal"><span class="pre">P</span></tt>(<tt class="docutils literal"><span class="pre">u</span></tt>) such that <tt class="docutils literal"><span class="pre">\$e^{\int(-a_1/2a_2)}</span> <span class="pre">e^{\int</span> <span class="pre">u}\$</span></tt> is a solution of <tt class="docutils literal"><span class="pre">a_2</span> <span class="pre">y''</span> <span class="pre">+</span> <span class="pre">a_1</span> <span class="pre">y'</span> <span class="pre">+</span> <span class="pre">a0</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">0</span></tt> whenever <tt class="docutils literal"><span class="pre">u</span></tt> is a solution of <tt class="docutils literal"><span class="pre">P</span> <span class="pre">u</span> <span class="pre">=</span> <span class="pre">0</span></tt>. The equation must be already irreducible over the rational functions.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">kovacic</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> UP) -&gt; Union(<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">kovacic(a_0,a_1,a_2,ezfactor)</span></tt> returns either &#8220;failed&#8221; or <tt class="docutils literal"><span class="pre">P</span></tt>(<tt class="docutils literal"><span class="pre">u</span></tt>) such that <tt class="docutils literal"><span class="pre">\$e^{\int(-a_1/2a_2)}</span> <span class="pre">e^{\int</span> <span class="pre">u}\$</span></tt> is a solution of <tt class="docutils literal"><span class="pre">\$a_2</span> <span class="pre">y''</span> <span class="pre">+</span> <span class="pre">a_1</span> <span class="pre">y'</span> <span class="pre">+</span> <span class="pre">a0</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">0\$</span></tt> whenever <tt class="docutils literal"><span class="pre">u</span></tt> is a solution of <tt class="docutils literal"><span class="pre">P</span> <span class="pre">u</span> <span class="pre">=</span> <span class="pre">0</span></tt>. The equation must be already irreducible over the rational functions. Argument <tt class="docutils literal"><span class="pre">ezfactor</span></tt> is a factorisation in <tt class="docutils literal"><span class="pre">UP</span></tt>, not necessarily into irreducibles.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="KernelFunctions2.html"
+                        title="previous chapter">KernelFunctions2(R, S)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="LaplaceTransform.html"
+                        title="next chapter">LaplaceTransform(R, F)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/Kovacic.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="LaplaceTransform.html" title="LaplaceTransform(R, F)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="KernelFunctions2.html" title="KernelFunctions2(R, S)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

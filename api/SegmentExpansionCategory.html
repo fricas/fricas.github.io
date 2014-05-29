@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SegmentExpansionCategory(S, L) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Categories" href="Categories.html" />
+    <link rel="next" title="SemiGroup" href="SemiGroup.html" />
+    <link rel="prev" title="SegmentCategory S" href="SegmentCategory.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="SemiGroup.html" title="SemiGroup"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="SegmentCategory.html" title="SegmentCategory S"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="segmentexpansioncategory-s-l">
+<span id="l-segment-expansion-category"></span><span id="index-0"></span><h1>SegmentExpansionCategory(S, L)<a class="headerlink" href="#segmentexpansioncategory-s-l" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//seg.spad#L46">seg.spad line 46</a></p>
+<ul class="simple">
+<li>S: <a class="reference internal" href="OrderedRing.html#l-ordered-ring"><em>OrderedRing</em></a></li>
+<li>L: <a class="reference internal" href="StreamAggregate.html#l-stream-aggregate"><em>StreamAggregate</em></a> S</li>
+</ul>
+<p>This category provides an interface for expanding segments to a stream of elements.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="SegmentCategory.html#l-segment-category-b-y"><em>BY</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="SegmentCategory.html#l-segment-category"><em>SegmentCategory</em></a> S</dd>
+<dt><a class="reference internal" href="ConvertibleTo.html#l-convertible-to-convert"><em>convert</em></a>: % -&gt; <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a> if S has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a></dt>
+<dd>from <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a></dd>
+<dt><a class="reference internal" href="SegmentCategory.html#l-segment-category-convert"><em>convert</em></a>: S -&gt; %</dt>
+<dd>from <a class="reference internal" href="SegmentCategory.html#l-segment-category"><em>SegmentCategory</em></a> S</dd>
+</dl>
+<span class="target" id="l-segment-expansion-category-expand"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">expand</span>: % -&gt; L</dt>
+<dd><tt class="docutils literal"><span class="pre">expand(l..h</span> <span class="pre">by</span> <span class="pre">k)</span></tt> creates value of type <tt class="docutils literal"><span class="pre">L</span></tt> with elements <tt class="docutils literal"><span class="pre">l,</span> <span class="pre">l+k,</span> <span class="pre">...</span> <span class="pre">lN</span></tt> where <tt class="docutils literal"><span class="pre">lN</span> <span class="pre">&lt;=</span> <span class="pre">h</span> <span class="pre">&lt;</span> <span class="pre">lN+k</span></tt>. For example, <tt class="docutils literal"><span class="pre">expand(1..5</span> <span class="pre">by</span> <span class="pre">2)</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">3,</span> <span class="pre">5]</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">expand</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; L</dt>
+<dd><tt class="docutils literal"><span class="pre">expand(l)</span></tt> creates a new value of type <tt class="docutils literal"><span class="pre">L</span></tt> in which each segment <tt class="docutils literal"><span class="pre">l..h</span> <span class="pre">by</span> <span class="pre">k</span></tt> is replaced with <tt class="docutils literal"><span class="pre">l,</span> <span class="pre">l+k,</span> <span class="pre">...</span> <span class="pre">lN</span></tt>, where <tt class="docutils literal"><span class="pre">lN</span> <span class="pre">&lt;=</span> <span class="pre">h</span> <span class="pre">&lt;</span> <span class="pre">lN+k</span></tt>. For example, <tt class="docutils literal"><span class="pre">expand</span> <span class="pre">[1..4,</span> <span class="pre">7..9]</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">7,</span> <span class="pre">8,</span> <span class="pre">9]</span></tt>.</dd>
+<dt><a class="reference internal" href="SegmentCategory.html#l-segment-category-hi"><em>hi</em></a>: % -&gt; S</dt>
+<dd>from <a class="reference internal" href="SegmentCategory.html#l-segment-category"><em>SegmentCategory</em></a> S</dd>
+<dt><a class="reference internal" href="SegmentCategory.html#l-segment-category-high"><em>high</em></a>: % -&gt; S</dt>
+<dd>from <a class="reference internal" href="SegmentCategory.html#l-segment-category"><em>SegmentCategory</em></a> S</dd>
+<dt><a class="reference internal" href="SegmentCategory.html#l-segment-category-incr"><em>incr</em></a>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="SegmentCategory.html#l-segment-category"><em>SegmentCategory</em></a> S</dd>
+<dt><a class="reference internal" href="SegmentCategory.html#l-segment-category-lo"><em>lo</em></a>: % -&gt; S</dt>
+<dd>from <a class="reference internal" href="SegmentCategory.html#l-segment-category"><em>SegmentCategory</em></a> S</dd>
+<dt><a class="reference internal" href="SegmentCategory.html#l-segment-category-low"><em>low</em></a>: % -&gt; S</dt>
+<dd>from <a class="reference internal" href="SegmentCategory.html#l-segment-category"><em>SegmentCategory</em></a> S</dd>
+</dl>
+<span class="target" id="l-segment-expansion-category-map"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">map</span>: (S -&gt; S, %) -&gt; L</dt>
+<dd><tt class="docutils literal"><span class="pre">map(f,</span> <span class="pre">l..h</span> <span class="pre">by</span> <span class="pre">k)</span></tt> produces a value of type <tt class="docutils literal"><span class="pre">L</span></tt> by applying <tt class="docutils literal"><span class="pre">f</span></tt> to each of the succesive elements of the segment, that is, <tt class="docutils literal"><span class="pre">[f(l),</span> <span class="pre">f(l+k),</span> <span class="pre">...,</span> <span class="pre">f(lN)]</span></tt>, where <tt class="docutils literal"><span class="pre">lN</span> <span class="pre">&lt;=</span> <span class="pre">h</span> <span class="pre">&lt;</span> <span class="pre">lN+k</span></tt>.</dd>
+<dt><a class="reference internal" href="SegmentCategory.html#l-segment-category-segment"><em>segment</em></a>: (S, S) -&gt; %</dt>
+<dd>from <a class="reference internal" href="SegmentCategory.html#l-segment-category"><em>SegmentCategory</em></a> S</dd>
+<dt><a class="reference internal" href="SegmentCategory.html#l-segment-category-s-e-g-m-e-n-t"><em>SEGMENT</em></a>: (S, S) -&gt; %</dt>
+<dd>from <a class="reference internal" href="SegmentCategory.html#l-segment-category"><em>SegmentCategory</em></a> S</dd>
+</dl>
+<p><a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a> if S has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a></p>
+<p><a class="reference internal" href="SegmentCategory.html#l-segment-category"><em>SegmentCategory</em></a> S</p>
+<p><a class="reference internal" href="Type.html#l-type"><em>Type</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="SegmentCategory.html"
+                        title="previous chapter">SegmentCategory S</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="SemiGroup.html"
+                        title="next chapter">SemiGroup</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/SegmentExpansionCategory.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="SemiGroup.html" title="SemiGroup"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="SegmentCategory.html" title="SegmentCategory S"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

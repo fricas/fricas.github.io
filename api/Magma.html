@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Magma VarSet &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="MakeCachableSet S" href="MakeCachableSet.html" />
+    <link rel="prev" title="MachineInteger" href="MachineInteger.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="MakeCachableSet.html" title="MakeCachableSet S"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="MachineInteger.html" title="MachineInteger"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="magma-varset">
+<span id="l-magma"></span><span id="index-0"></span><h1>Magma VarSet<a class="headerlink" href="#magma-varset" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//xlpoly.spad#L1">xlpoly.spad line 1</a></p>
+<ul class="simple">
+<li>VarSet: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></li>
+</ul>
+<p>This type is the basic representation of parenthesized words (binary trees over arbitrary symbols) useful in <a class="reference internal" href="LiePolynomial.html#l-lie-polynomial"><em>LiePolynomial</em></a>. newline Author: Michel Petitot (<a class="reference external" href="mailto:petitot&#37;&#52;&#48;lifl">petitot<span>&#64;</span>lifl</a>.<tt class="docutils literal"><span class="pre">fr</span></tt>).</p>
+<span class="target" id="id1"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">*</span>: (%, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">x*y</span></tt> returns the tree <tt class="docutils literal"><span class="pre">[x,</span> <span class="pre">y]</span></tt>.</dd>
+<dt><a class="reference internal" href="PartialOrder.html#id1"><em>&lt;</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id2"><em>&lt;=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id3"><em>&gt;</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id4"><em>&gt;=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+</dl>
+<span class="target" id="l-magma-coerce"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="OrderedFreeMonoid.html#l-ordered-free-monoid"><em>OrderedFreeMonoid</em></a> VarSet</dt>
+<dd><tt class="docutils literal"><span class="pre">coerce(x)</span></tt> returns the element of <a class="reference internal" href="OrderedFreeMonoid.html#l-ordered-free-monoid"><em>OrderedFreeMonoid</em></a>(VarSet) corresponding to <tt class="docutils literal"><span class="pre">x</span></tt> by removing parentheses.</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-coerce"><em>coerce</em></a>: VarSet -&gt; %</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> VarSet</dd>
+</dl>
+<span class="target" id="l-magma-first"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">first</span>: % -&gt; VarSet</dt>
+<dd><tt class="docutils literal"><span class="pre">first(x)</span></tt> returns the first entry of the tree <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-magma-left"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">left</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">left(x)</span></tt> returns left subtree of <tt class="docutils literal"><span class="pre">x</span></tt> or error if spadopFrom{retractable?}{Magma}(<tt class="docutils literal"><span class="pre">x</span></tt>) is <tt class="docutils literal"><span class="pre">true</span></tt>.</dd>
+</dl>
+<span class="target" id="l-magma-length"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">length</span>: % -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">length(x)</span></tt> returns the number of entries in <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+</dl>
+<span class="target" id="l-magma-lexico"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">lexico</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">lexico(x,</span> <span class="pre">y)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> iff <tt class="docutils literal"><span class="pre">x</span></tt> is smaller than <tt class="docutils literal"><span class="pre">y</span></tt> <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. the lexicographical ordering induced by <tt class="docutils literal"><span class="pre">VarSet</span></tt>. <tt class="docutils literal"><span class="pre">N</span></tt>.<tt class="docutils literal"><span class="pre">B</span></tt>. This operation does not take into account the tree structure of its arguments. Thus this is not a total ordering.</dd>
+<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-max"><em>max</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dd>
+<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-min"><em>min</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dd>
+</dl>
+<span class="target" id="l-magma-mirror"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">mirror</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">mirror(x)</span></tt> returns the reversed word of <tt class="docutils literal"><span class="pre">x</span></tt>. That is <tt class="docutils literal"><span class="pre">x</span></tt> itself if spadopFrom{retractable?}{Magma}(<tt class="docutils literal"><span class="pre">x</span></tt>) is <tt class="docutils literal"><span class="pre">true</span></tt> and <tt class="docutils literal"><span class="pre">mirror(z)</span> <span class="pre">*</span> <span class="pre">mirror(y)</span></tt> if <tt class="docutils literal"><span class="pre">x</span></tt> is <tt class="docutils literal"><span class="pre">y*z</span></tt>.</dd>
+</dl>
+<span class="target" id="l-magma-rest"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">rest</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">rest(x)</span></tt> return <tt class="docutils literal"><span class="pre">x</span></tt> without the first entry or error if spadopFrom{retractable?}{Magma}(<tt class="docutils literal"><span class="pre">x</span></tt>) is <tt class="docutils literal"><span class="pre">true</span></tt>.</dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract"><em>retract</em></a>: % -&gt; VarSet</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> VarSet</dd>
+</dl>
+<span class="target" id="l-magma-retractable"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">retractable?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">retractable?(x)</span></tt> tests if <tt class="docutils literal"><span class="pre">x</span></tt> is a tree with only one entry.</dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract-if-can"><em>retractIfCan</em></a>: % -&gt; Union(VarSet, failed)</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> VarSet</dd>
+</dl>
+<span class="target" id="l-magma-right"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">right</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">right(x)</span></tt> returns right subtree of <tt class="docutils literal"><span class="pre">x</span></tt> or error if spadopFrom{retractable?}{Magma}(<tt class="docutils literal"><span class="pre">x</span></tt>) is <tt class="docutils literal"><span class="pre">true</span></tt>.</dd>
+<dt><a class="reference internal" href="Comparable.html#l-comparable-smaller"><em>smaller?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dd>
+</dl>
+<span class="target" id="l-magma-var-list"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">varList</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> VarSet</dt>
+<dd><tt class="docutils literal"><span class="pre">varList(x)</span></tt> returns the list of distinct entries of <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+</dl>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></p>
+<p><a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></p>
+<p><a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></p>
+<p><a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> VarSet</p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="MachineInteger.html"
+                        title="previous chapter">MachineInteger</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="MakeCachableSet.html"
+                        title="next chapter">MakeCachableSet S</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/Magma.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="MakeCachableSet.html" title="MakeCachableSet S"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="MachineInteger.html" title="MachineInteger"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

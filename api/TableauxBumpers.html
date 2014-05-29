@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TableauxBumpers S &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="TabulatedComputationPackage(Key, Entry)" href="TabulatedComputationPackage.html" />
+    <link rel="prev" title="SystemSolvePackage R" href="SystemSolvePackage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="TabulatedComputationPackage.html" title="TabulatedComputationPackage(Key, Entry)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="SystemSolvePackage.html" title="SystemSolvePackage R"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tableauxbumpers-s">
+<span id="l-tableaux-bumpers"></span><span id="index-0"></span><h1>TableauxBumpers S<a class="headerlink" href="#tableauxbumpers-s" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//tableau.spad#L49">tableau.spad line 49</a></p>
+<ul class="simple">
+<li>S: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></li>
+</ul>
+<p>TableauBumpers implements the Schenstead-Knuth correspondence between sequences and pairs of Young tableaux. The 2 Young tableaux are represented as a single tableau with pairs as components.</p>
+<span class="target" id="l-tableaux-bumpers-bat1"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">bat1</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">bat1(llp)</span></tt> unbumps a tableau <tt class="docutils literal"><span class="pre">llp</span></tt>. Operation <tt class="docutils literal"><span class="pre">bat1</span></tt> is the inverse of <tt class="docutils literal"><span class="pre">tab1</span></tt>.</dd>
+</dl>
+<span class="target" id="l-tableaux-bumpers-bat"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">bat</span>: <a class="reference internal" href="Tableau.html#l-tableau"><em>Tableau</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">bat(ls)</span></tt> unbumps a tableau <tt class="docutils literal"><span class="pre">ls</span></tt></dd>
+</dl>
+<span class="target" id="l-tableaux-bumpers-bumprow"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">bumprow</span>: ((S, S) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S) -&gt; Record(fs: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, sd: <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, td: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S)</dt>
+<dd><tt class="docutils literal"><span class="pre">bumprow(cf,</span> <span class="pre">pr,</span> <span class="pre">r)</span></tt> is an auxiliary function which bumps a row <tt class="docutils literal"><span class="pre">r</span></tt> with a pair <tt class="docutils literal"><span class="pre">pr</span></tt> using comparison function <tt class="docutils literal"><span class="pre">cf</span></tt>, and returns a record</dd>
+</dl>
+<span class="target" id="l-tableaux-bumpers-bumptab1"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">bumptab1</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">bumptab1(pr,</span> <span class="pre">t)</span></tt> bumps a tableau <tt class="docutils literal"><span class="pre">t</span></tt> with a pair <tt class="docutils literal"><span class="pre">pr</span></tt> using comparison function <span class="spadfun">&lt;</span>, returning a new tableau</dd>
+</dl>
+<span class="target" id="l-tableaux-bumpers-bumptab"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">bumptab</span>: ((S, S) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">bumptab(cf,</span> <span class="pre">pr,</span> <span class="pre">t)</span></tt> bumps a tableau <tt class="docutils literal"><span class="pre">t</span></tt> with a pair <tt class="docutils literal"><span class="pre">pr</span></tt> using comparison function <tt class="docutils literal"><span class="pre">cf</span></tt>, returning a new tableau</dd>
+</dl>
+<span class="target" id="l-tableaux-bumpers-inverse"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">inverse</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> S -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">inverse(ls)</span></tt> forms the inverse of a sequence <tt class="docutils literal"><span class="pre">ls</span></tt></dd>
+</dl>
+<span class="target" id="l-tableaux-bumpers-lex"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">lex</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">lex(ls)</span></tt> sorts a list of pairs to lexicographic order</dd>
+</dl>
+<span class="target" id="l-tableaux-bumpers-maxrow"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">maxrow</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S) -&gt; Record(f1: <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, f2: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, f3: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, f4: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S)</dt>
+<dd><tt class="docutils literal"><span class="pre">maxrow(a,</span> <span class="pre">b,</span> <span class="pre">c,</span> <span class="pre">d,</span> <span class="pre">e)</span></tt> is an auxiliary function for <tt class="docutils literal"><span class="pre">mr</span></tt></dd>
+</dl>
+<span class="target" id="l-tableaux-bumpers-mr"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">mr</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S -&gt; Record(f1: <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, f2: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, f3: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, f4: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S)</dt>
+<dd><tt class="docutils literal"><span class="pre">mr(t)</span></tt> is an auxiliary function which finds the position of the maximum element of a tableau <tt class="docutils literal"><span class="pre">t</span></tt> which is in the lowest row, producing a record of results</dd>
+</dl>
+<span class="target" id="l-tableaux-bumpers-slex"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">slex</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> S -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">slex(ls)</span></tt> sorts the argument sequence <tt class="docutils literal"><span class="pre">ls</span></tt>, then zips (see <strong>map</strong>) the original argument sequence with the sorted result to a list of pairs</dd>
+</dl>
+<span class="target" id="l-tableaux-bumpers-tab1"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">tab1</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">tab1(lp)</span></tt> creates a tableau from a list of pairs <tt class="docutils literal"><span class="pre">lp</span></tt></dd>
+</dl>
+<span class="target" id="l-tableaux-bumpers-tab"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">tab</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> S -&gt; <a class="reference internal" href="Tableau.html#l-tableau"><em>Tableau</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">tab(ls)</span></tt> creates a tableau from <tt class="docutils literal"><span class="pre">ls</span></tt> by first creating a list of pairs using <strong>slex</strong>, then creating a tableau using <a href="#id1"><span class="problematic" id="id2">**</span></a><tt class="docutils literal"><span class="pre">tab1</span></tt><a href="#id3"><span class="problematic" id="id4">**</span></a>.</dd>
+</dl>
+<span class="target" id="l-tableaux-bumpers-untab"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">untab</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">untab(lp,</span> <span class="pre">llp)</span></tt> is an auxiliary function which unbumps a tableau <tt class="docutils literal"><span class="pre">llp</span></tt>, using <tt class="docutils literal"><span class="pre">lp</span></tt> to accumulate pairs</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="SystemSolvePackage.html"
+                        title="previous chapter">SystemSolvePackage R</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="TabulatedComputationPackage.html"
+                        title="next chapter">TabulatedComputationPackage(Key, Entry)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/TableauxBumpers.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="TabulatedComputationPackage.html" title="TabulatedComputationPackage(Key, Entry)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="SystemSolvePackage.html" title="SystemSolvePackage R"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

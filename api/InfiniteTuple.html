@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>InfiniteTuple S &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="InnerAlgebraicNumber" href="InnerAlgebraicNumber.html" />
+    <link rel="prev" title="IndexedVector(R, mn)" href="IndexedVector.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="InnerAlgebraicNumber.html" title="InnerAlgebraicNumber"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="IndexedVector.html" title="IndexedVector(R, mn)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="infinitetuple-s">
+<span id="l-infinite-tuple"></span><span id="index-0"></span><h1>InfiniteTuple S<a class="headerlink" href="#infinitetuple-s" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//ituple.spad#L1">ituple.spad line 1</a></p>
+<ul class="simple">
+<li>S: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
+</ul>
+<p>This package implements &#8216;infinite tuples&#8217; for the interpreter. The representation is a stream.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+</dl>
+<span class="target" id="l-infinite-tuple-construct"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">construct</span>: % -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">construct(t)</span></tt> converts an infinite tuple to a stream.</dd>
+</dl>
+<span class="target" id="l-infinite-tuple-filter-until"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">filterUntil</span>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">filterUntil(p,</span> <span class="pre">t)</span></tt> returns <tt class="docutils literal"><span class="pre">[x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">t</span> <span class="pre">while</span> <span class="pre">not</span> <span class="pre">p(x)]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-infinite-tuple-filter-while"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">filterWhile</span>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">filterWhile(p,</span> <span class="pre">t)</span></tt> returns <tt class="docutils literal"><span class="pre">[x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">t</span> <span class="pre">while</span> <span class="pre">p(x)]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-infinite-tuple-map"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">map</span>: (S -&gt; S, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">map(f,</span> <span class="pre">t)</span></tt> replaces the tuple <tt class="docutils literal"><span class="pre">t</span></tt> by <tt class="docutils literal"><span class="pre">[f(x)</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">t]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-infinite-tuple-select"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">select</span>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">select(p,</span> <span class="pre">t)</span></tt> returns <tt class="docutils literal"><span class="pre">[x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">t</span> <span class="pre">|</span> <span class="pre">p(x)]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-infinite-tuple-stream"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">stream</span>: (S -&gt; S, S) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">stream(f,</span> <span class="pre">s)</span></tt> returns <tt class="docutils literal"><span class="pre">[s,</span> <span class="pre">f(s),</span> <span class="pre">f(f(s)),</span> <span class="pre">...]</span></tt>.</dd>
+</dl>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="IndexedVector.html"
+                        title="previous chapter">IndexedVector(R, mn)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="InnerAlgebraicNumber.html"
+                        title="next chapter">InnerAlgebraicNumber</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/InfiniteTuple.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="InnerAlgebraicNumber.html" title="InnerAlgebraicNumber"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="IndexedVector.html" title="IndexedVector(R, mn)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

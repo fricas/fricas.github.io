@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PatternFunctions1(R, D) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="PatternFunctions2(R, S)" href="PatternFunctions2.html" />
+    <link rel="prev" title="PathArrayPackage R" href="PathArrayPackage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="PatternFunctions2.html" title="PatternFunctions2(R, S)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PathArrayPackage.html" title="PathArrayPackage R"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="patternfunctions1-r-d">
+<span id="l-pattern-functions1"></span><span id="index-0"></span><h1>PatternFunctions1(R, D)<a class="headerlink" href="#patternfunctions1-r-d" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//pattern.spad#L376">pattern.spad line 376</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></li>
+<li>D: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
+</ul>
+<p>Tools for patterns.</p>
+<span class="target" id="l-pattern-functions1-add-bad-value"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">addBadValue</span>: (<a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R, D) -&gt; <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">addBadValue(p,</span> <span class="pre">v)</span></tt> adds <tt class="docutils literal"><span class="pre">v</span></tt> to the list of &#8220;bad values&#8221; for <tt class="docutils literal"><span class="pre">p</span></tt>; <tt class="docutils literal"><span class="pre">p</span></tt> is not allowed to match any of its &#8220;bad values&#8221;.</dd>
+</dl>
+<span class="target" id="l-pattern-functions1-bad-values"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">badValues</span>: <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> D</dt>
+<dd><tt class="docutils literal"><span class="pre">badValues(p)</span></tt> returns the list of &#8220;bad values&#8221; for <tt class="docutils literal"><span class="pre">p</span></tt>; <tt class="docutils literal"><span class="pre">p</span></tt> is not allowed to match any of its &#8220;bad values&#8221;.</dd>
+</dl>
+<span class="target" id="l-pattern-functions1-predicate"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">predicate</span>: <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R -&gt; D -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">predicate(p)</span></tt> returns the predicate attached to <tt class="docutils literal"><span class="pre">p</span></tt>, the constant function <tt class="docutils literal"><span class="pre">true</span></tt> if <tt class="docutils literal"><span class="pre">p</span></tt> has no predicates attached to it.</dd>
+</dl>
+<span class="target" id="l-pattern-functions1-satisfy"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">satisfy?</span>: (D, <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">satisfy?(v,</span> <span class="pre">p)</span></tt> returns <tt class="docutils literal"><span class="pre">f</span></tt>(<tt class="docutils literal"><span class="pre">v</span></tt>) where <tt class="docutils literal"><span class="pre">f</span></tt> is the predicate attached to <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">satisfy?</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> D, <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">satisfy?([v1,</span> <span class="pre">...,</span> <span class="pre">vn],</span> <span class="pre">p)</span></tt> returns <tt class="docutils literal"><span class="pre">f(v1,</span> <span class="pre">...,</span> <span class="pre">vn)</span></tt> where <tt class="docutils literal"><span class="pre">f</span></tt> is the top-level predicate attached to <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<span class="target" id="l-pattern-functions1-such-that"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">suchThat</span>: (<a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R, D -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">suchThat(p,</span> <span class="pre">f)</span></tt> makes a copy of <tt class="docutils literal"><span class="pre">p</span></tt> and adds the predicate <tt class="docutils literal"><span class="pre">f</span></tt> to the copy, which is returned.</dd>
+</dl>
+<dl class="docutils" id="index-7">
+<dt><span class="spadfun">suchThat</span>: (<a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R, <a class="reference internal" href="List.html#l-list"><em>List</em></a> D -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">suchThat(p,</span> <span class="pre">[f1,</span> <span class="pre">...,</span> <span class="pre">fn])</span></tt> makes a copy of <tt class="docutils literal"><span class="pre">p</span></tt> and adds the predicate <tt class="docutils literal"><span class="pre">f1</span></tt> and ... and <tt class="docutils literal"><span class="pre">fn</span></tt> to the copy, which is returned.</dd>
+</dl>
+<dl class="docutils" id="index-8">
+<dt><span class="spadfun">suchThat</span>: (<a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> D -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">suchThat(p,</span> <span class="pre">[a1,</span> <span class="pre">...,</span> <span class="pre">an],</span> <span class="pre">f)</span></tt> returns a copy of <tt class="docutils literal"><span class="pre">p</span></tt> with the top-level predicate set to <tt class="docutils literal"><span class="pre">f(a1,</span> <span class="pre">...,</span> <span class="pre">an)</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="PathArrayPackage.html"
+                        title="previous chapter">PathArrayPackage R</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PatternFunctions2.html"
+                        title="next chapter">PatternFunctions2(R, S)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/PatternFunctions1.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="PatternFunctions2.html" title="PatternFunctions2(R, S)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="PathArrayPackage.html" title="PathArrayPackage R"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

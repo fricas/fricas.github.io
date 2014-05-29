@@ -1,0 +1,485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FortranExpression(basicSymbols, subscriptedSymbols, R) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="FortranFormat" href="FortranFormat.html" />
+    <link rel="prev" title="FortranCode" href="FortranCode.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="FortranFormat.html" title="FortranFormat"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="FortranCode.html" title="FortranCode"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="fortranexpression-basicsymbols-subscriptedsymbols-r">
+<span id="l-fortran-expression"></span><span id="index-0"></span><h1>FortranExpression(basicSymbols, subscriptedSymbols, R)<a class="headerlink" href="#fortranexpression-basicsymbols-subscriptedsymbols-r" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//fortran.spad#L1440">fortran.spad line 1440</a></p>
+<ul class="simple">
+<li>basicSymbols: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></li>
+<li>subscriptedSymbols: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></li>
+<li>R: <a class="reference internal" href="FortranMachineTypeCategory.html#l-fortran-machine-type-category"><em>FortranMachineTypeCategory</em></a></li>
+</ul>
+<p>A domain of expressions involving functions which can be translated into standard Fortran-77, with some extra extensions from the NAG Fortran Library.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><em>0</em></a>: %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="Monoid.html#l-monoid-1"><em>1</em></a>: %</dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="SemiGroup.html#id1"><em>*</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></dd>
+<dt><a class="reference internal" href="RightModule.html#id1"><em>*</em></a>: (%, R) -&gt; %</dt>
+<dd>from <a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> R</dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#id1"><em>*</em></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
+<dt><a class="reference internal" href="LeftModule.html#id1"><em>*</em></a>: (R, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> R</dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id2"><em>+</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="Monoid.html#id1"><em>^</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="SemiGroup.html#id2"><em>^</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+</dl>
+<span class="target" id="l-fortran-expression-abs"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">abs</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">abs(x)</span></tt> represents the Fortran intrinsic function ABS</dd>
+</dl>
+<span class="target" id="l-fortran-expression-acos"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">acos</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">acos(x)</span></tt> represents the Fortran intrinsic function ACOS</dd>
+<dt><a class="reference internal" href="Rng.html#l-rng-annihilate"><em>annihilate?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Rng.html#l-rng"><em>Rng</em></a></dd>
+</dl>
+<span class="target" id="l-fortran-expression-asin"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">asin</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">asin(x)</span></tt> represents the Fortran intrinsic function ASIN</dd>
+</dl>
+<span class="target" id="l-fortran-expression-atan"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">atan</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">atan(x)</span></tt> represents the Fortran intrinsic function ATAN</dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-belong"><em>belong?</em></a>: <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a> -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-box"><em>box</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-box"><em>box</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="Ring.html#l-ring-characteristic"><em>characteristic</em></a>: () -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></dd>
+</dl>
+<span class="target" id="l-fortran-expression-coerce"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">coerce(x)</span></tt> is undocumented.</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="Ring.html#l-ring-coerce"><em>coerce</em></a>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; %</dt>
+<dd>from <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-coerce"><em>coerce</em></a>: <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> % -&gt; %</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dd>
+<dt><a class="reference internal" href="Algebra.html#l-algebra-coerce"><em>coerce</em></a>: R -&gt; %</dt>
+<dd>from <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> R</dd>
+</dl>
+<span class="target" id="l-fortran-expression-cos"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">cos</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">cos(x)</span></tt> represents the Fortran intrinsic function COS</dd>
+</dl>
+<span class="target" id="l-fortran-expression-cosh"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">cosh</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">cosh(x)</span></tt> represents the Fortran intrinsic function COSH</dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-d"><em>D</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-d"><em>D</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-d"><em>D</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-d"><em>D</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-defining-polynomial"><em>definingPolynomial</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-differentiate"><em>differentiate</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-differentiate"><em>differentiate</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-differentiate"><em>differentiate</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring-differentiate"><em>differentiate</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-distribute"><em>distribute</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-distribute"><em>distribute</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-elt"><em>elt</em></a>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-elt"><em>elt</em></a>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-elt"><em>elt</em></a>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-elt"><em>elt</em></a>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %, %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-elt"><em>elt</em></a>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %, %, %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-elt"><em>elt</em></a>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %, %, %, %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-elt"><em>elt</em></a>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %, %, %, %, %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-elt"><em>elt</em></a>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %, %, %, %, %, %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-elt"><em>elt</em></a>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %, %, %, %, %, %, %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-elt"><em>elt</em></a>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(%, %)</dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-eval"><em>eval</em></a>: (%, <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, % -&gt; %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-eval"><em>eval</em></a>: (%, <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> %</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(<a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, %)</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(%, %)</dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> %</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(<a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, %)</dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-eval"><em>eval</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, % -&gt; %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-eval"><em>eval</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-even"><em>even?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if % has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+</dl>
+<span class="target" id="l-fortran-expression-exp"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">exp</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">exp(x)</span></tt> represents the Fortran intrinsic function EXP</dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-free-of"><em>freeOf?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-free-of"><em>freeOf?</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-height"><em>height</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-is"><em>is?</em></a>: (%, <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-is"><em>is?</em></a>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-kernel"><em>kernel</em></a>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-kernel"><em>kernel</em></a>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-kernels"><em>kernels</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-kernels"><em>kernels</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-fortran-expression-log10"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">log10</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">log10(x)</span></tt> represents the Fortran intrinsic function <tt class="docutils literal"><span class="pre">LOG10</span></tt></dd>
+</dl>
+<span class="target" id="l-fortran-expression-log"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">log</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">log(x)</span></tt> represents the Fortran intrinsic function LOG</dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-main-kernel"><em>mainKernel</em></a>: % -&gt; Union(<a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, failed)</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-map"><em>map</em></a>: (% -&gt; %, <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-min-poly"><em>minPoly</em></a>: <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> % -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-odd"><em>odd?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if % has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="Monoid.html#l-monoid-one"><em>one?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-operator"><em>operator</em></a>: <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a> -&gt; <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a></dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-operators"><em>operators</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a></dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-opposite"><em>opposite?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-paren"><em>paren</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-paren"><em>paren</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+</dl>
+<span class="target" id="l-fortran-expression-pi"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">pi</span>: () -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">pi(x)</span></tt> represents the NAG Library function X01AAF which returns an approximation to the value of <tt class="docutils literal"><span class="pre">pi</span></tt></dd>
+<dt><a class="reference internal" href="Monoid.html#l-monoid-recip"><em>recip</em></a>: % -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract"><em>retract</em></a>: % -&gt; <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract"><em>retract</em></a>: % -&gt; R</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> R</dd>
+</dl>
+<span class="target" id="l-fortran-expression-retract"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">retract</span>: <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> <a class="reference internal" href="Float.html#l-float"><em>Float</em></a> -&gt; % if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Float.html#l-float"><em>Float</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">retract(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and transforms it into a FortranExpression checking that it contains no non-Fortran functions, and that it only contains the given basic symbols and subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+</dl>
+<dl class="docutils" id="index-13">
+<dt><span class="spadfun">retract</span>: <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; % if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">retract(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and transforms it into a FortranExpression checking that it contains no non-Fortran functions, and that it only contains the given basic symbols and subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+</dl>
+<dl class="docutils" id="index-14">
+<dt><span class="spadfun">retract</span>: <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> R -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">retract(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and transforms it into a FortranExpression checking that it contains no non-Fortran functions, and that it only contains the given basic symbols and subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+</dl>
+<dl class="docutils" id="index-15">
+<dt><span class="spadfun">retract</span>: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Float.html#l-float"><em>Float</em></a> -&gt; % if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Float.html#l-float"><em>Float</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">retract(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and transforms it into a FortranExpression checking that it contains no non-Fortran functions, and that it only contains the given basic symbols and subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+</dl>
+<dl class="docutils" id="index-16">
+<dt><span class="spadfun">retract</span>: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; % if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">retract(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and transforms it into a FortranExpression checking that it contains no non-Fortran functions, and that it only contains the given basic symbols and subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+</dl>
+<dl class="docutils" id="index-17">
+<dt><span class="spadfun">retract</span>: <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Float.html#l-float"><em>Float</em></a> -&gt; % if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Float.html#l-float"><em>Float</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">retract(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and transforms it into a FortranExpression checking that it contains no non-Fortran functions, and that it only contains the given basic symbols and subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+</dl>
+<dl class="docutils" id="index-18">
+<dt><span class="spadfun">retract</span>: <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; % if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">retract(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and transforms it into a FortranExpression checking that it contains no non-Fortran functions, and that it only contains the given basic symbols and subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+</dl>
+<dl class="docutils" id="index-19">
+<dt><span class="spadfun">retract</span>: <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a> -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">retract(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and transforms it into a FortranExpression checking that it is one of the given basic symbols or subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract-if-can"><em>retractIfCan</em></a>: % -&gt; Union(<a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, failed)</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract-if-can"><em>retractIfCan</em></a>: % -&gt; Union(R, failed)</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> R</dd>
+</dl>
+<span class="target" id="l-fortran-expression-retract-if-can"></span><dl class="docutils" id="index-20">
+<dt><span class="spadfun">retractIfCan</span>: <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> <a class="reference internal" href="Float.html#l-float"><em>Float</em></a> -&gt; Union(%, failed) if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Float.html#l-float"><em>Float</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">retractIfCan(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and tries to transform it into a FortranExpression checking that it contains no non-Fortran functions, and that it only contains the given basic symbols and subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+</dl>
+<dl class="docutils" id="index-21">
+<dt><span class="spadfun">retractIfCan</span>: <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; Union(%, failed) if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">retractIfCan(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and tries to transform it into a FortranExpression checking that it contains no non-Fortran functions, and that it only contains the given basic symbols and subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+</dl>
+<dl class="docutils" id="index-22">
+<dt><span class="spadfun">retractIfCan</span>: <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> R -&gt; Union(%, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">retractIfCan(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and tries to transform it into a FortranExpression checking that it contains no non-Fortran functions, and that it only contains the given basic symbols and subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+</dl>
+<dl class="docutils" id="index-23">
+<dt><span class="spadfun">retractIfCan</span>: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Float.html#l-float"><em>Float</em></a> -&gt; Union(%, failed) if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Float.html#l-float"><em>Float</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">retractIfCan(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and tries to transform it into a FortranExpression checking that it contains no non-Fortran functions, and that it only contains the given basic symbols and subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+</dl>
+<dl class="docutils" id="index-24">
+<dt><span class="spadfun">retractIfCan</span>: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; Union(%, failed) if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">retractIfCan(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and tries to transform it into a FortranExpression checking that it contains no non-Fortran functions, and that it only contains the given basic symbols and subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+</dl>
+<dl class="docutils" id="index-25">
+<dt><span class="spadfun">retractIfCan</span>: <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Float.html#l-float"><em>Float</em></a> -&gt; Union(%, failed) if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Float.html#l-float"><em>Float</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">retractIfCan(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and tries to transform it into a FortranExpression checking that it contains no non-Fortran functions, and that it only contains the given basic symbols and subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+</dl>
+<dl class="docutils" id="index-26">
+<dt><span class="spadfun">retractIfCan</span>: <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; Union(%, failed) if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">retractIfCan(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and tries to transform it into a FortranExpression checking that it contains no non-Fortran functions, and that it only contains the given basic symbols and subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+</dl>
+<dl class="docutils" id="index-27">
+<dt><span class="spadfun">retractIfCan</span>: <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a> -&gt; Union(%, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">retractIfCan(e)</span></tt> takes <tt class="docutils literal"><span class="pre">e</span></tt> and tries to transform it into a FortranExpression checking that it is one of the given basic symbols or subscripted symbols which correspond to scalar and array parameters respectively.</dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-sample"><em>sample</em></a>: %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+</dl>
+<span class="target" id="l-fortran-expression-sin"></span><dl class="docutils" id="index-28">
+<dt><span class="spadfun">sin</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">sin(x)</span></tt> represents the Fortran intrinsic function SIN</dd>
+</dl>
+<span class="target" id="l-fortran-expression-sinh"></span><dl class="docutils" id="index-29">
+<dt><span class="spadfun">sinh</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">sinh(x)</span></tt> represents the Fortran intrinsic function SINH</dd>
+<dt><a class="reference internal" href="Comparable.html#l-comparable-smaller"><em>smaller?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dd>
+</dl>
+<span class="target" id="l-fortran-expression-sqrt"></span><dl class="docutils" id="index-30">
+<dt><span class="spadfun">sqrt</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">sqrt(x)</span></tt> represents the Fortran intrinsic function SQRT</dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-subst"><em>subst</em></a>: (%, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-subst"><em>subst</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-subst"><em>subst</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid-subtract-if-can"><em>subtractIfCan</em></a>: (%, %) -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a></dd>
+</dl>
+<span class="target" id="l-fortran-expression-tan"></span><dl class="docutils" id="index-31">
+<dt><span class="spadfun">tan</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">tan(x)</span></tt> represents the Fortran intrinsic function TAN</dd>
+</dl>
+<span class="target" id="l-fortran-expression-tanh"></span><dl class="docutils" id="index-32">
+<dt><span class="spadfun">tanh</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">tanh(x)</span></tt> represents the Fortran intrinsic function TANH</dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-tower"><em>tower</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+<dt><a class="reference internal" href="ExpressionSpace.html#l-expression-space-tower"><em>tower</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dt>
+<dd>from <a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></dd>
+</dl>
+<span class="target" id="l-fortran-expression-use-nag-functions"></span><dl class="docutils" id="index-33">
+<dt><span class="spadfun">useNagFunctions</span>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">useNagFunctions()</span></tt> indicates whether NAG functions are being used for mathematical and machine constants.</dd>
+</dl>
+<dl class="docutils" id="index-34">
+<dt><span class="spadfun">useNagFunctions</span>: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">useNagFunctions(v)</span></tt> sets the flag which controls whether NAG functions are being used for mathematical and machine constants. The previous value is returned.</dd>
+</dl>
+<span class="target" id="l-fortran-expression-variables"></span><dl class="docutils" id="index-35">
+<dt><span class="spadfun">variables</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">variables(e)</span></tt> return a list of all the variables in <tt class="docutils literal"><span class="pre">e</span></tt>.</dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-zero"><em>zero?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+</dl>
+<p><a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></p>
+<p><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></p>
+<p><a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></p>
+<p><a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> R</p>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="BiModule.html#l-bi-module"><em>BiModule</em></a>(R, R)</p>
+<p><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></p>
+<p><a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> %</p>
+<p><a class="reference internal" href="ExpressionSpace.html#l-expression-space"><em>ExpressionSpace</em></a></p>
+<p><a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(%, %)</p>
+<p><a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(<a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, %)</p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> %</p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> R</p>
+<p><a class="reference internal" href="Module.html#l-module"><em>Module</em></a> R</p>
+<p><a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></p>
+<p><a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></p>
+<p><a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</p>
+<p><a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> R</p>
+<p><a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> R</p>
+<p><a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></p>
+<p><a class="reference internal" href="Rng.html#l-rng"><em>Rng</em></a></p>
+<p><a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></p>
+<p><a class="reference internal" href="SemiRing.html#l-semi-ring"><em>SemiRing</em></a></p>
+<p><a class="reference internal" href="SemiRng.html#l-semi-rng"><em>SemiRng</em></a></p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+<p><a class="reference internal" href="unitsKnown.html#l-units-known"><em>unitsKnown</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="FortranCode.html"
+                        title="previous chapter">FortranCode</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="FortranFormat.html"
+                        title="next chapter">FortranFormat</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/FortranExpression.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="FortranFormat.html" title="FortranFormat"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="FortranCode.html" title="FortranCode"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

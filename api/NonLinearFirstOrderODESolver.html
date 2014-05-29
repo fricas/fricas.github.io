@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>NonLinearFirstOrderODESolver(R, F) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="NonLinearSolvePackage R" href="NonLinearSolvePackage.html" />
+    <link rel="prev" title="NoneFunctions1 S" href="NoneFunctions1.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="NonLinearSolvePackage.html" title="NonLinearSolvePackage R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="NoneFunctions1.html" title="NoneFunctions1 S"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="nonlinearfirstorderodesolver-r-f">
+<span id="l-non-linear-first-order-o-d-e-solver"></span><span id="index-0"></span><h1>NonLinearFirstOrderODESolver(R, F)<a class="headerlink" href="#nonlinearfirstorderodesolver-r-f" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//nlode.spad#L1">nlode.spad line 1</a></p>
+<ul class="simple">
+<li>R: Join(<a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a>, <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><em>EuclideanDomain</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a>)</li>
+<li>F: Join(<a class="reference internal" href="AlgebraicallyClosedFunctionSpace.html#l-algebraically-closed-function-space"><em>AlgebraicallyClosedFunctionSpace</em></a> R, <a class="reference internal" href="TranscendentalFunctionCategory.html#l-transcendental-function-category"><em>TranscendentalFunctionCategory</em></a>, <a class="reference internal" href="PrimitiveFunctionCategory.html#l-primitive-function-category"><em>PrimitiveFunctionCategory</em></a>)</li>
+</ul>
+<p>NonLinearFirstOrderODESolver provides a function for finding closed form first integrals of nonlinear ordinary differential equations of order 1.</p>
+<span class="target" id="l-non-linear-first-order-o-d-e-solver-solve"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">solve</span>: (F, F, <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Union(F, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">solve(M(x,</span> <span class="pre">y),</span> <span class="pre">N(x,</span> <span class="pre">y),</span> <span class="pre">y,</span> <span class="pre">x)</span></tt> returns <tt class="docutils literal"><span class="pre">F(x,</span> <span class="pre">y)</span></tt> such that <tt class="docutils literal"><span class="pre">F(x,</span> <span class="pre">y)</span> <span class="pre">=</span> <span class="pre">c</span></tt> for a constant <tt class="docutils literal"><span class="pre">c</span></tt> is a first integral of the equation <tt class="docutils literal"><span class="pre">M(x,</span> <span class="pre">y)</span> <span class="pre">dx</span> <span class="pre">+</span> <span class="pre">N(x,</span> <span class="pre">y)</span> <span class="pre">dy</span> <span class="pre">=</span> <span class="pre">0</span></tt>, or &#8220;failed&#8221; if no first-integral can be found.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="NoneFunctions1.html"
+                        title="previous chapter">NoneFunctions1 S</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="NonLinearSolvePackage.html"
+                        title="next chapter">NonLinearSolvePackage R</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/NonLinearFirstOrderODESolver.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="NonLinearSolvePackage.html" title="NonLinearSolvePackage R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="NoneFunctions1.html" title="NoneFunctions1 S"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

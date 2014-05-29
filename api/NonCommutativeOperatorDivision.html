@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>NonCommutativeOperatorDivision(P, F) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="NoneFunctions1 S" href="NoneFunctions1.html" />
+    <link rel="prev" title="NGroebnerPackage(Dom, Expon, VarSet, Dpol)" href="NGroebnerPackage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="NoneFunctions1.html" title="NoneFunctions1 S"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="NGroebnerPackage.html" title="NGroebnerPackage(Dom, Expon, VarSet, Dpol)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="noncommutativeoperatordivision-p-f">
+<span id="l-non-commutative-operator-division"></span><span id="index-0"></span><h1>NonCommutativeOperatorDivision(P, F)<a class="headerlink" href="#noncommutativeoperatordivision-p-f" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//lodop.spad#L86">lodop.spad line 86</a></p>
+<ul class="simple">
+<li>P: <a class="reference internal" href="MonogenicLinearOperator.html#l-monogenic-linear-operator"><em>MonogenicLinearOperator</em></a> F</li>
+<li>F: <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></li>
+</ul>
+<p>This package provides a division and related operations for <a class="reference internal" href="MonogenicLinearOperator.html#l-monogenic-linear-operator"><em>MonogenicLinearOperator</em></a><tt class="docutils literal"><span class="pre">s</span></tt> over a <a class="reference internal" href="Field.html#l-field"><em>Field</em></a>. Since the multiplication is in general non-commutative, these operations all have left- and right-hand versions. This package provides the operations based on left-division.</p>
+<span class="target" id="l-non-commutative-operator-division-left-divide"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">leftDivide</span>: (P, P) -&gt; Record(quotient: P, remainder: P)</dt>
+<dd><tt class="docutils literal"><span class="pre">leftDivide(a,</span> <span class="pre">b)</span></tt> returns the pair <tt class="docutils literal"><span class="pre">[q,</span> <span class="pre">r]</span></tt> such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b*q</span> <span class="pre">+</span> <span class="pre">r</span></tt> and the degree of <tt class="docutils literal"><span class="pre">r</span></tt> is less than the degree of <tt class="docutils literal"><span class="pre">b</span></tt>. This process is called <tt class="docutils literal"><span class="pre">left</span> <span class="pre">division\</span> <span class="pre">``''</span></tt>.</dd>
+</dl>
+<span class="target" id="l-non-commutative-operator-division-left-exact-quotient"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">leftExactQuotient</span>: (P, P) -&gt; Union(P, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">leftExactQuotient(a,</span> <span class="pre">b)</span></tt> computes the value <tt class="docutils literal"><span class="pre">q</span></tt>, if it exists, such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b*q</span></tt>.</dd>
+</dl>
+<span class="target" id="l-non-commutative-operator-division-left-gcd"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">leftGcd</span>: (P, P) -&gt; P</dt>
+<dd><tt class="docutils literal"><span class="pre">leftGcd(a,</span> <span class="pre">b)</span></tt> computes the value <tt class="docutils literal"><span class="pre">g</span></tt> of highest degree such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">aa*g</span></tt> <tt class="docutils literal"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">bb*g</span></tt> for some values <tt class="docutils literal"><span class="pre">aa</span></tt> and <tt class="docutils literal"><span class="pre">bb</span></tt>. The value <tt class="docutils literal"><span class="pre">g</span></tt> is computed using left-division.</dd>
+</dl>
+<span class="target" id="l-non-commutative-operator-division-left-lcm"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">leftLcm</span>: (P, P) -&gt; P</dt>
+<dd><tt class="docutils literal"><span class="pre">leftLcm(a,</span> <span class="pre">b)</span></tt> computes the value <tt class="docutils literal"><span class="pre">m</span></tt> of lowest degree such that <tt class="docutils literal"><span class="pre">m</span> <span class="pre">=</span> <span class="pre">a*aa</span> <span class="pre">=</span> <span class="pre">b*bb</span></tt> for some values <tt class="docutils literal"><span class="pre">aa</span></tt> and <tt class="docutils literal"><span class="pre">bb</span></tt>. The value <tt class="docutils literal"><span class="pre">m</span></tt> is computed using left-division.</dd>
+</dl>
+<span class="target" id="l-non-commutative-operator-division-left-quotient"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">leftQuotient</span>: (P, P) -&gt; P</dt>
+<dd><tt class="docutils literal"><span class="pre">leftQuotient(a,</span> <span class="pre">b)</span></tt> computes the pair <tt class="docutils literal"><span class="pre">[q,</span> <span class="pre">r]</span></tt> such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b*q</span> <span class="pre">+</span> <span class="pre">r</span></tt> and the degree of <tt class="docutils literal"><span class="pre">r</span></tt> is less than the degree of <tt class="docutils literal"><span class="pre">b</span></tt>. The value <tt class="docutils literal"><span class="pre">q</span></tt> is returned.</dd>
+</dl>
+<span class="target" id="l-non-commutative-operator-division-left-remainder"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">leftRemainder</span>: (P, P) -&gt; P</dt>
+<dd><tt class="docutils literal"><span class="pre">leftRemainder(a,</span> <span class="pre">b)</span></tt> computes the pair <tt class="docutils literal"><span class="pre">[q,</span> <span class="pre">r]</span></tt> such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b*q</span> <span class="pre">+</span> <span class="pre">r</span></tt> and the degree of <tt class="docutils literal"><span class="pre">r</span></tt> is less than the degree of <tt class="docutils literal"><span class="pre">b</span></tt>. The value <tt class="docutils literal"><span class="pre">r</span></tt> is returned.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="NGroebnerPackage.html"
+                        title="previous chapter">NGroebnerPackage(Dom, Expon, VarSet, Dpol)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="NoneFunctions1.html"
+                        title="next chapter">NoneFunctions1 S</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/NonCommutativeOperatorDivision.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="NoneFunctions1.html" title="NoneFunctions1 S"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="NGroebnerPackage.html" title="NGroebnerPackage(Dom, Expon, VarSet, Dpol)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

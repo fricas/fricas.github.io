@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MPolyCatRationalFunctionFactorizer(E, OV, R, PRF) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="MRationalFactorize(E, OV, R, P)" href="MRationalFactorize.html" />
+    <link rel="prev" title="MPolyCatPolyFactorizer(E, OV, R, PPR)" href="MPolyCatPolyFactorizer.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="MRationalFactorize.html" title="MRationalFactorize(E, OV, R, P)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="MPolyCatPolyFactorizer.html" title="MPolyCatPolyFactorizer(E, OV, R, PPR)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="mpolycatrationalfunctionfactorizer-e-ov-r-prf">
+<span id="l-m-poly-cat-rational-function-factorizer"></span><span id="index-0"></span><h1>MPolyCatRationalFunctionFactorizer(E, OV, R, PRF)<a class="headerlink" href="#mpolycatrationalfunctionfactorizer-e-ov-r-prf" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//allfact.spad#L52">allfact.spad line 52</a></p>
+<ul>
+<li><p class="first">E: <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a></p>
+</li>
+<li><p class="first">OV: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> with</p>
+<blockquote>
+<div><p><span class="spadfun">convert</span>: % -&gt; <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></p>
+</div></blockquote>
+</li>
+<li><p class="first">R: <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></p>
+</li>
+<li><p class="first">PRF: <a class="reference internal" href="PolynomialCategory.html#l-polynomial-category"><em>PolynomialCategory</em></a>(<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, E, OV)</p>
+</li>
+</ul>
+<p>This package exports a factor operation for multivariate polynomials with coefficients which are rational functions over some ring <tt class="docutils literal"><span class="pre">R</span></tt> over which we can factor. It is used internally by packages such as primary decomposition which need to work with polynomials with rational function coefficients, i.e. themselves fractions of polynomials.</p>
+<span class="target" id="l-m-poly-cat-rational-function-factorizer-factor"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">factor</span>: PRF -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> PRF</dt>
+<dd><tt class="docutils literal"><span class="pre">factor(prf)</span></tt> factors a polynomial with rational function coefficients.</dd>
+</dl>
+<span class="target" id="l-m-poly-cat-rational-function-factorizer-pushdown"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">pushdown</span>: (PRF, OV) -&gt; PRF</dt>
+<dd><tt class="docutils literal"><span class="pre">pushdown(prf,</span> <span class="pre">var)</span></tt> pushes all top level occurences of the variable var into the coefficient domain for the polynomial <tt class="docutils literal"><span class="pre">prf</span></tt>.</dd>
+</dl>
+<span class="target" id="l-m-poly-cat-rational-function-factorizer-pushdterm"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">pushdterm</span>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> PRF, OV) -&gt; PRF</dt>
+<dd><tt class="docutils literal"><span class="pre">pushdterm(monom,</span> <span class="pre">var)</span></tt> pushes all top level occurences of the variable var into the coefficient domain for the monomial <tt class="docutils literal"><span class="pre">monom</span></tt>.</dd>
+</dl>
+<span class="target" id="l-m-poly-cat-rational-function-factorizer-pushucoef"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">pushucoef</span>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, OV) -&gt; PRF</dt>
+<dd><tt class="docutils literal"><span class="pre">pushucoef(upoly,</span> <span class="pre">var)</span></tt> converts the anonymous univariate polynomial <tt class="docutils literal"><span class="pre">upoly</span></tt> to a polynomial in var over rational functions.</dd>
+</dl>
+<span class="target" id="l-m-poly-cat-rational-function-factorizer-pushuconst"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">pushuconst</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, OV) -&gt; PRF</dt>
+<dd><tt class="docutils literal"><span class="pre">pushuconst(r,</span> <span class="pre">var)</span></tt> takes a rational function and raises all occurances of the variable var to the polynomial level.</dd>
+</dl>
+<span class="target" id="l-m-poly-cat-rational-function-factorizer-pushup"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">pushup</span>: (PRF, OV) -&gt; PRF</dt>
+<dd><tt class="docutils literal"><span class="pre">pushup(prf,</span> <span class="pre">var)</span></tt> raises all occurences of the variable var in the coefficients of the polynomial <tt class="docutils literal"><span class="pre">prf</span></tt> back to the polynomial level.</dd>
+</dl>
+<span class="target" id="l-m-poly-cat-rational-function-factorizer-totalfract"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">totalfract</span>: PRF -&gt; Record(sup: <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, inf: <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R)</dt>
+<dd><tt class="docutils literal"><span class="pre">totalfract(prf)</span></tt> takes a polynomial whose coefficients are themselves fractions of polynomials and returns a record containing the numerator and denominator resulting from putting <tt class="docutils literal"><span class="pre">prf</span></tt> over a common denominator.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="MPolyCatPolyFactorizer.html"
+                        title="previous chapter">MPolyCatPolyFactorizer(E, OV, R, PPR)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="MRationalFactorize.html"
+                        title="next chapter">MRationalFactorize(E, OV, R, P)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/MPolyCatRationalFunctionFactorizer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="MRationalFactorize.html" title="MRationalFactorize(E, OV, R, P)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="MPolyCatPolyFactorizer.html" title="MPolyCatPolyFactorizer(E, OV, R, PPR)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

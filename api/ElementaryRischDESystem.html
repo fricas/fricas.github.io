@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ElementaryRischDESystem(R, F) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="ElementaryRischDEX R" href="ElementaryRischDEX.html" />
+    <link rel="prev" title="ElementaryRischDE(R, F)" href="ElementaryRischDE.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ElementaryRischDEX.html" title="ElementaryRischDEX R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ElementaryRischDE.html" title="ElementaryRischDE(R, F)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="elementaryrischdesystem-r-f">
+<span id="l-elementary-risch-d-e-system"></span><span id="index-0"></span><h1>ElementaryRischDESystem(R, F)<a class="headerlink" href="#elementaryrischdesystem-r-f" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//rdesys.spad#L219">rdesys.spad line 219</a></p>
+<ul class="simple">
+<li>R: Join(<a class="reference internal" href="GcdDomain.html#l-gcd-domain"><em>GcdDomain</em></a>, <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a>, <a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</li>
+<li>F: Join(<a class="reference internal" href="TranscendentalFunctionCategory.html#l-transcendental-function-category"><em>TranscendentalFunctionCategory</em></a>, <a class="reference internal" href="AlgebraicallyClosedField.html#l-algebraically-closed-field"><em>AlgebraicallyClosedField</em></a>, <a class="reference internal" href="FunctionSpace.html#l-function-space"><em>FunctionSpace</em></a> R)</li>
+</ul>
+<p>Risch differential equation, elementary case. Author: Manuel Bronstein Date Created: 12 August 1992 Date Last Updated: 17 August 1992 Keywords: elementary, function, integration.</p>
+<span class="target" id="l-elementary-risch-d-e-system-risch-d-esys"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">rischDEsys</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, F, F, F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, (F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> F) -&gt; Union(Record(mainpart: F, limitedlogs: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(coeff: F, logand: F)), failed), (F, F) -&gt; Union(Record(ratpart: F, coeff: F), failed)) -&gt; Union(<a class="reference internal" href="List.html#l-list"><em>List</em></a> F, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">rischDEsys(n,</span> <span class="pre">f,</span> <span class="pre">g_1,</span> <span class="pre">g_2,</span> <span class="pre">x,</span> <span class="pre">lim,</span> <span class="pre">ext)</span></tt> returns <tt class="docutils literal"><span class="pre">y_1.y_2</span></tt> such that <tt class="docutils literal"><span class="pre">(dy1/dx,</span> <span class="pre">dy2/dx)</span> <span class="pre">+</span> <span class="pre">((0,</span> <span class="pre">-</span> <span class="pre">n</span> <span class="pre">df/dx),</span> <span class="pre">(n</span> <span class="pre">df/dx,</span> <span class="pre">0))</span> <span class="pre">(y1,</span> <span class="pre">y2)</span> <span class="pre">=</span> <span class="pre">(g1,</span> <span class="pre">g2)</span></tt> if <tt class="docutils literal"><span class="pre">y_1,y_2</span></tt> exist, &#8220;failed&#8221; otherwise. <tt class="docutils literal"><span class="pre">lim</span></tt> is a limited integration function, ext is an extended integration function.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ElementaryRischDE.html"
+                        title="previous chapter">ElementaryRischDE(R, F)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ElementaryRischDEX.html"
+                        title="next chapter">ElementaryRischDEX R</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/ElementaryRischDESystem.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ElementaryRischDEX.html" title="ElementaryRischDEX R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ElementaryRischDE.html" title="ElementaryRischDE(R, F)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TranscendentalHermiteIntegration(F, UP) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="TranscendentalIntegration(F, UP)" href="TranscendentalIntegration.html" />
+    <link rel="prev" title="TopLevelThreeSpace" href="TopLevelThreeSpace.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="TranscendentalIntegration.html" title="TranscendentalIntegration(F, UP)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="TopLevelThreeSpace.html" title="TopLevelThreeSpace"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="transcendentalhermiteintegration-f-up">
+<span id="l-transcendental-hermite-integration"></span><span id="index-0"></span><h1>TranscendentalHermiteIntegration(F, UP)<a class="headerlink" href="#transcendentalhermiteintegration-f-up" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//intrf.spad#L230">intrf.spad line 230</a></p>
+<ul class="simple">
+<li>F: <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></li>
+<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> F</li>
+</ul>
+<p>Hermite integration, transcendental case.</p>
+<span class="target" id="l-transcendental-hermite-integration-hermite-integrate"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">HermiteIntegrate</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP) -&gt; Record(answer: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, logpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, specpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, polypart: UP)</dt>
+<dd><tt class="docutils literal"><span class="pre">HermiteIntegrate(f,</span> <span class="pre">D)</span></tt> returns <tt class="docutils literal"><span class="pre">[g,</span> <span class="pre">h,</span> <span class="pre">s,</span> <span class="pre">p]</span></tt> such that <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">Dg</span> <span class="pre">+</span> <span class="pre">h</span> <span class="pre">+</span> <span class="pre">s</span> <span class="pre">+</span> <span class="pre">p</span></tt>, <tt class="docutils literal"><span class="pre">h</span></tt> has a squarefree denominator normal <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. <tt class="docutils literal"><span class="pre">D</span></tt>, and all the squarefree factors of the denominator of <tt class="docutils literal"><span class="pre">s</span></tt> are special <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. <tt class="docutils literal"><span class="pre">D</span></tt>. Furthermore, <tt class="docutils literal"><span class="pre">h</span></tt> and <tt class="docutils literal"><span class="pre">s</span></tt> have no polynomial parts. <tt class="docutils literal"><span class="pre">D</span></tt> is the derivation to use on <em class="xref std std-ref">UP</em>.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">HermiteIntegrate</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP, UP) -&gt; Record(answer: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, logpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, specpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, polypart: UP)</dt>
+<dd><tt class="docutils literal"><span class="pre">HermiteIntegrate(f,</span> <span class="pre">D,</span> <span class="pre">d0)</span></tt> returns <tt class="docutils literal"><span class="pre">[g,</span> <span class="pre">h,</span> <span class="pre">s,</span> <span class="pre">p]</span></tt> such that <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">Dg</span> <span class="pre">+</span> <span class="pre">g*d0</span> <span class="pre">+</span> <span class="pre">h</span> <span class="pre">+</span> <span class="pre">s</span> <span class="pre">+</span> <span class="pre">p</span></tt>, <tt class="docutils literal"><span class="pre">h</span></tt> has a squarefree denominator normal <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. <tt class="docutils literal"><span class="pre">D</span></tt>, and all the squarefree factors of the denominator of <tt class="docutils literal"><span class="pre">s</span></tt> are special <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. <tt class="docutils literal"><span class="pre">D</span></tt>. Furthermore, <tt class="docutils literal"><span class="pre">h</span></tt> and <tt class="docutils literal"><span class="pre">s</span></tt> have no polynomial parts. <tt class="docutils literal"><span class="pre">D</span></tt> is the derivation to use on <em class="xref std std-ref">UP</em>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="TopLevelThreeSpace.html"
+                        title="previous chapter">TopLevelThreeSpace</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="TranscendentalIntegration.html"
+                        title="next chapter">TranscendentalIntegration(F, UP)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/TranscendentalHermiteIntegration.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="TranscendentalIntegration.html" title="TranscendentalIntegration(F, UP)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="TopLevelThreeSpace.html" title="TopLevelThreeSpace"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

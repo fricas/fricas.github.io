@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PatternMatchResult(R, S) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="PendantTree S" href="PendantTree.html" />
+    <link rel="prev" title="PatternMatchListResult(R, S, L)" href="PatternMatchListResult.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="PendantTree.html" title="PendantTree S"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PatternMatchListResult.html" title="PatternMatchListResult(R, S, L)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="patternmatchresult-r-s">
+<span id="l-pattern-match-result"></span><span id="index-0"></span><h1>PatternMatchResult(R, S)<a class="headerlink" href="#patternmatchresult-r-s" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//patmatch1.spad#L1">patmatch1.spad line 1</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></li>
+<li>S: <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></li>
+</ul>
+<p>A PatternMatchResult is an object internally returned by the pattern matcher; It is either a failed match, or a list of matches of the form (var, expr) meaning that the variable var matches the expression expr.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+</dl>
+<span class="target" id="l-pattern-match-result-add-match"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">addMatch</span>: (<a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R, S, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">addMatch(var,</span> <span class="pre">expr,</span> <span class="pre">r)</span></tt> adds the match (<tt class="docutils literal"><span class="pre">var</span></tt>, <tt class="docutils literal"><span class="pre">expr</span></tt>) in <tt class="docutils literal"><span class="pre">r</span></tt>, provided that <tt class="docutils literal"><span class="pre">expr</span></tt> satisfies the predicates attached to <tt class="docutils literal"><span class="pre">var</span></tt>, and that <tt class="docutils literal"><span class="pre">var</span></tt> is not matched to another expression already.</dd>
+</dl>
+<span class="target" id="l-pattern-match-result-add-match-restricted"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">addMatchRestricted</span>: (<a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R, S, %, S) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">addMatchRestricted(var,</span> <span class="pre">expr,</span> <span class="pre">r,</span> <span class="pre">val)</span></tt> adds the match (<tt class="docutils literal"><span class="pre">var</span></tt>, <tt class="docutils literal"><span class="pre">expr</span></tt>) in <tt class="docutils literal"><span class="pre">r</span></tt>, provided that <tt class="docutils literal"><span class="pre">expr</span></tt> satisfies the predicates attached to <tt class="docutils literal"><span class="pre">var</span></tt>, that <tt class="docutils literal"><span class="pre">var</span></tt> is not matched to another expression already, and that either <tt class="docutils literal"><span class="pre">var</span></tt> is an optional pattern variable or that <tt class="docutils literal"><span class="pre">expr</span></tt> is not equal to val (usually an identity).</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+</dl>
+<span class="target" id="l-pattern-match-result-construct"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">construct</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(key: <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, entry: S) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">construct([v1,</span> <span class="pre">e1],</span> <span class="pre">...,</span> <span class="pre">[vn,</span> <span class="pre">en])</span></tt> returns the match result containing the matches (<tt class="docutils literal"><span class="pre">v1</span></tt>, <tt class="docutils literal"><span class="pre">e1</span></tt>), ..., (<tt class="docutils literal"><span class="pre">vn</span></tt>, en).</dd>
+</dl>
+<span class="target" id="l-pattern-match-result-destruct"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">destruct</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(key: <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, entry: S)</dt>
+<dd><tt class="docutils literal"><span class="pre">destruct(r)</span></tt> returns the list of matches (var, expr) in <tt class="docutils literal"><span class="pre">r</span></tt>. Error: if <tt class="docutils literal"><span class="pre">r</span></tt> is a failed match.</dd>
+</dl>
+<span class="target" id="l-pattern-match-result-failed"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">failed</span>: () -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">failed()</span></tt> returns a failed match.</dd>
+</dl>
+<span class="target" id="id1"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">failed?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">failed?(r)</span></tt> tests if <tt class="docutils literal"><span class="pre">r</span></tt> is a failed match.</dd>
+</dl>
+<span class="target" id="l-pattern-match-result-get-match"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">getMatch</span>: (<a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R, %) -&gt; Union(S, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">getMatch(var,</span> <span class="pre">r)</span></tt> returns the expression that <tt class="docutils literal"><span class="pre">var</span></tt> matches in the result <tt class="docutils literal"><span class="pre">r</span></tt>, and &#8220;failed&#8221; if <tt class="docutils literal"><span class="pre">var</span></tt> is not matched in <tt class="docutils literal"><span class="pre">r</span></tt>.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-pattern-match-result-insert-match"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">insertMatch</span>: (<a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R, S, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">insertMatch(var,</span> <span class="pre">expr,</span> <span class="pre">r)</span></tt> adds the match (<tt class="docutils literal"><span class="pre">var</span></tt>, <tt class="docutils literal"><span class="pre">expr</span></tt>) in <tt class="docutils literal"><span class="pre">r</span></tt>, without checking predicates or previous matches for <tt class="docutils literal"><span class="pre">var</span></tt>.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-pattern-match-result-new"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">new</span>: () -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">new()</span></tt> returns a new empty match result.</dd>
+</dl>
+<span class="target" id="l-pattern-match-result-satisfy"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">satisfy?</span>: (%, <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> R) -&gt; Union(<a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">satisfy?(r,</span> <span class="pre">p)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if the matches satisfy the top-level predicate of <tt class="docutils literal"><span class="pre">p</span></tt>, <tt class="docutils literal"><span class="pre">false</span></tt> if they don<tt class="docutils literal"><span class="pre">'t</span></tt>, and &#8220;failed&#8221; if not enough variables of <tt class="docutils literal"><span class="pre">p</span></tt> are matched in <tt class="docutils literal"><span class="pre">r</span></tt> to decide.</dd>
+</dl>
+<span class="target" id="l-pattern-match-result-union"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">union</span>: (%, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">union(a,</span> <span class="pre">b)</span></tt> makes the set-union of two match results.</dd>
+</dl>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="PatternMatchListResult.html"
+                        title="previous chapter">PatternMatchListResult(R, S, L)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PendantTree.html"
+                        title="next chapter">PendantTree S</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/PatternMatchResult.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="PendantTree.html" title="PendantTree S"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="PatternMatchListResult.html" title="PatternMatchListResult(R, S, L)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

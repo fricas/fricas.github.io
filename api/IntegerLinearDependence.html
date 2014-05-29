@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>IntegerLinearDependence R &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="IntegerNumberTheoryFunctions" href="IntegerNumberTheoryFunctions.html" />
+    <link rel="prev" title="IntegerFactorizationPackage I" href="IntegerFactorizationPackage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="IntegerNumberTheoryFunctions.html" title="IntegerNumberTheoryFunctions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="IntegerFactorizationPackage.html" title="IntegerFactorizationPackage I"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="integerlineardependence-r">
+<span id="l-integer-linear-dependence"></span><span id="index-0"></span><h1>IntegerLinearDependence R<a class="headerlink" href="#integerlineardependence-r" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//lindep.spad#L137">lindep.spad line 137</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></li>
+</ul>
+<p>Test for linear dependence over the integers.</p>
+<span class="target" id="l-integer-linear-dependence-linear-dependence-over-z"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">linearDependenceOverZ</span>: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R -&gt; Union(<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">linearlyDependenceOverZ([v1,</span> <span class="pre">...,</span> <span class="pre">vn])</span></tt> returns <tt class="docutils literal"><span class="pre">[c1,</span> <span class="pre">...,</span> <span class="pre">cn]</span></tt> if <tt class="docutils literal"><span class="pre">c1*v1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">cn*vn</span> <span class="pre">=</span> <span class="pre">0</span></tt> and not all the <tt class="docutils literal"><span class="pre">ci</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> are 0, &#8220;failed&#8221; if the <tt class="docutils literal"><span class="pre">vi</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> are linearly independent over the integers.</dd>
+</dl>
+<span class="target" id="l-integer-linear-dependence-linearly-dependent-over-z"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">linearlyDependentOverZ?</span>: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">linearlyDependentOverZ?([v1,</span> <span class="pre">...,</span> <span class="pre">vn])</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if the <tt class="docutils literal"><span class="pre">vi</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> are linearly dependent over the integers, <tt class="docutils literal"><span class="pre">false</span></tt> otherwise.</dd>
+</dl>
+<span class="target" id="l-integer-linear-dependence-particular-solution-over-q"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">particularSolutionOverQ</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R) -&gt; Union(<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">solveLinearlyOverQ([v1,</span> <span class="pre">...,</span> <span class="pre">vn],</span> <span class="pre">u)</span></tt> returns <tt class="docutils literal"><span class="pre">[c1,</span> <span class="pre">...,</span> <span class="pre">cn]</span></tt> such that <tt class="docutils literal"><span class="pre">c1*v1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">cn*vn</span> <span class="pre">=</span> <span class="pre">u</span></tt>, &#8220;failed&#8221; if no such rational numbers <tt class="docutils literal"><span class="pre">ci</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> exist.</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">particularSolutionOverQ</span>: (<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R, R) -&gt; Union(<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">particularSolutionOverQ([v1,</span> <span class="pre">...,</span> <span class="pre">vn],</span> <span class="pre">u)</span></tt> returns <tt class="docutils literal"><span class="pre">[c1,</span> <span class="pre">...,</span> <span class="pre">cn]</span></tt> such that <tt class="docutils literal"><span class="pre">c1*v1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">cn*vn</span> <span class="pre">=</span> <span class="pre">u</span></tt>, &#8220;failed&#8221; if no such rational numbers <tt class="docutils literal"><span class="pre">ci</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> exist.</dd>
+</dl>
+<span class="target" id="l-integer-linear-dependence-solve-linearly-over-q"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">solveLinearlyOverQ</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R) -&gt; Record(particular: Union(<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, failed), basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">solveLinearlyOverQ([v1,</span> <span class="pre">...,</span> <span class="pre">vn],</span> <span class="pre">u)</span></tt> returns solution of the system <tt class="docutils literal"><span class="pre">c1*v1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">cn*vn</span> <span class="pre">=</span> <span class="pre">u</span></tt> and and a basis of the associated homogeneous system <tt class="docutils literal"><span class="pre">c1*v1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">cn*vn</span> <span class="pre">=</span> <span class="pre">0</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt><span class="spadfun">solveLinearlyOverQ</span>: (<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R, R) -&gt; Record(particular: Union(<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, failed), basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">solveLinearlyOverQ([v1,</span> <span class="pre">...,</span> <span class="pre">vn],</span> <span class="pre">u)</span></tt> returns solution of the system <tt class="docutils literal"><span class="pre">c1*v1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">cn*vn</span> <span class="pre">=</span> <span class="pre">u</span></tt> and and a basis of the associated homogeneous system <tt class="docutils literal"><span class="pre">c1*v1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">cn*vn</span> <span class="pre">=</span> <span class="pre">0</span></tt></dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="IntegerFactorizationPackage.html"
+                        title="previous chapter">IntegerFactorizationPackage I</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="IntegerNumberTheoryFunctions.html"
+                        title="next chapter">IntegerNumberTheoryFunctions</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/IntegerLinearDependence.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="IntegerNumberTheoryFunctions.html" title="IntegerNumberTheoryFunctions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="IntegerFactorizationPackage.html" title="IntegerFactorizationPackage I"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

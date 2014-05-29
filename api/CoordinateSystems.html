@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>CoordinateSystems R &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="CRApackage R" href="CRApackage.html" />
+    <link rel="prev" title="ConstantLODE(R, F, L)" href="ConstantLODE.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="CRApackage.html" title="CRApackage R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ConstantLODE.html" title="ConstantLODE(R, F, L)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="coordinatesystems-r">
+<span id="l-coordinate-systems"></span><span id="index-0"></span><h1>CoordinateSystems R<a class="headerlink" href="#coordinatesystems-r" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//coordsys.spad#L1">coordsys.spad line 1</a></p>
+<ul class="simple">
+<li>R: Join(<a class="reference internal" href="Field.html#l-field"><em>Field</em></a>, <a class="reference internal" href="TranscendentalFunctionCategory.html#l-transcendental-function-category"><em>TranscendentalFunctionCategory</em></a>, <a class="reference internal" href="RadicalCategory.html#l-radical-category"><em>RadicalCategory</em></a>)</li>
+</ul>
+<p>CoordinateSystems provides coordinate transformation functions for plotting. Functions in this package return conversion functions which take points expressed in other coordinate systems and return points with the corresponding Cartesian coordinates.</p>
+<span class="target" id="l-coordinate-systems-bipolar"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">bipolar</span>: R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">bipolar(a)</span></tt> transforms from bipolar coordinates to Cartesian coordinates: <tt class="docutils literal"><span class="pre">bipolar(a)</span></tt> is a function which will map the point <tt class="docutils literal"><span class="pre">(u,</span> <span class="pre">v)</span></tt> to <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">a*sinh(v)/(cosh(v)-cos(u))</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">a*sin(u)/(cosh(v)-cos(u))</span></tt>.</dd>
+</dl>
+<span class="target" id="l-coordinate-systems-bipolar-cylindrical"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">bipolarCylindrical</span>: R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">bipolarCylindrical(a)</span></tt> transforms from bipolar cylindrical coordinates to Cartesian coordinates: <tt class="docutils literal"><span class="pre">bipolarCylindrical(a)</span></tt> is a function which will map the point <tt class="docutils literal"><span class="pre">(u,</span> <span class="pre">v,</span> <span class="pre">z)</span></tt> to <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">a*sinh(v)/(cosh(v)-cos(u))</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">a*sin(u)/(cosh(v)-cos(u))</span></tt>, <tt class="docutils literal"><span class="pre">z</span></tt>.</dd>
+</dl>
+<span class="target" id="l-coordinate-systems-cartesian"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">cartesian</span>: <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">cartesian(pt)</span></tt> returns the Cartesian coordinates of point <tt class="docutils literal"><span class="pre">pt</span></tt>.</dd>
+</dl>
+<span class="target" id="l-coordinate-systems-conical"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">conical</span>: (R, R) -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">conical(a,</span> <span class="pre">b)</span></tt> transforms from conical coordinates to Cartesian coordinates: <tt class="docutils literal"><span class="pre">conical(a,</span> <span class="pre">b)</span></tt> is a function which will map the point <tt class="docutils literal"><span class="pre">(lambda,</span> <span class="pre">mu,</span> <span class="pre">nu)</span></tt> to <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">lambda*mu*nu/(a*b)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">lambda/a*sqrt((mu^2-a^2)*(nu^2-a^2)/(a^2-b^2))</span></tt>, <tt class="docutils literal"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">lambda/b*sqrt((mu^2-b^2)*(nu^2-b^2)/(b^2-a^2))</span></tt>.</dd>
+</dl>
+<span class="target" id="l-coordinate-systems-cylindrical"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">cylindrical</span>: <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">cylindrical(pt)</span></tt> transforms <tt class="docutils literal"><span class="pre">pt</span></tt> from polar coordinates to Cartesian coordinates: the function produced will map the point <tt class="docutils literal"><span class="pre">(r,</span> <span class="pre">theta,</span> <span class="pre">z)</span></tt> to <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">r</span> <span class="pre">*</span> <span class="pre">cos(theta)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">r</span> <span class="pre">*</span> <span class="pre">sin(theta)</span></tt>, <tt class="docutils literal"><span class="pre">z</span></tt>.</dd>
+</dl>
+<span class="target" id="l-coordinate-systems-elliptic"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">elliptic</span>: R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">elliptic(a)</span></tt> transforms from elliptic coordinates to Cartesian coordinates: <tt class="docutils literal"><span class="pre">elliptic(a)</span></tt> is a function which will map the point <tt class="docutils literal"><span class="pre">(u,</span> <span class="pre">v)</span></tt> to <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">a*cosh(u)*cos(v)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">a*sinh(u)*sin(v)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-coordinate-systems-elliptic-cylindrical"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">ellipticCylindrical</span>: R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">ellipticCylindrical(a)</span></tt> transforms from elliptic cylindrical coordinates to Cartesian coordinates: <tt class="docutils literal"><span class="pre">ellipticCylindrical(a)</span></tt> is a function which will map the point <tt class="docutils literal"><span class="pre">(u,</span> <span class="pre">v,</span> <span class="pre">z)</span></tt> to <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">a*cosh(u)*cos(v)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">a*sinh(u)*sin(v)</span></tt>, <tt class="docutils literal"><span class="pre">z</span></tt>.</dd>
+</dl>
+<span class="target" id="l-coordinate-systems-oblate-spheroidal"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">oblateSpheroidal</span>: R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">oblateSpheroidal(a)</span></tt> transforms from oblate spheroidal coordinates to Cartesian coordinates: <tt class="docutils literal"><span class="pre">oblateSpheroidal(a)</span></tt> is a function which will map the point <tt class="docutils literal"><span class="pre">(xi,</span> <span class="pre">eta,</span> <span class="pre">phi)</span></tt> to <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">a*sinh(xi)*sin(eta)*cos(phi)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">a*sinh(xi)*sin(eta)*sin(phi)</span></tt>, <tt class="docutils literal"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">a*cosh(xi)*cos(eta)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-coordinate-systems-parabolic"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">parabolic</span>: <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">parabolic(pt)</span></tt> transforms <tt class="docutils literal"><span class="pre">pt</span></tt> from parabolic coordinates to Cartesian coordinates: the function produced will map the point <tt class="docutils literal"><span class="pre">(u,</span> <span class="pre">v)</span></tt> to <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1/2*(u^2</span> <span class="pre">-</span> <span class="pre">v^2)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">u*v</span></tt>.</dd>
+</dl>
+<span class="target" id="l-coordinate-systems-parabolic-cylindrical"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">parabolicCylindrical</span>: <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">parabolicCylindrical(pt)</span></tt> transforms <tt class="docutils literal"><span class="pre">pt</span></tt> from parabolic cylindrical coordinates to Cartesian coordinates: the function produced will map the point <tt class="docutils literal"><span class="pre">(u,</span> <span class="pre">v,</span> <span class="pre">z)</span></tt> to <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">1/2*(u^2</span> <span class="pre">-</span> <span class="pre">v^2)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">u*v</span></tt>, <tt class="docutils literal"><span class="pre">z</span></tt>.</dd>
+</dl>
+<span class="target" id="l-coordinate-systems-paraboloidal"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">paraboloidal</span>: <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">paraboloidal(pt)</span></tt> transforms <tt class="docutils literal"><span class="pre">pt</span></tt> from paraboloidal coordinates to Cartesian coordinates: the function produced will map the point <tt class="docutils literal"><span class="pre">(u,</span> <span class="pre">v,</span> <span class="pre">phi)</span></tt> to <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">u*v*cos(phi)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">u*v*sin(phi)</span></tt>, <tt class="docutils literal"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">1/2</span> <span class="pre">*</span> <span class="pre">(u^2</span> <span class="pre">-</span> <span class="pre">v^2)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-coordinate-systems-polar"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">polar</span>: <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">polar(pt)</span></tt> transforms <tt class="docutils literal"><span class="pre">pt</span></tt> from polar coordinates to Cartesian coordinates: the function produced will map the point <tt class="docutils literal"><span class="pre">(r,</span> <span class="pre">theta)</span></tt> to <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">r</span> <span class="pre">*</span> <span class="pre">cos(theta)</span></tt> , <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">r</span> <span class="pre">*</span> <span class="pre">sin(theta)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-coordinate-systems-prolate-spheroidal"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">prolateSpheroidal</span>: R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">prolateSpheroidal(a)</span></tt> transforms from prolate spheroidal coordinates to Cartesian coordinates: <tt class="docutils literal"><span class="pre">prolateSpheroidal(a)</span></tt> is a function which will map the point <tt class="docutils literal"><span class="pre">(xi,</span> <span class="pre">eta,</span> <span class="pre">phi)</span></tt> to <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">a*sinh(xi)*sin(eta)*cos(phi)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">a*sinh(xi)*sin(eta)*sin(phi)</span></tt>, <tt class="docutils literal"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">a*cosh(xi)*cos(eta)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-coordinate-systems-spherical"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">spherical</span>: <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">spherical(pt)</span></tt> transforms <tt class="docutils literal"><span class="pre">pt</span></tt> from spherical coordinates to Cartesian coordinates: the function produced will map the point <tt class="docutils literal"><span class="pre">(r,</span> <span class="pre">theta,</span> <span class="pre">phi)</span></tt> to <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">r*sin(phi)*cos(theta)</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">r*sin(phi)*sin(theta)</span></tt>, <tt class="docutils literal"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">r*cos(phi)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-coordinate-systems-toroidal"></span><dl class="docutils" id="index-15">
+<dt><span class="spadfun">toroidal</span>: R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R -&gt; <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">toroidal(a)</span></tt> transforms from toroidal coordinates to Cartesian coordinates: <tt class="docutils literal"><span class="pre">toroidal(a)</span></tt> is a function which will map the point <tt class="docutils literal"><span class="pre">(u,</span> <span class="pre">v,</span> <span class="pre">phi)</span></tt> to <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">a*sinh(v)*cos(phi)/(cosh(v)-cos(u))</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">a*sinh(v)*sin(phi)/(cosh(v)-cos(u))</span></tt>, <tt class="docutils literal"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">a*sin(u)/(cosh(v)-cos(u))</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ConstantLODE.html"
+                        title="previous chapter">ConstantLODE(R, F, L)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="CRApackage.html"
+                        title="next chapter">CRApackage R</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/CoordinateSystems.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="CRApackage.html" title="CRApackage R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ConstantLODE.html" title="ConstantLODE(R, F, L)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

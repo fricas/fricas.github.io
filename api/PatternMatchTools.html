@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PatternMatchTools(S, R, P) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="Permanent(n, R)" href="Permanent.html" />
+    <link rel="prev" title="PatternMatchSymbol S" href="PatternMatchSymbol.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Permanent.html" title="Permanent(n, R)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PatternMatchSymbol.html" title="PatternMatchSymbol S"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="patternmatchtools-s-r-p">
+<span id="l-pattern-match-tools"></span><span id="index-0"></span><h1>PatternMatchTools(S, R, P)<a class="headerlink" href="#patternmatchtools-s-r-p" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//patmatch1.spad#L415">patmatch1.spad line 415</a></p>
+<ul class="simple">
+<li>S: <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></li>
+<li>R: Join(<a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a>, <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a>)</li>
+<li>P: Join(<a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a>, <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> S, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> R)</li>
+</ul>
+<p>This package provides tools for the pattern matcher.</p>
+<span class="target" id="l-pattern-match-tools-pattern-match"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">patternMatch</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> S, <a class="reference internal" href="List.html#l-list"><em>List</em></a> P -&gt; P, <a class="reference internal" href="PatternMatchResult.html#l-pattern-match-result"><em>PatternMatchResult</em></a>(S, P), (P, <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> S, <a class="reference internal" href="PatternMatchResult.html#l-pattern-match-result"><em>PatternMatchResult</em></a>(S, P)) -&gt; <a class="reference internal" href="PatternMatchResult.html#l-pattern-match-result"><em>PatternMatchResult</em></a>(S, P)) -&gt; <a class="reference internal" href="PatternMatchResult.html#l-pattern-match-result"><em>PatternMatchResult</em></a>(S, P)</dt>
+<dd><tt class="docutils literal"><span class="pre">patternMatch(lsubj,</span> <span class="pre">lpat,</span> <span class="pre">op,</span> <span class="pre">res,</span> <span class="pre">match)</span></tt> matches the list of patterns <tt class="docutils literal"><span class="pre">lpat</span></tt> to the list of subjects <tt class="docutils literal"><span class="pre">lsubj</span></tt>, allowing for commutativity; <tt class="docutils literal"><span class="pre">op</span></tt> is the operator such that <tt class="docutils literal"><span class="pre">op</span></tt>(<tt class="docutils literal"><span class="pre">lpat</span></tt>) should match <tt class="docutils literal"><span class="pre">op</span></tt>(<tt class="docutils literal"><span class="pre">lsubj</span></tt>) at the end, <tt class="docutils literal"><span class="pre">r</span></tt> contains the previous matches, and match is a pattern-matching function on <tt class="docutils literal"><span class="pre">P</span></tt>.</dd>
+</dl>
+<span class="target" id="l-pattern-match-tools-pattern-match-times"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">patternMatchTimes</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> S, <a class="reference internal" href="PatternMatchResult.html#l-pattern-match-result"><em>PatternMatchResult</em></a>(S, P), (P, <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> S, <a class="reference internal" href="PatternMatchResult.html#l-pattern-match-result"><em>PatternMatchResult</em></a>(S, P)) -&gt; <a class="reference internal" href="PatternMatchResult.html#l-pattern-match-result"><em>PatternMatchResult</em></a>(S, P)) -&gt; <a class="reference internal" href="PatternMatchResult.html#l-pattern-match-result"><em>PatternMatchResult</em></a>(S, P)</dt>
+<dd><tt class="docutils literal"><span class="pre">patternMatchTimes(lsubj,</span> <span class="pre">lpat,</span> <span class="pre">res,</span> <span class="pre">match)</span></tt> matches the product of patterns <tt class="docutils literal"><span class="pre">reduce(*,</span> <span class="pre">lpat)</span></tt> to the product of subjects <tt class="docutils literal"><span class="pre">reduce(*,</span> <span class="pre">lsubj)</span></tt>; <tt class="docutils literal"><span class="pre">r</span></tt> contains the previous matches and match is a pattern-matching function on <tt class="docutils literal"><span class="pre">P</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="PatternMatchSymbol.html"
+                        title="previous chapter">PatternMatchSymbol S</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Permanent.html"
+                        title="next chapter">Permanent(n, R)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/PatternMatchTools.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Permanent.html" title="Permanent(n, R)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="PatternMatchSymbol.html" title="PatternMatchSymbol S"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

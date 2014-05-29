@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>RationalUnivariateRepresentationPackage(R, ls) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="RDEaux(R, F)" href="RDEaux.html" />
+    <link rel="prev" title="RationalRicDE(F, UP)" href="RationalRicDE.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="RDEaux.html" title="RDEaux(R, F)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="RationalRicDE.html" title="RationalRicDE(F, UP)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="rationalunivariaterepresentationpackage-r-ls">
+<span id="l-rational-univariate-representation-package"></span><span id="index-0"></span><h1>RationalUnivariateRepresentationPackage(R, ls)<a class="headerlink" href="#rationalunivariaterepresentationpackage-r-ls" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//zerodim.spad#L526">zerodim.spad line 526</a></p>
+<ul class="simple">
+<li>R: Join(<a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><em>EuclideanDomain</em></a>, <a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a>)</li>
+<li>ls: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></li>
+</ul>
+<p>A package for computing the rational univariate representation of a zero-dimensional algebraic variety given by a regular triangular set. This package is essentially an interface for the <a class="reference internal" href="InternalRationalUnivariateRepresentationPackage.html#l-internal-rational-univariate-representation-package"><em>InternalRationalUnivariateRepresentationPackage</em></a> constructor. It is used in the <a class="reference internal" href="ZeroDimensionalSolvePackage.html#l-zero-dimensional-solve-package"><em>ZeroDimensionalSolvePackage</em></a> for solving polynomial systems with finitely many solutions.</p>
+<span class="target" id="l-rational-univariate-representation-package-rur"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">rur</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(complexRoots: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R, coordinates: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R)</dt>
+<dd><tt class="docutils literal"><span class="pre">rur(lp,</span> <span class="pre">univ?)</span></tt> returns a rational univariate representation of <tt class="docutils literal"><span class="pre">lp</span></tt>. This assumes that <tt class="docutils literal"><span class="pre">lp</span></tt> defines a regular triangular <tt class="docutils literal"><span class="pre">ts</span></tt> whose associated variety is zero-dimensional over <tt class="docutils literal"><span class="pre">R</span></tt>. <tt class="docutils literal"><span class="pre">rur(lp,</span> <span class="pre">univ?)</span></tt> returns a list of items <tt class="docutils literal"><span class="pre">[u,</span> <span class="pre">lc]</span></tt> where <tt class="docutils literal"><span class="pre">u</span></tt> is an irreducible univariate polynomial and each <tt class="docutils literal"><span class="pre">c</span></tt> in <tt class="docutils literal"><span class="pre">lc</span></tt> involves two variables: one from <tt class="docutils literal"><span class="pre">ls</span></tt>, called the coordinate of <tt class="docutils literal"><span class="pre">c</span></tt>, and an extra variable which represents any root of <tt class="docutils literal"><span class="pre">u</span></tt>. Every root of <tt class="docutils literal"><span class="pre">u</span></tt> leads to a tuple of values for the coordinates of <tt class="docutils literal"><span class="pre">lc</span></tt>. Moreover, a point <tt class="docutils literal"><span class="pre">x</span></tt> belongs to the variety associated with <tt class="docutils literal"><span class="pre">lp</span></tt> iff there exists an item <tt class="docutils literal"><span class="pre">[u,</span> <span class="pre">lc]</span></tt> in <tt class="docutils literal"><span class="pre">rur(lp,</span> <span class="pre">univ?)</span></tt> and a root <tt class="docutils literal"><span class="pre">r</span></tt> of <tt class="docutils literal"><span class="pre">u</span></tt> such that <tt class="docutils literal"><span class="pre">x</span></tt> is given by the tuple of values for the coordinates of <tt class="docutils literal"><span class="pre">lc</span></tt> evaluated at <tt class="docutils literal"><span class="pre">r</span></tt>. If <tt class="docutils literal"><span class="pre">univ?</span></tt> is <tt class="docutils literal"><span class="pre">true</span></tt> then each polynomial <tt class="docutils literal"><span class="pre">c</span></tt> will have a constant leading coefficient <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. its coordinate. See the example which illustrates the <a class="reference internal" href="ZeroDimensionalSolvePackage.html#l-zero-dimensional-solve-package"><em>ZeroDimensionalSolvePackage</em></a> package constructor.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">rur</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(complexRoots: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R, coordinates: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R)</dt>
+<dd><tt class="docutils literal"><span class="pre">rur(lp,</span> <span class="pre">univ?,</span> <span class="pre">check?)</span></tt> returns the same as <tt class="docutils literal"><span class="pre">rur(lp,</span> <span class="pre">true)</span></tt>. Moreover, if <tt class="docutils literal"><span class="pre">check?</span></tt> is <tt class="docutils literal"><span class="pre">true</span></tt> then the result is checked.</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">rur</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(complexRoots: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R, coordinates: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R)</dt>
+<dd><tt class="docutils literal"><span class="pre">rur(lp)</span></tt> returns the same as <tt class="docutils literal"><span class="pre">rur(lp,</span> <span class="pre">true)</span></tt></dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="RationalRicDE.html"
+                        title="previous chapter">RationalRicDE(F, UP)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="RDEaux.html"
+                        title="next chapter">RDEaux(R, F)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/RationalUnivariateRepresentationPackage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="RDEaux.html" title="RDEaux(R, F)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="RationalRicDE.html" title="RationalRicDE(F, UP)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

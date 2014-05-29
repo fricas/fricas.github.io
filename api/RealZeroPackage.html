@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>RealZeroPackage Pol &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="RealZeroPackageQ Pol" href="RealZeroPackageQ.html" />
+    <link rel="prev" title="RealSolvePackage" href="RealSolvePackage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="RealZeroPackageQ.html" title="RealZeroPackageQ Pol"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="RealSolvePackage.html" title="RealSolvePackage"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="realzeropackage-pol">
+<span id="l-real-zero-package"></span><span id="index-0"></span><h1>RealZeroPackage Pol<a class="headerlink" href="#realzeropackage-pol" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//realzero.spad#L1">realzero.spad line 1</a></p>
+<ul class="simple">
+<li>Pol: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></li>
+</ul>
+<p>This package provides functions for finding the real zeros of univariate polynomials over the integers to arbitrary user-specified precision. The results are returned as a list of isolating intervals which are expressed as records with &#8220;left&#8221; and &#8220;right&#8221; rational number components.</p>
+<span class="target" id="l-real-zero-package-midpoint"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">midpoint</span>: Record(left: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, right: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">midpoint(int)</span></tt> returns the midpoint of the interval <tt class="docutils literal"><span class="pre">int</span></tt>.</dd>
+</dl>
+<span class="target" id="l-real-zero-package-midpoints"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">midpoints</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(left: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, right: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">midpoints(isolist)</span></tt> returns the list of midpoints for the list of intervals <tt class="docutils literal"><span class="pre">isolist</span></tt>.</dd>
+</dl>
+<span class="target" id="l-real-zero-package-real-zeros"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">realZeros</span>: (Pol, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(left: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, right: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">realZeros(pol,</span> <span class="pre">eps)</span></tt> returns a list of intervals of length less than the rational number eps for all the real roots of the polynomial <tt class="docutils literal"><span class="pre">pol</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">realZeros</span>: (Pol, Record(left: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, right: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(left: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, right: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">realZeros(pol,</span> <span class="pre">range)</span></tt> returns a list of isolating intervals for all the real zeros of the univariate polynomial <tt class="docutils literal"><span class="pre">pol</span></tt> which lie in the interval expressed by the record range.</dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">realZeros</span>: (Pol, Record(left: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, right: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>), <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(left: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, right: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">realZeros(pol,</span> <span class="pre">int,</span> <span class="pre">eps)</span></tt> returns a list of intervals of length less than the rational number eps for all the real roots of the polynomial <tt class="docutils literal"><span class="pre">pol</span></tt> which lie in the interval expressed by the record <tt class="docutils literal"><span class="pre">int</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt><span class="spadfun">realZeros</span>: Pol -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(left: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, right: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">realZeros(pol)</span></tt> returns a list of isolating intervals for all the real zeros of the univariate polynomial <tt class="docutils literal"><span class="pre">pol</span></tt>.</dd>
+</dl>
+<span class="target" id="l-real-zero-package-refine"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">refine</span>: (Pol, Record(left: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, right: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>), <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; Record(left: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, right: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">refine(pol,</span> <span class="pre">int,</span> <span class="pre">eps)</span></tt> refines the interval <tt class="docutils literal"><span class="pre">int</span></tt> containing exactly one root of the univariate polynomial <tt class="docutils literal"><span class="pre">pol</span></tt> to size less than the rational number eps.</dd>
+</dl>
+<dl class="docutils" id="index-8">
+<dt><span class="spadfun">refine</span>: (Pol, Record(left: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, right: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>), Record(left: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, right: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)) -&gt; Union(Record(left: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, right: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>), failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">refine(pol,</span> <span class="pre">int,</span> <span class="pre">range)</span></tt> takes a univariate polynomial <tt class="docutils literal"><span class="pre">pol</span></tt> and and isolating interval <tt class="docutils literal"><span class="pre">int</span></tt> containing exactly one real root of <tt class="docutils literal"><span class="pre">pol</span></tt>; the operation returns an isolating interval which is contained within range, or &#8220;failed&#8221; if no such isolating interval exists.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="RealSolvePackage.html"
+                        title="previous chapter">RealSolvePackage</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="RealZeroPackageQ.html"
+                        title="next chapter">RealZeroPackageQ Pol</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/RealZeroPackage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="RealZeroPackageQ.html" title="RealZeroPackageQ Pol"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="RealSolvePackage.html" title="RealSolvePackage"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

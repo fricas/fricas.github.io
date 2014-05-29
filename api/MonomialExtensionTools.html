@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MonomialExtensionTools(F, UP) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="MoreSystemCommands" href="MoreSystemCommands.html" />
+    <link rel="prev" title="MonoidRingFunctions2(R, S, M)" href="MonoidRingFunctions2.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="MoreSystemCommands.html" title="MoreSystemCommands"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="MonoidRingFunctions2.html" title="MonoidRingFunctions2(R, S, M)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="monomialextensiontools-f-up">
+<span id="l-monomial-extension-tools"></span><span id="index-0"></span><h1>MonomialExtensionTools(F, UP)<a class="headerlink" href="#monomialextensiontools-f-up" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//intrf.spad#L130">intrf.spad line 130</a></p>
+<ul class="simple">
+<li>F: <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></li>
+<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> F</li>
+</ul>
+<p>Tools for handling monomial extensions.</p>
+<span class="target" id="l-monomial-extension-tools-decompose"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">decompose</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP) -&gt; Record(poly: UP, normal: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, special: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP)</dt>
+<dd><tt class="docutils literal"><span class="pre">decompose(f,</span> <span class="pre">D)</span></tt> returns <tt class="docutils literal"><span class="pre">[p,</span> <span class="pre">n,</span> <span class="pre">s]</span></tt> such that <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">p+n+s</span></tt>, all the squarefree factors of <tt class="docutils literal"><span class="pre">denom(n)</span></tt> are normal <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. <tt class="docutils literal"><span class="pre">D</span></tt>, <tt class="docutils literal"><span class="pre">denom(s)</span></tt> is special <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. <tt class="docutils literal"><span class="pre">D</span></tt>, and <tt class="docutils literal"><span class="pre">n</span></tt> and <tt class="docutils literal"><span class="pre">s</span></tt> are proper fractions (no pole at infinity). <tt class="docutils literal"><span class="pre">D</span></tt> is the derivation to use.</dd>
+</dl>
+<span class="target" id="l-monomial-extension-tools-normal-denom"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">normalDenom</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP) -&gt; UP</dt>
+<dd><tt class="docutils literal"><span class="pre">normalDenom(f,</span> <span class="pre">D)</span></tt> returns the product of all the normal factors of <tt class="docutils literal"><span class="pre">denom(f)</span></tt>. <tt class="docutils literal"><span class="pre">D</span></tt> is the derivation to use.</dd>
+</dl>
+<span class="target" id="l-monomial-extension-tools-split"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">split</span>: (UP, UP -&gt; UP) -&gt; Record(normal: UP, special: UP)</dt>
+<dd><tt class="docutils literal"><span class="pre">split(p,</span> <span class="pre">D)</span></tt> returns <tt class="docutils literal"><span class="pre">[n,</span> <span class="pre">s]</span></tt> such that <tt class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">n</span> <span class="pre">s</span></tt>, all the squarefree factors of <tt class="docutils literal"><span class="pre">n</span></tt> are normal <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. <tt class="docutils literal"><span class="pre">D</span></tt>, and <tt class="docutils literal"><span class="pre">s</span></tt> is special <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. <tt class="docutils literal"><span class="pre">D</span></tt>. <tt class="docutils literal"><span class="pre">D</span></tt> is the derivation to use.</dd>
+</dl>
+<span class="target" id="l-monomial-extension-tools-split-squarefree"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">splitSquarefree</span>: (UP, UP -&gt; UP) -&gt; Record(normal: <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> UP, special: <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> UP)</dt>
+<dd><tt class="docutils literal"><span class="pre">splitSquarefree(p,</span> <span class="pre">D)</span></tt> returns <tt class="docutils literal"><span class="pre">[n_1</span> <span class="pre">n_2\^2</span> <span class="pre">...</span> <span class="pre">n_m\^m,</span> <span class="pre">s_1</span> <span class="pre">s_2\^2</span> <span class="pre">...</span> <span class="pre">s_q\^q]</span></tt> such that <tt class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">n_1</span> <span class="pre">n_2\^2</span> <span class="pre">...</span> <span class="pre">n_m\^m</span> <span class="pre">s_1</span> <span class="pre">s_2\^2</span> <span class="pre">...</span> <span class="pre">s_q\^q</span></tt>, each <tt class="docutils literal"><span class="pre">n_i</span></tt> is normal <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. <tt class="docutils literal"><span class="pre">D</span></tt> and each <tt class="docutils literal"><span class="pre">s_i</span></tt> is special <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt> <tt class="docutils literal"><span class="pre">D</span></tt>. <tt class="docutils literal"><span class="pre">D</span></tt> is the derivation to use.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="MonoidRingFunctions2.html"
+                        title="previous chapter">MonoidRingFunctions2(R, S, M)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="MoreSystemCommands.html"
+                        title="next chapter">MoreSystemCommands</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/MonomialExtensionTools.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="MoreSystemCommands.html" title="MoreSystemCommands"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="MonoidRingFunctions2.html" title="MonoidRingFunctions2(R, S, M)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

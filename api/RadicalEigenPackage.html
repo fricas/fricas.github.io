@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>RadicalEigenPackage &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="RadicalSolvePackage R" href="RadicalSolvePackage.html" />
+    <link rel="prev" title="QuotientFieldCategoryFunctions2(A, B, R, S)" href="QuotientFieldCategoryFunctions2.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="RadicalSolvePackage.html" title="RadicalSolvePackage R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="QuotientFieldCategoryFunctions2.html" title="QuotientFieldCategoryFunctions2(A, B, R, S)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="radicaleigenpackage">
+<span id="l-radical-eigen-package"></span><span id="index-0"></span><h1>RadicalEigenPackage<a class="headerlink" href="#radicaleigenpackage" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//radeigen.spad#L1">radeigen.spad line 1</a></p>
+<p>Package for the computation of eigenvalues and eigenvectors. This package works for matrices with coefficients which are rational functions over the integers. (see <em class="xref std std-ref">Fraction Polynomial Integer</em>). The eigenvalues and eigenvectors are expressed in terms of radicals.</p>
+<span class="target" id="l-radical-eigen-package-eigen-matrix"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">eigenMatrix</span>: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; Union(<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">eigenMatrix(m)</span></tt> returns the matrix <tt class="docutils literal"><span class="pre">b</span></tt> such that <tt class="docutils literal"><span class="pre">b*m*(inverse</span> <span class="pre">b)</span></tt> is diagonal, or &#8220;failed&#8221; if no such <tt class="docutils literal"><span class="pre">b</span></tt> exists.</dd>
+</dl>
+<span class="target" id="l-radical-eigen-package-gramschmidt"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">gramschmidt</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">gramschmidt(lv)</span></tt> converts the list of column vectors <tt class="docutils literal"><span class="pre">lv</span></tt> into a set of orthogonal column vectors of euclidean length 1 using the Gram-Schmidt algorithm.</dd>
+</dl>
+<span class="target" id="l-radical-eigen-package-normalise"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">normalise</span>: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">normalise(v)</span></tt> returns the column vector <tt class="docutils literal"><span class="pre">v</span></tt> divided by its euclidean norm; when possible, the vector <tt class="docutils literal"><span class="pre">v</span></tt> is expressed in terms of radicals.</dd>
+</dl>
+<span class="target" id="l-radical-eigen-package-orthonormal-basis"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">orthonormalBasis</span>: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">orthonormalBasis(m)</span></tt> returns the orthogonal matrix <tt class="docutils literal"><span class="pre">b</span></tt> such that <tt class="docutils literal"><span class="pre">b*m*(inverse</span> <span class="pre">b)</span></tt> is diagonal. Error: if <tt class="docutils literal"><span class="pre">m</span></tt> is not a symmetric matrix.</dd>
+</dl>
+<span class="target" id="l-radical-eigen-package-radical-eigenvalues"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">radicalEigenvalues</span>: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">radicalEigenvalues(m)</span></tt> computes the eigenvalues of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>; when possible, the eigenvalues are expressed in terms of radicals.</dd>
+</dl>
+<span class="target" id="l-radical-eigen-package-radical-eigenvector"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">radicalEigenvector</span>: (<a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">radicalEigenvector(c,</span> <span class="pre">m)</span></tt> computes the eigenvector(<tt class="docutils literal"><span class="pre">s</span></tt>) of the matrix <tt class="docutils literal"><span class="pre">m</span></tt> corresponding to the eigenvalue <tt class="docutils literal"><span class="pre">c</span></tt>; when possible, values are expressed in terms of radicals.</dd>
+</dl>
+<span class="target" id="l-radical-eigen-package-radical-eigenvectors"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">radicalEigenvectors</span>: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(radval: <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, radmult: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, radvect: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Expression.html#l-expression"><em>Expression</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">radicalEigenvectors(m)</span></tt> computes the eigenvalues and the corresponding eigenvectors of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>; when possible, values are expressed in terms of radicals.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="QuotientFieldCategoryFunctions2.html"
+                        title="previous chapter">QuotientFieldCategoryFunctions2(A, B, R, S)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="RadicalSolvePackage.html"
+                        title="next chapter">RadicalSolvePackage R</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/RadicalEigenPackage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="RadicalSolvePackage.html" title="RadicalSolvePackage R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="QuotientFieldCategoryFunctions2.html" title="QuotientFieldCategoryFunctions2(A, B, R, S)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

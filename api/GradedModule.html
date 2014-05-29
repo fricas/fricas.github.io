@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GradedModule(R, E) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Categories" href="Categories.html" />
+    <link rel="next" title="Group" href="Group.html" />
+    <link rel="prev" title="GradedAlgebra(R, E)" href="GradedAlgebra.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Group.html" title="Group"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GradedAlgebra.html" title="GradedAlgebra(R, E)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="gradedmodule-r-e">
+<span id="l-graded-module"></span><span id="index-0"></span><h1>GradedModule(R, E)<a class="headerlink" href="#gradedmodule-r-e" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//carten.spad#L1">carten.spad line 1</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></li>
+<li>E: <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></li>
+</ul>
+<p>GradedModule(<tt class="docutils literal"><span class="pre">R</span></tt>, <tt class="docutils literal"><span class="pre">E</span></tt>) denotes <tt class="docutils literal"><span class="pre">E-graded</span> <span class="pre">\</span> <span class="pre">``R</span></tt>-module<tt class="docutils literal"><span class="pre">''</span></tt>, i.e. collection of <tt class="docutils literal"><span class="pre">R</span></tt>-modules indexed by an abelian monoid <tt class="docutils literal"><span class="pre">E</span></tt>. An element <tt class="docutils literal"><span class="pre">g</span></tt> of <tt class="docutils literal"><span class="pre">G[s]</span></tt> for some specific <tt class="docutils literal"><span class="pre">s</span></tt> in <tt class="docutils literal"><span class="pre">E</span></tt> is said to be an element of <tt class="docutils literal"><span class="pre">G</span></tt> with <em>degree</em> <tt class="docutils literal"><span class="pre">s</span></tt>. Sums are defined in each module <tt class="docutils literal"><span class="pre">G[s]</span></tt> so two elements of <tt class="docutils literal"><span class="pre">G</span></tt> have a sum if they have the same degree. blankline Morphisms can be defined and composed by degree to give the mathematical category of graded modules.</p>
+<span class="target" id="l-graded-module-0"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">0</span>: %</dt>
+<dd>0 denotes the zero of degree 0.</dd>
+</dl>
+<span class="target" id="id1"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">*</span>: (%, R) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">g*r</span></tt> is right module multiplication.</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">*</span>: (R, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">r*g</span></tt> is left module multiplication.</dd>
+</dl>
+<span class="target" id="id2"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">+</span>: (%, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">g+h</span></tt> is the sum of <tt class="docutils literal"><span class="pre">g</span></tt> and <tt class="docutils literal"><span class="pre">h</span></tt> in the module of elements of the same degree as <tt class="docutils literal"><span class="pre">g</span></tt> and <tt class="docutils literal"><span class="pre">h</span></tt>. Error: if <tt class="docutils literal"><span class="pre">g</span></tt> and <tt class="docutils literal"><span class="pre">h</span></tt> have different degrees.</dd>
+</dl>
+<span class="target" id="id3"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">-</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">-g</span></tt> is the additive inverse of <tt class="docutils literal"><span class="pre">g</span></tt> in the module of elements of the same grade as <tt class="docutils literal"><span class="pre">g</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt><span class="spadfun">-</span>: (%, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">g-h</span></tt> is the difference of <tt class="docutils literal"><span class="pre">g</span></tt> and <tt class="docutils literal"><span class="pre">h</span></tt> in the module of elements of the same degree as <tt class="docutils literal"><span class="pre">g</span></tt> and <tt class="docutils literal"><span class="pre">h</span></tt>. Error: if <tt class="docutils literal"><span class="pre">g</span></tt> and <tt class="docutils literal"><span class="pre">h</span></tt> have different degrees.</dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+</dl>
+<span class="target" id="l-graded-module-degree"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">degree</span>: % -&gt; E</dt>
+<dd><tt class="docutils literal"><span class="pre">degree(g)</span></tt> names the degree of <tt class="docutils literal"><span class="pre">g</span></tt>. The set of all elements of a given degree form an <tt class="docutils literal"><span class="pre">R</span></tt>-module.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="GradedAlgebra.html"
+                        title="previous chapter">GradedAlgebra(R, E)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Group.html"
+                        title="next chapter">Group</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/GradedModule.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Group.html" title="Group"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GradedAlgebra.html" title="GradedAlgebra(R, E)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

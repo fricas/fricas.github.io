@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GaloisGroupFactorizationUtilities(R, UP, F) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="GaloisGroupFactorizer UP" href="GaloisGroupFactorizer.html" />
+    <link rel="prev" title="FunctionSpaceUnivariatePolynomialFactor(R, F, UP)" href="FunctionSpaceUnivariatePolynomialFactor.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="GaloisGroupFactorizer.html" title="GaloisGroupFactorizer UP"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="FunctionSpaceUnivariatePolynomialFactor.html" title="FunctionSpaceUnivariatePolynomialFactor(R, F, UP)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="galoisgroupfactorizationutilities-r-up-f">
+<span id="l-galois-group-factorization-utilities"></span><span id="index-0"></span><h1>GaloisGroupFactorizationUtilities(R, UP, F)<a class="headerlink" href="#galoisgroupfactorizationutilities-r-up-f" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//galfactu.spad#L1">galfactu.spad line 1</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></li>
+<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> R</li>
+<li>F: Join(<a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system"><em>FloatingPointSystem</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> R, <a class="reference internal" href="Field.html#l-field"><em>Field</em></a>, <a class="reference internal" href="TranscendentalFunctionCategory.html#l-transcendental-function-category"><em>TranscendentalFunctionCategory</em></a>, <a class="reference internal" href="ElementaryFunctionCategory.html#l-elementary-function-category"><em>ElementaryFunctionCategory</em></a>)</li>
+</ul>
+<p><a class="reference internal" href="#l-galois-group-factorization-utilities"><em>GaloisGroupFactorizationUtilities</em></a> provides functions that will be used by the factorizer.</p>
+<span class="target" id="l-galois-group-factorization-utilities-beauzamy-bound"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">beauzamyBound</span>: UP -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">beauzamyBound(p)</span></tt> returns a bound on the larger coefficient of any factor of <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<span class="target" id="l-galois-group-factorization-utilities-bombieri-norm"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">bombieriNorm</span>: (UP, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">bombieriNorm(p,</span> <span class="pre">n)</span></tt> returns the <tt class="docutils literal"><span class="pre">n</span></tt>th Bombieri<tt class="docutils literal"><span class="pre">'s</span></tt> norm of <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">bombieriNorm</span>: UP -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">bombieriNorm(p)</span></tt> returns quadratic Bombieri<tt class="docutils literal"><span class="pre">'s</span></tt> norm of <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<span class="target" id="l-galois-group-factorization-utilities-height"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">height</span>: UP -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">height(p)</span></tt> returns the maximal absolute value of the coefficients of the polynomial <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<span class="target" id="l-galois-group-factorization-utilities-infinity-norm"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">infinityNorm</span>: UP -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">infinityNorm(f)</span></tt> returns the maximal absolute value of the coefficients of the polynomial <tt class="docutils literal"><span class="pre">f</span></tt>.</dd>
+</dl>
+<span class="target" id="l-galois-group-factorization-utilities-length"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">length</span>: UP -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">length(p)</span></tt> returns the sum of the absolute values of the coefficients of the polynomial <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<span class="target" id="l-galois-group-factorization-utilities-norm"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">norm</span>: (UP, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">norm(f,</span> <span class="pre">p)</span></tt> returns the <tt class="docutils literal"><span class="pre">lp</span></tt> norm of the polynomial <tt class="docutils literal"><span class="pre">f</span></tt>.</dd>
+</dl>
+<span class="target" id="l-galois-group-factorization-utilities-quadratic-norm"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">quadraticNorm</span>: UP -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">quadraticNorm(f)</span></tt> returns the <tt class="docutils literal"><span class="pre">l2</span></tt> norm of the polynomial <tt class="docutils literal"><span class="pre">f</span></tt>.</dd>
+</dl>
+<span class="target" id="l-galois-group-factorization-utilities-root-bound"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">rootBound</span>: UP -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">rootBound(p)</span></tt> returns a bound on the largest norm of the complex roots of <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<span class="target" id="l-galois-group-factorization-utilities-single-factor-bound"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">singleFactorBound</span>: (UP, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">singleFactorBound(p,</span> <span class="pre">r)</span></tt> returns a bound on the infinite norm of the factor of <tt class="docutils literal"><span class="pre">p</span></tt> with smallest Bombieri<tt class="docutils literal"><span class="pre">'s</span></tt> norm. <tt class="docutils literal"><span class="pre">r</span></tt> is a lower bound for the number of factors of <tt class="docutils literal"><span class="pre">p</span></tt>. <tt class="docutils literal"><span class="pre">p</span></tt> shall be of degree higher or equal to 2.</dd>
+</dl>
+<dl class="docutils" id="index-11">
+<dt><span class="spadfun">singleFactorBound</span>: UP -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">singleFactorBound(p,</span> <span class="pre">r)</span></tt> returns a bound on the infinite norm of the factor of <tt class="docutils literal"><span class="pre">p</span></tt> with smallest Bombieri<tt class="docutils literal"><span class="pre">'s</span></tt> norm. <tt class="docutils literal"><span class="pre">p</span></tt> shall be of degree higher or equal to 2.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="FunctionSpaceUnivariatePolynomialFactor.html"
+                        title="previous chapter">FunctionSpaceUnivariatePolynomialFactor(R, F, UP)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="GaloisGroupFactorizer.html"
+                        title="next chapter">GaloisGroupFactorizer UP</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/GaloisGroupFactorizationUtilities.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="GaloisGroupFactorizer.html" title="GaloisGroupFactorizer UP"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="FunctionSpaceUnivariatePolynomialFactor.html" title="FunctionSpaceUnivariatePolynomialFactor(R, F, UP)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

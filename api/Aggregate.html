@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Aggregate &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Categories" href="Categories.html" />
+    <link rel="next" title="Algebra R" href="Algebra.html" />
+    <link rel="prev" title="additiveValuation" href="additiveValuation.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Algebra.html" title="Algebra R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="additiveValuation.html" title="additiveValuation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="aggregate">
+<span id="l-aggregate"></span><span id="index-0"></span><h1>Aggregate<a class="headerlink" href="#aggregate" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//aggcat.spad#L1">aggcat.spad line 1</a></p>
+<p>The notion of aggregate serves to model any data structure aggregate, designating any collection of objects, with heterogenous or homogeneous members, with a finite or infinite number of members, explicitly or implicitly represented. An aggregate can in principle represent everything from a string of characters to abstract sets such as &#8220;the set of <tt class="docutils literal"><span class="pre">x</span></tt> satisfying relation <em>r(x)</em>&#8221; An attribute <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a> is used to assert that a domain has a finite number of elements.</p>
+<span class="target" id="id1"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">#</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">\#</span> <span class="pre">u</span></tt> returns the number of items in <tt class="docutils literal"><span class="pre">u</span></tt>.</dd>
+</dl>
+<span class="target" id="l-aggregate-copy"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">copy</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">copy(u)</span></tt> returns a top-level (non-recursive) copy of <tt class="docutils literal"><span class="pre">u</span></tt>. Note: for collections, <tt class="docutils literal"><span class="pre">copy(u)</span> <span class="pre">==</span> <span class="pre">[x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">u]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-aggregate-empty"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">empty</span>: () -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">empty()</span></tt>$<tt class="docutils literal"><span class="pre">D</span></tt> creates an aggregate of type <tt class="docutils literal"><span class="pre">D</span></tt> with 0 elements. Note: The <em>$D</em> can be dropped if understood by context, e.g. <tt class="docutils literal"><span class="pre">u:</span> <span class="pre">D</span> <span class="pre">:=</span> <span class="pre">empty()</span></tt>.</dd>
+</dl>
+<span class="target" id="id2"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">empty?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">empty?(u)</span></tt> tests if <tt class="docutils literal"><span class="pre">u</span></tt> has 0 elements.</dd>
+</dl>
+<span class="target" id="l-aggregate-eq"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">eq?</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">eq?(u,</span> <span class="pre">v)</span></tt> tests if <tt class="docutils literal"><span class="pre">u</span></tt> and <tt class="docutils literal"><span class="pre">v</span></tt> are same objects.</dd>
+</dl>
+<span class="target" id="l-aggregate-less"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">less?</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">less?(u,</span> <span class="pre">n)</span></tt> tests if <tt class="docutils literal"><span class="pre">u</span></tt> has less than <tt class="docutils literal"><span class="pre">n</span></tt> elements.</dd>
+</dl>
+<span class="target" id="l-aggregate-more"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">more?</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">more?(u,</span> <span class="pre">n)</span></tt> tests if <tt class="docutils literal"><span class="pre">u</span></tt> has greater than <tt class="docutils literal"><span class="pre">n</span></tt> elements.</dd>
+</dl>
+<span class="target" id="l-aggregate-sample"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">sample</span>: %</dt>
+<dd><tt class="docutils literal"><span class="pre">sample</span> <span class="pre">yields</span></tt> a value of type %</dd>
+</dl>
+<span class="target" id="l-aggregate-size"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">size?</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">size?(u,</span> <span class="pre">n)</span></tt> tests if <tt class="docutils literal"><span class="pre">u</span></tt> has exactly <tt class="docutils literal"><span class="pre">n</span></tt> elements.</dd>
+</dl>
+<p><a class="reference internal" href="Type.html#l-type"><em>Type</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="additiveValuation.html"
+                        title="previous chapter">additiveValuation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Algebra.html"
+                        title="next chapter">Algebra R</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/Aggregate.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Algebra.html" title="Algebra R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="additiveValuation.html" title="additiveValuation"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

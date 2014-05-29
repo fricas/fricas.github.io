@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FiniteLinearAggregateFunctions2(S, A, R, B) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="FiniteLinearAggregateSort(S, V)" href="FiniteLinearAggregateSort.html" />
+    <link rel="prev" title="FiniteFieldSolveLinearPolynomialEquation(F, FP, FPP)" href="FiniteFieldSolveLinearPolynomialEquation.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="FiniteLinearAggregateSort.html" title="FiniteLinearAggregateSort(S, V)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="FiniteFieldSolveLinearPolynomialEquation.html" title="FiniteFieldSolveLinearPolynomialEquation(F, FP, FPP)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="finitelinearaggregatefunctions2-s-a-r-b">
+<span id="l-finite-linear-aggregate-functions2"></span><span id="index-0"></span><h1>FiniteLinearAggregateFunctions2(S, A, R, B)<a class="headerlink" href="#finitelinearaggregatefunctions2-s-a-r-b" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//aggcat2.spad#L1">aggcat2.spad line 1</a></p>
+<ul class="simple">
+<li>S: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
+<li>A: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><em>FiniteLinearAggregate</em></a> S</li>
+<li>R: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
+<li>B: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><em>FiniteLinearAggregate</em></a> R</li>
+</ul>
+<p><tt class="docutils literal"><span class="pre">FiniteLinearAggregateFunctions2</span></tt> provides functions involving two FiniteLinearAggregates where the underlying domains might be different. An example of this might be creating a list of rational numbers by mapping a function across a list of integers where the function divides each integer by 1000.</p>
+<span class="target" id="l-finite-linear-aggregate-functions2-map"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">map</span>: (S -&gt; R, A) -&gt; B</dt>
+<dd><tt class="docutils literal"><span class="pre">map(f,</span> <span class="pre">a)</span></tt> applies function <tt class="docutils literal"><span class="pre">f</span></tt> to each member of aggregate <tt class="docutils literal"><span class="pre">a</span></tt> resulting in a new aggregate over a possibly different underlying domain.</dd>
+</dl>
+<span class="target" id="l-finite-linear-aggregate-functions2-reduce"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">reduce</span>: ((S, R) -&gt; R, A, R) -&gt; R</dt>
+<dd><tt class="docutils literal"><span class="pre">reduce(f,</span> <span class="pre">a,</span> <span class="pre">r)</span></tt> applies function <tt class="docutils literal"><span class="pre">f</span></tt> to each successive element of the aggregate <tt class="docutils literal"><span class="pre">a</span></tt> and an accumulant initialized to <tt class="docutils literal"><span class="pre">r</span></tt>. For example, <tt class="docutils literal"><span class="pre">reduce(_+\$Integer,</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">0)</span></tt> does <tt class="docutils literal"><span class="pre">3+(2+(1+0))</span></tt>. Note: third argument <tt class="docutils literal"><span class="pre">r</span></tt> may be regarded as the identity element for the function <tt class="docutils literal"><span class="pre">f</span></tt>.</dd>
+</dl>
+<span class="target" id="l-finite-linear-aggregate-functions2-scan"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">scan</span>: ((S, R) -&gt; R, A, R) -&gt; B</dt>
+<dd><tt class="docutils literal"><span class="pre">scan(f,</span> <span class="pre">a,</span> <span class="pre">r)</span></tt> successively applies <tt class="docutils literal"><span class="pre">reduce(f,</span> <span class="pre">x,</span> <span class="pre">r)</span></tt> to more and more leading sub-aggregates <tt class="docutils literal"><span class="pre">x</span></tt> of aggregrate <tt class="docutils literal"><span class="pre">a</span></tt>. More precisely, if <tt class="docutils literal"><span class="pre">a</span></tt> is <tt class="docutils literal"><span class="pre">[a1,</span> <span class="pre">a2,</span> <span class="pre">...]</span></tt>, then <tt class="docutils literal"><span class="pre">scan(f,</span> <span class="pre">a,</span> <span class="pre">r)</span></tt> returns <tt class="docutils literal"><span class="pre">[reduce(f,</span> <span class="pre">[a1],</span> <span class="pre">r),</span> <span class="pre">reduce(f,</span> <span class="pre">[a1,</span> <span class="pre">a2],</span> <span class="pre">r),</span> <span class="pre">...]</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="FiniteFieldSolveLinearPolynomialEquation.html"
+                        title="previous chapter">FiniteFieldSolveLinearPolynomialEquation(F, FP, FPP)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="FiniteLinearAggregateSort.html"
+                        title="next chapter">FiniteLinearAggregateSort(S, V)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/FiniteLinearAggregateFunctions2.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="FiniteLinearAggregateSort.html" title="FiniteLinearAggregateSort(S, V)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="FiniteFieldSolveLinearPolynomialEquation.html" title="FiniteFieldSolveLinearPolynomialEquation(F, FP, FPP)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

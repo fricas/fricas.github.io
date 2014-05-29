@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ElementaryFunctionStructurePackage(R, F) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="ElementaryIntegration(R, F)" href="ElementaryIntegration.html" />
+    <link rel="prev" title="ElementaryFunctionSign(R, F)" href="ElementaryFunctionSign.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ElementaryIntegration.html" title="ElementaryIntegration(R, F)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ElementaryFunctionSign.html" title="ElementaryFunctionSign(R, F)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="elementaryfunctionstructurepackage-r-f">
+<span id="l-elementary-function-structure-package"></span><span id="index-0"></span><h1>ElementaryFunctionStructurePackage(R, F)<a class="headerlink" href="#elementaryfunctionstructurepackage-r-f" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//efstruc.spad#L83">efstruc.spad line 83</a></p>
+<ul class="simple">
+<li>R: Join(<a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a>, <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</li>
+<li>F: Join(<a class="reference internal" href="AlgebraicallyClosedField.html#l-algebraically-closed-field"><em>AlgebraicallyClosedField</em></a>, <a class="reference internal" href="TranscendentalFunctionCategory.html#l-transcendental-function-category"><em>TranscendentalFunctionCategory</em></a>, <a class="reference internal" href="FunctionSpace.html#l-function-space"><em>FunctionSpace</em></a> R)</li>
+</ul>
+<p>ElementaryFunctionStructurePackage provides functions to test the algebraic independence of various elementary functions, using the Risch structure theorem (real and complex versions). It also provides transformations on elementary functions which are not considered simplifications.</p>
+<span class="target" id="l-elementary-function-structure-package-iroot-dep"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">irootDep</span>: <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F -&gt; Union(vec: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, func: F, fail: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">irootDep(k)</span></tt> is a local function with a conditional implementation.</dd>
+</dl>
+<span class="target" id="l-elementary-function-structure-package-normalize"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">normalize</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">normalize(f,</span> <span class="pre">x)</span></tt> rewrites <tt class="docutils literal"><span class="pre">f</span></tt> using the least possible number of real algebraically independent kernels involving <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">normalize</span>: F -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">normalize(f)</span></tt> rewrites <tt class="docutils literal"><span class="pre">f</span></tt> using the least possible number of real algebraically independent kernels.</dd>
+</dl>
+<span class="target" id="l-elementary-function-structure-package-real-elementary"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">realElementary</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">realElementary(f,</span> <span class="pre">x)</span></tt> rewrites the kernels of <tt class="docutils literal"><span class="pre">f</span></tt> involving <tt class="docutils literal"><span class="pre">x</span></tt> in terms of the 4 fundamental real transcendental elementary functions: <tt class="docutils literal"><span class="pre">log,</span> <span class="pre">exp,</span> <span class="pre">tan,</span> <span class="pre">atan</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">realElementary</span>: F -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">realElementary(f)</span></tt> rewrites <tt class="docutils literal"><span class="pre">f</span></tt> in terms of the 4 fundamental real transcendental elementary functions: <tt class="docutils literal"><span class="pre">log,</span> <span class="pre">exp,</span> <span class="pre">tan,</span> <span class="pre">atan</span></tt>.</dd>
+</dl>
+<span class="target" id="l-elementary-function-structure-package-real-liouvillian"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">realLiouvillian</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">realLiouvillian(f,</span> <span class="pre">x)</span></tt> rewrites <tt class="docutils literal"><span class="pre">f</span></tt> elementary kernels of <tt class="docutils literal"><span class="pre">f</span></tt> in terms 4 fundamental real elementary functions: <tt class="docutils literal"><span class="pre">log,</span> <span class="pre">exp,</span> <span class="pre">tan,</span> <span class="pre">atan</span></tt>. Additionally, it rewrites Liouvillian functions of <tt class="docutils literal"><span class="pre">x</span></tt> as indefinite integrals to support better normalization.</dd>
+</dl>
+<dl class="docutils" id="index-7">
+<dt><span class="spadfun">realLiouvillian</span>: F -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">realLiouvillian(f)</span></tt> rewrites <tt class="docutils literal"><span class="pre">f</span></tt> elementary kernels of <tt class="docutils literal"><span class="pre">f</span></tt> in terms 4 fundamental real elementary functions: <tt class="docutils literal"><span class="pre">log,</span> <span class="pre">exp,</span> <span class="pre">tan,</span> <span class="pre">atan</span></tt>. Additionally, it rewrites Liouvillian functions as indefinite integrals to support better normalization.</dd>
+</dl>
+<span class="target" id="l-elementary-function-structure-package-risch-normalize"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">rischNormalize</span>: (F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Record(func: F, kers: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F, vals: <a class="reference internal" href="List.html#l-list"><em>List</em></a> F)</dt>
+<dd><tt class="docutils literal"><span class="pre">rischNormalize(f,</span> <span class="pre">lx)</span></tt> returns <tt class="docutils literal"><span class="pre">[g,</span> <span class="pre">[k1,</span> <span class="pre">...,</span> <span class="pre">kn],</span> <span class="pre">[h1,</span> <span class="pre">...,</span> <span class="pre">hn]]</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">normalize(f,</span> <span class="pre">lx)</span></tt> and each <tt class="docutils literal"><span class="pre">ki</span></tt> was rewritten as <tt class="docutils literal"><span class="pre">hi</span></tt> during the normalization.</dd>
+</dl>
+<dl class="docutils" id="index-9">
+<dt><span class="spadfun">rischNormalize</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Record(func: F, kers: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F, vals: <a class="reference internal" href="List.html#l-list"><em>List</em></a> F)</dt>
+<dd><tt class="docutils literal"><span class="pre">rischNormalize(f,</span> <span class="pre">x)</span></tt> returns <tt class="docutils literal"><span class="pre">[g,</span> <span class="pre">[k1,</span> <span class="pre">...,</span> <span class="pre">kn],</span> <span class="pre">[h1,</span> <span class="pre">...,</span> <span class="pre">hn]]</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">normalize(f,</span> <span class="pre">x)</span></tt> and each <tt class="docutils literal"><span class="pre">ki</span></tt> was rewritten as <tt class="docutils literal"><span class="pre">hi</span></tt> during the normalization.</dd>
+</dl>
+<span class="target" id="l-elementary-function-structure-package-rmap"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">rmap</span>: (<a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F -&gt; F, F) -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">rmap(f,</span> <span class="pre">e)</span></tt> rewrites <tt class="docutils literal"><span class="pre">e</span></tt> replacing each kernel <tt class="docutils literal"><span class="pre">k</span></tt> in <tt class="docutils literal"><span class="pre">e</span></tt> by <tt class="docutils literal"><span class="pre">f</span></tt>(<tt class="docutils literal"><span class="pre">k</span></tt>)</dd>
+</dl>
+<span class="target" id="l-elementary-function-structure-package-root-normalize"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">rootNormalize</span>: (F, <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F) -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">rootNormalize(f,</span> <span class="pre">k)</span></tt> returns <tt class="docutils literal"><span class="pre">f</span></tt> rewriting either <tt class="docutils literal"><span class="pre">k</span></tt> which must be an <tt class="docutils literal"><span class="pre">n</span></tt>th-root in terms of radicals already in <tt class="docutils literal"><span class="pre">f</span></tt>, or some radicals in <tt class="docutils literal"><span class="pre">f</span></tt> in terms of <tt class="docutils literal"><span class="pre">k</span></tt>.</dd>
+</dl>
+<span class="target" id="l-elementary-function-structure-package-tan-q"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">tanQ</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, F) -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">tanQ(q,</span> <span class="pre">a)</span></tt> is a local function with a conditional implementation.</dd>
+</dl>
+<span class="target" id="l-elementary-function-structure-package-valid-exponential"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">validExponential</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F, F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Union(F, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">validExponential([k1,</span> <span class="pre">...,</span> <span class="pre">kn],</span> <span class="pre">f,</span> <span class="pre">x)</span></tt> returns <tt class="docutils literal"><span class="pre">g</span></tt> if <tt class="docutils literal"><span class="pre">exp(f)=g</span></tt> and <tt class="docutils literal"><span class="pre">g</span></tt> involves only <tt class="docutils literal"><span class="pre">k1...kn</span></tt>, and &#8220;failed&#8221; otherwise.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ElementaryFunctionSign.html"
+                        title="previous chapter">ElementaryFunctionSign(R, F)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ElementaryIntegration.html"
+                        title="next chapter">ElementaryIntegration(R, F)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/ElementaryFunctionStructurePackage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ElementaryIntegration.html" title="ElementaryIntegration(R, F)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ElementaryFunctionSign.html" title="ElementaryFunctionSign(R, F)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

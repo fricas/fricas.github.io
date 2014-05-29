@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>U32VectorPolynomialOperations &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="UnitGaussianElimination" href="UnitGaussianElimination.html" />
+    <link rel="prev" title="TwoFactorize F" href="TwoFactorize.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="UnitGaussianElimination.html" title="UnitGaussianElimination"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="TwoFactorize.html" title="TwoFactorize F"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="u32vectorpolynomialoperations">
+<span id="l-u32-vector-polynomial-operations"></span><span id="index-0"></span><h1>U32VectorPolynomialOperations<a class="headerlink" href="#u32vectorpolynomialoperations" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//u32vec.spad#L195">u32vec.spad line 195</a></p>
+<p>This is a low-level package which implements operations on vectors treated as univariate modular polynomials. Most operations takes modulus as parameter. Modulus is machine sized prime which should be small enough to avoid overflow in intermediate calculations.</p>
+<span class="target" id="l-u32-vector-polynomial-operations-copy-first"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">copy_first</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">copy_first(v1,</span> <span class="pre">v2,</span> <span class="pre">n)</span></tt> copies first <tt class="docutils literal"><span class="pre">n</span></tt> elements of <tt class="docutils literal"><span class="pre">v2</span></tt> into <tt class="docutils literal"><span class="pre">n</span></tt> first positions in <tt class="docutils literal"><span class="pre">v1</span></tt>.</dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-copy-slice"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">copy_slice</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd>copy_first(<tt class="docutils literal"><span class="pre">v1</span></tt>, <tt class="docutils literal"><span class="pre">v2</span></tt>, <tt class="docutils literal"><span class="pre">m</span></tt>, <tt class="docutils literal"><span class="pre">n</span></tt>) copies the slice of <tt class="docutils literal"><span class="pre">v2</span></tt> starting at <tt class="docutils literal"><span class="pre">m</span></tt> elements and having <tt class="docutils literal"><span class="pre">n</span></tt> elements into corresponding positions in <tt class="docutils literal"><span class="pre">v1</span></tt>.</dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-degree"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">degree</span>: <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a> -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">degree(v)</span></tt> is degree of <tt class="docutils literal"><span class="pre">v</span></tt> treated as polynomial</dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-differentiate"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">differentiate</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a></dt>
+<dd>Polynomial differentiation.</dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">differentiate</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a></dt>
+<dd>Polynomial differentiation.</dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-divide"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">divide!</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd>Polynomial division.</dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-eval-at"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">eval_at</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">eval_at(v,</span> <span class="pre">deg,</span> <span class="pre">pt,</span> <span class="pre">p)</span></tt> treats <tt class="docutils literal"><span class="pre">v</span></tt> as coefficients of polynomial of degree <tt class="docutils literal"><span class="pre">deg</span></tt> and evaluates the polynomial at point <tt class="docutils literal"><span class="pre">pt</span></tt> modulo <tt class="docutils literal"><span class="pre">p</span></tt></dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-extended-gcd"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">extended_gcd</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">extended_gcd(v1,</span> <span class="pre">v2,</span> <span class="pre">p)</span></tt> gives [<tt class="docutils literal"><span class="pre">g</span></tt>, <tt class="docutils literal"><span class="pre">c1</span></tt>, <tt class="docutils literal"><span class="pre">c2</span></tt>] such that <tt class="docutils literal"><span class="pre">g</span></tt> is <tt class="docutils literal"><span class="pre">gcd(v1,</span> <span class="pre">v2,</span> <span class="pre">p)</span></tt>, <tt class="docutils literal"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">c1*v1</span> <span class="pre">+</span> <span class="pre">c2*v2</span></tt> and degree(<tt class="docutils literal"><span class="pre">c1</span></tt>) &lt; max(degree(<tt class="docutils literal"><span class="pre">v2</span></tt>) - degree(<tt class="docutils literal"><span class="pre">g</span></tt>), 0) and degree(<tt class="docutils literal"><span class="pre">c2</span></tt>) &lt; max(degree(<tt class="docutils literal"><span class="pre">v1</span></tt>) - degree(<tt class="docutils literal"><span class="pre">g</span></tt>), 1)</dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-gcd"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">gcd</span>: (<a class="reference internal" href="PrimitiveArray.html#l-primitive-array"><em>PrimitiveArray</em></a> <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">gcd(a,</span> <span class="pre">lo,</span> <span class="pre">hi,</span> <span class="pre">p)</span></tt> computes <tt class="docutils literal"><span class="pre">gcd</span></tt> of elements a(<tt class="docutils literal"><span class="pre">lo</span></tt>), a(<tt class="docutils literal"><span class="pre">lo+1</span></tt>), ..., a(<tt class="docutils literal"><span class="pre">hi</span></tt>).</dd>
+</dl>
+<dl class="docutils" id="index-10">
+<dt><span class="spadfun">gcd</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">gcd(v1,</span> <span class="pre">v2,</span> <span class="pre">p)</span></tt> computes monic <tt class="docutils literal"><span class="pre">gcd</span></tt> of <tt class="docutils literal"><span class="pre">v1</span></tt> and <tt class="docutils literal"><span class="pre">v2</span></tt> modulo <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-lcm"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">lcm</span>: (<a class="reference internal" href="PrimitiveArray.html#l-primitive-array"><em>PrimitiveArray</em></a> <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">lcm(a,</span> <span class="pre">lo,</span> <span class="pre">hi,</span> <span class="pre">p)</span></tt> computes <tt class="docutils literal"><span class="pre">lcm</span></tt> of elements a(<tt class="docutils literal"><span class="pre">lo</span></tt>), a(<tt class="docutils literal"><span class="pre">lo+1</span></tt>), ..., a(<tt class="docutils literal"><span class="pre">hi</span></tt>).</dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-mul"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">mul</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a></dt>
+<dd>Polynomial multiplication.</dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-mul-by-binomial"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">mul_by_binomial</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">mul_by_binomial(v,</span> <span class="pre">pt,</span> <span class="pre">p)</span></tt> treats <tt class="docutils literal"><span class="pre">v</span></tt> a polynomial and multiplies in place this polynomial by binomial (<tt class="docutils literal"><span class="pre">x</span></tt> + <tt class="docutils literal"><span class="pre">pt</span></tt>). Highest coefficient of product is ignored.</dd>
+</dl>
+<dl class="docutils" id="index-14">
+<dt><span class="spadfun">mul_by_binomial</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">mul_by_binomial(v,</span> <span class="pre">deg,</span> <span class="pre">pt,</span> <span class="pre">p)</span></tt> treats <tt class="docutils literal"><span class="pre">v</span></tt> as coefficients of polynomial of degree <tt class="docutils literal"><span class="pre">deg</span></tt> and multiplies in place this polynomial by binomial (<tt class="docutils literal"><span class="pre">x</span></tt> + <tt class="docutils literal"><span class="pre">pt</span></tt>). Highest coefficient of product is ignored.</dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-mul-by-scalar"></span><dl class="docutils" id="index-15">
+<dt><span class="spadfun">mul_by_scalar</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">mul_by_scalar(v,</span> <span class="pre">deg,</span> <span class="pre">c,</span> <span class="pre">p)</span></tt> treats <tt class="docutils literal"><span class="pre">v</span></tt> as coefficients of polynomial of degree <tt class="docutils literal"><span class="pre">deg</span></tt> and multiplies in place this polynomial by scalar <tt class="docutils literal"><span class="pre">c</span></tt></dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-pow"></span><dl class="docutils" id="index-16">
+<dt><span class="spadfun">pow</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">pow(u,</span> <span class="pre">n,</span> <span class="pre">d,</span> <span class="pre">p)</span></tt> returns u^n truncated after degree <tt class="docutils literal"><span class="pre">d</span></tt>, except if <tt class="docutils literal"><span class="pre">n=1</span></tt>, in which case <tt class="docutils literal"><span class="pre">u</span></tt> itself is returned</dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-remainder"></span><dl class="docutils" id="index-17">
+<dt><span class="spadfun">remainder!</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd>Polynomial remainder</dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-resultant"></span><dl class="docutils" id="index-18">
+<dt><span class="spadfun">resultant</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">resultant(v1,</span> <span class="pre">v2,</span> <span class="pre">p)</span></tt> computes resultant of <tt class="docutils literal"><span class="pre">v1</span></tt> and <tt class="docutils literal"><span class="pre">v2</span></tt> modulo <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-to-mod-pa"></span><dl class="docutils" id="index-19">
+<dt><span class="spadfun">to_mod_pa</span>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">to_mod_pa(s,</span> <span class="pre">p)</span></tt> reduces coefficients of polynomial <tt class="docutils literal"><span class="pre">s</span></tt> modulo prime <tt class="docutils literal"><span class="pre">p</span></tt> and converts the result to vector</dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-truncated-mul-add"></span><dl class="docutils" id="index-20">
+<dt><span class="spadfun">truncated_mul_add</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">truncated_mul_add(x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">d,</span> <span class="pre">p)</span></tt> adds to <tt class="docutils literal"><span class="pre">z</span></tt> the produce x*y truncated after degree <tt class="docutils literal"><span class="pre">d</span></tt></dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-truncated-multiplication"></span><dl class="docutils" id="index-21">
+<dt><span class="spadfun">truncated_multiplication</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">truncated_multiplication(x,</span> <span class="pre">y,</span> <span class="pre">d,</span> <span class="pre">p)</span></tt> computes x*y truncated after degree <tt class="docutils literal"><span class="pre">d</span></tt></dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-vector-add-mul"></span><dl class="docutils" id="index-22">
+<dt><span class="spadfun">vector_add_mul</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">vector_add_mul(v1,</span> <span class="pre">v2,</span> <span class="pre">m,</span> <span class="pre">n,</span> <span class="pre">c,</span> <span class="pre">p)</span></tt> sets <tt class="docutils literal"><span class="pre">v1</span></tt>(<tt class="docutils literal"><span class="pre">m</span></tt>), ..., <tt class="docutils literal"><span class="pre">v1</span></tt>(<tt class="docutils literal"><span class="pre">n</span></tt>) to corresponding extries in <tt class="docutils literal"><span class="pre">v1</span></tt> + <tt class="docutils literal"><span class="pre">c*v2</span></tt> modulo <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<span class="target" id="l-u32-vector-polynomial-operations-vector-combination"></span><dl class="docutils" id="index-23">
+<dt><span class="spadfun">vector_combination</span>: (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">vector_combination(v1,</span> <span class="pre">c1,</span> <span class="pre">v2,</span> <span class="pre">c2,</span> <span class="pre">n,</span> <span class="pre">delta,</span> <span class="pre">p)</span></tt> replaces first <tt class="docutils literal"><span class="pre">n</span></tt> + 1 entires of <tt class="docutils literal"><span class="pre">v1</span></tt> by corresponding entries of <tt class="docutils literal"><span class="pre">c1*v1+c2*x^delta*v2</span></tt> mod <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="TwoFactorize.html"
+                        title="previous chapter">TwoFactorize F</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="UnitGaussianElimination.html"
+                        title="next chapter">UnitGaussianElimination</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/U32VectorPolynomialOperations.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="UnitGaussianElimination.html" title="UnitGaussianElimination"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="TwoFactorize.html" title="TwoFactorize F"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

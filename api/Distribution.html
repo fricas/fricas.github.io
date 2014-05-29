@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Distribution R &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="DoubleFloat" href="DoubleFloat.html" />
+    <link rel="prev" title="DistributedMultivariatePolynomial(vl, R)" href="DistributedMultivariatePolynomial.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="DoubleFloat.html" title="DoubleFloat"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="DistributedMultivariatePolynomial.html" title="DistributedMultivariatePolynomial(vl, R)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="distribution-r">
+<span id="l-distribution"></span><span id="index-0"></span><h1>Distribution R<a class="headerlink" href="#distribution-r" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//distro.spad#L1138">distro.spad line 1138</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></li>
+</ul>
+<p>Domain for distributions formally given by moments. moments and different kinds of cumulants are stored in streams and computed on demand.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-0"><em>0</em></a>: () -&gt; %</dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="DistributionCategory.html#id1"><em>^</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-boolean-convolution"><em>booleanConvolution</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-boolean-cumulant"><em>booleanCumulant</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; R</dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+</dl>
+<span class="target" id="l-distribution-boolean-cumulant-from-jacobi"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">booleanCumulantFromJacobi</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R, <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R) -&gt; R</dt>
+<dd><tt class="docutils literal"><span class="pre">booleanCumulantFromJacobi(n,</span> <span class="pre">aa,</span> <span class="pre">bb)</span></tt> computes the <tt class="docutils literal"><span class="pre">n</span></tt>th Boolean cumulant from the given Jacobiparameters <tt class="docutils literal"><span class="pre">aa</span></tt> and <tt class="docutils literal"><span class="pre">bb</span></tt>.</dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-boolean-cumulants"><em>booleanCumulants</em></a>: % -&gt; <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R</dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-classical-convolution"><em>classicalConvolution</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-classical-cumulant"><em>classicalCumulant</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; R</dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-classical-cumulants"><em>classicalCumulants</em></a>: % -&gt; <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R</dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+</dl>
+<span class="target" id="l-distribution-construct"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">construct</span>: (<a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R, <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R, <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R, <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">construct(mom,</span> <span class="pre">ccum,</span> <span class="pre">fcum,</span> <span class="pre">bcum)</span></tt> constructs a distribution with moments <tt class="docutils literal"><span class="pre">mom</span></tt>, classical cumulants <tt class="docutils literal"><span class="pre">ccum</span></tt>, free cumulants <tt class="docutils literal"><span class="pre">fcum</span></tt> and boolean cumulants <tt class="docutils literal"><span class="pre">bcum</span></tt>. The user must make sure that these are consistent, otherwise the results are unpredictable!</dd>
+</dl>
+<span class="target" id="l-distribution-distribution-by-boolean-cumulants"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">distributionByBooleanCumulants</span>: <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">distributionByBooleanCumulants(bb)</span></tt> initiates a distribution with given Boolean cumulants <tt class="docutils literal"><span class="pre">bb</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">distributionByBooleanCumulants</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> R -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">distributionByBooleanCumulants(bb)</span></tt> initiates a distribution with given Boolean cumulants <tt class="docutils literal"><span class="pre">bb</span></tt>.</dd>
+</dl>
+<span class="target" id="l-distribution-distribution-by-classical-cumulants"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">distributionByClassicalCumulants</span>: <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">distributionByEvenMoments(kk)</span></tt> initiates a distribution with given classical cumulants <tt class="docutils literal"><span class="pre">kk</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt><span class="spadfun">distributionByClassicalCumulants</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> R -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">distributionByEvenMoments(kk)</span></tt> initiates a distribution with given classical cumulants <tt class="docutils literal"><span class="pre">kk</span></tt>.</dd>
+</dl>
+<span class="target" id="l-distribution-distribution-by-even-moments"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">distributionByEvenMoments</span>: <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">distributionByEvenMoments(mm)</span></tt> initiates a distribution with given even moments <tt class="docutils literal"><span class="pre">mm</span></tt> and odd moments zero.</dd>
+</dl>
+<dl class="docutils" id="index-8">
+<dt><span class="spadfun">distributionByEvenMoments</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> R -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">distributionByEvenMoments(mm)</span></tt> initiates a distribution with given even moments <tt class="docutils literal"><span class="pre">mm</span></tt> and odd moments zero.</dd>
+</dl>
+<span class="target" id="l-distribution-distribution-by-free-cumulants"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">distributionByFreeCumulants</span>: <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">distributionByFreeCumulants(cc)</span></tt> initiates a distribution with given free cumulants <tt class="docutils literal"><span class="pre">cc</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-10">
+<dt><span class="spadfun">distributionByFreeCumulants</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> R -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">distributionByFreeCumulants(cc)</span></tt> initiates a distribution with given free cumulants <tt class="docutils literal"><span class="pre">cc</span></tt>.</dd>
+</dl>
+<span class="target" id="l-distribution-distribution-by-jacobi-parameters"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">distributionByJacobiParameters</span>: (<a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R, <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">distributionByJacobiParameters(aa,</span> <span class="pre">bb)</span></tt> initiates a distribution with given Jacobi parameters <tt class="docutils literal"><span class="pre">[aa,</span> <span class="pre">bb]</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-12">
+<dt><span class="spadfun">distributionByJacobiParameters</span>: (<a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> R, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> R) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">distributionByJacobiParameters(aa,</span> <span class="pre">bb)</span></tt> initiates a distribution with given Jacobi parameters <tt class="docutils literal"><span class="pre">[aa,</span> <span class="pre">bb]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-distribution-distribution-by-moments"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">distributionByMoments</span>: <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">distributionByMoments(mm)</span></tt> initiates a distribution with given moments <tt class="docutils literal"><span class="pre">mm</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-14">
+<dt><span class="spadfun">distributionByMoments</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> R -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">distributionByMoments(mm)</span></tt> initiates a distribution with given moments <tt class="docutils literal"><span class="pre">mm</span></tt>.</dd>
+</dl>
+<span class="target" id="l-distribution-distribution-by-monotone-cumulants"></span><dl class="docutils" id="index-15">
+<dt><span class="spadfun">distributionByMonotoneCumulants</span>: <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R -&gt; % if R has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">distributionByMonotoneCumulants(hh)</span></tt> initiates a distribution with given monotone cumulants <tt class="docutils literal"><span class="pre">hh</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-16">
+<dt><span class="spadfun">distributionByMonotoneCumulants</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> R -&gt; % if R has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">distributionByMonotoneCumulants(hh)</span></tt> initiates a distribution with given monotone cumulants <tt class="docutils literal"><span class="pre">hh</span></tt>.</dd>
+</dl>
+<span class="target" id="l-distribution-distribution-by-s-transform"></span><dl class="docutils" id="index-17">
+<dt><span class="spadfun">distributionBySTransform</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R) -&gt; % if R has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">distributionBySTransform(series)</span></tt> initiates a distribution with given <tt class="docutils literal"><span class="pre">S</span></tt>-transform <tt class="docutils literal"><span class="pre">series</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-18">
+<dt><span class="spadfun">distributionBySTransform</span>: Record(puiseux: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, laurent: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, coef: <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R) -&gt; % if R has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">distributionBySTransform(series)</span></tt> initiates a distribution with given <tt class="docutils literal"><span class="pre">S</span></tt>-transform <tt class="docutils literal"><span class="pre">series</span></tt>.</dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-free-convolution"><em>freeConvolution</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-free-cumulant"><em>freeCumulant</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; R</dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-free-cumulants"><em>freeCumulants</em></a>: % -&gt; <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R</dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+</dl>
+<span class="target" id="l-distribution-free-multiplicative-convolution"></span><dl class="docutils" id="index-19">
+<dt><span class="spadfun">freeMultiplicativeConvolution</span>: (%, %) -&gt; % if R has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">freeMultiplicativeConvolution(mu,</span> <span class="pre">nu)</span></tt> computes the free multiplicative convolution of the distributions <tt class="docutils literal"><span class="pre">mu</span></tt> and <tt class="docutils literal"><span class="pre">nu</span></tt>.</dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-hankel-determinants"><em>hankelDeterminants</em></a>: % -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> R</dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-jacobi-parameters"><em>jacobiParameters</em></a>: % -&gt; Record(an: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> R, bn: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> R) if not (R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a>) and R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-jacobi-parameters"><em>jacobiParameters</em></a>: % -&gt; Record(an: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> R, bn: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> R) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-moment"><em>moment</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; R</dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-moments"><em>moments</em></a>: % -&gt; <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R</dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-monotone-convolution"><em>monotoneConvolution</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-monotone-cumulants"><em>monotoneCumulants</em></a>: % -&gt; <a class="reference internal" href="Sequence.html#l-sequence"><em>Sequence</em></a> R if R has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-orthogonal-polynomials"><em>orthogonalPolynomials</em></a>: % -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> R if not (R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a>) and R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+<dt><a class="reference internal" href="DistributionCategory.html#l-distribution-category-orthogonal-polynomials"><em>orthogonalPolynomials</em></a>: % -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd>from <a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</dd>
+</dl>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="DistributionCategory.html#l-distribution-category"><em>DistributionCategory</em></a> R</p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="DistributedMultivariatePolynomial.html"
+                        title="previous chapter">DistributedMultivariatePolynomial(vl, R)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="DoubleFloat.html"
+                        title="next chapter">DoubleFloat</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/Distribution.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="DoubleFloat.html" title="DoubleFloat"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="DistributedMultivariatePolynomial.html" title="DistributedMultivariatePolynomial(vl, R)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

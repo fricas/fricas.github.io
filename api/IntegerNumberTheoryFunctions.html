@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>IntegerNumberTheoryFunctions &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="IntegerPrimesPackage I" href="IntegerPrimesPackage.html" />
+    <link rel="prev" title="IntegerLinearDependence R" href="IntegerLinearDependence.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="IntegerPrimesPackage.html" title="IntegerPrimesPackage I"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="IntegerLinearDependence.html" title="IntegerLinearDependence R"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="integernumbertheoryfunctions">
+<span id="l-integer-number-theory-functions"></span><span id="index-0"></span><h1>IntegerNumberTheoryFunctions<a class="headerlink" href="#integernumbertheoryfunctions" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//numtheor.spad#L182">numtheor.spad line 182</a></p>
+<p>This package provides various number theoretic functions on the integers.</p>
+<span class="target" id="l-integer-number-theory-functions-bernoulli"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">bernoulli</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">bernoulli(n)</span></tt> returns the <tt class="docutils literal"><span class="pre">n</span></tt>th Bernoulli number. this is <tt class="docutils literal"><span class="pre">B(n,</span> <span class="pre">0)</span></tt>, where <tt class="docutils literal"><span class="pre">B(n,</span> <span class="pre">x)</span></tt> is the <tt class="docutils literal"><span class="pre">n</span></tt>th Bernoulli polynomial.</dd>
+</dl>
+<span class="target" id="l-integer-number-theory-functions-carmichael-lambda"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">carmichaelLambda</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">carmichaelLambda(n)</span></tt> returns exponent of the multiplicative group of integers modulo <tt class="docutils literal"><span class="pre">n</span></tt>, that is smallest positive integer <tt class="docutils literal"><span class="pre">k</span></tt> such that <tt class="docutils literal"><span class="pre">i^k</span> <span class="pre">rem</span> <span class="pre">n</span> <span class="pre">=</span> <span class="pre">1</span></tt> for all <tt class="docutils literal"><span class="pre">i</span></tt> relatively prime to <tt class="docutils literal"><span class="pre">n</span></tt>.</dd>
+</dl>
+<span class="target" id="l-integer-number-theory-functions-chinese-remainder"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">chineseRemainder</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">chineseRemainder(x1,</span> <span class="pre">m1,</span> <span class="pre">x2,</span> <span class="pre">m2)</span></tt> returns <tt class="docutils literal"><span class="pre">w</span></tt>, where <tt class="docutils literal"><span class="pre">w</span></tt> is such that <tt class="docutils literal"><span class="pre">w</span> <span class="pre">=</span> <span class="pre">x1</span> <span class="pre">mod</span> <span class="pre">m1</span></tt> and <tt class="docutils literal"><span class="pre">w</span> <span class="pre">=</span> <span class="pre">x2</span> <span class="pre">mod</span> <span class="pre">m2</span></tt>. Note: <tt class="docutils literal"><span class="pre">m1</span></tt> and <tt class="docutils literal"><span class="pre">m2</span></tt> must be relatively prime.</dd>
+</dl>
+<span class="target" id="l-integer-number-theory-functions-divisors"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">divisors</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">divisors(n)</span></tt> returns a list of the divisors of <tt class="docutils literal"><span class="pre">n</span></tt>.</dd>
+</dl>
+<span class="target" id="l-integer-number-theory-functions-euler"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">euler</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">euler(n)</span></tt> returns the <tt class="docutils literal"><span class="pre">n</span></tt>th Euler number. This is <tt class="docutils literal"><span class="pre">2^n</span> <span class="pre">E(n,</span> <span class="pre">1/2)</span></tt>, where <tt class="docutils literal"><span class="pre">E(n,</span> <span class="pre">x)</span></tt> is the <tt class="docutils literal"><span class="pre">n</span></tt>th Euler polynomial.</dd>
+</dl>
+<span class="target" id="l-integer-number-theory-functions-euler-phi"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">eulerPhi</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">eulerPhi(n)</span></tt> returns the number of integers between 1 and <tt class="docutils literal"><span class="pre">n</span></tt> (including 1) which are relatively prime to <tt class="docutils literal"><span class="pre">n</span></tt>. This is the Euler phi function <tt class="docutils literal"><span class="pre">phi(n)</span></tt> is also called the totient function.</dd>
+</dl>
+<span class="target" id="l-integer-number-theory-functions-fibonacci"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">fibonacci</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">fibonacci(n)</span></tt> returns the <tt class="docutils literal"><span class="pre">n</span></tt>th Fibonacci number. the Fibonacci numbers <tt class="docutils literal"><span class="pre">F[n]</span></tt> are defined by <tt class="docutils literal"><span class="pre">F[0]</span> <span class="pre">=</span> <span class="pre">F[1]</span> <span class="pre">=</span> <span class="pre">1</span></tt> and <tt class="docutils literal"><span class="pre">F[n]</span> <span class="pre">=</span> <span class="pre">F[n-1]</span> <span class="pre">+</span> <span class="pre">F[n-2]</span></tt>. The algorithm has running time <tt class="docutils literal"><span class="pre">O(log(n)^3)</span></tt>. Reference: Knuth, The Art of Computer Programming Vol 2, Semi-Numerical Algorithms.</dd>
+</dl>
+<span class="target" id="l-integer-number-theory-functions-harmonic"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">harmonic</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">harmonic(n)</span></tt> returns the <tt class="docutils literal"><span class="pre">n</span></tt>th harmonic number. This is <tt class="docutils literal"><span class="pre">H[n]</span> <span class="pre">=</span> <span class="pre">sum(1/k,</span> <span class="pre">k=1..n)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-integer-number-theory-functions-jacobi"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">jacobi</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">jacobi(a,</span> <span class="pre">b)</span></tt> returns the Jacobi symbol <tt class="docutils literal"><span class="pre">J(a/b)</span></tt>. When <tt class="docutils literal"><span class="pre">b</span></tt> is odd, <tt class="docutils literal"><span class="pre">J(a/b)</span> <span class="pre">=</span> <span class="pre">product(L(a/p)</span> <span class="pre">for</span> <span class="pre">p</span> <span class="pre">in</span> <span class="pre">factor</span> <span class="pre">b</span> <span class="pre">)</span></tt>. Note: by convention, 0 is returned if <tt class="docutils literal"><span class="pre">gcd(a,</span> <span class="pre">b)</span> <span class="pre">~=</span> <span class="pre">1</span></tt>. Iterative <tt class="docutils literal"><span class="pre">O(log(b)^2)</span></tt> version coded by Michael Monagan June 1987.</dd>
+</dl>
+<span class="target" id="l-integer-number-theory-functions-legendre"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">legendre</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">legendre(a,</span> <span class="pre">p)</span></tt> returns the Legendre symbol <tt class="docutils literal"><span class="pre">L(a/p)</span></tt>. <tt class="docutils literal"><span class="pre">L(a/p)</span> <span class="pre">=</span> <span class="pre">(-1)^((p-1)/2)</span> <span class="pre">mod</span> <span class="pre">p</span></tt> (<tt class="docutils literal"><span class="pre">p</span></tt> prime), which is 0 if <tt class="docutils literal"><span class="pre">a</span></tt> is 0, 1 if <tt class="docutils literal"><span class="pre">a</span></tt> is a quadratic residue <tt class="docutils literal"><span class="pre">mod</span> <span class="pre">p</span></tt> and <tt class="docutils literal"><span class="pre">-1</span></tt> otherwise. Note: because the primality test is expensive, if it is known that <tt class="docutils literal"><span class="pre">p</span></tt> is prime then use <tt class="docutils literal"><span class="pre">jacobi(a,</span> <span class="pre">p)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-integer-number-theory-functions-moebius-mu"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">moebiusMu</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">moebiusMu(n)</span></tt> returns the Moebius function <tt class="docutils literal"><span class="pre">mu(n)</span></tt>. <tt class="docutils literal"><span class="pre">mu(n)</span></tt> is either <tt class="docutils literal"><span class="pre">-1</span></tt>, 0 or 1 as follows: <tt class="docutils literal"><span class="pre">mu(n)</span> <span class="pre">=</span> <span class="pre">0</span></tt> if <tt class="docutils literal"><span class="pre">n</span></tt> is divisible by a square &gt; 1, <tt class="docutils literal"><span class="pre">mu(n)</span> <span class="pre">=</span> <span class="pre">(-1)^k</span></tt> if <tt class="docutils literal"><span class="pre">n</span></tt> is square-free and has <tt class="docutils literal"><span class="pre">k</span></tt> distinct prime divisors.</dd>
+</dl>
+<span class="target" id="l-integer-number-theory-functions-number-of-divisors"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">numberOfDivisors</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">numberOfDivisors(n)</span></tt> returns the number of integers between 1 and <tt class="docutils literal"><span class="pre">n</span></tt> (inclusive) which divide <tt class="docutils literal"><span class="pre">n</span></tt>. The number of divisors of <tt class="docutils literal"><span class="pre">n</span></tt> is often denoted by <tt class="docutils literal"><span class="pre">tau(n)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-integer-number-theory-functions-sum-of-divisors"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">sumOfDivisors</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">sumOfDivisors(n)</span></tt> returns the sum of the integers between 1 and <tt class="docutils literal"><span class="pre">n</span></tt> (inclusive) which divide <tt class="docutils literal"><span class="pre">n</span></tt>. The sum of the divisors of <tt class="docutils literal"><span class="pre">n</span></tt> is often denoted by <tt class="docutils literal"><span class="pre">sigma(n)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-integer-number-theory-functions-sum-of-kth-power-divisors"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">sumOfKthPowerDivisors</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">sumOfKthPowerDivisors(n,</span> <span class="pre">k)</span></tt> returns the sum of the <tt class="docutils literal"><span class="pre">k</span></tt>th powers of the integers between 1 and <tt class="docutils literal"><span class="pre">n</span></tt> (inclusive) which divide <tt class="docutils literal"><span class="pre">n</span></tt>. the sum of the <tt class="docutils literal"><span class="pre">k</span></tt>th powers of the divisors of <tt class="docutils literal"><span class="pre">n</span></tt> is often denoted by <tt class="docutils literal"><span class="pre">sigma_k(n)</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="IntegerLinearDependence.html"
+                        title="previous chapter">IntegerLinearDependence R</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="IntegerPrimesPackage.html"
+                        title="next chapter">IntegerPrimesPackage I</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/IntegerNumberTheoryFunctions.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="IntegerPrimesPackage.html" title="IntegerPrimesPackage I"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="IntegerLinearDependence.html" title="IntegerLinearDependence R"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

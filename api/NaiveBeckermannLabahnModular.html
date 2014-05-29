@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>NaiveBeckermannLabahnModular &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="NewSparseUnivariatePolynomialFunctions2(R, S)" href="NewSparseUnivariatePolynomialFunctions2.html" />
+    <link rel="prev" title="MultivariateSquareFree(E, OV, R, P)" href="MultivariateSquareFree.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="NewSparseUnivariatePolynomialFunctions2.html" title="NewSparseUnivariatePolynomialFunctions2(R, S)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="MultivariateSquareFree.html" title="MultivariateSquareFree(E, OV, R, P)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="naivebeckermannlabahnmodular">
+<span id="l-naive-beckermann-labahn-modular"></span><span id="index-0"></span><h1>NaiveBeckermannLabahnModular<a class="headerlink" href="#naivebeckermannlabahnmodular" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//modhpsol.spad#L1">modhpsol.spad line 1</a></p>
+<p>This package solves (multipoint) Hermite-Pade interpolation problem over $<tt class="docutils literal"><span class="pre">Z_p</span></tt>$, where $<tt class="docutils literal"><span class="pre">p</span></tt>$ is machine sized prime. We use quadratic algorithm from 94 Beckermann and Labahn paper (with modification to handle multipoint case).</p>
+<span class="target" id="l-naive-beckermann-labahn-modular-naive-beckermann-labahn0"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">naiveBeckermannLabahn0</span>: (<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a>, (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd>main solver routine</dd>
+</dl>
+<span class="target" id="l-naive-beckermann-labahn-modular-naive-beckermann-labahn1"></span><p id="index-2"><span class="spadfun">naiveBeckermannLabahn1</span>: (<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a>, (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></p>
+<p id="index-3"><span class="spadfun">naiveBeckermannLabahn1</span>: (<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a>, (<a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></p>
+<span class="target" id="l-naive-beckermann-labahn-modular-naive-beckermann-labahn"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">naiveBeckermannLabahn</span>: (<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">naiveBeckermannLabahn(f,</span> <span class="pre">degs,</span> <span class="pre">sigma,</span> <span class="pre">p)</span></tt> solves modulo $<tt class="docutils literal"><span class="pre">p</span></tt>$ Hermite-Pade interpolation problem of order $<tt class="docutils literal"><span class="pre">sigma</span></tt>$. $<tt class="docutils literal"><span class="pre">degs</span></tt>$ specifies degree bounds for solution. The first element of result contains <tt class="docutils literal"><span class="pre">sigma</span></tt>-basis. The second gives defects of elements of <tt class="docutils literal"><span class="pre">sigma</span></tt>-basis. The third one contains residuals <tt class="docutils literal"><span class="pre">--</span></tt> we stop updating solution if this would violate degree bounds, so residual is zero for elements of <tt class="docutils literal"><span class="pre">sigma</span></tt>-basis which are within bounds, but non-zero otherwise.</dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">naiveBeckermannLabahn</span>: (<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">naiveBeckermannLabahn(f,</span> <span class="pre">degs,</span> <span class="pre">sigma,</span> <span class="pre">p)</span></tt> solves modulo $<tt class="docutils literal"><span class="pre">p</span></tt>$ Hermite-Pade interpolation problem of order $<tt class="docutils literal"><span class="pre">sigma</span></tt>$. $<tt class="docutils literal"><span class="pre">degs</span></tt>$ specifies degree bounds for solution. The first element of result contains <tt class="docutils literal"><span class="pre">sigma</span></tt>-basis. The second gives defects of elements of <tt class="docutils literal"><span class="pre">sigma</span></tt>-basis. The third one contains residuals <tt class="docutils literal"><span class="pre">--</span></tt> we stop updating solution if this would violate degree bounds, so residual is zero for elements of <tt class="docutils literal"><span class="pre">sigma</span></tt>-basis which are within bounds, but non-zero otherwise.</dd>
+</dl>
+<span class="target" id="l-naive-beckermann-labahn-modular-naive-beckermann-labahn-multipoint"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">naiveBeckermannLabahnMultipoint</span>: (<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd>naiveBeckermannLabahn(<tt class="docutils literal"><span class="pre">f</span></tt>, degs, sigma, <tt class="docutils literal"><span class="pre">p</span></tt>) solves modulo $<tt class="docutils literal"><span class="pre">p</span></tt>$ multipoint Hermite-Pade interpolation problem of order $sigma$. $degs$ specifies degree bounds for solution. The first element of result contains sigma-basis. The second gives defects of elements of sigma-basis. The third one contains residuals <tt class="docutils literal"><span class="pre">--</span></tt> we stop updating solution if this would violate degree bounds, so residual is zero for elements of sigma-basis which are within bounds, but non-zero otherwise.</dd>
+</dl>
+<dl class="docutils" id="index-7">
+<dt><span class="spadfun">naiveBeckermannLabahnMultipoint</span>: (<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd>naiveBeckermannLabahn(<tt class="docutils literal"><span class="pre">f</span></tt>, degs, sigma, <tt class="docutils literal"><span class="pre">p</span></tt>) solves modulo $<tt class="docutils literal"><span class="pre">p</span></tt>$ multipoint Hermite-Pade interpolation problem of order $sigma$. $degs$ specifies degree bounds for solution. The first element of result contains sigma-basis. The second gives defects of elements of sigma-basis. The third one contains residuals <tt class="docutils literal"><span class="pre">--</span></tt> we stop updating solution if this would violate degree bounds, so residual is zero for elements of sigma-basis which are within bounds, but non-zero otherwise.</dd>
+</dl>
+<span class="target" id="l-naive-beckermann-labahn-modular-reduce-basis0"></span><p id="index-8"><span class="spadfun">reduceBasis0</span>: (<a class="reference internal" href="TwoDimensionalArray.html#l-two-dimensional-array"><em>TwoDimensionalArray</em></a> <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; Record(basis: <a class="reference internal" href="TwoDimensionalArray.html#l-two-dimensional-array"><em>TwoDimensionalArray</em></a> <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, defects: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, cinds: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</p>
+<span class="target" id="l-naive-beckermann-labahn-modular-reduce-basis"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">reduceBasis</span>: (<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; Record(basis: <a class="reference internal" href="TwoDimensionalArray.html#l-two-dimensional-array"><em>TwoDimensionalArray</em></a> <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, defects: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, cinds: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</dt>
+<dd>Skips elements of sigma basis which does not satisfy degree bounds and puts sigma-basis into canonical form.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="MultivariateSquareFree.html"
+                        title="previous chapter">MultivariateSquareFree(E, OV, R, P)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="NewSparseUnivariatePolynomialFunctions2.html"
+                        title="next chapter">NewSparseUnivariatePolynomialFunctions2(R, S)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/NaiveBeckermannLabahnModular.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="NewSparseUnivariatePolynomialFunctions2.html" title="NewSparseUnivariatePolynomialFunctions2(R, S)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="MultivariateSquareFree.html" title="MultivariateSquareFree(E, OV, R, P)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

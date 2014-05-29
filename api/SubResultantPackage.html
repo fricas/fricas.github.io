@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SubResultantPackage(R, UP) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="SupFractionFactorizer(E, OV, R, P)" href="SupFractionFactorizer.html" />
+    <link rel="prev" title="SturmHabichtPackage(R, x)" href="SturmHabichtPackage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="SupFractionFactorizer.html" title="SupFractionFactorizer(E, OV, R, P)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="SturmHabichtPackage.html" title="SturmHabichtPackage(R, x)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="subresultantpackage-r-up">
+<span id="l-sub-resultant-package"></span><span id="index-0"></span><h1>SubResultantPackage(R, UP)<a class="headerlink" href="#subresultantpackage-r-up" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//intrf.spad#L1">intrf.spad line 1</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></li>
+<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> R</li>
+</ul>
+<p>This package computes the subresultants of two polynomials which is needed for the <a href="#id1"><span class="problematic" id="id2">`</span></a>Lazard Rioboo&#8217; enhancement to Tragers integrations formula For efficiency reasons this has been rewritten to call Lionel Ducos package which is currently the best one. blankline</p>
+<span class="target" id="l-sub-resultant-package-primitive-part"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">primitivePart</span>: (UP, R) -&gt; UP if R has <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><em>EuclideanDomain</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">primitivePart(p,</span> <span class="pre">q)</span></tt> reduces the coefficient of <tt class="docutils literal"><span class="pre">p</span></tt> modulo <tt class="docutils literal"><span class="pre">q</span></tt>, takes the primitive part of the result, and ensures that the leading coefficient of that result is monic.</dd>
+</dl>
+<span class="target" id="l-sub-resultant-package-subresultant-vector"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">subresultantVector</span>: (UP, UP) -&gt; <a class="reference internal" href="PrimitiveArray.html#l-primitive-array"><em>PrimitiveArray</em></a> UP</dt>
+<dd><tt class="docutils literal"><span class="pre">subresultantVector(p,</span> <span class="pre">q)</span></tt> returns <tt class="docutils literal"><span class="pre">[p0,</span> <span class="pre">...,</span> <span class="pre">pn]</span></tt> where <tt class="docutils literal"><span class="pre">pi</span></tt> is the <tt class="docutils literal"><span class="pre">i</span></tt>-th subresultant of <tt class="docutils literal"><span class="pre">p</span></tt> and <tt class="docutils literal"><span class="pre">q</span></tt>. In particular, <tt class="docutils literal"><span class="pre">p0</span> <span class="pre">=</span> <span class="pre">resultant(p,</span> <span class="pre">q)</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="SturmHabichtPackage.html"
+                        title="previous chapter">SturmHabichtPackage(R, x)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="SupFractionFactorizer.html"
+                        title="next chapter">SupFractionFactorizer(E, OV, R, P)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/SubResultantPackage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="SupFractionFactorizer.html" title="SupFractionFactorizer(E, OV, R, P)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="SturmHabichtPackage.html" title="SturmHabichtPackage(R, x)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

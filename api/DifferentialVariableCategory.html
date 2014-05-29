@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>DifferentialVariableCategory S &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Categories" href="Categories.html" />
+    <link rel="next" title="DirectProductCategory(dim, R)" href="DirectProductCategory.html" />
+    <link rel="prev" title="DifferentialRing" href="DifferentialRing.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="DirectProductCategory.html" title="DirectProductCategory(dim, R)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="DifferentialRing.html" title="DifferentialRing"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="differentialvariablecategory-s">
+<span id="l-differential-variable-category"></span><span id="index-0"></span><h1>DifferentialVariableCategory S<a class="headerlink" href="#differentialvariablecategory-s" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//dpolcat.spad#L1">dpolcat.spad line 1</a></p>
+<ul class="simple">
+<li>S: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></li>
+</ul>
+<p><a class="reference internal" href="#l-differential-variable-category"><em>DifferentialVariableCategory</em></a> constructs the set of derivatives of a given set of (ordinary) differential indeterminates. If <tt class="docutils literal"><span class="pre">x</span></tt>, ..., <tt class="docutils literal"><span class="pre">y</span></tt> is an ordered set of differential indeterminates, and the prime notation is used for differentiation, then the set of derivatives (including zero-th order) of the differential indeterminates is <tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">x'</span></tt>, <tt class="docutils literal"><span class="pre">x''</span></tt>, ..., <tt class="docutils literal"><span class="pre">y</span></tt>, <tt class="docutils literal"><span class="pre">y'</span></tt>, <tt class="docutils literal"><span class="pre">y''</span></tt>, ... (Note: in the interpreter, the <tt class="docutils literal"><span class="pre">n</span></tt>-th derivative of <tt class="docutils literal"><span class="pre">y</span></tt> is displayed as <tt class="docutils literal"><span class="pre">y</span></tt> with a subscript <tt class="docutils literal"><span class="pre">n</span></tt>.) This set is viewed as a set of algebraic indeterminates, totally ordered in a way compatible with differentiation and the given order on the differential indeterminates. Such a total order is called a ranking of the differential indeterminates. blankline A domain in this category is needed to construct a differential polynomial domain. Differential polynomials are ordered by a ranking on the derivatives, and by an order (extending the ranking) on on the set of differential monomials. One may thus associate a domain in this category with a ranking of the differential indeterminates, just as one associates a domain in the category <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a> with an ordering of the set of monomials in a set of algebraic indeterminates. The ranking is specified through the binary relation <span class="spadfun">&lt;</span>. For example, one may define one derivative to be less than another by lexicographically comparing first the <span class="spadfun">order</span>, then the given order of the differential indeterminates appearing in the derivatives. This is the default implementation. blankline The notion of weight generalizes that of degree. A polynomial domain may be made into a graded ring if a weight function is given on the set of indeterminates, Very often, a grading is the first step in ordering the set of monomials. For differential polynomial domains, this constructor provides a function <span class="spadfun">weight</span>, which allows the assignment of a non-negative number to each derivative of a differential indeterminate. For example, one may define the weight of a derivative to be simply its <span class="spadfun">order</span> (this is the default assignment). This weight function can then be extended to the set of all differential polynomials, providing a graded ring structure.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="PartialOrder.html#id1"><em>&lt;</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id2"><em>&lt;=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id3"><em>&gt;</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id4"><em>&gt;=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+</dl>
+<span class="target" id="l-differential-variable-category-coerce"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">coerce</span>: S -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">coerce(a)</span></tt> transforms a into an element of %.</dd>
+</dl>
+<span class="target" id="l-differential-variable-category-differentiate"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">differentiate</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">differentiate(v)</span></tt> returns the derivative of <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">differentiate</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">differentiate(v,</span> <span class="pre">n)</span></tt> returns the <tt class="docutils literal"><span class="pre">n</span></tt>-th derivative of <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-differential-variable-category-make-variable"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">makeVariable</span>: (S, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">makeVariable(s,</span> <span class="pre">n)</span></tt> returns the <tt class="docutils literal"><span class="pre">n</span></tt>-th derivative of a differential indeterminate <tt class="docutils literal"><span class="pre">s</span></tt> as an algebraic indeterminate.</dd>
+<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-max"><em>max</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dd>
+<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-min"><em>min</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dd>
+</dl>
+<span class="target" id="l-differential-variable-category-order"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">order</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">order(v)</span></tt> returns <tt class="docutils literal"><span class="pre">n</span></tt> if <tt class="docutils literal"><span class="pre">v</span></tt> is the <tt class="docutils literal"><span class="pre">n</span></tt>-th derivative of any differential indeterminate.</dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract"><em>retract</em></a>: % -&gt; S</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> S</dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract-if-can"><em>retractIfCan</em></a>: % -&gt; Union(S, failed)</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> S</dd>
+<dt><a class="reference internal" href="Comparable.html#l-comparable-smaller"><em>smaller?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dd>
+</dl>
+<span class="target" id="l-differential-variable-category-variable"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">variable</span>: % -&gt; S</dt>
+<dd><tt class="docutils literal"><span class="pre">variable(v)</span></tt> returns <tt class="docutils literal"><span class="pre">s</span></tt> if <tt class="docutils literal"><span class="pre">v</span></tt> is any derivative of the differential indeterminate <tt class="docutils literal"><span class="pre">s</span></tt>.</dd>
+</dl>
+<span class="target" id="l-differential-variable-category-weight"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">weight</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">weight(v)</span></tt> returns the weight of the derivative <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
+</dl>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></p>
+<p><a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></p>
+<p><a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></p>
+<p><a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> S</p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="DifferentialRing.html"
+                        title="previous chapter">DifferentialRing</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="DirectProductCategory.html"
+                        title="next chapter">DirectProductCategory(dim, R)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/DifferentialVariableCategory.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="DirectProductCategory.html" title="DirectProductCategory(dim, R)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="DifferentialRing.html" title="DifferentialRing"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

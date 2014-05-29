@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>StreamInfiniteProduct Coef &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="StreamTaylorSeriesOperations A" href="StreamTaylorSeriesOperations.html" />
+    <link rel="prev" title="StreamFunctions3(A, B, C)" href="StreamFunctions3.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="StreamTaylorSeriesOperations.html" title="StreamTaylorSeriesOperations A"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="StreamFunctions3.html" title="StreamFunctions3(A, B, C)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="streaminfiniteproduct-coef">
+<span id="l-stream-infinite-product"></span><span id="index-0"></span><h1>StreamInfiniteProduct Coef<a class="headerlink" href="#streaminfiniteproduct-coef" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//infprod.spad#L1">infprod.spad line 1</a></p>
+<ul class="simple">
+<li>Coef: Join(<a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a>, <a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a>)</li>
+</ul>
+<p>This package computes infinite products of Taylor series over an integral domain of characteristic 0. Here Taylor series are represented by streams of Taylor coefficients.</p>
+<span class="target" id="l-stream-infinite-product-even-infinite-product"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">evenInfiniteProduct</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> Coef -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> Coef</dt>
+<dd><tt class="docutils literal"><span class="pre">evenInfiniteProduct(f(x))</span></tt> computes <tt class="docutils literal"><span class="pre">product(n=2,</span> <span class="pre">4,</span> <span class="pre">6...,</span> <span class="pre">f(x^n))</span></tt>. The series <tt class="docutils literal"><span class="pre">f(x)</span></tt> should have constant coefficient 1.</dd>
+</dl>
+<span class="target" id="l-stream-infinite-product-general-infinite-product"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">generalInfiniteProduct</span>: (<a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> Coef, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> Coef</dt>
+<dd><tt class="docutils literal"><span class="pre">generalInfiniteProduct(f(x),</span> <span class="pre">a,</span> <span class="pre">d)</span></tt> computes <tt class="docutils literal"><span class="pre">product(n=a,</span> <span class="pre">a+d,</span> <span class="pre">a+2*d,</span> <span class="pre">...,</span> <span class="pre">f(x^n))</span></tt>. The series <tt class="docutils literal"><span class="pre">f(x)</span></tt> should have constant coefficient 1.</dd>
+</dl>
+<span class="target" id="l-stream-infinite-product-infinite-product"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">infiniteProduct</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> Coef -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> Coef</dt>
+<dd><tt class="docutils literal"><span class="pre">infiniteProduct(f(x))</span></tt> computes <tt class="docutils literal"><span class="pre">product(n=1,</span> <span class="pre">2,</span> <span class="pre">3...,</span> <span class="pre">f(x^n))</span></tt>. The series <tt class="docutils literal"><span class="pre">f(x)</span></tt> should have constant coefficient 1.</dd>
+</dl>
+<span class="target" id="l-stream-infinite-product-odd-infinite-product"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">oddInfiniteProduct</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> Coef -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> Coef</dt>
+<dd><tt class="docutils literal"><span class="pre">oddInfiniteProduct(f(x))</span></tt> computes <tt class="docutils literal"><span class="pre">product(n=1,</span> <span class="pre">3,</span> <span class="pre">5...,</span> <span class="pre">f(x^n))</span></tt>. The series <tt class="docutils literal"><span class="pre">f(x)</span></tt> should have constant coefficient 1.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="StreamFunctions3.html"
+                        title="previous chapter">StreamFunctions3(A, B, C)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="StreamTaylorSeriesOperations.html"
+                        title="next chapter">StreamTaylorSeriesOperations A</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/StreamInfiniteProduct.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="StreamTaylorSeriesOperations.html" title="StreamTaylorSeriesOperations A"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="StreamFunctions3.html" title="StreamFunctions3(A, B, C)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

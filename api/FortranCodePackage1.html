@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FortranCodePackage1 &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="FortranCodeTools" href="FortranCodeTools.html" />
+    <link rel="prev" title="FloatSpecialFunctions" href="FloatSpecialFunctions.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="FortranCodeTools.html" title="FortranCodeTools"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="FloatSpecialFunctions.html" title="FloatSpecialFunctions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="fortrancodepackage1">
+<span id="l-fortran-code-package1"></span><span id="index-0"></span><h1>FortranCodePackage1<a class="headerlink" href="#fortrancodepackage1" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//fortpak.spad#L1">fortpak.spad line 1</a></p>
+<p><a class="reference internal" href="#l-fortran-code-package1"><em>FortranCodePackage1</em></a> provides some utilities for producing useful objects in FortranCode domain. The Package may be used with the FortranCode domain and its <tt class="docutils literal"><span class="pre">printCode</span></tt> or possibly via an outputAsFortran. (The package provides items of use in connection with ASPs in the AXIOM-NAG link and, where appropriate, naming accords with that in IRENA.) The easy-to-use functions use Fortran loop variables <tt class="docutils literal"><span class="pre">I1</span></tt>, <tt class="docutils literal"><span class="pre">I2</span></tt>, and it is users&#8217; responsibility to check that this is sensible. The advanced functions use SegmentBinding to allow users control over Fortran loop variable names.</p>
+<span class="target" id="l-fortran-code-package1-identity-square-matrix"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">identitySquareMatrix</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="FortranCode.html#l-fortran-code"><em>FortranCode</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">identitySquareMatrix(s,</span> <span class="pre">p)</span></tt> is undocumented.</dd>
+</dl>
+<span class="target" id="l-fortran-code-package1-zero-matrix"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">zeroMatrix</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="FortranCode.html#l-fortran-code"><em>FortranCode</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">zeroMatrix(s,</span> <span class="pre">p,</span> <span class="pre">q)</span></tt> uses loop variables in the Fortran, <tt class="docutils literal"><span class="pre">I1</span></tt> and <tt class="docutils literal"><span class="pre">I2</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">zeroMatrix</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="SegmentBinding.html#l-segment-binding"><em>SegmentBinding</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="SegmentBinding.html#l-segment-binding"><em>SegmentBinding</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="FortranCode.html#l-fortran-code"><em>FortranCode</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">zeroMatrix(s,</span> <span class="pre">b,</span> <span class="pre">d)</span></tt> in this version gives the user control over names of Fortran variables used in loops.</dd>
+</dl>
+<span class="target" id="l-fortran-code-package1-zero-square-matrix"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">zeroSquareMatrix</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="FortranCode.html#l-fortran-code"><em>FortranCode</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">zeroSquareMatrix(s,</span> <span class="pre">p)</span></tt> is undocumented.</dd>
+</dl>
+<span class="target" id="l-fortran-code-package1-zero-vector"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">zeroVector</span>: (<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="FortranCode.html#l-fortran-code"><em>FortranCode</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">zeroVector(s,</span> <span class="pre">p)</span></tt> is undocumented.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="FloatSpecialFunctions.html"
+                        title="previous chapter">FloatSpecialFunctions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="FortranCodeTools.html"
+                        title="next chapter">FortranCodeTools</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/FortranCodePackage1.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="FortranCodeTools.html" title="FortranCodeTools"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="FloatSpecialFunctions.html" title="FloatSpecialFunctions"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FactoredFunctionUtilities R &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="FactoringUtilities(E, OV, R, P)" href="FactoringUtilities.html" />
+    <link rel="prev" title="FactoredFunctions2(R, S)" href="FactoredFunctions2.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="FactoringUtilities.html" title="FactoringUtilities(E, OV, R, P)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="FactoredFunctions2.html" title="FactoredFunctions2(R, S)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="factoredfunctionutilities-r">
+<span id="l-factored-function-utilities"></span><span id="index-0"></span><h1>FactoredFunctionUtilities R<a class="headerlink" href="#factoredfunctionutilities-r" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//fr.spad#L498">fr.spad line 498</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></li>
+</ul>
+<p><a class="reference internal" href="#l-factored-function-utilities"><em>FactoredFunctionUtilities</em></a> implements some utility functions for manipulating factored objects.</p>
+<span class="target" id="l-factored-function-utilities-merge-factors"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">mergeFactors</span>: (<a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> R, <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> R) -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">mergeFactors(u,</span> <span class="pre">v)</span></tt> is used when the factorizations of spadvar{<tt class="docutils literal"><span class="pre">u</span></tt>} and spadvar{<tt class="docutils literal"><span class="pre">v</span></tt>} are known to be disjoint, e.g. resulting from a content/primitive part split. Essentially, it creates a new factored object by multiplying the units together and appending the lists of factors.</dd>
+</dl>
+<span class="target" id="l-factored-function-utilities-refine"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">refine</span>: (<a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> R, R -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> R) -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">refine(u,</span> <span class="pre">fn)</span></tt> is used to apply the function userfun{<tt class="docutils literal"><span class="pre">fn</span></tt>} to each factor of spadvar{<tt class="docutils literal"><span class="pre">u</span></tt>} and then build a new factored object from the results. For example, if spadvar{<tt class="docutils literal"><span class="pre">u</span></tt>} were created by calling <tt class="docutils literal"><span class="pre">nilFactor(10,</span> <span class="pre">2)</span></tt> then <tt class="docutils literal"><span class="pre">refine(u,</span> <span class="pre">factor)</span></tt> would create a factored object equal to that created by <tt class="docutils literal"><span class="pre">factor(100)</span></tt> or <tt class="docutils literal"><span class="pre">primeFactor(2,</span> <span class="pre">2)</span> <span class="pre">*</span> <span class="pre">primeFactor(5,</span> <span class="pre">2)</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="FactoredFunctions2.html"
+                        title="previous chapter">FactoredFunctions2(R, S)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="FactoringUtilities.html"
+                        title="next chapter">FactoringUtilities(E, OV, R, P)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/FactoredFunctionUtilities.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="FactoringUtilities.html" title="FactoringUtilities(E, OV, R, P)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="FactoredFunctions2.html" title="FactoredFunctions2(R, S)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

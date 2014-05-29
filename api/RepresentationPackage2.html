@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>RepresentationPackage2 R &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="ResolveLatticeCompletion S" href="ResolveLatticeCompletion.html" />
+    <link rel="prev" title="RepresentationPackage1 R" href="RepresentationPackage1.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ResolveLatticeCompletion.html" title="ResolveLatticeCompletion S"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="RepresentationPackage1.html" title="RepresentationPackage1 R"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="representationpackage2-r">
+<span id="l-representation-package2"></span><span id="index-0"></span><h1>RepresentationPackage2 R<a class="headerlink" href="#representationpackage2-r" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//rep2.spad#L1">rep2.spad line 1</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></li>
+</ul>
+<p><tt class="docutils literal"><span class="pre">RepresentationPackage2</span></tt> provides functions for working with modular representations of finite groups and algebra. The routines in this package are created, using ideas of <tt class="docutils literal"><span class="pre">R</span></tt>. Parker, (the meat-Axe) to get smaller representations from bigger ones, i.e. finding sub- and factormodules, or to show, that such the representations are irreducible. Note: most functions are randomized functions of Las Vegas type i.e. every answer is correct, but with small probability the algorithm fails to get an answer.</p>
+<span class="target" id="l-representation-package2-are-equivalent"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">areEquivalent?</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">areEquivalent?(aG0,</span> <span class="pre">aG1)</span></tt> calls <em>areEquivalent?(aG0, aG1, true, 25)</em>. Note: the choice of 25 was rather arbitrary.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">areEquivalent?</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">areEquivalent?(aG0,</span> <span class="pre">aG1,</span> <span class="pre">randomelements,</span> <span class="pre">numberOfTries)</span></tt> tests whether the two lists of matrices, all assumed of same square shape, can be simultaneously conjugated by a non-singular matrix. If these matrices represent the same group generators, the representations are equivalent. The algorithm tries <em>numberOfTries</em> times to create elements in the generated algebras in the same fashion. If their ranks differ, they are not equivalent. If an isomorphism is assumed, then the kernel of an element of the first algebra is mapped to the kernel of the corresponding element in the second algebra. Now consider the one-dimensional ones. If they generate the whole space (e.g. irreducibility !) we use <em>standardBasisOfCyclicSubmodule</em> to create the only possible transition matrix. The method checks whether the matrix conjugates all corresponding matrices from <em>aGi</em>. The way to choose the singular matrices is as in <em>meatAxe</em>. If the two representations are equivalent, this routine returns the transformation matrix <em>TM</em> with <em>aG0.i * TM = TM * aG1.i</em> for all <tt class="docutils literal"><span class="pre">i</span></tt>. If the representations are not equivalent, a small 0-matrix is returned. Note: the case with different sets of group generators cannot be handled.</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">areEquivalent?</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">areEquivalent?(aG0,</span> <span class="pre">aG1,</span> <span class="pre">numberOfTries)</span></tt> calls <em>areEquivalent?(aG0, aG1, true, 25)</em>. Note: the choice of 25 was rather arbitrary.</dd>
+</dl>
+<span class="target" id="l-representation-package2-complete-echelon-basis"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">completeEchelonBasis</span>: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">completeEchelonBasis(lv)</span></tt> completes the basis <em>lv</em> assumed to be in echelon form of a subspace of <em>R^n</em> (<tt class="docutils literal"><span class="pre">n</span></tt> the length of all the vectors in <em>lv</em>) with unit vectors to a basis of <em>R^n</em>. It is assumed that the argument is not an empty vector and that it is not the basis of the 0-subspace. Note: the rows of the result correspond to the vectors of the basis.</dd>
+</dl>
+<span class="target" id="l-representation-package2-create-random-element"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">createRandomElement</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">createRandomElement(aG,</span> <span class="pre">x)</span></tt> creates a random element of the group algebra generated by <em>aG</em>.</dd>
+</dl>
+<span class="target" id="l-representation-package2-cyclic-submodule"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">cyclicSubmodule</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R) -&gt; <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R if R has <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><em>EuclideanDomain</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">cyclicSubmodule(lm,</span> <span class="pre">v)</span></tt> generates a basis as follows. It is assumed that the size <tt class="docutils literal"><span class="pre">n</span></tt> of the vector equals the number of rows and columns of the matrices. Then the matrices generate a subalgebra, say <tt class="docutils literal"><span class="pre">A</span></tt>, of the algebra of all square matrices of dimension <tt class="docutils literal"><span class="pre">n</span></tt>. <em>V R</em> is an <tt class="docutils literal"><span class="pre">A</span></tt>-module in the natural way. cyclicSubmodule(<tt class="docutils literal"><span class="pre">lm</span></tt>, <tt class="docutils literal"><span class="pre">v</span></tt>) generates the <tt class="docutils literal"><span class="pre">R</span></tt>-Basis of <em>Av</em> as described in section 6 of <tt class="docutils literal"><span class="pre">R</span></tt>. A. Parker<tt class="docutils literal"><span class="pre">'s</span></tt> &#8220;The Meat-Axe&#8221;. Note: in contrast to the description in &#8220;The Meat-Axe&#8221; and to <em>standardBasisOfCyclicSubmodule</em> the result is in echelon form.</dd>
+</dl>
+<span class="target" id="l-representation-package2-is-absolutely-irreducible"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">isAbsolutelyIrreducible?</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">isAbsolutelyIrreducible?(aG,</span> <span class="pre">numberOfTries)</span></tt> uses Norton<tt class="docutils literal"><span class="pre">'s</span></tt> irreducibility test to check for absolute irreduciblity, assuming if a one-dimensional kernel is found. As no field extension changes create &#8220;new&#8221; elements in a one-dimensional space, the criterium stays <tt class="docutils literal"><span class="pre">true</span></tt> for every extension. The method looks for one-dimensionals only by creating random elements (no fingerprints) since a run of <em>meatAxe</em> would have proved absolute irreducibility anyway.</dd>
+</dl>
+<dl class="docutils" id="index-8">
+<dt><span class="spadfun">isAbsolutelyIrreducible?</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">isAbsolutelyIrreducible?(aG)</span></tt> calls <em>isAbsolutelyIrreducible?(aG, 25)</em>. Note: the choice of 25 was rather arbitrary.</dd>
+</dl>
+<span class="target" id="l-representation-package2-meat-axe"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">meatAxe</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R if R has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a> and R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">meatAxe(aG,</span> <span class="pre">randomElements)</span></tt> calls <em>meatAxe(aG, false, 6, 7)</em>, only using Parker<tt class="docutils literal"><span class="pre">'s</span></tt> fingerprints, if <em>randomElemnts</em> is <tt class="docutils literal"><span class="pre">false</span></tt>. If it is <tt class="docutils literal"><span class="pre">true</span></tt>, it calls <em>meatAxe(aG, true, 25, 7)</em>, only using random elements. Note: the choice of 25 was rather arbitrary. Also, 7 covers the case of three-dimensional kernels over the field with 2 elements.</dd>
+</dl>
+<dl class="docutils" id="index-10">
+<dt><span class="spadfun">meatAxe</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R if R has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a> and R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">meatAxe(aG,</span> <span class="pre">randomElements,</span> <span class="pre">numberOfTries,</span> <span class="pre">maxTests)</span></tt> returns a 2-list of representations as follows. All matrices of argument <tt class="docutils literal"><span class="pre">aG</span></tt> are assumed to be square and of equal size. Then <tt class="docutils literal"><span class="pre">aG</span></tt> generates a subalgebra, say <tt class="docutils literal"><span class="pre">A</span></tt>, of the algebra of all square matrices of dimension <tt class="docutils literal"><span class="pre">n</span></tt>. <em>V R</em> is an A-module in the usual way. meatAxe(<tt class="docutils literal"><span class="pre">aG</span></tt>, <tt class="docutils literal"><span class="pre">numberOfTries</span></tt>, maxTests) creates at most <em>numberOfTries</em> random elements of the algebra, tests them for singularity. If singular, it tries at most <em>maxTests</em> elements of its kernel to generate a proper submodule. If successful, a 2-list is returned: first, a list containing first the list of the representations of the submodule, then a list of the representations of the factor module. Otherwise, if we know that all the kernel is already scanned, Norton<tt class="docutils literal"><span class="pre">'s</span></tt> irreducibility test can be used either to prove irreducibility or to find the splitting. If <em>randomElements</em> is <em>false</em>, the first 6 tries use Parker<tt class="docutils literal"><span class="pre">'s</span></tt> fingerprints.</dd>
+</dl>
+<dl class="docutils" id="index-11">
+<dt><span class="spadfun">meatAxe</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R if R has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a> and R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">meatAxe(aG,</span> <span class="pre">numberOfTries)</span></tt> calls <em>meatAxe(aG, true, numberOfTries, 7)</em>. Notes: 7 covers the case of three-dimensional kernels over the field with 2 elements.</dd>
+</dl>
+<dl class="docutils" id="index-12">
+<dt><span class="spadfun">meatAxe</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R if R has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a> and R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">meatAxe(aG)</span></tt> calls <em>meatAxe(aG, false, 25, 7)</em> returns a 2-list of representations as follows. All matrices of argument <tt class="docutils literal"><span class="pre">aG</span></tt> are assumed to be square and of equal size. Then <tt class="docutils literal"><span class="pre">aG</span></tt> generates a subalgebra, say <tt class="docutils literal"><span class="pre">A</span></tt>, of the algebra of all square matrices of dimension <tt class="docutils literal"><span class="pre">n</span></tt>. <em>V R</em> is an A-module in the usual way. meatAxe(<tt class="docutils literal"><span class="pre">aG</span></tt>) creates at most 25 random elements of the algebra, tests them for singularity. If singular, it tries at most 7 elements of its kernel to generate a proper submodule. If successful a list which contains first the list of the representations of the submodule, then a list of the representations of the factor module is returned. Otherwise, if we know that all the kernel is already scanned, Norton<tt class="docutils literal"><span class="pre">'s</span></tt> irreducibility test can be used either to prove irreducibility or to find the splitting. Notes: the first 6 tries use Parker<tt class="docutils literal"><span class="pre">'s</span></tt> fingerprints. Also, 7 covers the case of three-dimensional kernels over the field with 2 elements.</dd>
+</dl>
+<span class="target" id="l-representation-package2-scan-one-dim-subspaces"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">scanOneDimSubspaces</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R if R has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a> and R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">scanOneDimSubspaces(basis,</span> <span class="pre">n)</span></tt> gives a canonical representative of the <em>n</em><tt class="docutils literal"><span class="pre">-</span></tt>th one-dimensional subspace of the vector space generated by the elements of <em>basis</em>, all from <em>R^n</em>. The coefficients of the representative are of shape <em>(0, ..., 0, 1, *, ..., *)</em>, <a href="#id1"><span class="problematic" id="id2">**</span></a><em> in ``R``. If the size of ``R`` is ``q``, then there are *(q^n-1)/(q-1)</em> of them. We first reduce <tt class="docutils literal"><span class="pre">n</span></tt> modulo this number, then find the largest <tt class="docutils literal"><span class="pre">i</span></tt> such that <em>+/[q^i for i in 0..i-1] &lt;= n</em>. Subtracting this sum of powers from <tt class="docutils literal"><span class="pre">n</span></tt> results in an <tt class="docutils literal"><span class="pre">i</span></tt>-digit number to <tt class="docutils literal"><span class="pre">basis</span></tt> <tt class="docutils literal"><span class="pre">q</span></tt>. This fills the positions of the stars.</dd>
+</dl>
+<span class="target" id="l-representation-package2-split"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">split</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">split(aG,</span> <span class="pre">vector)</span></tt> returns a subalgebra <tt class="docutils literal"><span class="pre">A</span></tt> of all square matrix of dimension <tt class="docutils literal"><span class="pre">n</span></tt> as a list of list of matrices, generated by the list of matrices <tt class="docutils literal"><span class="pre">aG</span></tt>, where <tt class="docutils literal"><span class="pre">n</span></tt> denotes both the size of vector as well as the dimension of each of the square matrices. <em>V R</em> is an A-module in the natural way. split(<tt class="docutils literal"><span class="pre">aG</span></tt>, vector) then checks whether the cyclic submodule generated by <em>vector</em> is a proper submodule of <em>V R</em>. If successful, it returns a two-element list, which contains first the list of the representations of the submodule, then the list of the representations of the factor module. If the vector generates the whole module, a one-element list of the old representation is given. Note: a later version this should call the other split.</dd>
+</dl>
+<dl class="docutils" id="index-15">
+<dt><span class="spadfun">split</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">split(aG,</span> <span class="pre">submodule)</span></tt> uses a proper submodule of <em>R^n</em> to create the representations of the submodule and of the factor module.</dd>
+</dl>
+<span class="target" id="l-representation-package2-standard-basis-of-cyclic-submodule"></span><dl class="docutils" id="index-16">
+<dt><span class="spadfun">standardBasisOfCyclicSubmodule</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R if R has <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><em>EuclideanDomain</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">standardBasisOfCyclicSubmodule(lm,</span> <span class="pre">v)</span></tt> returns a matrix as follows. It is assumed that the size <tt class="docutils literal"><span class="pre">n</span></tt> of the vector equals the number of rows and columns of the matrices. Then the matrices generate a subalgebra, say <tt class="docutils literal"><span class="pre">A</span></tt>, of the algebra of all square matrices of dimension <tt class="docutils literal"><span class="pre">n</span></tt>. <em>V R</em> is an <tt class="docutils literal"><span class="pre">A</span></tt>-module in the natural way. standardBasisOfCyclicSubmodule(<tt class="docutils literal"><span class="pre">lm</span></tt>, <tt class="docutils literal"><span class="pre">v</span></tt>) calculates a matrix whose non-zero column vectors are the <tt class="docutils literal"><span class="pre">R</span></tt>-Basis of <em>Av</em> achieved in the way as described in section 6 of <tt class="docutils literal"><span class="pre">R</span></tt>. A. Parker<tt class="docutils literal"><span class="pre">'s</span></tt> &#8220;The Meat-Axe&#8221;. Note: in contrast to <em>cyclicSubmodule</em>, the result is not in echelon form.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="RepresentationPackage1.html"
+                        title="previous chapter">RepresentationPackage1 R</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ResolveLatticeCompletion.html"
+                        title="next chapter">ResolveLatticeCompletion S</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/RepresentationPackage2.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ResolveLatticeCompletion.html" title="ResolveLatticeCompletion S"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="RepresentationPackage1.html" title="RepresentationPackage1 R"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

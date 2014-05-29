@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>RecurrenceOperator(R, F) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="ReducedDivisor(F1, UP, UPUP, R, F2)" href="ReducedDivisor.html" />
+    <link rel="prev" title="RectangularMatrixCategoryFunctions2(m, n, R1, Row1, Col1, M1, R2, Row2, Col2, M2)" href="RectangularMatrixCategoryFunctions2.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ReducedDivisor.html" title="ReducedDivisor(F1, UP, UPUP, R, F2)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="RectangularMatrixCategoryFunctions2.html" title="RectangularMatrixCategoryFunctions2(m, n, R1, Row1, Col1, M1, R2, Row2, Col2, M2)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="recurrenceoperator-r-f">
+<span id="l-recurrence-operator"></span><span id="index-0"></span><h1>RecurrenceOperator(R, F)<a class="headerlink" href="#recurrenceoperator-r-f" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//rec.spad#L24">rec.spad line 24</a></p>
+<ul class="simple">
+<li>R: Join(<a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a>, <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a>, <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a>)</li>
+<li>F: Join(<a class="reference internal" href="FunctionSpace.html#l-function-space"><em>FunctionSpace</em></a> R, <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="PartialDifferentialRing.html#l-partial-differential-ring"><em>PartialDifferentialRing</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="CombinatorialOpsCategory.html#l-combinatorial-ops-category"><em>CombinatorialOpsCategory</em></a>)</li>
+</ul>
+<p>This package provides an operator for the <tt class="docutils literal"><span class="pre">n</span></tt>-th term of a recurrence and an operator for the coefficient of <tt class="docutils literal"><span class="pre">x^n</span></tt> in a function specified by a functional equation.</p>
+<span class="target" id="l-recurrence-operator-eltable"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">eltable?</span>: F -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">eltable?</span> <span class="pre">r</span></tt> returns whether the operator determines (most likely) the sequence completely.</dd>
+</dl>
+<span class="target" id="l-recurrence-operator-get-eq"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">getEq</span>: F -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">getEq</span> <span class="pre">f</span></tt> returns the defining equation, if <tt class="docutils literal"><span class="pre">f</span></tt> represents the coefficient of an ADE or a recurrence.</dd>
+</dl>
+<span class="target" id="l-recurrence-operator-make-f-eq"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">makeFEq</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> F, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> F) -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">evalADE(f,</span> <span class="pre">x,</span> <span class="pre">n,</span> <span class="pre">eq,</span> <span class="pre">parameters,</span> <span class="pre">values)</span></tt> creates an expression that stands for the coefficient of <tt class="docutils literal"><span class="pre">x^n</span></tt> in the Taylor expansion of <tt class="docutils literal"><span class="pre">f</span></tt>(<tt class="docutils literal"><span class="pre">x</span></tt>), where <tt class="docutils literal"><span class="pre">f</span></tt>(<tt class="docutils literal"><span class="pre">x</span></tt>) is given by the functional equation <tt class="docutils literal"><span class="pre">eq</span></tt>. The argument values specifies the first few Taylor coefficients.</dd>
+</dl>
+<span class="target" id="l-recurrence-operator-make-rec"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">makeRec</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> F, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> F) -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">makeRec(u,</span> <span class="pre">n,</span> <span class="pre">eq,</span> <span class="pre">parameters,</span> <span class="pre">values)</span></tt> creates an expression that stands for <tt class="docutils literal"><span class="pre">u</span></tt>(<tt class="docutils literal"><span class="pre">n</span></tt>), where <tt class="docutils literal"><span class="pre">u</span></tt>(<tt class="docutils literal"><span class="pre">n</span></tt>) is given by the equation <tt class="docutils literal"><span class="pre">eq</span></tt>. The argument <tt class="docutils literal"><span class="pre">parameters</span></tt> has to contain all variables (or kernels) that appear eventually in the stream of values. The argument values specifies the initial values of the recurrence <tt class="docutils literal"><span class="pre">u</span></tt>(0), <tt class="docutils literal"><span class="pre">u</span></tt>(1), ... For the moment we don<tt class="docutils literal"><span class="pre">'t</span></tt> allow recursions that contain <tt class="docutils literal"><span class="pre">u</span></tt> inside of another operator.</dd>
+</dl>
+<span class="target" id="l-recurrence-operator-values"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">values</span>: () -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">values()</span></tt> returns the number of initial values to display at most.</dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt><span class="spadfun">values</span>: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">values</span> <span class="pre">N</span></tt> sets the number of initial values to display at most.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="RectangularMatrixCategoryFunctions2.html"
+                        title="previous chapter">RectangularMatrixCategoryFunctions2(m, n, R1, Row1, Col1, M1, R2, Row2, Col2, M2)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ReducedDivisor.html"
+                        title="next chapter">ReducedDivisor(F1, UP, UPUP, R, F2)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/RecurrenceOperator.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ReducedDivisor.html" title="ReducedDivisor(F1, UP, UPUP, R, F2)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="RectangularMatrixCategoryFunctions2.html" title="RectangularMatrixCategoryFunctions2(m, n, R1, Row1, Col1, M1, R2, Row2, Col2, M2)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

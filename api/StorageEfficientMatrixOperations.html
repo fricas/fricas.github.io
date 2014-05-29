@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>StorageEfficientMatrixOperations R &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="STransformPackage(R, UTSR, ULSR, UPSR)" href="STransformPackage.html" />
+    <link rel="prev" title="SquareFreeRegularTriangularSetGcdPackage(R, E, V, P, TS)" href="SquareFreeRegularTriangularSetGcdPackage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="STransformPackage.html" title="STransformPackage(R, UTSR, ULSR, UPSR)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="SquareFreeRegularTriangularSetGcdPackage.html" title="SquareFreeRegularTriangularSetGcdPackage(R, E, V, P, TS)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="storageefficientmatrixoperations-r">
+<span id="l-storage-efficient-matrix-operations"></span><span id="index-0"></span><h1>StorageEfficientMatrixOperations R<a class="headerlink" href="#storageefficientmatrixoperations-r" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//matstor.spad#L1">matstor.spad line 1</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></li>
+</ul>
+<p>This package provides standard arithmetic operations on matrices. The functions in this package store the results of computations in existing matrices, rather than creating new matrices. This package works only for matrices of type Matrix and uses the internal representation of this type.</p>
+<span class="target" id="id1"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">^</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">x</span> <span class="pre">^</span> <span class="pre">n</span></tt> computes the <tt class="docutils literal"><span class="pre">n</span></tt>-th power of a square matrix. The power <tt class="docutils literal"><span class="pre">n</span></tt> is assumed greater than 1.</dd>
+</dl>
+<span class="target" id="l-storage-efficient-matrix-operations-copy"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">copy!</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">copy!(c,</span> <span class="pre">a)</span></tt> copies the matrix <tt class="docutils literal"><span class="pre">a</span></tt> into the matrix <tt class="docutils literal"><span class="pre">c</span></tt>. Error: if <tt class="docutils literal"><span class="pre">a</span></tt> and <tt class="docutils literal"><span class="pre">c</span></tt> do not have the same dimensions.</dd>
+</dl>
+<span class="target" id="l-storage-efficient-matrix-operations-left-scalar-times"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">leftScalarTimes!</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, R, <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">leftScalarTimes!(c,</span> <span class="pre">r,</span> <span class="pre">a)</span></tt> computes the scalar product <tt class="docutils literal"><span class="pre">r</span> <span class="pre">*</span> <span class="pre">a</span></tt> and stores the result in the matrix <tt class="docutils literal"><span class="pre">c</span></tt>. Error: if <tt class="docutils literal"><span class="pre">a</span></tt> and <tt class="docutils literal"><span class="pre">c</span></tt> do not have the same dimensions.</dd>
+</dl>
+<span class="target" id="l-storage-efficient-matrix-operations-minus"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">minus!</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">minus!(c,</span> <span class="pre">a)</span></tt> computes <tt class="docutils literal"><span class="pre">-a</span></tt> and stores the result in the matrix <tt class="docutils literal"><span class="pre">c</span></tt>. Error: if a and <tt class="docutils literal"><span class="pre">c</span></tt> do not have the same dimensions.</dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">minus!</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">!minus!(c,</span> <span class="pre">a,</span> <span class="pre">b)</span></tt> computes the matrix difference <tt class="docutils literal"><span class="pre">a</span> <span class="pre">-</span> <span class="pre">b</span></tt> and stores the result in the matrix <tt class="docutils literal"><span class="pre">c</span></tt>. Error: if <tt class="docutils literal"><span class="pre">a</span></tt>, <tt class="docutils literal"><span class="pre">b</span></tt>, and <tt class="docutils literal"><span class="pre">c</span></tt> do not have the same dimensions.</dd>
+</dl>
+<span class="target" id="l-storage-efficient-matrix-operations-plus"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">plus!</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">plus!(c,</span> <span class="pre">a,</span> <span class="pre">b)</span></tt> computes the matrix sum <tt class="docutils literal"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></tt> and stores the result in the matrix <tt class="docutils literal"><span class="pre">c</span></tt>. Error: if <tt class="docutils literal"><span class="pre">a</span></tt>, <tt class="docutils literal"><span class="pre">b</span></tt>, and <tt class="docutils literal"><span class="pre">c</span></tt> do not have the same dimensions.</dd>
+</dl>
+<span class="target" id="l-storage-efficient-matrix-operations-power"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">power!</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">power!(a,</span> <span class="pre">b,</span> <span class="pre">c,</span> <span class="pre">m,</span> <span class="pre">n)</span></tt> computes <tt class="docutils literal"><span class="pre">m</span></tt> ^ <tt class="docutils literal"><span class="pre">n</span></tt> and stores the result in <tt class="docutils literal"><span class="pre">a</span></tt>. The matrices <tt class="docutils literal"><span class="pre">b</span></tt> and <tt class="docutils literal"><span class="pre">c</span></tt> are used to store intermediate results. Error: if <tt class="docutils literal"><span class="pre">a</span></tt>, <tt class="docutils literal"><span class="pre">b</span></tt>, <tt class="docutils literal"><span class="pre">c</span></tt>, and <tt class="docutils literal"><span class="pre">m</span></tt> are not square and of the same dimensions.</dd>
+</dl>
+<span class="target" id="l-storage-efficient-matrix-operations-right-scalar-times"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">rightScalarTimes!</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, R) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">rightScalarTimes!(c,</span> <span class="pre">a,</span> <span class="pre">r)</span></tt> computes the scalar product <tt class="docutils literal"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">r</span></tt> and stores the result in the matrix <tt class="docutils literal"><span class="pre">c</span></tt>. Error: if <tt class="docutils literal"><span class="pre">a</span></tt> and <tt class="docutils literal"><span class="pre">c</span></tt> do not have the same dimensions.</dd>
+</dl>
+<span class="target" id="l-storage-efficient-matrix-operations-times"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">times!</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">times!(c,</span> <span class="pre">a,</span> <span class="pre">b)</span></tt> computes the matrix product <tt class="docutils literal"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span></tt> and stores the result in the matrix <tt class="docutils literal"><span class="pre">c</span></tt>. Error: if <tt class="docutils literal"><span class="pre">a</span></tt>, <tt class="docutils literal"><span class="pre">b</span></tt>, and <tt class="docutils literal"><span class="pre">c</span></tt> do not have compatible dimensions.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="SquareFreeRegularTriangularSetGcdPackage.html"
+                        title="previous chapter">SquareFreeRegularTriangularSetGcdPackage(R, E, V, P, TS)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="STransformPackage.html"
+                        title="next chapter">STransformPackage(R, UTSR, ULSR, UPSR)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/StorageEfficientMatrixOperations.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="STransformPackage.html" title="STransformPackage(R, UTSR, ULSR, UPSR)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="SquareFreeRegularTriangularSetGcdPackage.html" title="SquareFreeRegularTriangularSetGcdPackage(R, E, V, P, TS)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

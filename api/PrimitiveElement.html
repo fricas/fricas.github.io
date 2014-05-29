@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PrimitiveElement F &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="PrimitiveRatDE(F, UP, L, LQ)" href="PrimitiveRatDE.html" />
+    <link rel="prev" title="PrimitiveArrayFunctions2(A, B)" href="PrimitiveArrayFunctions2.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="PrimitiveRatDE.html" title="PrimitiveRatDE(F, UP, L, LQ)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PrimitiveArrayFunctions2.html" title="PrimitiveArrayFunctions2(A, B)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="primitiveelement-f">
+<span id="l-primitive-element"></span><span id="index-0"></span><h1>PrimitiveElement F<a class="headerlink" href="#primitiveelement-f" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//primelt.spad#L1">primelt.spad line 1</a></p>
+<ul class="simple">
+<li>F: Join(<a class="reference internal" href="Field.html#l-field"><em>Field</em></a>, <a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a>)</li>
+</ul>
+<p>PrimitiveElement provides functions to compute primitive elements in algebraic extensions.</p>
+<span class="target" id="l-primitive-element-primitive-element"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">primitiveElement</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Record(coef: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, poly: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> F, prim: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> F)</dt>
+<dd><tt class="docutils literal"><span class="pre">primitiveElement([p1,</span> <span class="pre">...,</span> <span class="pre">pn],</span> <span class="pre">[a1,</span> <span class="pre">...,</span> <span class="pre">an])</span></tt> returns <tt class="docutils literal"><span class="pre">[[c1,</span> <span class="pre">...,</span> <span class="pre">cn],</span> <span class="pre">[q1,</span> <span class="pre">...,</span> <span class="pre">qn],</span> <span class="pre">q]</span></tt> such that then <tt class="docutils literal"><span class="pre">k(a1,</span> <span class="pre">...,</span> <span class="pre">an)</span> <span class="pre">=</span> <span class="pre">k(a)</span></tt>, where <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a1</span> <span class="pre">c1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">an</span> <span class="pre">cn</span></tt>, <tt class="docutils literal"><span class="pre">ai</span> <span class="pre">=</span> <span class="pre">qi(a)</span></tt>, and <tt class="docutils literal"><span class="pre">q(a)</span> <span class="pre">=</span> <span class="pre">0</span></tt>. The <tt class="docutils literal"><span class="pre">pi</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> are the defining polynomials for the <tt class="docutils literal"><span class="pre">ai</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt>. This operation uses the technique of spadglossSee{groebner bases}{Groebner basis}.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">primitiveElement</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Record(coef: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, poly: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> F, prim: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> F)</dt>
+<dd><tt class="docutils literal"><span class="pre">primitiveElement([p1,</span> <span class="pre">...,</span> <span class="pre">pn],</span> <span class="pre">[a1,</span> <span class="pre">...,</span> <span class="pre">an],</span> <span class="pre">a)</span></tt> returns <tt class="docutils literal"><span class="pre">[[c1,</span> <span class="pre">...,</span> <span class="pre">cn],</span> <span class="pre">[q1,</span> <span class="pre">...,</span> <span class="pre">qn],</span> <span class="pre">q]</span></tt> such that then <tt class="docutils literal"><span class="pre">k(a1,</span> <span class="pre">...,</span> <span class="pre">an)</span> <span class="pre">=</span> <span class="pre">k(a)</span></tt>, where <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">a1</span> <span class="pre">c1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">an</span> <span class="pre">cn</span></tt>, <tt class="docutils literal"><span class="pre">ai</span> <span class="pre">=</span> <span class="pre">qi(a)</span></tt>, and <tt class="docutils literal"><span class="pre">q(a)</span> <span class="pre">=</span> <span class="pre">0</span></tt>. The <tt class="docutils literal"><span class="pre">pi</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> are the defining polynomials for the <tt class="docutils literal"><span class="pre">ai</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt>. This operation uses the technique of spadglossSee{groebner bases}{Groebner basis}.</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">primitiveElement</span>: (<a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Record(coef1: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, coef2: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, prim: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> F)</dt>
+<dd><tt class="docutils literal"><span class="pre">primitiveElement(p1,</span> <span class="pre">a1,</span> <span class="pre">p2,</span> <span class="pre">a2)</span></tt> returns <tt class="docutils literal"><span class="pre">[c1,</span> <span class="pre">c2,</span> <span class="pre">q]</span></tt> such that <tt class="docutils literal"><span class="pre">k(a1,</span> <span class="pre">a2)</span> <span class="pre">=</span> <span class="pre">k(a)</span></tt> where <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">c1</span> <span class="pre">a1</span> <span class="pre">+</span> <span class="pre">c2</span> <span class="pre">a2,</span> <span class="pre">and</span> <span class="pre">q(a)</span> <span class="pre">=</span> <span class="pre">0</span></tt>. The <tt class="docutils literal"><span class="pre">pi</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> are the defining polynomials for the <tt class="docutils literal"><span class="pre">ai</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt>. The <tt class="docutils literal"><span class="pre">p2</span></tt> may involve <tt class="docutils literal"><span class="pre">a1</span></tt>, but <tt class="docutils literal"><span class="pre">p1</span></tt> must not involve <tt class="docutils literal"><span class="pre">a2</span></tt>. This operation uses <span class="spadfun">resultant</span>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="PrimitiveArrayFunctions2.html"
+                        title="previous chapter">PrimitiveArrayFunctions2(A, B)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PrimitiveRatDE.html"
+                        title="next chapter">PrimitiveRatDE(F, UP, L, LQ)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/PrimitiveElement.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="PrimitiveRatDE.html" title="PrimitiveRatDE(F, UP, L, LQ)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="PrimitiveArrayFunctions2.html" title="PrimitiveArrayFunctions2(A, B)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

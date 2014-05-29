@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>IrrRepSymNatPackage &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="JetCoordinateTransformation(JB1, JB2, Y, W)" href="JetCoordinateTransformation.html" />
+    <link rel="prev" title="IrredPolyOverFiniteField GF" href="IrredPolyOverFiniteField.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="JetCoordinateTransformation.html" title="JetCoordinateTransformation(JB1, JB2, Y, W)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="IrredPolyOverFiniteField.html" title="IrredPolyOverFiniteField GF"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="irrrepsymnatpackage">
+<span id="l-irr-rep-sym-nat-package"></span><span id="index-0"></span><h1>IrrRepSymNatPackage<a class="headerlink" href="#irrrepsymnatpackage" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//irsn.spad#L1">irsn.spad line 1</a></p>
+<p>IrrRepSymNatPackage contains functions for computing the ordinary irreducible representations of symmetric groups on <tt class="docutils literal"><span class="pre">n</span></tt> letters <em>{1, 2, ..., n}</em> in Young<tt class="docutils literal"><span class="pre">'s</span></tt> natural form and their dimensions. These representations can be labelled by number partitions of <tt class="docutils literal"><span class="pre">n</span></tt>, i.e. a weakly decreasing sequence of integers summing up to <tt class="docutils literal"><span class="pre">n</span></tt>, e.g. <em>[3, 3, 3, 1]</em> labels an irreducible representation for <tt class="docutils literal"><span class="pre">n</span></tt> equals 10. Note: whenever a <em class="xref std std-ref">List Integer</em> appears in a signature, a partition required.</p>
+<span class="target" id="l-irr-rep-sym-nat-package-dimension-of-irreducible-representation"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">dimensionOfIrreducibleRepresentation</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">dimensionOfIrreducibleRepresentation(lambda)</span></tt> is the dimension of the ordinary irreducible representation of the symmetric group corresponding to <em>lambda</em>. Note: the Robinson-Thrall hook formula is implemented.</dd>
+</dl>
+<span class="target" id="l-irr-rep-sym-nat-package-irreducible-representation"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">irreducibleRepresentation</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Permutation.html#l-permutation"><em>Permutation</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">irreducibleRepresentation(lambda,</span> <span class="pre">listOfPerm)</span></tt> is the list of the irreducible representations corresponding to <em>lambda</em> in Young<tt class="docutils literal"><span class="pre">'s</span></tt> natural form for the list of permutations given by <em>listOfPerm</em>.</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">irreducibleRepresentation</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Permutation.html#l-permutation"><em>Permutation</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">irreducibleRepresentation(lambda,</span> <span class="pre">pi)</span></tt> is the irreducible representation corresponding to partition <em>lambda</em> in Young<tt class="docutils literal"><span class="pre">'s</span></tt> natural form of the permutation <em>``pi``* in the symmetric group, whose elements permute *{1, 2, ..., n}</em>.</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">irreducibleRepresentation</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">irreducibleRepresentation(lambda)</span></tt> is the list of the two irreducible representations corresponding to the partition <em>lambda</em> in Young<tt class="docutils literal"><span class="pre">'s</span></tt> natural form for the following two generators of the symmetric group, whose elements permute <em>{1, 2, ..., n}</em>, namely <em>(1 2)</em> (2-cycle) and <em>(1 2 ... n)</em> (<tt class="docutils literal"><span class="pre">n</span></tt>-cycle).</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="IrredPolyOverFiniteField.html"
+                        title="previous chapter">IrredPolyOverFiniteField GF</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="JetCoordinateTransformation.html"
+                        title="next chapter">JetCoordinateTransformation(JB1, JB2, Y, W)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/IrrRepSymNatPackage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="JetCoordinateTransformation.html" title="JetCoordinateTransformation(JB1, JB2, Y, W)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="IrredPolyOverFiniteField.html" title="IrredPolyOverFiniteField GF"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

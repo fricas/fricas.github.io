@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MultivariateSquareFree(E, OV, R, P) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="NaiveBeckermannLabahnModular" href="NaiveBeckermannLabahnModular.html" />
+    <link rel="prev" title="MultivariateLifting(E, OV, R, P)" href="MultivariateLifting.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="NaiveBeckermannLabahnModular.html" title="NaiveBeckermannLabahnModular"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="MultivariateLifting.html" title="MultivariateLifting(E, OV, R, P)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="multivariatesquarefree-e-ov-r-p">
+<span id="l-multivariate-square-free"></span><span id="index-0"></span><h1>MultivariateSquareFree(E, OV, R, P)<a class="headerlink" href="#multivariatesquarefree-e-ov-r-p" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//multsqfr.spad#L1">multsqfr.spad line 1</a></p>
+<ul class="simple">
+<li>E: <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a></li>
+<li>OV: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></li>
+<li>R: <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><em>EuclideanDomain</em></a></li>
+<li>P: <a class="reference internal" href="PolynomialCategory.html#l-polynomial-category"><em>PolynomialCategory</em></a>(R, E, OV)</li>
+</ul>
+<p>Author : <tt class="docutils literal"><span class="pre">P</span></tt>.Gianni This package provides the functions for the computation of the square free decomposition of a multivariate polynomial. It uses the package GenExEuclid for the resolution of the equation <tt class="docutils literal"><span class="pre">Af</span> <span class="pre">+</span> <span class="pre">Bg</span> <span class="pre">=</span> <span class="pre">h</span></tt> and its generalization to <tt class="docutils literal"><span class="pre">n</span></tt> polynomials over an integral domain and the package <tt class="docutils literal"><span class="pre">MultivariateLifting</span></tt> for the &#8220;multivariate&#8221; lifting.</p>
+<span class="target" id="l-multivariate-square-free-check"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">check</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(factor: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R, exponent: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>), <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(factor: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R, exponent: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">check</span> <span class="pre">should</span></tt> be local</dd>
+</dl>
+<span class="target" id="l-multivariate-square-free-coef-choose"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">coefChoose</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> P) -&gt; P</dt>
+<dd><tt class="docutils literal"><span class="pre">coefChoose</span> <span class="pre">should</span></tt> be local</dd>
+</dl>
+<span class="target" id="l-multivariate-square-free-compdegd"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">compdegd</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(factor: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R, exponent: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">compdegd</span> <span class="pre">should</span></tt> be local</dd>
+</dl>
+<span class="target" id="l-multivariate-square-free-consnewpol"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">consnewpol</span>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P, <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; Record(pol: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P, polval: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R)</dt>
+<dd><tt class="docutils literal"><span class="pre">consnewpol</span> <span class="pre">should</span></tt> be local</dd>
+</dl>
+<span class="target" id="l-multivariate-square-free-int-choose"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">intChoose</span>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> OV, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> R) -&gt; Record(upol: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R, Lval: <a class="reference internal" href="List.html#l-list"><em>List</em></a> R, Lfact: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(factor: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R, exponent: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>), ctpol: R)</dt>
+<dd><tt class="docutils literal"><span class="pre">intChoose</span> <span class="pre">should</span></tt> be local</dd>
+</dl>
+<span class="target" id="l-multivariate-square-free-lift"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">lift</span>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P, <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R, <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R, P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> OV, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> R) -&gt; Union(<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">lift</span> <span class="pre">should</span></tt> be local</dd>
+</dl>
+<span class="target" id="l-multivariate-square-free-my-degree"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">myDegree</span>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> OV, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">myDegree</span> <span class="pre">should</span></tt> be local</dd>
+</dl>
+<span class="target" id="l-multivariate-square-free-norm-deriv2"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">normDeriv2</span>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">normDeriv2</span> <span class="pre">should</span></tt> be local</dd>
+</dl>
+<span class="target" id="l-multivariate-square-free-nsqfree"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">nsqfree</span>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> OV, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> R) -&gt; Record(unitPart: P, suPart: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(factor: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P, exponent: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>))</dt>
+<dd><tt class="docutils literal"><span class="pre">nsqfree</span> <span class="pre">should</span></tt> be local</dd>
+</dl>
+<span class="target" id="l-multivariate-square-free-square-free"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">squareFree</span>: P -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> P</dt>
+<dd><tt class="docutils literal"><span class="pre">squareFree(p)</span></tt> computes the square free decomposition of a multivariate polynomial <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-11">
+<dt><span class="spadfun">squareFree</span>: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> P</dt>
+<dd><tt class="docutils literal"><span class="pre">squareFree(p)</span></tt> computes the square free decomposition of a multivariate polynomial <tt class="docutils literal"><span class="pre">p</span></tt> presented as a univariate polynomial with multivariate coefficients.</dd>
+</dl>
+<span class="target" id="l-multivariate-square-free-square-free-prim"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">squareFreePrim</span>: P -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> P</dt>
+<dd><tt class="docutils literal"><span class="pre">squareFreePrim(p)</span></tt> compute the square free decomposition of a primitive multivariate polynomial <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<span class="target" id="l-multivariate-square-free-univcase"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">univcase</span>: (P, OV) -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> P</dt>
+<dd><tt class="docutils literal"><span class="pre">univcase</span> <span class="pre">should</span></tt> be local</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="MultivariateLifting.html"
+                        title="previous chapter">MultivariateLifting(E, OV, R, P)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="NaiveBeckermannLabahnModular.html"
+                        title="next chapter">NaiveBeckermannLabahnModular</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/MultivariateSquareFree.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="NaiveBeckermannLabahnModular.html" title="NaiveBeckermannLabahnModular"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="MultivariateLifting.html" title="MultivariateLifting(E, OV, R, P)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

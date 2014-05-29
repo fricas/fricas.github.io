@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PadeApproximants(R, PS, UP) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="PAdicWildFunctionFieldIntegralBasis(K, R, UP, F)" href="PAdicWildFunctionFieldIntegralBasis.html" />
+    <link rel="prev" title="PadeApproximantPackage(R, x, pt)" href="PadeApproximantPackage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="PAdicWildFunctionFieldIntegralBasis.html" title="PAdicWildFunctionFieldIntegralBasis(K, R, UP, F)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PadeApproximantPackage.html" title="PadeApproximantPackage(R, x, pt)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="padeapproximants-r-ps-up">
+<span id="l-pade-approximants"></span><span id="index-0"></span><h1>PadeApproximants(R, PS, UP)<a class="headerlink" href="#padeapproximants-r-ps-up" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//pade.spad#L49">pade.spad line 49</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></li>
+<li>PS: <a class="reference internal" href="UnivariateTaylorSeriesCategory.html#l-univariate-taylor-series-category"><em>UnivariateTaylorSeriesCategory</em></a> R</li>
+<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> R</li>
+</ul>
+<p>This package computes reliable Pad&amp;ea. approximants using a generalized Viskovatov continued fraction algorithm. Authors: Burge, Hassner &amp; Watt. Date Created: April 1987 Date Last Updated: 12 April 1990 Keywords: Pade, series Examples: References: &#8220;Pade Approximants, Part I: Basic Theory&#8221;, Baker &amp; Graves-Morris.</p>
+<span class="target" id="l-pade-approximants-pade"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">pade</span>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, PS, PS) -&gt; Union(<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">pade(nd,</span> <span class="pre">dd,</span> <span class="pre">ns,</span> <span class="pre">ds)</span></tt> computes the approximant as a quotient of polynomials (if it exists) for arguments <tt class="docutils literal"><span class="pre">nd</span></tt> (numerator degree of approximant), <tt class="docutils literal"><span class="pre">dd</span></tt> (denominator degree of approximant), <tt class="docutils literal"><span class="pre">ns</span></tt> (numerator series of function), and <tt class="docutils literal"><span class="pre">ds</span></tt> (denominator series of function).</dd>
+</dl>
+<span class="target" id="l-pade-approximants-padecf"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">padecf</span>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, PS, PS) -&gt; Union(<a class="reference internal" href="ContinuedFraction.html#l-continued-fraction"><em>ContinuedFraction</em></a> UP, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">padecf(nd,</span> <span class="pre">dd,</span> <span class="pre">ns,</span> <span class="pre">ds)</span></tt> computes the approximant as a continued fraction of polynomials (if it exists) for arguments <tt class="docutils literal"><span class="pre">nd</span></tt> (numerator degree of approximant), <tt class="docutils literal"><span class="pre">dd</span></tt> (denominator degree of approximant), <tt class="docutils literal"><span class="pre">ns</span></tt> (numerator series of function), and <tt class="docutils literal"><span class="pre">ds</span></tt> (denominator series of function).</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="PadeApproximantPackage.html"
+                        title="previous chapter">PadeApproximantPackage(R, x, pt)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PAdicWildFunctionFieldIntegralBasis.html"
+                        title="next chapter">PAdicWildFunctionFieldIntegralBasis(K, R, UP, F)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/PadeApproximants.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="PAdicWildFunctionFieldIntegralBasis.html" title="PAdicWildFunctionFieldIntegralBasis(K, R, UP, F)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="PadeApproximantPackage.html" title="PadeApproximantPackage(R, x, pt)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

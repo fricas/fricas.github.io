@@ -1,0 +1,348 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ExpressionSpace &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Categories" href="Categories.html" />
+    <link rel="next" title="ExtensibleLinearAggregate S" href="ExtensibleLinearAggregate.html" />
+    <link rel="prev" title="Evalable R" href="Evalable.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ExtensibleLinearAggregate.html" title="ExtensibleLinearAggregate S"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Evalable.html" title="Evalable R"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="expressionspace">
+<span id="l-expression-space"></span><span id="index-0"></span><h1>ExpressionSpace<a class="headerlink" href="#expressionspace" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//fspace.spad#L1">fspace.spad line 1</a></p>
+<p>An expression space is a set which is closed under certain operators.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+</dl>
+<span class="target" id="l-expression-space-belong"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">belong?</span>: <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a> -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">belong?(op)</span></tt> tests if % accepts <tt class="docutils literal"><span class="pre">op</span></tt> as applicable to its elements.</dd>
+</dl>
+<span class="target" id="l-expression-space-box"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">box</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">box(f)</span></tt> returns <tt class="docutils literal"><span class="pre">f</span></tt> with a &#8216;box&#8217; around it that prevents <tt class="docutils literal"><span class="pre">f</span></tt> from being evaluated when operators are applied to it. For example, <tt class="docutils literal"><span class="pre">log(1)</span></tt> returns 0, but <tt class="docutils literal"><span class="pre">log(box</span> <span class="pre">1)</span></tt> returns the formal kernel log(1).</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">box</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">box([f1,</span> <span class="pre">...,</span> <span class="pre">fn])</span></tt> returns <tt class="docutils literal"><span class="pre">(f1,</span> <span class="pre">...,</span> <span class="pre">fn)</span></tt> with a &#8216;box&#8217; around them that prevents the <tt class="docutils literal"><span class="pre">fi</span></tt> from being evaluated when operators are applied to them, and makes them applicable to a unary operator. For example, <tt class="docutils literal"><span class="pre">atan(box</span> <span class="pre">[x,</span> <span class="pre">2])</span></tt> returns the formal kernel <tt class="docutils literal"><span class="pre">atan(x,</span> <span class="pre">2)</span></tt>.</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-coerce"><em>coerce</em></a>: <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> % -&gt; %</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dd>
+</dl>
+<span class="target" id="l-expression-space-defining-polynomial"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">definingPolynomial</span>: % -&gt; % if % has <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">definingPolynomial(x)</span></tt> returns an expression <tt class="docutils literal"><span class="pre">p</span></tt> such that <tt class="docutils literal"><span class="pre">p(x)</span> <span class="pre">=</span> <span class="pre">0</span></tt>.</dd>
+</dl>
+<span class="target" id="l-expression-space-distribute"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">distribute</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">distribute(f)</span></tt> expands all the kernels in <tt class="docutils literal"><span class="pre">f</span></tt> that are formally enclosed by a <strong>box</strong> or <strong>paren</strong> expression.</dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt><span class="spadfun">distribute</span>: (%, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">distribute(f,</span> <span class="pre">g)</span></tt> expands all the kernels in <tt class="docutils literal"><span class="pre">f</span></tt> that contain <tt class="docutils literal"><span class="pre">g</span></tt> in their arguments and that are formally enclosed by a <strong>box</strong> or a <strong>paren</strong> expression.</dd>
+</dl>
+<span class="target" id="l-expression-space-elt"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">elt</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">elt(op,</span> <span class="pre">x)</span></tt> or <tt class="docutils literal"><span class="pre">op</span></tt>(<tt class="docutils literal"><span class="pre">x</span></tt>) applies the unary operator <tt class="docutils literal"><span class="pre">op</span></tt> to <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-8">
+<dt><span class="spadfun">elt</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">elt(op,</span> <span class="pre">x,</span> <span class="pre">y)</span></tt> or <tt class="docutils literal"><span class="pre">op</span></tt>(<tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt>) applies the binary operator <tt class="docutils literal"><span class="pre">op</span></tt> to <tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-9">
+<dt><span class="spadfun">elt</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">elt(op,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z)</span></tt> or <tt class="docutils literal"><span class="pre">op</span></tt>(<tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt>, <tt class="docutils literal"><span class="pre">z</span></tt>) applies the ternary operator <tt class="docutils literal"><span class="pre">op</span></tt> to <tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt> and <tt class="docutils literal"><span class="pre">z</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-10">
+<dt><span class="spadfun">elt</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %, %, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">elt(op,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">t)</span></tt> or <tt class="docutils literal"><span class="pre">op</span></tt>(<tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt>, <tt class="docutils literal"><span class="pre">z</span></tt>, <tt class="docutils literal"><span class="pre">t</span></tt>) applies the 4-ary operator <tt class="docutils literal"><span class="pre">op</span></tt> to <tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt>, <tt class="docutils literal"><span class="pre">z</span></tt> and <tt class="docutils literal"><span class="pre">t</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-11">
+<dt><span class="spadfun">elt</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %, %, %, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">elt(op,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">t,</span> <span class="pre">s)</span></tt> applies the 5-ary operator <tt class="docutils literal"><span class="pre">op</span></tt> to <tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt>, <tt class="docutils literal"><span class="pre">z</span></tt>, <tt class="docutils literal"><span class="pre">t</span></tt> and <tt class="docutils literal"><span class="pre">s</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-12">
+<dt><span class="spadfun">elt</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %, %, %, %, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">elt(op,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">t,</span> <span class="pre">s,</span> <span class="pre">r)</span></tt> applies the 6-ary operator <tt class="docutils literal"><span class="pre">op</span></tt> to <tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt>, <tt class="docutils literal"><span class="pre">z</span></tt>, <tt class="docutils literal"><span class="pre">t</span></tt>, <tt class="docutils literal"><span class="pre">s</span></tt> and <tt class="docutils literal"><span class="pre">r</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-13">
+<dt><span class="spadfun">elt</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %, %, %, %, %, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">elt(op,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">t,</span> <span class="pre">s,</span> <span class="pre">r,</span> <span class="pre">q)</span></tt> applies the 7-ary operator <tt class="docutils literal"><span class="pre">op</span></tt> to <tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt>, <tt class="docutils literal"><span class="pre">z</span></tt>, <tt class="docutils literal"><span class="pre">t</span></tt>, <tt class="docutils literal"><span class="pre">s</span></tt>, <tt class="docutils literal"><span class="pre">r</span></tt> and <tt class="docutils literal"><span class="pre">q</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-14">
+<dt><span class="spadfun">elt</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %, %, %, %, %, %, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">elt(op,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">t,</span> <span class="pre">s,</span> <span class="pre">r,</span> <span class="pre">q,</span> <span class="pre">p)</span></tt> applies the 8-ary operator <tt class="docutils literal"><span class="pre">op</span></tt> to <tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt>, <tt class="docutils literal"><span class="pre">z</span></tt>, <tt class="docutils literal"><span class="pre">t</span></tt>, <tt class="docutils literal"><span class="pre">s</span></tt>, <tt class="docutils literal"><span class="pre">r</span></tt>, <tt class="docutils literal"><span class="pre">q</span></tt> and <tt class="docutils literal"><span class="pre">p</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-15">
+<dt><span class="spadfun">elt</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %, %, %, %, %, %, %, %, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">elt(op,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">t,</span> <span class="pre">s,</span> <span class="pre">r,</span> <span class="pre">q,</span> <span class="pre">p,</span> <span class="pre">o)</span></tt> applies the 9-ary operator <tt class="docutils literal"><span class="pre">op</span></tt> to <tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt>, <tt class="docutils literal"><span class="pre">z</span></tt>, <tt class="docutils literal"><span class="pre">t</span></tt>, <tt class="docutils literal"><span class="pre">s</span></tt>, <tt class="docutils literal"><span class="pre">r</span></tt>, <tt class="docutils literal"><span class="pre">q</span></tt>, <tt class="docutils literal"><span class="pre">p</span></tt> and <tt class="docutils literal"><span class="pre">o</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-16">
+<dt><span class="spadfun">elt</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">elt(op,</span> <span class="pre">[x1,</span> <span class="pre">...,</span> <span class="pre">xn])</span></tt> or <tt class="docutils literal"><span class="pre">op</span></tt>([<tt class="docutils literal"><span class="pre">x1</span></tt>, ..., <tt class="docutils literal"><span class="pre">xn</span></tt>]) applies the <tt class="docutils literal"><span class="pre">n</span></tt>-ary operator <tt class="docutils literal"><span class="pre">op</span></tt> to <tt class="docutils literal"><span class="pre">x1</span></tt>, ..., <tt class="docutils literal"><span class="pre">xn</span></tt>.</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(%, %)</dd>
+</dl>
+<span class="target" id="l-expression-space-eval"></span><dl class="docutils" id="index-17">
+<dt><span class="spadfun">eval</span>: (%, <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, % -&gt; %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">eval(x,</span> <span class="pre">s,</span> <span class="pre">f)</span></tt> replaces every <tt class="docutils literal"><span class="pre">s(a)</span></tt> in <tt class="docutils literal"><span class="pre">x</span></tt> by <tt class="docutils literal"><span class="pre">f(a)</span></tt> for any <tt class="docutils literal"><span class="pre">a</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-18">
+<dt><span class="spadfun">eval</span>: (%, <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">eval(x,</span> <span class="pre">s,</span> <span class="pre">f)</span></tt> replaces every <tt class="docutils literal"><span class="pre">s(a1,</span> <span class="pre">..,</span> <span class="pre">am)</span></tt> in <tt class="docutils literal"><span class="pre">x</span></tt> by <tt class="docutils literal"><span class="pre">f(a1,</span> <span class="pre">..,</span> <span class="pre">am)</span></tt> for any <tt class="docutils literal"><span class="pre">a1</span></tt>, ..., <tt class="docutils literal"><span class="pre">am</span></tt>.</dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> %</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(<a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, %)</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(%, %)</dd>
+</dl>
+<dl class="docutils" id="index-19">
+<dt><span class="spadfun">eval</span>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">eval(x,</span> <span class="pre">[s1,</span> <span class="pre">...,</span> <span class="pre">sm],</span> <span class="pre">[f1,</span> <span class="pre">...,</span> <span class="pre">fm])</span></tt> replaces every <tt class="docutils literal"><span class="pre">si(a)</span></tt> in <tt class="docutils literal"><span class="pre">x</span></tt> by <tt class="docutils literal"><span class="pre">fi(a)</span></tt> for any <tt class="docutils literal"><span class="pre">a</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-20">
+<dt><span class="spadfun">eval</span>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">eval(x,</span> <span class="pre">[s1,</span> <span class="pre">...,</span> <span class="pre">sm],</span> <span class="pre">[f1,</span> <span class="pre">...,</span> <span class="pre">fm])</span></tt> replaces every <tt class="docutils literal"><span class="pre">si(a1,</span> <span class="pre">...,</span> <span class="pre">an)</span></tt> in <tt class="docutils literal"><span class="pre">x</span></tt> by <tt class="docutils literal"><span class="pre">fi(a1,</span> <span class="pre">...,</span> <span class="pre">an)</span></tt> for any <tt class="docutils literal"><span class="pre">a1</span></tt>, ..., <tt class="docutils literal"><span class="pre">an</span></tt>.</dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> %</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(<a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, %)</dd>
+</dl>
+<dl class="docutils" id="index-21">
+<dt><span class="spadfun">eval</span>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">eval(x,</span> <span class="pre">[s1,</span> <span class="pre">...,</span> <span class="pre">sm],</span> <span class="pre">[f1,</span> <span class="pre">...,</span> <span class="pre">fm])</span></tt> replaces every <tt class="docutils literal"><span class="pre">si(a)</span></tt> in <tt class="docutils literal"><span class="pre">x</span></tt> by <tt class="docutils literal"><span class="pre">fi(a)</span></tt> for any <tt class="docutils literal"><span class="pre">a</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-22">
+<dt><span class="spadfun">eval</span>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">eval(x,</span> <span class="pre">[s1,</span> <span class="pre">...,</span> <span class="pre">sm],</span> <span class="pre">[f1,</span> <span class="pre">...,</span> <span class="pre">fm])</span></tt> replaces every <tt class="docutils literal"><span class="pre">si(a1,</span> <span class="pre">...,</span> <span class="pre">an)</span></tt> in <tt class="docutils literal"><span class="pre">x</span></tt> by <tt class="docutils literal"><span class="pre">fi(a1,</span> <span class="pre">...,</span> <span class="pre">an)</span></tt> for any <tt class="docutils literal"><span class="pre">a1</span></tt>, ..., <tt class="docutils literal"><span class="pre">an</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-23">
+<dt><span class="spadfun">eval</span>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, % -&gt; %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">eval(x,</span> <span class="pre">s,</span> <span class="pre">f)</span></tt> replaces every <tt class="docutils literal"><span class="pre">s(a)</span></tt> in <tt class="docutils literal"><span class="pre">x</span></tt> by <tt class="docutils literal"><span class="pre">f(a)</span></tt> for any <tt class="docutils literal"><span class="pre">a</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-24">
+<dt><span class="spadfun">eval</span>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">eval(x,</span> <span class="pre">s,</span> <span class="pre">f)</span></tt> replaces every <tt class="docutils literal"><span class="pre">s(a1,</span> <span class="pre">..,</span> <span class="pre">am)</span></tt> in <tt class="docutils literal"><span class="pre">x</span></tt> by <tt class="docutils literal"><span class="pre">f(a1,</span> <span class="pre">..,</span> <span class="pre">am)</span></tt> for any <tt class="docutils literal"><span class="pre">a1</span></tt>, ..., <tt class="docutils literal"><span class="pre">am</span></tt>.</dd>
+</dl>
+<span class="target" id="l-expression-space-even"></span><dl class="docutils" id="index-25">
+<dt><span class="spadfun">even?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if % has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">even?</span> <span class="pre">x</span></tt> is <tt class="docutils literal"><span class="pre">true</span></tt> if <tt class="docutils literal"><span class="pre">x</span></tt> is an even integer.</dd>
+</dl>
+<span class="target" id="l-expression-space-free-of"></span><dl class="docutils" id="index-26">
+<dt><span class="spadfun">freeOf?</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">freeOf?(x,</span> <span class="pre">y)</span></tt> tests if <tt class="docutils literal"><span class="pre">x</span></tt> does not contain any occurrence of <tt class="docutils literal"><span class="pre">y</span></tt>, where <tt class="docutils literal"><span class="pre">y</span></tt> is a single kernel.</dd>
+</dl>
+<dl class="docutils" id="index-27">
+<dt><span class="spadfun">freeOf?</span>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">freeOf?(x,</span> <span class="pre">s)</span></tt> tests if <tt class="docutils literal"><span class="pre">x</span></tt> does not contain any operator whose name is <tt class="docutils literal"><span class="pre">s</span></tt>.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-expression-space-height"></span><dl class="docutils" id="index-28">
+<dt><span class="spadfun">height</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">height(f)</span></tt> returns the highest nesting level appearing in <tt class="docutils literal"><span class="pre">f</span></tt>. Constants have height 0. Symbols have height 1. For any operator op and expressions <tt class="docutils literal"><span class="pre">f1</span></tt>, ..., <tt class="docutils literal"><span class="pre">fn</span></tt>, <tt class="docutils literal"><span class="pre">op(f1,</span> <span class="pre">...,</span> <span class="pre">fn)</span></tt> has height equal to <tt class="docutils literal"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">max(height(f1),</span> <span class="pre">...,</span> <span class="pre">height(fn))</span></tt>.</dd>
+</dl>
+<span class="target" id="l-expression-space-is"></span><dl class="docutils" id="index-29">
+<dt><span class="spadfun">is?</span>: (%, <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">is?(x,</span> <span class="pre">op)</span></tt> tests if <tt class="docutils literal"><span class="pre">x</span></tt> is a kernel and is its operator is op.</dd>
+</dl>
+<dl class="docutils" id="index-30">
+<dt><span class="spadfun">is?</span>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">is?(x,</span> <span class="pre">s)</span></tt> tests if <tt class="docutils literal"><span class="pre">x</span></tt> is a kernel and is the name of its operator is <tt class="docutils literal"><span class="pre">s</span></tt>.</dd>
+</dl>
+<span class="target" id="l-expression-space-kernel"></span><dl class="docutils" id="index-31">
+<dt><span class="spadfun">kernel</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">kernel(op,</span> <span class="pre">x)</span></tt> constructs <tt class="docutils literal"><span class="pre">op</span></tt>(<tt class="docutils literal"><span class="pre">x</span></tt>) without evaluating it.</dd>
+</dl>
+<dl class="docutils" id="index-32">
+<dt><span class="spadfun">kernel</span>: (<a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">kernel(op,</span> <span class="pre">[f1,</span> <span class="pre">...,</span> <span class="pre">fn])</span></tt> constructs <tt class="docutils literal"><span class="pre">op(f1,</span> <span class="pre">...,</span> <span class="pre">fn)</span></tt> without evaluating it.</dd>
+</dl>
+<span class="target" id="l-expression-space-kernels"></span><dl class="docutils" id="index-33">
+<dt><span class="spadfun">kernels</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dt>
+<dd><tt class="docutils literal"><span class="pre">kernels(f)</span></tt> returns the list of all the top-level kernels appearing in <tt class="docutils literal"><span class="pre">f</span></tt>, but not the ones appearing in the arguments of the top-level kernels.</dd>
+</dl>
+<dl class="docutils" id="index-34">
+<dt><span class="spadfun">kernels</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dt>
+<dd>kernels(([<tt class="docutils literal"><span class="pre">f1</span></tt>,...,<tt class="docutils literal"><span class="pre">fn</span></tt>]) returns the list of all the top-level kernels appearing in <tt class="docutils literal"><span class="pre">f1</span></tt>, ..., <tt class="docutils literal"><span class="pre">fn</span></tt> but not the ones appearing in the arguments of the top-level kernels.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-expression-space-main-kernel"></span><dl class="docutils" id="index-35">
+<dt><span class="spadfun">mainKernel</span>: % -&gt; Union(<a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">mainKernel(f)</span></tt> returns a kernel of <tt class="docutils literal"><span class="pre">f</span></tt> with maximum nesting level, or if <tt class="docutils literal"><span class="pre">f</span></tt> has no kernels (i.e. <tt class="docutils literal"><span class="pre">f</span></tt> is a constant).</dd>
+</dl>
+<span class="target" id="l-expression-space-map"></span><dl class="docutils" id="index-36">
+<dt><span class="spadfun">map</span>: (% -&gt; %, <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">map(f,</span> <span class="pre">k)</span></tt> returns <tt class="docutils literal"><span class="pre">op(f(x1),</span> <span class="pre">...,</span> <span class="pre">f(xn))</span></tt> where <tt class="docutils literal"><span class="pre">k</span> <span class="pre">=</span> <span class="pre">op(x1,</span> <span class="pre">...,</span> <span class="pre">xn)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-expression-space-min-poly"></span><dl class="docutils" id="index-37">
+<dt><span class="spadfun">minPoly</span>: <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> % -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> % if % has <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">minPoly(k)</span></tt> returns <tt class="docutils literal"><span class="pre">p</span></tt> such that <tt class="docutils literal"><span class="pre">p(k)</span> <span class="pre">=</span> <span class="pre">0</span></tt>.</dd>
+</dl>
+<span class="target" id="l-expression-space-odd"></span><dl class="docutils" id="index-38">
+<dt><span class="spadfun">odd?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if % has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">odd?</span> <span class="pre">x</span></tt> is <tt class="docutils literal"><span class="pre">true</span></tt> if <tt class="docutils literal"><span class="pre">x</span></tt> is an odd integer.</dd>
+</dl>
+<span class="target" id="l-expression-space-operator"></span><dl class="docutils" id="index-39">
+<dt><span class="spadfun">operator</span>: <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a> -&gt; <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">operator(op)</span></tt> returns a copy of <tt class="docutils literal"><span class="pre">op</span></tt> with the domain-dependent properties appropriate for %.</dd>
+</dl>
+<span class="target" id="l-expression-space-operators"></span><dl class="docutils" id="index-40">
+<dt><span class="spadfun">operators</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="BasicOperator.html#l-basic-operator"><em>BasicOperator</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">operators(f)</span></tt> returns all the basic operators appearing in <tt class="docutils literal"><span class="pre">f</span></tt>, no matter what their levels are.</dd>
+</dl>
+<span class="target" id="l-expression-space-paren"></span><dl class="docutils" id="index-41">
+<dt><span class="spadfun">paren</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">paren(f)</span></tt> returns (<tt class="docutils literal"><span class="pre">f</span></tt>). This prevents <tt class="docutils literal"><span class="pre">f</span></tt> from being evaluated when operators are applied to it. For example, <tt class="docutils literal"><span class="pre">log(1)</span></tt> returns 0, but <tt class="docutils literal"><span class="pre">log(paren</span> <span class="pre">1)</span></tt> returns the formal kernel log((1)).</dd>
+</dl>
+<dl class="docutils" id="index-42">
+<dt><span class="spadfun">paren</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">paren([f1,</span> <span class="pre">...,</span> <span class="pre">fn])</span></tt> returns <tt class="docutils literal"><span class="pre">(f1,</span> <span class="pre">...,</span> <span class="pre">fn)</span></tt>. This prevents the <tt class="docutils literal"><span class="pre">fi</span></tt> from being evaluated when operators are applied to them, and makes them applicable to a unary operator. For example, <tt class="docutils literal"><span class="pre">atan(paren</span> <span class="pre">[x,</span> <span class="pre">2])</span></tt> returns the formal kernel <tt class="docutils literal"><span class="pre">atan((x,</span> <span class="pre">2))</span></tt>.</dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract"><em>retract</em></a>: % -&gt; <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract-if-can"><em>retractIfCan</em></a>: % -&gt; Union(<a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, failed)</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dd>
+<dt><a class="reference internal" href="Comparable.html#l-comparable-smaller"><em>smaller?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dd>
+</dl>
+<span class="target" id="l-expression-space-subst"></span><dl class="docutils" id="index-43">
+<dt><span class="spadfun">subst</span>: (%, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">subst(f,</span> <span class="pre">k</span> <span class="pre">=</span> <span class="pre">g)</span></tt> replaces the kernel <tt class="docutils literal"><span class="pre">k</span></tt> by <tt class="docutils literal"><span class="pre">g</span></tt> formally in <tt class="docutils literal"><span class="pre">f</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-44">
+<dt><span class="spadfun">subst</span>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">subst(f,</span> <span class="pre">[k1</span> <span class="pre">=</span> <span class="pre">g1,</span> <span class="pre">...,</span> <span class="pre">kn</span> <span class="pre">=</span> <span class="pre">gn])</span></tt> replaces the kernels <tt class="docutils literal"><span class="pre">k1</span></tt>, ..., <tt class="docutils literal"><span class="pre">kn</span></tt> by <tt class="docutils literal"><span class="pre">g1</span></tt>, ..., <tt class="docutils literal"><span class="pre">gn</span></tt> formally in <tt class="docutils literal"><span class="pre">f</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-45">
+<dt><span class="spadfun">subst</span>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">subst(f,</span> <span class="pre">[k1...,</span> <span class="pre">kn],</span> <span class="pre">[g1,</span> <span class="pre">...,</span> <span class="pre">gn])</span></tt> replaces the kernels <tt class="docutils literal"><span class="pre">k1</span></tt>, ..., <tt class="docutils literal"><span class="pre">kn</span></tt> by <tt class="docutils literal"><span class="pre">g1</span></tt>, ..., <tt class="docutils literal"><span class="pre">gn</span></tt> formally in <tt class="docutils literal"><span class="pre">f</span></tt>.</dd>
+</dl>
+<span class="target" id="l-expression-space-tower"></span><dl class="docutils" id="index-46">
+<dt><span class="spadfun">tower</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dt>
+<dd><tt class="docutils literal"><span class="pre">tower(f)</span></tt> returns all the kernels appearing in <tt class="docutils literal"><span class="pre">f</span></tt>, no matter what their levels are.</dd>
+</dl>
+<dl class="docutils" id="index-47">
+<dt><span class="spadfun">tower</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</dt>
+<dd><tt class="docutils literal"><span class="pre">tower([f1,...,fn])</span></tt> returns all the kernels appearing in <tt class="docutils literal"><span class="pre">f1</span></tt>, ..., <tt class="docutils literal"><span class="pre">fn</span></tt> no matter what their levels are.</dd>
+</dl>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></p>
+<p><a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> %</p>
+<p><a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(%, %)</p>
+<p><a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(<a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %, %)</p>
+<p><a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> %</p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Evalable.html"
+                        title="previous chapter">Evalable R</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ExtensibleLinearAggregate.html"
+                        title="next chapter">ExtensibleLinearAggregate S</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/ExpressionSpace.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ExtensibleLinearAggregate.html" title="ExtensibleLinearAggregate S"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Evalable.html" title="Evalable R"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

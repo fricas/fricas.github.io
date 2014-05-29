@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>RationalFunction R &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="RationalFunctionDefiniteIntegration R" href="RationalFunctionDefiniteIntegration.html" />
+    <link rel="prev" title="RationalFactorize RP" href="RationalFactorize.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="RationalFunctionDefiniteIntegration.html" title="RationalFunctionDefiniteIntegration R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="RationalFactorize.html" title="RationalFactorize RP"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="rationalfunction-r">
+<span id="l-rational-function"></span><span id="index-0"></span><h1>RationalFunction R<a class="headerlink" href="#rationalfunction-r" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//rf.spad#L157">rf.spad line 157</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></li>
+</ul>
+<p>Utilities that provide the same top-level manipulations on fractions than on polynomials.</p>
+<span class="target" id="l-rational-function-coerce"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">coerce</span>: R -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">coerce(r)</span></tt> returns <tt class="docutils literal"><span class="pre">r</span></tt> viewed as a rational function over <tt class="docutils literal"><span class="pre">R</span></tt>.</dd>
+</dl>
+<span class="target" id="l-rational-function-eval"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">eval</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R) -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">eval(f,</span> <span class="pre">v</span> <span class="pre">=</span> <span class="pre">g)</span></tt> returns <tt class="docutils literal"><span class="pre">f</span></tt> with <tt class="docutils literal"><span class="pre">v</span></tt> replaced by <tt class="docutils literal"><span class="pre">g</span></tt>. Error: if <tt class="docutils literal"><span class="pre">v</span></tt> is not a symbol.</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">eval</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R) -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">eval(f,</span> <span class="pre">[v1</span> <span class="pre">=</span> <span class="pre">g1,</span> <span class="pre">...,</span> <span class="pre">vn</span> <span class="pre">=</span> <span class="pre">gn])</span></tt> returns <tt class="docutils literal"><span class="pre">f</span></tt> with each <tt class="docutils literal"><span class="pre">vi</span></tt> replaced by <tt class="docutils literal"><span class="pre">gi</span></tt> in parallel, i.e. <tt class="docutils literal"><span class="pre">vi</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> appearing inside the <tt class="docutils literal"><span class="pre">gi</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> are not replaced. Error: if any <tt class="docutils literal"><span class="pre">vi</span></tt> is not a symbol.</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">eval</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R) -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">eval(f,</span> <span class="pre">[v1,</span> <span class="pre">...,</span> <span class="pre">vn],</span> <span class="pre">[g1,</span> <span class="pre">...,</span> <span class="pre">gn])</span></tt> returns <tt class="docutils literal"><span class="pre">f</span></tt> with each <tt class="docutils literal"><span class="pre">vi</span></tt> replaced by <tt class="docutils literal"><span class="pre">gi</span></tt> in parallel, i.e. <tt class="docutils literal"><span class="pre">vi</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> appearing inside the <tt class="docutils literal"><span class="pre">gi</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> are not replaced.</dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">eval</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R) -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">eval(f,</span> <span class="pre">v,</span> <span class="pre">g)</span></tt> returns <tt class="docutils literal"><span class="pre">f</span></tt> with <tt class="docutils literal"><span class="pre">v</span></tt> replaced by <tt class="docutils literal"><span class="pre">g</span></tt>.</dd>
+</dl>
+<span class="target" id="l-rational-function-main-variable"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">mainVariable</span>: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R -&gt; Union(<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">mainVariable(f)</span></tt> returns the highest variable appearing in the numerator or the denominator of <tt class="docutils literal"><span class="pre">f</span></tt>, &#8220;failed&#8221; if <tt class="docutils literal"><span class="pre">f</span></tt> has no variables.</dd>
+</dl>
+<span class="target" id="l-rational-function-multivariate"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">multivariate</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">multivariate(f,</span> <span class="pre">v)</span></tt> applies both the numerator and denominator of <tt class="docutils literal"><span class="pre">f</span></tt> to <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
+</dl>
+<span class="target" id="l-rational-function-univariate"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">univariate</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">univariate(f,</span> <span class="pre">v)</span></tt> returns <tt class="docutils literal"><span class="pre">f</span></tt> viewed as a univariate rational function in <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
+</dl>
+<span class="target" id="l-rational-function-variables"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">variables</span>: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">variables(f)</span></tt> returns the list of variables appearing in the numerator or the denominator of <tt class="docutils literal"><span class="pre">f</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="RationalFactorize.html"
+                        title="previous chapter">RationalFactorize RP</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="RationalFunctionDefiniteIntegration.html"
+                        title="next chapter">RationalFunctionDefiniteIntegration R</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/RationalFunction.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="RationalFunctionDefiniteIntegration.html" title="RationalFunctionDefiniteIntegration R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="RationalFactorize.html" title="RationalFactorize RP"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

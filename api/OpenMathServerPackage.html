@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OpenMathServerPackage &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="OperationsQuery" href="OperationsQuery.html" />
+    <link rel="prev" title="OpenMathPackage" href="OpenMathPackage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="OperationsQuery.html" title="OperationsQuery"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="OpenMathPackage.html" title="OpenMathPackage"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="openmathserverpackage">
+<span id="l-open-math-server-package"></span><span id="index-0"></span><h1>OpenMathServerPackage<a class="headerlink" href="#openmathserverpackage" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//omserver.spad#L1">omserver.spad line 1</a></p>
+<p><a class="reference internal" href="#l-open-math-server-package"><em>OpenMathServerPackage</em></a> provides the necessary operations to run AXIOM as an OpenMath server, reading/writing objects to/from a port. Please note the facilities available here are very basic. The idea is that a user calls e.g. <tt class="docutils literal"><span class="pre">Omserve(4000,</span> <span class="pre">60)</span></tt> and then another process sends OpenMath objects to port 4000 and reads the result.</p>
+<span class="target" id="l-open-math-server-package-o-mreceive"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">OMreceive</span>: <a class="reference internal" href="OpenMathConnection.html#l-open-math-connection"><em>OpenMathConnection</em></a> -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">OMreceive(c)</span></tt> reads an OpenMath object from connection <tt class="docutils literal"><span class="pre">c</span></tt> and returns the appropriate AXIOM object.</dd>
+</dl>
+<span class="target" id="l-open-math-server-package-o-msend"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">OMsend</span>: (<a class="reference internal" href="OpenMathConnection.html#l-open-math-connection"><em>OpenMathConnection</em></a>, <a class="reference internal" href="Any.html#l-any"><em>Any</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">OMsend(c,</span> <span class="pre">u)</span></tt> attempts to output <tt class="docutils literal"><span class="pre">u</span></tt> on aciom{<tt class="docutils literal"><span class="pre">c</span></tt>} in OpenMath.</dd>
+</dl>
+<span class="target" id="l-open-math-server-package-o-mserve"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">OMserve</span>: (<a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a>, <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">OMserve(portnum,</span> <span class="pre">timeout)</span></tt> puts AXIOM into server mode on port number <tt class="docutils literal"><span class="pre">portnum</span></tt>. The parameter <tt class="docutils literal"><span class="pre">timeout</span></tt> specifies the timeout period for the connection.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="OpenMathPackage.html"
+                        title="previous chapter">OpenMathPackage</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="OperationsQuery.html"
+                        title="next chapter">OperationsQuery</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/OpenMathServerPackage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="OperationsQuery.html" title="OperationsQuery"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="OpenMathPackage.html" title="OpenMathPackage"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

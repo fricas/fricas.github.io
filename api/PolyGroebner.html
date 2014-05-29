@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PolyGroebner F &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="PolynomialAN2Expression" href="PolynomialAN2Expression.html" />
+    <link rel="prev" title="PolToPol(lv, R)" href="PolToPol.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="PolynomialAN2Expression.html" title="PolynomialAN2Expression"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PolToPol.html" title="PolToPol(lv, R)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="polygroebner-f">
+<span id="l-poly-groebner"></span><span id="index-0"></span><h1>PolyGroebner F<a class="headerlink" href="#polygroebner-f" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//pgrobner.spad#L1">pgrobner.spad line 1</a></p>
+<ul class="simple">
+<li>F: <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><em>GcdDomain</em></a></li>
+</ul>
+<p>Groebner functions for <tt class="docutils literal"><span class="pre">P</span></tt> <tt class="docutils literal"><span class="pre">F</span></tt> This package is an interface package to the groebner basis package which allows you to compute groebner bases for polynomials in either lexicographic ordering or total degree ordering refined by reverse lex. The input is the ordinary polynomial type which is internally converted to a type with the required ordering. The resulting grobner basis is converted back to ordinary polynomials. The ordering among the variables is controlled by an explicit list of variables which is passed as a second argument. The coefficient domain is allowed to be any <tt class="docutils literal"><span class="pre">gcd</span></tt> domain, but the groebner basis is computed as if the polynomials were over a field.</p>
+<span class="target" id="l-poly-groebner-lex-groebner"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">lexGroebner</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> F</dt>
+<dd><tt class="docutils literal"><span class="pre">lexGroebner(lp,</span> <span class="pre">lv)</span></tt> computes Groebner basis for the list of polynomials <tt class="docutils literal"><span class="pre">lp</span></tt> in lexicographic order. The variables are ordered by their position in the list <tt class="docutils literal"><span class="pre">lv</span></tt>.</dd>
+</dl>
+<span class="target" id="l-poly-groebner-total-groebner"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">totalGroebner</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> F</dt>
+<dd><tt class="docutils literal"><span class="pre">totalGroebner(lp,</span> <span class="pre">lv)</span></tt> computes Groebner basis for the list of polynomials <tt class="docutils literal"><span class="pre">lp</span></tt> with the terms ordered first by total degree and then refined by reverse lexicographic ordering. The variables are ordered by their position in the list <tt class="docutils literal"><span class="pre">lv</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="PolToPol.html"
+                        title="previous chapter">PolToPol(lv, R)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PolynomialAN2Expression.html"
+                        title="next chapter">PolynomialAN2Expression</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/PolyGroebner.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="PolynomialAN2Expression.html" title="PolynomialAN2Expression"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="PolToPol.html" title="PolToPol(lv, R)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

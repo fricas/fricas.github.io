@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>VarCat &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Categories" href="Categories.html" />
+    <link rel="next" title="VariablesCommuteWithCoefficients" href="VariablesCommuteWithCoefficients.html" />
+    <link rel="prev" title="UnivariateTaylorSeriesCategory Coef" href="UnivariateTaylorSeriesCategory.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="VariablesCommuteWithCoefficients.html" title="VariablesCommuteWithCoefficients"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="UnivariateTaylorSeriesCategory.html" title="UnivariateTaylorSeriesCategory Coef"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="varcat">
+<span id="l-var-cat"></span><span id="index-0"></span><h1>VarCat<a class="headerlink" href="#varcat" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//computation.spad#L1247">computation.spad line 1247</a></p>
+<p>VarCat represents a variable in Lambda and Ski domains. Since we are working in terms of functions then a variable will be a function (possibly a constant function) a variable has a name represented by a String. If the Lambda or Ski calculas is typed then the variable will also have a type.</p>
+<span class="target" id="id1"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">=</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>return <tt class="docutils literal"><span class="pre">true</span></tt> if equal, that is names are equal and if there is a type then tey mast also be equal</dd>
+</dl>
+<span class="target" id="l-var-cat-coerce"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>output</dd>
+</dl>
+<span class="target" id="l-var-cat-get-name"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">getName</span>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>returns the name of the variable.</dd>
+</dl>
+<span class="target" id="l-var-cat-get-type"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">getType</span>: % -&gt; <a class="reference internal" href="ILogic.html#l-i-logic"><em>ILogic</em></a></dt>
+<dd>returns the type of the variable. This may be a compund type, for instance [&#8220;a&#8221;,<tt class="docutils literal"><span class="pre">&quot;b&quot;</span></tt>] represents a-<tt class="docutils literal"><span class="pre">&gt;b</span></tt> a function from type a to type <tt class="docutils literal"><span class="pre">b</span></tt> untyped implementations return []</dd>
+</dl>
+<span class="target" id="l-var-cat-parse-var"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">parseVar</span>: <a class="reference internal" href="String.html#l-string"><em>String</em></a> -&gt; %</dt>
+<dd>construct a variable by parsing a string</dd>
+</dl>
+<span class="target" id="l-var-cat-parse-var-term"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">parseVarTerm</span>: (<a class="reference internal" href="String.html#l-string"><em>String</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; Record(rft: %, pout: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>)</dt>
+<dd>construct a variable by parsing a string pin is index to string at start of parse pout is index to string at end of parse</dd>
+</dl>
+<span class="target" id="l-var-cat-to-string"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">toString</span>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>returns the name and the type in string form.</dd>
+</dl>
+<span class="target" id="l-var-cat-var"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">var</span>: (<a class="reference internal" href="String.html#l-string"><em>String</em></a>, <a class="reference internal" href="ILogic.html#l-i-logic"><em>ILogic</em></a>) -&gt; %</dt>
+<dd>constructs variable with a name and also a type.</dd>
+</dl>
+<dl class="docutils" id="index-9">
+<dt><span class="spadfun">var</span>: <a class="reference internal" href="String.html#l-string"><em>String</em></a> -&gt; %</dt>
+<dd>constructs variable with a name but no type.</dd>
+</dl>
+<p><a class="reference internal" href="Type.html#l-type"><em>Type</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="UnivariateTaylorSeriesCategory.html"
+                        title="previous chapter">UnivariateTaylorSeriesCategory Coef</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="VariablesCommuteWithCoefficients.html"
+                        title="next chapter">VariablesCommuteWithCoefficients</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/VarCat.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="VariablesCommuteWithCoefficients.html" title="VariablesCommuteWithCoefficients"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="UnivariateTaylorSeriesCategory.html" title="UnivariateTaylorSeriesCategory Coef"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

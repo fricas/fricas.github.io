@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ModularDistinctDegreeFactorizer U &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="ModularHermitePade" href="ModularHermitePade.html" />
+    <link rel="prev" title="ModularAlgebraicGcd(MPT, MD, MO)" href="ModularAlgebraicGcd.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ModularHermitePade.html" title="ModularHermitePade"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ModularAlgebraicGcd.html" title="ModularAlgebraicGcd(MPT, MD, MO)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="modulardistinctdegreefactorizer-u">
+<span id="l-modular-distinct-degree-factorizer"></span><span id="index-0"></span><h1>ModularDistinctDegreeFactorizer U<a class="headerlink" href="#modulardistinctdegreefactorizer-u" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//moddfact.spad#L1">moddfact.spad line 1</a></p>
+<ul class="simple">
+<li>U: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></li>
+</ul>
+<p>This package supports factorization and gcds of univariate polynomials over the integers modulo different primes. The inputs are given as polynomials over the integers with the prime passed explicitly as an extra argument.</p>
+<span class="target" id="l-modular-distinct-degree-factorizer-dd-fact"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">ddFact</span>: (U, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(factor: U, degree: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">ddFact(f,</span> <span class="pre">p)</span></tt> computes a distinct degree factorization of the polynomial <tt class="docutils literal"><span class="pre">f</span></tt> modulo the prime <tt class="docutils literal"><span class="pre">p</span></tt>, i.e. such that each factor is a product of irreducibles of the same degrees. The input polynomial <tt class="docutils literal"><span class="pre">f</span></tt> is assumed to be square-free modulo <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<span class="target" id="l-modular-distinct-degree-factorizer-expt-mod"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">exptMod</span>: (U, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, U, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; U</dt>
+<dd><tt class="docutils literal"><span class="pre">exptMod(f,</span> <span class="pre">n,</span> <span class="pre">g,</span> <span class="pre">p)</span></tt> raises the univariate polynomial <tt class="docutils literal"><span class="pre">f</span></tt> to the <tt class="docutils literal"><span class="pre">n</span></tt>th power modulo the polynomial <tt class="docutils literal"><span class="pre">g</span></tt> and the prime <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<span class="target" id="l-modular-distinct-degree-factorizer-factor"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">factor</span>: (U, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> U</dt>
+<dd><tt class="docutils literal"><span class="pre">factor(f1,</span> <span class="pre">p)</span></tt> returns the list of factors of the univariate polynomial <tt class="docutils literal"><span class="pre">f1</span></tt> modulo the integer prime <tt class="docutils literal"><span class="pre">p</span></tt>. Error: if <tt class="docutils literal"><span class="pre">f1</span></tt> is not square-free modulo <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<span class="target" id="l-modular-distinct-degree-factorizer-gcd"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">gcd</span>: (U, U, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; U</dt>
+<dd><tt class="docutils literal"><span class="pre">gcd(f1,</span> <span class="pre">f2,</span> <span class="pre">p)</span></tt> computes the <tt class="docutils literal"><span class="pre">gcd</span></tt> of the univariate polynomials <tt class="docutils literal"><span class="pre">f1</span></tt> and <tt class="docutils literal"><span class="pre">f2</span></tt> modulo the integer prime <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<span class="target" id="l-modular-distinct-degree-factorizer-linears"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">linears</span>: (U, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; U</dt>
+<dd><tt class="docutils literal"><span class="pre">linears(f,</span> <span class="pre">p)</span></tt> returns the product of all the linear factors of <tt class="docutils literal"><span class="pre">f</span></tt> modulo <tt class="docutils literal"><span class="pre">p</span></tt>. Potentially incorrect result if <tt class="docutils literal"><span class="pre">f</span></tt> is not square-free modulo <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+</dl>
+<span class="target" id="l-modular-distinct-degree-factorizer-separate-factors"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">separateFactors</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(factor: U, degree: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>), <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> U</dt>
+<dd><tt class="docutils literal"><span class="pre">separateFactors(ddl,</span> <span class="pre">p)</span></tt> refines the distinct degree factorization produced by <strong>ddFact</strong> to give a complete list of factors.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ModularAlgebraicGcd.html"
+                        title="previous chapter">ModularAlgebraicGcd(MPT, MD, MO)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="ModularHermitePade.html"
+                        title="next chapter">ModularHermitePade</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/ModularDistinctDegreeFactorizer.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ModularHermitePade.html" title="ModularHermitePade"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ModularAlgebraicGcd.html" title="ModularAlgebraicGcd(MPT, MD, MO)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

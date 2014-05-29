@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>IntegerRoots I &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="IntegerSmithNormalForm" href="IntegerSmithNormalForm.html" />
+    <link rel="prev" title="IntegerRetractions S" href="IntegerRetractions.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="IntegerSmithNormalForm.html" title="IntegerSmithNormalForm"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="IntegerRetractions.html" title="IntegerRetractions S"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="integerroots-i">
+<span id="l-integer-roots"></span><span id="index-0"></span><h1>IntegerRoots I<a class="headerlink" href="#integerroots-i" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//intfact.spad#L208">intfact.spad line 208</a></p>
+<ul class="simple">
+<li>I: <a class="reference internal" href="IntegerNumberSystem.html#l-integer-number-system"><em>IntegerNumberSystem</em></a></li>
+</ul>
+<p>The <a class="reference internal" href="#l-integer-roots"><em>IntegerRoots</em></a> package computes square roots and <tt class="docutils literal"><span class="pre">n</span></tt>th roots of integers efficiently.</p>
+<span class="target" id="l-integer-roots-approx-nth-root"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">approxNthRoot</span>: (I, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; I</dt>
+<dd><tt class="docutils literal"><span class="pre">approxRoot(n,</span> <span class="pre">r)</span></tt> returns an approximation <tt class="docutils literal"><span class="pre">x</span></tt> to <tt class="docutils literal"><span class="pre">n^(1/r)</span></tt> such that <tt class="docutils literal"><span class="pre">-1</span> <span class="pre">&lt;</span> <span class="pre">x</span> <span class="pre">-</span> <span class="pre">n^(1/r)</span> <span class="pre">&lt;</span> <span class="pre">1</span></tt></dd>
+</dl>
+<span class="target" id="l-integer-roots-approx-sqrt"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">approxSqrt</span>: I -&gt; I</dt>
+<dd><tt class="docutils literal"><span class="pre">approxSqrt(n)</span></tt> returns an approximation <tt class="docutils literal"><span class="pre">x</span></tt> to <tt class="docutils literal"><span class="pre">sqrt(n)</span></tt> such that <tt class="docutils literal"><span class="pre">-1</span> <span class="pre">&lt;</span> <span class="pre">x</span> <span class="pre">-</span> <span class="pre">sqrt(n)</span> <span class="pre">&lt;</span> <span class="pre">1</span></tt>. Compute an approximation <tt class="docutils literal"><span class="pre">s</span></tt> to <tt class="docutils literal"><span class="pre">sqrt(n)</span></tt> such that <tt class="docutils literal"><span class="pre">-1</span> <span class="pre">&lt;</span> <span class="pre">s</span> <span class="pre">-</span> <span class="pre">sqrt(n)</span> <span class="pre">&lt;</span> <span class="pre">1</span></tt> A variable precision Newton iteration is used. The running time is <tt class="docutils literal"><span class="pre">O(</span> <span class="pre">log(n)^2</span> <span class="pre">)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-integer-roots-perfect-nth-power"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">perfectNthPower?</span>: (I, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">perfectNthPower?(n,</span> <span class="pre">r)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if <tt class="docutils literal"><span class="pre">n</span></tt> is an <tt class="docutils literal"><span class="pre">r</span></tt>th power and <tt class="docutils literal"><span class="pre">false</span></tt> otherwise</dd>
+</dl>
+<span class="target" id="l-integer-roots-perfect-nth-root"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">perfectNthRoot</span>: (I, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; Union(I, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">perfectNthRoot(n,</span> <span class="pre">r)</span></tt> returns the <tt class="docutils literal"><span class="pre">r</span></tt>th root of <tt class="docutils literal"><span class="pre">n</span></tt> if <tt class="docutils literal"><span class="pre">n</span></tt> is an <tt class="docutils literal"><span class="pre">r</span></tt>th power and returns &#8220;failed&#8221; otherwise</dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">perfectNthRoot</span>: I -&gt; Record(base: I, exponent: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">perfectNthRoot(n)</span></tt> returns <tt class="docutils literal"><span class="pre">[x,</span> <span class="pre">r]</span></tt>, where <tt class="docutils literal"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">x\^r</span></tt> and <tt class="docutils literal"><span class="pre">r</span></tt> is the largest integer such that <tt class="docutils literal"><span class="pre">n</span></tt> is a perfect <tt class="docutils literal"><span class="pre">r</span></tt>th power</dd>
+</dl>
+<span class="target" id="l-integer-roots-perfect-sqrt"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">perfectSqrt</span>: I -&gt; Union(I, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">perfectSqrt(n)</span></tt> returns the square root of <tt class="docutils literal"><span class="pre">n</span></tt> if <tt class="docutils literal"><span class="pre">n</span></tt> is a perfect square and returns &#8220;failed&#8221; otherwise</dd>
+</dl>
+<span class="target" id="l-integer-roots-perfect-square"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">perfectSquare?</span>: I -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">perfectSquare?(n)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if <tt class="docutils literal"><span class="pre">n</span></tt> is a perfect square and <tt class="docutils literal"><span class="pre">false</span></tt> otherwise</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="IntegerRetractions.html"
+                        title="previous chapter">IntegerRetractions S</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="IntegerSmithNormalForm.html"
+                        title="next chapter">IntegerSmithNormalForm</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/IntegerRoots.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="IntegerSmithNormalForm.html" title="IntegerSmithNormalForm"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="IntegerRetractions.html" title="IntegerRetractions S"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

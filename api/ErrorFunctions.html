@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ErrorFunctions &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="EuclideanGroebnerBasisPackage(Dom, Expon, VarSet, Dpol)" href="EuclideanGroebnerBasisPackage.html" />
+    <link rel="prev" title="EquationFunctions2(S, R)" href="EquationFunctions2.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="EuclideanGroebnerBasisPackage.html" title="EuclideanGroebnerBasisPackage(Dom, Expon, VarSet, Dpol)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="EquationFunctions2.html" title="EquationFunctions2(S, R)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="errorfunctions">
+<span id="l-error-functions"></span><span id="index-0"></span><h1>ErrorFunctions<a class="headerlink" href="#errorfunctions" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//error.spad#L1">error.spad line 1</a></p>
+<p>ErrorFunctions implements error functions callable from the system interpreter. Typically, these functions would be called in user functions. The simple forms of the functions take one argument which is either a string (an error message) or a list of strings which all together make up a message. The list can contain formatting codes (see below). The more sophisticated versions takes two arguments where the first argument is the name of the function from which the error was invoked and the second argument is either a string or a list of strings, as above. When you use the one argument version in an interpreter function, the system will automatically insert the name of the function as the new first argument. Thus in the user interpreter function <tt class="docutils literal"><span class="pre">f</span> <span class="pre">x</span> <span class="pre">==</span> <span class="pre">if</span> <span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">0</span> <span class="pre">then</span> <span class="pre">error</span> <span class="pre">&quot;negative</span> <span class="pre">argument&quot;</span> <span class="pre">else</span> <span class="pre">x</span></tt> the call to error will actually be of the form <tt class="docutils literal"><span class="pre">error(&quot;f&quot;,&quot;negative</span> <span class="pre">argument&quot;)</span></tt> because the interpreter will have created a new first argument. blankline Formatting codes: error messages may contain the following formatting codes (they should either start or end a string or else have blanks around them): <tt class="docutils literal"><span class="pre">\%l</span></tt> start a new line <tt class="docutils literal"><span class="pre">\%b</span></tt> start printing in a bold font (where available) <tt class="docutils literal"><span class="pre">\%d</span></tt> stop printing in a bold font (where available) `` %ceon`` start centering message lines <tt class="docutils literal"><span class="pre">\%ceoff</span></tt> stop centering message lines <tt class="docutils literal"><span class="pre">\%rjon</span></tt> start displaying lines &#8220;ragged left&#8221; <tt class="docutils literal"><span class="pre">\%rjoff</span></tt> stop displaying lines &#8220;ragged left&#8221; <tt class="docutils literal"><span class="pre">\%i</span></tt> indent following lines 3 additional spaces <tt class="docutils literal"><span class="pre">\%u</span></tt> unindent following lines 3 additional spaces <tt class="docutils literal"><span class="pre">\%xN</span></tt> insert <tt class="docutils literal"><span class="pre">N</span></tt> blanks (eg, <tt class="docutils literal"><span class="pre">\%x10</span></tt> inserts 10 blanks) blankline</p>
+<span class="target" id="l-error-functions-error"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">error</span>: (<a class="reference internal" href="String.html#l-string"><em>String</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="String.html#l-string"><em>String</em></a>) -&gt; <a class="reference internal" href="Exit.html#l-exit"><em>Exit</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">error(nam,</span> <span class="pre">lmsg)</span></tt> displays error messages lmsg preceded by a message containing the name <tt class="docutils literal"><span class="pre">nam</span></tt> of the function in which the error is contained.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">error</span>: (<a class="reference internal" href="String.html#l-string"><em>String</em></a>, <a class="reference internal" href="String.html#l-string"><em>String</em></a>) -&gt; <a class="reference internal" href="Exit.html#l-exit"><em>Exit</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">error(nam,</span> <span class="pre">msg)</span></tt> displays error message <tt class="docutils literal"><span class="pre">msg</span></tt> preceded by a message containing the name <tt class="docutils literal"><span class="pre">nam</span></tt> of the function in which the error is contained.</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">error</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="String.html#l-string"><em>String</em></a> -&gt; <a class="reference internal" href="Exit.html#l-exit"><em>Exit</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">error(lmsg)</span></tt> displays error message <tt class="docutils literal"><span class="pre">lmsg</span></tt> and terminates.</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">error</span>: <a class="reference internal" href="String.html#l-string"><em>String</em></a> -&gt; <a class="reference internal" href="Exit.html#l-exit"><em>Exit</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">error(msg)</span></tt> displays error message <tt class="docutils literal"><span class="pre">msg</span></tt> and terminates.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="EquationFunctions2.html"
+                        title="previous chapter">EquationFunctions2(S, R)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="EuclideanGroebnerBasisPackage.html"
+                        title="next chapter">EuclideanGroebnerBasisPackage(Dom, Expon, VarSet, Dpol)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/ErrorFunctions.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="EuclideanGroebnerBasisPackage.html" title="EuclideanGroebnerBasisPackage(Dom, Expon, VarSet, Dpol)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="EquationFunctions2.html" title="EquationFunctions2(S, R)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

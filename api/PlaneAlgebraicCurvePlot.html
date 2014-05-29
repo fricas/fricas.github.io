@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PlaneAlgebraicCurvePlot &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="Plot" href="Plot.html" />
+    <link rel="prev" title="Pi" href="Pi.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Plot.html" title="Plot"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Pi.html" title="Pi"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="planealgebraiccurveplot">
+<span id="l-plane-algebraic-curve-plot"></span><span id="index-0"></span><h1>PlaneAlgebraicCurvePlot<a class="headerlink" href="#planealgebraiccurveplot" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//acplot.spad#L48">acplot.spad line 48</a></p>
+<p>Plot a NON-SINGULAR plane algebraic curve <tt class="docutils literal"><span class="pre">p</span></tt>(<tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt>) = 0. Author: Clifton <tt class="docutils literal"><span class="pre">J</span></tt>. Williamson Date Created: Fall 1988 Date Last Updated: 27 April 1990 Keywords: algebraic curve, non-singular, plot Examples: References:</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="PlottablePlaneCurveCategory.html#l-plottable-plane-curve-category-list-branches"><em>listBranches</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Point.html#l-point"><em>Point</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a></dt>
+<dd>from <a class="reference internal" href="PlottablePlaneCurveCategory.html#l-plottable-plane-curve-category"><em>PlottablePlaneCurveCategory</em></a></dd>
+</dl>
+<span class="target" id="l-plane-algebraic-curve-plot-make-sketch"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">makeSketch</span>: (<a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">makeSketch(p,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">a..b,</span> <span class="pre">c..d)</span></tt> creates an ACPLOT of the curve <tt class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">0</span></tt> in the region <em>a &lt;= x &lt;= b, c &lt;= y &lt;= d</em>. More specifically, &#8216;makeSketch&#8217; plots a non-singular algebraic curve <tt class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">0</span></tt> in an rectangular region <em>xMin &lt;= x &lt;= xMax</em>, <em>yMin &lt;= y &lt;= yMax</em>. The user inputs <tt class="docutils literal"><span class="pre">makeSketch(p,</span> <span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">xMin..xMax,</span> <span class="pre">yMin..yMax)</span></tt>. Here <tt class="docutils literal"><span class="pre">p</span></tt> is a polynomial in the variables <tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt> with integer coefficients (<tt class="docutils literal"><span class="pre">p</span></tt> belongs to the domain <tt class="docutils literal"><span class="pre">Polynomial</span> <span class="pre">Integer</span></tt>). The case where <tt class="docutils literal"><span class="pre">p</span></tt> is a polynomial in only one of the variables is allowed. The variables <tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt> are input to specify the the coordinate axes. The horizontal axis is the <tt class="docutils literal"><span class="pre">x</span></tt>-axis and the vertical axis is the <tt class="docutils literal"><span class="pre">y</span></tt>-axis. The rational numbers xMin, ..., yMax specify the boundaries of the region in which the curve is to be plotted.</dd>
+</dl>
+<span class="target" id="l-plane-algebraic-curve-plot-refine"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">refine</span>: (%, <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">refine(p,</span> <span class="pre">x)</span></tt> is undocumented.</dd>
+<dt><a class="reference internal" href="PlottablePlaneCurveCategory.html#l-plottable-plane-curve-category-x-range"><em>xRange</em></a>: % -&gt; <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a></dt>
+<dd>from <a class="reference internal" href="PlottablePlaneCurveCategory.html#l-plottable-plane-curve-category"><em>PlottablePlaneCurveCategory</em></a></dd>
+<dt><a class="reference internal" href="PlottablePlaneCurveCategory.html#l-plottable-plane-curve-category-y-range"><em>yRange</em></a>: % -&gt; <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a></dt>
+<dd>from <a class="reference internal" href="PlottablePlaneCurveCategory.html#l-plottable-plane-curve-category"><em>PlottablePlaneCurveCategory</em></a></dd>
+</dl>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="PlottablePlaneCurveCategory.html#l-plottable-plane-curve-category"><em>PlottablePlaneCurveCategory</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Pi.html"
+                        title="previous chapter">Pi</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Plot.html"
+                        title="next chapter">Plot</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/PlaneAlgebraicCurvePlot.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Plot.html" title="Plot"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Pi.html" title="Pi"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

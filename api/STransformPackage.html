@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>STransformPackage(R, UTSR, ULSR, UPSR) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="StreamExponentialSeriesOperations Coef" href="StreamExponentialSeriesOperations.html" />
+    <link rel="prev" title="StorageEfficientMatrixOperations R" href="StorageEfficientMatrixOperations.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="StreamExponentialSeriesOperations.html" title="StreamExponentialSeriesOperations Coef"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="StorageEfficientMatrixOperations.html" title="StorageEfficientMatrixOperations R"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="stransformpackage-r-utsr-ulsr-upsr">
+<span id="l-s-transform-package"></span><span id="index-0"></span><h1>STransformPackage(R, UTSR, ULSR, UPSR)<a class="headerlink" href="#stransformpackage-r-utsr-ulsr-upsr" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//distro.spad#L888">distro.spad line 888</a></p>
+<ul class="simple">
+<li>R: Join(<a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a>, <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</li>
+<li>UTSR: <a class="reference internal" href="UnivariateTaylorSeriesCategory.html#l-univariate-taylor-series-category"><em>UnivariateTaylorSeriesCategory</em></a> R</li>
+<li>ULSR: <a class="reference internal" href="UnivariateLaurentSeriesConstructorCategory.html#l-univariate-laurent-series-constructor-category"><em>UnivariateLaurentSeriesConstructorCategory</em></a>(R, UTSR)</li>
+<li>UPSR: <a class="reference internal" href="UnivariatePuiseuxSeriesConstructorCategory.html#l-univariate-puiseux-series-constructor-category"><em>UnivariatePuiseuxSeriesConstructorCategory</em></a>(R, ULSR)</li>
+</ul>
+<p>A package to computes Taylor and Puiseux series of <tt class="docutils literal"><span class="pre">S</span></tt>-transforms.</p>
+<span class="target" id="l-s-transform-package-distribution-by-s-transform"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">distributionBySTransform</span>: UPSR -&gt; <a class="reference internal" href="Distribution.html#l-distribution"><em>Distribution</em></a> R</dt>
+<dd>of the distributions <tt class="docutils literal"><span class="pre">x</span></tt> if the mean is zero <tt class="docutils literal"><span class="pre">distributionBySTransform(x)</span></tt> returns the distribution with <tt class="docutils literal"><span class="pre">S</span></tt>-transform <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+</dl>
+<span class="target" id="l-s-transform-package-free-multiplicative-convolution"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">freeMultiplicativeConvolution</span>: (<a class="reference internal" href="Distribution.html#l-distribution"><em>Distribution</em></a> R, <a class="reference internal" href="Distribution.html#l-distribution"><em>Distribution</em></a> R) -&gt; <a class="reference internal" href="Distribution.html#l-distribution"><em>Distribution</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">freeMultiplicativeConvolution(x,</span> <span class="pre">y)</span></tt> returns the free multiplicative convolution of the distributions <tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt>.</dd>
+</dl>
+<span class="target" id="l-s-transform-package-s-transform1"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">STransform1</span>: <a class="reference internal" href="Distribution.html#l-distribution"><em>Distribution</em></a> R -&gt; UTSR</dt>
+<dd><tt class="docutils literal"><span class="pre">STransform(x)</span></tt> returns the Taylor expansion the <tt class="docutils literal"><span class="pre">S</span></tt>-transform <tt class="docutils literal"><span class="pre">S(z)</span></tt> of the distribution <tt class="docutils literal"><span class="pre">x</span></tt> if the mean is nonzero.</dd>
+</dl>
+<span class="target" id="l-s-transform-package-s-transform2"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">STransform2</span>: <a class="reference internal" href="Distribution.html#l-distribution"><em>Distribution</em></a> R -&gt; UPSR</dt>
+<dd><tt class="docutils literal"><span class="pre">STransform(x)</span></tt> returns the Puiseux expansion of the <tt class="docutils literal"><span class="pre">S</span></tt>-transform <tt class="docutils literal"><span class="pre">S(z)</span></tt> if the mean is zero.</dd>
+</dl>
+<span class="target" id="l-s-transform-package-s-transform"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">STransform</span>: <a class="reference internal" href="Distribution.html#l-distribution"><em>Distribution</em></a> R -&gt; UPSR</dt>
+<dd><tt class="docutils literal"><span class="pre">STransform(x)</span></tt> returns the Puiseux expansion of the <tt class="docutils literal"><span class="pre">S</span></tt>-transform <tt class="docutils literal"><span class="pre">S(z)</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="StorageEfficientMatrixOperations.html"
+                        title="previous chapter">StorageEfficientMatrixOperations R</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="StreamExponentialSeriesOperations.html"
+                        title="next chapter">StreamExponentialSeriesOperations Coef</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/STransformPackage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="StreamExponentialSeriesOperations.html" title="StreamExponentialSeriesOperations Coef"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="StorageEfficientMatrixOperations.html" title="StorageEfficientMatrixOperations R"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

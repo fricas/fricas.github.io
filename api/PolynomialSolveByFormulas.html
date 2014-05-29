@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PolynomialSolveByFormulas(UP, F) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="PolynomialSquareFree(VarSet, E, RC, P)" href="PolynomialSquareFree.html" />
+    <link rel="prev" title="PolynomialSetUtilitiesPackage(R, E, V, P)" href="PolynomialSetUtilitiesPackage.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="PolynomialSquareFree.html" title="PolynomialSquareFree(VarSet, E, RC, P)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PolynomialSetUtilitiesPackage.html" title="PolynomialSetUtilitiesPackage(R, E, V, P)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="polynomialsolvebyformulas-up-f">
+<span id="l-polynomial-solve-by-formulas"></span><span id="index-0"></span><h1>PolynomialSolveByFormulas(UP, F)<a class="headerlink" href="#polynomialsolvebyformulas-up-f" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//solvefor.spad#L1">solvefor.spad line 1</a></p>
+<ul>
+<li><p class="first">UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> F</p>
+</li>
+<li><p class="first">F: <a class="reference internal" href="Field.html#l-field"><em>Field</em></a> with</p>
+<blockquote>
+<div><p><span class="spadfun">^</span>: (%, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</p>
+</div></blockquote>
+</li>
+</ul>
+<p>This package factors the formulas out of the general solve code, allowing their recursive use over different domains. Care is taken to introduce few radicals so that radical extension domains can more easily simplify the results.</p>
+<span class="target" id="l-polynomial-solve-by-formulas-a-cubic"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">aCubic</span>: (F, F, F, F) -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">aCubic(f,</span> <span class="pre">g,</span> <span class="pre">h,</span> <span class="pre">j)</span></tt> undocumented</dd>
+</dl>
+<span class="target" id="l-polynomial-solve-by-formulas-a-linear"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">aLinear</span>: (F, F) -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">aLinear(f,</span> <span class="pre">g)</span></tt> undocumented</dd>
+</dl>
+<span class="target" id="l-polynomial-solve-by-formulas-a-quadratic"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">aQuadratic</span>: (F, F, F) -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">aQuadratic(f,</span> <span class="pre">g,</span> <span class="pre">h)</span></tt> undocumented</dd>
+</dl>
+<span class="target" id="l-polynomial-solve-by-formulas-a-quartic"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">aQuartic</span>: (F, F, F, F, F) -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">aQuartic(f,</span> <span class="pre">g,</span> <span class="pre">h,</span> <span class="pre">i,</span> <span class="pre">k)</span></tt> undocumented</dd>
+</dl>
+<span class="target" id="l-polynomial-solve-by-formulas-cubic"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">cubic</span>: (F, F, F, F) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> F</dt>
+<dd><tt class="docutils literal"><span class="pre">cubic(f,</span> <span class="pre">g,</span> <span class="pre">h,</span> <span class="pre">i)</span></tt> undocumented</dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt><span class="spadfun">cubic</span>: UP -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> F</dt>
+<dd><tt class="docutils literal"><span class="pre">cubic(u)</span></tt> undocumented</dd>
+</dl>
+<span class="target" id="l-polynomial-solve-by-formulas-linear"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">linear</span>: (F, F) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> F</dt>
+<dd><tt class="docutils literal"><span class="pre">linear(f,</span> <span class="pre">g)</span></tt> undocumented</dd>
+</dl>
+<dl class="docutils" id="index-8">
+<dt><span class="spadfun">linear</span>: UP -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> F</dt>
+<dd><tt class="docutils literal"><span class="pre">linear(u)</span></tt> undocumented</dd>
+</dl>
+<span class="target" id="l-polynomial-solve-by-formulas-map-solve"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">mapSolve</span>: (UP, F -&gt; F) -&gt; Record(solns: <a class="reference internal" href="List.html#l-list"><em>List</em></a> F, maps: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(arg: F, res: F))</dt>
+<dd><tt class="docutils literal"><span class="pre">mapSolve(u,</span> <span class="pre">f)</span></tt> undocumented</dd>
+</dl>
+<span class="target" id="l-polynomial-solve-by-formulas-particular-solution"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">particularSolution</span>: UP -&gt; F</dt>
+<dd><tt class="docutils literal"><span class="pre">particularSolution(u)</span></tt> undocumented</dd>
+</dl>
+<span class="target" id="l-polynomial-solve-by-formulas-quadratic"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">quadratic</span>: (F, F, F) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> F</dt>
+<dd><tt class="docutils literal"><span class="pre">quadratic(f,</span> <span class="pre">g,</span> <span class="pre">h)</span></tt> undocumented</dd>
+</dl>
+<dl class="docutils" id="index-12">
+<dt><span class="spadfun">quadratic</span>: UP -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> F</dt>
+<dd><tt class="docutils literal"><span class="pre">quadratic(u)</span></tt> undocumented</dd>
+</dl>
+<span class="target" id="l-polynomial-solve-by-formulas-quartic"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">quartic</span>: (F, F, F, F, F) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> F</dt>
+<dd><tt class="docutils literal"><span class="pre">quartic(f,</span> <span class="pre">g,</span> <span class="pre">h,</span> <span class="pre">i,</span> <span class="pre">j)</span></tt> undocumented</dd>
+</dl>
+<dl class="docutils" id="index-14">
+<dt><span class="spadfun">quartic</span>: UP -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> F</dt>
+<dd><tt class="docutils literal"><span class="pre">quartic(u)</span></tt> undocumented</dd>
+</dl>
+<span class="target" id="l-polynomial-solve-by-formulas-solve"></span><dl class="docutils" id="index-15">
+<dt><span class="spadfun">solve</span>: UP -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> F</dt>
+<dd><tt class="docutils literal"><span class="pre">solve(u)</span></tt> undocumented</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="PolynomialSetUtilitiesPackage.html"
+                        title="previous chapter">PolynomialSetUtilitiesPackage(R, E, V, P)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PolynomialSquareFree.html"
+                        title="next chapter">PolynomialSquareFree(VarSet, E, RC, P)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/PolynomialSolveByFormulas.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="PolynomialSquareFree.html" title="PolynomialSquareFree(VarSet, E, RC, P)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="PolynomialSetUtilitiesPackage.html" title="PolynomialSetUtilitiesPackage(R, E, V, P)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

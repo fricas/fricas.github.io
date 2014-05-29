@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>StreamTaylorSeriesOperations A &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="StreamTensor R" href="StreamTensor.html" />
+    <link rel="prev" title="StreamInfiniteProduct Coef" href="StreamInfiniteProduct.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="StreamTensor.html" title="StreamTensor R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="StreamInfiniteProduct.html" title="StreamInfiniteProduct Coef"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="streamtaylorseriesoperations-a">
+<span id="l-stream-taylor-series-operations"></span><span id="index-0"></span><h1>StreamTaylorSeriesOperations A<a class="headerlink" href="#streamtaylorseriesoperations-a" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//sttaylor.spad#L1">sttaylor.spad line 1</a></p>
+<ul class="simple">
+<li>A: <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></li>
+</ul>
+<p>StreamTaylorSeriesOperations implements Taylor series arithmetic, where a Taylor series is represented by a stream of its coefficients.</p>
+<span class="target" id="id1"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">*</span>: (A, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">r</span> <span class="pre">*</span> <span class="pre">a</span></tt> returns the power series scalar multiplication of <tt class="docutils literal"><span class="pre">r</span></tt> by <tt class="docutils literal"><span class="pre">a</span></tt>: <tt class="docutils literal"><span class="pre">r</span> <span class="pre">*</span> <span class="pre">[a0,</span> <span class="pre">a1,</span> <span class="pre">...]</span> <span class="pre">=</span> <span class="pre">[r</span> <span class="pre">*</span> <span class="pre">a0,</span> <span class="pre">r</span> <span class="pre">*</span> <span class="pre">a1,</span> <span class="pre">...]</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">*</span>: (<a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A, A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">r</span></tt> returns the power series scalar multiplication of <tt class="docutils literal"><span class="pre">a</span></tt> by <tt class="docutils literal"><span class="pre">r:</span></tt> <tt class="docutils literal"><span class="pre">[a0,</span> <span class="pre">a1,</span> <span class="pre">...]</span> <span class="pre">*</span> <span class="pre">r</span> <span class="pre">=</span> <span class="pre">[a0</span> <span class="pre">*</span> <span class="pre">r,</span> <span class="pre">a1</span> <span class="pre">*</span> <span class="pre">r,</span> <span class="pre">...]</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">*</span>: (<a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">b</span></tt> returns the power series (Cauchy) product of <tt class="docutils literal"><span class="pre">a</span></tt> and <tt class="docutils literal"><span class="pre">b:</span></tt> <tt class="docutils literal"><span class="pre">[a0,</span> <span class="pre">a1,</span> <span class="pre">...]</span> <span class="pre">*</span> <span class="pre">[b0,</span> <span class="pre">b1,</span> <span class="pre">...]</span> <span class="pre">=</span> <span class="pre">[c0,</span> <span class="pre">c1,</span> <span class="pre">...]</span></tt> where <tt class="docutils literal"><span class="pre">ck</span> <span class="pre">=</span> <span class="pre">sum(i</span> <span class="pre">+</span> <span class="pre">j</span> <span class="pre">=</span> <span class="pre">k,</span> <span class="pre">ai</span> <span class="pre">*</span> <span class="pre">bk)</span></tt>.</dd>
+</dl>
+<span class="target" id="id2"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">+</span>: (<a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></tt> returns the power series sum of <tt class="docutils literal"><span class="pre">a</span></tt> and <tt class="docutils literal"><span class="pre">b</span></tt>: <tt class="docutils literal"><span class="pre">[a0,</span> <span class="pre">a1,</span> <span class="pre">..]</span> <span class="pre">+</span> <span class="pre">[b0,</span> <span class="pre">b1,</span> <span class="pre">..]</span> <span class="pre">=</span> <span class="pre">[a0</span> <span class="pre">+</span> <span class="pre">b0,</span> <span class="pre">a1</span> <span class="pre">+</span> <span class="pre">b1,</span> <span class="pre">..]</span></tt></dd>
+</dl>
+<span class="target" id="id3"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">-</span>: (<a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">a</span> <span class="pre">-</span> <span class="pre">b</span></tt> returns the power series difference of <tt class="docutils literal"><span class="pre">a</span></tt> and <tt class="docutils literal"><span class="pre">b</span></tt>: <tt class="docutils literal"><span class="pre">[a0,</span> <span class="pre">a1,</span> <span class="pre">..]</span> <span class="pre">-</span> <span class="pre">[b0,</span> <span class="pre">b1,</span> <span class="pre">..]</span> <span class="pre">=</span> <span class="pre">[a0</span> <span class="pre">-</span> <span class="pre">b0,</span> <span class="pre">a1</span> <span class="pre">-</span> <span class="pre">b1,</span> <span class="pre">..]</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt><span class="spadfun">-</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">-</span> <span class="pre">a</span></tt> returns the power series negative of <tt class="docutils literal"><span class="pre">a</span></tt>: <tt class="docutils literal"><span class="pre">-</span> <span class="pre">[a0,</span> <span class="pre">a1,</span> <span class="pre">...]</span> <span class="pre">=</span> <span class="pre">[-</span> <span class="pre">a0,</span> <span class="pre">-</span> <span class="pre">a1,</span> <span class="pre">...]</span></tt></dd>
+</dl>
+<span class="target" id="id4"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">/</span>: (<a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">a</span> <span class="pre">/</span> <span class="pre">b</span></tt> returns the power series quotient of <tt class="docutils literal"><span class="pre">a</span></tt> by <tt class="docutils literal"><span class="pre">b</span></tt>. An error message is returned if <tt class="docutils literal"><span class="pre">b</span></tt> is not invertible. This function is used in fixed point computations.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-addiag"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">addiag</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">addiag(x)</span></tt> performs diagonal addition of a stream of streams. if <tt class="docutils literal"><span class="pre">x</span></tt> = <tt class="docutils literal"><span class="pre">[[a&lt;0,</span> <span class="pre">0&gt;,</span> <span class="pre">a&lt;0,</span> <span class="pre">1&gt;,</span> <span class="pre">..],</span> <span class="pre">[a&lt;1,</span> <span class="pre">0&gt;,</span> <span class="pre">a&lt;1,</span> <span class="pre">1&gt;,</span> <span class="pre">..],</span> <span class="pre">[a&lt;2,</span> <span class="pre">0&gt;,</span> <span class="pre">a&lt;2,</span> <span class="pre">1&gt;,</span> <span class="pre">..],</span> <span class="pre">..]</span></tt> and <tt class="docutils literal"><span class="pre">addiag(x)</span> <span class="pre">=</span> <span class="pre">[b&lt;0,</span> <span class="pre">b&lt;1&gt;,</span> <span class="pre">...],</span> <span class="pre">then</span> <span class="pre">b&lt;k&gt;</span> <span class="pre">=</span> <span class="pre">sum(i+j=k,</span> <span class="pre">a&lt;i,</span> <span class="pre">j&gt;)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-coerce"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">coerce</span>: A -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">coerce(r)</span></tt> converts a ring element <tt class="docutils literal"><span class="pre">r</span></tt> to a stream with one element.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-compose"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">compose</span>: (<a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">compose(a,</span> <span class="pre">b)</span></tt> composes the power series <tt class="docutils literal"><span class="pre">a</span></tt> with the power series <tt class="docutils literal"><span class="pre">b</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-deriv"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">deriv</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">deriv(a)</span></tt> returns the derivative of the power series with respect to the power series variable. Thus <tt class="docutils literal"><span class="pre">deriv([a0,</span> <span class="pre">a1,</span> <span class="pre">a2,</span> <span class="pre">...])</span></tt> returns <tt class="docutils literal"><span class="pre">[a1,</span> <span class="pre">2</span> <span class="pre">a2,</span> <span class="pre">3</span> <span class="pre">a3,</span> <span class="pre">...]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-eval"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">eval</span>: (<a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A, A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">eval(a,</span> <span class="pre">r)</span></tt> returns a stream of partial sums of the power series <tt class="docutils literal"><span class="pre">a</span></tt> evaluated at the power series variable equal to <tt class="docutils literal"><span class="pre">r</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-evenlambert"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">evenlambert</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">evenlambert(st)</span></tt> computes <tt class="docutils literal"><span class="pre">f(x^2)</span> <span class="pre">+</span> <span class="pre">f(x^4)</span> <span class="pre">+</span> <span class="pre">f(x^6)</span> <span class="pre">+</span> <span class="pre">...</span></tt> if <tt class="docutils literal"><span class="pre">st</span></tt> is a stream representing <tt class="docutils literal"><span class="pre">f(x)</span></tt>. This function is used for computing infinite products. If <tt class="docutils literal"><span class="pre">f(x)</span></tt> is a power series with constant coefficient 1, then <tt class="docutils literal"><span class="pre">prod(f(x^(2*n)),</span> <span class="pre">n=1..infinity)</span> <span class="pre">=</span> <span class="pre">exp(evenlambert(log(f(x))))</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-exquo"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">exquo</span>: (<a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; Union(<a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">exquo(a,</span> <span class="pre">b)</span></tt> returns the power series quotient of <tt class="docutils literal"><span class="pre">a</span></tt> by <tt class="docutils literal"><span class="pre">b</span></tt>, if the quotient exists, and &#8220;failed&#8221; otherwise</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-gderiv"></span><dl class="docutils" id="index-15">
+<dt><span class="spadfun">gderiv</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; A, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">gderiv(f,</span> <span class="pre">[a0,</span> <span class="pre">a1,</span> <span class="pre">a2,</span> <span class="pre">..])</span></tt> returns <tt class="docutils literal"><span class="pre">[f(0)*a0,</span> <span class="pre">f(1)*a1,</span> <span class="pre">f(2)*a2,</span> <span class="pre">..]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-general-lambert"></span><dl class="docutils" id="index-16">
+<dt><span class="spadfun">generalLambert</span>: (<a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">generalLambert(f(x),</span> <span class="pre">a,</span> <span class="pre">d)</span></tt> returns <tt class="docutils literal"><span class="pre">f(x^a)</span> <span class="pre">+</span> <span class="pre">f(x^(a</span> <span class="pre">+</span> <span class="pre">d))</span> <span class="pre">+</span> <span class="pre">f(x^(a</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">d))</span> <span class="pre">+</span> <span class="pre">...</span></tt>. <tt class="docutils literal"><span class="pre">f(x)</span></tt> should have zero constant coefficient and <tt class="docutils literal"><span class="pre">a</span></tt> and <tt class="docutils literal"><span class="pre">d</span></tt> should be positive.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-int"></span><dl class="docutils" id="index-17">
+<dt><span class="spadfun">int</span>: A -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">int(r)</span></tt> returns [<tt class="docutils literal"><span class="pre">r</span></tt>, <tt class="docutils literal"><span class="pre">r+1</span></tt>, <tt class="docutils literal"><span class="pre">r+2</span></tt>, ...], where <tt class="docutils literal"><span class="pre">r</span></tt> is a ring element.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-integers"></span><dl class="docutils" id="index-18">
+<dt><span class="spadfun">integers</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">integers(n)</span></tt> returns <tt class="docutils literal"><span class="pre">[n,</span> <span class="pre">n+1,</span> <span class="pre">n+2,</span> <span class="pre">...]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-integrate"></span><dl class="docutils" id="index-19">
+<dt><span class="spadfun">integrate</span>: (A, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A if A has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">integrate(r,</span> <span class="pre">a)</span></tt> returns the integral of the power series <tt class="docutils literal"><span class="pre">a</span></tt> with respect to the power series variableintegration where <tt class="docutils literal"><span class="pre">r</span></tt> denotes the constant of integration. Thus <tt class="docutils literal"><span class="pre">integrate(a,</span> <span class="pre">[a0,</span> <span class="pre">a1,</span> <span class="pre">a2,</span> <span class="pre">...])</span> <span class="pre">=</span> <span class="pre">[a,</span> <span class="pre">a0,</span> <span class="pre">a1/2,</span> <span class="pre">a2/3,</span> <span class="pre">...]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-invmultisect"></span><dl class="docutils" id="index-20">
+<dt><span class="spadfun">invmultisect</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">invmultisect(a,</span> <span class="pre">b,</span> <span class="pre">st)</span></tt> substitutes <tt class="docutils literal"><span class="pre">x^((a+b)*n)</span></tt> for <tt class="docutils literal"><span class="pre">x^n</span></tt> and multiplies by <tt class="docutils literal"><span class="pre">x^b</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-lagrange"></span><dl class="docutils" id="index-21">
+<dt><span class="spadfun">lagrange</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">lagrange(g)</span></tt> produces the power series for <tt class="docutils literal"><span class="pre">f</span></tt> where <tt class="docutils literal"><span class="pre">f</span></tt> is implicitly defined as <tt class="docutils literal"><span class="pre">f(z)</span> <span class="pre">=</span> <span class="pre">z*g(f(z))</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-lambert"></span><dl class="docutils" id="index-22">
+<dt><span class="spadfun">lambert</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">lambert(st)</span></tt> computes <tt class="docutils literal"><span class="pre">f(x)</span> <span class="pre">+</span> <span class="pre">f(x^2)</span> <span class="pre">+</span> <span class="pre">f(x^3)</span> <span class="pre">+</span> <span class="pre">...</span></tt> if <tt class="docutils literal"><span class="pre">st</span></tt> is a stream representing <tt class="docutils literal"><span class="pre">f(x)</span></tt>. This function is used for computing infinite products. If <tt class="docutils literal"><span class="pre">f(x)</span></tt> is a power series with constant coefficient 1 then <tt class="docutils literal"><span class="pre">prod(f(x^n),</span> <span class="pre">n</span> <span class="pre">=</span> <span class="pre">1..infinity)</span> <span class="pre">=</span> <span class="pre">exp(lambert(log(f(x))))</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-lazy-gintegrate"></span><dl class="docutils" id="index-23">
+<dt><span class="spadfun">lazyGintegrate</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; A, A, () -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A if A has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">lazyGintegrate(f,</span> <span class="pre">r,</span> <span class="pre">g)</span></tt> is used for fixed point computations.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-lazy-integrate"></span><dl class="docutils" id="index-24">
+<dt><span class="spadfun">lazyIntegrate</span>: (A, () -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A if A has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">lazyIntegrate(r,</span> <span class="pre">f)</span></tt> is a local function used for fixed point computations.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-mapdiv"></span><dl class="docutils" id="index-25">
+<dt><span class="spadfun">mapdiv</span>: (<a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A if A has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">mapdiv([a0,</span> <span class="pre">a1,</span> <span class="pre">..],</span> <span class="pre">[b0,</span> <span class="pre">b1,</span> <span class="pre">..])</span></tt> returns <tt class="docutils literal"><span class="pre">[a0/b0,</span> <span class="pre">a1/b1,</span> <span class="pre">..]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-mapmult"></span><dl class="docutils" id="index-26">
+<dt><span class="spadfun">mapmult</span>: (<a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">mapmult([a0,</span> <span class="pre">a1,</span> <span class="pre">..],</span> <span class="pre">[b0,</span> <span class="pre">b1,</span> <span class="pre">..])</span></tt> returns <tt class="docutils literal"><span class="pre">[a0*b0,</span> <span class="pre">a1*b1,</span> <span class="pre">..]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-monom"></span><dl class="docutils" id="index-27">
+<dt><span class="spadfun">monom</span>: (A, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">monom(deg,</span> <span class="pre">coef)</span></tt> is a monomial of degree <tt class="docutils literal"><span class="pre">deg</span></tt> with coefficient coef.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-multisect"></span><dl class="docutils" id="index-28">
+<dt><span class="spadfun">multisect</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">multisect(a,</span> <span class="pre">b,</span> <span class="pre">st)</span></tt> selects the coefficients of <tt class="docutils literal"><span class="pre">x^((a+b)*n+a)</span></tt>, and changes them to <tt class="docutils literal"><span class="pre">x^n</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-nlde"></span><dl class="docutils" id="index-29">
+<dt><span class="spadfun">nlde</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A if A has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">nlde(u)</span></tt> solves a first order non-linear differential equation described by <tt class="docutils literal"><span class="pre">u</span></tt> of the form <tt class="docutils literal"><span class="pre">[[b&lt;0,</span> <span class="pre">0&gt;,</span> <span class="pre">b&lt;0,</span> <span class="pre">1&gt;,</span> <span class="pre">...],</span> <span class="pre">[b&lt;1,</span> <span class="pre">0&gt;,</span> <span class="pre">b&lt;1,</span> <span class="pre">1&gt;,</span> <span class="pre">.],</span> <span class="pre">...]</span></tt>. the differential equation has the form <tt class="docutils literal"><span class="pre">y'</span> <span class="pre">=</span> <span class="pre">sum(i=0</span> <span class="pre">to</span> <span class="pre">infinity,</span> <span class="pre">j=0</span> <span class="pre">to</span> <span class="pre">infinity,</span> <span class="pre">b&lt;i,</span> <span class="pre">j&gt;*(x^i)*(y^j))</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-oddintegers"></span><dl class="docutils" id="index-30">
+<dt><span class="spadfun">oddintegers</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">oddintegers(n)</span></tt> returns <tt class="docutils literal"><span class="pre">[n,</span> <span class="pre">n+2,</span> <span class="pre">n+4,</span> <span class="pre">...]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-oddlambert"></span><dl class="docutils" id="index-31">
+<dt><span class="spadfun">oddlambert</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">oddlambert(st)</span></tt> computes <tt class="docutils literal"><span class="pre">f(x)</span> <span class="pre">+</span> <span class="pre">f(x^3)</span> <span class="pre">+</span> <span class="pre">f(x^5)</span> <span class="pre">+</span> <span class="pre">...</span></tt> if <tt class="docutils literal"><span class="pre">st</span></tt> is a stream representing <tt class="docutils literal"><span class="pre">f(x)</span></tt>. This function is used for computing infinite products. If <tt class="docutils literal"><span class="pre">f</span></tt>(<tt class="docutils literal"><span class="pre">x</span></tt>) is a power series with constant coefficient 1 then <tt class="docutils literal"><span class="pre">prod(f(x^(2*n-1)),</span> <span class="pre">n=1..infinity)</span> <span class="pre">=</span> <span class="pre">exp(oddlambert(log(f(x))))</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-power"></span><dl class="docutils" id="index-32">
+<dt><span class="spadfun">power</span>: (A, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A if A has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">power(a,</span> <span class="pre">f)</span></tt> returns the power series <tt class="docutils literal"><span class="pre">f</span></tt> raised to the power <tt class="docutils literal"><span class="pre">a</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-powern"></span><dl class="docutils" id="index-33">
+<dt><span class="spadfun">powern</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A) -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A if A has <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">powern(r,</span> <span class="pre">f)</span></tt> raises power series <tt class="docutils literal"><span class="pre">f</span></tt> to the power <tt class="docutils literal"><span class="pre">r</span></tt>.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-recip"></span><dl class="docutils" id="index-34">
+<dt><span class="spadfun">recip</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A -&gt; Union(<a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">recip(a)</span></tt> returns the power series reciprocal of <tt class="docutils literal"><span class="pre">a</span></tt>, or &#8220;failed&#8221; if not possible.</dd>
+</dl>
+<span class="target" id="l-stream-taylor-series-operations-revert"></span><dl class="docutils" id="index-35">
+<dt><span class="spadfun">revert</span>: <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A -&gt; <a class="reference internal" href="Stream.html#l-stream"><em>Stream</em></a> A</dt>
+<dd><tt class="docutils literal"><span class="pre">revert(a)</span></tt> computes the inverse of a power series <tt class="docutils literal"><span class="pre">a</span></tt> with respect to composition. the series should have constant coefficient 0 and invertible first order coefficient.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="StreamInfiniteProduct.html"
+                        title="previous chapter">StreamInfiniteProduct Coef</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="StreamTensor.html"
+                        title="next chapter">StreamTensor R</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/StreamTaylorSeriesOperations.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="StreamTensor.html" title="StreamTensor R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="StreamInfiniteProduct.html" title="StreamInfiniteProduct Coef"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

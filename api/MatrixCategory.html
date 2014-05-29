@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MatrixCategory(R, Row, Col) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Categories" href="Categories.html" />
+    <link rel="next" title="MaybeSkewPolynomialCategory(R, E, VarSet)" href="MaybeSkewPolynomialCategory.html" />
+    <link rel="prev" title="Logic" href="Logic.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="MaybeSkewPolynomialCategory.html" title="MaybeSkewPolynomialCategory(R, E, VarSet)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Logic.html" title="Logic"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="matrixcategory-r-row-col">
+<span id="l-matrix-category"></span><span id="index-0"></span><h1>MatrixCategory(R, Row, Col)<a class="headerlink" href="#matrixcategory-r-row-col" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//matcat.spad#L63">matcat.spad line 63</a></p>
+<ul class="simple">
+<li>R: Join(<a class="reference internal" href="SemiRng.html#l-semi-rng"><em>SemiRng</em></a>, <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a>)</li>
+<li>Row: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><em>FiniteLinearAggregate</em></a> R</li>
+<li>Col: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><em>FiniteLinearAggregate</em></a> R</li>
+</ul>
+<p><a class="reference internal" href="#l-matrix-category"><em>MatrixCategory</em></a> is a general matrix category which allows different representations and indexing schemes. Rows and columns may be extracted with rows returned as objects of type Row and colums returned as objects of type Col. A domain belonging to this category will be shallowly mutable. The index of the &#8216;first&#8217; row may be obtained by calling the function <span class="spadfun">minRowIndex</span>. The index of the &#8216;first&#8217; column may be obtained by calling the function <span class="spadfun">minColIndex</span>. The index of the first element of a Row is the same as the index of the first column in a matrix and vice versa.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="Aggregate.html#id1"><em>#</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+</dl>
+<span class="target" id="id1"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">*</span>: (%, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">y</span></tt> is the product of the matrices <tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt>. Error: if the dimensions are incompatible.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">*</span>: (%, Col) -&gt; Col</dt>
+<dd><tt class="docutils literal"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">c</span></tt> is the product of the matrix <tt class="docutils literal"><span class="pre">x</span></tt> and the column vector <tt class="docutils literal"><span class="pre">c</span></tt>. Error: if the dimensions are incompatible.</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">*</span>: (%, R) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">r</span></tt> is the right scalar multiple of the scalar <tt class="docutils literal"><span class="pre">r</span></tt> and the matrix <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">*</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; % if R has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">n</span> <span class="pre">*</span> <span class="pre">x</span></tt> is an integer multiple.</dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">*</span>: (R, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">r*x</span></tt> is the left scalar multiple of the scalar <tt class="docutils literal"><span class="pre">r</span></tt> and the matrix <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt><span class="spadfun">*</span>: (Row, %) -&gt; Row</dt>
+<dd><tt class="docutils literal"><span class="pre">r</span> <span class="pre">*</span> <span class="pre">x</span></tt> is the product of the row vector <tt class="docutils literal"><span class="pre">r</span></tt> and the matrix <tt class="docutils literal"><span class="pre">x</span></tt>. Error: if the dimensions are incompatible.</dd>
+</dl>
+<span class="target" id="id2"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">+</span>: (%, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">x</span> <span class="pre">+</span> <span class="pre">y</span></tt> is the sum of the matrices <tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt>. Error: if the dimensions are incompatible.</dd>
+</dl>
+<span class="target" id="id3"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">-</span>: % -&gt; % if R has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">-x</span></tt> returns the negative of the matrix <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-9">
+<dt><span class="spadfun">-</span>: (%, %) -&gt; % if R has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">x</span> <span class="pre">-</span> <span class="pre">y</span></tt> is the difference of the matrices <tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt>. Error: if the dimensions are incompatible.</dd>
+</dl>
+<span class="target" id="id4"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">/</span>: (%, R) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">m/r</span></tt> divides the elements of <tt class="docutils literal"><span class="pre">m</span></tt> by <tt class="docutils literal"><span class="pre">r</span></tt>. Error: if <tt class="docutils literal"><span class="pre">r</span> <span class="pre">=</span> <span class="pre">0</span></tt>.</dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+</dl>
+<span class="target" id="id5"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">^</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">m^n</span></tt> computes an integral power of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>. Error: if matrix is not square or if the matrix is square but not invertible.</dd>
+</dl>
+<dl class="docutils" id="index-12">
+<dt><span class="spadfun">^</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if R has <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">x</span> <span class="pre">^</span> <span class="pre">n</span></tt> computes a non-negative integral power of the matrix <tt class="docutils literal"><span class="pre">x</span></tt>. Error: if the matrix is not square.</dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+</dl>
+<span class="target" id="l-matrix-category-antisymmetric"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">antisymmetric?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">antisymmetric?(m)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if the matrix <tt class="docutils literal"><span class="pre">m</span></tt> is square and antisymmetric (i.e. <tt class="docutils literal"><span class="pre">m[i,</span> <span class="pre">j]</span> <span class="pre">=</span> <span class="pre">-m[j,</span> <span class="pre">i]</span></tt> for all <tt class="docutils literal"><span class="pre">i</span></tt> and <tt class="docutils literal"><span class="pre">j</span></tt>) and <tt class="docutils literal"><span class="pre">false</span></tt> otherwise.</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-any"><em>any?</em></a>: (R -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> R</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-block-concat"><em>blockConcat</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-block-split"><em>blockSplit</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-block-split"><em>blockSplit</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if R has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+</dl>
+<span class="target" id="l-matrix-category-coerce"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">coerce</span>: Col -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">coerce(col)</span></tt> converts the column <tt class="docutils literal"><span class="pre">col</span></tt> to a column matrix.</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-col-slice"><em>colSlice</em></a>: % -&gt; <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-column"><em>column</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; Col</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+</dl>
+<span class="target" id="l-matrix-category-column-space"></span><dl class="docutils" id="index-15">
+<dt><span class="spadfun">columnSpace</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Col if R has <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><em>EuclideanDomain</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">columnSpace(m)</span></tt> returns a sublist of columns of the matrix <tt class="docutils literal"><span class="pre">m</span></tt> forming a basis of its column space</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><em>copy</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><em>count</em></a>: (R -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> R</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><em>count</em></a>: (R, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if R has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> R</dd>
+</dl>
+<span class="target" id="l-matrix-category-determinant"></span><dl class="docutils" id="index-16">
+<dt><span class="spadfun">determinant</span>: % -&gt; R if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">determinant(m)</span></tt> returns the determinant of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>. Error: if the matrix is not square.</dd>
+</dl>
+<span class="target" id="l-matrix-category-diagonal"></span><dl class="docutils" id="index-17">
+<dt><span class="spadfun">diagonal?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">diagonal?(m)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if the matrix <tt class="docutils literal"><span class="pre">m</span></tt> is square and diagonal (i.e. all entries of <tt class="docutils literal"><span class="pre">m</span></tt> not on the diagonal are zero) and <tt class="docutils literal"><span class="pre">false</span></tt> otherwise.</dd>
+</dl>
+<span class="target" id="l-matrix-category-diagonal-matrix"></span><dl class="docutils" id="index-18">
+<dt><span class="spadfun">diagonalMatrix</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">diagonalMatrix([m1,</span> <span class="pre">...,</span> <span class="pre">mk])</span></tt> creates a block diagonal matrix <tt class="docutils literal"><span class="pre">M</span></tt> with block matrices <em>m1</em>, ..., <em>mk</em> down the diagonal, with 0 block matrices elsewhere. More precisly: if <tt class="docutils literal"><span class="pre">ri</span> <span class="pre">:=</span> <span class="pre">nrows</span> <span class="pre">mi</span></tt>, <tt class="docutils literal"><span class="pre">ci</span> <span class="pre">:=</span> <span class="pre">ncols</span> <span class="pre">mi</span></tt>, then <tt class="docutils literal"><span class="pre">m</span></tt> is an (<tt class="docutils literal"><span class="pre">r1+</span></tt>..<tt class="docutils literal"><span class="pre">+rk</span></tt>) by (<tt class="docutils literal"><span class="pre">c1+</span></tt>..<tt class="docutils literal"><span class="pre">+ck</span></tt>) - matrix with entries <tt class="docutils literal"><span class="pre">m.i.j</span> <span class="pre">=</span> <span class="pre">ml.(i-r1-..-r(l-1)).(j-n1-..-n(l-1))</span></tt>, if <tt class="docutils literal"><span class="pre">(r1+..+r(l-1))</span> <span class="pre">&lt;</span> <span class="pre">i</span> <span class="pre">&lt;=</span> <span class="pre">r1+..+rl</span></tt> and <tt class="docutils literal"><span class="pre">(c1+..+c(l-1))</span> <span class="pre">&lt;</span> <span class="pre">i</span> <span class="pre">&lt;=</span> <span class="pre">c1+..+cl</span></tt>, <tt class="docutils literal"><span class="pre">m.i.j</span></tt> = 0 otherwise.</dd>
+</dl>
+<dl class="docutils" id="index-19">
+<dt><span class="spadfun">diagonalMatrix</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> R -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">diagonalMatrix(l)</span></tt> returns a diagonal matrix with the elements of <tt class="docutils literal"><span class="pre">l</span></tt> on the diagonal.</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-elt"><em>elt</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; R</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-elt"><em>elt</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, R) -&gt; R</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-elt"><em>elt</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-elt"><em>elt</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-elt"><em>elt</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-elt"><em>elt</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-elt"><em>elt</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-elt"><em>elt</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-elt"><em>elt</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-elt"><em>elt</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-elt"><em>elt</em></a>: (%, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-elt"><em>elt</em></a>: (%, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-elt"><em>elt</em></a>: (%, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><em>empty</em></a>: () -&gt; %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#id2"><em>empty?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-eq"><em>eq?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> R) -&gt; % if R has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and R has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> R) -&gt; % if R has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and R has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> R, <a class="reference internal" href="List.html#l-list"><em>List</em></a> R) -&gt; % if R has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and R has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(R, R)</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, R, R) -&gt; % if R has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and R has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(R, R)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-every"><em>every?</em></a>: (R -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> R</dd>
+</dl>
+<span class="target" id="l-matrix-category-exquo"></span><dl class="docutils" id="index-20">
+<dt><span class="spadfun">exquo</span>: (%, R) -&gt; Union(%, failed) if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">exquo(m,</span> <span class="pre">r)</span></tt> computes the exact quotient of the elements of <tt class="docutils literal"><span class="pre">m</span></tt> by <tt class="docutils literal"><span class="pre">r</span></tt>, returning <tt class="docutils literal"><span class="pre">&quot;failed&quot;</span></tt> if this is not possible.</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-fill"><em>fill!</em></a>: (%, R) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a> if R has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a> if R has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-horiz-concat"><em>horizConcat</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-horiz-concat"><em>horizConcat</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-horiz-split"><em>horizSplit</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-horiz-split"><em>horizSplit</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+</dl>
+<span class="target" id="l-matrix-category-inverse"></span><dl class="docutils" id="index-21">
+<dt><span class="spadfun">inverse</span>: % -&gt; Union(%, failed) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">inverse(m)</span></tt> returns the inverse of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>. If the matrix is not invertible, &#8220;failed&#8221; is returned. Error: if the matrix is not square.</dd>
+</dl>
+<span class="target" id="l-matrix-category-kronecker-prod1"></span><dl class="docutils" id="index-22">
+<dt><span class="spadfun">kronecker_prod1</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, Union(R, one)) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd>Should be local but conditional.</dd>
+</dl>
+<span class="target" id="l-matrix-category-kronecker-product"></span><dl class="docutils" id="index-23">
+<dt><span class="spadfun">kroneckerProduct</span>: (%, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">kroneckerProduct(a,</span> <span class="pre">b)</span></tt> calculates the Kronecker product of the matrices a and <tt class="docutils literal"><span class="pre">b</span></tt>. This corresponds to tensor product of corresponding operators.</dd>
+</dl>
+<dl class="docutils" id="index-24">
+<dt><span class="spadfun">kroneckerProduct</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">kroneckerProduct([a1,</span> <span class="pre">a2,</span> <span class="pre">...,</span> <span class="pre">an])</span></tt> calculates the Kronecker product of the matrices <tt class="docutils literal"><span class="pre">a1</span></tt>, <tt class="docutils literal"><span class="pre">a2</span></tt>, ..., an. This corresponds to tensor product of corresponding operators.</dd>
+</dl>
+<span class="target" id="l-matrix-category-kronecker-sum"></span><dl class="docutils" id="index-25">
+<dt><span class="spadfun">kroneckerSum</span>: (%, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">kroneckerSum(a,</span> <span class="pre">b)</span></tt> calculates the Kronecker sum of the matrices a and <tt class="docutils literal"><span class="pre">b</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-26">
+<dt><span class="spadfun">kroneckerSum</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">kroneckerSum([a1,</span> <span class="pre">a2,</span> <span class="pre">...,</span> <span class="pre">an])</span></tt> calculates the Kronecker sum of the matrices <tt class="docutils literal"><span class="pre">a1</span></tt>, <tt class="docutils literal"><span class="pre">a2</span></tt>, ..., an.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a> if R has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-less"><em>less?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-list-of-lists"><em>listOfLists</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> R</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><em class="xref std std-ref">map!</em>: (R -&gt; R, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-map"><em>map</em></a>: ((R, R) -&gt; R, %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-map"><em>map</em></a>: ((R, R) -&gt; R, %, %, R) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-map"><em>map</em></a>: (R -&gt; R, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+</dl>
+<span class="target" id="l-matrix-category-matrix"></span><dl class="docutils" id="index-27">
+<dt><span class="spadfun">matrix</span>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; R) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">matrix(n,m,f)</span></tt> constructs an <tt class="docutils literal"><span class="pre">n</span> <span class="pre">*</span> <span class="pre">m</span></tt> matrix with the <tt class="docutils literal"><span class="pre">(i,j)</span></tt> entry equal to <tt class="docutils literal"><span class="pre">f(i,j)</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-28">
+<dt><span class="spadfun">matrix</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> R -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">matrix(l)</span></tt> converts the list of lists <tt class="docutils literal"><span class="pre">l</span></tt> to a matrix, where the list of lists is viewed as a list of the rows of the matrix.</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-max-col-index"><em>maxColIndex</em></a>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-max-row-index"><em>maxRowIndex</em></a>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><em>member?</em></a>: (R, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> R</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-members"><em>members</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> R</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> R</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-min-col-index"><em>minColIndex</em></a>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+</dl>
+<span class="target" id="l-matrix-category-minordet"></span><dl class="docutils" id="index-29">
+<dt><span class="spadfun">minordet</span>: % -&gt; R if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">minordet(m)</span></tt> computes the determinant of the matrix <tt class="docutils literal"><span class="pre">m</span></tt> using minors. Error: if the matrix is not square.</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-min-row-index"><em>minRowIndex</em></a>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-more"><em>more?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-ncols"><em>ncols</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-new"><em>new</em></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, R) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-nrows"><em>nrows</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+</dl>
+<span class="target" id="l-matrix-category-nullity"></span><dl class="docutils" id="index-30">
+<dt><span class="spadfun">nullity</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">nullity(m)</span></tt> returns the nullity of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>. This is the dimension of the null space of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+</dl>
+<span class="target" id="l-matrix-category-null-space"></span><dl class="docutils" id="index-31">
+<dt><span class="spadfun">nullSpace</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Col if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">nullSpace(m)</span></tt> returns a basis for the null space of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+<dt><em class="xref std std-ref">parts</em>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> R</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+</dl>
+<span class="target" id="l-matrix-category-pfaffian"></span><dl class="docutils" id="index-32">
+<dt><span class="spadfun">Pfaffian</span>: % -&gt; R if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">Pfaffian(m)</span></tt> returns the Pfaffian of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>. Error: if the matrix is not antisymmetric.</dd>
+</dl>
+<span class="target" id="l-matrix-category-positive-power"></span><dl class="docutils" id="index-33">
+<dt><span class="spadfun">positivePower</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">positivePower(x,</span> <span class="pre">n)</span></tt> computes a positive integral power of the matrix <tt class="docutils literal"><span class="pre">x</span></tt>. Error: if the matrix is not square.</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-qelt"><em>qelt</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; R</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-qnew"><em>qnew</em></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-qsetelt"><em>qsetelt!</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, R) -&gt; R</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+</dl>
+<span class="target" id="l-matrix-category-rank"></span><dl class="docutils" id="index-34">
+<dt><span class="spadfun">rank</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">rank(m)</span></tt> returns the rank of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-row"><em>row</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; Row</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+</dl>
+<span class="target" id="l-matrix-category-row-echelon"></span><dl class="docutils" id="index-35">
+<dt><span class="spadfun">rowEchelon</span>: % -&gt; % if R has <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><em>EuclideanDomain</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">rowEchelon(m)</span></tt> returns the row echelon form of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-row-slice"><em>rowSlice</em></a>: % -&gt; <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-sample"><em>sample</em></a>: %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+</dl>
+<span class="target" id="l-matrix-category-scalar-matrix"></span><dl class="docutils" id="index-36">
+<dt><span class="spadfun">scalarMatrix</span>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, R) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">scalarMatrix(n,</span> <span class="pre">r)</span></tt> returns an <tt class="docutils literal"><span class="pre">n</span></tt>-by-<tt class="docutils literal"><span class="pre">n</span></tt> matrix with <tt class="docutils literal"><span class="pre">r</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> on the diagonal and zeroes elsewhere.</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-set-column"><em>setColumn!</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, Col) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-setelt"><em>setelt!</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, R) -&gt; R</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-setelt"><em>setelt!</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-setelt"><em>setelt!</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-setelt"><em>setelt!</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-setelt"><em>setelt!</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-setelt"><em>setelt!</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-setelt"><em>setelt!</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-setelt"><em>setelt!</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-setelt"><em>setelt!</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-setelt"><em>setelt!</em></a>: (%, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-setelt"><em>setelt!</em></a>: (%, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-setelt"><em>setelt!</em></a>: (%, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-set-row"><em>setRow!</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, Row) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-setsub-matrix"><em>setsubMatrix!</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-size"><em>size?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+</dl>
+<span class="target" id="l-matrix-category-square"></span><dl class="docutils" id="index-37">
+<dt><span class="spadfun">square?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">square?(m)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if <tt class="docutils literal"><span class="pre">m</span></tt> is a square matrix (i.e. if <tt class="docutils literal"><span class="pre">m</span></tt> has the same number of rows as columns) and <tt class="docutils literal"><span class="pre">false</span></tt> otherwise.</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-square-top"><em>squareTop</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-sub-matrix"><em>subMatrix</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-swap-columns"><em>swapColumns!</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-swap-rows"><em>swapRows!</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+</dl>
+<span class="target" id="l-matrix-category-symmetric"></span><dl class="docutils" id="index-38">
+<dt><span class="spadfun">symmetric?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">symmetric?(m)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if the matrix <tt class="docutils literal"><span class="pre">m</span></tt> is square and symmetric (i.e. <tt class="docutils literal"><span class="pre">m[i,</span> <span class="pre">j]</span> <span class="pre">=</span> <span class="pre">m[j,</span> <span class="pre">i]</span></tt> for all <tt class="docutils literal"><span class="pre">i</span></tt> and <tt class="docutils literal"><span class="pre">j</span></tt>) and <tt class="docutils literal"><span class="pre">false</span></tt> otherwise.</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-transpose"><em>transpose</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+</dl>
+<span class="target" id="l-matrix-category-transpose"></span><dl class="docutils" id="index-39">
+<dt><span class="spadfun">transpose</span>: Row -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">transpose(r)</span></tt> converts the row <tt class="docutils literal"><span class="pre">r</span></tt> to a row matrix.</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-vert-concat"><em>vertConcat</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-vert-concat"><em>vertConcat</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-vert-split"><em>vertSplit</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+<dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-vert-split"><em>vertSplit</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</dd>
+</dl>
+<span class="target" id="l-matrix-category-zero"></span><dl class="docutils" id="index-40">
+<dt><span class="spadfun">zero</span>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">zero(m,</span> <span class="pre">n)</span></tt> returns an <tt class="docutils literal"><span class="pre">m</span></tt>-by-<tt class="docutils literal"><span class="pre">n</span></tt> zero matrix.</dd>
+</dl>
+<span class="target" id="id6"></span><dl class="docutils" id="index-41">
+<dt><span class="spadfun">zero?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">zero?(m)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if <tt class="docutils literal"><span class="pre">m</span></tt> is a zero matrix and <tt class="docutils literal"><span class="pre">false</span></tt> otherwise.</dd>
+</dl>
+<p><a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></p>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> if R has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> or R has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if R has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> or R has <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R if R has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and R has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</p>
+<p><a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></p>
+<p><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> R</p>
+<p><a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(R, R) if R has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and R has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> R</p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> if R has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+<p><a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></p>
+<p><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, Row, Col)</p>
+<p><a class="reference internal" href="Type.html#l-type"><em>Type</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Logic.html"
+                        title="previous chapter">Logic</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="MaybeSkewPolynomialCategory.html"
+                        title="next chapter">MaybeSkewPolynomialCategory(R, E, VarSet)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/MatrixCategory.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="MaybeSkewPolynomialCategory.html" title="MaybeSkewPolynomialCategory(R, E, VarSet)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Logic.html" title="Logic"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

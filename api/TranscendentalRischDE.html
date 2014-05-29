@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TranscendentalRischDE(F, UP) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="TranscendentalRischDESystem(F, UP)" href="TranscendentalRischDESystem.html" />
+    <link rel="prev" title="TranscendentalManipulations(R, F)" href="TranscendentalManipulations.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="TranscendentalRischDESystem.html" title="TranscendentalRischDESystem(F, UP)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="TranscendentalManipulations.html" title="TranscendentalManipulations(R, F)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="transcendentalrischde-f-up">
+<span id="l-transcendental-risch-d-e"></span><span id="index-0"></span><h1>TranscendentalRischDE(F, UP)<a class="headerlink" href="#transcendentalrischde-f-up" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//rderf.spad#L1">rderf.spad line 1</a></p>
+<ul class="simple">
+<li>F: Join(<a class="reference internal" href="Field.html#l-field"><em>Field</em></a>, <a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</li>
+<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> F</li>
+</ul>
+<p>Risch differential equation, transcendental case. Author: Manuel Bronstein Date Created: Jan 1988 Date Last Updated: 2 November 1995</p>
+<span class="target" id="l-transcendental-risch-d-e-base-r-d-e"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">baseRDE</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Record(ans: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, nosol: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">baseRDE(f,</span> <span class="pre">g)</span></tt> returns a <tt class="docutils literal"><span class="pre">[y,</span> <span class="pre">b]</span></tt> such that <tt class="docutils literal"><span class="pre">y'</span> <span class="pre">+</span> <span class="pre">fy</span> <span class="pre">=</span> <span class="pre">g</span></tt> if <tt class="docutils literal"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">false</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt> is a partial solution otherwise (no solution in that case). <tt class="docutils literal"><span class="pre">D</span></tt> is the derivation to use.</dd>
+</dl>
+<span class="target" id="l-transcendental-risch-d-e-monom-r-d-e"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">monomRDE</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP) -&gt; Union(Record(a: UP, b: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, c: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, t: UP), failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">monomRDE(f,</span> <span class="pre">g,</span> <span class="pre">D)</span></tt> returns <tt class="docutils literal"><span class="pre">[A,</span> <span class="pre">B,</span> <span class="pre">C,</span> <span class="pre">T]</span></tt> such that <tt class="docutils literal"><span class="pre">y'</span> <span class="pre">+</span> <span class="pre">f</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">g</span></tt> has a solution if and only if <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">Q</span> <span class="pre">/</span> <span class="pre">T</span></tt>, where <tt class="docutils literal"><span class="pre">Q</span></tt> satisfies <tt class="docutils literal"><span class="pre">A</span> <span class="pre">Q'</span> <span class="pre">+</span> <span class="pre">B</span> <span class="pre">Q</span> <span class="pre">=</span> <span class="pre">C</span></tt> and has no normal pole. A and <tt class="docutils literal"><span class="pre">T</span></tt> are polynomials and <tt class="docutils literal"><span class="pre">B</span></tt> and <tt class="docutils literal"><span class="pre">C</span></tt> have no normal poles. <tt class="docutils literal"><span class="pre">D</span></tt> is the derivation to use.</dd>
+</dl>
+<span class="target" id="l-transcendental-risch-d-e-poly-r-d-e"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">polyRDE</span>: (UP, UP, UP, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, UP -&gt; UP) -&gt; Union(ans: Record(ans: UP, nosol: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>), eq: Record(b: UP, c: UP, m: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, alpha: UP, beta: UP))</dt>
+<dd><tt class="docutils literal"><span class="pre">polyRDE(a,</span> <span class="pre">B,</span> <span class="pre">C,</span> <span class="pre">n,</span> <span class="pre">D)</span></tt> returns either: 1. <tt class="docutils literal"><span class="pre">[Q,</span> <span class="pre">b]</span></tt> such that <tt class="docutils literal"><span class="pre">degree(Q)</span> <span class="pre">&lt;=</span> <span class="pre">n</span></tt> and <tt class="docutils literal"><span class="pre">a</span> <span class="pre">Q'+</span> <span class="pre">B</span> <span class="pre">Q</span> <span class="pre">=</span> <span class="pre">C</span></tt> if <tt class="docutils literal"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">false</span></tt>, <tt class="docutils literal"><span class="pre">Q</span></tt> is a partial solution otherwise. 2. <tt class="docutils literal"><span class="pre">[B1,</span> <span class="pre">C1,</span> <span class="pre">m,</span> <span class="pre">\alpha,</span> <span class="pre">\beta]</span></tt> such that any polynomial solution of degree at most <tt class="docutils literal"><span class="pre">n</span></tt> of <tt class="docutils literal"><span class="pre">A</span> <span class="pre">Q'</span> <span class="pre">+</span> <span class="pre">BQ</span> <span class="pre">=</span> <span class="pre">C</span></tt> must be of the form <tt class="docutils literal"><span class="pre">Q</span> <span class="pre">=</span> <span class="pre">\alpha</span> <span class="pre">H</span> <span class="pre">+</span> <span class="pre">\beta</span></tt> where <tt class="docutils literal"><span class="pre">degree(H)</span> <span class="pre">&lt;=</span> <span class="pre">m</span></tt> and <tt class="docutils literal"><span class="pre">H</span></tt> satisfies <tt class="docutils literal"><span class="pre">H'</span> <span class="pre">+</span> <span class="pre">B1</span> <span class="pre">H</span> <span class="pre">=</span> <span class="pre">C1</span></tt>. <tt class="docutils literal"><span class="pre">D</span></tt> is the derivation to use.</dd>
+</dl>
+<span class="target" id="l-transcendental-risch-d-e-s-p-d-enocancel1"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">SPDEnocancel1</span>: (UP, UP, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, UP -&gt; UP) -&gt; Record(ans: UP, nosol: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">SPDEnocancel1(b,</span> <span class="pre">c,</span> <span class="pre">n,</span> <span class="pre">D)</span></tt> solves <tt class="docutils literal"><span class="pre">Q'</span></tt> + <tt class="docutils literal"><span class="pre">b</span></tt> <tt class="docutils literal"><span class="pre">Q</span></tt> = <tt class="docutils literal"><span class="pre">c</span></tt> with deg(<tt class="docutils literal"><span class="pre">Q</span></tt>) <tt class="docutils literal"><span class="pre">&lt;=</span></tt> <tt class="docutils literal"><span class="pre">n</span></tt> and returns [<tt class="docutils literal"><span class="pre">Q</span></tt>, flag] where flag is <tt class="docutils literal"><span class="pre">false</span></tt> when <tt class="docutils literal"><span class="pre">Q</span></tt> satisfies the equation, if flag is <tt class="docutils literal"><span class="pre">true</span></tt> <tt class="docutils literal"><span class="pre">Q</span></tt> is a partial solution. <tt class="docutils literal"><span class="pre">D</span></tt> is the derivation to use. Note: <tt class="docutils literal"><span class="pre">SPDEnocancel1</span></tt> assumes that deg(<tt class="docutils literal"><span class="pre">Q'</span></tt>) &lt; deg(<tt class="docutils literal"><span class="pre">bQ</span></tt>) for all <tt class="docutils literal"><span class="pre">Q</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="TranscendentalManipulations.html"
+                        title="previous chapter">TranscendentalManipulations(R, F)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="TranscendentalRischDESystem.html"
+                        title="next chapter">TranscendentalRischDESystem(F, UP)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/TranscendentalRischDE.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="TranscendentalRischDESystem.html" title="TranscendentalRischDESystem(F, UP)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="TranscendentalManipulations.html" title="TranscendentalManipulations(R, F)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

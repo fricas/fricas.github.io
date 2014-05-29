@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>PrimitiveRatRicDE(F, UP, L, LQ) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="PrintPackage" href="PrintPackage.html" />
+    <link rel="prev" title="PrimitiveRatDE(F, UP, L, LQ)" href="PrimitiveRatDE.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="PrintPackage.html" title="PrintPackage"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="PrimitiveRatDE.html" title="PrimitiveRatDE(F, UP, L, LQ)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="primitiveratricde-f-up-l-lq">
+<span id="l-primitive-rat-ric-d-e"></span><span id="index-0"></span><h1>PrimitiveRatRicDE(F, UP, L, LQ)<a class="headerlink" href="#primitiveratricde-f-up-l-lq" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//riccati.spad#L1">riccati.spad line 1</a></p>
+<ul class="simple">
+<li>F: Join(<a class="reference internal" href="Field.html#l-field"><em>Field</em></a>, <a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</li>
+<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> F</li>
+<li>L: <a class="reference internal" href="LinearOrdinaryDifferentialOperatorCategory.html#l-linear-ordinary-differential-operator-category"><em>LinearOrdinaryDifferentialOperatorCategory</em></a> UP</li>
+<li>LQ: <a class="reference internal" href="LinearOrdinaryDifferentialOperatorCategory.html#l-linear-ordinary-differential-operator-category"><em>LinearOrdinaryDifferentialOperatorCategory</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP</li>
+</ul>
+<p>In-field solution of Riccati equations, primitive case.</p>
+<span class="target" id="l-primitive-rat-ric-d-e-change-var"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">changeVar</span>: (L, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; L</dt>
+<dd><tt class="docutils literal"><span class="pre">changeVar(+/[ai</span> <span class="pre">D^i],</span> <span class="pre">a)</span></tt> returns the operator <tt class="docutils literal"><span class="pre">+/[ai</span> <span class="pre">(D+a)^i]</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">changeVar</span>: (L, UP) -&gt; L</dt>
+<dd><tt class="docutils literal"><span class="pre">changeVar(+/[ai</span> <span class="pre">D^i],</span> <span class="pre">a)</span></tt> returns the operator <tt class="docutils literal"><span class="pre">+/[ai</span> <span class="pre">(D+a)^i]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-primitive-rat-ric-d-e-constant-coefficient-ric-d-e"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">constantCoefficientRicDE</span>: (L, UP -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> F) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(constant: F, eq: L)</dt>
+<dd><tt class="docutils literal"><span class="pre">constantCoefficientRicDE(op,</span> <span class="pre">ric)</span></tt> returns <tt class="docutils literal"><span class="pre">[[a1,</span> <span class="pre">L1],</span> <span class="pre">[a2,</span> <span class="pre">L2],</span> <span class="pre">...</span> <span class="pre">,</span> <span class="pre">[ak,</span> <span class="pre">Lk]]</span></tt> such that any rational solution with no polynomial part of the associated Riccati equation of <tt class="docutils literal"><span class="pre">op</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">0</span></tt> must be one of the <tt class="docutils literal"><span class="pre">ai</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> in which case the equation for <tt class="docutils literal"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">y</span> <span class="pre">e^{-int</span> <span class="pre">ai}</span></tt> is <tt class="docutils literal"><span class="pre">Li</span> <span class="pre">z</span> <span class="pre">=</span> <span class="pre">0</span></tt>. <tt class="docutils literal"><span class="pre">ric</span></tt> is a Riccati equation solver over <tt class="docutils literal"><span class="pre">F</span></tt>, whose input is the associated linear equation.</dd>
+</dl>
+<span class="target" id="l-primitive-rat-ric-d-e-denom-ric-d-e"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">denomRicDE</span>: L -&gt; UP</dt>
+<dd><tt class="docutils literal"><span class="pre">denomRicDE(op)</span></tt> returns a polynomial <tt class="docutils literal"><span class="pre">d</span></tt> such that any rational solution of the associated Riccati equation of <tt class="docutils literal"><span class="pre">op</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">0</span></tt> is of the form <tt class="docutils literal"><span class="pre">p/d</span> <span class="pre">+</span> <span class="pre">q'/q</span> <span class="pre">+</span> <span class="pre">r</span></tt> for some polynomials <tt class="docutils literal"><span class="pre">p</span></tt> and <tt class="docutils literal"><span class="pre">q</span></tt> and a reduced <tt class="docutils literal"><span class="pre">r</span></tt>. Also, <tt class="docutils literal"><span class="pre">deg(p)</span> <span class="pre">&lt;</span> <span class="pre">deg(d)</span></tt> and {<tt class="docutils literal"><span class="pre">gcd</span></tt>(<tt class="docutils literal"><span class="pre">d</span></tt>, <tt class="docutils literal"><span class="pre">q</span></tt>) = 1}.</dd>
+</dl>
+<span class="target" id="l-primitive-rat-ric-d-e-leading-coefficient-ric-d-e"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">leadingCoefficientRicDE</span>: L -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(deg: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, eq: UP)</dt>
+<dd><tt class="docutils literal"><span class="pre">leadingCoefficientRicDE(op)</span></tt> returns <tt class="docutils literal"><span class="pre">[[m1,</span> <span class="pre">p1],</span> <span class="pre">[m2,</span> <span class="pre">p2],</span> <span class="pre">...</span> <span class="pre">,</span> <span class="pre">[mk,</span> <span class="pre">pk]]</span></tt> such that the polynomial part of any rational solution of the associated Riccati equation of <tt class="docutils literal"><span class="pre">op</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">0</span></tt> must have degree <tt class="docutils literal"><span class="pre">mj</span></tt> for some <tt class="docutils literal"><span class="pre">j</span></tt>, and its leading coefficient is then a zero of <tt class="docutils literal"><span class="pre">pj</span></tt>. In addition, <tt class="docutils literal"><span class="pre">m1&gt;m2&gt;</span> <span class="pre">...</span> <span class="pre">&gt;mk</span></tt>.</dd>
+</dl>
+<span class="target" id="l-primitive-rat-ric-d-e-poly-ric-d-e"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">polyRicDE</span>: (L, UP -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> F) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(poly: UP, eq: L)</dt>
+<dd><tt class="docutils literal"><span class="pre">polyRicDE(op,</span> <span class="pre">zeros)</span></tt> returns <tt class="docutils literal"><span class="pre">[[p1,</span> <span class="pre">L1],</span> <span class="pre">[p2,</span> <span class="pre">L2],</span> <span class="pre">...</span> <span class="pre">,</span> <span class="pre">[pk,</span> <span class="pre">Lk]]</span></tt> such that the polynomial part of any rational solution of the associated Riccati equation of <tt class="docutils literal"><span class="pre">op</span> <span class="pre">y=0</span></tt> must be one of the <tt class="docutils literal"><span class="pre">pi</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> (up to the constant coefficient), in which case the equation for <tt class="docutils literal"><span class="pre">z=y</span> <span class="pre">e^{-int</span> <span class="pre">p}</span></tt> is <tt class="docutils literal"><span class="pre">Li</span> <span class="pre">z</span> <span class="pre">=0</span></tt>. <tt class="docutils literal"><span class="pre">zeros</span></tt> is a zero finder in <tt class="docutils literal"><span class="pre">UP</span></tt>.</dd>
+</dl>
+<span class="target" id="l-primitive-rat-ric-d-e-sing-ric-d-e"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">singRicDE</span>: (L, (UP, <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> UP) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> UP, UP -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> UP) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(frac: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, eq: L)</dt>
+<dd><tt class="docutils literal"><span class="pre">singRicDE(op,</span> <span class="pre">zeros,</span> <span class="pre">ezfactor)</span></tt> returns <tt class="docutils literal"><span class="pre">[[f1,</span> <span class="pre">L1],</span> <span class="pre">[f2,</span> <span class="pre">L2],</span> <span class="pre">...</span> <span class="pre">,</span> <span class="pre">[fk,</span> <span class="pre">Lk]]</span></tt> such that the singular part of any rational solution of the associated Riccati equation of <tt class="docutils literal"><span class="pre">op</span> <span class="pre">y=0</span></tt> must be one of the <tt class="docutils literal"><span class="pre">fi</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> (up to the constant coefficient), in which case the equation for <tt class="docutils literal"><span class="pre">z=y</span> <span class="pre">e^{-int</span> <span class="pre">p}</span></tt> is <tt class="docutils literal"><span class="pre">Li</span> <span class="pre">z=0</span></tt>. <tt class="docutils literal"><span class="pre">zeros(C(x),</span> <span class="pre">H(x,</span> <span class="pre">y))</span></tt> returns all the <tt class="docutils literal"><span class="pre">P_i(x)</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> such that <tt class="docutils literal"><span class="pre">H(x,</span> <span class="pre">P_i(x))</span> <span class="pre">=</span> <span class="pre">0</span> <span class="pre">modulo</span> <span class="pre">C(x)</span></tt>. Argument <tt class="docutils literal"><span class="pre">ezfactor</span></tt> is a factorisation in <tt class="docutils literal"><span class="pre">UP</span></tt>, not necessarily into irreducibles.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="PrimitiveRatDE.html"
+                        title="previous chapter">PrimitiveRatDE(F, UP, L, LQ)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="PrintPackage.html"
+                        title="next chapter">PrintPackage</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/PrimitiveRatRicDE.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="PrintPackage.html" title="PrintPackage"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="PrimitiveRatDE.html" title="PrimitiveRatDE(F, UP, L, LQ)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

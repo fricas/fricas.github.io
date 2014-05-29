@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>WeightedGraph(S, W) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="WeightedPolynomials(R, VarSet, E, P, vl, wl, wtlevel)" href="WeightedPolynomials.html" />
+    <link rel="prev" title="Void" href="Void.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="WeightedPolynomials.html" title="WeightedPolynomials(R, VarSet, E, P, vl, wl, wtlevel)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="Void.html" title="Void"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="weightedgraph-s-w">
+<span id="l-weighted-graph"></span><span id="index-0"></span><h1>WeightedGraph(S, W)<a class="headerlink" href="#weightedgraph-s-w" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//graph.spad#L4627">graph.spad line 4627</a></p>
+<ul class="simple">
+<li>S: <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></li>
+<li>W: <a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a></li>
+</ul>
+<p>allows us to model weighted graphs This graph assigns a weight to each arrow. This is used when calculating say, lowest &#8216;cost&#8217; routes. An arrow with a higher weight is more &#8216;costly&#8217; in some way and therefore we try to choose the minimum weight. For arrows in series the overall weight is the sum of the individual weights. For arrows in parallel the overall weight is the minimum of the individual weights. <tt class="docutils literal"><span class="pre">I</span></tt> may change this in future to allow different cost metrics to be plugged in. blankline</p>
+<span class="target" id="id1"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">*</span>: (%, %) -&gt; <a class="reference internal" href="#l-weighted-graph"><em>WeightedGraph</em></a>(<a class="reference internal" href="Product.html#l-product"><em>Product</em></a>(S, S), W)</dt>
+<dd>tensor product : the tensor product <tt class="docutils literal"><span class="pre">G*H</span></tt> of graphs <tt class="docutils literal"><span class="pre">G</span></tt> and <tt class="docutils literal"><span class="pre">H</span></tt> is a graph such that the vertex set of <tt class="docutils literal"><span class="pre">G*H</span></tt> is the Cartesian product <tt class="docutils literal"><span class="pre">V</span></tt>(<tt class="docutils literal"><span class="pre">G</span></tt>) times <tt class="docutils literal"><span class="pre">V</span></tt>(<tt class="docutils literal"><span class="pre">H</span></tt>); and any two vertices (<tt class="docutils literal"><span class="pre">u</span></tt>, u&#8217;) and (<tt class="docutils literal"><span class="pre">v</span></tt>, <tt class="docutils literal"><span class="pre">v'</span></tt>) are adjacent in <tt class="docutils literal"><span class="pre">G</span></tt> times <tt class="docutils literal"><span class="pre">H</span></tt> if and only if u&#8217; is adjacent with <tt class="docutils literal"><span class="pre">v'</span></tt> and <tt class="docutils literal"><span class="pre">u</span></tt> is adjacent with <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#id1"><em>+</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-add-arrow"><em>addArrow!</em></a>: (%, <a class="reference internal" href="String.html#l-string"><em>String</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-add-arrow"><em>addArrow!</em></a>: (%, <a class="reference internal" href="String.html#l-string"><em>String</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-add-arrow"><em>addArrow!</em></a>: (%, <a class="reference internal" href="String.html#l-string"><em>String</em></a>, S, S) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-add-object"><em>addObject!</em></a>: (%, Record(value: S, posX: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, posY: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>)) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-add-object"><em>addObject!</em></a>: (%, S) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+</dl>
+<span class="target" id="l-weighted-graph-add-w-arrow"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">addWArrow!</span>: (%, <a class="reference internal" href="String.html#l-string"><em>String</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, W) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">addWArrow!(s,</span> <span class="pre">name,</span> <span class="pre">n1,</span> <span class="pre">n2,</span> <span class="pre">w)</span></tt> adds a weighted arrow to the graph <tt class="docutils literal"><span class="pre">s</span></tt>, where <tt class="docutils literal"><span class="pre">name</span></tt> is <tt class="docutils literal"><span class="pre">name</span></tt> of the arrow, <tt class="docutils literal"><span class="pre">w</span></tt> is weight of the arrow, <tt class="docutils literal"><span class="pre">n1</span></tt> is starting point of the arrow, <tt class="docutils literal"><span class="pre">n2</span></tt> is endpoint of the arrow.</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-adjacency-matrix"><em>adjacencyMatrix</em></a>: % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-arrow-name"><em>arrowName</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-arrows-from-arrow"><em>arrowsFromArrow</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-arrows-from-node"><em>arrowsFromNode</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-arrows-to-arrow"><em>arrowsToArrow</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-arrows-to-node"><em>arrowsToNode</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+</dl>
+<span class="target" id="l-weighted-graph-cartesian"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">cartesian</span>: (%, %) -&gt; <a class="reference internal" href="#l-weighted-graph"><em>WeightedGraph</em></a>(<a class="reference internal" href="Product.html#l-product"><em>Product</em></a>(S, S), W)</dt>
+<dd>Cartesian product: the vertex set of <tt class="docutils literal"><span class="pre">G</span></tt> <tt class="docutils literal"><span class="pre">o</span></tt> <tt class="docutils literal"><span class="pre">H</span></tt> is the Cartesian product <tt class="docutils literal"><span class="pre">V</span></tt>(<tt class="docutils literal"><span class="pre">G</span></tt>) times <tt class="docutils literal"><span class="pre">V</span></tt>(<tt class="docutils literal"><span class="pre">H</span></tt>) and any two vertices (<tt class="docutils literal"><span class="pre">u</span></tt>, u&#8217;) and (<tt class="docutils literal"><span class="pre">v</span></tt>, <tt class="docutils literal"><span class="pre">v'</span></tt>) are adjacent in <tt class="docutils literal"><span class="pre">G</span></tt> <tt class="docutils literal"><span class="pre">o</span></tt> <tt class="docutils literal"><span class="pre">H</span></tt> if and only if either <tt class="docutils literal"><span class="pre">u</span></tt> = <tt class="docutils literal"><span class="pre">v</span></tt> and u&#8217; is adjacent with <tt class="docutils literal"><span class="pre">v'</span></tt> in <tt class="docutils literal"><span class="pre">H</span></tt>, or u&#8217; = <tt class="docutils literal"><span class="pre">v'</span></tt> and <tt class="docutils literal"><span class="pre">u</span></tt> is adjacent with <tt class="docutils literal"><span class="pre">v</span></tt> in <tt class="docutils literal"><span class="pre">G</span></tt>.</dd>
+</dl>
+<span class="target" id="l-weighted-graph-closed-cartesian"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">closedCartesian</span>: (%, %, (S, S) -&gt; S) -&gt; %</dt>
+<dd>as Cartesian product but returns %.</dd>
+</dl>
+<span class="target" id="l-weighted-graph-closed-tensor"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">closedTensor</span>: (%, %, (S, S) -&gt; S) -&gt; %</dt>
+<dd>as tensor product but returns %.</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-create-width"><em>createWidth</em></a>: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-create-x"><em>createX</em></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-create-y"><em>createY</em></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-cycle-closed"><em>cycleClosed</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="String.html#l-string"><em>String</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-cycle-open"><em>cycleOpen</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="String.html#l-string"><em>String</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-deep-diagram-svg"><em>deepDiagramSvg</em></a>: (<a class="reference internal" href="String.html#l-string"><em>String</em></a>, %, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-diagram-height"><em>diagramHeight</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-diagram-svg"><em>diagramSvg</em></a>: (<a class="reference internal" href="String.html#l-string"><em>String</em></a>, %, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-diagram-width"><em>diagramWidth</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-distance"><em>distance</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-distance-matrix"><em>distanceMatrix</em></a>: % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+</dl>
+<span class="target" id="l-weighted-graph-distance-weighted"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">distanceWeighted</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; Union(W, disjoint)</dt>
+<dd>the shortest distance between &#8216;a&#8217; and <tt class="docutils literal"><span class="pre">'b'</span></tt> in terms of weight.</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-flatten"><em>flatten</em></a>: <a class="reference internal" href="DirectedGraph.html#l-directed-graph"><em>DirectedGraph</em></a> % -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-get-arrow-index"><em>getArrowIndex</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-get-arrows"><em>getArrows</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(name: <a class="reference internal" href="String.html#l-string"><em>String</em></a>, arrType: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, fromOb: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, toOb: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, xOffset: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, yOffset: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, map: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>)</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-get-vertex-index"><em>getVertexIndex</em></a>: (%, S) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-get-vertices"><em>getVertices</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(value: S, posX: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, posY: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>)</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-incidence-matrix"><em>incidenceMatrix</em></a>: % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-in-degree"><em>inDegree</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-initial"><em>initial</em></a>: () -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-is-acyclic"><em>isAcyclic?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-is-directed"><em>isDirected?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-is-direct-successor"><em>isDirectSuccessor?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-is-fix-point"><em>isFixPoint?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-is-functional"><em>isFunctional?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-is-greater-than"><em>isGreaterThan?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-kgraph"><em>kgraph</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="String.html#l-string"><em>String</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-laplacian-matrix"><em>laplacianMatrix</em></a>: % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-loops-arrows"><em>loopsArrows</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Loop.html#l-loop"><em>Loop</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-loops-at-node"><em>loopsAtNode</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Loop.html#l-loop"><em>Loop</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-loops-nodes"><em>loopsNodes</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Loop.html#l-loop"><em>Loop</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-loose-equals"><em>looseEquals</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-map"><em>map</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-map-contra"><em>mapContra</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-max"><em>max</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-max"><em>max</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-merge"><em>merge</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-min"><em>min</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-min"><em>min</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-node-from-arrow"><em>nodeFromArrow</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-node-from-node"><em>nodeFromNode</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-node-to-arrow"><em>nodeToArrow</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-node-to-node"><em>nodeToNode</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-out-degree"><em>outDegree</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-route-arrows"><em>routeArrows</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+</dl>
+<span class="target" id="l-weighted-graph-route-arrow-weight"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">routeArrowWeight</span>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; W</dt>
+<dd>the cumulative weight of a given route. The route is given in terms of a sequence of arrow indexes.</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-route-nodes"><em>routeNodes</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+</dl>
+<span class="target" id="l-weighted-graph-route-node-weight"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">routeNodeWeight</span>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; W</dt>
+<dd>the cumulative weight of a given route. The route is given in terms of a sequence of node indexes.</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-spanning-forest-arrow"><em>spanningForestArrow</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Tree.html#l-tree"><em>Tree</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-spanning-forest-node"><em>spanningForestNode</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Tree.html#l-tree"><em>Tree</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-spanning-tree-arrow"><em>spanningTreeArrow</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Tree.html#l-tree"><em>Tree</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-spanning-tree-node"><em>spanningTreeNode</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Tree.html#l-tree"><em>Tree</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-subdiagram-svg"><em>subdiagramSvg</em></a>: (<a class="reference internal" href="Scene.html#l-scene"><em>Scene</em></a> <a class="reference internal" href="SCartesian.html#l-s-cartesian"><em>SCartesian</em></a> 2, %, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-terminal"><em>terminal</em></a>: S -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+<dt><a class="reference internal" href="FiniteGraph.html#l-finite-graph-unit"><em>unit</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="String.html#l-string"><em>String</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</dd>
+</dl>
+<span class="target" id="l-weighted-graph-weighted-distance-matrix"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">weightedDistanceMatrix</span>: % -&gt; <a class="reference internal" href="TwoDimensionalArray.html#l-two-dimensional-array"><em>TwoDimensionalArray</em></a> Union(W, disjoint)</dt>
+<dd>The elements of the returned array will represent the distance weights between vertices. if there is no connection between the vertices then the element will be set to &#8220;disjoint&#8221;</dd>
+</dl>
+<span class="target" id="l-weighted-graph-weighted-graph"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">weightedGraph</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(value: S, posX: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, posY: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>), <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(name: <a class="reference internal" href="String.html#l-string"><em>String</em></a>, arrType: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, fromOb: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, toOb: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, xOffset: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, yOffset: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, map: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>)) -&gt; %</dt>
+<dd>constructor for graph with given objects and arrows more objects and arrows can be added later if required.</dd>
+</dl>
+<dl class="docutils" id="index-11">
+<dt><span class="spadfun">weightedGraph</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(value: S, posX: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, posY: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, weight: W), <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(name: <a class="reference internal" href="String.html#l-string"><em>String</em></a>, weight: W, fromOb: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, toOb: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, xOffset: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, yOffset: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, map: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>)) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">weightedGraph(ob,</span> <span class="pre">ar)</span></tt> constructs graph with objects on and arrows ar. More objects and arrows can be added later if required.</dd>
+</dl>
+<dl class="docutils" id="index-12">
+<dt><span class="spadfun">weightedGraph</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd>constructor for graph with given objects and adjacency matrix.</dd>
+</dl>
+<dl class="docutils" id="index-13">
+<dt><span class="spadfun">weightedGraph</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(value: S, posX: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, posY: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, weight: W) -&gt; %</dt>
+<dd>constructor for graph with given objects more objects and arrows can be added later if required.</dd>
+</dl>
+<dl class="docutils" id="index-14">
+<dt><span class="spadfun">weightedGraph</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> S -&gt; %</dt>
+<dd>constructor for graph with given list of object names. Use this version of the constructor if you don<tt class="docutils literal"><span class="pre">'t</span></tt> intend to create diagrams and therefore don<tt class="docutils literal"><span class="pre">'t</span></tt> care about <tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">y</span></tt> coordinates. more objects and arrows can be added later if required.</dd>
+</dl>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="FiniteGraph.html#l-finite-graph"><em>FiniteGraph</em></a> S</p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="Void.html"
+                        title="previous chapter">Void</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="WeightedPolynomials.html"
+                        title="next chapter">WeightedPolynomials(R, VarSet, E, P, vl, wl, wtlevel)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/WeightedGraph.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="WeightedPolynomials.html" title="WeightedPolynomials(R, VarSet, E, P, vl, wl, wtlevel)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="Void.html" title="Void"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

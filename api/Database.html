@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Database S &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="DataList S" href="DataList.html" />
+    <link rel="prev" title="ContinuedFraction R" href="ContinuedFraction.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="DataList.html" title="DataList S"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ContinuedFraction.html" title="ContinuedFraction R"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="database-s">
+<span id="l-database"></span><span id="index-0"></span><h1>Database S<a class="headerlink" href="#database-s" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//alql.spad#L84">alql.spad line 84</a></p>
+<ul>
+<li><p class="first">S: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> with</p>
+<blockquote>
+<div><p><span class="spadfun">display</span>: % -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></p>
+<p><span class="spadfun">elt</span>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></p>
+<p><span class="spadfun">fullDisplay</span>: % -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></p>
+</div></blockquote>
+</li>
+</ul>
+<p>This domain implements a simple view of a database whose fields are indexed by symbols</p>
+<span class="target" id="id1"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">+</span>: (%, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">db1+db2</span></tt> returns the merge of databases <tt class="docutils literal"><span class="pre">db1</span></tt> and <tt class="docutils literal"><span class="pre">db2</span></tt></dd>
+</dl>
+<span class="target" id="id2"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">-</span>: (%, %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">db1-db2</span></tt> returns the difference of databases <tt class="docutils literal"><span class="pre">db1</span></tt> and <tt class="docutils literal"><span class="pre">db2</span></tt> i.e. consisting of elements in <tt class="docutils literal"><span class="pre">db1</span></tt> but not in <tt class="docutils literal"><span class="pre">db2</span></tt></dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+</dl>
+<span class="target" id="l-database-coerce"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">coerce</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> S -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">coerce(l)</span></tt> makes a database out of a list</dd>
+</dl>
+<span class="target" id="l-database-display"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">display</span>: % -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">display(x)</span></tt> displays <tt class="docutils literal"><span class="pre">x</span></tt> in some form</dd>
+</dl>
+<span class="target" id="l-database-elt"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">elt</span>: (%, <a class="reference internal" href="QueryEquation.html#l-query-equation"><em>QueryEquation</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">elt(db,</span> <span class="pre">q)</span></tt> returns all elements of <tt class="docutils literal"><span class="pre">db</span></tt> which satisfy <tt class="docutils literal"><span class="pre">q</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt><span class="spadfun">elt</span>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="DataList.html#l-data-list"><em>DataList</em></a> <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">elt(db,</span> <span class="pre">s)</span></tt> returns the <tt class="docutils literal"><span class="pre">s</span></tt> field of each element of <tt class="docutils literal"><span class="pre">db</span></tt>.</dd>
+</dl>
+<span class="target" id="l-database-full-display"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">fullDisplay</span>: % -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">fullDisplay(x)</span></tt> displays <tt class="docutils literal"><span class="pre">x</span></tt> in detail</dd>
+</dl>
+<dl class="docutils" id="index-8">
+<dt><span class="spadfun">fullDisplay</span>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">fullDisplay(db,</span> <span class="pre">start,</span> <span class="pre">end</span> <span class="pre">)</span></tt> prints full details of entries in the range <tt class="docutils literal"><span class="pre">start..end</span></tt> in <tt class="docutils literal"><span class="pre">db</span></tt>.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ContinuedFraction.html"
+                        title="previous chapter">ContinuedFraction R</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="DataList.html"
+                        title="next chapter">DataList S</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/Database.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="DataList.html" title="DataList S"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ContinuedFraction.html" title="ContinuedFraction R"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

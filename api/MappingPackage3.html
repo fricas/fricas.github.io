@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>MappingPackage3(A, B, C) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="MappingPackageInternalHacks1 A" href="MappingPackageInternalHacks1.html" />
+    <link rel="prev" title="MappingPackage2(A, C)" href="MappingPackage2.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="MappingPackageInternalHacks1.html" title="MappingPackageInternalHacks1 A"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="MappingPackage2.html" title="MappingPackage2(A, C)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="mappingpackage3-a-b-c">
+<span id="l-mapping-package3"></span><span id="index-0"></span><h1>MappingPackage3(A, B, C)<a class="headerlink" href="#mappingpackage3-a-b-c" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//mappkg.spad#L148">mappkg.spad line 148</a></p>
+<ul class="simple">
+<li>A: <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></li>
+<li>B: <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></li>
+<li>C: <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></li>
+</ul>
+<p>various Currying operations.</p>
+<span class="target" id="id1"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">*</span>: (B -&gt; C, A -&gt; B) -&gt; A -&gt; C</dt>
+<dd><tt class="docutils literal"><span class="pre">f*g</span></tt> is the function <tt class="docutils literal"><span class="pre">h</span></tt> such that <tt class="docutils literal"><span class="pre">h</span> <span class="pre">x=</span> <span class="pre">f(g</span> <span class="pre">x)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-mapping-package3-constant-left"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">constantLeft</span>: B -&gt; C -&gt; (A, B) -&gt; C</dt>
+<dd><tt class="docutils literal"><span class="pre">constantLeft(f)</span></tt> is the function <tt class="docutils literal"><span class="pre">g</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">(a,</span> <span class="pre">b)=</span> <span class="pre">f</span> <span class="pre">b</span></tt>.</dd>
+</dl>
+<span class="target" id="l-mapping-package3-constant-right"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">constantRight</span>: A -&gt; C -&gt; (A, B) -&gt; C</dt>
+<dd><tt class="docutils literal"><span class="pre">constantRight(f)</span></tt> is the function <tt class="docutils literal"><span class="pre">g</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">(a,</span> <span class="pre">b)=</span> <span class="pre">f</span> <span class="pre">a</span></tt>.</dd>
+</dl>
+<span class="target" id="l-mapping-package3-curry-left"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">curryLeft</span>: ((A, B) -&gt; C, A) -&gt; B -&gt; C</dt>
+<dd><tt class="docutils literal"><span class="pre">curryLeft(f,</span> <span class="pre">a)</span></tt> is the function <tt class="docutils literal"><span class="pre">g</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">f(a,</span> <span class="pre">b)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-mapping-package3-curry-right"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">curryRight</span>: ((A, B) -&gt; C, B) -&gt; A -&gt; C</dt>
+<dd><tt class="docutils literal"><span class="pre">curryRight(f,</span> <span class="pre">b)</span></tt> is the function <tt class="docutils literal"><span class="pre">g</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">f(a,</span> <span class="pre">b)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-mapping-package3-twist"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">twist</span>: (A, B) -&gt; C -&gt; (B, A) -&gt; C</dt>
+<dd><tt class="docutils literal"><span class="pre">twist(f)</span></tt> is the function <tt class="docutils literal"><span class="pre">g</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">(a,</span> <span class="pre">b)=</span> <span class="pre">f(b,</span> <span class="pre">a)</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="MappingPackage2.html"
+                        title="previous chapter">MappingPackage2(A, C)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="MappingPackageInternalHacks1.html"
+                        title="next chapter">MappingPackageInternalHacks1 A</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/MappingPackage3.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="MappingPackageInternalHacks1.html" title="MappingPackageInternalHacks1 A"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="MappingPackage2.html" title="MappingPackage2(A, C)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

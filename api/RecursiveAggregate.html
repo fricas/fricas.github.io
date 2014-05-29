@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>RecursiveAggregate S &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Categories" href="Categories.html" />
+    <link rel="next" title="RecursivePolynomialCategory(R, E, V)" href="RecursivePolynomialCategory.html" />
+    <link rel="prev" title="RectangularMatrixCategory(m, n, R, Row, Col)" href="RectangularMatrixCategory.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="RecursivePolynomialCategory.html" title="RecursivePolynomialCategory(R, E, V)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="RectangularMatrixCategory.html" title="RectangularMatrixCategory(m, n, R, Row, Col)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="recursiveaggregate-s">
+<span id="l-recursive-aggregate"></span><span id="index-0"></span><h1>RecursiveAggregate S<a class="headerlink" href="#recursiveaggregate-s" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//aggcat.spad#L1072">aggcat.spad line 1072</a></p>
+<ul class="simple">
+<li>S: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
+</ul>
+<p>A recursive aggregate over a type <tt class="docutils literal"><span class="pre">S</span></tt> is a model for a a directed graph containing values of type <tt class="docutils literal"><span class="pre">S</span></tt>. Recursively, a recursive aggregate is a <em>node</em> consisting of a <span class="spadfun">value</span> from <tt class="docutils literal"><span class="pre">S</span></tt> and 0 or more <span class="spadfun">children</span> which are recursive aggregates. A node with no children is called a <span class="spadfun">leaf</span> node. A recursive aggregate may be cyclic for which some operations as noted may go into an infinite loop.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="Aggregate.html#id1"><em>#</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-any"><em>any?</em></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+</dl>
+<span class="target" id="l-recursive-aggregate-child"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">child?</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">child?(u,</span> <span class="pre">v)</span></tt> tests if node <tt class="docutils literal"><span class="pre">u</span></tt> is a child of node <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
+</dl>
+<span class="target" id="l-recursive-aggregate-children"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">children</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd><tt class="docutils literal"><span class="pre">children(u)</span></tt> returns a list of the children of aggregate <tt class="docutils literal"><span class="pre">u</span></tt>.</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><em>copy</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><em>count</em></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><em>count</em></a>: (S, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a> and S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+</dl>
+<span class="target" id="l-recursive-aggregate-cyclic"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">cyclic?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">cyclic?(u)</span></tt> tests if <tt class="docutils literal"><span class="pre">u</span></tt> has a cycle.</dd>
+</dl>
+<span class="target" id="l-recursive-aggregate-distance"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">distance</span>: (%, %) -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">distance(u,</span> <span class="pre">v)</span></tt> returns the path length (an integer) from node <tt class="docutils literal"><span class="pre">u</span></tt> to <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
+</dl>
+<span class="target" id="l-recursive-aggregate-elt"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">elt</span>: (%, value) -&gt; S</dt>
+<dd><tt class="docutils literal"><span class="pre">elt(u,&quot;value&quot;)</span></tt> (also written: <tt class="docutils literal"><span class="pre">a.</span> <span class="pre">value</span></tt>) is equivalent to <tt class="docutils literal"><span class="pre">value(a)</span></tt>.</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><em>empty</em></a>: () -&gt; %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#id2"><em>empty?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-eq"><em>eq?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="List.html#l-list"><em>List</em></a> S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(S, S)</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, S, S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(S, S)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-every"><em>every?</em></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-recursive-aggregate-leaf"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">leaf?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">leaf?(u)</span></tt> tests if <tt class="docutils literal"><span class="pre">u</span></tt> is a terminal node.</dd>
+</dl>
+<span class="target" id="l-recursive-aggregate-leaves"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">leaves</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">leaves(t)</span></tt> returns the list of values in obtained by visiting the nodes of tree <tt class="docutils literal"><span class="pre">t</span></tt> in left-to-right order.</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-less"><em>less?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><em>map!</em></a>: (S -&gt; S, %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#id1"><em>map</em></a>: (S -&gt; S, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><em>member?</em></a>: (S, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a> and S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-members"><em>members</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-more"><em>more?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+</dl>
+<span class="target" id="l-recursive-aggregate-node"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">node?</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">node?(u,</span> <span class="pre">v)</span></tt> tests if node <tt class="docutils literal"><span class="pre">u</span></tt> is contained in node <tt class="docutils literal"><span class="pre">v</span></tt> (either as a child, a child of a child, etc.).</dd>
+</dl>
+<span class="target" id="l-recursive-aggregate-nodes"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">nodes</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd><tt class="docutils literal"><span class="pre">nodes(u)</span></tt> returns a list of all of the nodes of aggregate <tt class="docutils literal"><span class="pre">u</span></tt>.</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-parts"><em>parts</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-sample"><em>sample</em></a>: %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+</dl>
+<span class="target" id="l-recursive-aggregate-setchildren"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">setchildren!</span>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">setchildren!(u,</span> <span class="pre">v)</span></tt> replaces the current children of node <tt class="docutils literal"><span class="pre">u</span></tt> with the members of <tt class="docutils literal"><span class="pre">v</span></tt> in left-to-right order.</dd>
+</dl>
+<span class="target" id="l-recursive-aggregate-setelt"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">setelt!</span>: (%, value, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">setelt!(a,</span> <span class="pre">&quot;value&quot;</span> <span class="pre">,x)</span></tt> (also written <tt class="docutils literal"><span class="pre">a.value</span> <span class="pre">:=</span> <span class="pre">x</span></tt>) is equivalent to <tt class="docutils literal"><span class="pre">setvalue!(a,</span> <span class="pre">x)</span></tt></dd>
+</dl>
+<span class="target" id="l-recursive-aggregate-setvalue"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">setvalue!</span>: (%, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">setvalue!(u,</span> <span class="pre">x)</span></tt> sets the value of node <tt class="docutils literal"><span class="pre">u</span></tt> to <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-size"><em>size?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+</dl>
+<span class="target" id="l-recursive-aggregate-value"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">value</span>: % -&gt; S</dt>
+<dd><tt class="docutils literal"><span class="pre">value(u)</span></tt> returns the value of the node <tt class="docutils literal"><span class="pre">u</span></tt>.</dd>
+</dl>
+<p><a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></p>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> or % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a> and S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> or S has <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</p>
+<p><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</p>
+<p><a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(S, S) if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+<p><a class="reference internal" href="Type.html#l-type"><em>Type</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="RectangularMatrixCategory.html"
+                        title="previous chapter">RectangularMatrixCategory(m, n, R, Row, Col)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="RecursivePolynomialCategory.html"
+                        title="next chapter">RecursivePolynomialCategory(R, E, V)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/RecursiveAggregate.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="RecursivePolynomialCategory.html" title="RecursivePolynomialCategory(R, E, V)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="RectangularMatrixCategory.html" title="RectangularMatrixCategory(m, n, R, Row, Col)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

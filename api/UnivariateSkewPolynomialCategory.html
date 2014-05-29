@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>UnivariateSkewPolynomialCategory R &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Categories" href="Categories.html" />
+    <link rel="next" title="UnivariateTaylorSeriesCategory Coef" href="UnivariateTaylorSeriesCategory.html" />
+    <link rel="prev" title="UnivariatePuiseuxSeriesConstructorCategory(Coef, ULS)" href="UnivariatePuiseuxSeriesConstructorCategory.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="UnivariateTaylorSeriesCategory.html" title="UnivariateTaylorSeriesCategory Coef"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="UnivariatePuiseuxSeriesConstructorCategory.html" title="UnivariatePuiseuxSeriesConstructorCategory(Coef, ULS)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="univariateskewpolynomialcategory-r">
+<span id="l-univariate-skew-polynomial-category"></span><span id="index-0"></span><h1>UnivariateSkewPolynomialCategory R<a class="headerlink" href="#univariateskewpolynomialcategory-r" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//ore.spad#L46">ore.spad line 46</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></li>
+</ul>
+<p>This is the category of univariate skew polynomials over an Ore coefficient ring. The multiplication is given by <tt class="docutils literal"><span class="pre">x</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">\sigma(a)</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">\delta</span> <span class="pre">a</span></tt>. This category is an evolution of the types MonogenicLinearOperator, OppositeMonogenicLinearOperator, and NonCommutativeOperatorDivision developped by Jean Della Dora and Stephen <tt class="docutils literal"><span class="pre">M</span></tt>. Watt.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><em>0</em></a>: % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="Monoid.html#l-monoid-1"><em>1</em></a>: % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="SemiGroup.html#id1"><em>*</em></a>: (%, %) -&gt; % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></dd>
+<dt><a class="reference internal" href="RightModule.html#id1"><em>*</em></a>: (%, R) -&gt; % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> R</dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#id1"><em>*</em></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, %) -&gt; % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, %) -&gt; % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
+<dt><a class="reference internal" href="LeftModule.html#id1"><em>*</em></a>: (R, %) -&gt; % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> R</dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id2"><em>+</em></a>: (%, %) -&gt; % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: % -&gt; % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: (%, %) -&gt; % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="Monoid.html#id1"><em>^</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="SemiGroup.html#id2"><em>^</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="Rng.html#l-rng-annihilate"><em>annihilate?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="Rng.html#l-rng"><em>Rng</em></a></dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-apply"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">apply</span>: (%, R, R) -&gt; R</dt>
+<dd><tt class="docutils literal"><span class="pre">apply(p,</span> <span class="pre">c,</span> <span class="pre">m)</span></tt> returns <tt class="docutils literal"><span class="pre">p(m)</span></tt> where the action is given by <tt class="docutils literal"><span class="pre">x</span> <span class="pre">m</span> <span class="pre">=</span> <span class="pre">c</span> <span class="pre">sigma(m)</span> <span class="pre">+</span> <span class="pre">delta(m)</span></tt>.</dd>
+<dt><a class="reference internal" href="Ring.html#l-ring-characteristic"><em>characteristic</em></a>: () -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd>from <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-coefficient"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">coefficient</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; R</dt>
+<dd><tt class="docutils literal"><span class="pre">coefficient(l,</span> <span class="pre">k)</span></tt> is <tt class="docutils literal"><span class="pre">a(k)</span></tt> if <tt class="docutils literal"><span class="pre">l</span> <span class="pre">=</span> <span class="pre">sum(monomial(a(i),</span> <span class="pre">i),</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">0..n)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-coefficients"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">coefficients</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">coefficients(l)</span></tt> returns the list of all the nonzero coefficients of <tt class="docutils literal"><span class="pre">l</span></tt>.</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-coerce"><em>coerce</em></a>: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; % if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-coerce"><em>coerce</em></a>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; %</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="Algebra.html#l-algebra-coerce"><em>coerce</em></a>: R -&gt; %</dt>
+<dd>from <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> R</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-content"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">content</span>: % -&gt; R if R has <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><em>GcdDomain</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">content(l)</span></tt> returns the <tt class="docutils literal"><span class="pre">gcd</span></tt> of all the coefficients of <tt class="docutils literal"><span class="pre">l</span></tt>.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-degree"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">degree</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">degree(l)</span></tt> is <tt class="docutils literal"><span class="pre">n</span></tt> if <tt class="docutils literal"><span class="pre">l</span> <span class="pre">=</span> <span class="pre">sum(monomial(a(i),</span> <span class="pre">i),</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">0..n)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-exquo"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">exquo</span>: (%, R) -&gt; Union(%, failed) if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">exquo(l,</span> <span class="pre">a)</span></tt> returns the exact quotient of <tt class="docutils literal"><span class="pre">l</span></tt> by a, returning <tt class="docutils literal"><span class="pre">&quot;failed&quot;</span></tt> if this is not possible.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-leading-coefficient"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">leadingCoefficient</span>: % -&gt; R</dt>
+<dd><tt class="docutils literal"><span class="pre">leadingCoefficient(l)</span></tt> is <tt class="docutils literal"><span class="pre">a(n)</span></tt> if <tt class="docutils literal"><span class="pre">l</span> <span class="pre">=</span> <span class="pre">sum(monomial(a(i),</span> <span class="pre">i),</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">0..n)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-left-divide"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">leftDivide</span>: (%, %) -&gt; Record(quotient: %, remainder: %) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">leftDivide(a,</span> <span class="pre">b)</span></tt> returns the pair <tt class="docutils literal"><span class="pre">[q,</span> <span class="pre">r]</span></tt> such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b*q</span> <span class="pre">+</span> <span class="pre">r</span></tt> and the degree of <tt class="docutils literal"><span class="pre">r</span></tt> is less than the degree of <tt class="docutils literal"><span class="pre">b</span></tt>. This process is called <tt class="docutils literal"><span class="pre">left</span> <span class="pre">division\</span> <span class="pre">``''</span></tt>.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-left-exact-quotient"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">leftExactQuotient</span>: (%, %) -&gt; Union(%, failed) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">leftExactQuotient(a,</span> <span class="pre">b)</span></tt> computes the value <tt class="docutils literal"><span class="pre">q</span></tt>, if it exists, such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b*q</span></tt>.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-left-extended-gcd"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">leftExtendedGcd</span>: (%, %) -&gt; Record(coef1: %, coef2: %, generator: %) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">leftExtendedGcd(a,</span> <span class="pre">b)</span></tt> returns <tt class="docutils literal"><span class="pre">[c,</span> <span class="pre">d]</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">*</span> <span class="pre">c</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">*</span> <span class="pre">d</span> <span class="pre">=</span> <span class="pre">leftGcd(a,</span> <span class="pre">b)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-left-gcd"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">leftGcd</span>: (%, %) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">leftGcd(a,</span> <span class="pre">b)</span></tt> computes the value <tt class="docutils literal"><span class="pre">g</span></tt> of highest degree such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">g*aa</span></tt> <tt class="docutils literal"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">g*bb</span></tt> for some values <tt class="docutils literal"><span class="pre">aa</span></tt> and <tt class="docutils literal"><span class="pre">bb</span></tt>. The value <tt class="docutils literal"><span class="pre">g</span></tt> is computed using left-division.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-left-lcm"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">leftLcm</span>: (%, %) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">leftLcm(a,</span> <span class="pre">b)</span></tt> computes the value <tt class="docutils literal"><span class="pre">m</span></tt> of lowest degree such that <tt class="docutils literal"><span class="pre">m</span> <span class="pre">=</span> <span class="pre">aa*a</span> <span class="pre">=</span> <span class="pre">bb*b</span></tt> for some values <tt class="docutils literal"><span class="pre">aa</span></tt> and <tt class="docutils literal"><span class="pre">bb</span></tt>. The value <tt class="docutils literal"><span class="pre">m</span></tt> is computed using right-division.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-left-quotient"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">leftQuotient</span>: (%, %) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">leftQuotient(a,</span> <span class="pre">b)</span></tt> computes the pair <tt class="docutils literal"><span class="pre">[q,</span> <span class="pre">r]</span></tt> such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b*q</span> <span class="pre">+</span> <span class="pre">r</span></tt> and the degree of <tt class="docutils literal"><span class="pre">r</span></tt> is less than the degree of <tt class="docutils literal"><span class="pre">b</span></tt>. The value <tt class="docutils literal"><span class="pre">q</span></tt> is returned.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-left-remainder"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">leftRemainder</span>: (%, %) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">leftRemainder(a,</span> <span class="pre">b)</span></tt> computes the pair <tt class="docutils literal"><span class="pre">[q,</span> <span class="pre">r]</span></tt> such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b*q</span> <span class="pre">+</span> <span class="pre">r</span></tt> and the degree of <tt class="docutils literal"><span class="pre">r</span></tt> is less than the degree of <tt class="docutils literal"><span class="pre">b</span></tt>. The value <tt class="docutils literal"><span class="pre">r</span></tt> is returned.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-minimum-degree"></span><dl class="docutils" id="index-15">
+<dt><span class="spadfun">minimumDegree</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">minimumDegree(l)</span></tt> is the smallest <tt class="docutils literal"><span class="pre">k</span></tt> such that <tt class="docutils literal"><span class="pre">a(k)</span> <span class="pre">~=</span> <span class="pre">0</span></tt> if <tt class="docutils literal"><span class="pre">l</span> <span class="pre">=</span> <span class="pre">sum(monomial(a(i),</span> <span class="pre">i),</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">0..n)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-monic-left-divide"></span><dl class="docutils" id="index-16">
+<dt><span class="spadfun">monicLeftDivide</span>: (%, %) -&gt; Record(quotient: %, remainder: %) if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">monicLeftDivide(a,</span> <span class="pre">b)</span></tt> returns the pair <tt class="docutils literal"><span class="pre">[q,</span> <span class="pre">r]</span></tt> such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">b*q</span> <span class="pre">+</span> <span class="pre">r</span></tt> and the degree of <tt class="docutils literal"><span class="pre">r</span></tt> is less than the degree of <tt class="docutils literal"><span class="pre">b</span></tt>. <tt class="docutils literal"><span class="pre">b</span></tt> must be monic. This process is called <tt class="docutils literal"><span class="pre">left</span> <span class="pre">division\</span> <span class="pre">``''</span></tt>.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-monic-right-divide"></span><dl class="docutils" id="index-17">
+<dt><span class="spadfun">monicRightDivide</span>: (%, %) -&gt; Record(quotient: %, remainder: %) if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">monicRightDivide(a,</span> <span class="pre">b)</span></tt> returns the pair <tt class="docutils literal"><span class="pre">[q,</span> <span class="pre">r]</span></tt> such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">q*b</span> <span class="pre">+</span> <span class="pre">r</span></tt> and the degree of <tt class="docutils literal"><span class="pre">r</span></tt> is less than the degree of <tt class="docutils literal"><span class="pre">b</span></tt>. <tt class="docutils literal"><span class="pre">b</span></tt> must be monic. This process is called <tt class="docutils literal"><span class="pre">right</span> <span class="pre">division\</span> <span class="pre">``''</span></tt>.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-monomial"></span><dl class="docutils" id="index-18">
+<dt><span class="spadfun">monomial</span>: (R, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">monomial(c,</span> <span class="pre">k)</span></tt> produces <tt class="docutils literal"><span class="pre">c</span></tt> times the <tt class="docutils literal"><span class="pre">k</span></tt>-th power of the generating operator, <tt class="docutils literal"><span class="pre">monomial(1,</span> <span class="pre">1)</span></tt>.</dd>
+<dt><a class="reference internal" href="Monoid.html#l-monoid-one"><em>one?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-opposite"><em>opposite?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-primitive-part"></span><dl class="docutils" id="index-19">
+<dt><span class="spadfun">primitivePart</span>: % -&gt; % if R has <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><em>GcdDomain</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">primitivePart(l)</span></tt> returns <tt class="docutils literal"><span class="pre">l0</span></tt> such that <tt class="docutils literal"><span class="pre">l</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">*</span> <span class="pre">l0</span></tt> for some a in <tt class="docutils literal"><span class="pre">R</span></tt>, and <tt class="docutils literal"><span class="pre">content(l0)</span> <span class="pre">=</span> <span class="pre">1</span></tt>.</dd>
+<dt><a class="reference internal" href="Monoid.html#l-monoid-recip"><em>recip</em></a>: % -&gt; Union(%, failed) if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-reductum"></span><dl class="docutils" id="index-20">
+<dt><span class="spadfun">reductum</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">reductum(l)</span></tt> is <tt class="docutils literal"><span class="pre">l</span> <span class="pre">-</span> <span class="pre">monomial(a(n),</span> <span class="pre">n)</span></tt> if <tt class="docutils literal"><span class="pre">l</span> <span class="pre">=</span> <span class="pre">sum(monomial(a(i),</span> <span class="pre">i),</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">0..n)</span></tt>.</dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract"><em>retract</em></a>: % -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract"><em>retract</em></a>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract"><em>retract</em></a>: % -&gt; R</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> R</dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract-if-can"><em>retractIfCan</em></a>: % -&gt; Union(<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, failed) if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract-if-can"><em>retractIfCan</em></a>: % -&gt; Union(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, failed) if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract-if-can"><em>retractIfCan</em></a>: % -&gt; Union(R, failed)</dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> R</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-right-divide"></span><dl class="docutils" id="index-21">
+<dt><span class="spadfun">rightDivide</span>: (%, %) -&gt; Record(quotient: %, remainder: %) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">rightDivide(a,</span> <span class="pre">b)</span></tt> returns the pair <tt class="docutils literal"><span class="pre">[q,</span> <span class="pre">r]</span></tt> such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">q*b</span> <span class="pre">+</span> <span class="pre">r</span></tt> and the degree of <tt class="docutils literal"><span class="pre">r</span></tt> is less than the degree of <tt class="docutils literal"><span class="pre">b</span></tt>. This process is called <tt class="docutils literal"><span class="pre">right</span> <span class="pre">division\</span> <span class="pre">``''</span></tt>.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-right-exact-quotient"></span><dl class="docutils" id="index-22">
+<dt><span class="spadfun">rightExactQuotient</span>: (%, %) -&gt; Union(%, failed) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">rightExactQuotient(a,</span> <span class="pre">b)</span></tt> computes the value <tt class="docutils literal"><span class="pre">q</span></tt>, if it exists such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">q*b</span></tt>.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-right-extended-gcd"></span><dl class="docutils" id="index-23">
+<dt><span class="spadfun">rightExtendedGcd</span>: (%, %) -&gt; Record(coef1: %, coef2: %, generator: %) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">rightExtendedGcd(a,</span> <span class="pre">b)</span></tt> returns <tt class="docutils literal"><span class="pre">[c,</span> <span class="pre">d]</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">c</span> <span class="pre">*</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">d</span> <span class="pre">*</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">rightGcd(a,</span> <span class="pre">b)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-right-gcd"></span><dl class="docutils" id="index-24">
+<dt><span class="spadfun">rightGcd</span>: (%, %) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">rightGcd(a,</span> <span class="pre">b)</span></tt> computes the value <tt class="docutils literal"><span class="pre">g</span></tt> of highest degree such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">aa*g</span></tt> <tt class="docutils literal"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">bb*g</span></tt> for some values <tt class="docutils literal"><span class="pre">aa</span></tt> and <tt class="docutils literal"><span class="pre">bb</span></tt>. The value <tt class="docutils literal"><span class="pre">g</span></tt> is computed using right-division.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-right-lcm"></span><dl class="docutils" id="index-25">
+<dt><span class="spadfun">rightLcm</span>: (%, %) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">rightLcm(a,</span> <span class="pre">b)</span></tt> computes the value <tt class="docutils literal"><span class="pre">m</span></tt> of lowest degree such that <tt class="docutils literal"><span class="pre">m</span> <span class="pre">=</span> <span class="pre">a*aa</span> <span class="pre">=</span> <span class="pre">b*bb</span></tt> for some values <tt class="docutils literal"><span class="pre">aa</span></tt> and <tt class="docutils literal"><span class="pre">bb</span></tt>. The value <tt class="docutils literal"><span class="pre">m</span></tt> is computed using left-division.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-right-quotient"></span><dl class="docutils" id="index-26">
+<dt><span class="spadfun">rightQuotient</span>: (%, %) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">rightQuotient(a,</span> <span class="pre">b)</span></tt> computes the pair <tt class="docutils literal"><span class="pre">[q,</span> <span class="pre">r]</span></tt> such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">q*b</span> <span class="pre">+</span> <span class="pre">r</span></tt> and the degree of <tt class="docutils literal"><span class="pre">r</span></tt> is less than the degree of <tt class="docutils literal"><span class="pre">b</span></tt>. The value <tt class="docutils literal"><span class="pre">q</span></tt> is returned.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-right-remainder"></span><dl class="docutils" id="index-27">
+<dt><span class="spadfun">rightRemainder</span>: (%, %) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">rightRemainder(a,</span> <span class="pre">b)</span></tt> computes the pair <tt class="docutils literal"><span class="pre">[q,</span> <span class="pre">r]</span></tt> such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">q*b</span> <span class="pre">+</span> <span class="pre">r</span></tt> and the degree of <tt class="docutils literal"><span class="pre">r</span></tt> is less than the degree of <tt class="docutils literal"><span class="pre">b</span></tt>. The value <tt class="docutils literal"><span class="pre">r</span></tt> is returned.</dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-sample"><em>sample</em></a>: % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid-subtract-if-can"><em>subtractIfCan</em></a>: (%, %) -&gt; Union(%, failed) if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-zero"><em>zero?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+</dl>
+<p><a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a> or % has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a> and R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a> or R has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a> and R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a> or R has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a> and R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> if % has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> and R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a> or R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a> or R has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> and R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a> or R has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> and R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a> or R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> R if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="BiModule.html#l-bi-module"><em>BiModule</em></a>(R, R)</p>
+<p><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="FullyRetractableTo.html#l-fully-retractable-to"><em>FullyRetractableTo</em></a> R</p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> %</p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> R</p>
+<p><a class="reference internal" href="Module.html#l-module"><em>Module</em></a> R if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> if R has <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
+<p><a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> R</p>
+<p><a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> R</p>
+<p><a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></p>
+<p><a class="reference internal" href="Rng.html#l-rng"><em>Rng</em></a></p>
+<p><a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="SemiRing.html#l-semi-ring"><em>SemiRing</em></a></p>
+<p><a class="reference internal" href="SemiRng.html#l-semi-rng"><em>SemiRng</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="unitsKnown.html#l-units-known"><em>unitsKnown</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="UnivariatePuiseuxSeriesConstructorCategory.html"
+                        title="previous chapter">UnivariatePuiseuxSeriesConstructorCategory(Coef, ULS)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="UnivariateTaylorSeriesCategory.html"
+                        title="next chapter">UnivariateTaylorSeriesCategory Coef</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/UnivariateSkewPolynomialCategory.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="UnivariateTaylorSeriesCategory.html" title="UnivariateTaylorSeriesCategory Coef"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="UnivariatePuiseuxSeriesConstructorCategory.html" title="UnivariatePuiseuxSeriesConstructorCategory(Coef, ULS)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SymmetryAnalysis(JB1, xi, eta) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="SystemODESolver(F, LO)" href="SystemODESolver.html" />
+    <link rel="prev" title="SymmetricGroupCombinatoricFunctions" href="SymmetricGroupCombinatoricFunctions.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="SystemODESolver.html" title="SystemODESolver(F, LO)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="SymmetricGroupCombinatoricFunctions.html" title="SymmetricGroupCombinatoricFunctions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="symmetryanalysis-jb1-xi-eta">
+<span id="l-symmetry-analysis"></span><span id="index-0"></span><h1>SymmetryAnalysis(JB1, xi, eta)<a class="headerlink" href="#symmetryanalysis-jb1-xi-eta" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//jet.spad#L5146">jet.spad line 5146</a></p>
+<ul class="simple">
+<li>JB1: <a class="reference internal" href="JetBundleCategory.html#l-jet-bundle-category"><em>JetBundleCategory</em></a></li>
+<li>xi: Union(<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>)</li>
+<li>eta: Union(<a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>)</li>
+</ul>
+<p><tt class="docutils literal"><span class="pre">SymmetryAnalysis(JB,</span> <span class="pre">xi,</span> <span class="pre">eta)</span></tt> provides procedures for the symmetry analysis of differential equations over a given jet bundle. Currently there exist only some procedures to set up the determining system for the symmetry generators of Lie point symmetries.</p>
+<span class="target" id="l-symmetry-analysis-ansatz"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">ansatz</span>: () -&gt; <a class="reference internal" href="JetVectorField.html#l-jet-vector-field"><em>JetVectorField</em></a>(JB1, <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1)</dt>
+<dd><tt class="docutils literal"><span class="pre">ansatz()</span></tt> returns a general ansatz for a symmetry generator.</dd>
+</dl>
+<span class="target" id="l-symmetry-analysis-det-sys"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">detSys</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1, <a class="reference internal" href="JetVectorField.html#l-jet-vector-field"><em>JetVectorField</em></a>(JB1, <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1)) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1</dt>
+<dd><tt class="docutils literal"><span class="pre">detSys(sys,</span> <span class="pre">vf)</span></tt> computes the determining system for symmetry generators of the system <tt class="docutils literal"><span class="pre">sys</span></tt> with a given ansatz for the generators. It is assumed that each equation can be solved for its leading derivative.</dd>
+</dl>
+<dl class="docutils" id="index-3">
+<dt><span class="spadfun">detSys</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1, <a class="reference internal" href="List.html#l-list"><em>List</em></a> JB1, <a class="reference internal" href="JetVectorField.html#l-jet-vector-field"><em>JetVectorField</em></a>(JB1, <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1)) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1</dt>
+<dd><tt class="docutils literal"><span class="pre">detSys(sys,</span> <span class="pre">sjb,</span> <span class="pre">vf)</span></tt> computes the determining system for symmetry generators of the system <tt class="docutils literal"><span class="pre">sys</span></tt> with a given ansatz for the generators. <tt class="docutils literal"><span class="pre">sjb</span></tt> contains jet variables for which the individual equations can be solved.</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">detSys</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1 -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> <a class="reference internal" href="JetBundleSymAna.html#l-jet-bundle-sym-ana"><em>JetBundleSymAna</em></a>(JB1, xi, eta)</dt>
+<dd><tt class="docutils literal"><span class="pre">detSys(sys)</span></tt> computes the determining system for symmetry generators of the system <tt class="docutils literal"><span class="pre">sys</span></tt>. It is assumed that each equation can be solved for its leading derivative.</dd>
+</dl>
+<span class="target" id="l-symmetry-analysis-det-sys-n-s"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">detSysNS</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1, <a class="reference internal" href="JetVectorField.html#l-jet-vector-field"><em>JetVectorField</em></a>(JB1, <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1)) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1</dt>
+<dd><tt class="docutils literal"><span class="pre">detSysNS(sys,</span> <span class="pre">vf)</span></tt> computes the determining system for symmetry generators without assuming solvability of the equations for some derivatives.</dd>
+</dl>
+<dl class="docutils" id="index-6">
+<dt><span class="spadfun">detSysNS</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1 -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> <a class="reference internal" href="JetBundleSymAna.html#l-jet-bundle-sym-ana"><em>JetBundleSymAna</em></a>(JB1, xi, eta)</dt>
+<dd><tt class="docutils literal"><span class="pre">detSysNS(sys,</span> <span class="pre">vf)</span></tt> computes the determining system for symmetry generators without assuming solvability of the equations for some derivatives.</dd>
+</dl>
+<span class="target" id="l-symmetry-analysis-linearize"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">linearize</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> <a class="reference internal" href="JetBundleSymAna.html#l-jet-bundle-sym-ana"><em>JetBundleSymAna</em></a>(JB1, xi, eta) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleLinearFunction.html#l-jet-bundle-linear-function"><em>JetBundleLinearFunction</em></a>(<a class="reference internal" href="JetBundleSymAna.html#l-jet-bundle-sym-ana"><em>JetBundleSymAna</em></a>(JB1, xi, eta), <a class="reference internal" href="JetBundleXExpression.html#l-jet-bundle-x-expression"><em>JetBundleXExpression</em></a> <a class="reference internal" href="JetBundleSymAna.html#l-jet-bundle-sym-ana"><em>JetBundleSymAna</em></a>(JB1, xi, eta))</dt>
+<dd><tt class="docutils literal"><span class="pre">linearize(sys)</span></tt> tries to retract all equations in <tt class="docutils literal"><span class="pre">sys</span></tt> to a linear one. If that is not possible, an error occurs.</dd>
+</dl>
+<span class="target" id="l-symmetry-analysis-nc-det-sys"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">ncDetSys</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1, <a class="reference internal" href="JetVectorField.html#l-jet-vector-field"><em>JetVectorField</em></a>(JB1, <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1)) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1</dt>
+<dd><tt class="docutils literal"><span class="pre">ncDetSys(sys,</span> <span class="pre">vf)</span></tt> computes the determining system for generators of conditional symmetries of <tt class="docutils literal"><span class="pre">sys</span></tt> with a given ansatz for the vector fields.</dd>
+</dl>
+<dl class="docutils" id="index-9">
+<dt><span class="spadfun">ncDetSys</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1, <a class="reference internal" href="List.html#l-list"><em>List</em></a> JB1, <a class="reference internal" href="JetVectorField.html#l-jet-vector-field"><em>JetVectorField</em></a>(JB1, <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1)) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1</dt>
+<dd><tt class="docutils literal"><span class="pre">ncDetSys(sys,</span> <span class="pre">sjb,</span> <span class="pre">vf)</span></tt> computes the determining system for generators of conditional symmetries of <tt class="docutils literal"><span class="pre">sys</span></tt>. The meaning of the further arguments is the same as in <tt class="docutils literal"><span class="pre">detSys</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-10">
+<dt><span class="spadfun">ncDetSys</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1 -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> <a class="reference internal" href="JetBundleSymAna.html#l-jet-bundle-sym-ana"><em>JetBundleSymAna</em></a>(JB1, xi, eta)</dt>
+<dd><tt class="docutils literal"><span class="pre">ncDetSys(sys)</span></tt> computes the determining system for generators of conditional symmetries of <tt class="docutils literal"><span class="pre">sys</span></tt>. It makes the same assumptions as <tt class="docutils literal"><span class="pre">detSys</span></tt>.</dd>
+</dl>
+<span class="target" id="l-symmetry-analysis-transform"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">transform</span>: <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> JB1 -&gt; <a class="reference internal" href="JetBundleExpression.html#l-jet-bundle-expression"><em>JetBundleExpression</em></a> <a class="reference internal" href="JetBundleSymAna.html#l-jet-bundle-sym-ana"><em>JetBundleSymAna</em></a>(JB1, xi, eta)</dt>
+<dd><tt class="docutils literal"><span class="pre">transform(f)</span></tt> transforms expressions between the different function types involved.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="SymmetricGroupCombinatoricFunctions.html"
+                        title="previous chapter">SymmetricGroupCombinatoricFunctions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="SystemODESolver.html"
+                        title="next chapter">SystemODESolver(F, LO)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/SymmetryAnalysis.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="SystemODESolver.html" title="SystemODESolver(F, LO)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="SymmetricGroupCombinatoricFunctions.html" title="SymmetricGroupCombinatoricFunctions"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

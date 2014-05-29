@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FreeModuleCategory(R, S) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Categories" href="Categories.html" />
+    <link rel="next" title="FullyEvalableOver R" href="FullyEvalableOver.html" />
+    <link rel="prev" title="FreeLieAlgebra(VarSet, R)" href="FreeLieAlgebra.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="FullyEvalableOver.html" title="FullyEvalableOver R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="FreeLieAlgebra.html" title="FreeLieAlgebra(VarSet, R)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="freemodulecategory-r-s">
+<span id="l-free-module-category"></span><span id="index-0"></span><h1>FreeModuleCategory(R, S)<a class="headerlink" href="#freemodulecategory-r-s" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//poly.spad#L1">poly.spad line 1</a></p>
+<ul class="simple">
+<li>R: Join(<a class="reference internal" href="SemiRng.html#l-semi-rng"><em>SemiRng</em></a>, <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a>)</li>
+<li>S: <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></li>
+</ul>
+<p>A domain of this category implements formal linear combinations of elements from a domain <tt class="docutils literal"><span class="pre">Basis</span></tt> with coefficients in a domain <tt class="docutils literal"><span class="pre">R</span></tt>. The domain <tt class="docutils literal"><span class="pre">Basis</span></tt> needs only to belong to the category <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and <tt class="docutils literal"><span class="pre">R</span></tt> to the category <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a>. Thus the coefficient ring may be non-commutative. See the <a class="reference internal" href="XDistributedPolynomial.html#l-x-distributed-polynomial"><em>XDistributedPolynomial</em></a> constructor for examples of domains built with the <a class="reference internal" href="#l-free-module-category"><em>FreeModuleCategory</em></a> category constructor. Author: Michel Petitot (<a class="reference external" href="mailto:petitot&#37;&#52;&#48;lifl">petitot<span>&#64;</span>lifl</a>.<tt class="docutils literal"><span class="pre">fr</span></tt>) blankline Note (Franz Lehner, June 2009): Since <tt class="docutils literal"><span class="pre">leadingTerm</span></tt> makes no sense for unordered base sets, and at the time of this writing this domain was never used for such, it was changed to <tt class="docutils literal"><span class="pre">OrderedSet</span></tt>. <tt class="docutils literal"><span class="pre">FreeModule</span></tt> originally was not of FreeModuleCategory. Some functions (like <tt class="docutils literal"><span class="pre">support</span></tt>, <tt class="docutils literal"><span class="pre">coefficients</span></tt>, <tt class="docutils literal"><span class="pre">monomials</span></tt>, ...) from here could be moved to <tt class="docutils literal"><span class="pre">IndexedDirectProductCategory</span></tt> but at the moment there is no need for this.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><em>0</em></a>: % if R has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="RightModule.html#id1"><em>*</em></a>: (%, R) -&gt; %</dt>
+<dd>from <a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> R</dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; % if R has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#id1"><em>*</em></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, %) -&gt; % if R has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, %) -&gt; % if R has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
+<dt><a class="reference internal" href="LeftModule.html#id1"><em>*</em></a>: (R, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> R</dd>
+</dl>
+<span class="target" id="id1"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">*</span>: (R, S) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">r*b</span></tt> returns the product of <tt class="docutils literal"><span class="pre">r</span></tt> by <tt class="docutils literal"><span class="pre">b</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">*</span>: (S, R) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">s*r</span></tt> returns the product <tt class="docutils literal"><span class="pre">r*s</span></tt> used by <a class="reference internal" href="XRecursivePolynomial.html#l-x-recursive-polynomial"><em>XRecursivePolynomial</em></a></dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id2"><em>+</em></a>: (%, %) -&gt; % if R has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: % -&gt; % if R has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: (%, %) -&gt; % if R has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id1"><em>&lt;</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id2"><em>&lt;=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id3"><em>&gt;</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id4"><em>&gt;=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+</dl>
+<span class="target" id="l-free-module-category-coefficient"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">coefficient</span>: (%, S) -&gt; R</dt>
+<dd><tt class="docutils literal"><span class="pre">coefficient(x,</span> <span class="pre">s)</span></tt> returns the coefficient of the basis element <tt class="docutils literal"><span class="pre">s</span></tt></dd>
+</dl>
+<span class="target" id="l-free-module-category-coefficients"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">coefficients</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">coefficients(x)</span></tt> returns the list of coefficients of <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if R has <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-coerce"><em>coerce</em></a>: S -&gt; % if R has <a class="reference internal" href="SemiRing.html#l-semi-ring"><em>SemiRing</em></a></dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> S</dd>
+<dt><a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category-construct"><em>construct</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(k: S, c: R) -&gt; %</dt>
+<dd>from <a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category"><em>IndexedDirectProductCategory</em></a>(R, S)</dd>
+<dt><a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category-construct-ordered"><em>constructOrdered</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(k: S, c: R) -&gt; %</dt>
+<dd>from <a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category"><em>IndexedDirectProductCategory</em></a>(R, S)</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a> if R has <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a> if R has <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a> if R has <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category-leading-coefficient"><em>leadingCoefficient</em></a>: % -&gt; R</dt>
+<dd>from <a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category"><em>IndexedDirectProductCategory</em></a>(R, S)</dd>
+</dl>
+<span class="target" id="l-free-module-category-leading-monomial"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">leadingMonomial</span>: % -&gt; S</dt>
+<dd><tt class="docutils literal"><span class="pre">leadingMonomial(x)</span></tt> returns the first element from <tt class="docutils literal"><span class="pre">S</span></tt> which appears in <tt class="docutils literal"><span class="pre">listOfTerms(x)</span></tt>.</dd>
+<dt><a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category-leading-support"><em>leadingSupport</em></a>: % -&gt; S</dt>
+<dd>from <a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category"><em>IndexedDirectProductCategory</em></a>(R, S)</dd>
+<dt><a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category-leading-term"><em>leadingTerm</em></a>: % -&gt; Record(k: S, c: R)</dt>
+<dd>from <a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category"><em>IndexedDirectProductCategory</em></a>(R, S)</dd>
+</dl>
+<span class="target" id="l-free-module-category-linear-extend"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">linearExtend</span>: (S -&gt; R, %) -&gt; R if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">linearExtend:</span> <span class="pre">(f,</span> <span class="pre">x)</span></tt> returns the linear extension of a map defined on the basis applied to a linear combination</dd>
+<dt><a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category-list-of-terms"><em>listOfTerms</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(k: S, c: R)</dt>
+<dd>from <a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category"><em>IndexedDirectProductCategory</em></a>(R, S)</dd>
+<dt><a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category-map"><em>map</em></a>: (R -&gt; R, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category"><em>IndexedDirectProductCategory</em></a>(R, S)</dd>
+<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-max"><em>max</em></a>: (%, %) -&gt; % if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a></dt>
+<dd>from <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dd>
+<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-min"><em>min</em></a>: (%, %) -&gt; % if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a></dt>
+<dd>from <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dd>
+</dl>
+<span class="target" id="l-free-module-category-monom"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">monom</span>: (S, R) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">monom(s,</span> <span class="pre">r)</span></tt> returns the product of the basis element <tt class="docutils literal"><span class="pre">s</span></tt> by the coefficient <tt class="docutils literal"><span class="pre">r</span></tt>.</dd>
+<dt><a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category-monomial"><em>monomial</em></a>: (R, S) -&gt; %</dt>
+<dd>from <a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category"><em>IndexedDirectProductCategory</em></a>(R, S)</dd>
+</dl>
+<span class="target" id="l-free-module-category-monomial"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">monomial?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">monomial?(x)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if <tt class="docutils literal"><span class="pre">x</span></tt> contains a single monomial.</dd>
+</dl>
+<span class="target" id="l-free-module-category-monomials"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">monomials</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dd><tt class="docutils literal"><span class="pre">monomials(x)</span></tt> returns the list of <tt class="docutils literal"><span class="pre">r_i*b_i</span></tt> whose sum is <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+</dl>
+<span class="target" id="l-free-module-category-number-of-monomials"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">numberOfMonomials</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">numberOfMonomials(x)</span></tt> returns the number of monomials of <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-opposite"><em>opposite?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category-reductum"><em>reductum</em></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category"><em>IndexedDirectProductCategory</em></a>(R, S)</dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract"><em>retract</em></a>: % -&gt; S if R has <a class="reference internal" href="SemiRing.html#l-semi-ring"><em>SemiRing</em></a></dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> S</dd>
+<dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract-if-can"><em>retractIfCan</em></a>: % -&gt; Union(S, failed) if R has <a class="reference internal" href="SemiRing.html#l-semi-ring"><em>SemiRing</em></a></dt>
+<dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> S</dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-sample"><em>sample</em></a>: % if R has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="Comparable.html#l-comparable-smaller"><em>smaller?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dt>
+<dd>from <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dd>
+<dt><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid-subtract-if-can"><em>subtractIfCan</em></a>: (%, %) -&gt; Union(%, failed) if R has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dt>
+<dd>from <a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a></dd>
+<dt><a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup-sup"><em>sup</em></a>: (%, %) -&gt; % if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a></dt>
+<dd>from <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a></dd>
+</dl>
+<span class="target" id="l-free-module-category-support"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">support</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">support(x)</span></tt> returns the list of basis elements with nonzero coefficients.</dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-zero"><em>zero?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if R has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+</dl>
+<p><a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a> if R has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></p>
+<p><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a> or R has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> or R has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> or R has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a> or R has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></p>
+<p><a class="reference internal" href="AbelianProductCategory.html#l-abelian-product-category"><em>AbelianProductCategory</em></a> R</p>
+<p><a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></p>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> if R has <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></p>
+<p><a class="reference internal" href="BiModule.html#l-bi-module"><em>BiModule</em></a>(R, R)</p>
+<p><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a> or R has <a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a> or R has <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if R has <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></p>
+<p><a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a> if R has <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a> or S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a> or R has <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></p>
+<p><a class="reference internal" href="IndexedDirectProductCategory.html#l-indexed-direct-product-category"><em>IndexedDirectProductCategory</em></a>(R, S)</p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> R</p>
+<p><a class="reference internal" href="Module.html#l-module"><em>Module</em></a> R if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></p>
+<p><a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a> or S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a></p>
+<p><a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a></p>
+<p><a class="reference internal" href="OrderedAbelianSemiGroup.html#l-ordered-abelian-semi-group"><em>OrderedAbelianSemiGroup</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a></p>
+<p><a class="reference internal" href="OrderedCancellationAbelianMonoid.html#l-ordered-cancellation-abelian-monoid"><em>OrderedCancellationAbelianMonoid</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a></p>
+<p><a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a></p>
+<p><a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> and R has <a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a></p>
+<p><a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> S if R has <a class="reference internal" href="SemiRing.html#l-semi-ring"><em>SemiRing</em></a></p>
+<p><a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> R</p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> if R has <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a> or R has <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="FreeLieAlgebra.html"
+                        title="previous chapter">FreeLieAlgebra(VarSet, R)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="FullyEvalableOver.html"
+                        title="next chapter">FullyEvalableOver R</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/FreeModuleCategory.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="FullyEvalableOver.html" title="FullyEvalableOver R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="FreeLieAlgebra.html" title="FreeLieAlgebra(VarSet, R)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

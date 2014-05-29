@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>WildFunctionFieldIntegralBasis(K, R, UP, F) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="XExponentialPackage(R, VarSet, XPOLY)" href="XExponentialPackage.html" />
+    <link rel="prev" title="WeierstrassPreparation R" href="WeierstrassPreparation.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="XExponentialPackage.html" title="XExponentialPackage(R, VarSet, XPOLY)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="WeierstrassPreparation.html" title="WeierstrassPreparation R"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="wildfunctionfieldintegralbasis-k-r-up-f">
+<span id="l-wild-function-field-integral-basis"></span><span id="index-0"></span><h1>WildFunctionFieldIntegralBasis(K, R, UP, F)<a class="headerlink" href="#wildfunctionfieldintegralbasis-k-r-up-f" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//intclos.spad#L323">intclos.spad line 323</a></p>
+<ul class="simple">
+<li>K: <a class="reference internal" href="FiniteFieldCategory.html#l-finite-field-category"><em>FiniteFieldCategory</em></a></li>
+<li>R: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> K</li>
+<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> R</li>
+<li>F: <a class="reference internal" href="FramedAlgebra.html#l-framed-algebra"><em>FramedAlgebra</em></a>(R, UP)</li>
+</ul>
+<p>In this package <tt class="docutils literal"><span class="pre">K</span></tt> is a finite field, <tt class="docutils literal"><span class="pre">R</span></tt> is a ring of univariate polynomials over <tt class="docutils literal"><span class="pre">K</span></tt>, and <tt class="docutils literal"><span class="pre">F</span></tt> is a framed algebra over <tt class="docutils literal"><span class="pre">R</span></tt>. The package provides a function to compute the integral closure of <tt class="docutils literal"><span class="pre">R</span></tt> in the quotient field of <tt class="docutils literal"><span class="pre">F</span></tt> as well as a function to compute a &#8220;local integral basis&#8221; at a specific prime.</p>
+<span class="target" id="l-wild-function-field-integral-basis-integral-basis"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">integralBasis</span>: () -&gt; Record(basis: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, basisDen: R, basisInv: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R)</dt>
+<dd><tt class="docutils literal"><span class="pre">integralBasis()</span></tt> returns a record <tt class="docutils literal"><span class="pre">[basis,</span> <span class="pre">basisDen,</span> <span class="pre">basisInv]</span></tt> containing information regarding the integral closure of <tt class="docutils literal"><span class="pre">R</span></tt> in the quotient field of <tt class="docutils literal"><span class="pre">F</span></tt>, where <tt class="docutils literal"><span class="pre">F</span></tt> is a framed algebra with <tt class="docutils literal"><span class="pre">R</span></tt>-module basis <tt class="docutils literal"><span class="pre">w1,</span> <span class="pre">w2,</span> <span class="pre">...,</span> <span class="pre">wn</span></tt>. If <tt class="docutils literal"><span class="pre">basis</span></tt> is the matrix <tt class="docutils literal"><span class="pre">(aij,</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">1..n,</span> <span class="pre">j</span> <span class="pre">=</span> <span class="pre">1..n)</span></tt>, then the <tt class="docutils literal"><span class="pre">i</span></tt>th element of the integral basis is <tt class="docutils literal"><span class="pre">vi</span> <span class="pre">=</span> <span class="pre">(1/basisDen)</span> <span class="pre">*</span> <span class="pre">sum(aij</span> <span class="pre">*</span> <span class="pre">wj,</span> <span class="pre">j</span> <span class="pre">=</span> <span class="pre">1..n)</span></tt>, i.e. the <tt class="docutils literal"><span class="pre">i</span></tt>th row of <tt class="docutils literal"><span class="pre">basis</span></tt> contains the coordinates of the <tt class="docutils literal"><span class="pre">i</span></tt>th basis vector. Similarly, the <tt class="docutils literal"><span class="pre">i</span></tt>th row of the matrix <tt class="docutils literal"><span class="pre">basisInv</span></tt> contains the coordinates of <tt class="docutils literal"><span class="pre">wi</span></tt> with respect to the basis <tt class="docutils literal"><span class="pre">v1,</span> <span class="pre">...,</span> <span class="pre">vn</span></tt>: if <tt class="docutils literal"><span class="pre">basisInv</span></tt> is the matrix <tt class="docutils literal"><span class="pre">(bij,</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">1..n,</span> <span class="pre">j</span> <span class="pre">=</span> <span class="pre">1..n)</span></tt>, then <tt class="docutils literal"><span class="pre">wi</span> <span class="pre">=</span> <span class="pre">sum(bij</span> <span class="pre">*</span> <span class="pre">vj,</span> <span class="pre">j</span> <span class="pre">=</span> <span class="pre">1..n)</span></tt>.</dd>
+</dl>
+<span class="target" id="l-wild-function-field-integral-basis-local-integral-basis"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">localIntegralBasis</span>: R -&gt; Record(basis: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, basisDen: R, basisInv: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R)</dt>
+<dd><tt class="docutils literal"><span class="pre">integralBasis(p)</span></tt> returns a record <tt class="docutils literal"><span class="pre">[basis,</span> <span class="pre">basisDen,</span> <span class="pre">basisInv]</span></tt> containing information regarding the local integral closure of <tt class="docutils literal"><span class="pre">R</span></tt> at the prime <tt class="docutils literal"><span class="pre">p</span></tt> in the quotient field of <tt class="docutils literal"><span class="pre">F</span></tt>, where <tt class="docutils literal"><span class="pre">F</span></tt> is a framed algebra with <tt class="docutils literal"><span class="pre">R</span></tt>-module basis <tt class="docutils literal"><span class="pre">w1,</span> <span class="pre">w2,</span> <span class="pre">...,</span> <span class="pre">wn</span></tt>. If <tt class="docutils literal"><span class="pre">basis</span></tt> is the matrix <tt class="docutils literal"><span class="pre">(aij,</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">1..n,</span> <span class="pre">j</span> <span class="pre">=</span> <span class="pre">1..n)</span></tt>, then the <tt class="docutils literal"><span class="pre">i</span></tt>th element of the local integral basis is <tt class="docutils literal"><span class="pre">vi</span> <span class="pre">=</span> <span class="pre">(1/basisDen)</span> <span class="pre">*</span> <span class="pre">sum(aij</span> <span class="pre">*</span> <span class="pre">wj,</span> <span class="pre">j</span> <span class="pre">=</span> <span class="pre">1..n)</span></tt>, i.e. the <tt class="docutils literal"><span class="pre">i</span></tt>th row of <tt class="docutils literal"><span class="pre">basis</span></tt> contains the coordinates of the <tt class="docutils literal"><span class="pre">i</span></tt>th basis vector. Similarly, the <tt class="docutils literal"><span class="pre">i</span></tt>th row of the matrix <tt class="docutils literal"><span class="pre">basisInv</span></tt> contains the coordinates of <tt class="docutils literal"><span class="pre">wi</span></tt> with respect to the basis <tt class="docutils literal"><span class="pre">v1,</span> <span class="pre">...,</span> <span class="pre">vn</span></tt>: if <tt class="docutils literal"><span class="pre">basisInv</span></tt> is the matrix <tt class="docutils literal"><span class="pre">(bij,</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">1..n,</span> <span class="pre">j</span> <span class="pre">=</span> <span class="pre">1..n)</span></tt>, then <tt class="docutils literal"><span class="pre">wi</span> <span class="pre">=</span> <span class="pre">sum(bij</span> <span class="pre">*</span> <span class="pre">vj,</span> <span class="pre">j</span> <span class="pre">=</span> <span class="pre">1..n)</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="WeierstrassPreparation.html"
+                        title="previous chapter">WeierstrassPreparation R</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="XExponentialPackage.html"
+                        title="next chapter">XExponentialPackage(R, VarSet, XPOLY)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/WildFunctionFieldIntegralBasis.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="XExponentialPackage.html" title="XExponentialPackage(R, VarSet, XPOLY)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="WeierstrassPreparation.html" title="WeierstrassPreparation R"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

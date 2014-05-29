@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>IntegerPrimesPackage I &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="IntegerRetractions S" href="IntegerRetractions.html" />
+    <link rel="prev" title="IntegerNumberTheoryFunctions" href="IntegerNumberTheoryFunctions.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="IntegerRetractions.html" title="IntegerRetractions S"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="IntegerNumberTheoryFunctions.html" title="IntegerNumberTheoryFunctions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="integerprimespackage-i">
+<span id="l-integer-primes-package"></span><span id="index-0"></span><h1>IntegerPrimesPackage I<a class="headerlink" href="#integerprimespackage-i" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//intfact.spad#L1">intfact.spad line 1</a></p>
+<ul class="simple">
+<li>I: <a class="reference internal" href="IntegerNumberSystem.html#l-integer-number-system"><em>IntegerNumberSystem</em></a></li>
+</ul>
+<p>The <a class="reference internal" href="#l-integer-primes-package"><em>IntegerPrimesPackage</em></a> implements a modification of Rabin<tt class="docutils literal"><span class="pre">'s</span></tt> probabilistic primality test and the utility functions <span class="spadfun">nextPrime</span>, <span class="spadfun">prevPrime</span> and <span class="spadfun">primes</span>.</p>
+<span class="target" id="l-integer-primes-package-next-prime"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">nextPrime</span>: I -&gt; I</dt>
+<dd><tt class="docutils literal"><span class="pre">nextPrime(n)</span></tt> returns the smallest prime strictly larger than <tt class="docutils literal"><span class="pre">n</span></tt></dd>
+</dl>
+<span class="target" id="l-integer-primes-package-prev-prime"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">prevPrime</span>: I -&gt; I</dt>
+<dd><tt class="docutils literal"><span class="pre">prevPrime(n)</span></tt> returns the largest prime strictly smaller than <tt class="docutils literal"><span class="pre">n</span></tt></dd>
+</dl>
+<span class="target" id="l-integer-primes-package-prime"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">prime?</span>: I -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">prime?(n)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if <tt class="docutils literal"><span class="pre">n</span></tt> is prime and <tt class="docutils literal"><span class="pre">false</span></tt> if not. Note that we ignore sign of <tt class="docutils literal"><span class="pre">n</span></tt>, so <tt class="docutils literal"><span class="pre">-5</span></tt> is considered prime. The algorithm used is Rabin<tt class="docutils literal"><span class="pre">'s</span></tt> probabilistic primality test (reference: Knuth Volume 2 Semi Numerical Algorithms). If <tt class="docutils literal"><span class="pre">prime?</span> <span class="pre">n</span></tt> returns <tt class="docutils literal"><span class="pre">false</span></tt>, <tt class="docutils literal"><span class="pre">n</span></tt> is proven composite. If <tt class="docutils literal"><span class="pre">prime?</span> <span class="pre">n</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt>, prime? may be in error however, the probability of error is very low. and is zero below 25*10^9 (due to a result of Pomerance et al), below 10^12 and 10^13 due to results of Pinch, and below 341550071728321 due to a result of Jaeschke. Specifically, this implementation does at least 10 pseudo prime tests and so the probability of error is <tt class="docutils literal"><span class="pre">&lt;</span> <span class="pre">4^(-10)</span></tt>. The running time of this method is cubic in the length of the input <tt class="docutils literal"><span class="pre">n</span></tt>, that is <tt class="docutils literal"><span class="pre">O(</span> <span class="pre">(log</span> <span class="pre">n)^3</span> <span class="pre">)</span></tt>, for <tt class="docutils literal"><span class="pre">n&lt;10^20</span></tt>. beyond that, the algorithm is quartic, <tt class="docutils literal"><span class="pre">O(</span> <span class="pre">(log</span> <span class="pre">n)^4</span> <span class="pre">)</span></tt>. Two improvements due to Davenport have been incorporated which catches some trivial strong pseudo-primes, such as [Jaeschke, 1991] 1377161253229053 * 413148375987157, which the original algorithm regards as prime</dd>
+</dl>
+<span class="target" id="l-integer-primes-package-primes"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">primes</span>: (I, I) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> I</dt>
+<dd><tt class="docutils literal"><span class="pre">primes(a,</span> <span class="pre">b)</span></tt> returns a list of all primes <tt class="docutils literal"><span class="pre">p</span></tt> with <tt class="docutils literal"><span class="pre">a</span> <span class="pre">&lt;=</span> <span class="pre">p</span> <span class="pre">&lt;=</span> <span class="pre">b</span></tt></dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="IntegerNumberTheoryFunctions.html"
+                        title="previous chapter">IntegerNumberTheoryFunctions</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="IntegerRetractions.html"
+                        title="next chapter">IntegerRetractions S</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/IntegerPrimesPackage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="IntegerRetractions.html" title="IntegerRetractions S"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="IntegerNumberTheoryFunctions.html" title="IntegerNumberTheoryFunctions"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

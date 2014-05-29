@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ModularAlgebraicGcdOperations(MPT, MD) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Categories" href="Categories.html" />
+    <link rel="next" title="Module R" href="Module.html" />
+    <link rel="prev" title="MaybeSkewPolynomialCategory(R, E, VarSet)" href="MaybeSkewPolynomialCategory.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Module.html" title="Module R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="MaybeSkewPolynomialCategory.html" title="MaybeSkewPolynomialCategory(R, E, VarSet)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="modularalgebraicgcdoperations-mpt-md">
+<span id="l-modular-algebraic-gcd-operations"></span><span id="index-0"></span><h1>ModularAlgebraicGcdOperations(MPT, MD)<a class="headerlink" href="#modularalgebraicgcdoperations-mpt-md" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//amodgcd.spad#L23">amodgcd.spad line 23</a></p>
+<ul class="simple">
+<li>MPT: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
+<li>MD: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
+</ul>
+<p>This category specifies operations needed by ModularAlgebraicGcd package. Since we have multiple implementations we specify interface here and put implementations in separate packages. Most operations are done using special purpose abstract representation. Apropriate types are passesd as parametes: <tt class="docutils literal"><span class="pre">MPT</span></tt> is type of modular polynomials in one variable with coefficients in some algebraic extension. <tt class="docutils literal"><span class="pre">MD</span></tt> is type of modulus. Final results are converted to packed representation, with coefficients (from prime field) stored in one array and exponents (in main variable and in auxilary variables representing generators of algebrac extension) stored in parallel array.</p>
+<span class="target" id="l-modular-algebraic-gcd-operations-canonical-if-can"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">canonicalIfCan</span>: (MPT, MD) -&gt; Union(MPT, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">canonicalIfCan(x,</span> <span class="pre">m)</span></tt> tries to divide <tt class="docutils literal"><span class="pre">x</span></tt> by its leading coefficient modulo <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+</dl>
+<span class="target" id="l-modular-algebraic-gcd-operations-degree"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">degree</span>: MPT -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">degree(x)</span></tt> gives degree of <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+</dl>
+<span class="target" id="l-modular-algebraic-gcd-operations-m-pto-m-p-t"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">MPtoMPT</span>: (<a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, MD) -&gt; MPT</dt>
+<dd><tt class="docutils literal"><span class="pre">MPtoMPT(p,</span> <span class="pre">s,</span> <span class="pre">ls,</span> <span class="pre">m)</span></tt> coverts <tt class="docutils literal"><span class="pre">p</span></tt> to packed represntation.</dd>
+</dl>
+<span class="target" id="l-modular-algebraic-gcd-operations-pack-exps"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">pack_exps</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, MD) -&gt; <a class="reference internal" href="SortedExponentVector.html#l-sorted-exponent-vector"><em>SortedExponentVector</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">pack_exps(d,</span> <span class="pre">s,</span> <span class="pre">m)</span></tt> produces vector of exponents up to degree <tt class="docutils literal"><span class="pre">d</span></tt>. <tt class="docutils literal"><span class="pre">s</span></tt> is size (degree) of algebraic extension. Use together with <tt class="docutils literal"><span class="pre">repack1</span></tt>.</dd>
+</dl>
+<span class="target" id="l-modular-algebraic-gcd-operations-pack-modulus"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">pack_modulus</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; Union(MD, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">pack_modulus(lp,</span> <span class="pre">ls,</span> <span class="pre">p)</span></tt> converts <tt class="docutils literal"><span class="pre">lp</span></tt>, <tt class="docutils literal"><span class="pre">ls</span></tt> and prime <tt class="docutils literal"><span class="pre">p</span></tt> which together describe algebraic extension to packed representation.</dd>
+</dl>
+<span class="target" id="l-modular-algebraic-gcd-operations-pseudo-rem"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">pseudoRem</span>: (MPT, MPT, MD) -&gt; MPT</dt>
+<dd><tt class="docutils literal"><span class="pre">pseudoRem(x,</span> <span class="pre">y,</span> <span class="pre">m)</span></tt> computes pseudoremainder of <tt class="docutils literal"><span class="pre">x</span></tt> by <tt class="docutils literal"><span class="pre">y</span></tt> modulo <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+</dl>
+<span class="target" id="l-modular-algebraic-gcd-operations-repack1"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">repack1</span>: (MPT, <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, MD) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">repack1(x,</span> <span class="pre">a,</span> <span class="pre">d,</span> <span class="pre">m)</span></tt> stores coefficients of <tt class="docutils literal"><span class="pre">x</span></tt> in a. <tt class="docutils literal"><span class="pre">d</span></tt> is degree of <tt class="docutils literal"><span class="pre">x</span></tt>. Corresponding exponents are given by pack_exps.</dd>
+</dl>
+<span class="target" id="l-modular-algebraic-gcd-operations-zero"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">zero?</span>: MPT -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">zero?(x)</span></tt> checks if <tt class="docutils literal"><span class="pre">x</span></tt> is zero.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="MaybeSkewPolynomialCategory.html"
+                        title="previous chapter">MaybeSkewPolynomialCategory(R, E, VarSet)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Module.html"
+                        title="next chapter">Module R</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/ModularAlgebraicGcdOperations.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Module.html" title="Module R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="MaybeSkewPolynomialCategory.html" title="MaybeSkewPolynomialCategory(R, E, VarSet)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

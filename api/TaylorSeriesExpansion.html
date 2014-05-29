@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TaylorSeriesExpansion(Coef, Expon, Var, PS, UTS) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Categories" href="Categories.html" />
+    <link rel="next" title="TensorPowerCategory(n, R, M)" href="TensorPowerCategory.html" />
+    <link rel="prev" title="TableAggregate(Key, Entry)" href="TableAggregate.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="TensorPowerCategory.html" title="TensorPowerCategory(n, R, M)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="TableAggregate.html" title="TableAggregate(Key, Entry)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="taylorseriesexpansion-coef-expon-var-ps-uts">
+<span id="l-taylor-series-expansion"></span><span id="index-0"></span><h1>TaylorSeriesExpansion(Coef, Expon, Var, PS, UTS)<a class="headerlink" href="#taylorseriesexpansion-coef-expon-var-ps-uts" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//serexp.spad#L1">serexp.spad line 1</a></p>
+<ul class="simple">
+<li>Coef: <a class="reference internal" href="Algebra.html#l-algebra"><em>Algebra</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></li>
+<li>Expon: <a class="reference internal" href="OrderedAbelianMonoid.html#l-ordered-abelian-monoid"><em>OrderedAbelianMonoid</em></a></li>
+<li>Var: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></li>
+<li>PS: <a class="reference internal" href="PowerSeriesCategory.html#l-power-series-category"><em>PowerSeriesCategory</em></a>(Coef, Expon, Var)</li>
+<li>UTS: <a class="reference internal" href="UnivariateTaylorSeriesCategory.html#l-univariate-taylor-series-category"><em>UnivariateTaylorSeriesCategory</em></a> Coef</li>
+</ul>
+<p>undocumented</p>
+<span class="target" id="l-taylor-series-expansion-apply-taylor"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">apply_taylor</span>: (UTS, PS) -&gt; PS</dt>
+<dd><tt class="docutils literal"><span class="pre">apply_taylor(g,</span> <span class="pre">f)</span></tt> applies <tt class="docutils literal"><span class="pre">g</span></tt> to <tt class="docutils literal"><span class="pre">f</span></tt></dd>
+</dl>
+<span class="target" id="id1"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">applyTaylor</span>: (UTS -&gt; UTS, PS) -&gt; PS</dt>
+<dd><tt class="docutils literal"><span class="pre">applyTaylor(g,</span> <span class="pre">f)</span></tt> applies <tt class="docutils literal"><span class="pre">g</span></tt> to <tt class="docutils literal"><span class="pre">f</span></tt></dd>
+</dl>
+<span class="target" id="l-taylor-series-expansion-taylor-via-deriv"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">taylor_via_deriv</span>: (Coef, <a class="reference internal" href="List.html#l-list"><em>List</em></a> PS, <a class="reference internal" href="List.html#l-list"><em>List</em></a> Coef -&gt; Coef) -&gt; PS</dt>
+<dd><tt class="docutils literal"><span class="pre">taylor_via_deriv(f,</span> <span class="pre">[x1,</span> <span class="pre">...,</span> <span class="pre">xn],</span> <span class="pre">[D1,</span> <span class="pre">...,</span> <span class="pre">Dn])</span></tt> expands <tt class="docutils literal"><span class="pre">f</span></tt> into Taylor series at (<tt class="docutils literal"><span class="pre">x1</span></tt>, ..., <tt class="docutils literal"><span class="pre">xn</span></tt>) using <tt class="docutils literal"><span class="pre">D1</span></tt>, ..., <tt class="docutils literal"><span class="pre">Dn</span></tt> as partial derivatives</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">taylor_via_deriv</span>: (PS, <a class="reference internal" href="List.html#l-list"><em>List</em></a> PS, <a class="reference internal" href="List.html#l-list"><em>List</em></a> Coef -&gt; Coef) -&gt; PS</dt>
+<dd><tt class="docutils literal"><span class="pre">taylor_via_deriv(f,</span> <span class="pre">[x1,</span> <span class="pre">...,</span> <span class="pre">xn],</span> <span class="pre">[D1,</span> <span class="pre">...,</span> <span class="pre">Dn])</span></tt> expands <tt class="docutils literal"><span class="pre">f</span></tt> into Taylor series at (<tt class="docutils literal"><span class="pre">x1</span></tt>, ..., <tt class="docutils literal"><span class="pre">xn</span></tt>) using <tt class="docutils literal"><span class="pre">D1</span></tt>, ..., <tt class="docutils literal"><span class="pre">Dn</span></tt> as partial derivatives</dd>
+</dl>
+<span class="target" id="l-taylor-series-expansion-taylor-via-lode"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">taylor_via_lode</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> UTS, PS, <a class="reference internal" href="List.html#l-list"><em>List</em></a> Coef) -&gt; PS</dt>
+<dd><tt class="docutils literal"><span class="pre">taylor_via_lode([a0,</span> <span class="pre">...,</span> <span class="pre">ak],</span> <span class="pre">z,</span> <span class="pre">[c0,</span> <span class="pre">...,</span> <span class="pre">ck])</span></tt> expands into Taylor series solution of the linear ordinary differential equation</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="TableAggregate.html"
+                        title="previous chapter">TableAggregate(Key, Entry)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="TensorPowerCategory.html"
+                        title="next chapter">TensorPowerCategory(n, R, M)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/TaylorSeriesExpansion.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="TensorPowerCategory.html" title="TensorPowerCategory(n, R, M)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="TableAggregate.html" title="TableAggregate(Key, Entry)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

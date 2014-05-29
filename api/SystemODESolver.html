@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SystemODESolver(F, LO) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="SystemSolvePackage R" href="SystemSolvePackage.html" />
+    <link rel="prev" title="SymmetryAnalysis(JB1, xi, eta)" href="SymmetryAnalysis.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="SystemSolvePackage.html" title="SystemSolvePackage R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="SymmetryAnalysis.html" title="SymmetryAnalysis(JB1, xi, eta)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="systemodesolver-f-lo">
+<span id="l-system-o-d-e-solver"></span><span id="index-0"></span><h1>SystemODESolver(F, LO)<a class="headerlink" href="#systemodesolver-f-lo" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//odealg.spad#L1">odealg.spad line 1</a></p>
+<ul class="simple">
+<li>F: <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></li>
+<li>LO: <a class="reference internal" href="LinearOrdinaryDifferentialOperatorCategory.html#l-linear-ordinary-differential-operator-category"><em>LinearOrdinaryDifferentialOperatorCategory</em></a> F</li>
+</ul>
+<p>SystemODESolver provides tools for triangulating and solving some systems of linear ordinary differential equations.</p>
+<span class="target" id="l-system-o-d-e-solver-solve"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">solve</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> F, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F, (LO, F) -&gt; Union(Record(particular: F, basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> F), failed)) -&gt; Union(Record(particular: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F, basis: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> F), failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">solve(m,</span> <span class="pre">v,</span> <span class="pre">solve)</span></tt> returns <tt class="docutils literal"><span class="pre">[[v_1,</span> <span class="pre">...,</span> <span class="pre">v_m],</span> <span class="pre">v_p]</span></tt> such that the solutions in <tt class="docutils literal"><span class="pre">F</span></tt> of the system <tt class="docutils literal"><span class="pre">D</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">m</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">v</span></tt> are <tt class="docutils literal"><span class="pre">v_p</span> <span class="pre">+</span> <span class="pre">c_1</span> <span class="pre">v_1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">c_m</span> <span class="pre">v_m</span></tt> where the <tt class="docutils literal"><span class="pre">c_i's</span></tt> are constants, and the <tt class="docutils literal"><span class="pre">v_i's</span></tt> form a basis for the solutions of <tt class="docutils literal"><span class="pre">D</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">m</span> <span class="pre">x</span></tt>. Argument <tt class="docutils literal"><span class="pre">solve</span></tt> is a function for solving a single linear ordinary differential equation in <tt class="docutils literal"><span class="pre">F</span></tt>.</dd>
+</dl>
+<span class="target" id="l-system-o-d-e-solver-solve-in-field"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">solveInField</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> LO, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F, (LO, F) -&gt; Record(particular: Union(F, failed), basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> F)) -&gt; Record(particular: Union(<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F, failed), basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F)</dt>
+<dd><tt class="docutils literal"><span class="pre">solveInField(m,</span> <span class="pre">v,</span> <span class="pre">solve)</span></tt> returns <tt class="docutils literal"><span class="pre">[[v_1,</span> <span class="pre">...,</span> <span class="pre">v_m],</span> <span class="pre">v_p]</span></tt> such that the solutions in <tt class="docutils literal"><span class="pre">F</span></tt> of the system <tt class="docutils literal"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">v</span></tt> are <tt class="docutils literal"><span class="pre">v_p</span> <span class="pre">+</span> <span class="pre">c_1</span> <span class="pre">v_1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">c_m</span> <span class="pre">v_m</span></tt> where the <tt class="docutils literal"><span class="pre">c_i's</span></tt> are constants, and the <tt class="docutils literal"><span class="pre">v_i's</span></tt> form a basis for the solutions of <tt class="docutils literal"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">0</span></tt>. Argument <tt class="docutils literal"><span class="pre">solve</span></tt> is a function for solving a single linear ordinary differential equation in <tt class="docutils literal"><span class="pre">F</span></tt>.</dd>
+</dl>
+<span class="target" id="l-system-o-d-e-solver-triangulate"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">triangulate</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> F, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F) -&gt; Record(A: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> F, eqs: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(C: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> F, g: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F, eq: LO, rh: F))</dt>
+<dd><tt class="docutils literal"><span class="pre">triangulate(M,</span> <span class="pre">v)</span></tt> returns <tt class="docutils literal"><span class="pre">A,</span> <span class="pre">[[C_1,</span> <span class="pre">g_1,</span> <span class="pre">L_1,</span> <span class="pre">h_1],</span> <span class="pre">...,</span> <span class="pre">[C_k,</span> <span class="pre">g_k,</span> <span class="pre">L_k,</span> <span class="pre">h_k]]</span></tt> such that under the change of variable <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">A</span> <span class="pre">z</span></tt>, the first order linear system <tt class="docutils literal"><span class="pre">D</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">M</span> <span class="pre">y</span> <span class="pre">+</span> <span class="pre">v</span></tt> is uncoupled as <tt class="docutils literal"><span class="pre">D</span> <span class="pre">z_i</span> <span class="pre">=</span> <span class="pre">C_i</span> <span class="pre">z_i</span> <span class="pre">+</span> <span class="pre">g_i</span></tt> and each <tt class="docutils literal"><span class="pre">C_i</span></tt> is a companion matrix corresponding to the scalar equation <tt class="docutils literal"><span class="pre">L_i</span> <span class="pre">z_j</span> <span class="pre">=</span> <span class="pre">h_i</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">triangulate</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> LO, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F) -&gt; Record(mat: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> LO, vec: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F)</dt>
+<dd><tt class="docutils literal"><span class="pre">triangulate(m,</span> <span class="pre">v)</span></tt> returns <tt class="docutils literal"><span class="pre">[m_0,</span> <span class="pre">v_0]</span></tt> such that <tt class="docutils literal"><span class="pre">m_0</span></tt> is upper triangular and the system <tt class="docutils literal"><span class="pre">m_0</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">v_0</span></tt> is equivalent to <tt class="docutils literal"><span class="pre">m</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">v</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="SymmetryAnalysis.html"
+                        title="previous chapter">SymmetryAnalysis(JB1, xi, eta)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="SystemSolvePackage.html"
+                        title="next chapter">SystemSolvePackage R</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/SystemODESolver.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="SystemSolvePackage.html" title="SystemSolvePackage R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="SymmetryAnalysis.html" title="SymmetryAnalysis(JB1, xi, eta)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

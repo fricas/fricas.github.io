@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>BrillhartTests UP &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="CartanKuranishi(JB, D)" href="CartanKuranishi.html" />
+    <link rel="prev" title="BoundIntegerRoots(F, UP)" href="BoundIntegerRoots.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="CartanKuranishi.html" title="CartanKuranishi(JB, D)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="BoundIntegerRoots.html" title="BoundIntegerRoots(F, UP)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="brillharttests-up">
+<span id="l-brillhart-tests"></span><span id="index-0"></span><h1>BrillhartTests UP<a class="headerlink" href="#brillharttests-up" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//brill.spad#L1">brill.spad line 1</a></p>
+<ul class="simple">
+<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></li>
+</ul>
+<p>Author: Frederic Lehobey, James <tt class="docutils literal"><span class="pre">H</span></tt>. Davenport Date Created: 28 June 1994 Date Last Updated: 11 July 1997 Basic Operations: brillhartIrreducible? Related Domains: Also See: AMS Classifications: Keywords: factorization Examples: References: [1] John Brillhart, Note on Irreducibility Testing, Mathematics of Computation, vol. 35, num. 35, Oct. 1980, 1379-1381 [2] James Davenport, On Brillhart Irreducibility. To appear. [3] John Brillhart, On the Euler and Bernoulli polynomials, <tt class="docutils literal"><span class="pre">J</span></tt>. Reine Angew. Math., <tt class="docutils literal"><span class="pre">v</span></tt>. 234, (1969), <tt class="docutils literal"><span class="pre">pp</span></tt>. 45-64</p>
+<span class="target" id="l-brillhart-tests-brillhart-irreducible"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">brillhartIrreducible?</span>: (UP, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">brillhartIrreducible?(p,</span> <span class="pre">noLinears)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if <tt class="docutils literal"><span class="pre">p</span></tt> can be shown to be irreducible by a remark of Brillhart, <tt class="docutils literal"><span class="pre">false</span></tt> else. If noLinears is <tt class="docutils literal"><span class="pre">true</span></tt>, we are being told <tt class="docutils literal"><span class="pre">p</span></tt> has no linear factors <tt class="docutils literal"><span class="pre">false</span></tt> does not mean that <tt class="docutils literal"><span class="pre">p</span></tt> is reducible.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">brillhartIrreducible?</span>: UP -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">brillhartIrreducible?(p)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if <tt class="docutils literal"><span class="pre">p</span></tt> can be shown to be irreducible by a remark of Brillhart, <tt class="docutils literal"><span class="pre">false</span></tt> is inconclusive.</dd>
+</dl>
+<span class="target" id="l-brillhart-tests-brillhart-trials"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">brillhartTrials</span>: () -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">brillhartTrials()</span></tt> returns the number of tests in <span class="spadfun">brillhartIrreducible?</span>.</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">brillhartTrials</span>: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">brillhartTrials(n)</span></tt> sets to <tt class="docutils literal"><span class="pre">n</span></tt> the number of tests in <span class="spadfun">brillhartIrreducible?</span> and returns the previous value.</dd>
+</dl>
+<span class="target" id="l-brillhart-tests-no-linear-factor"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">noLinearFactor?</span>: UP -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">noLinearFactor?(p)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if <tt class="docutils literal"><span class="pre">p</span></tt> can be shown to have no linear factor by a theorem of Lehmer, <tt class="docutils literal"><span class="pre">false</span></tt> else. <tt class="docutils literal"><span class="pre">I</span></tt> insist on the fact that <tt class="docutils literal"><span class="pre">false</span></tt> does not mean that <tt class="docutils literal"><span class="pre">p</span></tt> has a linear factor.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="BoundIntegerRoots.html"
+                        title="previous chapter">BoundIntegerRoots(F, UP)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="CartanKuranishi.html"
+                        title="next chapter">CartanKuranishi(JB, D)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/BrillhartTests.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="CartanKuranishi.html" title="CartanKuranishi(JB, D)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="BoundIntegerRoots.html" title="BoundIntegerRoots(F, UP)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

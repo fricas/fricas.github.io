@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ModularHermitianRowReduction R &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="MomentPackage R" href="MomentPackage.html" />
+    <link rel="prev" title="ModularHermitePadeSolver(F, S)" href="ModularHermitePadeSolver.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="MomentPackage.html" title="MomentPackage R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ModularHermitePadeSolver.html" title="ModularHermitePadeSolver(F, S)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="modularhermitianrowreduction-r">
+<span id="l-modular-hermitian-row-reduction"></span><span id="index-0"></span><h1>ModularHermitianRowReduction R<a class="headerlink" href="#modularhermitianrowreduction-r" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//divisor.spad#L215">divisor.spad line 215</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><em>EuclideanDomain</em></a></li>
+</ul>
+<p>Modular hermitian row reduction. Author: Manuel Bronstein Date Created: 22 February 1989 Date Last Updated: 24 November 1993 Keywords: matrix, reduction.</p>
+<span class="target" id="l-modular-hermitian-row-reduction-normalized-divide"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">normalizedDivide</span>: (R, R) -&gt; Record(quotient: R, remainder: R)</dt>
+<dd><tt class="docutils literal"><span class="pre">normalizedDivide(n,</span> <span class="pre">d)</span></tt> returns a normalized quotient and remainder such that consistently unique representatives for the residue class are chosen, e.g. positive remainders</dd>
+</dl>
+<span class="target" id="l-modular-hermitian-row-reduction-row-ech"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">rowEch</span>: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">rowEch(m)</span></tt> computes a modular row-echelon form of <tt class="docutils literal"><span class="pre">m</span></tt>, finding an appropriate modulus.</dd>
+</dl>
+<span class="target" id="l-modular-hermitian-row-reduction-row-echelon"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">rowEchelon</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, R) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">rowEchelon(m,</span> <span class="pre">d)</span></tt> computes a modular row-echelon form mod <tt class="docutils literal"><span class="pre">d</span></tt> of [<tt class="docutils literal"><span class="pre">d</span></tt> ] [ <tt class="docutils literal"><span class="pre">d</span></tt> ] [ . ] [ <tt class="docutils literal"><span class="pre">d</span></tt>] [ <tt class="docutils literal"><span class="pre">M</span></tt> ] where <tt class="docutils literal"><span class="pre">M</span> <span class="pre">=</span> <span class="pre">m</span> <span class="pre">mod</span> <span class="pre">d</span></tt>.</dd>
+</dl>
+<span class="target" id="l-modular-hermitian-row-reduction-row-echelon-local"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">rowEchelonLocal</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, R, R) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">rowEchelonLocal(m,</span> <span class="pre">d,</span> <span class="pre">p)</span></tt> computes the row-echelon form of <tt class="docutils literal"><span class="pre">m</span></tt> concatenated with <tt class="docutils literal"><span class="pre">d</span></tt> times the identity matrix over a local ring where <tt class="docutils literal"><span class="pre">p</span></tt> is the only prime.</dd>
+</dl>
+<span class="target" id="l-modular-hermitian-row-reduction-row-ech-local"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">rowEchLocal</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, R) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
+<dd><tt class="docutils literal"><span class="pre">rowEchLocal(m,</span> <span class="pre">p)</span></tt> computes a modular row-echelon form of <tt class="docutils literal"><span class="pre">m</span></tt>, finding an appropriate modulus over a local ring where <tt class="docutils literal"><span class="pre">p</span></tt> is the only prime.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="ModularHermitePadeSolver.html"
+                        title="previous chapter">ModularHermitePadeSolver(F, S)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="MomentPackage.html"
+                        title="next chapter">MomentPackage R</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/ModularHermitianRowReduction.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="MomentPackage.html" title="MomentPackage R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ModularHermitePadeSolver.html" title="ModularHermitePadeSolver(F, S)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

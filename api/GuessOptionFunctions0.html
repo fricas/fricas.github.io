@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>GuessOptionFunctions0 &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="HashState" href="HashState.html" />
+    <link rel="prev" title="GuessOption" href="GuessOption.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="HashState.html" title="HashState"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="GuessOption.html" title="GuessOption"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="guessoptionfunctions0">
+<span id="l-guess-option-functions0"></span><span id="index-0"></span><h1>GuessOptionFunctions0<a class="headerlink" href="#guessoptionfunctions0" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//mantepse.spad#L229">mantepse.spad line 229</a></p>
+<p><tt class="docutils literal"><span class="pre">GuessOptionFunctions0</span></tt> provides operations that extract the values of options for <a class="reference internal" href="Guess.html#l-guess"><em>Guess</em></a>.</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-all-degrees"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">allDegrees</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">allDegrees</span> <span class="pre">returns</span></tt> whether all possibilities of the degree vector should be tried, the default being <tt class="docutils literal"><span class="pre">false</span></tt>.</dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-check"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">check</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; Union(skip, MonteCarlo, deterministic)</dt>
+<dd><tt class="docutils literal"><span class="pre">check(d)</span></tt> specifies how we want to check the solution. If the value is &#8220;skip&#8221;, we return the solutions found by the interpolation routine without checking. If the value is &#8220;MonteCarlo&#8221;, we use a probabilistic check. The default is &#8220;deterministic&#8221;.</dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-check-extra-values"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">checkExtraValues</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">checkExtraValues(d)</span></tt> specifies whether we want to check the solution beyond the order given by the degree bounds. The default is <tt class="docutils literal"><span class="pre">true</span></tt>.</dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-check-options"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">checkOptions</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">checkOptions</span> <span class="pre">checks</span></tt> whether the given options are consistent, and yields an error otherwise</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-debug"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">debug</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">debug</span> <span class="pre">returns</span></tt> whether we want additional output on the progress, default being <tt class="docutils literal"><span class="pre">false</span></tt></dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-display-kind"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">displayKind</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">displayKind(d)</span></tt> specifies kind of the result: generating function, recurrence or equation. This option should not be set by the user, but rather by the <tt class="docutils literal"><span class="pre">HP</span></tt>-specification.</dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-function-name"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">functionName</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">functionName</span> <span class="pre">returns</span></tt> the name of the function given by the algebraic differential equation, default being <tt class="docutils literal"><span class="pre">f</span></tt></dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-function-names"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">functionNames</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">functionNames</span> <span class="pre">returns</span></tt> the names for the function in the algebraic dependence, default being %<tt class="docutils literal"><span class="pre">f1</span></tt>, %<tt class="docutils literal"><span class="pre">f2</span></tt>, ...</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-homogeneous"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">homogeneous</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; Union(<a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">homogeneous</span> <span class="pre">returns</span></tt> whether we allow only homogeneous algebraic differential equations, default being <tt class="docutils literal"><span class="pre">false</span></tt></dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-index-name"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">indexName</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">indexName</span> <span class="pre">returns</span></tt> the name of the index variable used for the formulas, default being <tt class="docutils literal"><span class="pre">n</span></tt></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-max-degree"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">maxDegree</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; Union(<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, arbitrary)</dt>
+<dd><tt class="docutils literal"><span class="pre">maxDegree</span> <span class="pre">returns</span></tt> the specified maxDegree.</dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-max-derivative"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">maxDerivative</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; Union(<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, arbitrary)</dt>
+<dd><tt class="docutils literal"><span class="pre">maxDerivative</span> <span class="pre">returns</span></tt> the specified maxDerivative.</dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-max-level"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">maxLevel</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; Union(<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, arbitrary)</dt>
+<dd><tt class="docutils literal"><span class="pre">maxLevel</span> <span class="pre">returns</span></tt> the specified maxLevel.</dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-max-mixed-degree"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">maxMixedDegree</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">maxMixedDegree</span> <span class="pre">returns</span></tt> the specified maxMixedDegree.</dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-max-power"></span><dl class="docutils" id="index-15">
+<dt><span class="spadfun">maxPower</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; Union(<a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, arbitrary)</dt>
+<dd><tt class="docutils literal"><span class="pre">maxPower</span> <span class="pre">returns</span></tt> the specified maxPower.</dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-max-shift"></span><dl class="docutils" id="index-16">
+<dt><span class="spadfun">maxShift</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; Union(<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, arbitrary)</dt>
+<dd><tt class="docutils literal"><span class="pre">maxShift</span> <span class="pre">returns</span></tt> the specified maxShift.</dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-max-subst"></span><dl class="docutils" id="index-17">
+<dt><span class="spadfun">maxSubst</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; Union(<a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, arbitrary)</dt>
+<dd><tt class="docutils literal"><span class="pre">maxSubst</span> <span class="pre">returns</span></tt> the specified maxSubst.</dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-one"></span><dl class="docutils" id="index-18">
+<dt><span class="spadfun">one</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">one</span> <span class="pre">returns</span></tt> whether we need only one solution, default being <tt class="docutils literal"><span class="pre">true</span></tt>.</dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-safety"></span><dl class="docutils" id="index-19">
+<dt><span class="spadfun">safety</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">safety</span> <span class="pre">returns</span></tt> the specified safety or 1 as default.</dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-somos"></span><dl class="docutils" id="index-20">
+<dt><span class="spadfun">Somos</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; Union(<a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">Somos</span> <span class="pre">returns</span></tt> whether we allow only Somos-like operators, default being <tt class="docutils literal"><span class="pre">false</span></tt></dd>
+</dl>
+<span class="target" id="l-guess-option-functions0-variable-name"></span><dl class="docutils" id="index-21">
+<dt><span class="spadfun">variableName</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="GuessOption.html#l-guess-option"><em>GuessOption</em></a> -&gt; <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">variableName</span> <span class="pre">returns</span></tt> the name of the variable used in by the algebraic differential equation, default being <tt class="docutils literal"><span class="pre">x</span></tt></dd>
+</dl>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="GuessOption.html"
+                        title="previous chapter">GuessOption</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="HashState.html"
+                        title="next chapter">HashState</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/GuessOptionFunctions0.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="HashState.html" title="HashState"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="GuessOption.html" title="GuessOption"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

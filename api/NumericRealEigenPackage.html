@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>NumericRealEigenPackage Par &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="NumericTubePlot Curve" href="NumericTubePlot.html" />
+    <link rel="prev" title="NumericContinuedFraction F" href="NumericContinuedFraction.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="NumericTubePlot.html" title="NumericTubePlot Curve"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="NumericContinuedFraction.html" title="NumericContinuedFraction F"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="numericrealeigenpackage-par">
+<span id="l-numeric-real-eigen-package"></span><span id="index-0"></span><h1>NumericRealEigenPackage Par<a class="headerlink" href="#numericrealeigenpackage-par" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//numeigen.spad#L196">numeigen.spad line 196</a></p>
+<ul class="simple">
+<li>Par: Join(<a class="reference internal" href="Field.html#l-field"><em>Field</em></a>, <a class="reference internal" href="OrderedRing.html#l-ordered-ring"><em>OrderedRing</em></a>)</li>
+</ul>
+<p>This package computes explicitly eigenvalues and eigenvectors of matrices with entries over the Rational Numbers. The results are expressed as floating numbers or as rational numbers depending on the type of the parameter Par.</p>
+<span class="target" id="l-numeric-real-eigen-package-characteristic-polynomial"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">characteristicPolynomial</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">characteristicPolynomial(m,</span> <span class="pre">x)</span></tt> returns the characteristic polynomial of the matrix <tt class="docutils literal"><span class="pre">m</span></tt> expressed as polynomial over <tt class="docutils literal"><span class="pre">RN</span></tt> with variable <tt class="docutils literal"><span class="pre">x</span></tt>. Fraction <tt class="docutils literal"><span class="pre">P</span></tt> <tt class="docutils literal"><span class="pre">RN</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">characteristicPolynomial</span>: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">characteristicPolynomial(m)</span></tt> returns the characteristic polynomial of the matrix <tt class="docutils literal"><span class="pre">m</span></tt> expressed as polynomial over <tt class="docutils literal"><span class="pre">RN</span></tt> with a new symbol as variable.</dd>
+</dl>
+<span class="target" id="l-numeric-real-eigen-package-real-eigenvalues"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">realEigenvalues</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, Par) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Par</dt>
+<dd><tt class="docutils literal"><span class="pre">realEigenvalues(m,</span> <span class="pre">eps)</span></tt> computes the eigenvalues of the matrix <tt class="docutils literal"><span class="pre">m</span></tt> to precision eps. The eigenvalues are expressed as floats or rational numbers depending on the type of eps (float or rational).</dd>
+</dl>
+<span class="target" id="l-numeric-real-eigen-package-real-eigenvectors"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">realEigenvectors</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, Par) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(outval: Par, outmult: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, outvect: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> Par)</dt>
+<dd><tt class="docutils literal"><span class="pre">realEigenvectors(m,</span> <span class="pre">eps)</span></tt> returns a list of records each one containing a real eigenvalue, its algebraic multiplicity, and a list of associated eigenvectors. All these results are computed to precision eps as floats or rational numbers depending on the type of eps .</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="NumericContinuedFraction.html"
+                        title="previous chapter">NumericContinuedFraction F</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="NumericTubePlot.html"
+                        title="next chapter">NumericTubePlot Curve</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/NumericRealEigenPackage.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="NumericTubePlot.html" title="NumericTubePlot Curve"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="NumericContinuedFraction.html" title="NumericContinuedFraction F"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>

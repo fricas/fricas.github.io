@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>InnerMatrixLinearAlgebraFunctions(R, Row, Col, M) &mdash; FriCAS 1.2.3 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.2.3',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="InnerMatrixQuotientFieldFunctions(R, Row, Col, M, QF, Row2, Col2, M2)" href="InnerMatrixQuotientFieldFunctions.html" />
+    <link rel="prev" title="InnerCommonDenominator(R, Q, A, B)" href="InnerCommonDenominator.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="InnerMatrixQuotientFieldFunctions.html" title="InnerMatrixQuotientFieldFunctions(R, Row, Col, M, QF, Row2, Col2, M2)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="InnerCommonDenominator.html" title="InnerCommonDenominator(R, Q, A, B)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="innermatrixlinearalgebrafunctions-r-row-col-m">
+<span id="l-inner-matrix-linear-algebra-functions"></span><span id="index-0"></span><h1>InnerMatrixLinearAlgebraFunctions(R, Row, Col, M)<a class="headerlink" href="#innermatrixlinearalgebrafunctions-r-row-col-m" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//matfuns.spad#L1">matfuns.spad line 1</a></p>
+<ul class="simple">
+<li>R: <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></li>
+<li>Row: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><em>FiniteLinearAggregate</em></a> R</li>
+<li>Col: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><em>FiniteLinearAggregate</em></a> R</li>
+<li>M: <a class="reference internal" href="MatrixCategory.html#l-matrix-category"><em>MatrixCategory</em></a>(R, Row, Col)</li>
+</ul>
+<p><a class="reference internal" href="#l-inner-matrix-linear-algebra-functions"><em>InnerMatrixLinearAlgebraFunctions</em></a> is an internal package which provides standard linear algebra functions on domains in <tt class="docutils literal"><span class="pre">MatrixCategory</span></tt></p>
+<span class="target" id="l-inner-matrix-linear-algebra-functions-determinant"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">determinant</span>: M -&gt; R</dt>
+<dd><tt class="docutils literal"><span class="pre">determinant(m)</span></tt> returns the determinant of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>. an error message is returned if the matrix is not square.</dd>
+</dl>
+<span class="target" id="l-inner-matrix-linear-algebra-functions-generalized-inverse"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">generalizedInverse</span>: M -&gt; M</dt>
+<dd><tt class="docutils literal"><span class="pre">generalizedInverse(m)</span></tt> returns the generalized (Moore&#8211;Penrose) inverse of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>, i.e. the matrix <tt class="docutils literal"><span class="pre">h</span></tt> such that m*h*m=h, h*m*h=m, <tt class="docutils literal"><span class="pre">m*h</span></tt> and <tt class="docutils literal"><span class="pre">h*m</span></tt> are both symmetric matrices.</dd>
+</dl>
+<span class="target" id="l-inner-matrix-linear-algebra-functions-inverse"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">inverse</span>: M -&gt; Union(M, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">inverse(m)</span></tt> returns the inverse of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>. If the matrix is not invertible, &#8220;failed&#8221; is returned. Error: if the matrix is not square.</dd>
+</dl>
+<span class="target" id="l-inner-matrix-linear-algebra-functions-nullity"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">nullity</span>: M -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">nullity(m)</span></tt> returns the mullity of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>. This is the dimension of the null space of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+</dl>
+<span class="target" id="l-inner-matrix-linear-algebra-functions-null-space"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">nullSpace</span>: M -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Col if Col has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">nullSpace(m)</span></tt> returns a basis for the null space of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+</dl>
+<span class="target" id="l-inner-matrix-linear-algebra-functions-rank"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">rank</span>: M -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">rank(m)</span></tt> returns the rank of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+</dl>
+<span class="target" id="l-inner-matrix-linear-algebra-functions-row-operation-base"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">row_operation_base</span>: (M, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, R) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">row_operation_base</span> <span class="pre">should</span></tt> be local, but conditional</dd>
+</dl>
+<span class="target" id="l-inner-matrix-linear-algebra-functions-row-operation-modular"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">row_operation_modular</span>: (M, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, R, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">row_operation_modular</span> <span class="pre">should</span></tt> be local, but conditional</dd>
+</dl>
+<span class="target" id="l-inner-matrix-linear-algebra-functions-row-echelon"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">rowEchelon</span>: M -&gt; M</dt>
+<dd><tt class="docutils literal"><span class="pre">rowEchelon(m)</span></tt> returns the row echelon form of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="InnerCommonDenominator.html"
+                        title="previous chapter">InnerCommonDenominator(R, Q, A, B)</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="InnerMatrixQuotientFieldFunctions.html"
+                        title="next chapter">InnerMatrixQuotientFieldFunctions(R, Row, Col, M, QF, Row2, Col2, M2)</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/api/InnerMatrixLinearAlgebraFunctions.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="InnerMatrixQuotientFieldFunctions.html" title="InnerMatrixQuotientFieldFunctions(R, Row, Col, M, QF, Row2, Col2, M2)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="InnerCommonDenominator.html" title="InnerCommonDenominator(R, Q, A, B)"
+             >previous</a> |</li>
+        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+    </div>
+  </body>
+</html>
