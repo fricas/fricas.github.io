@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>AssociatedJordanAlgebra(R, A) &mdash; FriCAS 1.2.3 documentation</title>
+    <title>AssociatedJordanAlgebra(R, A) &mdash; FriCAS 1.2.3 API</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="top" title="FriCAS 1.2.3 API" href="../index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="AssociatedLieAlgebra(R, A)" href="AssociatedLieAlgebra.html" />
     <link rel="prev" title="ArrayStack S" href="ArrayStack.html" /> 
@@ -43,8 +43,8 @@
         <li class="right" >
           <a href="ArrayStack.html" title="ArrayStack S"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
@@ -61,7 +61,7 @@
 <li>R: <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></li>
 <li>A: <a class="reference internal" href="NonAssociativeAlgebra.html#l-non-associative-algebra"><em>NonAssociativeAlgebra</em></a> R</li>
 </ul>
-<p>AssociatedJordanAlgebra takes an algebra <tt class="docutils literal"><span class="pre">A</span></tt> and uses <span class="spadfun">*$A</span> to define the new multiplications <tt class="docutils literal"><span class="pre">a*b</span> <span class="pre">:=</span> <span class="pre">(a</span> <span class="pre">*\$A</span> <span class="pre">b</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">*\$A</span> <span class="pre">a)/2</span></tt> (anticommutator). The usual notation <tt class="docutils literal"><span class="pre">{a,</span> <span class="pre">b}_+</span></tt> cannot be used due to restrictions in the current language. This domain only gives a Jordan algebra if the Jordan-identity <tt class="docutils literal"><span class="pre">(a*b)*c</span> <span class="pre">+</span> <span class="pre">(b*c)*a</span> <span class="pre">+</span> <span class="pre">(c*a)*b</span> <span class="pre">=</span> <span class="pre">0</span></tt> holds for all <tt class="docutils literal"><span class="pre">a</span></tt>, <tt class="docutils literal"><span class="pre">b</span></tt>, <tt class="docutils literal"><span class="pre">c</span></tt> in <tt class="docutils literal"><span class="pre">A</span></tt>. This relation can be checked by <span class="spadfun">jordanAdmissible?()$A</span>. blankline If the underlying algebra is of type <em class="xref std std-ref">FramedNonAssociativeAlgebra(R)</em> (i.e. a non associative algebra over <tt class="docutils literal"><span class="pre">R</span></tt> which is a free <tt class="docutils literal"><span class="pre">R</span></tt>-module of finite rank, together with a fixed <tt class="docutils literal"><span class="pre">R</span></tt>-module basis), then the same is <tt class="docutils literal"><span class="pre">true</span></tt> for the associated Jordan algebra. Moreover, if the underlying algebra is of type <em class="xref std std-ref">FiniteRankNonAssociativeAlgebra(R)</em> (i.e. a non associative algebra over <tt class="docutils literal"><span class="pre">R</span></tt> which is a free <tt class="docutils literal"><span class="pre">R</span></tt>-module of finite rank), then the same <tt class="docutils literal"><span class="pre">true</span></tt> for the associated Jordan algebra.</p>
+<p>AssociatedJordanAlgebra takes an algebra <tt class="docutils literal"><span class="pre">A</span></tt> and uses <span class="spadfun">*$A</span> to define the new multiplications <tt class="docutils literal"><span class="pre">a*b</span> <span class="pre">:=</span> <span class="pre">(a</span> <span class="pre">*\$A</span> <span class="pre">b</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">*\$A</span> <span class="pre">a)/2</span></tt> (anticommutator). The usual notation <tt class="docutils literal"><span class="pre">{a,</span> <span class="pre">b}_+</span></tt> cannot be used due to restrictions in the current language. This domain only gives a Jordan algebra if the Jordan-identity <tt class="docutils literal"><span class="pre">(a*b)*c</span> <span class="pre">+</span> <span class="pre">(b*c)*a</span> <span class="pre">+</span> <span class="pre">(c*a)*b</span> <span class="pre">=</span> <span class="pre">0</span></tt> holds for all <tt class="docutils literal"><span class="pre">a</span></tt>, <tt class="docutils literal"><span class="pre">b</span></tt>, <tt class="docutils literal"><span class="pre">c</span></tt> in <tt class="docutils literal"><span class="pre">A</span></tt>. This relation can be checked by <span class="spadfun">jordanAdmissible?()$A</span>.   If the underlying algebra is of type <em class="xref std std-ref">FramedNonAssociativeAlgebra(R)</em> (i.e. a non associative algebra over <tt class="docutils literal"><span class="pre">R</span></tt> which is a free <tt class="docutils literal"><span class="pre">R</span></tt>-module of finite rank, together with a fixed <tt class="docutils literal"><span class="pre">R</span></tt>-module basis), then the same is <tt class="docutils literal"><span class="pre">true</span></tt> for the associated Jordan algebra. Moreover, if the underlying algebra is of type <em class="xref std std-ref">FiniteRankNonAssociativeAlgebra(R)</em> (i.e. a non associative algebra over <tt class="docutils literal"><span class="pre">R</span></tt> which is a free <tt class="docutils literal"><span class="pre">R</span></tt>-module of finite rank), then the same <tt class="docutils literal"><span class="pre">true</span></tt> for the associated Jordan algebra.</p>
 <dl class="docutils">
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><em>0</em></a>: %</dt>
 <dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
@@ -276,12 +276,16 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ArrayStack.html"
-                        title="previous chapter">ArrayStack S</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="AssociatedLieAlgebra.html"
-                        title="next chapter">AssociatedLieAlgebra(R, A)</a></p>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FriCAS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+</li>
+</ul>
+
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/api/AssociatedJordanAlgebra.txt"
@@ -316,13 +320,14 @@
         <li class="right" >
           <a href="ArrayStack.html" title="ArrayStack S"
              >previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, FriCAS Team.
+      Last updated on May 31, 2014.
     </div>
   </body>
 </html>

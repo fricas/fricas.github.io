@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>FloatingPointSystem &mdash; FriCAS 1.2.3 documentation</title>
+    <title>FloatingPointSystem &mdash; FriCAS 1.2.3 API</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="top" title="FriCAS 1.2.3 API" href="../index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
     <link rel="next" title="FortranFunctionCategory" href="FortranFunctionCategory.html" />
     <link rel="prev" title="FiniteSetAggregate S" href="FiniteSetAggregate.html" /> 
@@ -43,8 +43,8 @@
         <li class="right" >
           <a href="FiniteSetAggregate.html" title="FiniteSetAggregate S"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
@@ -57,7 +57,7 @@
   <div class="section" id="floatingpointsystem">
 <span id="l-floating-point-system"></span><span id="index-0"></span><h1>FloatingPointSystem<a class="headerlink" href="#floatingpointsystem" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//sf.spad#L84">sf.spad line 84</a></p>
-<p>This category is intended as a model for floating point systems. A floating point system is a model for the real numbers. In fact, it is an approximation in the sense that not all real numbers are exactly representable by floating point numbers. A floating point system is characterized by the following: blankline 1: <strong>base</strong> of the <strong>exponent</strong>. (actual implemenations are usually binary or decimal) 2: <strong>precision</strong> of the <strong>mantissa</strong> (arbitrary or fixed) 3: rounding error for operations blankline Because a Float is an approximation to the real numbers, even though it is defined to be a join of a Field and OrderedRing, some of the attributes do not hold. In particular associative(<tt class="docutils literal"><span class="pre">&quot;+&quot;</span></tt>) does not hold. Algorithms defined over a field need special considerations when the field is a floating point system.</p>
+<p>This category is intended as a model for floating point systems. A floating point system is a model for the real numbers. In fact, it is an approximation in the sense that not all real numbers are exactly representable by floating point numbers. A floating point system is characterized by the following:   1: <a class="reference internal" href="#l-floating-point-system-base"><em>base</em></a> of the <a class="reference internal" href="#l-floating-point-system-exponent"><em>exponent</em></a>. (actual implemenations are usually binary or decimal) 2: <a class="reference internal" href="#l-floating-point-system-precision"><em>precision</em></a> of the <a class="reference internal" href="#l-floating-point-system-mantissa"><em>mantissa</em></a> (arbitrary or fixed) 3: rounding error for operations   Because a Float is an approximation to the real numbers, even though it is defined to be a join of a Field and OrderedRing, some of the attributes do not hold. In particular associative(<tt class="docutils literal"><span class="pre">&quot;+&quot;</span></tt>) does not hold. Algorithms defined over a field need special considerations when the field is a floating point system.</p>
 <dl class="docutils">
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><em>0</em></a>: %</dt>
 <dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
@@ -112,7 +112,7 @@
 </dl>
 <span class="target" id="l-floating-point-system-base"></span><dl class="docutils" id="index-1">
 <dt><span class="spadfun">base</span>: () -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">base()</span></tt> returns the base of the <strong>exponent</strong>.</dd>
+<dd><tt class="docutils literal"><span class="pre">base()</span></tt> returns the base of the <a class="reference internal" href="#l-floating-point-system-exponent"><em>exponent</em></a>.</dd>
 </dl>
 <span class="target" id="l-floating-point-system-bits"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">bits</span>: () -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a></dt>
@@ -120,7 +120,7 @@
 </dl>
 <dl class="docutils" id="index-3">
 <dt><span class="spadfun">bits</span>: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a> -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a> if % has <a class="reference internal" href="arbitraryPrecision.html#l-arbitrary-precision"><em>arbitraryPrecision</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">bits(n)</span></tt> set the <strong>precision</strong> to <tt class="docutils literal"><span class="pre">n</span></tt> bits.</dd>
+<dd><tt class="docutils literal"><span class="pre">bits(n)</span></tt> set the <a class="reference internal" href="#l-floating-point-system-precision"><em>precision</em></a> to <tt class="docutils literal"><span class="pre">n</span></tt> bits.</dd>
 <dt><a class="reference internal" href="RealNumberSystem.html#l-real-number-system-ceiling"><em>ceiling</em></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="RealNumberSystem.html#l-real-number-system"><em>RealNumberSystem</em></a></dd>
 <dt><a class="reference internal" href="Ring.html#l-ring-characteristic"><em>characteristic</em></a>: () -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
@@ -142,7 +142,7 @@
 </dl>
 <span class="target" id="l-floating-point-system-decrease-precision"></span><dl class="docutils" id="index-4">
 <dt><span class="spadfun">decreasePrecision</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a> if % has <a class="reference internal" href="arbitraryPrecision.html#l-arbitrary-precision"><em>arbitraryPrecision</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">decreasePrecision(n)</span></tt> decreases the current <strong>precision</strong> precision by <tt class="docutils literal"><span class="pre">n</span></tt> decimal digits.</dd>
+<dd><tt class="docutils literal"><span class="pre">decreasePrecision(n)</span></tt> decreases the current <a class="reference internal" href="#l-floating-point-system-precision"><em>precision</em></a> precision by <tt class="docutils literal"><span class="pre">n</span></tt> decimal digits.</dd>
 </dl>
 <span class="target" id="l-floating-point-system-digits"></span><dl class="docutils" id="index-5">
 <dt><span class="spadfun">digits</span>: () -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a></dt>
@@ -150,7 +150,7 @@
 </dl>
 <dl class="docutils" id="index-6">
 <dt><span class="spadfun">digits</span>: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a> -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a> if % has <a class="reference internal" href="arbitraryPrecision.html#l-arbitrary-precision"><em>arbitraryPrecision</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">digits(d)</span></tt> set the <strong>precision</strong> to <tt class="docutils literal"><span class="pre">d</span></tt> digits.</dd>
+<dd><tt class="docutils literal"><span class="pre">digits(d)</span></tt> set the <a class="reference internal" href="#l-floating-point-system-precision"><em>precision</em></a> to <tt class="docutils literal"><span class="pre">d</span></tt> digits.</dd>
 <dt><a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain-divide"><em>divide</em></a>: (%, %) -&gt; Record(quotient: %, remainder: %)</dt>
 <dd>from <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><em>EuclideanDomain</em></a></dd>
 <dt><a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain-euclidean-size"><em>euclideanSize</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
@@ -158,7 +158,7 @@
 </dl>
 <span class="target" id="l-floating-point-system-exponent"></span><dl class="docutils" id="index-7">
 <dt><span class="spadfun">exponent</span>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">exponent(x)</span></tt> returns the <strong>exponent</strong> part of <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+<dd><tt class="docutils literal"><span class="pre">exponent(x)</span></tt> returns the <a class="reference internal" href="#l-floating-point-system-exponent"><em>exponent</em></a> part of <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
 <dt><a class="reference internal" href="PrincipalIdealDomain.html#l-principal-ideal-domain-express-ideal-member"><em>expressIdealMember</em></a>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> %, %) -&gt; Union(<a class="reference internal" href="List.html#l-list"><em>List</em></a> %, failed)</dt>
 <dd>from <a class="reference internal" href="PrincipalIdealDomain.html#l-principal-ideal-domain"><em>PrincipalIdealDomain</em></a></dd>
 <dt><a class="reference internal" href="EntireRing.html#l-entire-ring-exquo"><em>exquo</em></a>: (%, %) -&gt; Union(%, failed)</dt>
@@ -194,7 +194,7 @@
 </dl>
 <span class="target" id="l-floating-point-system-increase-precision"></span><dl class="docutils" id="index-10">
 <dt><span class="spadfun">increasePrecision</span>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a> if % has <a class="reference internal" href="arbitraryPrecision.html#l-arbitrary-precision"><em>arbitraryPrecision</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">increasePrecision(n)</span></tt> increases the current <strong>precision</strong> by <tt class="docutils literal"><span class="pre">n</span></tt> decimal digits.</dd>
+<dd><tt class="docutils literal"><span class="pre">increasePrecision(n)</span></tt> increases the current <a class="reference internal" href="#l-floating-point-system-precision"><em>precision</em></a> by <tt class="docutils literal"><span class="pre">n</span></tt> decimal digits.</dd>
 <dt><a class="reference internal" href="DivisionRing.html#l-division-ring-inv"><em>inv</em></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="DivisionRing.html#l-division-ring"><em>DivisionRing</em></a></dd>
 <dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
@@ -367,12 +367,16 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="FiniteSetAggregate.html"
-                        title="previous chapter">FiniteSetAggregate S</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="FortranFunctionCategory.html"
-                        title="next chapter">FortranFunctionCategory</a></p>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FriCAS</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+</li>
+</ul>
+
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/api/FloatingPointSystem.txt"
@@ -407,13 +411,14 @@
         <li class="right" >
           <a href="FiniteSetAggregate.html" title="FiniteSetAggregate S"
              >previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, FriCAS Team.
+      Last updated on May 31, 2014.
     </div>
   </body>
 </html>

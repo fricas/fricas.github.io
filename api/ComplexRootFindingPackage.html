@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>ComplexRootFindingPackage(R, UP) &mdash; FriCAS 1.2.3 documentation</title>
+    <title>ComplexRootFindingPackage(R, UP) &mdash; FriCAS 1.2.3 API</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="top" title="FriCAS 1.2.3 API" href="../index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="ComplexRootPackage(UP, Par)" href="ComplexRootPackage.html" />
     <link rel="prev" title="ComplexPatternMatch(R, S, CS)" href="ComplexPatternMatch.html" /> 
@@ -43,8 +43,8 @@
         <li class="right" >
           <a href="ComplexPatternMatch.html" title="ComplexPatternMatch(R, S, CS)"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
@@ -61,7 +61,7 @@
 <li>R: Join(<a class="reference internal" href="Field.html#l-field"><em>Field</em></a>, <a class="reference internal" href="OrderedRing.html#l-ordered-ring"><em>OrderedRing</em></a>)</li>
 <li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> <a class="reference internal" href="Complex.html#l-complex"><em>Complex</em></a> R</li>
 </ul>
-<p><a class="reference internal" href="#l-complex-root-finding-package"><em>ComplexRootFindingPackage</em></a> provides functions to find all roots of a polynomial <tt class="docutils literal"><span class="pre">p</span></tt> over the complex number by using Plesken<tt class="docutils literal"><span class="pre">'s</span></tt> idea to calculate in the polynomial ring modulo <tt class="docutils literal"><span class="pre">f</span></tt> and employing the Chinese Remainder Theorem. In this first version, the precision (see <strong>digits</strong>) is not increased when this is necessary to avoid rounding errors. Hence it is the user<tt class="docutils literal"><span class="pre">'s</span></tt> responsibility to increase the precision if necessary. Note also, if this package is called with e.g. <em class="xref std std-ref">Fraction Integer</em>, the precise calculations could require a lot of time. Also note that evaluating the zeros is not necessarily a good check whether the result is correct: already evaluation can cause rounding errors.</p>
+<p><a class="reference internal" href="#l-complex-root-finding-package"><em>ComplexRootFindingPackage</em></a> provides functions to find all roots of a polynomial <tt class="docutils literal"><span class="pre">p</span></tt> over the complex number by using Plesken<tt class="docutils literal"><span class="pre">'s</span></tt> idea to calculate in the polynomial ring modulo <tt class="docutils literal"><span class="pre">f</span></tt> and employing the Chinese Remainder Theorem. In this first version, the precision (see <em class="xref std std-ref">digits</em>) is not increased when this is necessary to avoid rounding errors. Hence it is the user<tt class="docutils literal"><span class="pre">'s</span></tt> responsibility to increase the precision if necessary. Note also, if this package is called with e.g. <em class="xref std std-ref">Fraction Integer</em>, the precise calculations could require a lot of time. Also note that evaluating the zeros is not necessarily a good check whether the result is correct: already evaluation can cause rounding errors.</p>
 <span class="target" id="l-complex-root-finding-package-complex-zeros"></span><dl class="docutils" id="index-1">
 <dt><span class="spadfun">complexZeros</span>: (UP, R) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Complex.html#l-complex"><em>Complex</em></a> R</dt>
 <dd><tt class="docutils literal"><span class="pre">complexZeros(p,</span> <span class="pre">eps)</span></tt> tries to determine all complex zeros of the polynomial <tt class="docutils literal"><span class="pre">p</span></tt> with accuracy given by <em>eps</em>.</dd>
@@ -96,7 +96,7 @@
 </dl>
 <span class="target" id="l-complex-root-finding-package-norm"></span><dl class="docutils" id="index-9">
 <dt><span class="spadfun">norm</span>: UP -&gt; R</dt>
-<dd><tt class="docutils literal"><span class="pre">norm(p)</span></tt> determines sum of absolute values of coefficients Note: this function depends on <strong>abs</strong>.</dd>
+<dd><tt class="docutils literal"><span class="pre">norm(p)</span></tt> determines sum of absolute values of coefficients Note: this function depends on <em class="xref std std-ref">abs</em>.</dd>
 </dl>
 <span class="target" id="l-complex-root-finding-package-plesken-split"></span><dl class="docutils" id="index-10">
 <dt><span class="spadfun">pleskenSplit</span>: (UP, R) -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> UP</dt>
@@ -138,12 +138,16 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ComplexPatternMatch.html"
-                        title="previous chapter">ComplexPatternMatch(R, S, CS)</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="ComplexRootPackage.html"
-                        title="next chapter">ComplexRootPackage(UP, Par)</a></p>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FriCAS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+</li>
+</ul>
+
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/api/ComplexRootFindingPackage.txt"
@@ -178,13 +182,14 @@
         <li class="right" >
           <a href="ComplexPatternMatch.html" title="ComplexPatternMatch(R, S, CS)"
              >previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, FriCAS Team.
+      Last updated on May 31, 2014.
     </div>
   </body>
 </html>

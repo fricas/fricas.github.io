@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SquareFreeRegularSetDecompositionPackage(R, E, V, P, TS) &mdash; FriCAS 1.2.3 documentation</title>
+    <title>SquareFreeRegularSetDecompositionPackage(R, E, V, P, TS) &mdash; FriCAS 1.2.3 API</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="top" title="FriCAS 1.2.3 API" href="../index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="SquareFreeRegularTriangularSetGcdPackage(R, E, V, P, TS)" href="SquareFreeRegularTriangularSetGcdPackage.html" />
     <link rel="prev" title="SquareFreeQuasiComponentPackage(R, E, V, P, TS)" href="SquareFreeQuasiComponentPackage.html" /> 
@@ -43,8 +43,8 @@
         <li class="right" >
           <a href="SquareFreeQuasiComponentPackage.html" title="SquareFreeQuasiComponentPackage(R, E, V, P, TS)"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
@@ -64,7 +64,7 @@
 <li>P: <a class="reference internal" href="RecursivePolynomialCategory.html#l-recursive-polynomial-category"><em>RecursivePolynomialCategory</em></a>(R, E, V)</li>
 <li>TS: <a class="reference internal" href="SquareFreeRegularTriangularSetCategory.html#l-square-free-regular-triangular-set-category"><em>SquareFreeRegularTriangularSetCategory</em></a>(R, E, V, P)</li>
 </ul>
-<p>A package providing a new algorithm for solving polynomial systems by means of regular chains. Two ways of solving are provided: in the sense of Zariski closure (like in Kalkbrener<tt class="docutils literal"><span class="pre">'s</span></tt> algorithm) or in the sense of the regular zeros (like in Wu, Wang or Lazard- Moreno methods). This algorithm is valid for nay type of regular set. It does not care about the way a polynomial is added in an regular set, or how two quasi-components are compared (by an inclusion-test), or how the invertibility test is made in the tower of simple extensions associated with a regular set. These operations are realized respectively by the domain <tt class="docutils literal"><span class="pre">TS</span></tt> and the packages <tt class="docutils literal"><span class="pre">QCMPPK(R,</span> <span class="pre">E,</span> <span class="pre">V,</span> <span class="pre">P,</span> <span class="pre">TS)</span></tt> and <tt class="docutils literal"><span class="pre">RSETGCD(R,</span> <span class="pre">E,</span> <span class="pre">V,</span> <span class="pre">P,</span> <span class="pre">TS)</span></tt>. The same way it does not care about the way univariate polynomial gcds (with coefficients in the tower of simple extensions associated with a regular set) are computed. The only requirement is that these gcds need to have invertible initials (normalized or not). WARNING. There is no need for a user to call diectly any operation of this package since they can be accessed by the domain <em class="xref std std-ref">TS</em>. Thus, the operations of this package are not documented.newline</p>
+<p>A package providing a new algorithm for solving polynomial systems by means of regular chains. Two ways of solving are provided: in the sense of Zariski closure (like in Kalkbrener<tt class="docutils literal"><span class="pre">'s</span></tt> algorithm) or in the sense of the regular zeros (like in Wu, Wang or Lazard- Moreno methods). This algorithm is valid for nay type of regular set. It does not care about the way a polynomial is added in an regular set, or how two quasi-components are compared (by an inclusion-test), or how the invertibility test is made in the tower of simple extensions associated with a regular set. These operations are realized respectively by the domain <tt class="docutils literal"><span class="pre">TS</span></tt> and the packages <tt class="docutils literal"><span class="pre">QCMPPK(R,</span> <span class="pre">E,</span> <span class="pre">V,</span> <span class="pre">P,</span> <span class="pre">TS)</span></tt> and <tt class="docutils literal"><span class="pre">RSETGCD(R,</span> <span class="pre">E,</span> <span class="pre">V,</span> <span class="pre">P,</span> <span class="pre">TS)</span></tt>. The same way it does not care about the way univariate polynomial gcds (with coefficients in the tower of simple extensions associated with a regular set) are computed. The only requirement is that these gcds need to have invertible initials (normalized or not). WARNING. There is no need for a user to call diectly any operation of this package since they can be accessed by the domain <em class="xref std std-ref">TS</em>. Thus, the operations of this package are not documented.</p>
 <span class="target" id="l-square-free-regular-set-decomposition-package-algebraic-decompose"></span><p id="index-1"><span class="spadfun">algebraicDecompose</span>: (P, TS) -&gt; Record(done: <a class="reference internal" href="List.html#l-list"><em>List</em></a> TS, todo: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(val: <a class="reference internal" href="List.html#l-list"><em>List</em></a> P, tower: TS))</p>
 <span class="target" id="l-square-free-regular-set-decomposition-package-convert"></span><p id="index-2"><span class="spadfun">convert</span>: Record(val: <a class="reference internal" href="List.html#l-list"><em>List</em></a> P, tower: TS) -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></p>
 <span class="target" id="l-square-free-regular-set-decomposition-package-decompose"></span><p id="index-3"><span class="spadfun">decompose</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> P, <a class="reference internal" href="List.html#l-list"><em>List</em></a> TS, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> TS</p>
@@ -86,12 +86,16 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="SquareFreeQuasiComponentPackage.html"
-                        title="previous chapter">SquareFreeQuasiComponentPackage(R, E, V, P, TS)</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="SquareFreeRegularTriangularSetGcdPackage.html"
-                        title="next chapter">SquareFreeRegularTriangularSetGcdPackage(R, E, V, P, TS)</a></p>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FriCAS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+</li>
+</ul>
+
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/api/SquareFreeRegularSetDecompositionPackage.txt"
@@ -126,13 +130,14 @@
         <li class="right" >
           <a href="SquareFreeQuasiComponentPackage.html" title="SquareFreeQuasiComponentPackage(R, E, V, P, TS)"
              >previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, FriCAS Team.
+      Last updated on May 31, 2014.
     </div>
   </body>
 </html>

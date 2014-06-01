@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>DifferentialVariableCategory S &mdash; FriCAS 1.2.3 documentation</title>
+    <title>DifferentialVariableCategory S &mdash; FriCAS 1.2.3 API</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="top" title="FriCAS 1.2.3 API" href="../index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
     <link rel="next" title="DirectProductCategory(dim, R)" href="DirectProductCategory.html" />
     <link rel="prev" title="DifferentialRing" href="DifferentialRing.html" /> 
@@ -43,8 +43,8 @@
         <li class="right" >
           <a href="DifferentialRing.html" title="DifferentialRing"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
@@ -60,7 +60,7 @@
 <ul class="simple">
 <li>S: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></li>
 </ul>
-<p><a class="reference internal" href="#l-differential-variable-category"><em>DifferentialVariableCategory</em></a> constructs the set of derivatives of a given set of (ordinary) differential indeterminates. If <tt class="docutils literal"><span class="pre">x</span></tt>, ..., <tt class="docutils literal"><span class="pre">y</span></tt> is an ordered set of differential indeterminates, and the prime notation is used for differentiation, then the set of derivatives (including zero-th order) of the differential indeterminates is <tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">x'</span></tt>, <tt class="docutils literal"><span class="pre">x''</span></tt>, ..., <tt class="docutils literal"><span class="pre">y</span></tt>, <tt class="docutils literal"><span class="pre">y'</span></tt>, <tt class="docutils literal"><span class="pre">y''</span></tt>, ... (Note: in the interpreter, the <tt class="docutils literal"><span class="pre">n</span></tt>-th derivative of <tt class="docutils literal"><span class="pre">y</span></tt> is displayed as <tt class="docutils literal"><span class="pre">y</span></tt> with a subscript <tt class="docutils literal"><span class="pre">n</span></tt>.) This set is viewed as a set of algebraic indeterminates, totally ordered in a way compatible with differentiation and the given order on the differential indeterminates. Such a total order is called a ranking of the differential indeterminates. blankline A domain in this category is needed to construct a differential polynomial domain. Differential polynomials are ordered by a ranking on the derivatives, and by an order (extending the ranking) on on the set of differential monomials. One may thus associate a domain in this category with a ranking of the differential indeterminates, just as one associates a domain in the category <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a> with an ordering of the set of monomials in a set of algebraic indeterminates. The ranking is specified through the binary relation <span class="spadfun">&lt;</span>. For example, one may define one derivative to be less than another by lexicographically comparing first the <span class="spadfun">order</span>, then the given order of the differential indeterminates appearing in the derivatives. This is the default implementation. blankline The notion of weight generalizes that of degree. A polynomial domain may be made into a graded ring if a weight function is given on the set of indeterminates, Very often, a grading is the first step in ordering the set of monomials. For differential polynomial domains, this constructor provides a function <span class="spadfun">weight</span>, which allows the assignment of a non-negative number to each derivative of a differential indeterminate. For example, one may define the weight of a derivative to be simply its <span class="spadfun">order</span> (this is the default assignment). This weight function can then be extended to the set of all differential polynomials, providing a graded ring structure.</p>
+<p><a class="reference internal" href="#l-differential-variable-category"><em>DifferentialVariableCategory</em></a> constructs the set of derivatives of a given set of (ordinary) differential indeterminates. If <tt class="docutils literal"><span class="pre">x</span></tt>, ..., <tt class="docutils literal"><span class="pre">y</span></tt> is an ordered set of differential indeterminates, and the prime notation is used for differentiation, then the set of derivatives (including zero-th order) of the differential indeterminates is <tt class="docutils literal"><span class="pre">x</span></tt>, <tt class="docutils literal"><span class="pre">x'</span></tt>, <tt class="docutils literal"><span class="pre">x''</span></tt>, ..., <tt class="docutils literal"><span class="pre">y</span></tt>, <tt class="docutils literal"><span class="pre">y'</span></tt>, <tt class="docutils literal"><span class="pre">y''</span></tt>, ... (Note: in the interpreter, the <tt class="docutils literal"><span class="pre">n</span></tt>-th derivative of <tt class="docutils literal"><span class="pre">y</span></tt> is displayed as <tt class="docutils literal"><span class="pre">y</span></tt> with a subscript <tt class="docutils literal"><span class="pre">n</span></tt>.) This set is viewed as a set of algebraic indeterminates, totally ordered in a way compatible with differentiation and the given order on the differential indeterminates. Such a total order is called a ranking of the differential indeterminates.   A domain in this category is needed to construct a differential polynomial domain. Differential polynomials are ordered by a ranking on the derivatives, and by an order (extending the ranking) on on the set of differential monomials. One may thus associate a domain in this category with a ranking of the differential indeterminates, just as one associates a domain in the category <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a> with an ordering of the set of monomials in a set of algebraic indeterminates. The ranking is specified through the binary relation <span class="spadfun">&lt;</span>. For example, one may define one derivative to be less than another by lexicographically comparing first the <span class="spadfun">order</span>, then the given order of the differential indeterminates appearing in the derivatives. This is the default implementation.   The notion of weight generalizes that of degree. A polynomial domain may be made into a graded ring if a weight function is given on the set of indeterminates, Very often, a grading is the first step in ordering the set of monomials. For differential polynomial domains, this constructor provides a function <span class="spadfun">weight</span>, which allows the assignment of a non-negative number to each derivative of a differential indeterminate. For example, one may define the weight of a derivative to be simply its <span class="spadfun">order</span> (this is the default assignment). This weight function can then be extended to the set of all differential polynomials, providing a graded ring structure.</p>
 <dl class="docutils">
 <dt><a class="reference internal" href="PartialOrder.html#id1"><em>&lt;</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
 <dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
@@ -136,12 +136,16 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="DifferentialRing.html"
-                        title="previous chapter">DifferentialRing</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="DirectProductCategory.html"
-                        title="next chapter">DirectProductCategory(dim, R)</a></p>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FriCAS</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+</li>
+</ul>
+
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/api/DifferentialVariableCategory.txt"
@@ -176,13 +180,14 @@
         <li class="right" >
           <a href="DifferentialRing.html" title="DifferentialRing"
              >previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, FriCAS Team.
+      Last updated on May 31, 2014.
     </div>
   </body>
 </html>

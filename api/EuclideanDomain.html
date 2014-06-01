@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>EuclideanDomain &mdash; FriCAS 1.2.3 documentation</title>
+    <title>EuclideanDomain &mdash; FriCAS 1.2.3 API</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="top" title="FriCAS 1.2.3 API" href="../index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
     <link rel="next" title="Evalable R" href="Evalable.html" />
     <link rel="prev" title="EntireRing" href="EntireRing.html" /> 
@@ -43,8 +43,8 @@
         <li class="right" >
           <a href="EntireRing.html" title="EntireRing"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
@@ -57,7 +57,7 @@
   <div class="section" id="euclideandomain">
 <span id="l-euclidean-domain"></span><span id="index-0"></span><h1>EuclideanDomain<a class="headerlink" href="#euclideandomain" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//catdef.spad#L441">catdef.spad line 441</a></p>
-<p>A constructive euclidean domain, i.e. one can divide producing a quotient and a remainder where the remainder is either zero or is smaller (<span class="spadfun">euclideanSize</span>) than the divisor. blankline Conditional attributes: multiplicativeValuation <tt class="docutils literal"><span class="pre">Size(a*b)=Size(a)*Size(b)</span></tt> additiveValuation <tt class="docutils literal"><span class="pre">Size(a*b)=Size(a)+Size(b)</span></tt></p>
+<p>A constructive euclidean domain, i.e. one can divide producing a quotient and a remainder where the remainder is either zero or is smaller (<span class="spadfun">euclideanSize</span>) than the divisor.   Conditional attributes: multiplicativeValuation <tt class="docutils literal"><span class="pre">Size(a*b)=Size(a)*Size(b)</span></tt> additiveValuation <tt class="docutils literal"><span class="pre">Size(a*b)=Size(a)+Size(b)</span></tt></p>
 <dl class="docutils">
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><em>0</em></a>: %</dt>
 <dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
@@ -100,7 +100,7 @@
 </dl>
 <span class="target" id="l-euclidean-domain-divide"></span><dl class="docutils" id="index-1">
 <dt><span class="spadfun">divide</span>: (%, %) -&gt; Record(quotient: %, remainder: %)</dt>
-<dd><tt class="docutils literal"><span class="pre">divide(x,</span> <span class="pre">y)</span></tt> divides <tt class="docutils literal"><span class="pre">x</span></tt> by <tt class="docutils literal"><span class="pre">y</span></tt> producing a record containing a <tt class="docutils literal"><span class="pre">quotient</span></tt> and <tt class="docutils literal"><span class="pre">remainder</span></tt>, where the remainder is smaller (see <strong>sizeLess?</strong>) than the divisor <tt class="docutils literal"><span class="pre">y</span></tt>.</dd>
+<dd><tt class="docutils literal"><span class="pre">divide(x,</span> <span class="pre">y)</span></tt> divides <tt class="docutils literal"><span class="pre">x</span></tt> by <tt class="docutils literal"><span class="pre">y</span></tt> producing a record containing a <tt class="docutils literal"><span class="pre">quotient</span></tt> and <tt class="docutils literal"><span class="pre">remainder</span></tt>, where the remainder is smaller (see <a class="reference internal" href="#l-euclidean-domain-size-less"><em>sizeLess?</em></a>) than the divisor <tt class="docutils literal"><span class="pre">y</span></tt>.</dd>
 </dl>
 <span class="target" id="l-euclidean-domain-euclidean-size"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">euclideanSize</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
@@ -148,19 +148,19 @@
 </dl>
 <span class="target" id="l-euclidean-domain-quo"></span><dl class="docutils" id="index-6">
 <dt><span class="spadfun">quo</span>: (%, %) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">x</span> <span class="pre">quo</span> <span class="pre">y</span></tt> is the same as <tt class="docutils literal"><span class="pre">divide(x,</span> <span class="pre">y).quotient</span></tt>. See <strong>divide</strong>.</dd>
+<dd><tt class="docutils literal"><span class="pre">x</span> <span class="pre">quo</span> <span class="pre">y</span></tt> is the same as <tt class="docutils literal"><span class="pre">divide(x,</span> <span class="pre">y).quotient</span></tt>. See <a class="reference internal" href="#l-euclidean-domain-divide"><em>divide</em></a>.</dd>
 <dt><a class="reference internal" href="Monoid.html#l-monoid-recip"><em>recip</em></a>: % -&gt; Union(%, failed)</dt>
 <dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
 </dl>
 <span class="target" id="l-euclidean-domain-rem"></span><dl class="docutils" id="index-7">
 <dt><span class="spadfun">rem</span>: (%, %) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">x</span> <span class="pre">rem</span> <span class="pre">y</span></tt> is the same as <tt class="docutils literal"><span class="pre">divide(x,</span> <span class="pre">y).remainder</span></tt>. See <strong>divide</strong>.</dd>
+<dd><tt class="docutils literal"><span class="pre">x</span> <span class="pre">rem</span> <span class="pre">y</span></tt> is the same as <tt class="docutils literal"><span class="pre">divide(x,</span> <span class="pre">y).remainder</span></tt>. See <a class="reference internal" href="#l-euclidean-domain-divide"><em>divide</em></a>.</dd>
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-sample"><em>sample</em></a>: %</dt>
 <dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
 </dl>
 <span class="target" id="l-euclidean-domain-size-less"></span><dl class="docutils" id="index-8">
 <dt><span class="spadfun">sizeLess?</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">sizeLess?(x,</span> <span class="pre">y)</span></tt> tests whether <tt class="docutils literal"><span class="pre">x</span></tt> is strictly smaller than <tt class="docutils literal"><span class="pre">y</span></tt> with respect to the <strong>euclideanSize</strong>.</dd>
+<dd><tt class="docutils literal"><span class="pre">sizeLess?(x,</span> <span class="pre">y)</span></tt> tests whether <tt class="docutils literal"><span class="pre">x</span></tt> is strictly smaller than <tt class="docutils literal"><span class="pre">y</span></tt> with respect to the <a class="reference internal" href="#l-euclidean-domain-euclidean-size"><em>euclideanSize</em></a>.</dd>
 <dt><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid-subtract-if-can"><em>subtractIfCan</em></a>: (%, %) -&gt; Union(%, failed)</dt>
 <dd>from <a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a></dd>
 <dt><a class="reference internal" href="EntireRing.html#l-entire-ring-unit"><em>unit?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
@@ -207,12 +207,16 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="EntireRing.html"
-                        title="previous chapter">EntireRing</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="Evalable.html"
-                        title="next chapter">Evalable R</a></p>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FriCAS</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+</li>
+</ul>
+
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/api/EuclideanDomain.txt"
@@ -247,13 +251,14 @@
         <li class="right" >
           <a href="EntireRing.html" title="EntireRing"
              >previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, FriCAS Team.
+      Last updated on May 31, 2014.
     </div>
   </body>
 </html>

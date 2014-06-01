@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>CartesianTensorFunctions2(minix, dim, S, T$) &mdash; FriCAS 1.2.3 documentation</title>
+    <title>CartesianTensorFunctions2(minix, dim, S, T) &mdash; FriCAS 1.2.3 API</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="top" title="FriCAS 1.2.3 API" href="../index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="ChangeOfVariable(F, UP, UPUP)" href="ChangeOfVariable.html" />
     <link rel="prev" title="CartanKuranishi(JB, D)" href="CartanKuranishi.html" /> 
@@ -43,8 +43,8 @@
         <li class="right" >
           <a href="CartanKuranishi.html" title="CartanKuranishi(JB, D)"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,21 +55,21 @@
           <div class="body">
             
   <div class="section" id="cartesiantensorfunctions2-minix-dim-s-t">
-<span id="l-cartesian-tensor-functions2"></span><span id="index-0"></span><h1>CartesianTensorFunctions2(minix, dim, S, T$)<a class="headerlink" href="#cartesiantensorfunctions2-minix-dim-s-t" title="Permalink to this headline">¶</a></h1>
+<span id="l-cartesian-tensor-functions2"></span><span id="index-0"></span><h1>CartesianTensorFunctions2(minix, dim, S, T)<a class="headerlink" href="#cartesiantensorfunctions2-minix-dim-s-t" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//carten.spad#L583">carten.spad line 583</a></p>
 <ul class="simple">
 <li>minix: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></li>
 <li>dim: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></li>
 <li>S: <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></li>
-<li>T$: <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></li>
+<li>T: <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></li>
 </ul>
 <p>This package provides functions to enable conversion of tensors given conversion of the components.</p>
 <span class="target" id="l-cartesian-tensor-functions2-map"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">map</span>: (S -&gt; T$, <a class="reference internal" href="CartesianTensor.html#l-cartesian-tensor"><em>CartesianTensor</em></a>(minix, dim, S)) -&gt; <a class="reference internal" href="CartesianTensor.html#l-cartesian-tensor"><em>CartesianTensor</em></a>(minix, dim, T$)</dt>
+<dt><span class="spadfun">map</span>: (S -&gt; T, <a class="reference internal" href="CartesianTensor.html#l-cartesian-tensor"><em>CartesianTensor</em></a>(minix, dim, S)) -&gt; <a class="reference internal" href="CartesianTensor.html#l-cartesian-tensor"><em>CartesianTensor</em></a>(minix, dim, T)</dt>
 <dd><tt class="docutils literal"><span class="pre">map(f,</span> <span class="pre">ts)</span></tt> does a componentwise conversion of the tensor <tt class="docutils literal"><span class="pre">ts</span></tt> to a tensor with components of type <tt class="docutils literal"><span class="pre">T</span></tt>.</dd>
 </dl>
 <span class="target" id="l-cartesian-tensor-functions2-reshape"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">reshape</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> T$, <a class="reference internal" href="CartesianTensor.html#l-cartesian-tensor"><em>CartesianTensor</em></a>(minix, dim, S)) -&gt; <a class="reference internal" href="CartesianTensor.html#l-cartesian-tensor"><em>CartesianTensor</em></a>(minix, dim, T$)</dt>
+<dt><span class="spadfun">reshape</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> T, <a class="reference internal" href="CartesianTensor.html#l-cartesian-tensor"><em>CartesianTensor</em></a>(minix, dim, S)) -&gt; <a class="reference internal" href="CartesianTensor.html#l-cartesian-tensor"><em>CartesianTensor</em></a>(minix, dim, T)</dt>
 <dd><tt class="docutils literal"><span class="pre">reshape(lt,</span> <span class="pre">ts)</span></tt> organizes the list of components <tt class="docutils literal"><span class="pre">lt</span></tt> into a tensor with the same shape as <tt class="docutils literal"><span class="pre">ts</span></tt>.</dd>
 </dl>
 </div>
@@ -80,12 +80,16 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="CartanKuranishi.html"
-                        title="previous chapter">CartanKuranishi(JB, D)</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="ChangeOfVariable.html"
-                        title="next chapter">ChangeOfVariable(F, UP, UPUP)</a></p>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FriCAS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+</li>
+</ul>
+
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/api/CartesianTensorFunctions2.txt"
@@ -120,13 +124,14 @@
         <li class="right" >
           <a href="CartanKuranishi.html" title="CartanKuranishi(JB, D)"
              >previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, FriCAS Team.
+      Last updated on May 31, 2014.
     </div>
   </body>
 </html>

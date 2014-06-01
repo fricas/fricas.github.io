@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>ParametricLinearEquations(R, Var, Expon, GR) &mdash; FriCAS 1.2.3 documentation</title>
+    <title>ParametricLinearEquations(R, Var, Expon, GR) &mdash; FriCAS 1.2.3 API</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="top" title="FriCAS 1.2.3 API" href="../index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="ParametricPlaneCurveFunctions2(CF1, CF2)" href="ParametricPlaneCurveFunctions2.html" />
     <link rel="prev" title="ParallelIntegrationTools(R, V, P)" href="ParallelIntegrationTools.html" /> 
@@ -43,8 +43,8 @@
         <li class="right" >
           <a href="ParallelIntegrationTools.html" title="ParallelIntegrationTools(R, V, P)"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
@@ -63,7 +63,7 @@
 <li>Expon: <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a></li>
 <li>GR: <a class="reference internal" href="PolynomialCategory.html#l-polynomial-category"><em>PolynomialCategory</em></a>(R, Expon, Var)</li>
 </ul>
-<p>This package completely solves a parametric linear system of equations by decomposing the set of all parametric values for which the linear system is consistent into a union of quasi-algebraic sets (which need not be irredundant, but most of the time is). Each quasi-algebraic set is described by a list of polynomials that vanish on the set, and a list of polynomials that vanish at no point of the set. For each quasi-algebraic set, the solution of the linear system is given, as a particular solution and a basis of the homogeneous system. The parametric linear system should be given in matrix form, with a coefficient matrix and a right hand side vector. The entries of the coefficient matrix and right hand side vector should be polynomials in the parametric variables, over a Euclidean domain of characteristic zero. blankline If the system is homogeneous, the right hand side need not be given. The right hand side can also be replaced by an indeterminate vector, in which case, the conditions required for consistency will also be given.</p>
+<p>This package completely solves a parametric linear system of equations by decomposing the set of all parametric values for which the linear system is consistent into a union of quasi-algebraic sets (which need not be irredundant, but most of the time is). Each quasi-algebraic set is described by a list of polynomials that vanish on the set, and a list of polynomials that vanish at no point of the set. For each quasi-algebraic set, the solution of the linear system is given, as a particular solution and a basis of the homogeneous system. The parametric linear system should be given in matrix form, with a coefficient matrix and a right hand side vector. The entries of the coefficient matrix and right hand side vector should be polynomials in the parametric variables, over a Euclidean domain of characteristic zero.   If the system is homogeneous, the right hand side need not be given. The right hand side can also be replaced by an indeterminate vector, in which case, the conditions required for consistency will also be given.</p>
 <span class="target" id="l-parametric-linear-equations-b1solve"></span><dl class="docutils" id="index-1">
 <dt><span class="spadfun">B1solve</span>: Record(mat: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, vec: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, rank: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, rows: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, cols: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; Record(partsol: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R)</dt>
 <dd><tt class="docutils literal"><span class="pre">B1solve(s)</span></tt> solves the system (<tt class="docutils literal"><span class="pre">s</span></tt>.mat) <tt class="docutils literal"><span class="pre">z</span></tt> = <tt class="docutils literal"><span class="pre">s</span></tt>.vec for the variables given by the column indices of <tt class="docutils literal"><span class="pre">s</span></tt>.cols in terms of the other variables and the right hand side <tt class="docutils literal"><span class="pre">s</span></tt>.vec by assuming that the rank is <tt class="docutils literal"><span class="pre">s</span></tt>.rank, that the system is consistent, with the linearly independent equations indexed by the given row indices <tt class="docutils literal"><span class="pre">s</span></tt>.rows; the coefficients in <tt class="docutils literal"><span class="pre">s</span></tt>.mat involving parameters are treated as polynomials. B1solve(<tt class="docutils literal"><span class="pre">s</span></tt>) returns a particular solution to the system and a basis of the homogeneous system (<tt class="docutils literal"><span class="pre">s</span></tt>.mat) <tt class="docutils literal"><span class="pre">z</span></tt> = 0.</dd>
@@ -216,12 +216,16 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="ParallelIntegrationTools.html"
-                        title="previous chapter">ParallelIntegrationTools(R, V, P)</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="ParametricPlaneCurveFunctions2.html"
-                        title="next chapter">ParametricPlaneCurveFunctions2(CF1, CF2)</a></p>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FriCAS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+</li>
+</ul>
+
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/api/ParametricLinearEquations.txt"
@@ -256,13 +260,14 @@
         <li class="right" >
           <a href="ParallelIntegrationTools.html" title="ParallelIntegrationTools(R, V, P)"
              >previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, FriCAS Team.
+      Last updated on May 31, 2014.
     </div>
   </body>
 </html>

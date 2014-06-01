@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>CardinalNumber &mdash; FriCAS 1.2.3 documentation</title>
+    <title>CardinalNumber &mdash; FriCAS 1.2.3 API</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="top" title="FriCAS 1.2.3 API" href="../index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="CartesianTensor(minix, dim, R)" href="CartesianTensor.html" />
     <link rel="prev" title="Boolean" href="Boolean.html" /> 
@@ -43,8 +43,8 @@
         <li class="right" >
           <a href="Boolean.html" title="Boolean"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
@@ -57,7 +57,7 @@
   <div class="section" id="cardinalnumber">
 <span id="l-cardinal-number"></span><span id="index-0"></span><h1>CardinalNumber<a class="headerlink" href="#cardinalnumber" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//card.spad#L1">card.spad line 1</a></p>
-<p>Members of the domain CardinalNumber are values indicating the cardinality of sets, both finite and infinite. Arithmetic operations are defined on cardinal numbers as follows. blankline If <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">\#X</span></tt> and <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">\#Y</span></tt> then <tt class="docutils literal"><span class="pre">x+y</span> <span class="pre">=</span> <span class="pre">\#(X+Y)</span></tt>  disjoint union <tt class="docutils literal"><span class="pre">x-y</span> <span class="pre">=</span> <span class="pre">\#(X-Y)</span></tt>  relative complement <tt class="docutils literal"><span class="pre">x*y</span> <span class="pre">=</span> <span class="pre">\#(X*Y)</span></tt>  cartesian product <tt class="docutils literal"><span class="pre">x^y</span> <span class="pre">=</span> <span class="pre">\#(X^Y)</span></tt>  <tt class="docutils literal"><span class="pre">X^Y</span> <span class="pre">=</span> <span class="pre">\{g|</span> <span class="pre">g:</span> <span class="pre">Y-&gt;X\}</span></tt> blankline The non-negative integers have a natural construction as cardinals <tt class="docutils literal"><span class="pre">0</span> <span class="pre">=</span> <span class="pre">\#\{\}</span></tt>, <tt class="docutils literal"><span class="pre">1</span> <span class="pre">=</span> <span class="pre">\{0\}</span></tt>, <tt class="docutils literal"><span class="pre">2</span> <span class="pre">=</span> <span class="pre">\{0,</span> <span class="pre">1\}</span></tt>, ..., <tt class="docutils literal"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">\{i|</span> <span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">n\}</span></tt>. blankline That <tt class="docutils literal"><span class="pre">0</span></tt> acts as a zero for the multiplication of cardinals is equivalent to the axiom of choice. blankline The generalized continuum hypothesis asserts center{<tt class="docutils literal"><span class="pre">2^Aleph</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">Aleph(i+1)</span></tt>} and is independent of the axioms of set theory [Goedel 1940]. blankline Three commonly encountered cardinal numbers are <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">\#Z</span></tt>  countable infinity <tt class="docutils literal"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">\#R</span></tt>  the continuum <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">\#\{g|</span> <span class="pre">g:</span> <span class="pre">[0,</span> <span class="pre">1]-&gt;R\}</span></tt> blankline In this domain, these values are obtained using <tt class="docutils literal"><span class="pre">a</span> <span class="pre">:=</span> <span class="pre">Aleph</span> <span class="pre">0</span></tt>, <tt class="docutils literal"><span class="pre">c</span> <span class="pre">:=</span> <span class="pre">2^a</span></tt>, <tt class="docutils literal"><span class="pre">f</span> <span class="pre">:=</span> <span class="pre">2^c</span></tt>. blankline</p>
+<p>Members of the domain CardinalNumber are values indicating the cardinality of sets, both finite and infinite. Arithmetic operations are defined on cardinal numbers as follows.   If <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">\#X</span></tt> and <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">\#Y</span></tt> then <tt class="docutils literal"><span class="pre">x+y</span> <span class="pre">=</span> <span class="pre">\#(X+Y)</span></tt>  disjoint union <tt class="docutils literal"><span class="pre">x-y</span> <span class="pre">=</span> <span class="pre">\#(X-Y)</span></tt>  relative complement <tt class="docutils literal"><span class="pre">x*y</span> <span class="pre">=</span> <span class="pre">\#(X*Y)</span></tt>  cartesian product <tt class="docutils literal"><span class="pre">x^y</span> <span class="pre">=</span> <span class="pre">\#(X^Y)</span></tt>  <tt class="docutils literal"><span class="pre">X^Y</span> <span class="pre">=</span> <span class="pre">\{g|</span> <span class="pre">g:</span> <span class="pre">Y-&gt;X\}</span></tt>   The non-negative integers have a natural construction as cardinals <tt class="docutils literal"><span class="pre">0</span> <span class="pre">=</span> <span class="pre">\#\{\}</span></tt>, <tt class="docutils literal"><span class="pre">1</span> <span class="pre">=</span> <span class="pre">\{0\}</span></tt>, <tt class="docutils literal"><span class="pre">2</span> <span class="pre">=</span> <span class="pre">\{0,</span> <span class="pre">1\}</span></tt>, ..., <tt class="docutils literal"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">\{i|</span> <span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">n\}</span></tt>.   That <tt class="docutils literal"><span class="pre">0</span></tt> acts as a zero for the multiplication of cardinals is equivalent to the axiom of choice.   The generalized continuum hypothesis asserts center{<tt class="docutils literal"><span class="pre">2^Aleph</span> <span class="pre">i</span> <span class="pre">=</span> <span class="pre">Aleph(i+1)</span></tt>} and is independent of the axioms of set theory [Goedel 1940].   Three commonly encountered cardinal numbers are <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">\#Z</span></tt>  countable infinity <tt class="docutils literal"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">\#R</span></tt>  the continuum <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">\#\{g|</span> <span class="pre">g:</span> <span class="pre">[0,</span> <span class="pre">1]-&gt;R\}</span></tt>   In this domain, these values are obtained using <tt class="docutils literal"><span class="pre">a</span> <span class="pre">:=</span> <span class="pre">Aleph</span> <span class="pre">0</span></tt>, <tt class="docutils literal"><span class="pre">c</span> <span class="pre">:=</span> <span class="pre">2^a</span></tt>, <tt class="docutils literal"><span class="pre">f</span> <span class="pre">:=</span> <span class="pre">2^c</span></tt>.</p>
 <dl class="docutils">
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><em>0</em></a>: %</dt>
 <dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
@@ -166,12 +166,16 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="Boolean.html"
-                        title="previous chapter">Boolean</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="CartesianTensor.html"
-                        title="next chapter">CartesianTensor(minix, dim, R)</a></p>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FriCAS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+</li>
+</ul>
+
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/api/CardinalNumber.txt"
@@ -206,13 +210,14 @@
         <li class="right" >
           <a href="Boolean.html" title="Boolean"
              >previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, FriCAS Team.
+      Last updated on May 31, 2014.
     </div>
   </body>
 </html>

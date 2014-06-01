@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>QuasiAlgebraicSet(R, Var, Expon, Dpoly) &mdash; FriCAS 1.2.3 documentation</title>
+    <title>QuasiAlgebraicSet(R, Var, Expon, Dpoly) &mdash; FriCAS 1.2.3 API</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="top" title="FriCAS 1.2.3 API" href="../index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="Quaternion R" href="Quaternion.html" />
     <link rel="prev" title="QuadraticForm(n, K)" href="QuadraticForm.html" /> 
@@ -43,8 +43,8 @@
         <li class="right" >
           <a href="QuadraticForm.html" title="QuadraticForm(n, K)"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
@@ -63,7 +63,7 @@
 <li>Expon: <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a></li>
 <li>Dpoly: <a class="reference internal" href="PolynomialCategory.html#l-polynomial-category"><em>PolynomialCategory</em></a>(R, Expon, Var)</li>
 </ul>
-<p><a class="reference internal" href="#l-quasi-algebraic-set"><em>QuasiAlgebraicSet</em></a> constructs a domain representing quasi-algebraic sets, which is the intersection of a Zariski closed set, defined as the common zeros of a given list of polynomials (the defining polynomials for equations), and a principal Zariski open set, defined as the complement of the common zeros of a polynomial <tt class="docutils literal"><span class="pre">f</span></tt> (the defining polynomial for the inequation). This domain provides simplification of a user-given representation using groebner basis computations. There are two simplification routines: the first function <span class="spadfun">idealSimplify</span> uses groebner basis of ideals alone, while the second, <span class="spadfun">simplify</span> uses both groebner basis and factorization. The resulting defining equations <tt class="docutils literal"><span class="pre">L</span></tt> always form a groebner basis, and the resulting defining inequation <tt class="docutils literal"><span class="pre">f</span></tt> is always reduced. The function <span class="spadfun">simplify</span> may be applied several times if desired. A third simplification routine <span class="spadfun">radicalSimplify</span> is provided in <a class="reference internal" href="QuasiAlgebraicSet2.html#l-quasi-algebraic-set2"><em>QuasiAlgebraicSet2</em></a> for comparison study only, as it is inefficient compared to the other two, as well as is restricted to only certain coefficient domains. For detail analysis and a comparison of the three methods, please consult the reference cited. blankline A polynomial function <tt class="docutils literal"><span class="pre">q</span></tt> defined on the quasi-algebraic set is equivalent to its reduced form with respect to <tt class="docutils literal"><span class="pre">L</span></tt>. While this may be obtained using the usual normal form algorithm, there is no canonical form for <tt class="docutils literal"><span class="pre">q</span></tt>. blankline The ordering in groebner basis computation is determined by the data type of the input polynomials. If it is possible we suggest to use refinements of total degree orderings.</p>
+<p><a class="reference internal" href="#l-quasi-algebraic-set"><em>QuasiAlgebraicSet</em></a> constructs a domain representing quasi-algebraic sets, which is the intersection of a Zariski closed set, defined as the common zeros of a given list of polynomials (the defining polynomials for equations), and a principal Zariski open set, defined as the complement of the common zeros of a polynomial <tt class="docutils literal"><span class="pre">f</span></tt> (the defining polynomial for the inequation). This domain provides simplification of a user-given representation using groebner basis computations. There are two simplification routines: the first function <span class="spadfun">idealSimplify</span> uses groebner basis of ideals alone, while the second, <span class="spadfun">simplify</span> uses both groebner basis and factorization. The resulting defining equations <tt class="docutils literal"><span class="pre">L</span></tt> always form a groebner basis, and the resulting defining inequation <tt class="docutils literal"><span class="pre">f</span></tt> is always reduced. The function <span class="spadfun">simplify</span> may be applied several times if desired. A third simplification routine <span class="spadfun">radicalSimplify</span> is provided in <a class="reference internal" href="QuasiAlgebraicSet2.html#l-quasi-algebraic-set2"><em>QuasiAlgebraicSet2</em></a> for comparison study only, as it is inefficient compared to the other two, as well as is restricted to only certain coefficient domains. For detail analysis and a comparison of the three methods, please consult the reference cited.   A polynomial function <tt class="docutils literal"><span class="pre">q</span></tt> defined on the quasi-algebraic set is equivalent to its reduced form with respect to <tt class="docutils literal"><span class="pre">L</span></tt>. While this may be obtained using the usual normal form algorithm, there is no canonical form for <tt class="docutils literal"><span class="pre">q</span></tt>.   The ordering in groebner basis computation is determined by the data type of the input polynomials. If it is possible we suggest to use refinements of total degree orderings.</p>
 <dl class="docutils">
 <dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
@@ -125,12 +125,16 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="QuadraticForm.html"
-                        title="previous chapter">QuadraticForm(n, K)</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="Quaternion.html"
-                        title="next chapter">Quaternion R</a></p>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FriCAS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+</li>
+</ul>
+
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/api/QuasiAlgebraicSet.txt"
@@ -165,13 +169,14 @@
         <li class="right" >
           <a href="QuadraticForm.html" title="QuadraticForm(n, K)"
              >previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, FriCAS Team.
+      Last updated on May 31, 2014.
     </div>
   </body>
 </html>

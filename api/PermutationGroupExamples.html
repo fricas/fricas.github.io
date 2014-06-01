@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PermutationGroupExamples &mdash; FriCAS 1.2.3 documentation</title>
+    <title>PermutationGroupExamples &mdash; FriCAS 1.2.3 API</title>
     
     <link rel="stylesheet" href="../_static/default.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.3 documentation" href="../index.html" />
+    <link rel="top" title="FriCAS 1.2.3 API" href="../index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="PiCoercions R" href="PiCoercions.html" />
     <link rel="prev" title="Permanent(n, R)" href="Permanent.html" /> 
@@ -43,8 +43,8 @@
         <li class="right" >
           <a href="Permanent.html" title="Permanent(n, R)"
              accesskey="P">previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
@@ -136,7 +136,7 @@
 </dl>
 <span class="target" id="l-permutation-group-examples-rubiks-group"></span><dl class="docutils" id="index-20">
 <dt><span class="spadfun">rubiksGroup</span>: () -&gt; <a class="reference internal" href="PermutationGroup.html#l-permutation-group"><em>PermutationGroup</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">rubiksGroup</span> <span class="pre">constructs</span></tt> the permutation group representing Rubic<tt class="docutils literal"><span class="pre">'s</span></tt> Cube acting on integers <em>10*i+j</em> for <em>1 &lt;= i &lt;= 6</em>, <em>1 &lt;= j &lt;= 8</em>. The faces of Rubik<tt class="docutils literal"><span class="pre">'s</span></tt> Cube are labelled in the obvious way Front, Right, Up, Down, Left, Back and numbered from 1 to 6 in this given ordering, the pieces on each face (except the unmoveable center piece) are clockwise numbered from 1 to 8 starting with the piece in the upper left corner. The moves of the cube are represented as permutations on these pieces, represented as a two digit integer <em>ij</em> where <tt class="docutils literal"><span class="pre">i</span></tt> is the numer of theface (1 to 6) and <tt class="docutils literal"><span class="pre">j</span></tt> is the number of the piece on this face. The remaining ambiguities are resolved by looking at the 6 generators, which represent a 90 degree turns of the faces, or from the following pictorial description. Permutation group representing Rubic<tt class="docutils literal"><span class="pre">'s</span></tt> Cube acting on integers 10*i+j for 1 <tt class="docutils literal"><span class="pre">&lt;=</span></tt> <tt class="docutils literal"><span class="pre">i</span></tt> <tt class="docutils literal"><span class="pre">&lt;=</span></tt> 6, 1 <tt class="docutils literal"><span class="pre">&lt;=</span></tt> <tt class="docutils literal"><span class="pre">j</span></tt> <tt class="docutils literal"><span class="pre">&lt;=8</span></tt>. blanklinebegin{verbatim}Rubik&#8217;s Cube:   +&#8212;&#8211;+ +&#8211; B   where: marks Side # :               / U   /<a href="#id57"><span class="problematic" id="id58">|/              /     / |         F(ront)    &lt;-&gt;    1      L &#8211;&gt;  +&#8212;&#8211;+ R|</span></a>         R(ight)    &lt;-&gt;    2             |     |  +         U(p)       &lt;-&gt;    3             |  F  | /          D(own)     &lt;-&gt;    4             |     <a href="#id59"><span class="problematic" id="id60">|/           L(eft)     &lt;-&gt;    5             +&#8212;&#8211;+            B(ack)     &lt;-&gt;    6                ^                |                DThe Cube&#8217;s surface:                               The pieces on each side            +&#8212;+              (except the unmoveable center            |567|</span></a>              piece) are clockwise numbered            <a href="#id61"><span class="problematic" id="id62">|4U8|</span></a>              from 1 to 8 starting with the            <a href="#id63"><span class="problematic" id="id64">|321|</span></a>              piece in the upper left        +&#8212;+&#8212;+&#8212;+          corner (see figure on the        <a href="#id65"><span class="problematic" id="id66">|781|123|345|</span></a>          left).  The moves of the cube        <a href="#id67"><span class="problematic" id="id68">|6L2|8F4|2R6|</span></a>          are represented as        <a href="#id69"><span class="problematic" id="id70">|543|765|187|</span></a>          permutations on these pieces.        +&#8212;+&#8212;+&#8212;+          Each of the pieces is            <a href="#id71"><span class="problematic" id="id72">|123|</span></a>              represented as a two digit            <a href="#id73"><span class="problematic" id="id74">|8D4|</span></a>              integer ij where i is the            <a href="#id75"><span class="problematic" id="id76">|765|</span></a>              # of the side ( 1 to 6 for            +&#8212;+              F to B (see table above ))            <a href="#id77"><span class="problematic" id="id78">|567|</span></a>              and j is the # of the piece.            <a href="#id53"><span class="problematic" id="id54">|</span></a>4B8|            <a href="#id55"><span class="problematic" id="id56">|</span></a>321|            +&#8212;+end{verbatim}</dd>
+<dd><tt class="docutils literal"><span class="pre">rubiksGroup</span> <span class="pre">constructs</span></tt> the permutation group representing Rubic<tt class="docutils literal"><span class="pre">'s</span></tt> Cube acting on integers <em>10*i+j</em> for <em>1 &lt;= i &lt;= 6</em>, <em>1 &lt;= j &lt;= 8</em>. The faces of Rubik<tt class="docutils literal"><span class="pre">'s</span></tt> Cube are labelled in the obvious way Front, Right, Up, Down, Left, Back and numbered from 1 to 6 in this given ordering, the pieces on each face (except the unmoveable center piece) are clockwise numbered from 1 to 8 starting with the piece in the upper left corner. The moves of the cube are represented as permutations on these pieces, represented as a two digit integer <em>ij</em> where <tt class="docutils literal"><span class="pre">i</span></tt> is the numer of theface (1 to 6) and <tt class="docutils literal"><span class="pre">j</span></tt> is the number of the piece on this face. The remaining ambiguities are resolved by looking at the 6 generators, which represent a 90 degree turns of the faces, or from the following pictorial description. Permutation group representing Rubic<tt class="docutils literal"><span class="pre">'s</span></tt> Cube acting on integers 10*i+j for 1 <tt class="docutils literal"><span class="pre">&lt;=</span></tt> <tt class="docutils literal"><span class="pre">i</span></tt> <tt class="docutils literal"><span class="pre">&lt;=</span></tt> 6, 1 <tt class="docutils literal"><span class="pre">&lt;=</span></tt> <tt class="docutils literal"><span class="pre">j</span></tt> <tt class="docutils literal"><span class="pre">&lt;=8</span></tt>.  begin{verbatim}Rubik&#8217;s Cube:   +&#8212;&#8211;+ +&#8211; B   where: marks Side # :               / U   /<a href="#id57"><span class="problematic" id="id58">|/              /     / |         F(ront)    &lt;-&gt;    1      L &#8211;&gt;  +&#8212;&#8211;+ R|</span></a>         R(ight)    &lt;-&gt;    2             |     |  +         U(p)       &lt;-&gt;    3             |  F  | /          D(own)     &lt;-&gt;    4             |     <a href="#id59"><span class="problematic" id="id60">|/           L(eft)     &lt;-&gt;    5             +&#8212;&#8211;+            B(ack)     &lt;-&gt;    6                ^                |                DThe Cube&#8217;s surface:                               The pieces on each side            +&#8212;+              (except the unmoveable center            |567|</span></a>              piece) are clockwise numbered            <a href="#id61"><span class="problematic" id="id62">|4U8|</span></a>              from 1 to 8 starting with the            <a href="#id63"><span class="problematic" id="id64">|321|</span></a>              piece in the upper left        +&#8212;+&#8212;+&#8212;+          corner (see figure on the        <a href="#id65"><span class="problematic" id="id66">|781|123|345|</span></a>          left).  The moves of the cube        <a href="#id67"><span class="problematic" id="id68">|6L2|8F4|2R6|</span></a>          are represented as        <a href="#id69"><span class="problematic" id="id70">|543|765|187|</span></a>          permutations on these pieces.        +&#8212;+&#8212;+&#8212;+          Each of the pieces is            <a href="#id71"><span class="problematic" id="id72">|123|</span></a>              represented as a two digit            <a href="#id73"><span class="problematic" id="id74">|8D4|</span></a>              integer ij where i is the            <a href="#id75"><span class="problematic" id="id76">|765|</span></a>              # of the side ( 1 to 6 for            +&#8212;+              F to B (see table above ))            <a href="#id77"><span class="problematic" id="id78">|567|</span></a>              and j is the # of the piece.            <a href="#id53"><span class="problematic" id="id54">|</span></a>4B8|            <a href="#id55"><span class="problematic" id="id56">|</span></a>321|            +&#8212;+end{verbatim}</dd>
 </dl>
 <span class="target" id="l-permutation-group-examples-symmetric-group"></span><dl class="docutils" id="index-21">
 <dt><span class="spadfun">symmetricGroup</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; <a class="reference internal" href="PermutationGroup.html#l-permutation-group"><em>PermutationGroup</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
@@ -162,12 +162,16 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="Permanent.html"
-                        title="previous chapter">Permanent(n, R)</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="PiCoercions.html"
-                        title="next chapter">PiCoercions R</a></p>
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FriCAS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+</li>
+</ul>
+
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/api/PermutationGroupExamples.txt"
@@ -202,13 +206,14 @@
         <li class="right" >
           <a href="Permanent.html" title="Permanent(n, R)"
              >previous</a> |</li>
-        <li><a href="../index.html">FriCAS 1.2.3 documentation</a> &raquo;</li>
-          <li><a href="index.html" >FriCAS Documentation</a> &raquo;</li>
+        <li><a href="../index.html">FriCAS 1.2.3 API</a> &raquo;</li>
+          <li><a href="index.html" >FriCAS</a> &raquo;</li>
           <li><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014, FriCAS Team.
+      Last updated on May 31, 2014.
     </div>
   </body>
 </html>
