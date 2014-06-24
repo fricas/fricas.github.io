@@ -70,13 +70,13 @@
 <dd>from <a class="reference internal" href="Group.html#l-group"><em>Group</em></a></dd>
 <dt><a class="reference internal" href="PartialOrder.html#id1"><em>&lt;</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
 <dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
-<dt><a class="reference internal" href="PartialOrder.html#id2"><em>&lt;=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> or S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a></dt>
+<dt><a class="reference internal" href="PartialOrder.html#id2"><em>&lt;=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a> or S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
 <dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
-<dt><a class="reference internal" href="PartialOrder.html#id3"><em>&gt;</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> or S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a></dt>
+<dt><a class="reference internal" href="PartialOrder.html#id3"><em>&gt;</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a> or S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
 <dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
-<dt><a class="reference internal" href="PartialOrder.html#id4"><em>&gt;=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> or S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a></dt>
+<dt><a class="reference internal" href="PartialOrder.html#id4"><em>&gt;=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a> or S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
 <dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a></dd>
 <dt><a class="reference internal" href="Group.html#id2"><em>^</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
 <dd>from <a class="reference internal" href="Group.html#l-group"><em>Group</em></a></dd>
@@ -98,7 +98,7 @@
 <dd><tt class="docutils literal"><span class="pre">coerce(ls)</span></tt> coerces a cycle <em>ls</em>, i.e. a list with not repetitions to a permutation, which maps <em>ls.i</em> to <em>ls.i+1</em>, indices modulo the length of the list. Error: if repetitions occur.</dd>
 </dl>
 <span class="target" id="l-permutation-coerce-images"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">coerceImages</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> S -&gt; % if S has <a class="reference internal" href="IntegerNumberSystem.html#l-integer-number-system"><em>IntegerNumberSystem</em></a> or S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a></dt>
+<dt><span class="spadfun">coerceImages</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> S -&gt; % if S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a> or S has <a class="reference internal" href="IntegerNumberSystem.html#l-integer-number-system"><em>IntegerNumberSystem</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">coerceImages(ls)</span></tt> coerces the list <em>ls</em> to a permutation whose image is given by <em>ls</em> and the preimage is fixed to be <em>[1, ..., n]</em>. Note: {coerceImages(<tt class="docutils literal"><span class="pre">ls</span></tt>)=coercePreimagesImages([1, ..., <tt class="docutils literal"><span class="pre">n</span></tt>], <tt class="docutils literal"><span class="pre">ls</span></tt>)}. We assume that both preimage and image do not contain repetitions.</dd>
 </dl>
 <span class="target" id="l-permutation-coerce-list-of-pairs"></span><dl class="docutils" id="index-4">
@@ -148,9 +148,9 @@
 <span class="target" id="l-permutation-list-representation"></span><dl class="docutils" id="index-10">
 <dt><span class="spadfun">listRepresentation</span>: % -&gt; Record(preimage: <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, image: <a class="reference internal" href="List.html#l-list"><em>List</em></a> S)</dt>
 <dd><tt class="docutils literal"><span class="pre">listRepresentation(p)</span></tt> produces a representation <em>rep</em> of the permutation <tt class="docutils literal"><span class="pre">p</span></tt> as a list of preimages and images, <tt class="docutils literal"><span class="pre">i</span></tt>.<tt class="docutils literal"><span class="pre">e</span></tt> <tt class="docutils literal"><span class="pre">p</span></tt> maps <em>(rep.preimage).k</em> to <em>(rep.image).k</em> for all indices <tt class="docutils literal"><span class="pre">k</span></tt>. Elements of <tt class="docutils literal"><span class="pre">S</span></tt> not in <em>(rep.preimage).k</em> are fixed points, and these are the only fixed points of the permutation.</dd>
-<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-max"><em>max</em></a>: (%, %) -&gt; % if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> or S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a></dt>
+<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-max"><em>max</em></a>: (%, %) -&gt; % if S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a> or S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
 <dd>from <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dd>
-<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-min"><em>min</em></a>: (%, %) -&gt; % if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> or S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a></dt>
+<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-min"><em>min</em></a>: (%, %) -&gt; % if S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a> or S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
 <dd>from <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dd>
 </dl>
 <span class="target" id="l-permutation-moved-points"></span><dl class="docutils" id="index-11">
@@ -180,7 +180,7 @@
 <span class="target" id="l-permutation-sign"></span><dl class="docutils" id="index-15">
 <dt><span class="spadfun">sign</span>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">sign(p)</span></tt> returns the signum of the permutation <tt class="docutils literal"><span class="pre">p</span></tt>, <tt class="docutils literal"><span class="pre">+1</span></tt> or <tt class="docutils literal"><span class="pre">-1</span></tt>.</dd>
-<dt><a class="reference internal" href="Comparable.html#l-comparable-smaller"><em>smaller?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> or S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a></dt>
+<dt><a class="reference internal" href="Comparable.html#l-comparable-smaller"><em>smaller?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a> or S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
 <dd>from <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dd>
 </dl>
 <span class="target" id="l-permutation-sort"></span><dl class="docutils" id="index-16">
@@ -189,11 +189,11 @@
 </dl>
 <p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
 <p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
-<p><a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> or S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a></p>
+<p><a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a> if S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a> or S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></p>
 <p><a class="reference internal" href="Group.html#l-group"><em>Group</em></a></p>
 <p><a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></p>
-<p><a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> or S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a></p>
-<p><a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> or S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a></p>
+<p><a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> if S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a> or S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></p>
+<p><a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a> if S has <a class="reference internal" href="Finite.html#l-finite"><em>Finite</em></a> or S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></p>
 <p><a class="reference internal" href="PermutationCategory.html#l-permutation-category"><em>PermutationCategory</em></a> S</p>
 <p><a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></p>
 <p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
@@ -257,7 +257,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2014, FriCAS Team.
-      Last updated on Jun 13, 2014.
+      Last updated on Jun 23, 2014.
     </div>
   </body>
 </html>
