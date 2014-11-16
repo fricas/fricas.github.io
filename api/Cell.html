@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Cell TheField &mdash; FriCAS 1.2.4 API</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.2.4',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.4 API" href="index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="Character" href="Character.html" />
+    <link rel="prev" title="CartesianTensor(minix, dim, R)" href="CartesianTensor.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Character.html" title="Character"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="CartesianTensor.html" title="CartesianTensor(minix, dim, R)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="cell-thefield">
+<span id="l-cell"></span><span id="index-0"></span><h1>Cell TheField<a class="headerlink" href="#cell-thefield" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//cyldec.spad#L172">cyldec.spad line 172</a></p>
+<ul class="simple">
+<li>TheField: <a class="reference internal" href="RealClosedField.html#l-real-closed-field"><em>RealClosedField</em></a></li>
+</ul>
+<p>undocumented</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+</dl>
+<span class="target" id="l-cell-dimension"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">dimension</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">dimension(c)</span></tt> returns dimension of <tt class="docutils literal"><span class="pre">c</span></tt></dd>
+</dl>
+<span class="target" id="l-cell-has-dimension"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">hasDimension?</span>: (%, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">hasDimension?(c)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if <tt class="docutils literal"><span class="pre">c</span></tt> is of positive dimension. Otherwise hasDimension?(<tt class="docutils literal"><span class="pre">c</span></tt>) returns <tt class="docutils literal"><span class="pre">false</span></tt>.</dd>
+</dl>
+<span class="target" id="l-cell-main-variable-of"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">mainVariableOf</span>: % -&gt; <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">mainVariableOf(c)</span></tt> returns main variable of <tt class="docutils literal"><span class="pre">c</span></tt></dd>
+</dl>
+<span class="target" id="l-cell-make-cell"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">makeCell</span>: (<a class="reference internal" href="SimpleCell.html#l-simple-cell"><em>SimpleCell</em></a>(TheField, <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> TheField), %) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">makeCell(c,</span> <span class="pre">sc)</span></tt> creates a cell which consists of <tt class="docutils literal"><span class="pre">sc</span></tt> in main variable and which has projection <tt class="docutils literal"><span class="pre">c</span></tt></dd>
+</dl>
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">makeCell</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="SimpleCell.html#l-simple-cell"><em>SimpleCell</em></a>(TheField, <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> TheField) -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">makeCell(lc)</span></tt> creates a cell from list of simple cells <tt class="docutils literal"><span class="pre">lc</span></tt></dd>
+</dl>
+<span class="target" id="l-cell-projection"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">projection</span>: % -&gt; Union(%, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">projection(c)</span></tt> projects <tt class="docutils literal"><span class="pre">c</span></tt> with respect to main variable</dd>
+</dl>
+<span class="target" id="l-cell-sample-point"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">samplePoint</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> TheField</dt>
+<dd><tt class="docutils literal"><span class="pre">samplePoint(c)</span></tt> returns the sample point of <tt class="docutils literal"><span class="pre">c</span></tt></dd>
+</dl>
+<span class="target" id="l-cell-simple-cells"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">simpleCells</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="SimpleCell.html#l-simple-cell"><em>SimpleCell</em></a>(TheField, <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> TheField)</dt>
+<dd><tt class="docutils literal"><span class="pre">simpleCells(c)</span></tt> returns lists of simple cells determining <tt class="docutils literal"><span class="pre">c</span></tt>. That is <tt class="docutils literal"><span class="pre">c</span></tt> = makeCell(simpleCells(<tt class="docutils literal"><span class="pre">c</span></tt>))</dd>
+</dl>
+<span class="target" id="l-cell-variables-of"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">variablesOf</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">variablesOf(c)</span></tt> returns list of variables of <tt class="docutils literal"><span class="pre">c</span></tt></dd>
+</dl>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/Cell.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Character.html" title="Character"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="CartesianTensor.html" title="CartesianTensor(minix, dim, R)"
+             >previous</a> |</li>
+        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, FriCAS Team.
+      Last updated on Nov 16, 2014.
+    </div>
+  </body>
+</html>
