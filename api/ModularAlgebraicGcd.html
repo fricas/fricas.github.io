@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>ModularAlgebraicGcd(MPT, MD, MO) &mdash; FriCAS 1.2.4 API</title>
+    <title>ModularAlgebraicGcd(MPT, MD, MO) &mdash; FriCAS 1.2.5 API</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.4',
+        VERSION:     '1.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.4 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.2.5 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
-    <link rel="next" title="ModularDistinctDegreeFactorizer U" href="ModularDistinctDegreeFactorizer.html" />
+    <link rel="next" title="ModularAlgebraicGcd2(PT, MP, MPT, MD, ME, MO)" href="ModularAlgebraicGcd2.html" />
     <link rel="prev" title="MeshCreationRoutinesForThreeDimensions" href="MeshCreationRoutinesForThreeDimensions.html" /> 
   </head>
   <body>
@@ -38,12 +38,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="ModularDistinctDegreeFactorizer.html" title="ModularDistinctDegreeFactorizer U"
+          <a href="ModularAlgebraicGcd2.html" title="ModularAlgebraicGcd2(PT, MP, MPT, MD, ME, MO)"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="MeshCreationRoutinesForThreeDimensions.html" title="MeshCreationRoutinesForThreeDimensions"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,17 +55,14 @@
             
   <div class="section" id="modularalgebraicgcd-mpt-md-mo">
 <span id="l-modular-algebraic-gcd"></span><span id="index-0"></span><h1>ModularAlgebraicGcd(MPT, MD, MO)<a class="headerlink" href="#modularalgebraicgcd-mpt-md-mo" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//amodgcd.spad#L207">amodgcd.spad line 207</a></p>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//amodgcd.spad#L516">amodgcd.spad line 516</a></p>
 <ul class="simple">
 <li>MPT: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
 <li>MD: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
-<li>MO: <a class="reference internal" href="ModularAlgebraicGcdOperations.html#l-modular-algebraic-gcd-operations"><em>ModularAlgebraicGcdOperations</em></a>(MPT, MD)</li>
+<li>MO: <a class="reference internal" href="ModularAlgebraicGcdOperations.html#l-modular-algebraic-gcd-operations"><em>ModularAlgebraicGcdOperations</em></a>(<a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, MPT, MD)</li>
 </ul>
-<p>This package computes <tt class="docutils literal"><span class="pre">gcd</span></tt> over field of algebraic functions over <tt class="docutils literal"><span class="pre">Q</span></tt> using modular method based on <tt class="docutils literal"><span class="pre">M</span></tt>. Monagan and van Hoej paper. Core modular operations are passed as parameter (MO) to this package.</p>
-<span class="target" id="l-modular-algebraic-gcd-algebraic-gcd"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">algebraicGcd</span>: (<a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">algebraicGcd(x,</span> <span class="pre">y,</span> <span class="pre">lm,</span> <span class="pre">lp,</span> <span class="pre">v,</span> <span class="pre">la)</span></tt> computes <tt class="docutils literal"><span class="pre">gcd</span></tt> of <tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt> modulo polynomials in <tt class="docutils literal"><span class="pre">lm</span></tt>. la is list of algebraic parameters, <tt class="docutils literal"><span class="pre">lp</span></tt> is a list of transcendental parameters, <tt class="docutils literal"><span class="pre">v</span></tt> is main variable.</dd>
-</dl>
+<p>ModularAlgebraicGcd(<tt class="docutils literal"><span class="pre">MPT</span></tt>, <tt class="docutils literal"><span class="pre">MD</span></tt>, MO) is a compatibility wrapper around <tt class="docutils literal"><span class="pre">ModularAlgebraicGcd2</span></tt>.</p>
+<span class="target" id="l-modular-algebraic-gcd-algebraic-gcd"></span><p id="index-1"><span class="spadfun">algebraicGcd</span>: (<a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></p>
 </div>
 
 
@@ -110,18 +107,18 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="ModularDistinctDegreeFactorizer.html" title="ModularDistinctDegreeFactorizer U"
+          <a href="ModularAlgebraicGcd2.html" title="ModularAlgebraicGcd2(PT, MP, MPT, MD, ME, MO)"
              >next</a> |</li>
         <li class="right" >
           <a href="MeshCreationRoutinesForThreeDimensions.html" title="MeshCreationRoutinesForThreeDimensions"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2014, FriCAS Team.
-      Last updated on Nov 16, 2014.
+        &copy; Copyright 2014-2015, FriCAS Team.
+      Last updated on Feb 15, 2015.
     </div>
   </body>
 </html>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>RationalLODE(F, UP) &mdash; FriCAS 1.2.4 API</title>
+    <title>RationalLODE(F, UP) &mdash; FriCAS 1.2.5 API</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.4',
+        VERSION:     '1.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.4 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.2.5 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="RationalRetractions S" href="RationalRetractions.html" />
     <link rel="prev" title="RationalInterpolation(xx, F)" href="RationalInterpolation.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="RationalInterpolation.html" title="RationalInterpolation(xx, F)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,7 +55,7 @@
             
   <div class="section" id="rationallode-f-up">
 <span id="l-rational-l-o-d-e"></span><span id="index-0"></span><h1>RationalLODE(F, UP)<a class="headerlink" href="#rationallode-f-up" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//oderf.spad#L356">oderf.spad line 356</a></p>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//oderf.spad#L306">oderf.spad line 306</a></p>
 <ul class="simple">
 <li>F: Join(<a class="reference internal" href="Field.html#l-field"><em>Field</em></a>, <a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</li>
 <li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> F</li>
@@ -69,21 +69,25 @@
 <dt><span class="spadfun">indicialEquationAtInfinity</span>: <a class="reference internal" href="LinearOrdinaryDifferentialOperator2.html#l-linear-ordinary-differential-operator2"><em>LinearOrdinaryDifferentialOperator2</em></a>(UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; UP</dt>
 <dd><tt class="docutils literal"><span class="pre">indicialEquationAtInfinity</span> <span class="pre">op</span></tt> returns the indicial equation of <tt class="docutils literal"><span class="pre">op</span></tt> at infinity.</dd>
 </dl>
-<span class="target" id="l-rational-l-o-d-e-rat-dsolve"></span><dl class="docutils" id="index-3">
+<span class="target" id="l-rational-l-o-d-e-integrate-sols"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">integrate_sols</span>: <a class="reference internal" href="LinearOrdinaryDifferentialOperator1.html#l-linear-ordinary-differential-operator1"><em>LinearOrdinaryDifferentialOperator1</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP -&gt; Record(ltilde: <a class="reference internal" href="LinearOrdinaryDifferentialOperator1.html#l-linear-ordinary-differential-operator1"><em>LinearOrdinaryDifferentialOperator1</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, r: Union(<a class="reference internal" href="LinearOrdinaryDifferentialOperator1.html#l-linear-ordinary-differential-operator1"><em>LinearOrdinaryDifferentialOperator1</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, failed))</dt>
+<dd><tt class="docutils literal"><span class="pre">integrate_sols(l)</span></tt> integrates the solutions of an operator <tt class="docutils literal"><span class="pre">l</span></tt>.</dd>
+</dl>
+<span class="target" id="l-rational-l-o-d-e-rat-dsolve"></span><dl class="docutils" id="index-4">
 <dt><span class="spadfun">ratDsolve</span>: (<a class="reference internal" href="LinearOrdinaryDifferentialOperator1.html#l-linear-ordinary-differential-operator1"><em>LinearOrdinaryDifferentialOperator1</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Record(particular: Union(<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, failed), basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP)</dt>
 <dd><tt class="docutils literal"><span class="pre">ratDsolve(op,</span> <span class="pre">g)</span></tt> returns <tt class="docutils literal"><span class="pre">[&quot;failed&quot;,</span> <span class="pre">[]]</span></tt> if the equation <tt class="docutils literal"><span class="pre">op</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">g</span></tt> has no rational solution. Otherwise, it returns <tt class="docutils literal"><span class="pre">[f,</span> <span class="pre">[y1,</span> <span class="pre">...,</span> <span class="pre">ym]]</span></tt> where <tt class="docutils literal"><span class="pre">f</span></tt> is a particular rational solution and the <tt class="docutils literal"><span class="pre">yi</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> form a basis for the rational solutions of the homogeneous equation.</dd>
 </dl>
-<dl class="docutils" id="index-4">
-<dt><span class="spadfun">ratDsolve</span>: (<a class="reference internal" href="LinearOrdinaryDifferentialOperator1.html#l-linear-ordinary-differential-operator1"><em>LinearOrdinaryDifferentialOperator1</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Record(basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, mat: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> F)</dt>
-<dd><tt class="docutils literal"><span class="pre">ratDsolve(op,</span> <span class="pre">[g1,</span> <span class="pre">...,</span> <span class="pre">gm])</span></tt> returns <tt class="docutils literal"><span class="pre">[[h1,</span> <span class="pre">...,</span> <span class="pre">hq],</span> <span class="pre">M]</span></tt> such that any rational solution of <tt class="docutils literal"><span class="pre">op</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">c1</span> <span class="pre">g1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">cm</span> <span class="pre">gm</span></tt> is of the form <tt class="docutils literal"><span class="pre">d1</span> <span class="pre">h1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">dq</span> <span class="pre">hq</span></tt> where <tt class="docutils literal"><span class="pre">M</span> <span class="pre">[d1,</span> <span class="pre">...,</span> <span class="pre">dq,</span> <span class="pre">c1,</span> <span class="pre">...,</span> <span class="pre">cm]</span> <span class="pre">=</span> <span class="pre">0</span></tt>.</dd>
-</dl>
 <dl class="docutils" id="index-5">
+<dt><span class="spadfun">ratDsolve</span>: (<a class="reference internal" href="LinearOrdinaryDifferentialOperator1.html#l-linear-ordinary-differential-operator1"><em>LinearOrdinaryDifferentialOperator1</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Record(basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, mat: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> F)</dt>
+<dd><tt class="docutils literal"><span class="pre">ratDsolve(op,</span> <span class="pre">[g1,</span> <span class="pre">...,</span> <span class="pre">gm])</span></tt> returns <tt class="docutils literal"><span class="pre">[[h1,</span> <span class="pre">...,</span> <span class="pre">hq],</span> <span class="pre">M]</span></tt> such that any rational solution of <tt class="docutils literal"><span class="pre">op</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">c1</span> <span class="pre">g1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">cm</span> <span class="pre">gm</span></tt> is of the form <tt class="docutils literal"><span class="pre">c1</span> <span class="pre">h1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">cq</span> <span class="pre">hq</span></tt> where <tt class="docutils literal"><span class="pre">M</span> <span class="pre">[c1,</span> <span class="pre">...,</span> <span class="pre">cq]</span> <span class="pre">=</span> <span class="pre">0</span></tt> and <tt class="docutils literal"><span class="pre">q</span> <span class="pre">&gt;=</span> <span class="pre">m</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-6">
 <dt><span class="spadfun">ratDsolve</span>: (<a class="reference internal" href="LinearOrdinaryDifferentialOperator2.html#l-linear-ordinary-differential-operator2"><em>LinearOrdinaryDifferentialOperator2</em></a>(UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP), <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Record(particular: Union(<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, failed), basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP)</dt>
 <dd><tt class="docutils literal"><span class="pre">ratDsolve(op,</span> <span class="pre">g)</span></tt> returns <tt class="docutils literal"><span class="pre">[&quot;failed&quot;,</span> <span class="pre">[]]</span></tt> if the equation <tt class="docutils literal"><span class="pre">op</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">g</span></tt> has no rational solution. Otherwise, it returns <tt class="docutils literal"><span class="pre">[f,</span> <span class="pre">[y1,</span> <span class="pre">...,</span> <span class="pre">ym]]</span></tt> where <tt class="docutils literal"><span class="pre">f</span></tt> is a particular rational solution and the <tt class="docutils literal"><span class="pre">yi</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> form a basis for the rational solutions of the homogeneous equation.</dd>
 </dl>
-<dl class="docutils" id="index-6">
+<dl class="docutils" id="index-7">
 <dt><span class="spadfun">ratDsolve</span>: (<a class="reference internal" href="LinearOrdinaryDifferentialOperator2.html#l-linear-ordinary-differential-operator2"><em>LinearOrdinaryDifferentialOperator2</em></a>(UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP), <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Record(basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, mat: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> F)</dt>
-<dd><tt class="docutils literal"><span class="pre">ratDsolve(op,</span> <span class="pre">[g1,</span> <span class="pre">...,</span> <span class="pre">gm])</span></tt> returns <tt class="docutils literal"><span class="pre">[[h1,</span> <span class="pre">...,</span> <span class="pre">hq],</span> <span class="pre">M]</span></tt> such that any rational solution of <tt class="docutils literal"><span class="pre">op</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">c1</span> <span class="pre">g1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">cm</span> <span class="pre">gm</span></tt> is of the form <tt class="docutils literal"><span class="pre">d1</span> <span class="pre">h1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">dq</span> <span class="pre">hq</span></tt> where <tt class="docutils literal"><span class="pre">M</span> <span class="pre">[d1,</span> <span class="pre">...,</span> <span class="pre">dq,</span> <span class="pre">c1,</span> <span class="pre">...,</span> <span class="pre">cm]</span> <span class="pre">=</span> <span class="pre">0</span></tt>.</dd>
+<dd><tt class="docutils literal"><span class="pre">ratDsolve(op,</span> <span class="pre">[g1,</span> <span class="pre">...,</span> <span class="pre">gm])</span></tt> returns <tt class="docutils literal"><span class="pre">[[h1,</span> <span class="pre">...,</span> <span class="pre">hq],</span> <span class="pre">M]</span></tt> such that any rational solution of <tt class="docutils literal"><span class="pre">op</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">c1</span> <span class="pre">g1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">cm</span> <span class="pre">gm</span></tt> is of the form <tt class="docutils literal"><span class="pre">c1</span> <span class="pre">h1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">cq</span> <span class="pre">hq</span></tt> where <tt class="docutils literal"><span class="pre">M</span> <span class="pre">[c1,</span> <span class="pre">...,</span> <span class="pre">cq]</span> <span class="pre">=</span> <span class="pre">0</span></tt> and <tt class="docutils literal"><span class="pre">q</span> <span class="pre">&gt;=</span> <span class="pre">m</span></tt>.</dd>
 </dl>
 </div>
 
@@ -134,13 +138,13 @@
         <li class="right" >
           <a href="RationalInterpolation.html" title="RationalInterpolation(xx, F)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2014, FriCAS Team.
-      Last updated on Nov 16, 2014.
+        &copy; Copyright 2014-2015, FriCAS Team.
+      Last updated on Feb 15, 2015.
     </div>
   </body>
 </html>

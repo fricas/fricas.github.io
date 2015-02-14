@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>UnivariateSkewPolynomialCategory R &mdash; FriCAS 1.2.4 API</title>
+    <title>UnivariateSkewPolynomialCategory R &mdash; FriCAS 1.2.5 API</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.4',
+        VERSION:     '1.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.4 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.2.5 API" href="index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
     <link rel="next" title="UnivariateTaylorSeriesCategory Coef" href="UnivariateTaylorSeriesCategory.html" />
     <link rel="prev" title="UnivariatePuiseuxSeriesConstructorCategory(Coef, ULS)" href="UnivariatePuiseuxSeriesConstructorCategory.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="UnivariatePuiseuxSeriesConstructorCategory.html" title="UnivariatePuiseuxSeriesConstructorCategory(Coef, ULS)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
@@ -148,7 +148,7 @@
 </dl>
 <span class="target" id="l-univariate-skew-polynomial-category-left-extended-gcd"></span><dl class="docutils" id="index-10">
 <dt><span class="spadfun">leftExtendedGcd</span>: (%, %) -&gt; Record(coef1: %, coef2: %, generator: %) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">leftExtendedGcd(a,</span> <span class="pre">b)</span></tt> returns <tt class="docutils literal"><span class="pre">[c,</span> <span class="pre">d]</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">*</span> <span class="pre">c</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">*</span> <span class="pre">d</span> <span class="pre">=</span> <span class="pre">leftGcd(a,</span> <span class="pre">b)</span></tt>.</dd>
+<dd><tt class="docutils literal"><span class="pre">leftExtendedGcd(a,</span> <span class="pre">b)</span></tt> returns <tt class="docutils literal"><span class="pre">[c,</span> <span class="pre">d,</span> <span class="pre">g]</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">*</span> <span class="pre">c</span> <span class="pre">+</span> <span class="pre">b</span> <span class="pre">*</span> <span class="pre">d</span> <span class="pre">=</span> <span class="pre">leftGcd(a,</span> <span class="pre">b)</span></tt>.</dd>
 </dl>
 <span class="target" id="l-univariate-skew-polynomial-category-left-gcd"></span><dl class="docutils" id="index-11">
 <dt><span class="spadfun">leftGcd</span>: (%, %) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
@@ -208,31 +208,35 @@
 <dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract-if-can"><em>retractIfCan</em></a>: % -&gt; Union(R, failed)</dt>
 <dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> R</dd>
 </dl>
-<span class="target" id="l-univariate-skew-polynomial-category-right-divide"></span><dl class="docutils" id="index-21">
+<span class="target" id="l-univariate-skew-polynomial-category-right-ext-ext-g-c-d"></span><dl class="docutils" id="index-21">
+<dt><span class="spadfun">right_ext_ext_GCD</span>: (%, %) -&gt; Record(generator: %, coef1: %, coef2: %, coefu: %, coefv: %) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">right_ext_ext_GCD(a,</span> <span class="pre">b)</span></tt> returns <tt class="docutils literal"><span class="pre">g,</span> <span class="pre">c,</span> <span class="pre">d,</span> <span class="pre">u,</span> <span class="pre">v</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">c</span> <span class="pre">*</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">d</span> <span class="pre">*</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">rightGcd(a,</span> <span class="pre">b)</span></tt>, <tt class="docutils literal"><span class="pre">u</span> <span class="pre">*</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">-</span> <span class="pre">v</span> <span class="pre">*</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">leftLcm(a,</span> <span class="pre">b)</span></tt> and matrix <tt class="docutils literal"><span class="pre">matrix([[c,</span> <span class="pre">d],</span> <span class="pre">[u,</span> <span class="pre">v]</span></tt> is invertible.</dd>
+</dl>
+<span class="target" id="l-univariate-skew-polynomial-category-right-divide"></span><dl class="docutils" id="index-22">
 <dt><span class="spadfun">rightDivide</span>: (%, %) -&gt; Record(quotient: %, remainder: %) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">rightDivide(a,</span> <span class="pre">b)</span></tt> returns the pair <tt class="docutils literal"><span class="pre">[q,</span> <span class="pre">r]</span></tt> such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">q*b</span> <span class="pre">+</span> <span class="pre">r</span></tt> and the degree of <tt class="docutils literal"><span class="pre">r</span></tt> is less than the degree of <tt class="docutils literal"><span class="pre">b</span></tt>. This process is called <tt class="docutils literal"><span class="pre">right</span> <span class="pre">division\</span> <span class="pre">``''</span></tt>.</dd>
 </dl>
-<span class="target" id="l-univariate-skew-polynomial-category-right-exact-quotient"></span><dl class="docutils" id="index-22">
+<span class="target" id="l-univariate-skew-polynomial-category-right-exact-quotient"></span><dl class="docutils" id="index-23">
 <dt><span class="spadfun">rightExactQuotient</span>: (%, %) -&gt; Union(%, failed) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">rightExactQuotient(a,</span> <span class="pre">b)</span></tt> computes the value <tt class="docutils literal"><span class="pre">q</span></tt>, if it exists such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">q*b</span></tt>.</dd>
 </dl>
-<span class="target" id="l-univariate-skew-polynomial-category-right-extended-gcd"></span><dl class="docutils" id="index-23">
+<span class="target" id="l-univariate-skew-polynomial-category-right-extended-gcd"></span><dl class="docutils" id="index-24">
 <dt><span class="spadfun">rightExtendedGcd</span>: (%, %) -&gt; Record(coef1: %, coef2: %, generator: %) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">rightExtendedGcd(a,</span> <span class="pre">b)</span></tt> returns <tt class="docutils literal"><span class="pre">[c,</span> <span class="pre">d]</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">c</span> <span class="pre">*</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">d</span> <span class="pre">*</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">rightGcd(a,</span> <span class="pre">b)</span></tt>.</dd>
+<dd><tt class="docutils literal"><span class="pre">rightExtendedGcd(a,</span> <span class="pre">b)</span></tt> returns <tt class="docutils literal"><span class="pre">[c,</span> <span class="pre">d,</span> <span class="pre">g]</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">c</span> <span class="pre">*</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">d</span> <span class="pre">*</span> <span class="pre">b</span> <span class="pre">=</span> <span class="pre">rightGcd(a,</span> <span class="pre">b)</span></tt>.</dd>
 </dl>
-<span class="target" id="l-univariate-skew-polynomial-category-right-gcd"></span><dl class="docutils" id="index-24">
+<span class="target" id="l-univariate-skew-polynomial-category-right-gcd"></span><dl class="docutils" id="index-25">
 <dt><span class="spadfun">rightGcd</span>: (%, %) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">rightGcd(a,</span> <span class="pre">b)</span></tt> computes the value <tt class="docutils literal"><span class="pre">g</span></tt> of highest degree such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">aa*g</span></tt> <tt class="docutils literal"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">bb*g</span></tt> for some values <tt class="docutils literal"><span class="pre">aa</span></tt> and <tt class="docutils literal"><span class="pre">bb</span></tt>. The value <tt class="docutils literal"><span class="pre">g</span></tt> is computed using right-division.</dd>
 </dl>
-<span class="target" id="l-univariate-skew-polynomial-category-right-lcm"></span><dl class="docutils" id="index-25">
+<span class="target" id="l-univariate-skew-polynomial-category-right-lcm"></span><dl class="docutils" id="index-26">
 <dt><span class="spadfun">rightLcm</span>: (%, %) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">rightLcm(a,</span> <span class="pre">b)</span></tt> computes the value <tt class="docutils literal"><span class="pre">m</span></tt> of lowest degree such that <tt class="docutils literal"><span class="pre">m</span> <span class="pre">=</span> <span class="pre">a*aa</span> <span class="pre">=</span> <span class="pre">b*bb</span></tt> for some values <tt class="docutils literal"><span class="pre">aa</span></tt> and <tt class="docutils literal"><span class="pre">bb</span></tt>. The value <tt class="docutils literal"><span class="pre">m</span></tt> is computed using left-division.</dd>
 </dl>
-<span class="target" id="l-univariate-skew-polynomial-category-right-quotient"></span><dl class="docutils" id="index-26">
+<span class="target" id="l-univariate-skew-polynomial-category-right-quotient"></span><dl class="docutils" id="index-27">
 <dt><span class="spadfun">rightQuotient</span>: (%, %) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">rightQuotient(a,</span> <span class="pre">b)</span></tt> computes the pair <tt class="docutils literal"><span class="pre">[q,</span> <span class="pre">r]</span></tt> such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">q*b</span> <span class="pre">+</span> <span class="pre">r</span></tt> and the degree of <tt class="docutils literal"><span class="pre">r</span></tt> is less than the degree of <tt class="docutils literal"><span class="pre">b</span></tt>. The value <tt class="docutils literal"><span class="pre">q</span></tt> is returned.</dd>
 </dl>
-<span class="target" id="l-univariate-skew-polynomial-category-right-remainder"></span><dl class="docutils" id="index-27">
+<span class="target" id="l-univariate-skew-polynomial-category-right-remainder"></span><dl class="docutils" id="index-28">
 <dt><span class="spadfun">rightRemainder</span>: (%, %) -&gt; % if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">rightRemainder(a,</span> <span class="pre">b)</span></tt> computes the pair <tt class="docutils literal"><span class="pre">[q,</span> <span class="pre">r]</span></tt> such that <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">q*b</span> <span class="pre">+</span> <span class="pre">r</span></tt> and the degree of <tt class="docutils literal"><span class="pre">r</span></tt> is less than the degree of <tt class="docutils literal"><span class="pre">b</span></tt>. The value <tt class="docutils literal"><span class="pre">r</span></tt> is returned.</dd>
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-sample"><em>sample</em></a>: %</dt>
@@ -315,13 +319,13 @@
         <li class="right" >
           <a href="UnivariatePuiseuxSeriesConstructorCategory.html" title="UnivariatePuiseuxSeriesConstructorCategory(Coef, ULS)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2014, FriCAS Team.
-      Last updated on Nov 16, 2014.
+        &copy; Copyright 2014-2015, FriCAS Team.
+      Last updated on Feb 15, 2015.
     </div>
   </body>
 </html>

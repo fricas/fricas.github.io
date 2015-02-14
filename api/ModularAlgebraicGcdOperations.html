@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>ModularAlgebraicGcdOperations(MPT, MD) &mdash; FriCAS 1.2.4 API</title>
+    <title>ModularAlgebraicGcdOperations(MP, MPT, MD) &mdash; FriCAS 1.2.5 API</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.4',
+        VERSION:     '1.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.4 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.2.5 API" href="index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
-    <link rel="next" title="Module R" href="Module.html" />
+    <link rel="next" title="ModularEvaluationCategory(PT, MP)" href="ModularEvaluationCategory.html" />
     <link rel="prev" title="MaybeSkewPolynomialCategory(R, E, VarSet)" href="MaybeSkewPolynomialCategory.html" /> 
   </head>
   <body>
@@ -38,12 +38,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="Module.html" title="Module R"
+          <a href="ModularEvaluationCategory.html" title="ModularEvaluationCategory(PT, MP)"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="MaybeSkewPolynomialCategory.html" title="MaybeSkewPolynomialCategory(R, E, VarSet)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
@@ -53,10 +53,11 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="modularalgebraicgcdoperations-mpt-md">
-<span id="l-modular-algebraic-gcd-operations"></span><span id="index-0"></span><h1>ModularAlgebraicGcdOperations(MPT, MD)<a class="headerlink" href="#modularalgebraicgcdoperations-mpt-md" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="modularalgebraicgcdoperations-mp-mpt-md">
+<span id="l-modular-algebraic-gcd-operations"></span><span id="index-0"></span><h1>ModularAlgebraicGcdOperations(MP, MPT, MD)<a class="headerlink" href="#modularalgebraicgcdoperations-mp-mpt-md" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//amodgcd.spad#L23">amodgcd.spad line 23</a></p>
 <ul class="simple">
+<li>MP: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
 <li>MPT: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
 <li>MD: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
 </ul>
@@ -70,15 +71,15 @@
 <dd><tt class="docutils literal"><span class="pre">degree(x)</span></tt> gives degree of <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
 </dl>
 <span class="target" id="l-modular-algebraic-gcd-operations-m-pto-m-p-t"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">MPtoMPT</span>: (<a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, MD) -&gt; MPT</dt>
-<dd><tt class="docutils literal"><span class="pre">MPtoMPT(p,</span> <span class="pre">s,</span> <span class="pre">ls,</span> <span class="pre">m)</span></tt> coverts <tt class="docutils literal"><span class="pre">p</span></tt> to packed represntation.</dd>
+<dt><span class="spadfun">MPtoMPT</span>: (MP, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, MD) -&gt; Union(MPT, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">MPtoMPT(p,</span> <span class="pre">s,</span> <span class="pre">ls,</span> <span class="pre">m)</span></tt> converts <tt class="docutils literal"><span class="pre">p</span></tt> to packed represntation.</dd>
 </dl>
 <span class="target" id="l-modular-algebraic-gcd-operations-pack-exps"></span><dl class="docutils" id="index-4">
 <dt><span class="spadfun">pack_exps</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, MD) -&gt; <a class="reference internal" href="SortedExponentVector.html#l-sorted-exponent-vector"><em>SortedExponentVector</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">pack_exps(d,</span> <span class="pre">s,</span> <span class="pre">m)</span></tt> produces vector of exponents up to degree <tt class="docutils literal"><span class="pre">d</span></tt>. <tt class="docutils literal"><span class="pre">s</span></tt> is size (degree) of algebraic extension. Use together with <tt class="docutils literal"><span class="pre">repack1</span></tt>.</dd>
 </dl>
 <span class="target" id="l-modular-algebraic-gcd-operations-pack-modulus"></span><dl class="docutils" id="index-5">
-<dt><span class="spadfun">pack_modulus</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; Union(MD, failed)</dt>
+<dt><span class="spadfun">pack_modulus</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> MP, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; Union(MD, failed)</dt>
 <dd><tt class="docutils literal"><span class="pre">pack_modulus(lp,</span> <span class="pre">ls,</span> <span class="pre">p)</span></tt> converts <tt class="docutils literal"><span class="pre">lp</span></tt>, <tt class="docutils literal"><span class="pre">ls</span></tt> and prime <tt class="docutils literal"><span class="pre">p</span></tt> which together describe algebraic extension to packed representation.</dd>
 </dl>
 <span class="target" id="l-modular-algebraic-gcd-operations-pseudo-rem"></span><dl class="docutils" id="index-6">
@@ -137,18 +138,18 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="Module.html" title="Module R"
+          <a href="ModularEvaluationCategory.html" title="ModularEvaluationCategory(PT, MP)"
              >next</a> |</li>
         <li class="right" >
           <a href="MaybeSkewPolynomialCategory.html" title="MaybeSkewPolynomialCategory(R, E, VarSet)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2014, FriCAS Team.
-      Last updated on Nov 16, 2014.
+        &copy; Copyright 2014-2015, FriCAS Team.
+      Last updated on Feb 15, 2015.
     </div>
   </body>
 </html>

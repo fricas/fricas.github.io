@@ -2,16 +2,8 @@
 ==============
 
 |PACKAGE_NAME| is an advanced computer algebra system.
- Its capabilities range from calculus (integration and
- differentiation) to abstract algebra. It can plot functions and has
- integrated help system.
 
-.. toctree::
-   :maxdepth: 2
-
-   api/index
-
-* `Book <book.pdf>`_
+* |PACKAGE_BOOK|
 
 * `Programming in SPAD <http://axiom-wiki.newsynthesis.org/ProgrammingSPAD>`_
 
@@ -20,3 +12,6 @@
 * `Lanuage Difference <http://axiom-wiki.newsynthesis.org/LanguageDifferences>`_
 
 * `Example TaylorSeries <http://axiom-wiki.newsynthesis.org/TaylorSeries>`_
+
+* `Example Polynomials over finite fields and rings
+  <http://axiom-wiki.newsynthesis.org/SandBoxPolynomialOverFiniteField>`_

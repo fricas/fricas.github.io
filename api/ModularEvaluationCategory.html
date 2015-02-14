@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ModularEvaluationCategory(PT, MP) &mdash; FriCAS 1.2.5 API</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.5 API" href="index.html" />
+    <link rel="up" title="Categories" href="Categories.html" />
+    <link rel="next" title="Module R" href="Module.html" />
+    <link rel="prev" title="ModularAlgebraicGcdOperations(MP, MPT, MD)" href="ModularAlgebraicGcdOperations.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Module.html" title="Module R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ModularAlgebraicGcdOperations.html" title="ModularAlgebraicGcdOperations(MP, MPT, MD)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
+          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="modularevaluationcategory-pt-mp">
+<span id="l-modular-evaluation-category"></span><span id="index-0"></span><h1>ModularEvaluationCategory(PT, MP)<a class="headerlink" href="#modularevaluationcategory-pt-mp" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//evalut.spad#L178">evalut.spad line 178</a></p>
+<ul class="simple">
+<li>PT: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
+<li>MP: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
+</ul>
+<p>ModularEvaluationCategory(<tt class="docutils literal"><span class="pre">PT</span></tt>, <tt class="docutils literal"><span class="pre">MP</span></tt>) defines interface to evaluation functions for <tt class="docutils literal"><span class="pre">ModularAlgebraicGcd2</span></tt>.</p>
+<span class="target" id="l-modular-evaluation-category-degree"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">degree</span>: (MP, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">degree(p,</span> <span class="pre">v)</span></tt> computes degree of <tt class="docutils literal"><span class="pre">p</span></tt> with respect to <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
+</dl>
+<span class="target" id="l-modular-evaluation-category-eval1"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">eval1</span>: (MP, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, Record(prime: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, eval1coeffbuf: <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, eval1expbuf: <a class="reference internal" href="SortedExponentVector.html#l-sorted-exponent-vector"><em>SortedExponentVector</em></a>)) -&gt; MP</dt>
+<dd><tt class="docutils literal"><span class="pre">eval1(p,</span> <span class="pre">v,</span> <span class="pre">r,</span> <span class="pre">pss)</span></tt> evaluates <tt class="docutils literal"><span class="pre">p</span></tt> with respect to single variable <tt class="docutils literal"><span class="pre">v</span></tt> at <tt class="docutils literal"><span class="pre">r</span></tt>. <tt class="docutils literal"><span class="pre">pss</span></tt> is global state.</dd>
+</dl>
+<span class="target" id="l-modular-evaluation-category-eval1a"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">eval1a</span>: (MP, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, Record(prime: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, eval1coeffbuf: <a class="reference internal" href="U32Vector.html#l-u32-vector"><em>U32Vector</em></a>, eval1expbuf: <a class="reference internal" href="SortedExponentVector.html#l-sorted-exponent-vector"><em>SortedExponentVector</em></a>)) -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">eval1a(p,</span> <span class="pre">r,</span> <span class="pre">pss)</span></tt> evaluates <tt class="docutils literal"><span class="pre">p</span></tt> at <tt class="docutils literal"><span class="pre">r</span></tt>. <tt class="docutils literal"><span class="pre">p</span></tt> must be polynomial in single variable. <tt class="docutils literal"><span class="pre">pss</span></tt> is global state.</dd>
+</dl>
+<span class="target" id="l-modular-evaluation-category-ldegree"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">ldegree</span>: (PT, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">ldegree(p,</span> <span class="pre">v)</span></tt> computes degree of <tt class="docutils literal"><span class="pre">p</span></tt> with respect to <tt class="docutils literal"><span class="pre">v</span></tt>. <tt class="docutils literal"><span class="pre">v</span></tt> must be one of auxilary variables and must be lexicographically first variables which appears in <tt class="docutils literal"><span class="pre">p</span></tt>. Morover, <tt class="docutils literal"><span class="pre">p</span></tt> must be a polynomial in <tt class="docutils literal"><span class="pre">v</span></tt> (not a rational function).</dd>
+</dl>
+<span class="target" id="l-modular-evaluation-category-modpreduction"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">modpreduction</span>: (MP, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; MP</dt>
+<dd><tt class="docutils literal"><span class="pre">modpreduction(p,</span> <span class="pre">q)</span></tt> reduces all coeffiecients of <tt class="docutils literal"><span class="pre">p</span></tt> modulo <tt class="docutils literal"><span class="pre">q</span></tt>.</dd>
+</dl>
+<span class="target" id="l-modular-evaluation-category-subst-vars"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">subst_vars</span>: (PT, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; MP</dt>
+<dd><tt class="docutils literal"><span class="pre">subst_vars(p,</span> <span class="pre">lv1,</span> <span class="pre">lv2)</span></tt> substitutes variables from list <tt class="docutils literal"><span class="pre">lv2</span></tt> for corresponding variables from <tt class="docutils literal"><span class="pre">lv1</span></tt>.</dd>
+</dl>
+<span class="target" id="l-modular-evaluation-category-trial-division"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">trial_division</span>: (MP, <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> MP, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">trial_division(p,</span> <span class="pre">q,</span> <span class="pre">lm,</span> <span class="pre">v,</span> <span class="pre">lz)</span></tt> checks if <tt class="docutils literal"><span class="pre">p</span></tt> is divisible by <tt class="docutils literal"><span class="pre">q</span></tt>. <tt class="docutils literal"><span class="pre">lm</span></tt> is a list of defining equations for algebraic parameters, <tt class="docutils literal"><span class="pre">v</span></tt> is main variable, <tt class="docutils literal"><span class="pre">lz</span></tt> is the list of algebraic parameters.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/ModularEvaluationCategory.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Module.html" title="Module R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ModularAlgebraicGcdOperations.html" title="ModularAlgebraicGcdOperations(MP, MPT, MD)"
+             >previous</a> |</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
+          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014-2015, FriCAS Team.
+      Last updated on Feb 15, 2015.
+    </div>
+  </body>
+</html>

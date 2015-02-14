@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>OutputFormTools &mdash; FriCAS 1.2.4 API</title>
+    <title>OutputFormTools &mdash; FriCAS 1.2.5 API</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.4',
+        VERSION:     '1.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.4 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.2.5 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="OutputPackage" href="OutputPackage.html" />
     <link rel="prev" title="OrthogonalPolynomialFunctions R" href="OrthogonalPolynomialFunctions.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="OrthogonalPolynomialFunctions.html" title="OrthogonalPolynomialFunctions R"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
@@ -65,39 +65,47 @@
 <dt><span class="spadfun">atom?</span>: <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">atom?(f)</span></tt> checks if form <tt class="docutils literal"><span class="pre">f</span></tt> is atomic, <tt class="docutils literal"><span class="pre">false</span></tt> means composite</dd>
 </dl>
-<span class="target" id="l-output-form-tools-has-op"></span><dl class="docutils" id="index-3">
+<span class="target" id="l-output-form-tools-construct"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">construct</span>: (<a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a>) -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">construct(op,</span> <span class="pre">la)</span></tt> creates OutputForm with operator <tt class="docutils literal"><span class="pre">op</span></tt> and arguments la</dd>
+</dl>
+<span class="target" id="l-output-form-tools-has-op"></span><dl class="docutils" id="index-4">
 <dt><span class="spadfun">has_op?</span>: (<a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">has_op?(f,</span> <span class="pre">s)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> is <tt class="docutils literal"><span class="pre">f</span></tt> is a composite from with operator <tt class="docutils literal"><span class="pre">s</span></tt>, otherwise returns <tt class="docutils literal"><span class="pre">false</span></tt></dd>
 </dl>
-<span class="target" id="l-output-form-tools-integer"></span><dl class="docutils" id="index-4">
+<span class="target" id="l-output-form-tools-integer"></span><dl class="docutils" id="index-5">
 <dt><span class="spadfun">integer</span>: <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">integer(f)</span></tt> gives integer corresponding to <tt class="docutils literal"><span class="pre">f</span></tt>. Valid only when integer?(<tt class="docutils literal"><span class="pre">f</span></tt>) is <tt class="docutils literal"><span class="pre">true</span></tt></dd>
 </dl>
-<span class="target" id="id1"></span><dl class="docutils" id="index-5">
+<span class="target" id="id1"></span><dl class="docutils" id="index-6">
 <dt><span class="spadfun">integer?</span>: <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">integer?(f)</span></tt> checks if <tt class="docutils literal"><span class="pre">f</span></tt> is an integer, this implies atom?(<tt class="docutils literal"><span class="pre">f</span></tt>)</dd>
 </dl>
-<span class="target" id="l-output-form-tools-is-symbol"></span><dl class="docutils" id="index-6">
+<span class="target" id="l-output-form-tools-is-symbol"></span><dl class="docutils" id="index-7">
 <dt><span class="spadfun">is_symbol?</span>: (<a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a>, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">is_symbol?(f,</span> <span class="pre">s)</span></tt> retruns <tt class="docutils literal"><span class="pre">true</span></tt> if form is symbol <tt class="docutils literal"><span class="pre">s</span></tt>, otherwise returns <tt class="docutils literal"><span class="pre">false</span></tt></dd>
 </dl>
-<span class="target" id="l-output-form-tools-operator"></span><dl class="docutils" id="index-7">
+<span class="target" id="l-output-form-tools-operator"></span><dl class="docutils" id="index-8">
 <dt><span class="spadfun">operator</span>: <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">operator(f)</span></tt> gives operator (head) of form <tt class="docutils literal"><span class="pre">f</span></tt>. Valid only when atom?(<tt class="docutils literal"><span class="pre">f</span></tt>) is <tt class="docutils literal"><span class="pre">false</span></tt></dd>
 </dl>
-<span class="target" id="l-output-form-tools-string"></span><dl class="docutils" id="index-8">
+<span class="target" id="l-output-form-tools-precondition"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">precondition</span>: <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">precondition(f)</span></tt> prepares form for formatting.</dd>
+</dl>
+<span class="target" id="l-output-form-tools-string"></span><dl class="docutils" id="index-10">
 <dt><span class="spadfun">string</span>: <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">string(f)</span></tt> gives string corresponding to <tt class="docutils literal"><span class="pre">f</span></tt>. Valid only when string?(<tt class="docutils literal"><span class="pre">f</span></tt>) is <tt class="docutils literal"><span class="pre">true</span></tt></dd>
 </dl>
-<span class="target" id="id2"></span><dl class="docutils" id="index-9">
+<span class="target" id="id2"></span><dl class="docutils" id="index-11">
 <dt><span class="spadfun">string?</span>: <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">string?(f)</span></tt> checks if <tt class="docutils literal"><span class="pre">f</span></tt> is a string, this implies atom?(<tt class="docutils literal"><span class="pre">f</span></tt>)</dd>
 </dl>
-<span class="target" id="l-output-form-tools-symbol"></span><dl class="docutils" id="index-10">
+<span class="target" id="l-output-form-tools-symbol"></span><dl class="docutils" id="index-12">
 <dt><span class="spadfun">symbol</span>: <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> -&gt; <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">symbol(f)</span></tt> gives symbol corresponding to <tt class="docutils literal"><span class="pre">f</span></tt>. Valid only when symbol?(<tt class="docutils literal"><span class="pre">f</span></tt>) is <tt class="docutils literal"><span class="pre">true</span></tt></dd>
 </dl>
-<span class="target" id="id3"></span><dl class="docutils" id="index-11">
+<span class="target" id="id3"></span><dl class="docutils" id="index-13">
 <dt><span class="spadfun">symbol?</span>: <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">symbol?(f)</span></tt> checks if <tt class="docutils literal"><span class="pre">f</span></tt> is a symbol, this implies atom?(<tt class="docutils literal"><span class="pre">f</span></tt>)</dd>
 </dl>
@@ -150,13 +158,13 @@
         <li class="right" >
           <a href="OrthogonalPolynomialFunctions.html" title="OrthogonalPolynomialFunctions R"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2014, FriCAS Team.
-      Last updated on Nov 16, 2014.
+        &copy; Copyright 2014-2015, FriCAS Team.
+      Last updated on Feb 15, 2015.
     </div>
   </body>
 </html>

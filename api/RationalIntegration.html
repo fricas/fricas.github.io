@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>RationalIntegration(F, UP) &mdash; FriCAS 1.2.4 API</title>
+    <title>RationalIntegration(F, UP) &mdash; FriCAS 1.2.5 API</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.4',
+        VERSION:     '1.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.4 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.2.5 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="RationalInterpolation(xx, F)" href="RationalInterpolation.html" />
     <link rel="prev" title="RationalFunctionSum R" href="RationalFunctionSum.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="RationalFunctionSum.html" title="RationalFunctionSum R"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,27 +55,19 @@
             
   <div class="section" id="rationalintegration-f-up">
 <span id="l-rational-integration"></span><span id="index-0"></span><h1>RationalIntegration(F, UP)<a class="headerlink" href="#rationalintegration-f-up" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//intrf.spad#L849">intrf.spad line 849</a></p>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//intrf.spad#L611">intrf.spad line 611</a></p>
 <ul class="simple">
 <li>F: Join(<a class="reference internal" href="Field.html#l-field"><em>Field</em></a>, <a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</li>
 <li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> F</li>
 </ul>
 <p>This package provides functions for the base case of the Risch algorithm.</p>
-<span class="target" id="l-rational-integration-extendedint"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">extendedint</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Union(Record(ratpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, coeff: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP), failed)</dt>
-<dd><tt class="docutils literal"><span class="pre">extendedint(f,</span> <span class="pre">g)</span></tt> returns fractions <tt class="docutils literal"><span class="pre">[h,</span> <span class="pre">c]</span></tt> such that <tt class="docutils literal"><span class="pre">c'</span> <span class="pre">=</span> <span class="pre">0</span></tt> and <tt class="docutils literal"><span class="pre">h'</span> <span class="pre">=</span> <span class="pre">f</span> <span class="pre">-</span> <span class="pre">cg</span></tt>, if <tt class="docutils literal"><span class="pre">(h,</span> <span class="pre">c)</span></tt> exist, &#8220;failed&#8221; otherwise.</dd>
-</dl>
-<span class="target" id="l-rational-integration-infieldint"></span><dl class="docutils" id="index-2">
+<span class="target" id="l-rational-integration-infieldint"></span><dl class="docutils" id="index-1">
 <dt><span class="spadfun">infieldint</span>: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP -&gt; Union(<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, failed)</dt>
 <dd><tt class="docutils literal"><span class="pre">infieldint(f)</span></tt> returns <tt class="docutils literal"><span class="pre">g</span></tt> such that <tt class="docutils literal"><span class="pre">g'</span> <span class="pre">=</span> <span class="pre">f</span></tt> or &#8220;failed&#8221; if the integral of <tt class="docutils literal"><span class="pre">f</span></tt> is not a rational function.</dd>
 </dl>
-<span class="target" id="l-rational-integration-integrate"></span><dl class="docutils" id="index-3">
+<span class="target" id="l-rational-integration-integrate"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">integrate</span>: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP -&gt; <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP</dt>
 <dd><tt class="docutils literal"><span class="pre">integrate(f)</span></tt> returns <tt class="docutils literal"><span class="pre">g</span></tt> such that <tt class="docutils literal"><span class="pre">g'</span> <span class="pre">=</span> <span class="pre">f</span></tt>.</dd>
-</dl>
-<span class="target" id="l-rational-integration-limitedint"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">limitedint</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Union(Record(mainpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, limitedlogs: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(coeff: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, logand: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP)), failed)</dt>
-<dd><tt class="docutils literal"><span class="pre">limitedint(f,</span> <span class="pre">[g1,</span> <span class="pre">...,</span> <span class="pre">gn])</span></tt> returns fractions <tt class="docutils literal"><span class="pre">[h,</span> <span class="pre">[[ci,</span> <span class="pre">gi]]]</span></tt> such that the <tt class="docutils literal"><span class="pre">gi</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> are among <tt class="docutils literal"><span class="pre">[g1,</span> <span class="pre">...,</span> <span class="pre">gn]</span></tt>, <tt class="docutils literal"><span class="pre">ci'</span> <span class="pre">=</span> <span class="pre">0</span></tt>, and <tt class="docutils literal"><span class="pre">(h+sum(ci</span> <span class="pre">log(gi)))'</span> <span class="pre">=</span> <span class="pre">f</span></tt>, if possible, &#8220;failed&#8221; otherwise.</dd>
 </dl>
 </div>
 
@@ -126,13 +118,13 @@
         <li class="right" >
           <a href="RationalFunctionSum.html" title="RationalFunctionSum R"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2014, FriCAS Team.
-      Last updated on Nov 16, 2014.
+        &copy; Copyright 2014-2015, FriCAS Team.
+      Last updated on Feb 15, 2015.
     </div>
   </body>
 </html>

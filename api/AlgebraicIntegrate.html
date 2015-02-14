@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>AlgebraicIntegrate(R0, F, UP, UPUP, R) &mdash; FriCAS 1.2.4 API</title>
+    <title>AlgebraicIntegrate(R0, F, UP, UPUP, R) &mdash; FriCAS 1.2.5 API</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.4',
+        VERSION:     '1.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.4 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.2.5 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
-    <link rel="next" title="AlgebraicIntegration(R, F)" href="AlgebraicIntegration.html" />
+    <link rel="next" title="AlgebraicIntegrate2(R0, F, R)" href="AlgebraicIntegrate2.html" />
     <link rel="prev" title="AlgebraicHermiteIntegration(F, UP, UPUP, R)" href="AlgebraicHermiteIntegration.html" /> 
   </head>
   <body>
@@ -38,12 +38,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="AlgebraicIntegration.html" title="AlgebraicIntegration(R, F)"
+          <a href="AlgebraicIntegrate2.html" title="AlgebraicIntegrate2(R0, F, R)"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="AlgebraicHermiteIntegration.html" title="AlgebraicHermiteIntegration(F, UP, UPUP, R)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
@@ -68,15 +68,7 @@
 <dt><span class="spadfun">algintegrate</span>: (R, UP -&gt; UP) -&gt; <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> R</dt>
 <dd><tt class="docutils literal"><span class="pre">algintegrate(f,</span> <span class="pre">d)</span></tt> integrates <tt class="docutils literal"><span class="pre">f</span></tt> with respect to the derivation <tt class="docutils literal"><span class="pre">d</span></tt>.</dd>
 </dl>
-<span class="target" id="l-algebraic-integrate-palgextintegrate"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">palgextintegrate</span>: (R, UP -&gt; UP, UPUP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP) -&gt; Union(Record(ratpart: R, coeff: F), failed)</dt>
-<dd><tt class="docutils literal"><span class="pre">palgextintegrate(f,</span> <span class="pre">d,</span> <span class="pre">g,</span> <span class="pre">c1,</span> <span class="pre">c2)</span></tt> returns functions <tt class="docutils literal"><span class="pre">[h,</span> <span class="pre">c]</span></tt> such that using <tt class="docutils literal"><span class="pre">c1,</span> <span class="pre">c2</span></tt> as a change of variables we have <tt class="docutils literal"><span class="pre">(d(h))(c1(x),</span> <span class="pre">c2(y))</span> <span class="pre">=</span> <span class="pre">d(c1(x))f(c1(x),</span> <span class="pre">c2(y))</span> <span class="pre">-</span> <span class="pre">c</span> <span class="pre">g(x,</span> <span class="pre">y)</span></tt>, where <tt class="docutils literal"><span class="pre">y</span></tt> is an algebraic function of <tt class="docutils literal"><span class="pre">x</span></tt>; returns &#8220;failed&#8221; if no such functions exist.</dd>
-</dl>
-<span class="target" id="l-algebraic-integrate-palginfieldint"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">palginfieldint</span>: (R, UP -&gt; UP) -&gt; Union(R, failed)</dt>
-<dd><tt class="docutils literal"><span class="pre">palginfieldint(f,</span> <span class="pre">d)</span></tt> returns an algebraic function <tt class="docutils literal"><span class="pre">g</span></tt> such that <tt class="docutils literal"><span class="pre">dg</span> <span class="pre">=</span> <span class="pre">f</span></tt> if such a <tt class="docutils literal"><span class="pre">g</span></tt> exists, &#8220;failed&#8221; otherwise. Argument <tt class="docutils literal"><span class="pre">f</span></tt> must be a pure algebraic function.</dd>
-</dl>
-<span class="target" id="l-algebraic-integrate-palgintegrate"></span><dl class="docutils" id="index-4">
+<span class="target" id="l-algebraic-integrate-palgintegrate"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">palgintegrate</span>: (R, UP -&gt; UP) -&gt; <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> R</dt>
 <dd><tt class="docutils literal"><span class="pre">palgintegrate(f,</span> <span class="pre">d)</span></tt> integrates <tt class="docutils literal"><span class="pre">f</span></tt> with respect to the derivation <tt class="docutils literal"><span class="pre">d</span></tt>. Argument <tt class="docutils literal"><span class="pre">f</span></tt> must be a pure algebraic function.</dd>
 </dl>
@@ -124,18 +116,18 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="AlgebraicIntegration.html" title="AlgebraicIntegration(R, F)"
+          <a href="AlgebraicIntegrate2.html" title="AlgebraicIntegrate2(R0, F, R)"
              >next</a> |</li>
         <li class="right" >
           <a href="AlgebraicHermiteIntegration.html" title="AlgebraicHermiteIntegration(F, UP, UPUP, R)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2014, FriCAS Team.
-      Last updated on Nov 16, 2014.
+        &copy; Copyright 2014-2015, FriCAS Team.
+      Last updated on Feb 15, 2015.
     </div>
   </body>
 </html>

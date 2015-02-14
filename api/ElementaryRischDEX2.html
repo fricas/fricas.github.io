@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>ElementaryRischDEX2(R, F) &mdash; FriCAS 1.2.4 API</title>
+    <title>ElementaryRischDEX2(R, F) &mdash; FriCAS 1.2.5 API</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.4',
+        VERSION:     '1.2.5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.4 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.2.5 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="EllipticFunctionsUnivariateTaylorSeries(Coef, UTS)" href="EllipticFunctionsUnivariateTaylorSeries.html" />
     <link rel="prev" title="ElementaryRischDEX(R, F)" href="ElementaryRischDEX.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="ElementaryRischDEX.html" title="ElementaryRischDEX(R, F)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,15 +55,19 @@
             
   <div class="section" id="elementaryrischdex2-r-f">
 <span id="l-elementary-risch-d-e-x2"></span><span id="index-0"></span><h1>ElementaryRischDEX2(R, F)<a class="headerlink" href="#elementaryrischdex2-r-f" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//rdeefx.spad#L263">rdeefx.spad line 263</a></p>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//rdeefx.spad#L295">rdeefx.spad line 295</a></p>
 <ul class="simple">
 <li>R: Join(<a class="reference internal" href="GcdDomain.html#l-gcd-domain"><em>GcdDomain</em></a>, <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a>, <a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><em>CharacteristicZero</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</li>
 <li>F: Join(<a class="reference internal" href="TranscendentalFunctionCategory.html#l-transcendental-function-category"><em>TranscendentalFunctionCategory</em></a>, <a class="reference internal" href="AlgebraicallyClosedField.html#l-algebraically-closed-field"><em>AlgebraicallyClosedField</em></a>, <a class="reference internal" href="FunctionSpace.html#l-function-space"><em>FunctionSpace</em></a> R)</li>
 </ul>
 <p>Risch differential equation, wrapper for extended version.</p>
-<span class="target" id="l-elementary-risch-d-e-x2-risch-de-ext"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">risch_de_ext</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, F, F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, (F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> F) -&gt; Union(Record(mainpart: F, limitedlogs: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(coeff: F, logand: F)), failed), (F, F) -&gt; Union(Record(ratpart: F, coeff: F), failed)) -&gt; Record(ans: F, right: F, primpart: F, sol?: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>)</dt>
-<dd><tt class="docutils literal"><span class="pre">risch_de_ext(n,</span> <span class="pre">f,</span> <span class="pre">g,</span> <span class="pre">x,</span> <span class="pre">lim)</span></tt> returns <tt class="docutils literal"><span class="pre">[y,</span> <span class="pre">h,</span> <span class="pre">p,</span> <span class="pre">b]</span></tt> such that <tt class="docutils literal"><span class="pre">dy/dx</span> <span class="pre">+</span> <span class="pre">n</span> <span class="pre">df/dx</span> <span class="pre">y</span> <span class="pre">+</span> <span class="pre">exp(-nf)dp</span> <span class="pre">=</span> <span class="pre">h</span></tt> and <tt class="docutils literal"><span class="pre">b</span> <span class="pre">:=</span> <span class="pre">h</span> <span class="pre">=</span> <span class="pre">g</span></tt>. The equation <tt class="docutils literal"><span class="pre">dy/dx</span> <span class="pre">+</span> <span class="pre">n</span> <span class="pre">df/dx</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">g</span></tt> has no solution if <tt class="docutils literal"><span class="pre">h</span> <span class="pre">\~~=</span> <span class="pre">g</span></tt> (<tt class="docutils literal"><span class="pre">y</span></tt> is a partial solution in that case). Notes: lim is a limited integration function, and ext is an extended integration function.</dd>
+<span class="target" id="l-elementary-risch-d-e-x2-do-risch-d-e"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">do_risch_DE</span>: (F, F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F) -&gt; Record(ans: F, right: F, primpart: F, sol?: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">do_risch_DE(f,</span> <span class="pre">g,</span> <span class="pre">x,</span> <span class="pre">lk)</span></tt> returns <tt class="docutils literal"><span class="pre">[y,</span> <span class="pre">h,</span> <span class="pre">0,</span> <span class="pre">b]</span></tt> such that <tt class="docutils literal"><span class="pre">dy/dx</span> <span class="pre">+</span> <span class="pre">df/dx</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">h</span></tt> and <tt class="docutils literal"><span class="pre">b</span> <span class="pre">:=</span> <span class="pre">h</span> <span class="pre">=</span> <span class="pre">g</span></tt>. The equation <tt class="docutils literal"><span class="pre">dy/dx</span> <span class="pre">+</span> <span class="pre">df/dx</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">g</span></tt> has no solution in the field generated by <tt class="docutils literal"><span class="pre">lk</span></tt> if <tt class="docutils literal"><span class="pre">h</span> <span class="pre">\~~=</span> <span class="pre">g</span></tt> (<tt class="docutils literal"><span class="pre">y</span></tt> is a partial solution in that case).</dd>
+</dl>
+<span class="target" id="l-elementary-risch-d-e-x2-risch-de-ext"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">risch_de_ext</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, F, F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Record(ans: F, right: F, primpart: F, sol?: <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>)</dt>
+<dd><tt class="docutils literal"><span class="pre">risch_de_ext(n,</span> <span class="pre">f,</span> <span class="pre">g,</span> <span class="pre">x)</span></tt> returns <tt class="docutils literal"><span class="pre">[y,</span> <span class="pre">h,</span> <span class="pre">p,</span> <span class="pre">b]</span></tt> such that <tt class="docutils literal"><span class="pre">dy/dx</span> <span class="pre">+</span> <span class="pre">n</span> <span class="pre">df/dx</span> <span class="pre">y</span> <span class="pre">+</span> <span class="pre">exp(-nf)dp</span> <span class="pre">=</span> <span class="pre">h</span></tt> and <tt class="docutils literal"><span class="pre">b</span> <span class="pre">:=</span> <span class="pre">h</span> <span class="pre">=</span> <span class="pre">g</span></tt>. The equation <tt class="docutils literal"><span class="pre">dy/dx</span> <span class="pre">+</span> <span class="pre">n</span> <span class="pre">df/dx</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">g</span></tt> has no solution if <tt class="docutils literal"><span class="pre">h</span> <span class="pre">\~~=</span> <span class="pre">g</span></tt> (<tt class="docutils literal"><span class="pre">y</span></tt> is a partial solution in that case).</dd>
 </dl>
 </div>
 
@@ -114,13 +118,13 @@
         <li class="right" >
           <a href="ElementaryRischDEX.html" title="ElementaryRischDEX(R, F)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.4 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
           <li><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2014, FriCAS Team.
-      Last updated on Nov 16, 2014.
+        &copy; Copyright 2014-2015, FriCAS Team.
+      Last updated on Feb 15, 2015.
     </div>
   </body>
 </html>
