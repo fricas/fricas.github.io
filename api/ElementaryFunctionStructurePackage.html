@@ -55,7 +55,7 @@
             
   <div class="section" id="elementaryfunctionstructurepackage-r-f">
 <span id="l-elementary-function-structure-package"></span><span id="index-0"></span><h1>ElementaryFunctionStructurePackage(R, F)<a class="headerlink" href="#elementaryfunctionstructurepackage-r-f" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra//efstruc.spad#L83">efstruc.spad line 83</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//efstruc.spad#L83">efstruc.spad line 83</a></p>
 <ul class="simple">
 <li>R: Join(<a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a>, <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a>, <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="LinearlyExplicitRingOver.html#l-linearly-explicit-ring-over"><em>LinearlyExplicitRingOver</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>)</li>
 <li>F: Join(<a class="reference internal" href="AlgebraicallyClosedField.html#l-algebraically-closed-field"><em>AlgebraicallyClosedField</em></a>, <a class="reference internal" href="TranscendentalFunctionCategory.html#l-transcendental-function-category"><em>TranscendentalFunctionCategory</em></a>, <a class="reference internal" href="FunctionSpace.html#l-function-space"><em>FunctionSpace</em></a> R)</li>
@@ -67,49 +67,61 @@
 </dl>
 <span class="target" id="l-elementary-function-structure-package-normalize"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">normalize</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; F</dt>
-<dd><tt class="docutils literal"><span class="pre">normalize(f,</span> <span class="pre">x)</span></tt> rewrites <tt class="docutils literal"><span class="pre">f</span></tt> using the least possible number of real algebraically independent kernels involving <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+<dd><tt class="docutils literal"><span class="pre">normalize(f,</span> <span class="pre">x)</span></tt> is normalize([<tt class="docutils literal"><span class="pre">f</span></tt>], [<tt class="docutils literal"><span class="pre">x</span></tt>])</dd>
 </dl>
 <dl class="docutils" id="index-3">
+<dt><span class="spadfun">normalize</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> F</dt>
+<dd><tt class="docutils literal"><span class="pre">normalize([f1,</span> <span class="pre">...,</span> <span class="pre">fn],</span> <span class="pre">lx)</span></tt> rewrites <tt class="docutils literal"><span class="pre">f1,</span> <span class="pre">...,</span> <span class="pre">fn</span></tt> using the least possible number of real algebraically independent kernels. Additionally, it tries to ensure that any expression in resulting kernels which syntactially depends on a variable <tt class="docutils literal"><span class="pre">x</span></tt> from <tt class="docutils literal"><span class="pre">lx</span></tt> has nonzero derivative with respect to <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-4">
 <dt><span class="spadfun">normalize</span>: F -&gt; F</dt>
 <dd><tt class="docutils literal"><span class="pre">normalize(f)</span></tt> rewrites <tt class="docutils literal"><span class="pre">f</span></tt> using the least possible number of real algebraically independent kernels.</dd>
 </dl>
-<span class="target" id="l-elementary-function-structure-package-real-elementary"></span><dl class="docutils" id="index-4">
+<dl class="docutils" id="index-5">
+<dt><span class="spadfun">normalize</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> F -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> F</dt>
+<dd><tt class="docutils literal"><span class="pre">normalize(lf)</span></tt> is normalize(<tt class="docutils literal"><span class="pre">lf</span></tt>, [])</dd>
+</dl>
+<span class="target" id="l-elementary-function-structure-package-real-elementary"></span><dl class="docutils" id="index-6">
 <dt><span class="spadfun">realElementary</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; F</dt>
 <dd><tt class="docutils literal"><span class="pre">realElementary(f,</span> <span class="pre">x)</span></tt> rewrites the kernels of <tt class="docutils literal"><span class="pre">f</span></tt> involving <tt class="docutils literal"><span class="pre">x</span></tt> in terms of the 4 fundamental real transcendental elementary functions: <tt class="docutils literal"><span class="pre">log,</span> <span class="pre">exp,</span> <span class="pre">tan,</span> <span class="pre">atan</span></tt>.</dd>
 </dl>
-<dl class="docutils" id="index-5">
+<dl class="docutils" id="index-7">
 <dt><span class="spadfun">realElementary</span>: F -&gt; F</dt>
 <dd><tt class="docutils literal"><span class="pre">realElementary(f)</span></tt> rewrites <tt class="docutils literal"><span class="pre">f</span></tt> in terms of the 4 fundamental real transcendental elementary functions: <tt class="docutils literal"><span class="pre">log,</span> <span class="pre">exp,</span> <span class="pre">tan,</span> <span class="pre">atan</span></tt>.</dd>
 </dl>
-<span class="target" id="l-elementary-function-structure-package-real-liouvillian"></span><dl class="docutils" id="index-6">
+<span class="target" id="l-elementary-function-structure-package-real-liouvillian"></span><dl class="docutils" id="index-8">
 <dt><span class="spadfun">realLiouvillian</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; F</dt>
 <dd><tt class="docutils literal"><span class="pre">realLiouvillian(f,</span> <span class="pre">x)</span></tt> rewrites <tt class="docutils literal"><span class="pre">f</span></tt> elementary kernels of <tt class="docutils literal"><span class="pre">f</span></tt> in terms 4 fundamental real elementary functions: <tt class="docutils literal"><span class="pre">log,</span> <span class="pre">exp,</span> <span class="pre">tan,</span> <span class="pre">atan</span></tt>. Additionally, it rewrites Liouvillian functions of <tt class="docutils literal"><span class="pre">x</span></tt> as indefinite integrals to support better normalization.</dd>
 </dl>
-<dl class="docutils" id="index-7">
+<dl class="docutils" id="index-9">
 <dt><span class="spadfun">realLiouvillian</span>: F -&gt; F</dt>
 <dd><tt class="docutils literal"><span class="pre">realLiouvillian(f)</span></tt> rewrites <tt class="docutils literal"><span class="pre">f</span></tt> elementary kernels of <tt class="docutils literal"><span class="pre">f</span></tt> in terms 4 fundamental real elementary functions: <tt class="docutils literal"><span class="pre">log,</span> <span class="pre">exp,</span> <span class="pre">tan,</span> <span class="pre">atan</span></tt>. Additionally, it rewrites Liouvillian functions as indefinite integrals to support better normalization.</dd>
 </dl>
-<span class="target" id="l-elementary-function-structure-package-risch-normalize"></span><dl class="docutils" id="index-8">
+<span class="target" id="l-elementary-function-structure-package-risch-normalize"></span><dl class="docutils" id="index-10">
 <dt><span class="spadfun">rischNormalize</span>: (F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Record(func: F, kers: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F, vals: <a class="reference internal" href="List.html#l-list"><em>List</em></a> F)</dt>
-<dd><tt class="docutils literal"><span class="pre">rischNormalize(f,</span> <span class="pre">lx)</span></tt> returns <tt class="docutils literal"><span class="pre">[g,</span> <span class="pre">[k1,</span> <span class="pre">...,</span> <span class="pre">kn],</span> <span class="pre">[h1,</span> <span class="pre">...,</span> <span class="pre">hn]]</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">normalize(f,</span> <span class="pre">lx)</span></tt> and each <tt class="docutils literal"><span class="pre">ki</span></tt> was rewritten as <tt class="docutils literal"><span class="pre">hi</span></tt> during the normalization.</dd>
+<dd><tt class="docutils literal"><span class="pre">rischNormalize(f,</span> <span class="pre">lx)</span></tt> is rischNormalize([<tt class="docutils literal"><span class="pre">f</span></tt>], <tt class="docutils literal"><span class="pre">lx</span></tt>)</dd>
 </dl>
-<dl class="docutils" id="index-9">
+<dl class="docutils" id="index-11">
 <dt><span class="spadfun">rischNormalize</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Record(func: F, kers: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F, vals: <a class="reference internal" href="List.html#l-list"><em>List</em></a> F)</dt>
-<dd><tt class="docutils literal"><span class="pre">rischNormalize(f,</span> <span class="pre">x)</span></tt> returns <tt class="docutils literal"><span class="pre">[g,</span> <span class="pre">[k1,</span> <span class="pre">...,</span> <span class="pre">kn],</span> <span class="pre">[h1,</span> <span class="pre">...,</span> <span class="pre">hn]]</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">normalize(f,</span> <span class="pre">x)</span></tt> and each <tt class="docutils literal"><span class="pre">ki</span></tt> was rewritten as <tt class="docutils literal"><span class="pre">hi</span></tt> during the normalization.</dd>
+<dd><tt class="docutils literal"><span class="pre">rischNormalize(f,</span> <span class="pre">x)</span></tt> is rischNormalize([<tt class="docutils literal"><span class="pre">f</span></tt>], [<tt class="docutils literal"><span class="pre">x</span></tt>]) rischNormalize(<tt class="docutils literal"><span class="pre">f</span></tt>, <tt class="docutils literal"><span class="pre">x</span></tt>) returns <tt class="docutils literal"><span class="pre">[g,</span> <span class="pre">[k1,</span> <span class="pre">...,</span> <span class="pre">kn],</span> <span class="pre">[h1,</span> <span class="pre">...,</span> <span class="pre">hn]]</span></tt> such that <tt class="docutils literal"><span class="pre">g</span> <span class="pre">=</span> <span class="pre">normalize(f,</span> <span class="pre">x)</span></tt> and each <tt class="docutils literal"><span class="pre">ki</span></tt> was rewritten as <tt class="docutils literal"><span class="pre">hi</span></tt> during the normalization.</dd>
 </dl>
-<span class="target" id="l-elementary-function-structure-package-rmap"></span><dl class="docutils" id="index-10">
+<dl class="docutils" id="index-12">
+<dt><span class="spadfun">rischNormalize</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Record(funcs: <a class="reference internal" href="List.html#l-list"><em>List</em></a> F, kers: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F, vals: <a class="reference internal" href="List.html#l-list"><em>List</em></a> F)</dt>
+<dd><tt class="docutils literal"><span class="pre">rischNormalize(lf,</span> <span class="pre">lx)</span></tt> returns <tt class="docutils literal"><span class="pre">[lg,</span> <span class="pre">[k1,</span> <span class="pre">...,</span> <span class="pre">kn],</span> <span class="pre">[h1,</span> <span class="pre">...,</span> <span class="pre">hn]]</span></tt> such that <tt class="docutils literal"><span class="pre">lg</span> <span class="pre">=</span> <span class="pre">normalize(lf,</span> <span class="pre">lx)</span></tt> and each <tt class="docutils literal"><span class="pre">ki</span></tt> was rewritten as <tt class="docutils literal"><span class="pre">hi</span></tt> during the normalization.</dd>
+</dl>
+<span class="target" id="l-elementary-function-structure-package-rmap"></span><dl class="docutils" id="index-13">
 <dt><span class="spadfun">rmap</span>: (<a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F -&gt; F, F) -&gt; F</dt>
 <dd><tt class="docutils literal"><span class="pre">rmap(f,</span> <span class="pre">e)</span></tt> rewrites <tt class="docutils literal"><span class="pre">e</span></tt> replacing each kernel <tt class="docutils literal"><span class="pre">k</span></tt> in <tt class="docutils literal"><span class="pre">e</span></tt> by <tt class="docutils literal"><span class="pre">f</span></tt>(<tt class="docutils literal"><span class="pre">k</span></tt>)</dd>
 </dl>
-<span class="target" id="l-elementary-function-structure-package-root-normalize"></span><dl class="docutils" id="index-11">
+<span class="target" id="l-elementary-function-structure-package-root-normalize"></span><dl class="docutils" id="index-14">
 <dt><span class="spadfun">rootNormalize</span>: (F, <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F) -&gt; F</dt>
 <dd><tt class="docutils literal"><span class="pre">rootNormalize(f,</span> <span class="pre">k)</span></tt> returns <tt class="docutils literal"><span class="pre">f</span></tt> rewriting either <tt class="docutils literal"><span class="pre">k</span></tt> which must be an <tt class="docutils literal"><span class="pre">n</span></tt>th-root in terms of radicals already in <tt class="docutils literal"><span class="pre">f</span></tt>, or some radicals in <tt class="docutils literal"><span class="pre">f</span></tt> in terms of <tt class="docutils literal"><span class="pre">k</span></tt>.</dd>
 </dl>
-<span class="target" id="l-elementary-function-structure-package-tan-q"></span><dl class="docutils" id="index-12">
+<span class="target" id="l-elementary-function-structure-package-tan-q"></span><dl class="docutils" id="index-15">
 <dt><span class="spadfun">tanQ</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, F) -&gt; F</dt>
 <dd><tt class="docutils literal"><span class="pre">tanQ(q,</span> <span class="pre">a)</span></tt> is a local function with a conditional implementation.</dd>
 </dl>
-<span class="target" id="l-elementary-function-structure-package-valid-exponential"></span><dl class="docutils" id="index-13">
+<span class="target" id="l-elementary-function-structure-package-valid-exponential"></span><dl class="docutils" id="index-16">
 <dt><span class="spadfun">validExponential</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F, F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Union(F, failed)</dt>
 <dd><tt class="docutils literal"><span class="pre">validExponential([k1,</span> <span class="pre">...,</span> <span class="pre">kn],</span> <span class="pre">f,</span> <span class="pre">x)</span></tt> returns <tt class="docutils literal"><span class="pre">g</span></tt> if <tt class="docutils literal"><span class="pre">exp(f)=g</span></tt> and <tt class="docutils literal"><span class="pre">g</span></tt> involves only <tt class="docutils literal"><span class="pre">k1...kn</span></tt>, and &#8220;failed&#8221; otherwise.</dd>
 </dl>
@@ -168,7 +180,7 @@
     </div>
     <div class="footer">
         &copy; Copyright 2014-2015, FriCAS Team.
-      Last updated on Feb 15, 2015.
+      Last updated on Mar 01, 2015.
     </div>
   </body>
 </html>

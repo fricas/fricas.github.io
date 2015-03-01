@@ -15,3 +15,7 @@
 
 * `Example Polynomials over finite fields and rings
   <http://axiom-wiki.newsynthesis.org/SandBoxPolynomialOverFiniteField>`_
+
+* `Example Gröbner bases <http://axiom-wiki.newsynthesis.org/ExampleGroebner>`_
+
+* `Example non-commutative polynomials <http://axiom-wiki.newsynthesis.org/ExampleSkewPolynomial>`_

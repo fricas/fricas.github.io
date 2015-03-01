@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>OrePolynomialMatrixOperations(F, LO) &mdash; FriCAS 1.2.5 API</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.2.5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.2.5 API" href="index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="OrthogonalPolynomialFunctions R" href="OrthogonalPolynomialFunctions.html" />
+    <link rel="prev" title="OrderingFunctions(dim, S)" href="OrderingFunctions.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="OrthogonalPolynomialFunctions.html" title="OrthogonalPolynomialFunctions R"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="OrderingFunctions.html" title="OrderingFunctions(dim, S)"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
+          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="orepolynomialmatrixoperations-f-lo">
+<span id="l-ore-polynomial-matrix-operations"></span><span id="index-0"></span><h1>OrePolynomialMatrixOperations(F, LO)<a class="headerlink" href="#orepolynomialmatrixoperations-f-lo" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//skpol.spad#L392">skpol.spad line 392</a></p>
+<ul class="simple">
+<li>F: <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></li>
+<li>LO: <a class="reference internal" href="UnivariateSkewPolynomialCategory.html#l-univariate-skew-polynomial-category"><em>UnivariateSkewPolynomialCategory</em></a> F</li>
+</ul>
+<p>undocumented</p>
+<span class="target" id="l-ore-polynomial-matrix-operations-row-echelon"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">rowEchelon</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> LO, F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F) -&gt; Record(mat: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> LO, vecs: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F)</dt>
+<dd><tt class="docutils literal"><span class="pre">rowEchelon(m,</span> <span class="pre">c,</span> <span class="pre">lv)</span></tt> returns [<tt class="docutils literal"><span class="pre">m2</span></tt>, <tt class="docutils literal"><span class="pre">lv2</span></tt>] such that <tt class="docutils literal"><span class="pre">m2</span></tt> is the row echelon form of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>. <tt class="docutils literal"><span class="pre">lv2</span></tt> is transformed <tt class="docutils literal"><span class="pre">lv</span></tt> using <tt class="docutils literal"><span class="pre">c</span></tt> as paramenter to <tt class="docutils literal"><span class="pre">apply</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-2">
+<dt><span class="spadfun">rowEchelon</span>: <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> LO -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> LO</dt>
+<dd><tt class="docutils literal"><span class="pre">rowEchelon(m)</span></tt> returns the row echelon form of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+</dl>
+<span class="target" id="l-ore-polynomial-matrix-operations-solve"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">solve</span>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> LO, F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F, (LO, <a class="reference internal" href="List.html#l-list"><em>List</em></a> F) -&gt; Record(particular: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(ratpart: F, coeffs: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F), basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> F)) -&gt; Union(Record(particular: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(ratpart: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F, coeffs: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F), basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F), failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">solve(m,</span> <span class="pre">c,</span> <span class="pre">lv,</span> <span class="pre">solf)</span></tt> returns &#8220;failed&#8221; of [[<tt class="docutils literal"><span class="pre">vp1</span></tt>, ..., vp_m], [<tt class="docutils literal"><span class="pre">b1</span></tt>, ..., <tt class="docutils literal"><span class="pre">bl</span></tt>]] such that <tt class="docutils literal"><span class="pre">bi</span></tt>-<tt class="docutils literal"><span class="pre">s</span></tt> are basis of solutions of homogeneous system <tt class="docutils literal"><span class="pre">m</span></tt> <tt class="docutils literal"><span class="pre">bi</span></tt> = 0. Each vpi = [<tt class="docutils literal"><span class="pre">r</span></tt>, [<tt class="docutils literal"><span class="pre">c1</span></tt>, ..., <tt class="docutils literal"><span class="pre">cn</span></tt>]] is a particuar solution of a parametic matrix equation <tt class="docutils literal"><span class="pre">m</span></tt> <tt class="docutils literal"><span class="pre">r</span></tt> = sum <tt class="docutils literal"><span class="pre">ci</span></tt> <tt class="docutils literal"><span class="pre">vi</span></tt> where <tt class="docutils literal"><span class="pre">lv</span></tt> = [<tt class="docutils literal"><span class="pre">v1</span></tt>, ..., <tt class="docutils literal"><span class="pre">vn</span></tt>]. solf is scalar solver, <tt class="docutils literal"><span class="pre">c</span></tt> is a paramenter to <tt class="docutils literal"><span class="pre">apply</span></tt> (needed for astion of LO on <tt class="docutils literal"><span class="pre">F</span></tt>). &#8220;failed&#8221; means that system is underdetermined.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/OrePolynomialMatrixOperations.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="OrthogonalPolynomialFunctions.html" title="OrthogonalPolynomialFunctions R"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="OrderingFunctions.html" title="OrderingFunctions(dim, S)"
+             >previous</a> |</li>
+        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
+          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014-2015, FriCAS Team.
+      Last updated on Mar 01, 2015.
+    </div>
+  </body>
+</html>
