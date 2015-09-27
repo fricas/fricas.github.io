@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>NonAssociativeRng &mdash; FriCAS 1.2.5 API</title>
+    <title>NonAssociativeRng &mdash; FriCAS 1.2.7 API</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.5',
+        VERSION:     '1.2.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,9 +25,9 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.5 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
-    <link rel="next" title="NormalizedTriangularSetCategory(R, E, V, P)" href="NormalizedTriangularSetCategory.html" />
+    <link rel="next" title="NonAssociativeSemiRing" href="NonAssociativeSemiRing.html" />
     <link rel="prev" title="NonAssociativeRing" href="NonAssociativeRing.html" /> 
   </head>
   <body>
@@ -38,12 +38,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="NormalizedTriangularSetCategory.html" title="NormalizedTriangularSetCategory(R, E, V, P)"
+          <a href="NonAssociativeSemiRing.html" title="NonAssociativeSemiRing"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="NonAssociativeRing.html" title="NonAssociativeRing"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
           <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,13 +55,13 @@
             
   <div class="section" id="nonassociativerng">
 <span id="l-non-associative-rng"></span><span id="index-0"></span><h1>NonAssociativeRng<a class="headerlink" href="#nonassociativerng" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//naalgc.spad#L117">naalgc.spad line 117</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//naalgc.spad#L137">naalgc.spad line 137</a></p>
 <p>NonAssociativeRng is a basic ring-type structure, not necessarily commutative or associative, and not necessarily with unit. Axioms <tt class="docutils literal"><span class="pre">x*</span></tt>(<tt class="docutils literal"><span class="pre">y+z</span></tt>) = x*y + <tt class="docutils literal"><span class="pre">x*z</span></tt> (x+y)<tt class="docutils literal"><span class="pre">*z</span></tt> = <tt class="docutils literal"><span class="pre">x*z</span></tt> + <tt class="docutils literal"><span class="pre">y*z</span></tt> Common Additional Axioms noZeroDivisors ab = 0 <tt class="docutils literal"><span class="pre">=&gt;</span></tt> <tt class="docutils literal"><span class="pre">a=0</span></tt> or <tt class="docutils literal"><span class="pre">b=0</span></tt></p>
 <dl class="docutils">
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><em>0</em></a>: %</dt>
 <dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
-<dt><a class="reference internal" href="Monad.html#id1"><em>*</em></a>: (%, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="Monad.html#l-monad"><em>Monad</em></a></dd>
+<dt><a class="reference internal" href="Magma.html#id1"><em>*</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Magma.html#l-magma"><em>Magma</em></a></dd>
 <dt><a class="reference internal" href="AbelianGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
 <dt><a class="reference internal" href="AbelianMonoid.html#id1"><em>*</em></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, %) -&gt; %</dt>
@@ -76,22 +76,20 @@
 <dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
-<dt><a class="reference internal" href="Monad.html#id2"><em>^</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="Monad.html#l-monad"><em>Monad</em></a></dd>
+<dt><a class="reference internal" href="Magma.html#id2"><em>^</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Magma.html#l-magma"><em>Magma</em></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><a class="reference internal" href="NonAssociativeSemiRng.html#l-non-associative-semi-rng-anti-commutator"><em>antiCommutator</em></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="NonAssociativeSemiRng.html#l-non-associative-semi-rng"><em>NonAssociativeSemiRng</em></a></dd>
 </dl>
-<span class="target" id="l-non-associative-rng-anti-commutator"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">antiCommutator</span>: (%, %) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">antiCommutator(a,</span> <span class="pre">b)</span></tt> returns <tt class="docutils literal"><span class="pre">a*b+b*a</span></tt>.</dd>
-</dl>
-<span class="target" id="l-non-associative-rng-associator"></span><dl class="docutils" id="index-2">
+<span class="target" id="l-non-associative-rng-associator"></span><dl class="docutils" id="index-1">
 <dt><span class="spadfun">associator</span>: (%, %, %) -&gt; %</dt>
 <dd><tt class="docutils literal"><span class="pre">associator(a,</span> <span class="pre">b,</span> <span class="pre">c)</span></tt> returns <tt class="docutils literal"><span class="pre">(a*b)*c-a*(b*c)</span></tt>.</dd>
 <dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
 <dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
 </dl>
-<span class="target" id="l-non-associative-rng-commutator"></span><dl class="docutils" id="index-3">
+<span class="target" id="l-non-associative-rng-commutator"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">commutator</span>: (%, %) -&gt; %</dt>
 <dd><tt class="docutils literal"><span class="pre">commutator(a,</span> <span class="pre">b)</span></tt> returns <tt class="docutils literal"><span class="pre">a*b-b*a</span></tt>.</dd>
 <dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
@@ -100,12 +98,12 @@
 <dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
 <dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
 <dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
-<dt><a class="reference internal" href="Monad.html#l-monad-left-power"><em>leftPower</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="Monad.html#l-monad"><em>Monad</em></a></dd>
+<dt><a class="reference internal" href="Magma.html#l-magma-left-power"><em>leftPower</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Magma.html#l-magma"><em>Magma</em></a></dd>
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-opposite"><em>opposite?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
 <dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
-<dt><a class="reference internal" href="Monad.html#l-monad-right-power"><em>rightPower</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="Monad.html#l-monad"><em>Monad</em></a></dd>
+<dt><a class="reference internal" href="Magma.html#l-magma-right-power"><em>rightPower</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Magma.html#l-magma"><em>Magma</em></a></dd>
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-sample"><em>sample</em></a>: %</dt>
 <dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
 <dt><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid-subtract-if-can"><em>subtractIfCan</em></a>: (%, %) -&gt; Union(%, failed)</dt>
@@ -119,7 +117,8 @@
 <p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
 <p><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a></p>
 <p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
-<p><a class="reference internal" href="Monad.html#l-monad"><em>Monad</em></a></p>
+<p><a class="reference internal" href="Magma.html#l-magma"><em>Magma</em></a></p>
+<p><a class="reference internal" href="NonAssociativeSemiRng.html#l-non-associative-semi-rng"><em>NonAssociativeSemiRng</em></a></p>
 <p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
 </div>
 
@@ -136,11 +135,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/NonAssociativeRng.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -165,18 +159,17 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="NormalizedTriangularSetCategory.html" title="NormalizedTriangularSetCategory(R, E, V, P)"
+          <a href="NonAssociativeSemiRing.html" title="NonAssociativeSemiRing"
              >next</a> |</li>
         <li class="right" >
           <a href="NonAssociativeRing.html" title="NonAssociativeRing"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
           <li><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014-2015, FriCAS Team.
-      Last updated on Mar 04, 2015.
     </div>
   </body>
 </html>

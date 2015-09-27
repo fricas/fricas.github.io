@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>FreeMonoid S &mdash; FriCAS 1.2.5 API</title>
+    <title>FreeMonoid S &mdash; FriCAS 1.2.7 API</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.5',
+        VERSION:     '1.2.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.5 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="FreeNilpotentLie(n, class, R)" href="FreeNilpotentLie.html" />
     <link rel="prev" title="FreeModule(R, S)" href="FreeModule.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="FreeModule.html" title="FreeModule(R, S)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
           <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
@@ -59,7 +59,7 @@
 <ul class="simple">
 <li>S: <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></li>
 </ul>
-<p>The free monoid on a set <tt class="docutils literal"><span class="pre">S</span></tt> is the monoid of finite products of the form <tt class="docutils literal"><span class="pre">reduce(*,</span> <span class="pre">[si</span> <span class="pre">^</span> <span class="pre">ni])</span></tt> where the <tt class="docutils literal"><span class="pre">si</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> are in <tt class="docutils literal"><span class="pre">S</span></tt>, and the <tt class="docutils literal"><span class="pre">ni</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> are nonnegative integers. The multiplication is not commutative.</p>
+<p>The free monoid on a set <tt class="docutils literal"><span class="pre">S</span></tt> is the monoid of finite products of the form <tt class="docutils literal"><span class="pre">reduce(*,</span> <span class="pre">[si</span> <span class="pre">^</span> <span class="pre">ni])</span></tt> where the <tt class="docutils literal"><span class="pre">si</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> are in <tt class="docutils literal"><span class="pre">S</span></tt>, and the <tt class="docutils literal"><span class="pre">ni</span></tt><tt class="docutils literal"><span class="pre">'s</span></tt> are nonnegative integers. The multiplication is not commutative. When <tt class="docutils literal"><span class="pre">S</span></tt> is an OrderedSet, then FreeMonoid(<tt class="docutils literal"><span class="pre">S</span></tt>) has order: for two elements <tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt> the relation <tt class="docutils literal"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">y</span></tt> holds if either <tt class="docutils literal"><span class="pre">length(x)</span> <span class="pre">&lt;</span> <span class="pre">length(y)</span></tt> holds or if these lengths are equal and if <tt class="docutils literal"><span class="pre">x</span></tt> is smaller than <tt class="docutils literal"><span class="pre">y</span></tt> <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. the lexicographical ordering induced by <tt class="docutils literal"><span class="pre">S</span></tt>.</p>
 <dl class="docutils">
 <dt><a class="reference internal" href="Monoid.html#l-monoid-1"><em>1</em></a>: %</dt>
 <dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
@@ -105,30 +105,46 @@
 <span class="target" id="l-free-monoid-factors"></span><dl class="docutils" id="index-5">
 <dt><span class="spadfun">factors</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(gen: S, exp: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>)</dt>
 <dd><tt class="docutils literal"><span class="pre">factors(a1\^e1,</span> <span class="pre">...,</span> <span class="pre">an\^en)</span></tt> returns <tt class="docutils literal"><span class="pre">[[a1,</span> <span class="pre">e1],</span> <span class="pre">...,</span> <span class="pre">[an,</span> <span class="pre">en]]</span></tt>.</dd>
+</dl>
+<span class="target" id="l-free-monoid-first"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">first</span>: % -&gt; S</dt>
+<dd><tt class="docutils literal"><span class="pre">first(x)</span></tt> returns the first letter of <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
 <dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
 <dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
 <dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
 <dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
 </dl>
-<span class="target" id="l-free-monoid-hclf"></span><dl class="docutils" id="index-6">
+<span class="target" id="l-free-monoid-hclf"></span><dl class="docutils" id="index-7">
 <dt><span class="spadfun">hclf</span>: (%, %) -&gt; %</dt>
 <dd><tt class="docutils literal"><span class="pre">hclf(x,</span> <span class="pre">y)</span></tt> returns the highest common left factor of <tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt>, i.e. the largest <tt class="docutils literal"><span class="pre">d</span></tt> such that <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">d</span> <span class="pre">a</span></tt> and <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">d</span> <span class="pre">b</span></tt>.</dd>
 </dl>
-<span class="target" id="l-free-monoid-hcrf"></span><dl class="docutils" id="index-7">
+<span class="target" id="l-free-monoid-hcrf"></span><dl class="docutils" id="index-8">
 <dt><span class="spadfun">hcrf</span>: (%, %) -&gt; %</dt>
 <dd><tt class="docutils literal"><span class="pre">hcrf(x,</span> <span class="pre">y)</span></tt> returns the highest common right factor of <tt class="docutils literal"><span class="pre">x</span></tt> and <tt class="docutils literal"><span class="pre">y</span></tt>, i.e. the largest <tt class="docutils literal"><span class="pre">d</span></tt> such that <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">d</span></tt> and <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">b</span> <span class="pre">d</span></tt>.</dd>
 <dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
 <dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
 </dl>
-<span class="target" id="l-free-monoid-lquo"></span><dl class="docutils" id="index-8">
+<span class="target" id="l-free-monoid-length"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">length</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">length(x)</span></tt> returns the length of <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+</dl>
+<span class="target" id="l-free-monoid-lexico"></span><dl class="docutils" id="index-10">
+<dt><span class="spadfun">lexico</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">lexico(x,</span> <span class="pre">y)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> iff <tt class="docutils literal"><span class="pre">x</span></tt> is smaller than <tt class="docutils literal"><span class="pre">y</span></tt> <tt class="docutils literal"><span class="pre">w</span></tt>.<tt class="docutils literal"><span class="pre">r</span></tt>.<tt class="docutils literal"><span class="pre">t</span></tt>. the pure lexicographical ordering induced by <tt class="docutils literal"><span class="pre">S</span></tt>.</dd>
+</dl>
+<span class="target" id="l-free-monoid-lquo"></span><dl class="docutils" id="index-11">
 <dt><span class="spadfun">lquo</span>: (%, %) -&gt; Union(%, failed)</dt>
 <dd><tt class="docutils literal"><span class="pre">lquo(x,</span> <span class="pre">y)</span></tt> returns the exact left quotient of <tt class="docutils literal"><span class="pre">x</span></tt> by <tt class="docutils literal"><span class="pre">y</span></tt> i.e. <tt class="docutils literal"><span class="pre">q</span></tt> such that <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">y</span> <span class="pre">*</span> <span class="pre">q</span></tt>, &#8220;failed&#8221; if <tt class="docutils literal"><span class="pre">x</span></tt> is not of the form <tt class="docutils literal"><span class="pre">y</span> <span class="pre">*</span> <span class="pre">q</span></tt>.</dd>
 </dl>
-<span class="target" id="l-free-monoid-map-expon"></span><dl class="docutils" id="index-9">
+<dl class="docutils" id="index-12">
+<dt><span class="spadfun">lquo</span>: (%, S) -&gt; Union(%, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">lquo(x,</span> <span class="pre">s)</span></tt> returns the exact left quotient of <tt class="docutils literal"><span class="pre">x</span></tt> by <tt class="docutils literal"><span class="pre">s</span></tt>.</dd>
+</dl>
+<span class="target" id="l-free-monoid-map-expon"></span><dl class="docutils" id="index-13">
 <dt><span class="spadfun">mapExpon</span>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, %) -&gt; %</dt>
 <dd><tt class="docutils literal"><span class="pre">mapExpon(f,</span> <span class="pre">a1\^e1</span> <span class="pre">...</span> <span class="pre">an\^en)</span></tt> returns <tt class="docutils literal"><span class="pre">a1\^f(e1)</span> <span class="pre">...</span> <span class="pre">an\^f(en)</span></tt>.</dd>
 </dl>
-<span class="target" id="l-free-monoid-map-gen"></span><dl class="docutils" id="index-10">
+<span class="target" id="l-free-monoid-map-gen"></span><dl class="docutils" id="index-14">
 <dt><span class="spadfun">mapGen</span>: (S -&gt; S, %) -&gt; %</dt>
 <dd><tt class="docutils literal"><span class="pre">mapGen(f,</span> <span class="pre">a1\^e1</span> <span class="pre">...</span> <span class="pre">an\^en)</span></tt> returns <tt class="docutils literal"><span class="pre">f(a1)\^e1</span> <span class="pre">...</span> <span class="pre">f(an)\^en</span></tt>.</dd>
 <dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-max"><em>max</em></a>: (%, %) -&gt; % if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
@@ -136,42 +152,60 @@
 <dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-min"><em>min</em></a>: (%, %) -&gt; % if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dt>
 <dd>from <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></dd>
 </dl>
-<span class="target" id="l-free-monoid-nth-expon"></span><dl class="docutils" id="index-11">
+<span class="target" id="l-free-monoid-mirror"></span><dl class="docutils" id="index-15">
+<dt><span class="spadfun">mirror</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">mirror(x)</span></tt> returns the reversed word of <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+</dl>
+<span class="target" id="l-free-monoid-nth-expon"></span><dl class="docutils" id="index-16">
 <dt><span class="spadfun">nthExpon</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">nthExpon(x,</span> <span class="pre">n)</span></tt> returns the exponent of the n^th monomial of <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
 </dl>
-<span class="target" id="l-free-monoid-nth-factor"></span><dl class="docutils" id="index-12">
+<span class="target" id="l-free-monoid-nth-factor"></span><dl class="docutils" id="index-17">
 <dt><span class="spadfun">nthFactor</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; S</dt>
 <dd><tt class="docutils literal"><span class="pre">nthFactor(x,</span> <span class="pre">n)</span></tt> returns the factor of the n^th monomial of <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
 <dt><a class="reference internal" href="Monoid.html#l-monoid-one"><em>one?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
 <dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
 </dl>
-<span class="target" id="l-free-monoid-overlap"></span><dl class="docutils" id="index-13">
+<span class="target" id="l-free-monoid-overlap"></span><dl class="docutils" id="index-18">
 <dt><span class="spadfun">overlap</span>: (%, %) -&gt; Record(lm: %, mm: %, rm: %)</dt>
 <dd><tt class="docutils literal"><span class="pre">overlap(x,</span> <span class="pre">y)</span></tt> returns <tt class="docutils literal"><span class="pre">[l,</span> <span class="pre">m,</span> <span class="pre">r]</span></tt> such that <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">l</span> <span class="pre">*</span> <span class="pre">m</span></tt>, <tt class="docutils literal"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">m</span> <span class="pre">*</span> <span class="pre">r</span></tt> and <tt class="docutils literal"><span class="pre">l</span></tt> and <tt class="docutils literal"><span class="pre">r</span></tt> have no overlap, i.e. <tt class="docutils literal"><span class="pre">overlap(l,</span> <span class="pre">r)</span> <span class="pre">=</span> <span class="pre">[l,</span> <span class="pre">1,</span> <span class="pre">r]</span></tt>.</dd>
 <dt><a class="reference internal" href="Monoid.html#l-monoid-recip"><em>recip</em></a>: % -&gt; Union(%, failed)</dt>
 <dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
+</dl>
+<span class="target" id="l-free-monoid-rest"></span><dl class="docutils" id="index-19">
+<dt><span class="spadfun">rest</span>: % -&gt; %</dt>
+<dd><tt class="docutils literal"><span class="pre">rest(x)</span></tt> returns <tt class="docutils literal"><span class="pre">x</span></tt> except the first letter.</dd>
 <dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract"><em>retract</em></a>: % -&gt; S</dt>
 <dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> S</dd>
 <dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract-if-can"><em>retractIfCan</em></a>: % -&gt; Union(S, failed)</dt>
 <dd>from <a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> S</dd>
 </dl>
-<span class="target" id="l-free-monoid-rquo"></span><dl class="docutils" id="index-14">
+<span class="target" id="l-free-monoid-rquo"></span><dl class="docutils" id="index-20">
 <dt><span class="spadfun">rquo</span>: (%, %) -&gt; Union(%, failed)</dt>
 <dd><tt class="docutils literal"><span class="pre">rquo(x,</span> <span class="pre">y)</span></tt> returns the exact right quotient of <tt class="docutils literal"><span class="pre">x</span></tt> by <tt class="docutils literal"><span class="pre">y</span></tt> i.e. <tt class="docutils literal"><span class="pre">q</span></tt> such that <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">q</span> <span class="pre">*</span> <span class="pre">y</span></tt>, &#8220;failed&#8221; if <tt class="docutils literal"><span class="pre">x</span></tt> is not of the form <tt class="docutils literal"><span class="pre">q</span> <span class="pre">*</span> <span class="pre">y</span></tt>.</dd>
+</dl>
+<dl class="docutils" id="index-21">
+<dt><span class="spadfun">rquo</span>: (%, S) -&gt; Union(%, failed)</dt>
+<dd><tt class="docutils literal"><span class="pre">rquo(x,</span> <span class="pre">s)</span></tt> returns the exact right quotient of <tt class="docutils literal"><span class="pre">x</span></tt> by <tt class="docutils literal"><span class="pre">s</span></tt>.</dd>
 <dt><a class="reference internal" href="Monoid.html#l-monoid-sample"><em>sample</em></a>: %</dt>
 <dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
 </dl>
-<span class="target" id="l-free-monoid-size"></span><dl class="docutils" id="index-15">
+<span class="target" id="l-free-monoid-size"></span><dl class="docutils" id="index-22">
 <dt><span class="spadfun">size</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
 <dd><tt class="docutils literal"><span class="pre">size(x)</span></tt> returns the number of monomials in <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
 <dt><a class="reference internal" href="Comparable.html#l-comparable-smaller"><em>smaller?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dt>
 <dd>from <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></dd>
 </dl>
+<span class="target" id="l-free-monoid-var-list"></span><dl class="docutils" id="index-23">
+<dt><span class="spadfun">varList</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
+<dd><tt class="docutils literal"><span class="pre">varList(x)</span></tt> returns the list of variables of <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+</dl>
 <p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
 <p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
 <p><a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a> if S has <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></p>
 <p><a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></p>
+<p><a class="reference internal" href="OrderedMonoid.html#l-ordered-monoid"><em>OrderedMonoid</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></p>
+<p><a class="reference internal" href="OrderedSemiGroup.html#l-ordered-semi-group"><em>OrderedSemiGroup</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></p>
 <p><a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></p>
 <p><a class="reference internal" href="PartialOrder.html#l-partial-order"><em>PartialOrder</em></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></p>
 <p><a class="reference internal" href="RetractableTo.html#l-retractable-to"><em>RetractableTo</em></a> S</p>
@@ -192,11 +226,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/FreeMonoid.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -226,13 +255,12 @@
         <li class="right" >
           <a href="FreeModule.html" title="FreeModule(R, S)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
           <li><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014-2015, FriCAS Team.
-      Last updated on Mar 04, 2015.
     </div>
   </body>
 </html>

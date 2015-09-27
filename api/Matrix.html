@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Matrix R &mdash; FriCAS 1.2.5 API</title>
+    <title>Matrix R &mdash; FriCAS 1.2.7 API</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.5',
+        VERSION:     '1.2.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.5 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="ModMonic(R, Rep)" href="ModMonic.html" />
     <link rel="prev" title="MathMLFormat" href="MathMLFormat.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="MathMLFormat.html" title="MathMLFormat"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
           <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
@@ -189,10 +189,12 @@
 <dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R)</dd>
 <dt><a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category-horiz-split"><em>horizSplit</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
 <dd>from <a class="reference internal" href="TwoDimensionalArrayCategory.html#l-two-dimensional-array-category"><em>TwoDimensionalArrayCategory</em></a>(R, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R)</dd>
+<dt><a class="reference internal" href="MatrixCategory.html#l-matrix-category-inverse"><em>inverse</em></a>: % -&gt; Union(%, failed) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
+<dd>from <a class="reference internal" href="MatrixCategory.html#l-matrix-category"><em>MatrixCategory</em></a>(R, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R)</dd>
 </dl>
-<span class="target" id="l-matrix-inverse"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">inverse</span>: % -&gt; Union(%, failed) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">inverse(m)</span></tt> returns the inverse of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>. If the matrix is not invertible, &#8220;failed&#8221; is returned. Error: if the matrix is not square.</dd>
+<span class="target" id="l-matrix-invert-if-can"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">invertIfCan</span>: % -&gt; Union(%, failed) if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
+<dd><tt class="docutils literal"><span class="pre">invertIfCan(m)</span></tt> returns the inverse of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>. If the matrix is not invertible, &#8220;failed&#8221; is returned. Error: if the matrix is not square.</dd>
 <dt><a class="reference internal" href="MatrixCategory.html#l-matrix-category-kronecker-prod1"><em>kronecker_prod1</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, Union(R, one)) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
 <dd>from <a class="reference internal" href="MatrixCategory.html#l-matrix-category"><em>MatrixCategory</em></a>(R, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R)</dd>
 <dt><a class="reference internal" href="MatrixCategory.html#l-matrix-category-kronecker-product"><em>kroneckerProduct</em></a>: (%, %) -&gt; %</dt>
@@ -359,11 +361,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/Matrix.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -393,13 +390,12 @@
         <li class="right" >
           <a href="MathMLFormat.html" title="MathMLFormat"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
           <li><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014-2015, FriCAS Team.
-      Last updated on Mar 04, 2015.
     </div>
   </body>
 </html>

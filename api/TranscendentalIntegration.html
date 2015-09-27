@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>TranscendentalIntegration(F, UP) &mdash; FriCAS 1.2.5 API</title>
+    <title>TranscendentalIntegration(F, UP) &mdash; FriCAS 1.2.7 API</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.5',
+        VERSION:     '1.2.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.5 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="TranscendentalManipulations(R, F)" href="TranscendentalManipulations.html" />
     <link rel="prev" title="TranscendentalHermiteIntegration(F, UP)" href="TranscendentalHermiteIntegration.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="TranscendentalHermiteIntegration.html" title="TranscendentalHermiteIntegration(F, UP)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
           <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
@@ -67,7 +67,7 @@
 </dl>
 <span class="target" id="l-transcendental-integration-lambintegrate"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">lambintegrate</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, F, F -&gt; F, UP -&gt; UP, F -&gt; Union(Record(ratpart: F, coeff: F), failed), F -&gt; <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> F) -&gt; Record(answer: <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, a0: <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> F)</dt>
-<dd>like tanintegrate</dd>
+<dd><tt class="docutils literal"><span class="pre">lambintegrate(f,</span> <span class="pre">dx,</span> <span class="pre">D1,</span> <span class="pre">D2,</span> <span class="pre">extint,</span> <span class="pre">int)</span></tt> integrates <tt class="docutils literal"><span class="pre">f</span></tt> in extension by LambertW function. <tt class="docutils literal"><span class="pre">dx</span></tt> is derivative of the argument of LambertW, <tt class="docutils literal"><span class="pre">D1</span></tt> is dervative on <tt class="docutils literal"><span class="pre">F</span></tt>, <tt class="docutils literal"><span class="pre">D2</span></tt> is derivative on UP, <tt class="docutils literal"><span class="pre">extint</span></tt> is extended integration function on <tt class="docutils literal"><span class="pre">F</span></tt>, int is integration function on <tt class="docutils literal"><span class="pre">F</span></tt>.</dd>
 </dl>
 <span class="target" id="l-transcendental-integration-monomial-integrate"></span><dl class="docutils" id="index-3">
 <dt><span class="spadfun">monomialIntegrate</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP) -&gt; Record(ir: <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, specpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, polypart: UP)</dt>
@@ -80,10 +80,6 @@
 <span class="target" id="l-transcendental-integration-primintegrate"></span><dl class="docutils" id="index-5">
 <dt><span class="spadfun">primintegrate</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP, <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP -&gt; Record(answer: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, logpart: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, ir: <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP), F -&gt; Union(Record(ratpart: F, coeff: F), failed)) -&gt; Record(answer: <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, a0: F)</dt>
 <dd><tt class="docutils literal"><span class="pre">primintegrate(f,</span> <span class="pre">',</span> <span class="pre">foo)</span></tt> returns <tt class="docutils literal"><span class="pre">[g,</span> <span class="pre">a]</span></tt> such that <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">g'</span> <span class="pre">+</span> <span class="pre">a</span></tt>, and <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">0</span></tt> or <tt class="docutils literal"><span class="pre">a</span></tt> has no integral in UP. Argument foo is an extended integration function on <tt class="docutils literal"><span class="pre">F</span></tt>.</dd>
-</dl>
-<span class="target" id="l-transcendental-integration-tanintegrate"></span><dl class="docutils" id="index-6">
-<dt><span class="spadfun">tanintegrate</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, UP -&gt; UP, (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, F, F) -&gt; Union(<a class="reference internal" href="List.html#l-list"><em>List</em></a> F, failed)) -&gt; Record(answer: <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> UP, a0: F)</dt>
-<dd><tt class="docutils literal"><span class="pre">tanintegrate(f,</span> <span class="pre">',</span> <span class="pre">foo)</span></tt> returns <tt class="docutils literal"><span class="pre">[g,</span> <span class="pre">a]</span></tt> such that <tt class="docutils literal"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">g'</span> <span class="pre">+</span> <span class="pre">a</span></tt>, and <tt class="docutils literal"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">0</span></tt> or <tt class="docutils literal"><span class="pre">a</span></tt> has no integral in <tt class="docutils literal"><span class="pre">F</span></tt>; Argument foo is a Risch differential system solver on <tt class="docutils literal"><span class="pre">F</span></tt>.</dd>
 </dl>
 </div>
 
@@ -100,11 +96,6 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/TranscendentalIntegration.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -134,13 +125,12 @@
         <li class="right" >
           <a href="TranscendentalHermiteIntegration.html" title="TranscendentalHermiteIntegration(F, UP)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
           <li><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014-2015, FriCAS Team.
-      Last updated on Mar 04, 2015.
     </div>
   </body>
 </html>

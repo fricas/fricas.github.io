@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>LinearOutputFormat &mdash; FriCAS 1.2.5 API</title>
+    <title>LinearOutputFormat &mdash; FriCAS 1.2.7 API</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.5',
+        VERSION:     '1.2.7',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,10 +25,10 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.5 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="List S" href="List.html" />
-    <link rel="prev" title="LinearOrdinaryDifferentialOperator2(A, M)" href="LinearOrdinaryDifferentialOperator2.html" /> 
+    <link rel="prev" title="LinearOrdinaryDifferentialOperator3(Coeff, A, R)" href="LinearOrdinaryDifferentialOperator3.html" /> 
   </head>
   <body>
     <div class="related">
@@ -41,9 +41,9 @@
           <a href="List.html" title="List S"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="LinearOrdinaryDifferentialOperator2.html" title="LinearOrdinaryDifferentialOperator2(A, M)"
+          <a href="LinearOrdinaryDifferentialOperator3.html" title="LinearOrdinaryDifferentialOperator3(Coeff, A, R)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
           <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
@@ -97,7 +97,7 @@
 </dl>
 <span class="target" id="l-linear-output-format-format-expression"></span><dl class="docutils" id="index-9">
 <dt><span class="spadfun">formatExpression</span>: (<a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">formatExpression(o,</span> <span class="pre">p)</span></tt> returns a list of strings that represent the expression <tt class="docutils literal"><span class="pre">o</span></tt> in 1D-format when considered in a context with outer precedence <tt class="docutils literal"><span class="pre">p</span></tt>. This function is the main dispatcher function. It first checks whether <tt class="docutils literal"><span class="pre">o</span></tt> is an integer or a string and treats these cases. Then, if the number $<tt class="docutils literal"><span class="pre">n</span></tt>$ of arguments is less than 3, it tries to find a handler for <tt class="docutils literal"><span class="pre">ths</span></tt> top-level operator of <tt class="docutils literal"><span class="pre">o</span></tt>. If none is found, it checks for a handler of an <tt class="docutils literal"><span class="pre">n</span></tt>-ary operator. If no handler is found, the operator is treated as a function symbol and formatted as such.</dd>
+<dd><tt class="docutils literal"><span class="pre">formatExpression(o,</span> <span class="pre">p)</span></tt> returns a list of strings that represent the expression <tt class="docutils literal"><span class="pre">o</span></tt> in 1D-format when considered in a context with outer precedence <tt class="docutils literal"><span class="pre">p</span></tt>. This function is the main dispatcher function. It first checks whether <tt class="docutils literal"><span class="pre">o</span></tt> is an integer or a string and treats these cases. Then, if the number <tt class="docutils literal"><span class="pre">n</span></tt> of arguments is less than 3, it tries to find a handler for the top-level operator of <tt class="docutils literal"><span class="pre">o</span></tt>. If none is found, it checks for a handler of an <tt class="docutils literal"><span class="pre">n</span></tt>-ary operator. If no handler is found, the operator is treated as a function symbol and formatted as such.</dd>
 </dl>
 <span class="target" id="l-linear-output-format-handler"></span><dl class="docutils" id="index-10">
 <dt><span class="spadfun">handler</span>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="String.html#l-string"><em>String</em></a>) -&gt; (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
@@ -200,11 +200,6 @@
 <li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/LinearOutputFormat.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
 <div id="searchbox" style="display: none">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -232,15 +227,14 @@
           <a href="List.html" title="List S"
              >next</a> |</li>
         <li class="right" >
-          <a href="LinearOrdinaryDifferentialOperator2.html" title="LinearOrdinaryDifferentialOperator2(A, M)"
+          <a href="LinearOrdinaryDifferentialOperator3.html" title="LinearOrdinaryDifferentialOperator3(Coeff, A, R)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.5 API</a> &raquo;</li>
+        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
           <li><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2014-2015, FriCAS Team.
-      Last updated on Mar 04, 2015.
     </div>
   </body>
 </html>

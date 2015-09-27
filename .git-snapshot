@@ -1,0 +1,12 @@
+# branch   master        b3dbe406e4687bfd641ba2b51d5953a677b2cf64 fix double \spad
+# branch * rhx-build-doc 633904a72070ca381daf0d246b14cb78d902f451 fix quotes
+# remote backup	/home/hemmecke/backup/mount/backup/repositories/fricas.github.io.git (fetch)
+# remote backup	/home/hemmecke/backup/mount/backup/repositories/fricas.github.io.git (push)
+# remote origin	github-fricas:fricas/fricas.github.io (fetch)
+# remote origin	github-fricas:fricas/fricas.github.io (push)
+xc() { if test -e "$3";then chmod $1 "$3"; chown $2 "$3"; fi }
+xc 700 hemmecke:hemmecke "."
+xc 700 hemmecke:hemmecke "_static"
+xc 600 hemmecke:hemmecke ".git-snapshot"
+xc 600 hemmecke:hemmecke "Makefile"
+xc 600 hemmecke:hemmecke "_static/style.css~"
