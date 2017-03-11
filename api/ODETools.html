@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>ODETools(F, LODO) &mdash; FriCAS 1.2.7 API</title>
+    <title>ODETools(F, LODO) &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="OneDimensionalArrayFunctions2(A, B)" href="OneDimensionalArrayFunctions2.html" />
     <link rel="prev" title="ODEIntegration(R, F)" href="ODEIntegration.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,39 +43,39 @@
         <li class="right" >
           <a href="ODEIntegration.html" title="ODEIntegration(R, F)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="odetools-f-lodo">
 <span id="l-o-d-e-tools"></span><span id="index-0"></span><h1>ODETools(F, LODO)<a class="headerlink" href="#odetools-f-lodo" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//oderf.spad#L540">oderf.spad line 540</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//oderf.spad#L535">oderf.spad line 535</a></p>
 <ul class="simple">
-<li>F: <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></li>
-<li>LODO: <a class="reference internal" href="LinearOrdinaryDifferentialOperatorCategory.html#l-linear-ordinary-differential-operator-category"><em>LinearOrdinaryDifferentialOperatorCategory</em></a> F</li>
+<li>F: <a class="reference internal" href="Field.html#l-field"><span>Field</span></a></li>
+<li>LODO: <a class="reference internal" href="LinearOrdinaryDifferentialOperatorCategory.html#l-linear-ordinary-differential-operator-category"><span>LinearOrdinaryDifferentialOperatorCategory</span></a> F</li>
 </ul>
-<p><tt class="docutils literal"><span class="pre">ODETools</span></tt> provides tools for the linear ODE solver.</p>
+<p><code class="docutils literal"><span class="pre">ODETools</span></code> provides tools for the linear ODE solver.</p>
 <span class="target" id="l-o-d-e-tools-particular-solution"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">particularSolution</span>: (LODO, F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> F, F -&gt; F) -&gt; Union(F, failed)</dt>
-<dd><tt class="docutils literal"><span class="pre">particularSolution(op,</span> <span class="pre">g,</span> <span class="pre">[f1,</span> <span class="pre">...,</span> <span class="pre">fm],</span> <span class="pre">I)</span></tt> returns a particular solution <tt class="docutils literal"><span class="pre">h</span></tt> of the equation <tt class="docutils literal"><span class="pre">op</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">g</span></tt> where <tt class="docutils literal"><span class="pre">[f1,</span> <span class="pre">...,</span> <span class="pre">fm]</span></tt> are linearly independent and <tt class="docutils literal"><span class="pre">op(fi)=0</span></tt>. The value &#8220;failed&#8221; is returned if no particular solution is found. Note: the method of variations of parameters is used.</dd>
+<dt><span class="spadfun">particularSolution</span>: (LODO, F, <a class="reference internal" href="List.html#l-list"><span>List</span></a> F, F -&gt; F) -&gt; Union(F, failed)</dt>
+<dd><code class="docutils literal"><span class="pre">particularSolution(op,</span> <span class="pre">g,</span> <span class="pre">[f1,</span> <span class="pre">...,</span> <span class="pre">fm],</span> <span class="pre">I)</span></code> returns a particular solution <code class="docutils literal"><span class="pre">h</span></code> of the equation <code class="docutils literal"><span class="pre">op</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">g</span></code> where <code class="docutils literal"><span class="pre">[f1,</span> <span class="pre">...,</span> <span class="pre">fm]</span></code> are linearly independent and <code class="docutils literal"><span class="pre">op(fi)=0</span></code>. The value &#8220;failed&#8221; is returned if no particular solution is found. Note: the method of variations of parameters is used.</dd>
 </dl>
 <span class="target" id="l-o-d-e-tools-variation-of-parameters"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">variationOfParameters</span>: (LODO, F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> F) -&gt; Union(<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> F, failed)</dt>
-<dd><tt class="docutils literal"><span class="pre">variationOfParameters(op,</span> <span class="pre">g,</span> <span class="pre">[f1,</span> <span class="pre">...,</span> <span class="pre">fm])</span></tt> returns <tt class="docutils literal"><span class="pre">[u1,</span> <span class="pre">...,</span> <span class="pre">um]</span></tt> such that a particular solution of the equation <tt class="docutils literal"><span class="pre">op</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">g</span></tt> is <tt class="docutils literal"><span class="pre">f1</span> <span class="pre">int(u1)</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">fm</span> <span class="pre">int(um)</span></tt> where <tt class="docutils literal"><span class="pre">[f1,</span> <span class="pre">...,</span> <span class="pre">fm]</span></tt> are linearly independent and <tt class="docutils literal"><span class="pre">op(fi)=0</span></tt>. The value &#8220;failed&#8221; is returned if <tt class="docutils literal"><span class="pre">m</span> <span class="pre">&lt;</span> <span class="pre">n</span></tt> and no particular solution is found.</dd>
+<dt><span class="spadfun">variationOfParameters</span>: (LODO, F, <a class="reference internal" href="List.html#l-list"><span>List</span></a> F) -&gt; Union(<a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> F, failed)</dt>
+<dd><code class="docutils literal"><span class="pre">variationOfParameters(op,</span> <span class="pre">g,</span> <span class="pre">[f1,</span> <span class="pre">...,</span> <span class="pre">fm])</span></code> returns <code class="docutils literal"><span class="pre">[u1,</span> <span class="pre">...,</span> <span class="pre">um]</span></code> such that a particular solution of the equation <code class="docutils literal"><span class="pre">op</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">g</span></code> is <code class="docutils literal"><span class="pre">f1</span> <span class="pre">int(u1)</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">fm</span> <span class="pre">int(um)</span></code> where <code class="docutils literal"><span class="pre">[f1,</span> <span class="pre">...,</span> <span class="pre">fm]</span></code> are linearly independent and <code class="docutils literal"><span class="pre">op(fi)=0</span></code>. The value &#8220;failed&#8221; is returned if <code class="docutils literal"><span class="pre">m</span> <span class="pre">&lt;</span> <span class="pre">n</span></code> and no particular solution is found.</dd>
 </dl>
 <span class="target" id="l-o-d-e-tools-wronskian-matrix"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">wronskianMatrix</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> F, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> F</dt>
-<dd><tt class="docutils literal"><span class="pre">wronskianMatrix([f1,</span> <span class="pre">...,</span> <span class="pre">fn],</span> <span class="pre">q,</span> <span class="pre">D)</span></tt> returns the <tt class="docutils literal"><span class="pre">q</span> <span class="pre">x</span> <span class="pre">n</span></tt> matrix <tt class="docutils literal"><span class="pre">m</span></tt> whose i^th row is <tt class="docutils literal"><span class="pre">[f1^(i-1),</span> <span class="pre">...,</span> <span class="pre">fn^(i-1)]</span></tt>.</dd>
+<dt><span class="spadfun">wronskianMatrix</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> F, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> F</dt>
+<dd><code class="docutils literal"><span class="pre">wronskianMatrix([f1,</span> <span class="pre">...,</span> <span class="pre">fn],</span> <span class="pre">q,</span> <span class="pre">D)</span></code> returns the <code class="docutils literal"><span class="pre">q</span> <span class="pre">x</span> <span class="pre">n</span></code> matrix <code class="docutils literal"><span class="pre">m</span></code> whose i^th row is <code class="docutils literal"><span class="pre">[f1^(i-1),</span> <span class="pre">...,</span> <span class="pre">fn^(i-1)]</span></code>.</dd>
 </dl>
 <dl class="docutils" id="index-4">
-<dt><span class="spadfun">wronskianMatrix</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> F -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> F</dt>
-<dd><tt class="docutils literal"><span class="pre">wronskianMatrix([f1,</span> <span class="pre">...,</span> <span class="pre">fn])</span></tt> returns the <tt class="docutils literal"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">n</span></tt> matrix <tt class="docutils literal"><span class="pre">m</span></tt> whose i^th row is <tt class="docutils literal"><span class="pre">[f1^(i-1),</span> <span class="pre">...,</span> <span class="pre">fn^(i-1)]</span></tt>.</dd>
+<dt><span class="spadfun">wronskianMatrix</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> F -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> F</dt>
+<dd><code class="docutils literal"><span class="pre">wronskianMatrix([f1,</span> <span class="pre">...,</span> <span class="pre">fn])</span></code> returns the <code class="docutils literal"><span class="pre">n</span> <span class="pre">x</span> <span class="pre">n</span></code> matrix <code class="docutils literal"><span class="pre">m</span></code> whose i^th row is <code class="docutils literal"><span class="pre">[f1^(i-1),</span> <span class="pre">...,</span> <span class="pre">fn^(i-1)]</span></code>.</dd>
 </dl>
 </div>
 
@@ -83,7 +83,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -92,7 +92,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -109,7 +109,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -121,12 +121,12 @@
         <li class="right" >
           <a href="ODEIntegration.html" title="ODEIntegration(R, F)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

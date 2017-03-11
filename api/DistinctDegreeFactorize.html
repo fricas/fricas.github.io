@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>DistinctDegreeFactorize(F, FP) &mdash; FriCAS 1.2.7 API</title>
+    <title>DistinctDegreeFactorize(F, FP) &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="DistributionContinuedFractionPackage(R, z)" href="DistributionContinuedFractionPackage.html" />
     <link rel="prev" title="DisplayPackage" href="DisplayPackage.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,59 +43,59 @@
         <li class="right" >
           <a href="DisplayPackage.html" title="DisplayPackage"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="distinctdegreefactorize-f-fp">
 <span id="l-distinct-degree-factorize"></span><span id="index-0"></span><h1>DistinctDegreeFactorize(F, FP)<a class="headerlink" href="#distinctdegreefactorize-f-fp" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//ddfact.spad#L1">ddfact.spad line 1</a></p>
 <ul class="simple">
-<li>F: <a class="reference internal" href="FiniteFieldCategory.html#l-finite-field-category"><em>FiniteFieldCategory</em></a></li>
-<li>FP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> F</li>
+<li>F: <a class="reference internal" href="FiniteFieldCategory.html#l-finite-field-category"><span>FiniteFieldCategory</span></a></li>
+<li>FP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><span>UnivariatePolynomialCategory</span></a> F</li>
 </ul>
 <p>Package for the factorization of a univariate polynomial with coefficients in a finite field. The algorithm used is the &#8220;distinct degree&#8221; algorithm of Cantor-Zassenhaus, modified to use trace instead of the norm and a table for computing Frobenius as suggested by Naudin and Quitte .</p>
 <span class="target" id="l-distinct-degree-factorize-distdfact"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">distdfact</span>: (FP, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; Record(cont: F, factors: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(irr: FP, pow: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>))</dt>
-<dd><tt class="docutils literal"><span class="pre">distdfact(p,</span> <span class="pre">sqfrflag)</span></tt> produces the complete factorization of the polynomial <tt class="docutils literal"><span class="pre">p</span></tt> returning an internal data structure. If argument sqfrflag is <tt class="docutils literal"><span class="pre">true</span></tt>, the polynomial is assumed square free.</dd>
+<dt><span class="spadfun">distdfact</span>: (FP, <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>) -&gt; Record(cont: F, factors: <a class="reference internal" href="List.html#l-list"><span>List</span></a> Record(irr: FP, pow: <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>))</dt>
+<dd><code class="docutils literal"><span class="pre">distdfact(p,</span> <span class="pre">sqfrflag)</span></code> produces the complete factorization of the polynomial <code class="docutils literal"><span class="pre">p</span></code> returning an internal data structure. If argument sqfrflag is <code class="docutils literal"><span class="pre">true</span></code>, the polynomial is assumed square free.</dd>
 </dl>
 <span class="target" id="l-distinct-degree-factorize-expt-mod"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">exptMod</span>: (FP, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, FP) -&gt; FP</dt>
-<dd><tt class="docutils literal"><span class="pre">exptMod(u,</span> <span class="pre">k,</span> <span class="pre">v)</span></tt> raises the polynomial <tt class="docutils literal"><span class="pre">u</span></tt> to the <tt class="docutils literal"><span class="pre">k</span></tt>th power modulo the polynomial <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
+<dt><span class="spadfun">exptMod</span>: (FP, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, FP) -&gt; FP</dt>
+<dd><code class="docutils literal"><span class="pre">exptMod(u,</span> <span class="pre">k,</span> <span class="pre">v)</span></code> raises the polynomial <code class="docutils literal"><span class="pre">u</span></code> to the <code class="docutils literal"><span class="pre">k</span></code>th power modulo the polynomial <code class="docutils literal"><span class="pre">v</span></code>.</dd>
 </dl>
 <span class="target" id="l-distinct-degree-factorize-factor"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">factor</span>: FP -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> FP</dt>
-<dd><tt class="docutils literal"><span class="pre">factor(p)</span></tt> produces the complete factorization of the polynomial <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+<dt><span class="spadfun">factor</span>: FP -&gt; <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> FP</dt>
+<dd><code class="docutils literal"><span class="pre">factor(p)</span></code> produces the complete factorization of the polynomial <code class="docutils literal"><span class="pre">p</span></code>.</dd>
 </dl>
 <span class="target" id="l-distinct-degree-factorize-factor-square-free"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">factorSquareFree</span>: FP -&gt; <a class="reference internal" href="Factored.html#l-factored"><em>Factored</em></a> FP</dt>
-<dd><tt class="docutils literal"><span class="pre">factorSquareFree(p)</span></tt> produces the complete factorization of the square free polynomial <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+<dt><span class="spadfun">factorSquareFree</span>: FP -&gt; <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> FP</dt>
+<dd><code class="docutils literal"><span class="pre">factorSquareFree(p)</span></code> produces the complete factorization of the square free polynomial <code class="docutils literal"><span class="pre">p</span></code>.</dd>
 </dl>
 <span class="target" id="l-distinct-degree-factorize-irreducible"></span><dl class="docutils" id="index-5">
-<dt><span class="spadfun">irreducible?</span>: FP -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">irreducible?(p)</span></tt> tests whether the polynomial <tt class="docutils literal"><span class="pre">p</span></tt> is irreducible.</dd>
+<dt><span class="spadfun">irreducible?</span>: FP -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">irreducible?(p)</span></code> tests whether the polynomial <code class="docutils literal"><span class="pre">p</span></code> is irreducible.</dd>
 </dl>
 <span class="target" id="l-distinct-degree-factorize-separate-degrees"></span><dl class="docutils" id="index-6">
-<dt><span class="spadfun">separateDegrees</span>: FP -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(deg: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, prod: FP)</dt>
-<dd><tt class="docutils literal"><span class="pre">separateDegrees(p)</span></tt> splits the square free polynomial <tt class="docutils literal"><span class="pre">p</span></tt> into factors each of which is a product of irreducibles of the same degree.</dd>
+<dt><span class="spadfun">separateDegrees</span>: FP -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Record(deg: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, prod: FP)</dt>
+<dd><code class="docutils literal"><span class="pre">separateDegrees(p)</span></code> splits the square free polynomial <code class="docutils literal"><span class="pre">p</span></code> into factors each of which is a product of irreducibles of the same degree.</dd>
 </dl>
 <span class="target" id="l-distinct-degree-factorize-separate-factors"></span><dl class="docutils" id="index-7">
-<dt><span class="spadfun">separateFactors</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(deg: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, prod: FP) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> FP</dt>
-<dd><tt class="docutils literal"><span class="pre">separateFactors(lfact)</span></tt> takes the list produced by <em class="xref std std-ref">separateDegrees</em> and produces the complete list of factors.</dd>
+<dt><span class="spadfun">separateFactors</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> Record(deg: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, prod: FP) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> FP</dt>
+<dd><code class="docutils literal"><span class="pre">separateFactors(lfact)</span></code> takes the list produced by <span class="xref std std-ref">separateDegrees</span> and produces the complete list of factors.</dd>
 </dl>
 <span class="target" id="l-distinct-degree-factorize-trace2-pow-mod"></span><dl class="docutils" id="index-8">
-<dt><span class="spadfun">trace2PowMod</span>: (FP, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, FP) -&gt; FP</dt>
-<dd><tt class="docutils literal"><span class="pre">trace2PowMod(u,</span> <span class="pre">k,</span> <span class="pre">v)</span></tt> produces the sum of <tt class="docutils literal"><span class="pre">u^(2^i)</span></tt> for <tt class="docutils literal"><span class="pre">i</span></tt> running from 1 to <tt class="docutils literal"><span class="pre">k</span></tt> all computed modulo the polynomial <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
+<dt><span class="spadfun">trace2PowMod</span>: (FP, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, FP) -&gt; FP</dt>
+<dd><code class="docutils literal"><span class="pre">trace2PowMod(u,</span> <span class="pre">k,</span> <span class="pre">v)</span></code> produces the sum of <code class="docutils literal"><span class="pre">u^(2^i)</span></code> for <code class="docutils literal"><span class="pre">i</span></code> running from 1 to <code class="docutils literal"><span class="pre">k</span></code> all computed modulo the polynomial <code class="docutils literal"><span class="pre">v</span></code>.</dd>
 </dl>
 <span class="target" id="l-distinct-degree-factorize-trace-pow-mod"></span><dl class="docutils" id="index-9">
-<dt><span class="spadfun">tracePowMod</span>: (FP, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, FP) -&gt; FP</dt>
-<dd><tt class="docutils literal"><span class="pre">tracePowMod(u,</span> <span class="pre">k,</span> <span class="pre">v)</span></tt> produces the sum of <tt class="docutils literal"><span class="pre">u^(q^i)</span></tt> for <tt class="docutils literal"><span class="pre">i</span></tt> running and <tt class="docutils literal"><span class="pre">q=</span></tt> size <tt class="docutils literal"><span class="pre">F</span></tt></dd>
+<dt><span class="spadfun">tracePowMod</span>: (FP, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, FP) -&gt; FP</dt>
+<dd><code class="docutils literal"><span class="pre">tracePowMod(u,</span> <span class="pre">k,</span> <span class="pre">v)</span></code> produces the sum of <code class="docutils literal"><span class="pre">u^(q^i)</span></code> for <code class="docutils literal"><span class="pre">i</span></code> running and <code class="docutils literal"><span class="pre">q=</span></code> size <code class="docutils literal"><span class="pre">F</span></code></dd>
 </dl>
 </div>
 
@@ -103,7 +103,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -112,7 +112,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -129,7 +129,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -141,12 +141,12 @@
         <li class="right" >
           <a href="DisplayPackage.html" title="DisplayPackage"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

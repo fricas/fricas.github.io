@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>IntegrationTools(R, F) &mdash; FriCAS 1.2.7 API</title>
+    <title>IntegrationTools(R, F) &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="InternalPrintPackage" href="InternalPrintPackage.html" />
     <link rel="prev" title="IntegrationResultToFunction(R, F)" href="IntegrationResultToFunction.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,55 +43,55 @@
         <li class="right" >
           <a href="IntegrationResultToFunction.html" title="IntegrationResultToFunction(R, F)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="integrationtools-r-f">
 <span id="l-integration-tools"></span><span id="index-0"></span><h1>IntegrationTools(R, F)<a class="headerlink" href="#integrationtools-r-f" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//intaux.spad#L235">intaux.spad line 235</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//intaux.spad#L230">intaux.spad line 230</a></p>
 <ul class="simple">
-<li>R: <a class="reference internal" href="Comparable.html#l-comparable"><em>Comparable</em></a></li>
-<li>F: <a class="reference internal" href="FunctionSpace.html#l-function-space"><em>FunctionSpace</em></a> R</li>
+<li>R: <a class="reference internal" href="Comparable.html#l-comparable"><span>Comparable</span></a></li>
+<li>F: <a class="reference internal" href="FunctionSpace.html#l-function-space"><span>FunctionSpace</span></a> R</li>
 </ul>
-<p>Tools for the integrator Author: Manuel Bronstein Date Created: 25 April 1990 Date Last Updated: 9 June 1993 Keywords: elementary, function, integration.</p>
+<p>Tools for the integrator Author: Manuel Bronstein Date Created: 25 April 1990 Keywords: elementary, function, integration.</p>
 <span class="target" id="l-integration-tools-int-pattern-match"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">intPatternMatch</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>, (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> F, (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; Union(Record(special: F, integrand: F), failed)) -&gt; <a class="reference internal" href="IntegrationResult.html#l-integration-result"><em>IntegrationResult</em></a> F if R has <a class="reference internal" href="PatternMatchable.html#l-pattern-matchable"><em>PatternMatchable</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> and F has <a class="reference internal" href="ElementaryFunctionCategory.html#l-elementary-function-category"><em>ElementaryFunctionCategory</em></a> and R has <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><em>GcdDomain</em></a> and R has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="Pattern.html#l-pattern"><em>Pattern</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> and F has <a class="reference internal" href="LiouvillianFunctionCategory.html#l-liouvillian-function-category"><em>LiouvillianFunctionCategory</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">intPatternMatch(f,</span> <span class="pre">x,</span> <span class="pre">int,</span> <span class="pre">pmint)</span></tt> tries to integrate <tt class="docutils literal"><span class="pre">f</span></tt> first by using the integration function <tt class="docutils literal"><span class="pre">int</span></tt>, and then by using the pattern match intetgration function <tt class="docutils literal"><span class="pre">pmint</span></tt> on any remaining unintegrable part.</dd>
+<dt><span class="spadfun">intPatternMatch</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><span>Symbol</span></a>, (F, <a class="reference internal" href="Symbol.html#l-symbol"><span>Symbol</span></a>) -&gt; <a class="reference internal" href="IntegrationResult.html#l-integration-result"><span>IntegrationResult</span></a> F, (F, <a class="reference internal" href="Symbol.html#l-symbol"><span>Symbol</span></a>) -&gt; Union(Record(special: F, integrand: F), failed)) -&gt; <a class="reference internal" href="IntegrationResult.html#l-integration-result"><span>IntegrationResult</span></a> F if R has <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><span>GcdDomain</span></a> and F has <a class="reference internal" href="LiouvillianFunctionCategory.html#l-liouvillian-function-category"><span>LiouvillianFunctionCategory</span></a> and F has <a class="reference internal" href="ElementaryFunctionCategory.html#l-elementary-function-category"><span>ElementaryFunctionCategory</span></a> and R has <a class="reference internal" href="PatternMatchable.html#l-pattern-matchable"><span>PatternMatchable</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a> and R has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><span>ConvertibleTo</span></a> <a class="reference internal" href="Pattern.html#l-pattern"><span>Pattern</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">intPatternMatch(f,</span> <span class="pre">x,</span> <span class="pre">int,</span> <span class="pre">pmint)</span></code> tries to integrate <code class="docutils literal"><span class="pre">f</span></code> first by using the integration function <code class="docutils literal"><span class="pre">int</span></code>, and then by using the pattern match intetgration function <code class="docutils literal"><span class="pre">pmint</span></code> on any remaining unintegrable part.</dd>
 </dl>
 <span class="target" id="l-integration-tools-kmax"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">kmax</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F -&gt; <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F</dt>
-<dd><tt class="docutils literal"><span class="pre">kmax([k1,</span> <span class="pre">...,</span> <span class="pre">kn])</span></tt> returns the top-level <tt class="docutils literal"><span class="pre">ki</span></tt> for integration.</dd>
+<dt><span class="spadfun">kmax</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Kernel.html#l-kernel"><span>Kernel</span></a> F -&gt; <a class="reference internal" href="Kernel.html#l-kernel"><span>Kernel</span></a> F</dt>
+<dd><code class="docutils literal"><span class="pre">kmax([k1,</span> <span class="pre">...,</span> <span class="pre">kn])</span></code> returns the top-level <code class="docutils literal"><span class="pre">ki</span></code> for integration.</dd>
 </dl>
 <span class="target" id="l-integration-tools-ksec"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">ksec</span>: (<a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F</dt>
-<dd><tt class="docutils literal"><span class="pre">ksec(k,</span> <span class="pre">[k1,</span> <span class="pre">...,</span> <span class="pre">kn],</span> <span class="pre">x)</span></tt> returns the second top-level <tt class="docutils literal"><span class="pre">ki</span></tt> after <tt class="docutils literal"><span class="pre">k</span></tt> involving <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+<dt><span class="spadfun">ksec</span>: (<a class="reference internal" href="Kernel.html#l-kernel"><span>Kernel</span></a> F, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Kernel.html#l-kernel"><span>Kernel</span></a> F, <a class="reference internal" href="Symbol.html#l-symbol"><span>Symbol</span></a>) -&gt; <a class="reference internal" href="Kernel.html#l-kernel"><span>Kernel</span></a> F</dt>
+<dd><code class="docutils literal"><span class="pre">ksec(k,</span> <span class="pre">[k1,</span> <span class="pre">...,</span> <span class="pre">kn],</span> <span class="pre">x)</span></code> returns the second top-level <code class="docutils literal"><span class="pre">ki</span></code> after <code class="docutils literal"><span class="pre">k</span></code> involving <code class="docutils literal"><span class="pre">x</span></code>.</dd>
 </dl>
 <span class="target" id="l-integration-tools-mk-prim"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">mkPrim</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; F if R has <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><em>GcdDomain</em></a> and F has <a class="reference internal" href="ElementaryFunctionCategory.html#l-elementary-function-category"><em>ElementaryFunctionCategory</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">mkPrim(f,</span> <span class="pre">x)</span></tt> makes the logs in <tt class="docutils literal"><span class="pre">f</span></tt> which are linear in <tt class="docutils literal"><span class="pre">x</span></tt> primitive with respect to <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+<dt><span class="spadfun">mkPrim</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><span>Symbol</span></a>) -&gt; F if R has <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><span>GcdDomain</span></a> and F has <a class="reference internal" href="ElementaryFunctionCategory.html#l-elementary-function-category"><span>ElementaryFunctionCategory</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">mkPrim(f,</span> <span class="pre">x)</span></code> makes the logs in <code class="docutils literal"><span class="pre">f</span></code> which are linear in <code class="docutils literal"><span class="pre">x</span></code> primitive with respect to <code class="docutils literal"><span class="pre">x</span></code>.</dd>
 </dl>
 <span class="target" id="l-integration-tools-remove-constant-term"></span><dl class="docutils" id="index-5">
-<dt><span class="spadfun">removeConstantTerm</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; F if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">removeConstantTerm(f,</span> <span class="pre">x)</span></tt> returns <tt class="docutils literal"><span class="pre">f</span></tt> minus any additive constant with respect to <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+<dt><span class="spadfun">removeConstantTerm</span>: (F, <a class="reference internal" href="Symbol.html#l-symbol"><span>Symbol</span></a>) -&gt; F if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><span>IntegralDomain</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">removeConstantTerm(f,</span> <span class="pre">x)</span></code> returns <code class="docutils literal"><span class="pre">f</span></code> minus any additive constant with respect to <code class="docutils literal"><span class="pre">x</span></code>.</dd>
 </dl>
 <span class="target" id="l-integration-tools-union"></span><dl class="docutils" id="index-6">
-<dt><span class="spadfun">union</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F</dt>
-<dd><tt class="docutils literal"><span class="pre">union(l1,</span> <span class="pre">l2)</span></tt> returns set-theoretic union of <tt class="docutils literal"><span class="pre">l1</span></tt> and <tt class="docutils literal"><span class="pre">l2</span></tt>.</dd>
+<dt><span class="spadfun">union</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Kernel.html#l-kernel"><span>Kernel</span></a> F, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Kernel.html#l-kernel"><span>Kernel</span></a> F) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Kernel.html#l-kernel"><span>Kernel</span></a> F</dt>
+<dd><code class="docutils literal"><span class="pre">union(l1,</span> <span class="pre">l2)</span></code> returns set-theoretic union of <code class="docutils literal"><span class="pre">l1</span></code> and <code class="docutils literal"><span class="pre">l2</span></code>.</dd>
 </dl>
 <span class="target" id="l-integration-tools-vark"></span><dl class="docutils" id="index-7">
-<dt><span class="spadfun">vark</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F</dt>
-<dd><tt class="docutils literal"><span class="pre">vark([f1,</span> <span class="pre">...,</span> <span class="pre">fn],</span> <span class="pre">x)</span></tt> returns the set-theoretic union of <tt class="docutils literal"><span class="pre">(varselect(f1,</span> <span class="pre">x),</span> <span class="pre">...,</span> <span class="pre">varselect(fn,</span> <span class="pre">x))</span></tt>.</dd>
+<dt><span class="spadfun">vark</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> F, <a class="reference internal" href="Symbol.html#l-symbol"><span>Symbol</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Kernel.html#l-kernel"><span>Kernel</span></a> F</dt>
+<dd><code class="docutils literal"><span class="pre">vark([f1,</span> <span class="pre">...,</span> <span class="pre">fn],</span> <span class="pre">x)</span></code> returns the set-theoretic union of <code class="docutils literal"><span class="pre">(varselect(f1,</span> <span class="pre">x),</span> <span class="pre">...,</span> <span class="pre">varselect(fn,</span> <span class="pre">x))</span></code>.</dd>
 </dl>
 <span class="target" id="l-integration-tools-varselect"></span><dl class="docutils" id="index-8">
-<dt><span class="spadfun">varselect</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Kernel.html#l-kernel"><em>Kernel</em></a> F</dt>
-<dd><tt class="docutils literal"><span class="pre">varselect([k1,</span> <span class="pre">...,</span> <span class="pre">kn],</span> <span class="pre">x)</span></tt> returns the <tt class="docutils literal"><span class="pre">ki</span></tt> which involve <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
+<dt><span class="spadfun">varselect</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Kernel.html#l-kernel"><span>Kernel</span></a> F, <a class="reference internal" href="Symbol.html#l-symbol"><span>Symbol</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Kernel.html#l-kernel"><span>Kernel</span></a> F</dt>
+<dd><code class="docutils literal"><span class="pre">varselect([k1,</span> <span class="pre">...,</span> <span class="pre">kn],</span> <span class="pre">x)</span></code> returns the <code class="docutils literal"><span class="pre">ki</span></code> which involve <code class="docutils literal"><span class="pre">x</span></code>.</dd>
 </dl>
 </div>
 
@@ -99,7 +99,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -108,7 +108,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -125,7 +125,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -137,12 +137,12 @@
         <li class="right" >
           <a href="IntegrationResultToFunction.html" title="IntegrationResultToFunction(R, F)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

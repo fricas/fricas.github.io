@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>JetDifferentialEquation(JB, D) &mdash; FriCAS 1.2.7 API</title>
+    <title>JetDifferentialEquation(JB, D) &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="JetLazyFunction(JB, D)" href="JetLazyFunction.html" />
     <link rel="prev" title="JetDifferential(JB, D)" href="JetDifferential.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,111 +43,111 @@
         <li class="right" >
           <a href="JetDifferential.html" title="JetDifferential(JB, D)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="jetdifferentialequation-jb-d">
 <span id="l-jet-differential-equation"></span><span id="index-0"></span><h1>JetDifferentialEquation(JB, D)<a class="headerlink" href="#jetdifferentialequation-jb-d" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//jet.spad#L3761">jet.spad line 3761</a></p>
 <ul class="simple">
-<li>JB: <a class="reference internal" href="JetBundleCategory.html#l-jet-bundle-category"><em>JetBundleCategory</em></a></li>
-<li>D: <a class="reference internal" href="JetBundleFunctionCategory.html#l-jet-bundle-function-category"><em>JetBundleFunctionCategory</em></a> JB</li>
+<li>JB: <a class="reference internal" href="JetBundleCategory.html#l-jet-bundle-category"><span>JetBundleCategory</span></a></li>
+<li>D: <a class="reference internal" href="JetBundleFunctionCategory.html#l-jet-bundle-function-category"><span>JetBundleFunctionCategory</span></a> JB</li>
 </ul>
-<p><a class="reference internal" href="#l-jet-differential-equation"><em>JetDifferentialEquation</em></a> provides the basic data structures and procedures for differential equations as needed in the geometric theory. Differential equation means here always a submanifold in the jet bundle. The concrete equations which define this submanifold are called system. In an object of the type <a class="reference internal" href="#l-jet-differential-equation"><em>JetDifferentialEquation</em></a> much more than only the system is stored. <tt class="docutils literal"><span class="pre">D</span></tt> denotes the class of functions allowed as equations. It is assumed that the <tt class="docutils literal"><span class="pre">simplify</span></tt> procedure of <tt class="docutils literal"><span class="pre">D</span></tt> returns only independent equations and a system with symbol in row echelon form.</p>
+<p><a class="reference internal" href="#l-jet-differential-equation"><span>JetDifferentialEquation</span></a> provides the basic data structures and procedures for differential equations as needed in the geometric theory. Differential equation means here always a submanifold in the jet bundle. The concrete equations which define this submanifold are called system. In an object of the type <a class="reference internal" href="#l-jet-differential-equation"><span>JetDifferentialEquation</span></a> much more than only the system is stored. <code class="docutils literal"><span class="pre">D</span></code> denotes the class of functions allowed as equations. It is assumed that the <code class="docutils literal"><span class="pre">simplify</span></code> procedure of <code class="docutils literal"><span class="pre">D</span></code> returns only independent equations and a system with symbol in row echelon form.</p>
 <span class="target" id="l-jet-differential-equation-analyse-symbol"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">analyseSymbol</span>: <a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><em>SparseEchelonMatrix</em></a>(JB, D) -&gt; Record(Rank: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, NumMultVar: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, Betas: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>)</dt>
-<dd><tt class="docutils literal"><span class="pre">analyseSymbol(symb)</span></tt> computes the multiplicative variables of the symbol <tt class="docutils literal"><span class="pre">symb</span></tt>.</dd>
+<dt><span class="spadfun">analyseSymbol</span>: <a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><span>SparseEchelonMatrix</span></a>(JB, D) -&gt; Record(Rank: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, NumMultVar: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, Betas: <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>)</dt>
+<dd><code class="docutils literal"><span class="pre">analyseSymbol(symb)</span></code> computes the multiplicative variables of the symbol <code class="docutils literal"><span class="pre">symb</span></code>.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-coerce"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">coerce(de)</span></tt> transforms the differential equation <tt class="docutils literal"><span class="pre">de</span></tt> to <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a>.</dd>
+<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">coerce(de)</span></code> transforms the differential equation <code class="docutils literal"><span class="pre">de</span></code> to <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a>.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-copy"></span><dl class="docutils" id="index-3">
 <dt><span class="spadfun">copy</span>: % -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">copy(De)</span></tt> returns a copy of the equation <tt class="docutils literal"><span class="pre">De</span></tt>.</dd>
+<dd><code class="docutils literal"><span class="pre">copy(De)</span></code> returns a copy of the equation <code class="docutils literal"><span class="pre">De</span></code>.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-dimension"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">dimension</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">dimension(de,</span> <span class="pre">q)</span></tt> computes the dimension of the differential equation <tt class="docutils literal"><span class="pre">de</span></tt> as a submanifold of the <tt class="docutils literal"><span class="pre">q</span></tt><tt class="docutils literal"><span class="pre">-</span></tt>th order jet bundle. The result is correct only, if <tt class="docutils literal"><span class="pre">de</span></tt> is simplified.</dd>
+<dt><span class="spadfun">dimension</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">dimension(de,</span> <span class="pre">q)</span></code> computes the dimension of the differential equation <code class="docutils literal"><span class="pre">de</span></code> as a submanifold of the <code class="docutils literal"><span class="pre">q</span></code><code class="docutils literal"><span class="pre">-</span></code>th order jet bundle. The result is correct only, if <code class="docutils literal"><span class="pre">de</span></code> is simplified.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-display"></span><dl class="docutils" id="index-5">
-<dt><span class="spadfun">display</span>: % -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">display(de)</span></tt> prints all information stored about the differential equation <tt class="docutils literal"><span class="pre">de</span></tt>. This comprises the system ordered by the order of the equations, the Jacobi matrices separately for each order and the index of the independent variable with respect to which the equation was lastly differentiated (1 for not prolonged equations).</dd>
+<dt><span class="spadfun">display</span>: % -&gt; <a class="reference internal" href="Void.html#l-void"><span>Void</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">display(de)</span></code> prints all information stored about the differential equation <code class="docutils literal"><span class="pre">de</span></code>. This comprises the system ordered by the order of the equations, the Jacobi matrices separately for each order and the index of the independent variable with respect to which the equation was lastly differentiated (1 for not prolonged equations).</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-extract-symbol"></span><dl class="docutils" id="index-6">
-<dt><span class="spadfun">extractSymbol</span>: (%, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; <a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><em>SparseEchelonMatrix</em></a>(JB, D)</dt>
-<dd><tt class="docutils literal"><span class="pre">extractSymbol(de,</span> <span class="pre">solved?)</span></tt> computes the symbol of the differential equation <tt class="docutils literal"><span class="pre">de</span></tt>. If <tt class="docutils literal"><span class="pre">solved?</span></tt> is <tt class="docutils literal"><span class="pre">true</span></tt>, the row echelon form of the symbol is computed at once.</dd>
+<dt><span class="spadfun">extractSymbol</span>: (%, <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>) -&gt; <a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><span>SparseEchelonMatrix</span></a>(JB, D)</dt>
+<dd><code class="docutils literal"><span class="pre">extractSymbol(de,</span> <span class="pre">solved?)</span></code> computes the symbol of the differential equation <code class="docutils literal"><span class="pre">de</span></code>. If <code class="docutils literal"><span class="pre">solved?</span></code> is <code class="docutils literal"><span class="pre">true</span></code>, the row echelon form of the symbol is computed at once.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-insert"></span><dl class="docutils" id="index-7">
-<dt><span class="spadfun">insert</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> D, %) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">insert(sys,</span> <span class="pre">de)</span></tt> adds the system <tt class="docutils literal"><span class="pre">sys</span> <span class="pre">=</span> <span class="pre">0</span></tt> to the differential equation <tt class="docutils literal"><span class="pre">de</span></tt>.</dd>
+<dt><span class="spadfun">insert</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> D, %) -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">insert(sys,</span> <span class="pre">de)</span></code> adds the system <code class="docutils literal"><span class="pre">sys</span> <span class="pre">=</span> <span class="pre">0</span></code> to the differential equation <code class="docutils literal"><span class="pre">de</span></code>.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-jacobi-matrix"></span><dl class="docutils" id="index-8">
-<dt><span class="spadfun">jacobiMatrix</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><em>SparseEchelonMatrix</em></a>(JB, D)</dt>
-<dd><tt class="docutils literal"><span class="pre">jacobiMatrix(De)</span></tt> returns a list of Jacobi matrices sorted by the order of the equations.</dd>
+<dt><span class="spadfun">jacobiMatrix</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><span>SparseEchelonMatrix</span></a>(JB, D)</dt>
+<dd><code class="docutils literal"><span class="pre">jacobiMatrix(De)</span></code> returns a list of Jacobi matrices sorted by the order of the equations.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-join"></span><dl class="docutils" id="index-9">
 <dt><span class="spadfun">join</span>: (%, %) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">join(de1,</span> <span class="pre">de2)</span></tt> combines <tt class="docutils literal"><span class="pre">de1</span></tt> and <tt class="docutils literal"><span class="pre">de2</span></tt> to a single differential equation.</dd>
+<dd><code class="docutils literal"><span class="pre">join(de1,</span> <span class="pre">de2)</span></code> combines <code class="docutils literal"><span class="pre">de1</span></code> and <code class="docutils literal"><span class="pre">de2</span></code> to a single differential equation.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-make-system"></span><dl class="docutils" id="index-10">
-<dt><span class="spadfun">makeSystem</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> D -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">makeSystem(sys)</span></tt> creates a differential equation from a system.</dd>
+<dt><span class="spadfun">makeSystem</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> D -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">makeSystem(sys)</span></code> creates a differential equation from a system.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-order"></span><dl class="docutils" id="index-11">
-<dt><span class="spadfun">order</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">order(de)</span></tt> yields the order of the differential equation <tt class="docutils literal"><span class="pre">de</span></tt>.</dd>
+<dt><span class="spadfun">order</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">order(de)</span></code> yields the order of the differential equation <code class="docutils literal"><span class="pre">de</span></code>.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-print-sys"></span><dl class="docutils" id="index-12">
-<dt><span class="spadfun">printSys</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> D -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">printSys(sys)</span></tt> writes a list of functions as a vector of equations (with right hand side 0) and coerces the result to <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a>.</dd>
+<dt><span class="spadfun">printSys</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> D -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">printSys(sys)</span></code> writes a list of functions as a vector of equations (with right hand side 0) and coerces the result to <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a>.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-project"></span><dl class="docutils" id="index-13">
-<dt><span class="spadfun">project</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">project(de,</span> <span class="pre">q)</span></tt> projects the differential equation <tt class="docutils literal"><span class="pre">de</span></tt> of order higher than <tt class="docutils literal"><span class="pre">q</span></tt> into the <tt class="docutils literal"><span class="pre">q</span></tt><tt class="docutils literal"><span class="pre">-</span></tt>th order jet bundle.</dd>
+<dt><span class="spadfun">project</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">project(de,</span> <span class="pre">q)</span></code> projects the differential equation <code class="docutils literal"><span class="pre">de</span></code> of order higher than <code class="docutils literal"><span class="pre">q</span></code> into the <code class="docutils literal"><span class="pre">q</span></code><code class="docutils literal"><span class="pre">-</span></code>th order jet bundle.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-prolong"></span><dl class="docutils" id="index-14">
-<dt><span class="spadfun">prolong</span>: % -&gt; Record(SDe: %, IC: <a class="reference internal" href="List.html#l-list"><em>List</em></a> D)</dt>
-<dd><tt class="docutils literal"><span class="pre">prolong(de)</span></tt> prolongs the differential equation <tt class="docutils literal"><span class="pre">de</span></tt>. Additionally the arising integrability conditions are returned.</dd>
+<dt><span class="spadfun">prolong</span>: % -&gt; Record(SDe: %, IC: <a class="reference internal" href="List.html#l-list"><span>List</span></a> D)</dt>
+<dd><code class="docutils literal"><span class="pre">prolong(de)</span></code> prolongs the differential equation <code class="docutils literal"><span class="pre">de</span></code>. Additionally the arising integrability conditions are returned.</dd>
 </dl>
 <dl class="docutils" id="index-15">
-<dt><span class="spadfun">prolong</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; Record(SDe: %, IC: <a class="reference internal" href="List.html#l-list"><em>List</em></a> D)</dt>
-<dd><tt class="docutils literal"><span class="pre">prolong(de,</span> <span class="pre">q)</span></tt> is like <tt class="docutils literal"><span class="pre">prolong(de)</span></tt>. However, only equations of lower order than <tt class="docutils literal"><span class="pre">q</span></tt> are prolonged.</dd>
+<dt><span class="spadfun">prolong</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; Record(SDe: %, IC: <a class="reference internal" href="List.html#l-list"><span>List</span></a> D)</dt>
+<dd><code class="docutils literal"><span class="pre">prolong(de,</span> <span class="pre">q)</span></code> is like <code class="docutils literal"><span class="pre">prolong(de)</span></code>. However, only equations of lower order than <code class="docutils literal"><span class="pre">q</span></code> are prolonged.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-prolong-m-v"></span><dl class="docutils" id="index-16">
-<dt><span class="spadfun">prolongMV</span>: Record(Rank: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, NumMultVar: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, Betas: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; Record(Rank: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, NumMultVar: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, Betas: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>)</dt>
-<dd><tt class="docutils literal"><span class="pre">prolongMV(mv)</span></tt> calculates the number of multiplicative variables for the prolongation of an involutive symbol.</dd>
+<dt><span class="spadfun">prolongMV</span>: Record(Rank: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, NumMultVar: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, Betas: <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; Record(Rank: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, NumMultVar: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, Betas: <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>)</dt>
+<dd><code class="docutils literal"><span class="pre">prolongMV(mv)</span></code> calculates the number of multiplicative variables for the prolongation of an involutive symbol.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-prolong-symbol"></span><dl class="docutils" id="index-17">
-<dt><span class="spadfun">prolongSymbol</span>: <a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><em>SparseEchelonMatrix</em></a>(JB, D) -&gt; <a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><em>SparseEchelonMatrix</em></a>(JB, D)</dt>
-<dd><tt class="docutils literal"><span class="pre">prolongSymbol(symb)</span></tt> prolongs directly the symbol <tt class="docutils literal"><span class="pre">symb</span></tt>.</dd>
+<dt><span class="spadfun">prolongSymbol</span>: <a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><span>SparseEchelonMatrix</span></a>(JB, D) -&gt; <a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><span>SparseEchelonMatrix</span></a>(JB, D)</dt>
+<dd><code class="docutils literal"><span class="pre">prolongSymbol(symb)</span></code> prolongs directly the symbol <code class="docutils literal"><span class="pre">symb</span></code>.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-retract"></span><dl class="docutils" id="index-18">
-<dt><span class="spadfun">retract</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> D</dt>
-<dd><tt class="docutils literal"><span class="pre">retract(de)</span></tt> returns the system defining the differential equation <tt class="docutils literal"><span class="pre">de</span></tt>.</dd>
+<dt><span class="spadfun">retract</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> D</dt>
+<dd><code class="docutils literal"><span class="pre">retract(de)</span></code> returns the system defining the differential equation <code class="docutils literal"><span class="pre">de</span></code>.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-set-simp-mode"></span><dl class="docutils" id="index-19">
-<dt><span class="spadfun">setSimpMode</span>: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">setSimpMode(i)</span></tt> sets the flag controlling the used simplifications and returns the old value. Current values are: <tt class="docutils literal"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">0</span></tt> <tt class="docutils literal"><span class="pre">-&gt;</span></tt> No simplification modulo lower order equations. <tt class="docutils literal"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">1</span></tt> <tt class="docutils literal"><span class="pre">-&gt;</span></tt> Simplification modulo lower order equations. Default is 0.</dd>
+<dt><span class="spadfun">setSimpMode</span>: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">setSimpMode(i)</span></code> sets the flag controlling the used simplifications and returns the old value. Current values are: <code class="docutils literal"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">0</span></code> <code class="docutils literal"><span class="pre">-&gt;</span></code> No simplification modulo lower order equations. <code class="docutils literal"><span class="pre">i</span> <span class="pre">=</span> <span class="pre">1</span></code> <code class="docutils literal"><span class="pre">-&gt;</span></code> Simplification modulo lower order equations. Default is 0.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-simplify"></span><dl class="docutils" id="index-20">
-<dt><span class="spadfun">simplify</span>: % -&gt; Record(SDe: %, IC: <a class="reference internal" href="List.html#l-list"><em>List</em></a> D)</dt>
-<dd><tt class="docutils literal"><span class="pre">simplify(de)</span></tt> simplifies the equations of each order separately using the procedure <tt class="docutils literal"><span class="pre">simplify</span></tt> from <tt class="docutils literal"><span class="pre">D</span></tt>. Found integrability conditions are also returned separately.</dd>
+<dt><span class="spadfun">simplify</span>: % -&gt; Record(SDe: %, IC: <a class="reference internal" href="List.html#l-list"><span>List</span></a> D)</dt>
+<dd><code class="docutils literal"><span class="pre">simplify(de)</span></code> simplifies the equations of each order separately using the procedure <code class="docutils literal"><span class="pre">simplify</span></code> from <code class="docutils literal"><span class="pre">D</span></code>. Found integrability conditions are also returned separately.</dd>
 </dl>
 <span class="target" id="l-jet-differential-equation-tableau"></span><dl class="docutils" id="index-21">
-<dt><span class="spadfun">tableau</span>: (<a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><em>SparseEchelonMatrix</em></a>(JB, D), <a class="reference internal" href="JetDifferential.html#l-jet-differential"><em>JetDifferential</em></a>(JB, D)) -&gt; <a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><em>SparseEchelonMatrix</em></a>(JB, D)</dt>
-<dd><tt class="docutils literal"><span class="pre">tableau(symb,</span> <span class="pre">chi)</span></tt> computes the tableau parametrized by a given one-form.</dd>
+<dt><span class="spadfun">tableau</span>: (<a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><span>SparseEchelonMatrix</span></a>(JB, D), <a class="reference internal" href="JetDifferential.html#l-jet-differential"><span>JetDifferential</span></a>(JB, D)) -&gt; <a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><span>SparseEchelonMatrix</span></a>(JB, D)</dt>
+<dd><code class="docutils literal"><span class="pre">tableau(symb,</span> <span class="pre">chi)</span></code> computes the tableau parametrized by a given one-form.</dd>
 </dl>
 <dl class="docutils" id="index-22">
-<dt><span class="spadfun">tableau</span>: (<a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><em>SparseEchelonMatrix</em></a>(JB, D), <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="JetDifferential.html#l-jet-differential"><em>JetDifferential</em></a>(JB, D)) -&gt; <a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><em>SparseEchelonMatrix</em></a>(JB, D)</dt>
-<dd><tt class="docutils literal"><span class="pre">tableau(symb,</span> <span class="pre">lchi)</span></tt> computes the extended tableau parametrized by a given list of one-forms.</dd>
+<dt><span class="spadfun">tableau</span>: (<a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><span>SparseEchelonMatrix</span></a>(JB, D), <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="JetDifferential.html#l-jet-differential"><span>JetDifferential</span></a>(JB, D)) -&gt; <a class="reference internal" href="SparseEchelonMatrix.html#l-sparse-echelon-matrix"><span>SparseEchelonMatrix</span></a>(JB, D)</dt>
+<dd><code class="docutils literal"><span class="pre">tableau(symb,</span> <span class="pre">lchi)</span></code> computes the extended tableau parametrized by a given list of one-forms.</dd>
 </dl>
 </div>
 
@@ -155,7 +155,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -164,7 +164,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -181,7 +181,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -193,12 +193,12 @@
         <li class="right" >
           <a href="JetDifferential.html" title="JetDifferential(JB, D)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

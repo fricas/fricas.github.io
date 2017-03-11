@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>STransform PT &mdash; FriCAS 1.2.7 API</title>
+    <title>STransform PT &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="Stream S" href="Stream.html" />
     <link rel="prev" title="Stack S" href="Stack.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,58 +43,58 @@
         <li class="right" >
           <a href="Stack.html" title="Stack S"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="stransform-pt">
 <span id="l-s-transform"></span><span id="index-0"></span><h1>STransform PT<a class="headerlink" href="#stransform-pt" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//scene.spad#L2954">scene.spad line 2954</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//scene.spad#L2952">scene.spad line 2952</a></p>
 <ul class="simple">
-<li>PT: <a class="reference internal" href="SPointCategory.html#l-s-point-category"><em>SPointCategory</em></a></li>
+<li>PT: <a class="reference internal" href="SPointCategory.html#l-s-point-category"><span>SPointCategory</span></a></li>
 </ul>
 <p>Domains for transform from SPoint to SPoint STransform transform domain can by used to represent linear transforms for instance when working with SCartesian where its Representation is a matrix of DoubleFloat Other transform domains may not necessarily be linear and will have different representations</p>
 <span class="target" id="l-s-transform-coerce"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">coerce(tr)</span></tt> output</dd>
+<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">coerce(tr)</span></code> output</dd>
 </dl>
 <span class="target" id="l-s-transform-compound"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">compound</span>: (%, %) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">compound(tr,</span> <span class="pre">inpt)</span></tt> combine two transforms</dd>
+<dd><code class="docutils literal"><span class="pre">compound(tr,</span> <span class="pre">inpt)</span></code> combine two transforms</dd>
 </dl>
 <span class="target" id="l-s-transform-identity"></span><dl class="docutils" id="index-3">
 <dt><span class="spadfun">identity</span>: () -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">identity()</span></tt> returns the identity element which is do nothing transform</dd>
+<dd><code class="docutils literal"><span class="pre">identity()</span></code> returns the identity element which is do nothing transform</dd>
 </dl>
 <span class="target" id="l-s-transform-stransform"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">stransform</span>: <a class="reference internal" href="Complex.html#l-complex"><em>Complex</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; <a class="reference internal" href="Complex.html#l-complex"><em>Complex</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">stransform(cpx)</span></tt> construct transform as function of complex variable can only be used when <tt class="docutils literal"><span class="pre">PT</span></tt> is SArgand so this can be converted to <tt class="docutils literal"><span class="pre">PT</span></tt> <tt class="docutils literal"><span class="pre">-&gt;</span></tt> <tt class="docutils literal"><span class="pre">PT</span></tt></dd>
+<dt><span class="spadfun">stransform</span>: <a class="reference internal" href="Complex.html#l-complex"><span>Complex</span></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a> -&gt; <a class="reference internal" href="Complex.html#l-complex"><span>Complex</span></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a> -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">stransform(cpx)</span></code> construct transform as function of complex variable can only be used when <code class="docutils literal"><span class="pre">PT</span></code> is SArgand so this can be converted to <code class="docutils literal"><span class="pre">PT</span></code> <code class="docutils literal"><span class="pre">-&gt;</span></code> <code class="docutils literal"><span class="pre">PT</span></code></dd>
 </dl>
 <dl class="docutils" id="index-5">
-<dt><span class="spadfun">stransform</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">stransform(m)</span></tt> construct transorm using a multivector</dd>
+<dt><span class="spadfun">stransform</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a> -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">stransform(m)</span></code> construct transform using a multivector</dd>
 </dl>
 <dl class="docutils" id="index-6">
-<dt><span class="spadfun">stransform</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">stransform(m)</span></tt> constructs transform with given matrix elements</dd>
+<dt><span class="spadfun">stransform</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a> -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">stransform(m)</span></code> constructs transform with given matrix elements</dd>
 </dl>
 <dl class="docutils" id="index-7">
 <dt><span class="spadfun">stransform</span>: PT -&gt; PT -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">stransform(gen)</span></tt> construct transform in general form as a mapping from <tt class="docutils literal"><span class="pre">PT</span></tt> to <tt class="docutils literal"><span class="pre">PT</span></tt></dd>
+<dd><code class="docutils literal"><span class="pre">stransform(gen)</span></code> construct transform in general form as a mapping from <code class="docutils literal"><span class="pre">PT</span></code> to <code class="docutils literal"><span class="pre">PT</span></code></dd>
 </dl>
 <span class="target" id="l-s-transform-stranslate"></span><dl class="docutils" id="index-8">
-<dt><span class="spadfun">stranslate</span>: (<a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">stranslate(offsetx,</span> <span class="pre">offsety,</span> <span class="pre">offsetz,</span> <span class="pre">scalex,</span> <span class="pre">scaley,</span> <span class="pre">scalez)</span></tt> constructs a transform which represents pure translation we can also combine with scale which, for instance, is useful when writing to <tt class="docutils literal"><span class="pre">SVG</span></tt> file because the <tt class="docutils literal"><span class="pre">y</span></tt> dimension is inverted</dd>
+<dt><span class="spadfun">stranslate</span>: (<a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a>) -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">stranslate(offsetx,</span> <span class="pre">offsety,</span> <span class="pre">offsetz,</span> <span class="pre">scalex,</span> <span class="pre">scaley,</span> <span class="pre">scalez)</span></code> constructs a transform which represents pure translation we can also combine with scale which, for instance, is useful when writing to <code class="docutils literal"><span class="pre">SVG</span></code> file because the <code class="docutils literal"><span class="pre">y</span></code> dimension is inverted</dd>
 </dl>
 <span class="target" id="l-s-transform-xform"></span><dl class="docutils" id="index-9">
 <dt><span class="spadfun">xform</span>: (%, PT) -&gt; PT</dt>
-<dd><tt class="docutils literal"><span class="pre">xform(tr,</span> <span class="pre">inpt)</span></tt> apply transform to a point producing another point</dd>
+<dd><code class="docutils literal"><span class="pre">xform(tr,</span> <span class="pre">inpt)</span></code> apply transform to a point producing another point</dd>
 </dl>
 </div>
 
@@ -102,7 +102,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -111,7 +111,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -128,7 +128,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -140,12 +140,12 @@
         <li class="right" >
           <a href="Stack.html" title="Stack S"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

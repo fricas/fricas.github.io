@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SceneIFS PT &mdash; FriCAS 1.2.7 API</title>
+    <title>SceneIFS PT &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="SceneNamedPoints PT" href="SceneNamedPoints.html" />
     <link rel="prev" title="Scene PT" href="Scene.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,58 +43,58 @@
         <li class="right" >
           <a href="Scene.html" title="Scene PT"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="sceneifs-pt">
 <span id="l-scene-i-f-s"></span><span id="index-0"></span><h1>SceneIFS PT<a class="headerlink" href="#sceneifs-pt" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//scene.spad#L1851">scene.spad line 1851</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//scene.spad#L1849">scene.spad line 1849</a></p>
 <ul class="simple">
-<li>PT: <a class="reference internal" href="SPointCategory.html#l-s-point-category"><em>SPointCategory</em></a></li>
+<li>PT: <a class="reference internal" href="SPointCategory.html#l-s-point-category"><span>SPointCategory</span></a></li>
 </ul>
-<p>Generates various surfaces (2 dimensional subsets of 3D space). When 1 dimensional subspace (a line) needs to be represented in a 3D editor then we convert the line into a tube. Many of the functions here are from NumericTubePlot and related packages. However <tt class="docutils literal"><span class="pre">I</span></tt> needed them to be defined over SPointCategory so <tt class="docutils literal"><span class="pre">I</span></tt> adapted them here.</p>
+<p>Generates various surfaces (2 dimensional subsets of 3D space). When 1 dimensional subspace (a line) needs to be represented in a 3D editor then we convert the line into a tube. Many of the functions here are from NumericTubePlot and related packages. However <code class="docutils literal"><span class="pre">I</span></code> needed them to be defined over SPointCategory so <code class="docutils literal"><span class="pre">I</span></code> adapted them here.</p>
 <span class="target" id="l-scene-i-f-s-coerce"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">coerce(me)</span></tt> list this instance to the command line</dd>
+<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">coerce(me)</span></code> list this instance to the command line</dd>
 </dl>
 <span class="target" id="l-scene-i-f-s-curve-loops"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">curveLoops</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> PT, <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> PT</dt>
-<dd><tt class="docutils literal"><span class="pre">curveLoops(pts1,</span> <span class="pre">r,</span> <span class="pre">nn)</span></tt> generates ifs from line given by <tt class="docutils literal"><span class="pre">pts1</span></tt></dd>
+<dt><span class="spadfun">curveLoops</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> PT, <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a>, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> PT</dt>
+<dd><code class="docutils literal"><span class="pre">curveLoops(pts1,</span> <span class="pre">r,</span> <span class="pre">nn)</span></code> generates ifs from line given by <code class="docutils literal"><span class="pre">pts1</span></code></dd>
 </dl>
 <span class="target" id="l-scene-i-f-s-indexes"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">indexes</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">indexes(me)</span></tt> returns indexes into pointList(<tt class="docutils literal"><span class="pre">me</span></tt>)</dd>
+<dt><span class="spadfun">indexes</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">indexes(me)</span></code> returns indexes into pointList(<code class="docutils literal"><span class="pre">me</span></code>)</dd>
 </dl>
 <span class="target" id="l-scene-i-f-s-point-list"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">pointList</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> PT</dt>
-<dd><tt class="docutils literal"><span class="pre">pointList(me)</span></tt> returns points at vertices of this mesh.</dd>
+<dt><span class="spadfun">pointList</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> PT</dt>
+<dd><code class="docutils literal"><span class="pre">pointList(me)</span></code> returns points at vertices of this mesh.</dd>
 </dl>
 <span class="target" id="l-scene-i-f-s-sierpinski-divide"></span><dl class="docutils" id="index-5">
-<dt><span class="spadfun">sierpinskiDivide</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">sierpinskiDivide(me,</span> <span class="pre">level)</span></tt> for each edge of each face calculate a new point in the centre of the edge, then build a new set of faces which include the new points.</dd>
+<dt><span class="spadfun">sierpinskiDivide</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">sierpinskiDivide(me,</span> <span class="pre">level)</span></code> for each edge of each face calculate a new point in the centre of the edge, then build a new set of faces which include the new points.</dd>
 </dl>
 <span class="target" id="l-scene-i-f-s-single-face"></span><dl class="docutils" id="index-6">
-<dt><span class="spadfun">singleFace</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> PT -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">singleFace(ptin)</span></tt> constructs a ifs representation of a face from an array of points</dd>
+<dt><span class="spadfun">singleFace</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> PT -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">singleFace(ptin)</span></code> constructs a ifs representation of a face from an array of points</dd>
 </dl>
 <span class="target" id="l-scene-i-f-s-smesh"></span><dl class="docutils" id="index-7">
-<dt><span class="spadfun">smesh</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> PT, <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">smesh(ptin,</span> <span class="pre">clos)</span></tt> constructs a ifs representation of a mesh from a 2 dimensional array of points</dd>
+<dt><span class="spadfun">smesh</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> PT, <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>) -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">smesh(ptin,</span> <span class="pre">clos)</span></code> constructs a ifs representation of a mesh from a 2 dimensional array of points</dd>
 </dl>
 <span class="target" id="l-scene-i-f-s-stube"></span><dl class="docutils" id="index-8">
-<dt><span class="spadfun">stube</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> Record(source: <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a> -&gt; PT, ranges: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Segment.html#l-segment"><em>Segment</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, knots: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, points: <a class="reference internal" href="List.html#l-list"><em>List</em></a> PT), <a class="reference internal" href="DoubleFloat.html#l-double-float"><em>DoubleFloat</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">stube(functions:</span> <span class="pre">List</span> <span class="pre">Clipd,</span> <span class="pre">r,</span> <span class="pre">n)</span></tt> creates a tube of radius <tt class="docutils literal"><span class="pre">r</span></tt> around the curve functions.</dd>
+<dt><span class="spadfun">stube</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> Record(source: <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a> -&gt; PT, ranges: <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Segment.html#l-segment"><span>Segment</span></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a>, knots: <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a>, points: <a class="reference internal" href="List.html#l-list"><span>List</span></a> PT), <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a>, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">stube(functions:</span> <span class="pre">List</span> <span class="pre">Clipd,</span> <span class="pre">r,</span> <span class="pre">n)</span></code> creates a tube of radius <code class="docutils literal"><span class="pre">r</span></code> around the curve functions.</dd>
 </dl>
 <span class="target" id="l-scene-i-f-s-subdivide"></span><dl class="docutils" id="index-9">
 <dt><span class="spadfun">subdivide</span>: % -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">subdivide(me)</span></tt> for each face calculate a new point in the centre of the face, then build a new set of faces which include the new point.</dd>
+<dd><code class="docutils literal"><span class="pre">subdivide(me)</span></code> for each face calculate a new point in the centre of the face, then build a new set of faces which include the new point.</dd>
 </dl>
 </div>
 
@@ -102,7 +102,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -111,7 +111,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -128,7 +128,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -140,12 +140,12 @@
         <li class="right" >
           <a href="Scene.html" title="Scene PT"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

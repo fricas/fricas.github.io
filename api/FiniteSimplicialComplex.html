@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>FiniteSimplicialComplex VS &mdash; FriCAS 1.3.1 API</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.3.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="up" title="Domains" href="Domains.html" />
+    <link rel="next" title="FlexibleArray S" href="FlexibleArray.html" />
+    <link rel="prev" title="FinitePoset S" href="FinitePoset.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="FlexibleArray.html" title="FlexibleArray S"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="FinitePoset.html" title="FinitePoset S"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="finitesimplicialcomplex-vs">
+<span id="l-finite-simplicial-complex"></span><span id="index-0"></span><h1>FiniteSimplicialComplex VS<a class="headerlink" href="#finitesimplicialcomplex-vs" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//alg_top.spad#L1724">alg_top.spad line 1724</a></p>
+<ul class="simple">
+<li>VS: <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><span>AbelianGroup</span></a></li>
+</ul>
+<p>A Finite Simplicial Complex for more documentation see: <a class="reference external" href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/simplex/">http://www.euclideanspace.com/prog/scratchpad/mycode/topology/simplex/</a> Date Created: Dec 2015 Basic Operations: star, link, cone, product Related packages: Related categories: Related Domains: DeltaComplex is an alternative representation which is less compact but allows edges, triangles, etc to be indexed. Also See: AMS Classifications:</p>
+<dl class="docutils">
+<dt><a class="reference internal" href="BasicType.html#id1"><span>=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><span>~=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-add-implied-faces"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">addImpliedFaces</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="OrientedFacet.html#l-oriented-facet"><span>OrientedFacet</span></a></dt>
+<dd>a function to take a set of faces and add those that are implied by the simplecicalComplex conventions (if they don<code class="docutils literal"><span class="pre">'t</span></code> already exist). For example, if the input is a triangle ((1, 2, 3)) then we would add: its points ((1), (2), (3)). and its edges ((1, 2), (1, 3), (2, 3)).</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-add-simplex"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">addSimplex</span>: (%, <a class="reference internal" href="OrientedFacet.html#l-oriented-facet"><span>OrientedFacet</span></a>) -&gt; %</dt>
+<dd>Add a facet to this simplex If the facet is also in the list then, dont append, instead change the multiplier. Used by boundary function</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-boundary"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">boundary</span>: % -&gt; %</dt>
+<dd>Step down to the next lower dimension, this is like hollowing out the complex. It takes the highest dimension entries and replaces them with their boundaries, cancelling out where it can.</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-chain"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">chain</span>: % -&gt; <a class="reference internal" href="ChainComplex.html#l-chain-complex"><span>ChainComplex</span></a></dt>
+<dd>returns a matrix sequence representing the face maps in linear algebra form For more information: url{<a class="reference external" href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/chain/index">http://www.euclideanspace.com/prog/scratchpad/mycode/topology/chain/index</a>.<code class="docutils literal"><span class="pre">htm</span></code>}</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-co-chain"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">coChain</span>: % -&gt; <a class="reference internal" href="CoChainComplex.html#l-co-chain-complex"><span>CoChainComplex</span></a> VS</dt>
+<dd>returns a matrix sequence representing the face maps in linear algebra form For more information: url{<a class="reference external" href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/chain/cochain/index">http://www.euclideanspace.com/prog/scratchpad/mycode/topology/chain/cochain/index</a>.<code class="docutils literal"><span class="pre">htm</span></code>}</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-coerce"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="DeltaComplex.html#l-delta-complex"><span>DeltaComplex</span></a> VS</dt>
+<dd><code class="docutils literal"><span class="pre">coerce</span> <span class="pre">SimplicialComplex</span></code> to DeltaComplex</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-co-homology"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">coHomology</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Homology.html#l-homology"><span>Homology</span></a></dt>
+<dd>calculate cohomology using SmithNormalForm url{<a class="reference external" href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homology/cohomol/index">http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homology/cohomol/index</a>.<code class="docutils literal"><span class="pre">htm</span></code>}</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-cone"></span><dl class="docutils" id="index-8">
+<dt><span class="spadfun">cone</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
+<dd>The &#8216;cone&#8217; of a simplicial complex is formed by adding the vertex to every facet. &#8216;vertex&#8217; should not already be included in existing faces, this is not checked and so will lead to simplexes with duplicate vertices.</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-fundamental-group"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">fundamentalGroup</span>: % -&gt; <a class="reference internal" href="GroupPresentation.html#l-group-presentation"><span>GroupPresentation</span></a></dt>
+<dd>Generates fundamental group from this simplicial complex. This works by converting to a DeltaComplex and then generating the fundamentalGroup from that. This is not the most efficient method because the conversion generates lots of higher order faceMaps which are not used. This will attempt to simplify the group presentation, if you don<code class="docutils literal"><span class="pre">'t</span></code> want this use alternative function of same name. For more information: url{<a class="reference external" href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homotopy/index">http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homotopy/index</a>.<code class="docutils literal"><span class="pre">htm</span></code>}</dd>
+</dl>
+<dl class="docutils" id="index-10">
+<dt><span class="spadfun">fundamentalGroup</span>: (%, <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>) -&gt; <a class="reference internal" href="GroupPresentation.html#l-group-presentation"><span>GroupPresentation</span></a></dt>
+<dd>Generates fundamental group from this simplicial complex. This works by converting to a DeltaComplex and then generating the fundamentalGroup from that. This is not the most efficient method because the conversion generates lots of higher order faceMaps which are not used. This version has options to: simplify - if <code class="docutils literal"><span class="pre">true</span></code> attempts to simplify the group presentation trace - if <code class="docutils literal"><span class="pre">true</span></code> outputs trace of simplification rules used. For more information: url{<a class="reference external" href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homotopy/index">http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homotopy/index</a>.<code class="docutils literal"><span class="pre">htm</span></code>}</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-grade"></span><dl class="docutils" id="index-11">
+<dt><span class="spadfun">grade</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="OrientedFacet.html#l-oriented-facet"><span>OrientedFacet</span></a></dt>
+<dd>a function to grade simplexes according to their lengths. This nests the lists according to their length. Verticies, edges, trianges and so on. The list is returned in reverse order, that is, it starts at highest grade and works down.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><span>hash</span></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><span>SingleInteger</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><span>hashUpdate!</span></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-homology"></span><dl class="docutils" id="index-12">
+<dt><span class="spadfun">homology</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Homology.html#l-homology"><span>Homology</span></a></dt>
+<dd>calculate homology using SmithNormalForm For more information: url{<a class="reference external" href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homology/index">http://www.euclideanspace.com/prog/scratchpad/mycode/topology/homology/index</a>.<code class="docutils literal"><span class="pre">htm</span></code>}</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><span>latex</span></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-link"></span><dl class="docutils" id="index-13">
+<dt><span class="spadfun">link</span>: (%, <a class="reference internal" href="OrientedFacet.html#l-oriented-facet"><span>OrientedFacet</span></a>) -&gt; %</dt>
+<dd>The &#8216;link&#8217; of a simplicial complex and a vertex contains the boundary of the simplexes of <code class="docutils literal"><span class="pre">s</span></code> which include simplex.</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-make-disjoint"></span><dl class="docutils" id="index-14">
+<dt><span class="spadfun">makeDisjoint</span>: (%, %) -&gt; %</dt>
+<dd>If index numbers of <code class="docutils literal"><span class="pre">'b'</span></code> overlap with index numbers of &#8216;a&#8217; then refactor <code class="docutils literal"><span class="pre">'b'</span></code> so that it does not overlap.</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-max-index"></span><dl class="docutils" id="index-15">
+<dt><span class="spadfun">maxIndex</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>find the maximum index.</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-merge"></span><dl class="docutils" id="index-16">
+<dt><span class="spadfun">merge</span>: (%, %) -&gt; %</dt>
+<dd>Forms union of two simplicial complexes.</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-min-index"></span><dl class="docutils" id="index-17">
+<dt><span class="spadfun">minIndex</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>find the minimum index.</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-one-skeleton"></span><dl class="docutils" id="index-18">
+<dt><span class="spadfun">oneSkeleton</span>: % -&gt; <a class="reference internal" href="DirectedGraph.html#l-directed-graph"><span>DirectedGraph</span></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>generates graph AKA 1-skeleton</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-product"></span><dl class="docutils" id="index-19">
+<dt><span class="spadfun">product</span>: (%, %) -&gt; %</dt>
+<dd>Forms product of two simplicial complexes. For more detailed explanation of simplex product code see: url{<a class="reference external" href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/simplex/product/">http://www.euclideanspace.com/prog/scratchpad/mycode/topology/simplex/product/</a>} Also see Hatcher [9]. page 277 - The simplical cross product. page 278 - The cohomology cross product. Returns list, each entry is a &#8216;lattice path&#8217; from (0, 0) to (<code class="docutils literal"><span class="pre">x</span></code>, <code class="docutils literal"><span class="pre">y</span></code>) where <code class="docutils literal"><span class="pre">x</span></code> is number of entries in sa and <code class="docutils literal"><span class="pre">y</span></code> is number of entries in <code class="docutils literal"><span class="pre">sb</span></code>.</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-refactor-indexes"></span><dl class="docutils" id="index-20">
+<dt><span class="spadfun">refactorIndexes</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
+<dd>add <code class="docutils literal"><span class="pre">'n'</span></code> to all indexes without changing the structure of this simplicial complex.</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-simplicial-complex"></span><dl class="docutils" id="index-21">
+<dt><span class="spadfun">simplicialComplex</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> VS, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
+<dd>constructor where the simplices are supplied</dd>
+</dl>
+<dl class="docutils" id="index-22">
+<dt><span class="spadfun">simplicialComplex</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> VS, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
+<dd>constructor where the simplices are supplied</dd>
+</dl>
+<dl class="docutils" id="index-23">
+<dt><span class="spadfun">simplicialComplex</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> VS -&gt; %</dt>
+<dd>construct empty simplex</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-simplicial-complex-if-can"></span><dl class="docutils" id="index-24">
+<dt><span class="spadfun">simplicialComplexIfCan</span>: (<a class="reference internal" href="DeltaComplex.html#l-delta-complex"><span>DeltaComplex</span></a> VS, <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>) -&gt; Union(%, failed)</dt>
+<dd>construct FiniteSimplicialComplex from DeltaComplex with trace. If there are &#8216;implied&#8217; loops, such as facets with multiple entries with the same index, then this function may fail.</dd>
+</dl>
+<dl class="docutils" id="index-25">
+<dt><span class="spadfun">simplicialComplexIfCan</span>: <a class="reference internal" href="DeltaComplex.html#l-delta-complex"><span>DeltaComplex</span></a> VS -&gt; Union(%, failed)</dt>
+<dd>construct FiniteSimplicialComplex from DeltaComplex. If there are &#8216;implied&#8217; loops, such as facets with multiple entries with the same index, then this function may fail.</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-simplicial-join"></span><dl class="docutils" id="index-26">
+<dt><span class="spadfun">simplicialJoin</span>: (%, %, <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>) -&gt; %</dt>
+<dd>Forms join of two simplicial complexes. The join <code class="docutils literal"><span class="pre">S*T</span></code> of two simplicial sets <code class="docutils literal"><span class="pre">S</span></code> and <code class="docutils literal"><span class="pre">T</span></code> is a new simplicial set that may geometrically be thought of as a cone over <code class="docutils literal"><span class="pre">T</span></code> with tip of shape <code class="docutils literal"><span class="pre">S</span></code>. simplicialJoin is commutative and associative. For more information: url{<a class="reference external" href="http://www.euclideanspace.com/prog/scratchpad/mycode/topology/simplex/join/index">http://www.euclideanspace.com/prog/scratchpad/mycode/topology/simplex/join/index</a>.<code class="docutils literal"><span class="pre">htm</span></code>}</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-sort"></span><dl class="docutils" id="index-27">
+<dt><span class="spadfun">sort</span>: % -&gt; %</dt>
+<dd>sort</dd>
+</dl>
+<span class="target" id="l-finite-simplicial-complex-star"></span><dl class="docutils" id="index-28">
+<dt><span class="spadfun">star</span>: (%, <a class="reference internal" href="OrientedFacet.html#l-oriented-facet"><span>OrientedFacet</span></a>) -&gt; %</dt>
+<dd>The &#8216;star&#8217; of a simplicial complex and a facet contains only the faces of <code class="docutils literal"><span class="pre">s</span></code> which include simplex.</dd>
+</dl>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="FlexibleArray.html" title="FlexibleArray S"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="FinitePoset.html" title="FinitePoset S"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
+    </div>
+  </body>
+</html>

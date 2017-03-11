@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PrecomputedAssociatedEquations(R, L) &mdash; FriCAS 1.2.7 API</title>
+    <title>PrecomputedAssociatedEquations(R, L) &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="PrimGCD" href="PrimGCD.html" />
     <link rel="prev" title="PowerSeriesLimitPackage(R, FE)" href="PowerSeriesLimitPackage.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,27 +43,27 @@
         <li class="right" >
           <a href="PowerSeriesLimitPackage.html" title="PowerSeriesLimitPackage(R, FE)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="precomputedassociatedequations-r-l">
 <span id="l-precomputed-associated-equations"></span><span id="index-0"></span><h1>PrecomputedAssociatedEquations(R, L)<a class="headerlink" href="#precomputedassociatedequations-r-l" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//lodof.spad#L144">lodof.spad line 144</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//lodof.spad#L143">lodof.spad line 143</a></p>
 <ul class="simple">
-<li>R: <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></li>
-<li>L: <a class="reference internal" href="LinearOrdinaryDifferentialOperatorCategory.html#l-linear-ordinary-differential-operator-category"><em>LinearOrdinaryDifferentialOperatorCategory</em></a> R</li>
+<li>R: <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><span>IntegralDomain</span></a></li>
+<li>L: <a class="reference internal" href="LinearOrdinaryDifferentialOperatorCategory.html#l-linear-ordinary-differential-operator-category"><span>LinearOrdinaryDifferentialOperatorCategory</span></a> R</li>
 </ul>
-<p><a class="reference internal" href="#l-precomputed-associated-equations"><em>PrecomputedAssociatedEquations</em></a> stores some generic precomputations which speed up the computations of the associated equations needed for factoring operators.</p>
+<p><a class="reference internal" href="#l-precomputed-associated-equations"><span>PrecomputedAssociatedEquations</span></a> stores some generic precomputations which speed up the computations of the associated equations needed for factoring operators.</p>
 <span class="target" id="l-precomputed-associated-equations-first-uncoupling-matrix"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">firstUncouplingMatrix</span>: (L, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; Union(<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, failed)</dt>
-<dd><tt class="docutils literal"><span class="pre">firstUncouplingMatrix(op,</span> <span class="pre">m)</span></tt> returns the matrix A such that <tt class="docutils literal"><span class="pre">A</span> <span class="pre">w</span> <span class="pre">=</span> <span class="pre">(W',</span> <span class="pre">W'',</span> <span class="pre">...,</span> <span class="pre">W^N)</span></tt> in the corresponding associated equations for right-factors of order <tt class="docutils literal"><span class="pre">m</span></tt> of <tt class="docutils literal"><span class="pre">op</span></tt>. Returns &#8220;failed&#8221; if the matrix A has not been precomputed for the particular combination <tt class="docutils literal"><span class="pre">degree(L),</span> <span class="pre">m</span></tt>.</dd>
+<dt><span class="spadfun">firstUncouplingMatrix</span>: (L, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a>) -&gt; Union(<a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> R, failed)</dt>
+<dd><code class="docutils literal"><span class="pre">firstUncouplingMatrix(op,</span> <span class="pre">m)</span></code> returns the matrix A such that <code class="docutils literal"><span class="pre">A</span> <span class="pre">w</span> <span class="pre">=</span> <span class="pre">(W',</span> <span class="pre">W'',</span> <span class="pre">...,</span> <span class="pre">W^N)</span></code> in the corresponding associated equations for right-factors of order <code class="docutils literal"><span class="pre">m</span></code> of <code class="docutils literal"><span class="pre">op</span></code>. Returns &#8220;failed&#8221; if the matrix A has not been precomputed for the particular combination <code class="docutils literal"><span class="pre">degree(L),</span> <span class="pre">m</span></code>.</dd>
 </dl>
 </div>
 
@@ -71,7 +71,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -80,7 +80,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -97,7 +97,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -109,12 +109,12 @@
         <li class="right" >
           <a href="PowerSeriesLimitPackage.html" title="PowerSeriesLimitPackage(R, FE)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

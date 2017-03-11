@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PermutationGroup S &mdash; FriCAS 1.2.7 API</title>
+    <title>PermutationGroup S &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="Pi" href="Pi.html" />
     <link rel="prev" title="Permutation S" href="Permutation.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,149 +43,157 @@
         <li class="right" >
           <a href="Permutation.html" title="Permutation S"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="permutationgroup-s">
 <span id="l-permutation-group"></span><span id="index-0"></span><h1>PermutationGroup S<a class="headerlink" href="#permutationgroup-s" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//permgrps.spad#L1">permgrps.spad line 1</a></p>
 <ul class="simple">
-<li>S: <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></li>
+<li>S: <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></li>
 </ul>
-<p>PermutationGroup implements permutation groups acting on a set <tt class="docutils literal"><span class="pre">S</span></tt>, i.e. all subgroups of the symmetric group of <tt class="docutils literal"><span class="pre">S</span></tt>, represented as a list of permutations (generators). Note that therefore the objects are not members of the Language category <a class="reference internal" href="Group.html#l-group"><em>Group</em></a>. Using the idea of base and strong generators by Sims, basic routines and algorithms are implemented so that the word problem for permutation groups can be solved.</p>
+<p>PermutationGroup implements permutation groups acting on a set <code class="docutils literal"><span class="pre">S</span></code>, i.e. all subgroups of the symmetric group of <code class="docutils literal"><span class="pre">S</span></code>, represented as a list of permutations (generators). Note that therefore the objects are not members of the Language category <a class="reference internal" href="Group.html#l-group"><span>Group</span></a>. Using the idea of base and strong generators by Sims, basic routines and algorithms are implemented so that the word problem for permutation groups can be solved.</p>
 <span class="target" id="id1"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">&lt;</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">gp1</span> <span class="pre">&lt;</span> <span class="pre">gp2</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if and only if <em>gp1</em> is a proper subgroup of <em>gp2</em>.</dd>
+<dt><span class="spadfun">&lt;</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">gp1</span> <span class="pre">&lt;</span> <span class="pre">gp2</span></code> returns <code class="docutils literal"><span class="pre">true</span></code> if and only if <em>gp1</em> is a proper subgroup of <em>gp2</em>.</dd>
 </dl>
 <span class="target" id="id2"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">&lt;=</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">gp1</span> <span class="pre">&lt;=</span> <span class="pre">gp2</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if and only if <em>gp1</em> is a subgroup of <em>gp2</em>. Note: because of a bug in the parser you have to call this function explicitly by <em>gp1 &lt;=$(PERMGRP S) gp2</em>.</dd>
-<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
-<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
+<dt><span class="spadfun">&lt;=</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">gp1</span> <span class="pre">&lt;=</span> <span class="pre">gp2</span></code> returns <code class="docutils literal"><span class="pre">true</span></code> if and only if <em>gp1</em> is a subgroup of <em>gp2</em>. Note: because of a bug in the parser you have to call this function explicitly by <em>gp1 &lt;=$(PERMGRP S) gp2</em>.</dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><span>=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><span>~=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
 </dl>
 <span class="target" id="l-permutation-group-base"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">base</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
-<dd><tt class="docutils literal"><span class="pre">base(gp)</span></tt> returns a base for the group <em>gp</em>.</dd>
+<dt><span class="spadfun">base</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> S</dt>
+<dd><code class="docutils literal"><span class="pre">base(gp)</span></code> returns a base for the group <em>gp</em>.</dd>
 </dl>
 <span class="target" id="l-permutation-group-coerce"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Permutation.html#l-permutation"><em>Permutation</em></a> S</dt>
-<dd><tt class="docutils literal"><span class="pre">coerce(gp)</span></tt> returns the generators of the group <em>gp</em>.</dd>
-<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
-<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Permutation.html#l-permutation"><span>Permutation</span></a> S</dt>
+<dd><code class="docutils literal"><span class="pre">coerce(gp)</span></code> returns the generators of the group <em>gp</em>.</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dd>
 </dl>
 <dl class="docutils" id="index-5">
-<dt><span class="spadfun">coerce</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Permutation.html#l-permutation"><em>Permutation</em></a> S -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">coerce(ls)</span></tt> coerces a list of permutations <em>ls</em> to the group generated by this list.</dd>
+<dt><span class="spadfun">coerce</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Permutation.html#l-permutation"><span>Permutation</span></a> S -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">coerce(ls)</span></code> coerces a list of permutations <em>ls</em> to the group generated by this list.</dd>
 </dl>
 <span class="target" id="l-permutation-group-degree"></span><dl class="docutils" id="index-6">
-<dt><span class="spadfun">degree</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">degree(gp)</span></tt> returns the number of points moved by all permutations of the group <em>gp</em>.</dd>
+<dt><span class="spadfun">degree</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">degree(gp)</span></code> returns the number of points moved by all permutations of the group <em>gp</em>.</dd>
 </dl>
 <span class="target" id="l-permutation-group-elt"></span><dl class="docutils" id="index-7">
-<dt><span class="spadfun">elt</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Permutation.html#l-permutation"><em>Permutation</em></a> S</dt>
-<dd><tt class="docutils literal"><span class="pre">elt(gp,</span> <span class="pre">i)</span></tt> returns the <tt class="docutils literal"><span class="pre">i</span></tt>-th generator of the group <em>gp</em>.</dd>
+<dt><span class="spadfun">elt</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Permutation.html#l-permutation"><span>Permutation</span></a> S</dt>
+<dd><code class="docutils literal"><span class="pre">elt(gp,</span> <span class="pre">i)</span></code> returns the <code class="docutils literal"><span class="pre">i</span></code>-th generator of the group <em>gp</em>.</dd>
 </dl>
 <span class="target" id="l-permutation-group-generators"></span><dl class="docutils" id="index-8">
-<dt><span class="spadfun">generators</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Permutation.html#l-permutation"><em>Permutation</em></a> S</dt>
-<dd><tt class="docutils literal"><span class="pre">generators(gp)</span></tt> returns the generators of the group <em>gp</em>.</dd>
-<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
-<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
-<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
-<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><span class="spadfun">generators</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Permutation.html#l-permutation"><span>Permutation</span></a> S</dt>
+<dd><code class="docutils literal"><span class="pre">generators(gp)</span></code> returns the generators of the group <em>gp</em>.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><span>hash</span></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><span>SingleInteger</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><span>hashUpdate!</span></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
 </dl>
 <span class="target" id="l-permutation-group-initialize-group-for-word-problem"></span><dl class="docutils" id="index-9">
-<dt><span class="spadfun">initializeGroupForWordProblem</span>: % -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">initializeGroupForWordProblem(gp)</span></tt> initializes the group <em>gp</em> for the word problem. Notes: it calls the other function of this name with parameters 0 and 1: <em>initializeGroupForWordProblem(gp, 0, 1)</em>. Notes: (1) be careful: invoking this routine will destroy the possibly information about your group (but will recompute it again) (2) users need not call this function normally for the soultion of the word problem.</dd>
+<dt><span class="spadfun">initializeGroupForWordProblem</span>: % -&gt; <a class="reference internal" href="Void.html#l-void"><span>Void</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">initializeGroupForWordProblem(gp)</span></code> initializes the group <em>gp</em> for the word problem. Notes: it calls the other function of this name with parameters 0 and 1: <em>initializeGroupForWordProblem(gp, 0, 1)</em>. Notes: (1) be careful: invoking this routine will destroy the possibly information about your group (but will recompute it again) (2) users need not call this function normally for the soultion of the word problem.</dd>
 </dl>
 <dl class="docutils" id="index-10">
-<dt><span class="spadfun">initializeGroupForWordProblem</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">initializeGroupForWordProblem(gp,</span> <span class="pre">m,</span> <span class="pre">n)</span></tt> initializes the group <em>gp</em> for the word problem. Notes: (1) with a small integer you get shorter words, but the routine takes longer than the standard routine for longer words. (2) be careful: invoking this routine will destroy the possibly stored information about your group (but will recompute it again). (3) users need not call this function normally for the soultion of the word problem.</dd>
-<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
-<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dt><span class="spadfun">initializeGroupForWordProblem</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><span>Void</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">initializeGroupForWordProblem(gp,</span> <span class="pre">m,</span> <span class="pre">n)</span></code> initializes the group <em>gp</em> for the word problem. Notes: (1) with a small integer you get shorter words, but the routine takes longer than the standard routine for longer words. (2) be careful: invoking this routine will destroy the possibly stored information about your group (but will recompute it again). (3) users need not call this function normally for the soultion of the word problem.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><span>latex</span></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
 </dl>
 <span class="target" id="l-permutation-group-member"></span><dl class="docutils" id="index-11">
-<dt><span class="spadfun">member?</span>: (<a class="reference internal" href="Permutation.html#l-permutation"><em>Permutation</em></a> S, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">member?(pp,</span> <span class="pre">gp)</span></tt> answers the question, whether the permutation <em>pp</em> is in the group <em>gp</em> or not.</dd>
+<dt><span class="spadfun">member?</span>: (<a class="reference internal" href="Permutation.html#l-permutation"><span>Permutation</span></a> S, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">member?(pp,</span> <span class="pre">gp)</span></code> answers the question, whether the permutation <em>pp</em> is in the group <em>gp</em> or not.</dd>
 </dl>
 <span class="target" id="l-permutation-group-moved-points"></span><dl class="docutils" id="index-12">
-<dt><span class="spadfun">movedPoints</span>: % -&gt; <a class="reference internal" href="Set.html#l-set"><em>Set</em></a> S</dt>
-<dd><tt class="docutils literal"><span class="pre">movedPoints(gp)</span></tt> returns the points moved by the group <em>gp</em>.</dd>
+<dt><span class="spadfun">movedPoints</span>: % -&gt; <a class="reference internal" href="Set.html#l-set"><span>Set</span></a> S</dt>
+<dd><code class="docutils literal"><span class="pre">movedPoints(gp)</span></code> returns the points moved by the group <em>gp</em>.</dd>
 </dl>
 <span class="target" id="l-permutation-group-orbit"></span><dl class="docutils" id="index-13">
-<dt><span class="spadfun">orbit</span>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> S) -&gt; <a class="reference internal" href="Set.html#l-set"><em>Set</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
-<dd><tt class="docutils literal"><span class="pre">orbit(gp,</span> <span class="pre">ls)</span></tt> returns the orbit of the ordered list <em>ls</em> under the group <em>gp</em>. Note: return type is <tt class="docutils literal"><span class="pre">L</span></tt> <tt class="docutils literal"><span class="pre">L</span></tt> <tt class="docutils literal"><span class="pre">S</span></tt> temporarily because FSET <tt class="docutils literal"><span class="pre">L</span></tt> <tt class="docutils literal"><span class="pre">S</span></tt> has an error.</dd>
+<dt><span class="spadfun">orbit</span>: (%, <a class="reference internal" href="List.html#l-list"><span>List</span></a> S) -&gt; <a class="reference internal" href="Set.html#l-set"><span>Set</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> S</dt>
+<dd><code class="docutils literal"><span class="pre">orbit(gp,</span> <span class="pre">ls)</span></code> returns the orbit of the ordered list <em>ls</em> under the group <em>gp</em>. Note: return type is <code class="docutils literal"><span class="pre">L</span></code> <code class="docutils literal"><span class="pre">L</span></code> <code class="docutils literal"><span class="pre">S</span></code> temporarily because FSET <code class="docutils literal"><span class="pre">L</span></code> <code class="docutils literal"><span class="pre">S</span></code> has an error.</dd>
 </dl>
 <dl class="docutils" id="index-14">
-<dt><span class="spadfun">orbit</span>: (%, S) -&gt; <a class="reference internal" href="Set.html#l-set"><em>Set</em></a> S</dt>
-<dd><tt class="docutils literal"><span class="pre">orbit(gp,</span> <span class="pre">el)</span></tt> returns the orbit of the element <em>el</em> under the group <em>gp</em>, i.e. the set of all points gained by applying each group element to <em>el</em>.</dd>
+<dt><span class="spadfun">orbit</span>: (%, S) -&gt; <a class="reference internal" href="Set.html#l-set"><span>Set</span></a> S</dt>
+<dd><code class="docutils literal"><span class="pre">orbit(gp,</span> <span class="pre">el)</span></code> returns the orbit of the element <em>el</em> under the group <em>gp</em>, i.e. the set of all points gained by applying each group element to <em>el</em>.</dd>
 </dl>
 <dl class="docutils" id="index-15">
-<dt><span class="spadfun">orbit</span>: (%, <a class="reference internal" href="Set.html#l-set"><em>Set</em></a> S) -&gt; <a class="reference internal" href="Set.html#l-set"><em>Set</em></a> <a class="reference internal" href="Set.html#l-set"><em>Set</em></a> S</dt>
-<dd><tt class="docutils literal"><span class="pre">orbit(gp,</span> <span class="pre">els)</span></tt> returns the orbit of the unordered set <em>els</em> under the group <em>gp</em>.</dd>
+<dt><span class="spadfun">orbit</span>: (%, <a class="reference internal" href="Set.html#l-set"><span>Set</span></a> S) -&gt; <a class="reference internal" href="Set.html#l-set"><span>Set</span></a> <a class="reference internal" href="Set.html#l-set"><span>Set</span></a> S</dt>
+<dd><code class="docutils literal"><span class="pre">orbit(gp,</span> <span class="pre">els)</span></code> returns the orbit of the unordered set <em>els</em> under the group <em>gp</em>.</dd>
 </dl>
 <span class="target" id="l-permutation-group-orbits"></span><dl class="docutils" id="index-16">
-<dt><span class="spadfun">orbits</span>: % -&gt; <a class="reference internal" href="Set.html#l-set"><em>Set</em></a> <a class="reference internal" href="Set.html#l-set"><em>Set</em></a> S</dt>
-<dd><tt class="docutils literal"><span class="pre">orbits(gp)</span></tt> returns the orbits of the group <em>gp</em>, i.e. it partitions the (finite) of all moved points.</dd>
+<dt><span class="spadfun">orbits</span>: % -&gt; <a class="reference internal" href="Set.html#l-set"><span>Set</span></a> <a class="reference internal" href="Set.html#l-set"><span>Set</span></a> S</dt>
+<dd><code class="docutils literal"><span class="pre">orbits(gp)</span></code> returns the orbits of the group <em>gp</em>, i.e. it partitions the (finite) of all moved points.</dd>
 </dl>
 <span class="target" id="l-permutation-group-order"></span><dl class="docutils" id="index-17">
-<dt><span class="spadfun">order</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">order(gp)</span></tt> returns the order of the group <em>gp</em>.</dd>
+<dt><span class="spadfun">order</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">order(gp)</span></code> returns the order of the group <em>gp</em>.</dd>
 </dl>
 <span class="target" id="l-permutation-group-perm-to-vec"></span><dl class="docutils" id="index-18">
-<dt><span class="spadfun">perm_to_vec</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="Permutation.html#l-permutation"><em>Permutation</em></a> S, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">perm_to_vec(supp,</span> <span class="pre">p,</span> <span class="pre">degree)</span></tt> should be local but conditional</dd>
+<dt><span class="spadfun">perm_to_vec</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> S, <a class="reference internal" href="Permutation.html#l-permutation"><span>Permutation</span></a> S, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">perm_to_vec(supp,</span> <span class="pre">p,</span> <span class="pre">degree)</span></code> should be local but conditional</dd>
 </dl>
 <span class="target" id="l-permutation-group-permutation-group"></span><dl class="docutils" id="index-19">
-<dt><span class="spadfun">permutationGroup</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Permutation.html#l-permutation"><em>Permutation</em></a> S -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">permutationGroup(ls)</span></tt> coerces a list of permutations <em>ls</em> to the group generated by this list.</dd>
+<dt><span class="spadfun">permutationGroup</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Permutation.html#l-permutation"><span>Permutation</span></a> S -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">permutationGroup(ls)</span></code> coerces a list of permutations <em>ls</em> to the group generated by this list.</dd>
 </dl>
 <span class="target" id="l-permutation-group-point-list"></span><dl class="docutils" id="index-20">
-<dt><span class="spadfun">pointList</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
-<dd><tt class="docutils literal"><span class="pre">pointList(gp)</span></tt> should be local but conditional</dd>
+<dt><span class="spadfun">pointList</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> S</dt>
+<dd><code class="docutils literal"><span class="pre">pointList(gp)</span></code> should be local but conditional</dd>
 </dl>
 <span class="target" id="l-permutation-group-random"></span><dl class="docutils" id="index-21">
-<dt><span class="spadfun">random</span>: % -&gt; <a class="reference internal" href="Permutation.html#l-permutation"><em>Permutation</em></a> S</dt>
-<dd><tt class="docutils literal"><span class="pre">random(gp)</span></tt> returns a random product of maximal 20 generators of the group <em>gp</em>. Note: <em>random(gp)=random(gp, 20)</em>.</dd>
+<dt><span class="spadfun">random</span>: % -&gt; <a class="reference internal" href="Permutation.html#l-permutation"><span>Permutation</span></a> S</dt>
+<dd><code class="docutils literal"><span class="pre">random(gp)</span></code> returns a random product of maximal 20 generators of the group <em>gp</em>. Note: <em>random(gp)=random(gp, 20)</em>.</dd>
 </dl>
 <dl class="docutils" id="index-22">
-<dt><span class="spadfun">random</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Permutation.html#l-permutation"><em>Permutation</em></a> S</dt>
-<dd><tt class="docutils literal"><span class="pre">random(gp,</span> <span class="pre">i)</span></tt> returns a random product of maximal <tt class="docutils literal"><span class="pre">i</span></tt> generators of the group <em>gp</em>.</dd>
+<dt><span class="spadfun">random</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; <a class="reference internal" href="Permutation.html#l-permutation"><span>Permutation</span></a> S</dt>
+<dd><code class="docutils literal"><span class="pre">random(gp,</span> <span class="pre">i)</span></code> returns a random product of maximal <code class="docutils literal"><span class="pre">i</span></code> generators of the group <em>gp</em>.</dd>
 </dl>
-<span class="target" id="l-permutation-group-strong-generators"></span><dl class="docutils" id="index-23">
-<dt><span class="spadfun">strongGenerators</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Permutation.html#l-permutation"><em>Permutation</em></a> S</dt>
-<dd><tt class="docutils literal"><span class="pre">strongGenerators(gp)</span></tt> returns strong generators for the group <em>gp</em>.</dd>
+<span class="target" id="l-permutation-group-relations-in-generators"></span><dl class="docutils" id="index-23">
+<dt><span class="spadfun">relationsInGenerators</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">relationsInGenerators(gp)</span></code> computes relations between generators.</dd>
 </dl>
-<span class="target" id="l-permutation-group-word-in-generators"></span><dl class="docutils" id="index-24">
-<dt><span class="spadfun">wordInGenerators</span>: (<a class="reference internal" href="Permutation.html#l-permutation"><em>Permutation</em></a> S, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">wordInGenerators(p,</span> <span class="pre">gp)</span></tt> returns the word for the permutation <tt class="docutils literal"><span class="pre">p</span></tt> in the original generators of the group <em>gp</em>, represented by the indices of the list, given by <em>generators</em>.</dd>
+<span class="target" id="l-permutation-group-relations-in-strong-generators"></span><dl class="docutils" id="index-24">
+<dt><span class="spadfun">relationsInStrongGenerators</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">relationsInStrongGenerators(gp)</span></code> computes relations between strong generators.</dd>
 </dl>
-<span class="target" id="l-permutation-group-word-in-strong-generators"></span><dl class="docutils" id="index-25">
-<dt><span class="spadfun">wordInStrongGenerators</span>: (<a class="reference internal" href="Permutation.html#l-permutation"><em>Permutation</em></a> S, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">wordInStrongGenerators(p,</span> <span class="pre">gp)</span></tt> returns the word for the permutation <tt class="docutils literal"><span class="pre">p</span></tt> in the strong generators of the group <em>gp</em>, represented by the indices of the list, given by <em>strongGenerators</em>.</dd>
+<span class="target" id="l-permutation-group-strong-generators"></span><dl class="docutils" id="index-25">
+<dt><span class="spadfun">strongGenerators</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Permutation.html#l-permutation"><span>Permutation</span></a> S</dt>
+<dd><code class="docutils literal"><span class="pre">strongGenerators(gp)</span></code> returns strong generators for the group <em>gp</em>.</dd>
 </dl>
-<span class="target" id="l-permutation-group-words-for-strong-generators"></span><dl class="docutils" id="index-26">
-<dt><span class="spadfun">wordsForStrongGenerators</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">wordsForStrongGenerators(gp)</span></tt> returns the words for the strong generators of the group <em>gp</em> in the original generators of <em>gp</em>, represented by their indices in the list, given by <em>generators</em>.</dd>
+<span class="target" id="l-permutation-group-word-in-generators"></span><dl class="docutils" id="index-26">
+<dt><span class="spadfun">wordInGenerators</span>: (<a class="reference internal" href="Permutation.html#l-permutation"><span>Permutation</span></a> S, %) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">wordInGenerators(p,</span> <span class="pre">gp)</span></code> returns the word for the permutation <code class="docutils literal"><span class="pre">p</span></code> in the original generators of the group <em>gp</em>, represented by the indices of the list, given by <em>generators</em>.</dd>
 </dl>
-<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
-<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
-<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+<span class="target" id="l-permutation-group-word-in-strong-generators"></span><dl class="docutils" id="index-27">
+<dt><span class="spadfun">wordInStrongGenerators</span>: (<a class="reference internal" href="Permutation.html#l-permutation"><span>Permutation</span></a> S, %) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">wordInStrongGenerators(p,</span> <span class="pre">gp)</span></code> returns the word for the permutation <code class="docutils literal"><span class="pre">p</span></code> in the strong generators of the group <em>gp</em>, represented by the indices of the list, given by <em>strongGenerators</em>.</dd>
+</dl>
+<span class="target" id="l-permutation-group-words-for-strong-generators"></span><dl class="docutils" id="index-28">
+<dt><span class="spadfun">wordsForStrongGenerators</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">wordsForStrongGenerators(gp)</span></code> returns the words for the strong generators of the group <em>gp</em> in the original generators of <em>gp</em>, represented by their indices in the list, given by <em>generators</em>.</dd>
+</dl>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></p>
 </div>
 
 
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -194,7 +202,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -211,7 +219,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -223,12 +231,12 @@
         <li class="right" >
           <a href="Permutation.html" title="Permutation S"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

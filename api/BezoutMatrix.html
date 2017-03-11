@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>BezoutMatrix(R, UP, M, Row, Col) &mdash; FriCAS 1.2.7 API</title>
+    <title>BezoutMatrix(R, UP, M, Row, Col) &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,61 +24,77 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
-    <link rel="next" title="BoundIntegerRoots(F, UP)" href="BoundIntegerRoots.html" />
+    <link rel="next" title="BezoutMatrixWrapper(R, UP)" href="BezoutMatrixWrapper.html" />
     <link rel="prev" title="BasicOperatorFunctions1 A" href="BasicOperatorFunctions1.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="BoundIntegerRoots.html" title="BoundIntegerRoots(F, UP)"
+          <a href="BezoutMatrixWrapper.html" title="BezoutMatrixWrapper(R, UP)"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="BasicOperatorFunctions1.html" title="BasicOperatorFunctions1 A"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="bezoutmatrix-r-up-m-row-col">
 <span id="l-bezout-matrix"></span><span id="index-0"></span><h1>BezoutMatrix(R, UP, M, Row, Col)<a class="headerlink" href="#bezoutmatrix-r-up-m-row-col" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//bezout.spad#L1">bezout.spad line 1</a></p>
 <ul class="simple">
-<li>R: <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></li>
-<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><em>UnivariatePolynomialCategory</em></a> R</li>
-<li>M: <a class="reference internal" href="MatrixCategory.html#l-matrix-category"><em>MatrixCategory</em></a>(R, Row, Col)</li>
-<li>Row: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><em>FiniteLinearAggregate</em></a> R</li>
-<li>Col: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><em>FiniteLinearAggregate</em></a> R</li>
+<li>R: <a class="reference internal" href="Ring.html#l-ring"><span>Ring</span></a></li>
+<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><span>UnivariatePolynomialCategory</span></a> R</li>
+<li>M: <a class="reference internal" href="MatrixCategory.html#l-matrix-category"><span>MatrixCategory</span></a>(R, Row, Col)</li>
+<li>Row: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><span>FiniteLinearAggregate</span></a> R</li>
+<li>Col: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><span>FiniteLinearAggregate</span></a> R</li>
 </ul>
-<p><a class="reference internal" href="#l-bezout-matrix"><em>BezoutMatrix</em></a> contains functions for computing resultants and discriminants using Bezout matrices.</p>
+<p><a class="reference internal" href="#l-bezout-matrix"><span>BezoutMatrix</span></a> contains functions for computing resultants and discriminants using Bezout matrices, and functions related with Sylvester matrix and subresultant.</p>
 <span class="target" id="l-bezout-matrix-bezout-discriminant"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">bezoutDiscriminant</span>: UP -&gt; R if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">bezoutDiscriminant(p)</span></tt> computes the discriminant of a polynomial <tt class="docutils literal"><span class="pre">p</span></tt> by computing the determinant of a Bezout matrix.</dd>
+<dt><span class="spadfun">bezoutDiscriminant</span>: UP -&gt; R if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><span>CommutativeRing</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">bezoutDiscriminant(p)</span></code> computes the discriminant of a polynomial <code class="docutils literal"><span class="pre">p</span></code> by computing the determinant of a Bezout matrix.</dd>
 </dl>
 <span class="target" id="l-bezout-matrix-bezout-matrix"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">bezoutMatrix</span>: (UP, UP) -&gt; M</dt>
-<dd><tt class="docutils literal"><span class="pre">bezoutMatrix(p,</span> <span class="pre">q)</span></tt> returns the Bezout matrix for the two polynomials <tt class="docutils literal"><span class="pre">p</span></tt> and <tt class="docutils literal"><span class="pre">q</span></tt>.</dd>
+<dd><code class="docutils literal"><span class="pre">bezoutMatrix(p,</span> <span class="pre">q)</span></code> returns the Bezout matrix for the two polynomials <code class="docutils literal"><span class="pre">p</span></code> and <code class="docutils literal"><span class="pre">q</span></code>.</dd>
 </dl>
 <span class="target" id="l-bezout-matrix-bezout-resultant"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">bezoutResultant</span>: (UP, UP) -&gt; R if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">bezoutResultant(p,</span> <span class="pre">q)</span></tt> computes the resultant of the two polynomials <tt class="docutils literal"><span class="pre">p</span></tt> and <tt class="docutils literal"><span class="pre">q</span></tt> by computing the determinant of a Bezout matrix.</dd>
+<dt><span class="spadfun">bezoutResultant</span>: (UP, UP) -&gt; R if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><span>CommutativeRing</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">bezoutResultant(p,</span> <span class="pre">q)</span></code> computes the resultant of the two polynomials <code class="docutils literal"><span class="pre">p</span></code> and <code class="docutils literal"><span class="pre">q</span></code> by computing the determinant of a Bezout matrix.</dd>
 </dl>
-<span class="target" id="l-bezout-matrix-sylvester-matrix"></span><dl class="docutils" id="index-4">
+<span class="target" id="l-bezout-matrix-sub-resultant"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">subResultant</span>: (UP, UP, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; UP if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><span>CommutativeRing</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">subResultant(p,</span> <span class="pre">q,</span> <span class="pre">j)</span></code> returns the <code class="docutils literal"><span class="pre">j</span></code>th subresultant <code class="docutils literal"><span class="pre">Sj</span></code>, computed by its definition method (using determinant of subSylvesterMatrix). subResultant(<code class="docutils literal"><span class="pre">p</span></code>, <code class="docutils literal"><span class="pre">q</span></code>, 0) = resultant(<code class="docutils literal"><span class="pre">p</span></code>, <code class="docutils literal"><span class="pre">q</span></code>).</dd>
+</dl>
+<span class="target" id="l-bezout-matrix-sub-resultant-list"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">subResultantList</span>: (UP, UP) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> UP if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><span>CommutativeRing</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">subResultantList(p,</span> <span class="pre">q)</span></code> returns the subresultants of <code class="docutils literal"><span class="pre">p</span></code> and <code class="docutils literal"><span class="pre">q</span></code>, in descending order, the last element is resultant(<code class="docutils literal"><span class="pre">p</span></code>, <code class="docutils literal"><span class="pre">q</span></code>).</dd>
+</dl>
+<span class="target" id="l-bezout-matrix-sub-sylvester-matrix"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">subSylvesterMatrix</span>: (M, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; M</dt>
+<dd><code class="docutils literal"><span class="pre">subSylvesterMatrix(S,</span> <span class="pre">j)</span></code> returns the <code class="docutils literal"><span class="pre">j</span></code>th sub-Sylvester matrix <code class="docutils literal"><span class="pre">jS</span></code>.</dd>
+</dl>
+<dl class="docutils" id="index-7">
+<dt><span class="spadfun">subSylvesterMatrix</span>: (M, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; M</dt>
+<dd><code class="docutils literal"><span class="pre">subSylvesterMatrix(S,</span> <span class="pre">j,</span> <span class="pre">i)</span></code> returns sub-Sylvester matrix jSi.</dd>
+</dl>
+<span class="target" id="l-bezout-matrix-sylvester-matrix"></span><dl class="docutils" id="index-8">
 <dt><span class="spadfun">sylvesterMatrix</span>: (UP, UP) -&gt; M</dt>
-<dd><tt class="docutils literal"><span class="pre">sylvesterMatrix(p,</span> <span class="pre">q)</span></tt> returns the Sylvester matrix for the two polynomials <tt class="docutils literal"><span class="pre">p</span></tt> and <tt class="docutils literal"><span class="pre">q</span></tt>.</dd>
+<dd><code class="docutils literal"><span class="pre">sylvesterMatrix(p,</span> <span class="pre">q)</span></code> returns the Sylvester matrix for the two polynomials <code class="docutils literal"><span class="pre">p</span></code> and <code class="docutils literal"><span class="pre">q</span></code>.</dd>
 </dl>
 </div>
 
@@ -86,7 +102,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -95,7 +111,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -112,24 +128,24 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="BoundIntegerRoots.html" title="BoundIntegerRoots(F, UP)"
+          <a href="BezoutMatrixWrapper.html" title="BezoutMatrixWrapper(R, UP)"
              >next</a> |</li>
         <li class="right" >
           <a href="BasicOperatorFunctions1.html" title="BasicOperatorFunctions1 A"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

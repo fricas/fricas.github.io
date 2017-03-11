@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Permanent(n, R) &mdash; FriCAS 1.2.7 API</title>
+    <title>Permanent(n, R) &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="PermutationGroupExamples" href="PermutationGroupExamples.html" />
     <link rel="prev" title="PatternMatchTools(S, R, P)" href="PatternMatchTools.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,27 +43,27 @@
         <li class="right" >
           <a href="PatternMatchTools.html" title="PatternMatchTools(S, R, P)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="permanent-n-r">
 <span id="l-permanent"></span><span id="index-0"></span><h1>Permanent(n, R)<a class="headerlink" href="#permanent-n-r" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//perman.spad#L74">perman.spad line 74</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//perman.spad#L73">perman.spad line 73</a></p>
 <ul class="simple">
-<li>n: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a></li>
-<li>R: Join(<a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a>, <a class="reference internal" href="CommutativeStar.html#l-commutative-star"><em>CommutativeStar</em></a>)</li>
+<li>n: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a></li>
+<li>R: Join(<a class="reference internal" href="Ring.html#l-ring"><span>Ring</span></a>, <a class="reference internal" href="CommutativeStar.html#l-commutative-star"><span>CommutativeStar</span></a>)</li>
 </ul>
 <p>Permanent implements the functions <em>permanent</em>, the permanent for square matrices.</p>
 <span class="target" id="l-permanent-permanent"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">permanent</span>: <a class="reference internal" href="SquareMatrix.html#l-square-matrix"><em>SquareMatrix</em></a>(n, R) -&gt; R</dt>
-<dd><tt class="docutils literal"><span class="pre">permanent(x)</span></tt> computes the permanent of a square matrix <tt class="docutils literal"><span class="pre">x</span></tt>. The <em>permanent</em> is equivalent to the <span class="spadfun">determinant</span> except that coefficients have no change of sign. This function is much more difficult to compute than the <em>determinant</em>. The formula used is by <tt class="docutils literal"><span class="pre">H</span></tt>.<tt class="docutils literal"><span class="pre">J</span></tt>. Ryser, improved by [Nijenhuis and Wilf, <tt class="docutils literal"><span class="pre">Ch</span></tt>. 19]. Note: permanent(<tt class="docutils literal"><span class="pre">x</span></tt>) choose one of three algorithms, depending on the underlying ring <tt class="docutils literal"><span class="pre">R</span></tt> and on <tt class="docutils literal"><span class="pre">n</span></tt>, the number of rows (and columns) of <tt class="docutils literal"><span class="pre">x:</span></tt> begin{items} item 1. if 2 has an inverse in <tt class="docutils literal"><span class="pre">R</span></tt> we can use the algorithm of [Nijenhuis and Wilf, <tt class="docutils literal"><span class="pre">ch</span></tt>.19, <tt class="docutils literal"><span class="pre">p</span></tt>.158]; if 2 has no inverse, some modifications are necessary: item 2. if <em>n &gt; 6</em> and <tt class="docutils literal"><span class="pre">R</span></tt> is an integral domain with characteristic different from 2 (the algorithm works if and only 2 is not a zero-divisor of <tt class="docutils literal"><span class="pre">R</span></tt> and <em>characteristic()$R ~= 2</em>, but how to check that for any given <tt class="docutils literal"><span class="pre">R</span></tt> ?), the local function <em>permanent2</em> is called; item 3. else, the local function <em>permanent3</em> is called (works for all commutative rings <tt class="docutils literal"><span class="pre">R</span></tt>). end{items}</dd>
+<dt><span class="spadfun">permanent</span>: <a class="reference internal" href="SquareMatrix.html#l-square-matrix"><span>SquareMatrix</span></a>(n, R) -&gt; R</dt>
+<dd><code class="docutils literal"><span class="pre">permanent(x)</span></code> computes the permanent of a square matrix <code class="docutils literal"><span class="pre">x</span></code>. The <em>permanent</em> is equivalent to the <span class="spadfun">determinant</span> except that coefficients have no change of sign. This function is much more difficult to compute than the <em>determinant</em>. The formula used is by <code class="docutils literal"><span class="pre">H</span></code>.<code class="docutils literal"><span class="pre">J</span></code>. Ryser, improved by [Nijenhuis and Wilf, <code class="docutils literal"><span class="pre">Ch</span></code>. 19]. Note: permanent(<code class="docutils literal"><span class="pre">x</span></code>) choose one of three algorithms, depending on the underlying ring <code class="docutils literal"><span class="pre">R</span></code> and on <code class="docutils literal"><span class="pre">n</span></code>, the number of rows (and columns) of <code class="docutils literal"><span class="pre">x:</span></code> begin{items} item 1. if 2 has an inverse in <code class="docutils literal"><span class="pre">R</span></code> we can use the algorithm of [Nijenhuis and Wilf, <code class="docutils literal"><span class="pre">ch</span></code>.19, <code class="docutils literal"><span class="pre">p</span></code>.158]; if 2 has no inverse, some modifications are necessary: item 2. if <em>n &gt; 6</em> and <code class="docutils literal"><span class="pre">R</span></code> is an integral domain with characteristic different from 2 (the algorithm works if and only 2 is not a zero-divisor of <code class="docutils literal"><span class="pre">R</span></code> and <em>characteristic()$R ~= 2</em>, but how to check that for any given <code class="docutils literal"><span class="pre">R</span></code> ?), the local function <em>permanent2</em> is called; item 3. else, the local function <em>permanent3</em> is called (works for all commutative rings <code class="docutils literal"><span class="pre">R</span></code>). end{items}</dd>
 </dl>
 </div>
 
@@ -71,7 +71,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -80,7 +80,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -97,7 +97,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -109,12 +109,12 @@
         <li class="right" >
           <a href="PatternMatchTools.html" title="PatternMatchTools(S, R, P)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

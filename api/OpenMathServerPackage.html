@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>OpenMathServerPackage &mdash; FriCAS 1.2.7 API</title>
+    <title>OpenMathServerPackage &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="OperationsQuery" href="OperationsQuery.html" />
     <link rel="prev" title="OpenMathPackage" href="OpenMathPackage.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,31 +43,31 @@
         <li class="right" >
           <a href="OpenMathPackage.html" title="OpenMathPackage"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="openmathserverpackage">
 <span id="l-open-math-server-package"></span><span id="index-0"></span><h1>OpenMathServerPackage<a class="headerlink" href="#openmathserverpackage" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//omserver.spad#L1">omserver.spad line 1</a></p>
-<p><a class="reference internal" href="#l-open-math-server-package"><em>OpenMathServerPackage</em></a> provides the necessary operations to run AXIOM as an OpenMath server, reading/writing objects to/from a port. Please note the facilities available here are very basic. The idea is that a user calls e.g. <tt class="docutils literal"><span class="pre">Omserve(4000,</span> <span class="pre">60)</span></tt> and then another process sends OpenMath objects to port 4000 and reads the result.</p>
+<p><a class="reference internal" href="#l-open-math-server-package"><span>OpenMathServerPackage</span></a> provides the necessary operations to run AXIOM as an OpenMath server, reading/writing objects to/from a port. Please note the facilities available here are very basic. The idea is that a user calls e.g. <code class="docutils literal"><span class="pre">Omserve(4000,</span> <span class="pre">60)</span></code> and then another process sends OpenMath objects to port 4000 and reads the result.</p>
 <span class="target" id="l-open-math-server-package-o-mreceive"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">OMreceive</span>: <a class="reference internal" href="OpenMathConnection.html#l-open-math-connection"><em>OpenMathConnection</em></a> -&gt; <a class="reference internal" href="Any.html#l-any"><em>Any</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">OMreceive(c)</span></tt> reads an OpenMath object from connection <tt class="docutils literal"><span class="pre">c</span></tt> and returns the appropriate AXIOM object.</dd>
+<dt><span class="spadfun">OMreceive</span>: <a class="reference internal" href="OpenMathConnection.html#l-open-math-connection"><span>OpenMathConnection</span></a> -&gt; <a class="reference internal" href="Any.html#l-any"><span>Any</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">OMreceive(c)</span></code> reads an OpenMath object from connection <code class="docutils literal"><span class="pre">c</span></code> and returns the appropriate AXIOM object.</dd>
 </dl>
 <span class="target" id="l-open-math-server-package-o-msend"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">OMsend</span>: (<a class="reference internal" href="OpenMathConnection.html#l-open-math-connection"><em>OpenMathConnection</em></a>, <a class="reference internal" href="Any.html#l-any"><em>Any</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">OMsend(c,</span> <span class="pre">u)</span></tt> attempts to output <tt class="docutils literal"><span class="pre">u</span></tt> on aciom{<tt class="docutils literal"><span class="pre">c</span></tt>} in OpenMath.</dd>
+<dt><span class="spadfun">OMsend</span>: (<a class="reference internal" href="OpenMathConnection.html#l-open-math-connection"><span>OpenMathConnection</span></a>, <a class="reference internal" href="Any.html#l-any"><span>Any</span></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><span>Void</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">OMsend(c,</span> <span class="pre">u)</span></code> attempts to output <code class="docutils literal"><span class="pre">u</span></code> on aciom{<code class="docutils literal"><span class="pre">c</span></code>} in OpenMath.</dd>
 </dl>
 <span class="target" id="l-open-math-server-package-o-mserve"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">OMserve</span>: (<a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a>, <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">OMserve(portnum,</span> <span class="pre">timeout)</span></tt> puts AXIOM into server mode on port number <tt class="docutils literal"><span class="pre">portnum</span></tt>. The parameter <tt class="docutils literal"><span class="pre">timeout</span></tt> specifies the timeout period for the connection.</dd>
+<dt><span class="spadfun">OMserve</span>: (<a class="reference internal" href="SingleInteger.html#l-single-integer"><span>SingleInteger</span></a>, <a class="reference internal" href="SingleInteger.html#l-single-integer"><span>SingleInteger</span></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><span>Void</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">OMserve(portnum,</span> <span class="pre">timeout)</span></code> puts AXIOM into server mode on port number <code class="docutils literal"><span class="pre">portnum</span></code>. The parameter <code class="docutils literal"><span class="pre">timeout</span></code> specifies the timeout period for the connection.</dd>
 </dl>
 </div>
 
@@ -75,7 +75,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -84,7 +84,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -101,7 +101,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -113,12 +113,12 @@
         <li class="right" >
           <a href="OpenMathPackage.html" title="OpenMathPackage"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

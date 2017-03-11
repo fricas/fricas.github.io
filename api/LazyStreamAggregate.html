@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>LazyStreamAggregate S &mdash; FriCAS 1.2.7 API</title>
+    <title>LazyStreamAggregate S &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
     <link rel="next" title="LeftAlgebra R" href="LeftAlgebra.html" />
     <link rel="prev" title="lazyRepresentation" href="lazyRepresentation.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,298 +43,282 @@
         <li class="right" >
           <a href="lazyRepresentation.html" title="lazyRepresentation"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="lazystreamaggregate-s">
 <span id="l-lazy-stream-aggregate"></span><span id="index-0"></span><h1>LazyStreamAggregate S<a class="headerlink" href="#lazystreamaggregate-s" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//stream.spad#L1">stream.spad line 1</a></p>
 <ul class="simple">
-<li>S: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
+<li>S: <a class="reference internal" href="Type.html#l-type"><span>Type</span></a></li>
 </ul>
 <p>LazyStreamAggregate is the category of streams with lazy evaluation. It is understood that the function &#8216;empty?&#8217; will cause lazy evaluation if necessary to determine if there are entries. Functions which call &#8216;empty?&#8217;, e.g. &#8216;first&#8217; and &#8216;rest&#8217;, will also cause lazy evaluation if necessary.</p>
 <dl class="docutils">
-<dt><a class="reference internal" href="Aggregate.html#id1"><em>#</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a> or S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
-<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
-<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a> or S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
-<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-any"><em>any?</em></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-child"><em>child?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-children"><em>children</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if S has <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
-<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id1"><span>&lt;</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><span>PartialOrder</span></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id2"><span>&lt;=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><span>PartialOrder</span></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><span>=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a> or S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id3"><span>&gt;</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><span>PartialOrder</span></a></dd>
+<dt><a class="reference internal" href="PartialOrder.html#id4"><span>&gt;=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><span>PartialOrder</span></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><span>~=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a> or S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-child"><span>child?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-children"><span>children</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> %</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a> if S has <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dd>
 </dl>
 <span class="target" id="l-lazy-stream-aggregate-complete"></span><dl class="docutils" id="index-1">
 <dt><span class="spadfun">complete</span>: % -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">complete(st)</span></tt> causes all entries of &#8216;st&#8217; to be computed. this function should only be called on streams which are known to be finite.</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-concat"><em>concat!</em></a>: (%, %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-concat"><em>concat!</em></a>: (%, S) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-concat"><em>concat</em></a>: (%, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><em>LinearAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-concat"><em>concat</em></a>: (%, S) -&gt; %</dt>
-<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><em>LinearAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-concat"><em>concat</em></a>: (S, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><em>LinearAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-concat"><em>concat</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %</dt>
-<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><em>LinearAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="Collection.html#l-collection-construct"><em>construct</em></a>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> S -&gt; %</dt>
-<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> S</dd>
-<dt><a class="reference internal" href="ConvertibleTo.html#l-convertible-to-convert"><em>convert</em></a>: % -&gt; <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a> if S has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a></dt>
-<dd>from <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a></dd>
-<dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><em>copy</em></a>: % -&gt; %</dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><em>count</em></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><em>count</em></a>: (S, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-cycle-entry"><em>cycleEntry</em></a>: % -&gt; %</dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-cycle-length"><em>cycleLength</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-cycle-split"><em>cycleSplit!</em></a>: % -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-cycle-tail"><em>cycleTail</em></a>: % -&gt; %</dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-cyclic"><em>cyclic?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-delete"><em>delete</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><em>LinearAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-delete"><em>delete</em></a>: (%, <a class="reference internal" href="UniversalSegment.html#l-universal-segment"><em>UniversalSegment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><em>LinearAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-distance"><em>distance</em></a>: (%, %) -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-elt"><em>elt</em></a>: (%, first) -&gt; S</dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="Eltable.html#l-eltable-elt"><em>elt</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; S</dt>
-<dd>from <a class="reference internal" href="Eltable.html#l-eltable"><em>Eltable</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</dd>
-<dt><a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate-elt"><em>elt</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S) -&gt; S</dt>
-<dd>from <a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate"><em>EltableAggregate</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-elt"><em>elt</em></a>: (%, last) -&gt; S</dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-elt"><em>elt</em></a>: (%, rest) -&gt; %</dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-elt"><em>elt</em></a>: (%, <a class="reference internal" href="UniversalSegment.html#l-universal-segment"><em>UniversalSegment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><em>LinearAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-elt"><em>elt</em></a>: (%, value) -&gt; S</dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><em>empty</em></a>: () -&gt; %</dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="Aggregate.html#id2"><em>empty?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-entries"><em>entries</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
-<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><em>IndexedAggregate</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</dd>
-<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-entry"><em>entry?</em></a>: (S, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a> and S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
-<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><em>IndexedAggregate</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</dd>
-<dt><a class="reference internal" href="Aggregate.html#l-aggregate-eq"><em>eq?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
-<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dd>
-<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
-<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dd>
-<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="List.html#l-list"><em>List</em></a> S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
-<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(S, S)</dd>
-<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, S, S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
-<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(S, S)</dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-every"><em>every?</em></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dd><code class="docutils literal"><span class="pre">complete(st)</span></code> causes all entries of &#8216;st&#8217; to be computed. this function should only be called on streams which are known to be finite.</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-concat"><span>concat</span></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-concat"><span>concat</span></a>: (%, S) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-concat"><span>concat</span></a>: (S, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-concat"><span>concat</span></a>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> % -&gt; %</dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-construct"><span>construct</span></a>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> S -&gt; %</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
+<dt><a class="reference internal" href="ConvertibleTo.html#l-convertible-to-convert"><span>convert</span></a>: % -&gt; <a class="reference internal" href="InputForm.html#l-input-form"><span>InputForm</span></a> if S has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><span>ConvertibleTo</span></a> <a class="reference internal" href="InputForm.html#l-input-form"><span>InputForm</span></a></dt>
+<dd>from <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><span>ConvertibleTo</span></a> <a class="reference internal" href="InputForm.html#l-input-form"><span>InputForm</span></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><span>copy</span></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-copy-into"><span>copyInto!</span></a>: (%, %, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><span>shallowlyMutable</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (S, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-cycle-entry"><span>cycleEntry</span></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><span>UnaryRecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-cycle-length"><span>cycleLength</span></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><span>UnaryRecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-cycle-tail"><span>cycleTail</span></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><span>UnaryRecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-cyclic"><span>cyclic?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-delete"><span>delete</span></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-delete"><span>delete</span></a>: (%, <a class="reference internal" href="UniversalSegment.html#l-universal-segment"><span>UniversalSegment</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-distance"><span>distance</span></a>: (%, %) -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-elt"><span>elt</span></a>: (%, first) -&gt; S</dt>
+<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><span>UnaryRecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="Eltable.html#l-eltable-elt"><span>elt</span></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; S</dt>
+<dd>from <a class="reference internal" href="Eltable.html#l-eltable"><span>Eltable</span></a>(<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, S)</dd>
+<dt><a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate-elt"><span>elt</span></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, S) -&gt; S</dt>
+<dd>from <a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate"><span>EltableAggregate</span></a>(<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, S)</dd>
+<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-elt"><span>elt</span></a>: (%, last) -&gt; S</dt>
+<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><span>UnaryRecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-elt"><span>elt</span></a>: (%, rest) -&gt; %</dt>
+<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><span>UnaryRecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="Eltable.html#l-eltable-elt"><span>elt</span></a>: (%, <a class="reference internal" href="UniversalSegment.html#l-universal-segment"><span>UniversalSegment</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Eltable.html#l-eltable"><span>Eltable</span></a>(<a class="reference internal" href="UniversalSegment.html#l-universal-segment"><span>UniversalSegment</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, %)</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-elt"><span>elt</span></a>: (%, value) -&gt; S</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><span>empty</span></a>: () -&gt; %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#id1"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-entries"><span>entries</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> S</dt>
+<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><span>IndexedAggregate</span></a>(<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, S)</dd>
+<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-entry"><span>entry?</span></a>: (S, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><span>IndexedAggregate</span></a>(<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, S)</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-eq"><span>eq?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><span>eval</span></a>: (%, <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> S) -&gt; % if S has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S and S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S</dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><span>eval</span></a>: (%, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> S) -&gt; % if S has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S and S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><span>eval</span></a>: (%, <a class="reference internal" href="List.html#l-list"><span>List</span></a> S, <a class="reference internal" href="List.html#l-list"><span>List</span></a> S) -&gt; % if S has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S and S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(S, S)</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><span>eval</span></a>: (%, S, S) -&gt; % if S has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S and S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(S, S)</dd>
 </dl>
 <span class="target" id="l-lazy-stream-aggregate-explicit-entries"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">explicitEntries?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">explicitEntries?(s)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if the stream <tt class="docutils literal"><span class="pre">s</span></tt> has explicitly computed entries, and <tt class="docutils literal"><span class="pre">false</span></tt> otherwise.</dd>
+<dt><span class="spadfun">explicitEntries?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">explicitEntries?(s)</span></code> returns <code class="docutils literal"><span class="pre">true</span></code> if the stream <code class="docutils literal"><span class="pre">s</span></code> has explicitly computed entries, and <code class="docutils literal"><span class="pre">false</span></code> otherwise.</dd>
 </dl>
 <span class="target" id="l-lazy-stream-aggregate-explicitly-empty"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">explicitlyEmpty?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">explicitlyEmpty?(s)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if the stream is an (explicitly) empty stream. Note: this is a null test which will not cause lazy evaluation.</dd>
-<dt><a class="reference internal" href="StreamAggregate.html#l-stream-aggregate-explicitly-finite"><em>explicitlyFinite?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="StreamAggregate.html#l-stream-aggregate"><em>StreamAggregate</em></a> S</dd>
+<dt><span class="spadfun">explicitlyEmpty?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">explicitlyEmpty?(s)</span></code> returns <code class="docutils literal"><span class="pre">true</span></code> if the stream is an (explicitly) empty stream. Note: this is a null test which will not cause lazy evaluation.</dd>
+<dt><a class="reference internal" href="StreamAggregate.html#l-stream-aggregate-explicitly-finite"><span>explicitlyFinite?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="StreamAggregate.html#l-stream-aggregate"><span>StreamAggregate</span></a> S</dd>
 </dl>
 <span class="target" id="l-lazy-stream-aggregate-extend"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">extend</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">extend(st,</span> <span class="pre">n)</span></tt> causes entries to be computed, if necessary, so that &#8216;st&#8217; will have at least <tt class="docutils literal"><span class="pre">'n'</span></tt> explicit entries or so that all entries of &#8216;st&#8217; will be computed if &#8216;st&#8217; is finite with length <tt class="docutils literal"><span class="pre">&lt;=</span></tt> <tt class="docutils literal"><span class="pre">n</span></tt>.</dd>
-<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-fill"><em>fill!</em></a>: (%, S) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><em>IndexedAggregate</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</dd>
-<dt><a class="reference internal" href="Collection.html#l-collection-find"><em>find</em></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; Union(S, failed)</dt>
-<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> S</dd>
-<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-first"><em>first</em></a>: % -&gt; S</dt>
-<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><em>IndexedAggregate</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-first"><em>first</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
+<dt><span class="spadfun">extend</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">extend(st,</span> <span class="pre">n)</span></code> causes entries to be computed, if necessary, so that &#8216;st&#8217; will have at least <code class="docutils literal"><span class="pre">'n'</span></code> explicit entries or so that all entries of &#8216;st&#8217; will be computed if &#8216;st&#8217; is finite with length <code class="docutils literal"><span class="pre">&lt;=</span></code> <code class="docutils literal"><span class="pre">n</span></code>.</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-find"><span>find</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; Union(S, failed)</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
+<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-first"><span>first</span></a>: % -&gt; S</dt>
+<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><span>IndexedAggregate</span></a>(<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, S)</dd>
+<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-first"><span>first</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><span>UnaryRecursiveAggregate</span></a> S</dd>
 </dl>
 <span class="target" id="l-lazy-stream-aggregate-frst"></span><dl class="docutils" id="index-5">
 <dt><span class="spadfun">frst</span>: % -&gt; S</dt>
-<dd><tt class="docutils literal"><span class="pre">frst(s)</span></tt> returns the first element of stream <tt class="docutils literal"><span class="pre">s</span></tt>. Caution: this function should only be called after a <tt class="docutils literal"><span class="pre">empty?</span></tt> test has been made since there no error check.</dd>
-<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
-<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
-<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
-<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
-<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-index"><em>index?</em></a>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><em>IndexedAggregate</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</dd>
-<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-indices"><em>indices</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
-<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><em>IndexedAggregate</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</dd>
-<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-insert"><em>insert</em></a>: (%, %, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><em>LinearAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-insert"><em>insert</em></a>: (S, %, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><em>LinearAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-last"><em>last</em></a>: % -&gt; S</dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-last"><em>last</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
-<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dd><code class="docutils literal"><span class="pre">frst(s)</span></code> returns the first element of stream <code class="docutils literal"><span class="pre">s</span></code>. Caution: this function should only be called after a <code class="docutils literal"><span class="pre">empty?</span></code> test has been made since there no error check.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><span>hash</span></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><span>SingleInteger</span></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><span>hashUpdate!</span></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
+<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-index"><span>index?</span></a>: (<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><span>IndexedAggregate</span></a>(<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, S)</dd>
+<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-indices"><span>indices</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
+<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><span>IndexedAggregate</span></a>(<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, S)</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-insert"><span>insert</span></a>: (%, %, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-insert"><span>insert</span></a>: (S, %, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-last"><span>last</span></a>: % -&gt; S</dt>
+<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><span>UnaryRecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-last"><span>last</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><span>UnaryRecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><span>latex</span></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
 </dl>
 <span class="target" id="l-lazy-stream-aggregate-lazy"></span><dl class="docutils" id="index-6">
-<dt><span class="spadfun">lazy?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">lazy?(s)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if the first node of the stream <tt class="docutils literal"><span class="pre">s</span></tt> is a lazy evaluation mechanism which could produce an additional entry to <tt class="docutils literal"><span class="pre">s</span></tt>.</dd>
+<dt><span class="spadfun">lazy?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">lazy?(s)</span></code> returns <code class="docutils literal"><span class="pre">true</span></code> if the first node of the stream <code class="docutils literal"><span class="pre">s</span></code> is a lazy evaluation mechanism which could produce an additional entry to <code class="docutils literal"><span class="pre">s</span></code>.</dd>
 </dl>
 <span class="target" id="l-lazy-stream-aggregate-lazy-evaluate"></span><dl class="docutils" id="index-7">
 <dt><span class="spadfun">lazyEvaluate</span>: % -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">lazyEvaluate(s)</span></tt> causes one lazy evaluation of stream <tt class="docutils literal"><span class="pre">s</span></tt>. Caution: the first node must be a lazy evaluation mechanism (satisfies <tt class="docutils literal"><span class="pre">lazy?(s)</span> <span class="pre">=</span> <span class="pre">true</span></tt>) as there is no error check. Note: a call to this function may or may not produce an explicit first entry</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-leaf"><em>leaf?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-leaves"><em>leaves</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="Aggregate.html#l-aggregate-less"><em>less?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><em>map!</em></a>: (S -&gt; S, %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-map"><em>map</em></a>: ((S, S) -&gt; S, %, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><em>LinearAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#id1"><em>map</em></a>: (S -&gt; S, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-max-index"><em>maxIndex</em></a>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
-<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><em>IndexedAggregate</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><em>member?</em></a>: (S, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-members"><em>members</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-min-index"><em>minIndex</em></a>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
-<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><em>IndexedAggregate</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</dd>
-<dt><a class="reference internal" href="Aggregate.html#l-aggregate-more"><em>more?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-new"><em>new</em></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, S) -&gt; %</dt>
-<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><em>LinearAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-node"><em>node?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-nodes"><em>nodes</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dd><code class="docutils literal"><span class="pre">lazyEvaluate(s)</span></code> causes one lazy evaluation of stream <code class="docutils literal"><span class="pre">s</span></code>. Caution: the first node must be a lazy evaluation mechanism (satisfies <code class="docutils literal"><span class="pre">lazy?(s)</span> <span class="pre">=</span> <span class="pre">true</span></code>) as there is no error check. Note: a call to this function may or may not produce an explicit first entry</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-leaf"><span>leaf?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-leaves"><span>leaves</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> S</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-left-trim"><span>leftTrim</span></a>: (%, S) -&gt; % if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-less"><span>less?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-map"><span>map</span></a>: ((S, S) -&gt; S, %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map</span></a>: (S -&gt; S, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-max"><span>max</span></a>: (%, %) -&gt; % if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a></dd>
+<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-max-index"><span>maxIndex</span></a>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
+<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><span>IndexedAggregate</span></a>(<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, S)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><span>member?</span></a>: (S, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-merge"><span>merge</span></a>: (%, %) -&gt; % if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="OrderedSet.html#l-ordered-set-min"><span>min</span></a>: (%, %) -&gt; % if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a></dd>
+<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-min-index"><span>minIndex</span></a>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
+<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><span>IndexedAggregate</span></a>(<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, S)</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-more"><span>more?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-new"><span>new</span></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, S) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-node"><span>node?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-nodes"><span>nodes</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> %</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
 </dl>
 <span class="target" id="l-lazy-stream-aggregate-number-of-computed-entries"></span><dl class="docutils" id="index-8">
-<dt><span class="spadfun">numberOfComputedEntries</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">numberOfComputedEntries(st)</span></tt> returns the number of explicitly computed entries of stream <tt class="docutils literal"><span class="pre">st</span></tt> which exist immediately prior to the time this function is called.</dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-parts"><em>parts</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="StreamAggregate.html#l-stream-aggregate-possibly-infinite"><em>possiblyInfinite?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="StreamAggregate.html#l-stream-aggregate"><em>StreamAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate-qelt"><em>qelt</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; S</dt>
-<dd>from <a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate"><em>EltableAggregate</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</dd>
-<dt><a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate-qsetelt"><em>qsetelt!</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate"><em>EltableAggregate</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-qsetfirst"><em>qsetfirst!</em></a>: (%, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-qsetrest"><em>qsetrest!</em></a>: (%, %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><em>reduce</em></a>: ((S, S) -&gt; S, %) -&gt; S if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> S</dd>
-<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><em>reduce</em></a>: ((S, S) -&gt; S, %, S) -&gt; S if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> S</dd>
-<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><em>reduce</em></a>: ((S, S) -&gt; S, %, S, S) -&gt; S if S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> S</dd>
+<dt><span class="spadfun">numberOfComputedEntries</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">numberOfComputedEntries(st)</span></code> returns the number of explicitly computed entries of stream <code class="docutils literal"><span class="pre">st</span></code> which exist immediately prior to the time this function is called.</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-position"><span>position</span></a>: (S, %) -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-position"><span>position</span></a>: (S, %, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="StreamAggregate.html#l-stream-aggregate-possibly-infinite"><span>possiblyInfinite?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="StreamAggregate.html#l-stream-aggregate"><span>StreamAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate-qelt"><span>qelt</span></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; S</dt>
+<dd>from <a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate"><span>EltableAggregate</span></a>(<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, S)</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><span>reduce</span></a>: ((S, S) -&gt; S, %, S, S) -&gt; S if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
 </dl>
 <span class="target" id="l-lazy-stream-aggregate-remove"></span><dl class="docutils" id="index-9">
-<dt><span class="spadfun">remove</span>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">remove(f,</span> <span class="pre">st)</span></tt> returns a stream consisting of those elements of stream st which do not satisfy the predicate <tt class="docutils literal"><span class="pre">f</span></tt>. Note: <tt class="docutils literal"><span class="pre">remove(f,</span> <span class="pre">st)</span> <span class="pre">=</span> <span class="pre">[x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">st</span> <span class="pre">|</span> <span class="pre">not</span> <span class="pre">f(x)]</span></tt>.</dd>
-<dt><a class="reference internal" href="Collection.html#l-collection-remove"><em>remove</em></a>: (S, %) -&gt; % if S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> S</dd>
-<dt><a class="reference internal" href="Collection.html#l-collection-remove-duplicates"><em>removeDuplicates</em></a>: % -&gt; % if S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-rest"><em>rest</em></a>: % -&gt; %</dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-rest"><em>rest</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
+<dt><span class="spadfun">remove</span>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">remove(f,</span> <span class="pre">st)</span></code> returns a stream consisting of those elements of stream st which do not satisfy the predicate <code class="docutils literal"><span class="pre">f</span></code>. Note: <code class="docutils literal"><span class="pre">remove(f,</span> <span class="pre">st)</span> <span class="pre">=</span> <span class="pre">[x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">st</span> <span class="pre">|</span> <span class="pre">not</span> <span class="pre">f(x)]</span></code>.</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-remove"><span>remove</span></a>: (S, %) -&gt; % if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-remove-duplicates"><span>removeDuplicates</span></a>: % -&gt; % if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
+<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-rest"><span>rest</span></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><span>UnaryRecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-rest"><span>rest</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><span>UnaryRecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-reverse"><span>reverse!</span></a>: % -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><span>shallowlyMutable</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-right-trim"><span>rightTrim</span></a>: (%, S) -&gt; % if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
 </dl>
 <span class="target" id="l-lazy-stream-aggregate-rst"></span><dl class="docutils" id="index-10">
 <dt><span class="spadfun">rst</span>: % -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">rst(s)</span></tt> returns a pointer to the next node of stream <tt class="docutils literal"><span class="pre">s</span></tt>. Caution: this function should only be called after a <tt class="docutils literal"><span class="pre">empty?</span></tt> test has been made since there no error check.</dd>
-<dt><a class="reference internal" href="Aggregate.html#l-aggregate-sample"><em>sample</em></a>: %</dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-second"><em>second</em></a>: % -&gt; S</dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
+<dd><code class="docutils literal"><span class="pre">rst(s)</span></code> returns a pointer to the next node of stream <code class="docutils literal"><span class="pre">s</span></code>. Caution: this function should only be called after a <code class="docutils literal"><span class="pre">empty?</span></code> test has been made since there no error check.</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-sample"><span>sample</span></a>: %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-second"><span>second</span></a>: % -&gt; S</dt>
+<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><span>UnaryRecursiveAggregate</span></a> S</dd>
 </dl>
 <span class="target" id="l-lazy-stream-aggregate-select"></span><dl class="docutils" id="index-11">
-<dt><span class="spadfun">select</span>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">select(f,</span> <span class="pre">st)</span></tt> returns a stream consisting of those elements of stream st satisfying the predicate <tt class="docutils literal"><span class="pre">f</span></tt>. Note: <tt class="docutils literal"><span class="pre">select(f,</span> <span class="pre">st)</span> <span class="pre">=</span> <span class="pre">[x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">st</span> <span class="pre">|</span> <span class="pre">f(x)]</span></tt>.</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-setchildren"><em>setchildren!</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-setelt"><em>setelt!</em></a>: (%, first, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate-setelt"><em>setelt!</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate"><em>EltableAggregate</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-setelt"><em>setelt!</em></a>: (%, last, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-setelt"><em>setelt!</em></a>: (%, rest, %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-setelt"><em>setelt!</em></a>: (%, <a class="reference internal" href="UniversalSegment.html#l-universal-segment"><em>UniversalSegment</em></a> <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><em>LinearAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-setelt"><em>setelt!</em></a>: (%, value, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-setfirst"><em>setfirst!</em></a>: (%, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-setlast"><em>setlast!</em></a>: (%, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-setrest"><em>setrest!</em></a>: (%, %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-setvalue"><em>setvalue!</em></a>: (%, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="Aggregate.html#l-aggregate-size"><em>size?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-split"><em>split!</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-swap"><em>swap!</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a> if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><em>IndexedAggregate</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-tail"><em>tail</em></a>: % -&gt; %</dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-third"><em>third</em></a>: % -&gt; S</dt>
-<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-value"><em>value</em></a>: % -&gt; S</dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dt><span class="spadfun">select</span>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">select(f,</span> <span class="pre">st)</span></code> returns a stream consisting of those elements of stream st satisfying the predicate <code class="docutils literal"><span class="pre">f</span></code>. Note: <code class="docutils literal"><span class="pre">select(f,</span> <span class="pre">st)</span> <span class="pre">=</span> <span class="pre">[x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">st</span> <span class="pre">|</span> <span class="pre">f(x)]</span></code>.</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-size"><span>size?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="Comparable.html#l-comparable-smaller"><span>smaller?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a> or S has <a class="reference internal" href="Comparable.html#l-comparable"><span>Comparable</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="Comparable.html#l-comparable"><span>Comparable</span></a></dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-sort"><span>sort!</span></a>: % -&gt; % if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a> and % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><span>shallowlyMutable</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-sort"><span>sort!</span></a>: ((S, S) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><span>shallowlyMutable</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#id1"><span>sort</span></a>: % -&gt; % if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-sorted"><span>sorted?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-tail"><span>tail</span></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><span>UnaryRecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate-third"><span>third</span></a>: % -&gt; S</dt>
+<dd>from <a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><span>UnaryRecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate-trim"><span>trim</span></a>: (%, S) -&gt; % if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-value"><span>value</span></a>: % -&gt; S</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
 </dl>
-<p><a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></p>
-<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> or S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></p>
-<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if S has <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
-<p><a class="reference internal" href="Collection.html#l-collection"><em>Collection</em></a> S</p>
-<p><a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a> if S has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><em>ConvertibleTo</em></a> <a class="reference internal" href="InputForm.html#l-input-form"><em>InputForm</em></a></p>
-<p><a class="reference internal" href="Eltable.html#l-eltable"><em>Eltable</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</p>
-<p><a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate"><em>EltableAggregate</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</p>
-<p><a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</p>
-<p><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</p>
-<p><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><em>IndexedAggregate</em></a>(<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, S)</p>
-<p><a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(S, S) if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</p>
-<p><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><em>LinearAggregate</em></a> S</p>
-<p><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</p>
-<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
-<p><a class="reference internal" href="StreamAggregate.html#l-stream-aggregate"><em>StreamAggregate</em></a> S</p>
-<p><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><em>UnaryRecursiveAggregate</em></a> S</p>
+<p><a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></p>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a> or S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a> if S has <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></p>
+<p><a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</p>
+<p><a class="reference internal" href="Comparable.html#l-comparable"><span>Comparable</span></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a> or S has <a class="reference internal" href="Comparable.html#l-comparable"><span>Comparable</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></p>
+<p><a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><span>ConvertibleTo</span></a> <a class="reference internal" href="InputForm.html#l-input-form"><span>InputForm</span></a> if S has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><span>ConvertibleTo</span></a> <a class="reference internal" href="InputForm.html#l-input-form"><span>InputForm</span></a></p>
+<p><a class="reference internal" href="Eltable.html#l-eltable"><span>Eltable</span></a>(<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, S)</p>
+<p><a class="reference internal" href="Eltable.html#l-eltable"><span>Eltable</span></a>(<a class="reference internal" href="UniversalSegment.html#l-universal-segment"><span>UniversalSegment</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, %)</p>
+<p><a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate"><span>EltableAggregate</span></a>(<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, S)</p>
+<p><a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S if S has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S and S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></p>
+<p><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</p>
+<p><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><span>IndexedAggregate</span></a>(<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, S)</p>
+<p><a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(S, S) if S has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S and S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></p>
+<p><a class="reference internal" href="LinearAggregate.html#l-linear-aggregate"><span>LinearAggregate</span></a> S</p>
+<p><a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></p>
+<p><a class="reference internal" href="PartialOrder.html#l-partial-order"><span>PartialOrder</span></a> if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></p>
+<p><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></p>
+<p><a class="reference internal" href="StreamAggregate.html#l-stream-aggregate"><span>StreamAggregate</span></a> S</p>
+<p><a class="reference internal" href="UnaryRecursiveAggregate.html#l-unary-recursive-aggregate"><span>UnaryRecursiveAggregate</span></a> S</p>
 </div>
 
 
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -343,7 +327,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -360,7 +344,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -372,12 +356,12 @@
         <li class="right" >
           <a href="lazyRepresentation.html" title="lazyRepresentation"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

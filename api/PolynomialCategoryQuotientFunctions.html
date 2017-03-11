@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PolynomialCategoryQuotientFunctions(E, V, R, P, F) &mdash; FriCAS 1.2.7 API</title>
+    <title>PolynomialCategoryQuotientFunctions(E, V, R, P, F) &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="PolynomialCommonDenominator(R, Q, E, VarSet, P)" href="PolynomialCommonDenominator.html" />
     <link rel="prev" title="PolynomialCategoryLifting(E, Vars, R, P, S)" href="PolynomialCategoryLifting.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,29 +43,29 @@
         <li class="right" >
           <a href="PolynomialCategoryLifting.html" title="PolynomialCategoryLifting(E, Vars, R, P, S)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="polynomialcategoryquotientfunctions-e-v-r-p-f">
 <span id="l-polynomial-category-quotient-functions"></span><span id="index-0"></span><h1>PolynomialCategoryQuotientFunctions(E, V, R, P, F)<a class="headerlink" href="#polynomialcategoryquotientfunctions-e-v-r-p-f" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//rf.spad#L1">rf.spad line 1</a></p>
 <ul>
-<li><p class="first">E: <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><em>OrderedAbelianMonoidSup</em></a></p>
+<li><p class="first">E: <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><span>OrderedAbelianMonoidSup</span></a></p>
 </li>
-<li><p class="first">V: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><em>OrderedSet</em></a></p>
+<li><p class="first">V: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a></p>
 </li>
-<li><p class="first">R: <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></p>
+<li><p class="first">R: <a class="reference internal" href="Ring.html#l-ring"><span>Ring</span></a></p>
 </li>
-<li><p class="first">P: <a class="reference internal" href="PolynomialCategory.html#l-polynomial-category"><em>PolynomialCategory</em></a>(R, E, V)</p>
+<li><p class="first">P: <a class="reference internal" href="PolynomialCategory.html#l-polynomial-category"><span>PolynomialCategory</span></a>(R, E, V)</p>
 </li>
-<li><p class="first">F: <a class="reference internal" href="Field.html#l-field"><em>Field</em></a> with</p>
+<li><p class="first">F: <a class="reference internal" href="Field.html#l-field"><span>Field</span></a> with</p>
 <blockquote>
 <div><p><span class="spadfun">coerce</span>: P -&gt; %</p>
 <p><span class="spadfun">denom</span>: % -&gt; P</p>
@@ -75,40 +75,40 @@
 </ul>
 <p>This package transforms multivariate polynomials or fractions into univariate polynomials or fractions, and back.</p>
 <span class="target" id="l-polynomial-category-quotient-functions-is-expt"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">isExpt</span>: F -&gt; Union(Record(var: V, exponent: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>), failed)</dt>
-<dd><tt class="docutils literal"><span class="pre">isExpt(p)</span></tt> returns <tt class="docutils literal"><span class="pre">[x,</span> <span class="pre">n]</span></tt> if <tt class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">x^n</span></tt> and <tt class="docutils literal"><span class="pre">n</span> <span class="pre">&lt;&gt;</span> <span class="pre">0</span></tt>, &#8220;failed&#8221; otherwise.</dd>
+<dt><span class="spadfun">isExpt</span>: F -&gt; Union(Record(var: V, exponent: <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>), failed)</dt>
+<dd><code class="docutils literal"><span class="pre">isExpt(p)</span></code> returns <code class="docutils literal"><span class="pre">[x,</span> <span class="pre">n]</span></code> if <code class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">x^n</span></code> and <code class="docutils literal"><span class="pre">n</span> <span class="pre">&lt;&gt;</span> <span class="pre">0</span></code>, &#8220;failed&#8221; otherwise.</dd>
 </dl>
 <span class="target" id="l-polynomial-category-quotient-functions-is-plus"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">isPlus</span>: F -&gt; Union(<a class="reference internal" href="List.html#l-list"><em>List</em></a> F, failed)</dt>
-<dd><tt class="docutils literal"><span class="pre">isPlus(p)</span></tt> returns [<tt class="docutils literal"><span class="pre">m1</span></tt>, ..., <tt class="docutils literal"><span class="pre">mn</span></tt>] if <tt class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">m1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">mn</span></tt> and <tt class="docutils literal"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">1</span></tt>, &#8220;failed&#8221; otherwise.</dd>
+<dt><span class="spadfun">isPlus</span>: F -&gt; Union(<a class="reference internal" href="List.html#l-list"><span>List</span></a> F, failed)</dt>
+<dd><code class="docutils literal"><span class="pre">isPlus(p)</span></code> returns [<code class="docutils literal"><span class="pre">m1</span></code>, ..., <code class="docutils literal"><span class="pre">mn</span></code>] if <code class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">m1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">mn</span></code> and <code class="docutils literal"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>, &#8220;failed&#8221; otherwise.</dd>
 </dl>
 <span class="target" id="l-polynomial-category-quotient-functions-is-power"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">isPower</span>: F -&gt; Union(Record(val: F, exponent: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>), failed)</dt>
-<dd><tt class="docutils literal"><span class="pre">isPower(p)</span></tt> returns <tt class="docutils literal"><span class="pre">[x,</span> <span class="pre">n]</span></tt> if <tt class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">x^n</span></tt> and <tt class="docutils literal"><span class="pre">n</span> <span class="pre">&lt;&gt;</span> <span class="pre">0</span></tt>, &#8220;failed&#8221; otherwise.</dd>
+<dt><span class="spadfun">isPower</span>: F -&gt; Union(Record(val: F, exponent: <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>), failed)</dt>
+<dd><code class="docutils literal"><span class="pre">isPower(p)</span></code> returns <code class="docutils literal"><span class="pre">[x,</span> <span class="pre">n]</span></code> if <code class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">x^n</span></code> and <code class="docutils literal"><span class="pre">n</span> <span class="pre">&lt;&gt;</span> <span class="pre">0</span></code>, &#8220;failed&#8221; otherwise.</dd>
 </dl>
 <span class="target" id="l-polynomial-category-quotient-functions-is-times"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">isTimes</span>: F -&gt; Union(<a class="reference internal" href="List.html#l-list"><em>List</em></a> F, failed)</dt>
-<dd><tt class="docutils literal"><span class="pre">isTimes(p)</span></tt> returns <tt class="docutils literal"><span class="pre">[a1,</span> <span class="pre">...,</span> <span class="pre">an]</span></tt> if <tt class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">a1</span> <span class="pre">...</span> <span class="pre">an</span></tt> and <tt class="docutils literal"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">1</span></tt>, &#8220;failed&#8221; otherwise.</dd>
+<dt><span class="spadfun">isTimes</span>: F -&gt; Union(<a class="reference internal" href="List.html#l-list"><span>List</span></a> F, failed)</dt>
+<dd><code class="docutils literal"><span class="pre">isTimes(p)</span></code> returns <code class="docutils literal"><span class="pre">[a1,</span> <span class="pre">...,</span> <span class="pre">an]</span></code> if <code class="docutils literal"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">a1</span> <span class="pre">...</span> <span class="pre">an</span></code> and <code class="docutils literal"><span class="pre">n</span> <span class="pre">&gt;</span> <span class="pre">1</span></code>, &#8220;failed&#8221; otherwise.</dd>
 </dl>
 <span class="target" id="l-polynomial-category-quotient-functions-main-variable"></span><dl class="docutils" id="index-5">
 <dt><span class="spadfun">mainVariable</span>: F -&gt; Union(V, failed)</dt>
-<dd><tt class="docutils literal"><span class="pre">mainVariable(f)</span></tt> returns the highest variable appearing in the numerator or the denominator of <tt class="docutils literal"><span class="pre">f</span></tt>, &#8220;failed&#8221; if <tt class="docutils literal"><span class="pre">f</span></tt> has no variables.</dd>
+<dd><code class="docutils literal"><span class="pre">mainVariable(f)</span></code> returns the highest variable appearing in the numerator or the denominator of <code class="docutils literal"><span class="pre">f</span></code>, &#8220;failed&#8221; if <code class="docutils literal"><span class="pre">f</span></code> has no variables.</dd>
 </dl>
 <span class="target" id="l-polynomial-category-quotient-functions-multivariate"></span><dl class="docutils" id="index-6">
-<dt><span class="spadfun">multivariate</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> F, V) -&gt; F</dt>
-<dd><tt class="docutils literal"><span class="pre">multivariate(f,</span> <span class="pre">v)</span></tt> applies both the numerator and denominator of <tt class="docutils literal"><span class="pre">f</span></tt> to <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
+<dt><span class="spadfun">multivariate</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> F, V) -&gt; F</dt>
+<dd><code class="docutils literal"><span class="pre">multivariate(f,</span> <span class="pre">v)</span></code> applies both the numerator and denominator of <code class="docutils literal"><span class="pre">f</span></code> to <code class="docutils literal"><span class="pre">v</span></code>.</dd>
 </dl>
 <span class="target" id="l-polynomial-category-quotient-functions-univariate"></span><dl class="docutils" id="index-7">
-<dt><span class="spadfun">univariate</span>: (F, V) -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> F</dt>
-<dd><tt class="docutils literal"><span class="pre">univariate(f,</span> <span class="pre">v)</span></tt> returns <tt class="docutils literal"><span class="pre">f</span></tt> viewed as a univariate rational function in <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
+<dt><span class="spadfun">univariate</span>: (F, V) -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> F</dt>
+<dd><code class="docutils literal"><span class="pre">univariate(f,</span> <span class="pre">v)</span></code> returns <code class="docutils literal"><span class="pre">f</span></code> viewed as a univariate rational function in <code class="docutils literal"><span class="pre">v</span></code>.</dd>
 </dl>
 <dl class="docutils" id="index-8">
-<dt><span class="spadfun">univariate</span>: (F, V, <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> F) -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> F</dt>
-<dd><tt class="docutils literal"><span class="pre">univariate(f,</span> <span class="pre">x,</span> <span class="pre">p)</span></tt> returns <tt class="docutils literal"><span class="pre">f</span></tt> viewed as a univariate polynomial in <tt class="docutils literal"><span class="pre">x</span></tt>, using the side-condition <tt class="docutils literal"><span class="pre">p(x)</span> <span class="pre">=</span> <span class="pre">0</span></tt>.</dd>
+<dt><span class="spadfun">univariate</span>: (F, V, <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> F) -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> F</dt>
+<dd><code class="docutils literal"><span class="pre">univariate(f,</span> <span class="pre">x,</span> <span class="pre">p)</span></code> returns <code class="docutils literal"><span class="pre">f</span></code> viewed as a univariate polynomial in <code class="docutils literal"><span class="pre">x</span></code>, using the side-condition <code class="docutils literal"><span class="pre">p(x)</span> <span class="pre">=</span> <span class="pre">0</span></code>.</dd>
 </dl>
 <span class="target" id="l-polynomial-category-quotient-functions-variables"></span><dl class="docutils" id="index-9">
-<dt><span class="spadfun">variables</span>: F -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> V</dt>
-<dd><tt class="docutils literal"><span class="pre">variables(f)</span></tt> returns the list of variables appearing in the numerator or the denominator of <tt class="docutils literal"><span class="pre">f</span></tt>.</dd>
+<dt><span class="spadfun">variables</span>: F -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> V</dt>
+<dd><code class="docutils literal"><span class="pre">variables(f)</span></code> returns the list of variables appearing in the numerator or the denominator of <code class="docutils literal"><span class="pre">f</span></code>.</dd>
 </dl>
 </div>
 
@@ -116,7 +116,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -125,7 +125,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -142,7 +142,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -154,12 +154,12 @@
         <li class="right" >
           <a href="PolynomialCategoryLifting.html" title="PolynomialCategoryLifting(E, Vars, R, P, S)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

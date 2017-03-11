@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>MatrixLinearAlgebraFunctions(R, Row, Col, M) &mdash; FriCAS 1.2.7 API</title>
+    <title>MatrixLinearAlgebraFunctions(R, Row, Col, M) &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="MatrixManipulation(R, Row, Col, M)" href="MatrixManipulation.html" />
     <link rel="prev" title="MatrixCommonDenominator(R, Q)" href="MatrixCommonDenominator.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,81 +43,81 @@
         <li class="right" >
           <a href="MatrixCommonDenominator.html" title="MatrixCommonDenominator(R, Q)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="matrixlinearalgebrafunctions-r-row-col-m">
 <span id="l-matrix-linear-algebra-functions"></span><span id="index-0"></span><h1>MatrixLinearAlgebraFunctions(R, Row, Col, M)<a class="headerlink" href="#matrixlinearalgebrafunctions-r-row-col-m" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//matfuns.spad#L445">matfuns.spad line 445</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//matfuns.spad#L441">matfuns.spad line 441</a></p>
 <ul class="simple">
-<li>R: <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></li>
-<li>Row: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><em>FiniteLinearAggregate</em></a> R</li>
-<li>Col: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><em>FiniteLinearAggregate</em></a> R</li>
-<li>M: <a class="reference internal" href="MatrixCategory.html#l-matrix-category"><em>MatrixCategory</em></a>(R, Row, Col)</li>
+<li>R: <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><span>CommutativeRing</span></a></li>
+<li>Row: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><span>FiniteLinearAggregate</span></a> R</li>
+<li>Col: <a class="reference internal" href="FiniteLinearAggregate.html#l-finite-linear-aggregate"><span>FiniteLinearAggregate</span></a> R</li>
+<li>M: <a class="reference internal" href="MatrixCategory.html#l-matrix-category"><span>MatrixCategory</span></a>(R, Row, Col)</li>
 </ul>
-<p><a class="reference internal" href="#l-matrix-linear-algebra-functions"><em>MatrixLinearAlgebraFunctions</em></a> provides functions to compute inverses and canonical forms.</p>
+<p><a class="reference internal" href="#l-matrix-linear-algebra-functions"><span>MatrixLinearAlgebraFunctions</span></a> provides functions to compute inverses and canonical forms.</p>
 <span class="target" id="l-matrix-linear-algebra-functions-adjoint"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">adjoint</span>: M -&gt; Record(adjMat: M, detMat: R) if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">adjoint(m)</span></tt> returns the ajoint matrix of <tt class="docutils literal"><span class="pre">m</span></tt> (i.e. the matrix <tt class="docutils literal"><span class="pre">n</span></tt> such that <tt class="docutils literal"><span class="pre">m*n</span></tt> = determinant(<tt class="docutils literal"><span class="pre">m</span></tt>)*id) and the detrminant of <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+<dt><span class="spadfun">adjoint</span>: M -&gt; Record(adjMat: M, detMat: R) if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><span>IntegralDomain</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">adjoint(m)</span></code> returns the ajoint matrix of <code class="docutils literal"><span class="pre">m</span></code> (i.e. the matrix <code class="docutils literal"><span class="pre">n</span></code> such that <code class="docutils literal"><span class="pre">m*n</span></code> = determinant(<code class="docutils literal"><span class="pre">m</span></code>)*id) and the detrminant of <code class="docutils literal"><span class="pre">m</span></code>.</dd>
 </dl>
 <span class="target" id="l-matrix-linear-algebra-functions-determinant"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">determinant</span>: M -&gt; R</dt>
-<dd><tt class="docutils literal"><span class="pre">determinant(m)</span></tt> returns the determinant of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>. an error message is returned if the matrix is not square.</dd>
+<dd><code class="docutils literal"><span class="pre">determinant(m)</span></code> returns the determinant of the matrix <code class="docutils literal"><span class="pre">m</span></code>. an error message is returned if the matrix is not square.</dd>
 </dl>
 <span class="target" id="l-matrix-linear-algebra-functions-el-column2"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">elColumn2!</span>: (M, R, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; M</dt>
-<dd><tt class="docutils literal"><span class="pre">elColumn2!(m,</span> <span class="pre">a,</span> <span class="pre">i,</span> <span class="pre">j)</span></tt> adds to column <tt class="docutils literal"><span class="pre">i</span></tt> a*column(<tt class="docutils literal"><span class="pre">m</span></tt>, <tt class="docutils literal"><span class="pre">j</span></tt>) : elementary operation of second kind. (<tt class="docutils literal"><span class="pre">i</span></tt> <tt class="docutils literal"><span class="pre">~=j</span></tt>)</dd>
+<dt><span class="spadfun">elColumn2!</span>: (M, R, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; M</dt>
+<dd><code class="docutils literal"><span class="pre">elColumn2!(m,</span> <span class="pre">a,</span> <span class="pre">i,</span> <span class="pre">j)</span></code> adds to column <code class="docutils literal"><span class="pre">i</span></code> a*column(<code class="docutils literal"><span class="pre">m</span></code>, <code class="docutils literal"><span class="pre">j</span></code>) : elementary operation of second kind. (<code class="docutils literal"><span class="pre">i</span></code> <code class="docutils literal"><span class="pre">~=j</span></code>)</dd>
 </dl>
 <span class="target" id="l-matrix-linear-algebra-functions-el-row1"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">elRow1!</span>: (M, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; M</dt>
-<dd><tt class="docutils literal"><span class="pre">elRow1!(m,</span> <span class="pre">i,</span> <span class="pre">j)</span></tt> swaps rows <tt class="docutils literal"><span class="pre">i</span></tt> and <tt class="docutils literal"><span class="pre">j</span></tt> of matrix <tt class="docutils literal"><span class="pre">m</span></tt> : elementary operation of first kind</dd>
+<dt><span class="spadfun">elRow1!</span>: (M, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; M</dt>
+<dd><code class="docutils literal"><span class="pre">elRow1!(m,</span> <span class="pre">i,</span> <span class="pre">j)</span></code> swaps rows <code class="docutils literal"><span class="pre">i</span></code> and <code class="docutils literal"><span class="pre">j</span></code> of matrix <code class="docutils literal"><span class="pre">m</span></code> : elementary operation of first kind</dd>
 </dl>
 <span class="target" id="l-matrix-linear-algebra-functions-el-row2"></span><dl class="docutils" id="index-5">
-<dt><span class="spadfun">elRow2!</span>: (M, R, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; M</dt>
-<dd><tt class="docutils literal"><span class="pre">elRow2!(m,</span> <span class="pre">a,</span> <span class="pre">i,</span> <span class="pre">j)</span></tt> adds to row <tt class="docutils literal"><span class="pre">i</span></tt> a*row(<tt class="docutils literal"><span class="pre">m</span></tt>, <tt class="docutils literal"><span class="pre">j</span></tt>) : elementary operation of second kind. (<tt class="docutils literal"><span class="pre">i</span></tt> <tt class="docutils literal"><span class="pre">~=j</span></tt>)</dd>
+<dt><span class="spadfun">elRow2!</span>: (M, R, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; M</dt>
+<dd><code class="docutils literal"><span class="pre">elRow2!(m,</span> <span class="pre">a,</span> <span class="pre">i,</span> <span class="pre">j)</span></code> adds to row <code class="docutils literal"><span class="pre">i</span></code> a*row(<code class="docutils literal"><span class="pre">m</span></code>, <code class="docutils literal"><span class="pre">j</span></code>) : elementary operation of second kind. (<code class="docutils literal"><span class="pre">i</span></code> <code class="docutils literal"><span class="pre">~=j</span></code>)</dd>
 </dl>
 <span class="target" id="l-matrix-linear-algebra-functions-fraction-free-gauss"></span><dl class="docutils" id="index-6">
-<dt><span class="spadfun">fractionFreeGauss!</span>: M -&gt; M if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">fractionFreeGauss(m)</span></tt> performs the fraction free gaussian elimination on the matrix <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+<dt><span class="spadfun">fractionFreeGauss!</span>: M -&gt; M if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><span>IntegralDomain</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">fractionFreeGauss(m)</span></code> performs the fraction free gaussian elimination on the matrix <code class="docutils literal"><span class="pre">m</span></code>.</dd>
 </dl>
 <span class="target" id="l-matrix-linear-algebra-functions-inverse"></span><dl class="docutils" id="index-7">
-<dt><span class="spadfun">inverse</span>: M -&gt; Union(M, failed) if R has <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">inverse(m)</span></tt> returns the inverse of the matrix. If the matrix is not invertible, &#8220;failed&#8221; is returned. Error: if the matrix is not square.</dd>
+<dt><span class="spadfun">inverse</span>: M -&gt; Union(M, failed) if R has <a class="reference internal" href="Field.html#l-field"><span>Field</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">inverse(m)</span></code> returns the inverse of the matrix. If the matrix is not invertible, &#8220;failed&#8221; is returned. Error: if the matrix is not square.</dd>
 </dl>
 <span class="target" id="l-matrix-linear-algebra-functions-invert-if-can"></span><dl class="docutils" id="index-8">
-<dt><span class="spadfun">invertIfCan</span>: M -&gt; Union(M, failed) if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">invertIfCan(m)</span></tt> returns the inverse of <tt class="docutils literal"><span class="pre">m</span></tt> over <tt class="docutils literal"><span class="pre">R</span></tt></dd>
+<dt><span class="spadfun">invertIfCan</span>: M -&gt; Union(M, failed) if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><span>IntegralDomain</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">invertIfCan(m)</span></code> returns the inverse of <code class="docutils literal"><span class="pre">m</span></code> over <code class="docutils literal"><span class="pre">R</span></code></dd>
 </dl>
 <span class="target" id="l-matrix-linear-algebra-functions-minordet"></span><dl class="docutils" id="index-9">
 <dt><span class="spadfun">minordet</span>: M -&gt; R</dt>
-<dd><tt class="docutils literal"><span class="pre">minordet(m)</span></tt> computes the determinant of the matrix <tt class="docutils literal"><span class="pre">m</span></tt> using minors. Error: if the matrix is not square.</dd>
+<dd><code class="docutils literal"><span class="pre">minordet(m)</span></code> computes the determinant of the matrix <code class="docutils literal"><span class="pre">m</span></code> using minors. Error: if the matrix is not square.</dd>
 </dl>
 <span class="target" id="l-matrix-linear-algebra-functions-normalized-divide"></span><dl class="docutils" id="index-10">
-<dt><span class="spadfun">normalizedDivide</span>: (R, R) -&gt; Record(quotient: R, remainder: R) if R has <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><em>EuclideanDomain</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">normalizedDivide(n,</span> <span class="pre">d)</span></tt> returns a normalized quotient and remainder such that consistently unique representatives for the residue class are chosen, e.g. positive remainders</dd>
+<dt><span class="spadfun">normalizedDivide</span>: (R, R) -&gt; Record(quotient: R, remainder: R) if R has <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><span>EuclideanDomain</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">normalizedDivide(n,</span> <span class="pre">d)</span></code> returns a normalized quotient and remainder such that consistently unique representatives for the residue class are chosen, e.g. positive remainders</dd>
 </dl>
 <span class="target" id="l-matrix-linear-algebra-functions-nullity"></span><dl class="docutils" id="index-11">
-<dt><span class="spadfun">nullity</span>: M -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">nullity(m)</span></tt> returns the mullity of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>. This is the dimension of the null space of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+<dt><span class="spadfun">nullity</span>: M -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><span>IntegralDomain</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">nullity(m)</span></code> returns the mullity of the matrix <code class="docutils literal"><span class="pre">m</span></code>. This is the dimension of the null space of the matrix <code class="docutils literal"><span class="pre">m</span></code>.</dd>
 </dl>
 <span class="target" id="l-matrix-linear-algebra-functions-null-space"></span><dl class="docutils" id="index-12">
-<dt><span class="spadfun">nullSpace</span>: M -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> Col if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">nullSpace(m)</span></tt> returns a basis for the null space of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+<dt><span class="spadfun">nullSpace</span>: M -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Col if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><span>IntegralDomain</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">nullSpace(m)</span></code> returns a basis for the null space of the matrix <code class="docutils literal"><span class="pre">m</span></code>.</dd>
 </dl>
 <span class="target" id="l-matrix-linear-algebra-functions-rank"></span><dl class="docutils" id="index-13">
-<dt><span class="spadfun">rank</span>: M -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">rank(m)</span></tt> returns the rank of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+<dt><span class="spadfun">rank</span>: M -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><span>IntegralDomain</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">rank(m)</span></code> returns the rank of the matrix <code class="docutils literal"><span class="pre">m</span></code>.</dd>
 </dl>
 <span class="target" id="l-matrix-linear-algebra-functions-row-echelon"></span><dl class="docutils" id="index-14">
-<dt><span class="spadfun">rowEchelon</span>: M -&gt; M if R has <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><em>EuclideanDomain</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">rowEchelon(m)</span></tt> returns the row echelon form of the matrix <tt class="docutils literal"><span class="pre">m</span></tt>.</dd>
+<dt><span class="spadfun">rowEchelon</span>: M -&gt; M if R has <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><span>EuclideanDomain</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">rowEchelon(m)</span></code> returns the row echelon form of the matrix <code class="docutils literal"><span class="pre">m</span></code>.</dd>
 </dl>
 </div>
 
@@ -125,7 +125,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -134,7 +134,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -151,7 +151,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -163,12 +163,12 @@
         <li class="right" >
           <a href="MatrixCommonDenominator.html" title="MatrixCommonDenominator(R, Q)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

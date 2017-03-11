@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Lambda UT &mdash; FriCAS 1.2.7 API</title>
+    <title>Lambda UT &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,68 +24,68 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
-    <link rel="next" title="LaurentPolynomial(R, UP)" href="LaurentPolynomial.html" />
+    <link rel="next" title="LatticeJoinOfMeets" href="LatticeJoinOfMeets.html" />
     <link rel="prev" title="KeyedAccessFile Entry" href="KeyedAccessFile.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="LaurentPolynomial.html" title="LaurentPolynomial(R, UP)"
+          <a href="LatticeJoinOfMeets.html" title="LatticeJoinOfMeets"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="KeyedAccessFile.html" title="KeyedAccessFile Entry"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="lambda-ut">
 <span id="l-lambda"></span><span id="index-0"></span><h1>Lambda UT<a class="headerlink" href="#lambda-ut" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//computation.spad#L1713">computation.spad line 1713</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//computation.spad#L858">computation.spad line 858</a></p>
 <ul class="simple">
-<li>UT: <a class="reference internal" href="VarCat.html#l-var-cat"><em>VarCat</em></a></li>
+<li>UT: <a class="reference internal" href="VarCat.html#l-var-cat"><span>VarCat</span></a></li>
 </ul>
-<p>parse result includes term returned and new index</p>
+<p>macro to simplify output</p>
 <span class="target" id="id1"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">=</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>return <tt class="docutils literal"><span class="pre">true</span></tt> if equal (deep search) that is: all terms at all levels in tree must be alpha-equivalent to return <tt class="docutils literal"><span class="pre">true</span></tt> That is the names, but not the deBruijn index, of the bound variables can be different. beta-equivalenty is not implemented because it is not decidable.</dd>
+<dt><span class="spadfun">=</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>return <code class="docutils literal"><span class="pre">true</span></code> if equal (deep search) that is: all terms at all levels in tree must be alpha-equivalent to return <code class="docutils literal"><span class="pre">true</span></code> That is the names, but not the deBruijn index, of the bound variables can be different. beta-equivalence is not implemented because it is not decidable.</dd>
 </dl>
 <span class="target" id="l-lambda-atom"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">atom?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>returns <tt class="docutils literal"><span class="pre">true</span></tt> if this is an atom, that is free or bound variable otherwise return <tt class="docutils literal"><span class="pre">false</span></tt> if this is a compound or lambda definition</dd>
+<dt><span class="spadfun">atom?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>returns <code class="docutils literal"><span class="pre">true</span></code> if this is an atom, that is free or bound variable otherwise return <code class="docutils literal"><span class="pre">false</span></code> if this is a compound or lambda definition</dd>
 </dl>
 <span class="target" id="l-lambda-bind"></span><dl class="docutils" id="index-3">
 <dt><span class="spadfun">bind</span>: % -&gt; %</dt>
 <dd>if this is a lambda term then replace string name in sub-nodes with De Bruijn index</dd>
 </dl>
 <span class="target" id="l-lambda-coerce"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
+<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
 <dd>output</dd>
 </dl>
 <span class="target" id="l-lambda-free"></span><dl class="docutils" id="index-5">
-<dt><span class="spadfun">free?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
+<dt><span class="spadfun">free?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>if this is a lambda term then is it free, that is does its variable appear in its expression</dd>
 </dl>
 <span class="target" id="l-lambda-get-bound-value"></span><dl class="docutils" id="index-6">
-<dt><span class="spadfun">getBoundValue</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
+<dt><span class="spadfun">getBoundValue</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
 <dd>introspection: returns deBruijn index of bound variable in bound leaf node</dd>
 </dl>
 <span class="target" id="l-lambda-get-children"></span><dl class="docutils" id="index-7">
-<dt><span class="spadfun">getChildren</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
+<dt><span class="spadfun">getChildren</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> %</dt>
 <dd>returns 2 child nodes if this is a compound term returns 1 child node if this is a lamda term otherwise returns []</dd>
 </dl>
 <span class="target" id="l-lambda-get-variable"></span><dl class="docutils" id="index-8">
@@ -93,20 +93,20 @@
 <dd>introspection: returns value of unbound variable in unbound leaf node or bound variable in lambda term</dd>
 </dl>
 <span class="target" id="l-lambda-is-bound-node"></span><dl class="docutils" id="index-9">
-<dt><span class="spadfun">isBoundNode?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>introspection: returns <tt class="docutils literal"><span class="pre">true</span></tt> if this is a bound leaf node</dd>
+<dt><span class="spadfun">isBoundNode?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>introspection: returns <code class="docutils literal"><span class="pre">true</span></code> if this is a bound leaf node</dd>
 </dl>
 <span class="target" id="l-lambda-is-compound"></span><dl class="docutils" id="index-10">
-<dt><span class="spadfun">isCompound?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>introspection: returns <tt class="docutils literal"><span class="pre">true</span></tt> if this is a compound term containing two nodes</dd>
+<dt><span class="spadfun">isCompound?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>introspection: returns <code class="docutils literal"><span class="pre">true</span></code> if this is a compound term containing two nodes</dd>
 </dl>
 <span class="target" id="l-lambda-is-free-node"></span><dl class="docutils" id="index-11">
-<dt><span class="spadfun">isFreeNode?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>introspection: returns <tt class="docutils literal"><span class="pre">true</span></tt> if this is a unbound leaf node</dd>
+<dt><span class="spadfun">isFreeNode?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>introspection: returns <code class="docutils literal"><span class="pre">true</span></code> if this is a unbound leaf node</dd>
 </dl>
 <span class="target" id="l-lambda-is-lambda"></span><dl class="docutils" id="index-12">
-<dt><span class="spadfun">isLambda?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>introspection: returns <tt class="docutils literal"><span class="pre">true</span></tt> if this is a lambda definition</dd>
+<dt><span class="spadfun">isLambda?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>introspection: returns <code class="docutils literal"><span class="pre">true</span></code> if this is a lambda definition</dd>
 </dl>
 <span class="target" id="l-lambda-lambda"></span><dl class="docutils" id="index-13">
 <dt><span class="spadfun">lambda</span>: (%, %) -&gt; %</dt>
@@ -117,7 +117,7 @@
 <dd>Constructs lambda term and bind any variables with the name provided</dd>
 </dl>
 <dl class="docutils" id="index-15">
-<dt><span class="spadfun">lambda</span>: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> -&gt; %</dt>
+<dt><span class="spadfun">lambda</span>: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> -&gt; %</dt>
 <dd>Constructs a reference to a bound variable from its deBruijn index</dd>
 </dl>
 <dl class="docutils" id="index-16">
@@ -125,11 +125,11 @@
 <dd>Constructs a reference to a free variable</dd>
 </dl>
 <span class="target" id="l-lambda-parse-lambda"></span><dl class="docutils" id="index-17">
-<dt><span class="spadfun">parseLambda</span>: <a class="reference internal" href="String.html#l-string"><em>String</em></a> -&gt; %</dt>
-<dd>Constructs nested lambda terms from a string notation assumes format like this: &lt;term&gt; : <tt class="docutils literal"><span class="pre">:=</span></tt> &#8220;<tt class="docutils literal"><span class="pre">\&quot;</span></tt> var &#8221;.&#8221;&lt;term&gt; | <tt class="docutils literal"><span class="pre">n</span></tt> | &lt;term&gt;&lt;term&gt; | &#8220;(&#8220;&lt;term&gt;&#8221;)&#8221; where: \ = lambda (<tt class="docutils literal"><span class="pre">I</span></tt> would like to use unicode lambda symbol but <tt class="docutils literal"><span class="pre">I</span></tt> would also like to keep maximum compatibility with non-unicode versions of Lisp) <tt class="docutils literal"><span class="pre">n</span></tt> = De Bruijn index which is a integer where, 1=inside inner lambda term, 2= next outer lambda term, 3= next outer and so on. brackets can be used around whole terms.</dd>
+<dt><span class="spadfun">parseLambda</span>: <a class="reference internal" href="String.html#l-string"><span>String</span></a> -&gt; %</dt>
+<dd>Constructs nested lambda terms from a string notation assumes format like this: &lt;term&gt; : <code class="docutils literal"><span class="pre">:=</span></code> &#8220;<code class="docutils literal"><span class="pre">\&quot;</span></code> var &#8221;.&#8221;&lt;term&gt; | <code class="docutils literal"><span class="pre">n</span></code> | &lt;term&gt;&lt;term&gt; | &#8220;(&#8220;&lt;term&gt;&#8221;)&#8221; where: \ = lambda (<code class="docutils literal"><span class="pre">I</span></code> would like to use unicode lambda symbol but <code class="docutils literal"><span class="pre">I</span></code> would also like to keep maximum compatibility with non-unicode versions of Lisp) <code class="docutils literal"><span class="pre">n</span></code> = De Bruijn index which is a integer where, 1=inside inner lambda term, 2= next outer lambda term, 3= next outer and so on. brackets can be used around whole terms.</dd>
 </dl>
 <span class="target" id="l-lambda-parse-term"></span><dl class="docutils" id="index-18">
-<dt><span class="spadfun">parseTerm</span>: (<a class="reference internal" href="String.html#l-string"><em>String</em></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; Record(rft: %, pout: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>)</dt>
+<dt><span class="spadfun">parseTerm</span>: (<a class="reference internal" href="String.html#l-string"><span>String</span></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; Record(rft: %, pout: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>)</dt>
 <dd>parseTerm is used by parseLambda. It would rarely be called externally but it is here to allow it to call parseLambda that is to allow circular calls</dd>
 </dl>
 <span class="target" id="l-lambda-redux"></span><dl class="docutils" id="index-19">
@@ -138,28 +138,28 @@
 </dl>
 <span class="target" id="l-lambda-subst"></span><dl class="docutils" id="index-20">
 <dt><span class="spadfun">subst</span>: (%, %, %) -&gt; %</dt>
-<dd>substitution of &#8216;a&#8217; for <tt class="docutils literal"><span class="pre">'b'</span></tt> in <tt class="docutils literal"><span class="pre">'n'</span></tt></dd>
+<dd>substitution of &#8216;a&#8217; for <code class="docutils literal"><span class="pre">'b'</span></code> in <code class="docutils literal"><span class="pre">'n'</span></code></dd>
 </dl>
 <span class="target" id="l-lambda-to-string"></span><dl class="docutils" id="index-21">
-<dt><span class="spadfun">toString</span>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dt><span class="spadfun">toString</span>: % -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a></dt>
 <dd>return string representation using deBruijn index for bound variables. notation assumes association to the left, in the absence of brackets, the term to the left binds more tightly than the one on the right.</dd>
 </dl>
 <span class="target" id="l-lambda-to-string-conven"></span><dl class="docutils" id="index-22">
-<dt><span class="spadfun">toStringConven</span>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="String.html#l-string"><em>String</em></a>) -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
+<dt><span class="spadfun">toStringConven</span>: (%, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="String.html#l-string"><span>String</span></a>) -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a></dt>
 <dd>return string representation using conventional notation, that is deBruijn index is replaced by name using String value for bound variables. notation assumes association to the left, in the absence of brackets, the term to the left binds more tightly than the one on the right.</dd>
 </dl>
 <span class="target" id="l-lambda-unbind"></span><dl class="docutils" id="index-23">
 <dt><span class="spadfun">unbind</span>: % -&gt; %</dt>
 <dd>if this is a lambda term then replace De Bruijn index in sub-nodes with string name</dd>
 </dl>
-<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></p>
 </div>
 
 
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -168,7 +168,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -185,24 +185,24 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="LaurentPolynomial.html" title="LaurentPolynomial(R, UP)"
+          <a href="LatticeJoinOfMeets.html" title="LatticeJoinOfMeets"
              >next</a> |</li>
         <li class="right" >
           <a href="KeyedAccessFile.html" title="KeyedAccessFile Entry"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

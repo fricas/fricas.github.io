@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>compUtil UT &mdash; FriCAS 1.2.7 API</title>
+    <title>compUtil UT &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="ConstantLinearDependence(R, F)" href="ConstantLinearDependence.html" />
     <link rel="prev" title="ComplexTrigonometricManipulations(R, F)" href="ComplexTrigonometricManipulations.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,34 +43,34 @@
         <li class="right" >
           <a href="ComplexTrigonometricManipulations.html" title="ComplexTrigonometricManipulations(R, F)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="computil-ut">
 <span id="l-comp-util"></span><span id="index-0"></span><h1>compUtil UT<a class="headerlink" href="#computil-ut" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//computation.spad#L3066">computation.spad line 3066</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//computation.spad#L2266">computation.spad line 2266</a></p>
 <ul class="simple">
-<li>UT: <a class="reference internal" href="VarCat.html#l-var-cat"><em>VarCat</em></a></li>
+<li>UT: <a class="reference internal" href="VarCat.html#l-var-cat"><span>VarCat</span></a></li>
 </ul>
-<p>The compUtil package provides utilities to convert between the computational domains: Lambda, Ski and ILogic. Both Lambda are Ski are Turing complete and can be coerced to each other. Lambda and Ski are not equal and they are only isomorphic up to beta-equivalence and beta-equivalence is undecidable so there is not a direct correspondence between the nodes in their trees. Also the names of bound variables and other such constructions may be lost in Lambda <tt class="docutils literal"><span class="pre">-&gt;</span></tt> Ski <tt class="docutils literal"><span class="pre">-&gt;</span></tt> Lambda round trip. An element of ILogic cannot be coerced to the other types. However ILogic can be used to produce a theory which can be concerted to/from the other domains using Curry-Howard isomorphism.</p>
+<p>macro to simplify output</p>
 <span class="target" id="l-comp-util-coerce"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">coerce</span>: <a class="reference internal" href="Lambda.html#l-lambda"><em>Lambda</em></a> UT -&gt; <a class="reference internal" href="SKICombinators.html#l-s-k-i-combinators"><em>SKICombinators</em></a> UT</dt>
-<dd><tt class="docutils literal"><span class="pre">coerce</span> <span class="pre">Lambda</span></tt> term to SKI combinators. this process is known as abstraction elimination. it is done by applying the following rules until all lambda terms have been eliminated. rule LS1: Lam[<tt class="docutils literal"><span class="pre">x</span></tt>] <tt class="docutils literal"><span class="pre">=&gt;</span></tt> <tt class="docutils literal"><span class="pre">x</span></tt> rule LS2: Lam[(<tt class="docutils literal"><span class="pre">E1</span></tt> <tt class="docutils literal"><span class="pre">E2</span></tt>)] <tt class="docutils literal"><span class="pre">=&gt;</span></tt> (Lam[<tt class="docutils literal"><span class="pre">E1</span></tt>] Lam[<tt class="docutils literal"><span class="pre">E2</span></tt>]) rule LS3: Lam[<tt class="docutils literal"><span class="pre">\x</span></tt>.<tt class="docutils literal"><span class="pre">E</span></tt>] <tt class="docutils literal"><span class="pre">=&gt;</span></tt> (<tt class="docutils literal"><span class="pre">K</span></tt> Lam[<tt class="docutils literal"><span class="pre">E</span></tt>]) (if <tt class="docutils literal"><span class="pre">x</span></tt> does not occur free in <tt class="docutils literal"><span class="pre">E</span></tt>) rule LS4: Lam[<tt class="docutils literal"><span class="pre">\x</span></tt>.<tt class="docutils literal"><span class="pre">x</span></tt>] <tt class="docutils literal"><span class="pre">=&gt;</span></tt> <tt class="docutils literal"><span class="pre">I</span></tt> rule LS5: Lam[<tt class="docutils literal"><span class="pre">\x</span></tt>.y.<tt class="docutils literal"><span class="pre">E</span></tt>] <tt class="docutils literal"><span class="pre">=&gt;</span></tt> Lam[<tt class="docutils literal"><span class="pre">\x</span></tt>.Lam[y.<tt class="docutils literal"><span class="pre">E</span></tt>]] (if <tt class="docutils literal"><span class="pre">x</span></tt> occurs free in <tt class="docutils literal"><span class="pre">E</span></tt>) rule LS6: Lam[<tt class="docutils literal"><span class="pre">\x</span></tt>.(<tt class="docutils literal"><span class="pre">E1</span></tt> <tt class="docutils literal"><span class="pre">E2</span></tt>)] <tt class="docutils literal"><span class="pre">=&gt;</span></tt> (<tt class="docutils literal"><span class="pre">S</span></tt> Lam[<tt class="docutils literal"><span class="pre">\x</span></tt>.<tt class="docutils literal"><span class="pre">E1</span></tt>] Lam[<tt class="docutils literal"><span class="pre">\x</span></tt>.<tt class="docutils literal"><span class="pre">E2</span></tt>])</dd>
+<dt><span class="spadfun">coerce</span>: <a class="reference internal" href="Lambda.html#l-lambda"><span>Lambda</span></a> UT -&gt; <a class="reference internal" href="SKICombinators.html#l-s-k-i-combinators"><span>SKICombinators</span></a> UT</dt>
+<dd><code class="docutils literal"><span class="pre">coerce</span> <span class="pre">Lambda</span></code> term to SKI combinators. this process is known as abstraction elimination. it is done by applying the following rules until all lambda terms have been eliminated. rule LS1: Lam[<code class="docutils literal"><span class="pre">x</span></code>] <code class="docutils literal"><span class="pre">=&gt;</span></code> <code class="docutils literal"><span class="pre">x</span></code> rule LS2: Lam[(<code class="docutils literal"><span class="pre">E1</span></code> <code class="docutils literal"><span class="pre">E2</span></code>)] <code class="docutils literal"><span class="pre">=&gt;</span></code> (Lam[<code class="docutils literal"><span class="pre">E1</span></code>] Lam[<code class="docutils literal"><span class="pre">E2</span></code>]) rule LS3: Lam[<code class="docutils literal"><span class="pre">\x</span></code>.<code class="docutils literal"><span class="pre">E</span></code>] <code class="docutils literal"><span class="pre">=&gt;</span></code> (<code class="docutils literal"><span class="pre">K</span></code> Lam[<code class="docutils literal"><span class="pre">E</span></code>]) (if <code class="docutils literal"><span class="pre">x</span></code> does not occur free in <code class="docutils literal"><span class="pre">E</span></code>) rule LS4: Lam[<code class="docutils literal"><span class="pre">\x</span></code>.<code class="docutils literal"><span class="pre">x</span></code>] <code class="docutils literal"><span class="pre">=&gt;</span></code> <code class="docutils literal"><span class="pre">I</span></code> rule LS5: Lam[<code class="docutils literal"><span class="pre">\x</span></code>.y.<code class="docutils literal"><span class="pre">E</span></code>] <code class="docutils literal"><span class="pre">=&gt;</span></code> Lam[<code class="docutils literal"><span class="pre">\x</span></code>.Lam[y.<code class="docutils literal"><span class="pre">E</span></code>]] (if <code class="docutils literal"><span class="pre">x</span></code> occurs free in <code class="docutils literal"><span class="pre">E</span></code>) rule LS6: Lam[<code class="docutils literal"><span class="pre">\x</span></code>.(<code class="docutils literal"><span class="pre">E1</span></code> <code class="docutils literal"><span class="pre">E2</span></code>)] <code class="docutils literal"><span class="pre">=&gt;</span></code> (<code class="docutils literal"><span class="pre">S</span></code> Lam[<code class="docutils literal"><span class="pre">\x</span></code>.<code class="docutils literal"><span class="pre">E1</span></code>] Lam[<code class="docutils literal"><span class="pre">\x</span></code>.<code class="docutils literal"><span class="pre">E2</span></code>])</dd>
 </dl>
 <dl class="docutils" id="index-2">
-<dt><span class="spadfun">coerce</span>: <a class="reference internal" href="SKICombinators.html#l-s-k-i-combinators"><em>SKICombinators</em></a> UT -&gt; <a class="reference internal" href="ILogic.html#l-i-logic"><em>ILogic</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">coerce</span> <span class="pre">combinators</span></tt> to intuitionistic logic this is known as the Curry-Howard isomorphism it uses the following rules: rule SI1: Ski[Kab] <tt class="docutils literal"><span class="pre">=&gt;</span></tt> a <tt class="docutils literal"><span class="pre">-&gt;</span></tt> (<tt class="docutils literal"><span class="pre">b</span></tt> <tt class="docutils literal"><span class="pre">-&gt;</span></tt> a), rule SI2: Ski[Sabc] <tt class="docutils literal"><span class="pre">=&gt;</span></tt> (a <tt class="docutils literal"><span class="pre">-&gt;</span></tt> (<tt class="docutils literal"><span class="pre">b</span></tt> <tt class="docutils literal"><span class="pre">-&gt;</span></tt> <tt class="docutils literal"><span class="pre">c</span></tt>)) <tt class="docutils literal"><span class="pre">-&gt;</span></tt> ((a <tt class="docutils literal"><span class="pre">-&gt;</span></tt> <tt class="docutils literal"><span class="pre">b</span></tt>) <tt class="docutils literal"><span class="pre">-&gt;</span></tt> (a <tt class="docutils literal"><span class="pre">-&gt;</span></tt> <tt class="docutils literal"><span class="pre">c</span></tt>)), rule SI3: Ski[a a-<tt class="docutils literal"><span class="pre">&gt;b</span></tt>] <tt class="docutils literal"><span class="pre">=&gt;</span></tt> <tt class="docutils literal"><span class="pre">b</span></tt> the last rule is function application (modus ponens)</dd>
+<dt><span class="spadfun">coerce</span>: <a class="reference internal" href="SKICombinators.html#l-s-k-i-combinators"><span>SKICombinators</span></a> UT -&gt; <a class="reference internal" href="ILogic.html#l-i-logic"><span>ILogic</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">coerce</span> <span class="pre">combinators</span></code> to intuitionistic logic this is known as the Curry-Howard isomorphism it uses the following rules: rule SI1: Ski[Kab] <code class="docutils literal"><span class="pre">=&gt;</span></code> a <code class="docutils literal"><span class="pre">-&gt;</span></code> (<code class="docutils literal"><span class="pre">b</span></code> <code class="docutils literal"><span class="pre">-&gt;</span></code> a), rule SI2: Ski[Sabc] <code class="docutils literal"><span class="pre">=&gt;</span></code> (a <code class="docutils literal"><span class="pre">-&gt;</span></code> (<code class="docutils literal"><span class="pre">b</span></code> <code class="docutils literal"><span class="pre">-&gt;</span></code> <code class="docutils literal"><span class="pre">c</span></code>)) <code class="docutils literal"><span class="pre">-&gt;</span></code> ((a <code class="docutils literal"><span class="pre">-&gt;</span></code> <code class="docutils literal"><span class="pre">b</span></code>) <code class="docutils literal"><span class="pre">-&gt;</span></code> (a <code class="docutils literal"><span class="pre">-&gt;</span></code> <code class="docutils literal"><span class="pre">c</span></code>)), rule SI3: Ski[a a-<code class="docutils literal"><span class="pre">&gt;b</span></code>] <code class="docutils literal"><span class="pre">=&gt;</span></code> <code class="docutils literal"><span class="pre">b</span></code> the last rule is function application (modus ponens)</dd>
 </dl>
 <dl class="docutils" id="index-3">
-<dt><span class="spadfun">coerce</span>: <a class="reference internal" href="SKICombinators.html#l-s-k-i-combinators"><em>SKICombinators</em></a> UT -&gt; <a class="reference internal" href="Lambda.html#l-lambda"><em>Lambda</em></a> UT</dt>
-<dd><tt class="docutils literal"><span class="pre">coerce</span> <span class="pre">SKI</span></tt> combinators to Lambda term. this conversion is done by applying the following rules rule SL1: Ski[<tt class="docutils literal"><span class="pre">I</span></tt>] = <tt class="docutils literal"><span class="pre">\x</span></tt>.0 rule SL2: Ski[<tt class="docutils literal"><span class="pre">K</span></tt>] = <tt class="docutils literal"><span class="pre">\x</span></tt>.y.1 rule SL3: Ski[<tt class="docutils literal"><span class="pre">S</span></tt>] = <tt class="docutils literal"><span class="pre">\x</span></tt>.y.<tt class="docutils literal"><span class="pre">\z</span></tt>.(2 0 (1 0)) rule SL4: Ski[(<tt class="docutils literal"><span class="pre">E1</span></tt> <tt class="docutils literal"><span class="pre">E2</span></tt>)] = (Ski[<tt class="docutils literal"><span class="pre">E1</span></tt>] Ski[<tt class="docutils literal"><span class="pre">E2</span></tt>])</dd>
+<dt><span class="spadfun">coerce</span>: <a class="reference internal" href="SKICombinators.html#l-s-k-i-combinators"><span>SKICombinators</span></a> UT -&gt; <a class="reference internal" href="Lambda.html#l-lambda"><span>Lambda</span></a> UT</dt>
+<dd><code class="docutils literal"><span class="pre">coerce</span> <span class="pre">SKI</span></code> combinators to Lambda term. this conversion is done by applying the following rules rule SL1: Ski[<code class="docutils literal"><span class="pre">I</span></code>] = <code class="docutils literal"><span class="pre">\x</span></code>.0 rule SL2: Ski[<code class="docutils literal"><span class="pre">K</span></code>] = <code class="docutils literal"><span class="pre">\x</span></code>.y.1 rule SL3: Ski[<code class="docutils literal"><span class="pre">S</span></code>] = <code class="docutils literal"><span class="pre">\x</span></code>.y.<code class="docutils literal"><span class="pre">\z</span></code>.(2 0 (1 0)) rule SL4: Ski[(<code class="docutils literal"><span class="pre">E1</span></code> <code class="docutils literal"><span class="pre">E2</span></code>)] = (Ski[<code class="docutils literal"><span class="pre">E1</span></code>] Ski[<code class="docutils literal"><span class="pre">E2</span></code>])</dd>
 </dl>
 </div>
 
@@ -78,7 +78,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -87,7 +87,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -104,7 +104,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -116,12 +116,12 @@
         <li class="right" >
           <a href="ComplexTrigonometricManipulations.html" title="ComplexTrigonometricManipulations(R, F)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

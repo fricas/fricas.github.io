@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>ModularRing(R, Mod, reduction, merge, exactQuo) &mdash; FriCAS 1.2.7 API</title>
+    <title>ModularRing(R, Mod, reduction, merge, exactQuo) &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="ModuleMonomial(IS, E, ff)" href="ModuleMonomial.html" />
     <link rel="prev" title="ModularField(R, Mod, reduction, merge, exactQuo)" href="ModularField.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,125 +43,151 @@
         <li class="right" >
           <a href="ModularField.html" title="ModularField(R, Mod, reduction, merge, exactQuo)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="modularring-r-mod-reduction-merge-exactquo">
 <span id="l-modular-ring"></span><span id="index-0"></span><h1>ModularRing(R, Mod, reduction, merge, exactQuo)<a class="headerlink" href="#modularring-r-mod-reduction-merge-exactquo" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//modring.spad#L1">modring.spad line 1</a></p>
 <ul class="simple">
-<li>R: <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><em>CommutativeRing</em></a></li>
-<li>Mod: <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></li>
+<li>R: <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><span>CommutativeRing</span></a></li>
+<li>Mod: <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></li>
 <li>reduction: (R, Mod) -&gt; R</li>
 <li>merge: (Mod, Mod) -&gt; Union(Mod, failed)</li>
 <li>exactQuo: (R, R, Mod) -&gt; Union(R, failed)</li>
 </ul>
-<p>These domains are used for the factorization and gcds of univariate polynomials over the integers in order to work modulo different primes. See <a class="reference internal" href="EuclideanModularRing.html#l-euclidean-modular-ring"><em>EuclideanModularRing</em></a> , <a class="reference internal" href="ModularField.html#l-modular-field"><em>ModularField</em></a></p>
+<p>These domains are used for the factorization and gcds of univariate polynomials over the integers in order to work modulo different primes. See <a class="reference internal" href="EuclideanModularRing.html#l-euclidean-modular-ring"><span>EuclideanModularRing</span></a> , <a class="reference internal" href="ModularField.html#l-modular-field"><span>ModularField</span></a></p>
 <dl class="docutils">
-<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><em>0</em></a>: %</dt>
-<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
-<dt><a class="reference internal" href="Monoid.html#l-monoid-1"><em>1</em></a>: %</dt>
-<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
-<dt><a class="reference internal" href="SemiGroup.html#id1"><em>*</em></a>: (%, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></dd>
-<dt><a class="reference internal" href="AbelianGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
-<dt><a class="reference internal" href="AbelianMonoid.html#id1"><em>*</em></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
-<dt><a class="reference internal" href="AbelianSemiGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
-<dt><a class="reference internal" href="AbelianSemiGroup.html#id2"><em>+</em></a>: (%, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
-<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: % -&gt; %</dt>
-<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
-<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: (%, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
-<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
-<dt><a class="reference internal" href="Monoid.html#id1"><em>^</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
-<dt><a class="reference internal" href="SemiGroup.html#id2"><em>^</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></dd>
-<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
-<dt><a class="reference internal" href="Rng.html#l-rng-annihilate"><em>annihilate?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="Rng.html#l-rng"><em>Rng</em></a></dd>
-<dt><a class="reference internal" href="Ring.html#l-ring-characteristic"><em>characteristic</em></a>: () -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
-<dd>from <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></dd>
-<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
-<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><span>0</span></a>: %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></dd>
+<dt><a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit-1"><span>1</span></a>: %</dt>
+<dd>from <a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit"><span>MagmaWithUnit</span></a></dd>
+<dt><a class="reference internal" href="Magma.html#id1"><span>*</span></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Magma.html#l-magma"><span>Magma</span></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id1"><span>*</span></a>: (<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><span>AbelianGroup</span></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#id1"><span>*</span></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id1"><span>*</span></a>: (<a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><span>AbelianSemiGroup</span></a></dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id2"><span>+</span></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><span>AbelianSemiGroup</span></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><span>-</span></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><span>AbelianGroup</span></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><span>-</span></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><span>AbelianGroup</span></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><span>=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="MagmaWithUnit.html#id1"><span>^</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit"><span>MagmaWithUnit</span></a></dd>
+<dt><a class="reference internal" href="Magma.html#id2"><span>^</span></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Magma.html#l-magma"><span>Magma</span></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><span>~=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="Rng.html#l-rng-annihilate"><span>annihilate?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="Rng.html#l-rng"><span>Rng</span></a></dd>
+<dt><a class="reference internal" href="NonAssociativeSemiRng.html#l-non-associative-semi-rng-anti-commutator"><span>antiCommutator</span></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="NonAssociativeSemiRng.html#l-non-associative-semi-rng"><span>NonAssociativeSemiRng</span></a></dd>
+<dt><a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng-associator"><span>associator</span></a>: (%, %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng"><span>NonAssociativeRng</span></a></dd>
+<dt><a class="reference internal" href="NonAssociativeRing.html#l-non-associative-ring-characteristic"><span>characteristic</span></a>: () -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="NonAssociativeRing.html#l-non-associative-ring"><span>NonAssociativeRing</span></a></dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dd>
 </dl>
 <span class="target" id="l-modular-ring-coerce"></span><dl class="docutils" id="index-1">
 <dt><span class="spadfun">coerce</span>: % -&gt; R</dt>
-<dd><tt class="docutils literal"><span class="pre">coerce(x)</span></tt> undocumented</dd>
-<dt><a class="reference internal" href="Ring.html#l-ring-coerce"><em>coerce</em></a>: <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a> -&gt; %</dt>
-<dd>from <a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></dd>
+<dd><code class="docutils literal"><span class="pre">coerce(x)</span></code> undocumented</dd>
+<dt><a class="reference internal" href="NonAssociativeRing.html#l-non-associative-ring-coerce"><span>coerce</span></a>: <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a> -&gt; %</dt>
+<dd>from <a class="reference internal" href="NonAssociativeRing.html#l-non-associative-ring"><span>NonAssociativeRing</span></a></dd>
+<dt><a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng-commutator"><span>commutator</span></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng"><span>NonAssociativeRng</span></a></dd>
 </dl>
 <span class="target" id="l-modular-ring-ex-quo"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">exQuo</span>: (%, %) -&gt; Union(%, failed)</dt>
-<dd><tt class="docutils literal"><span class="pre">exQuo(x,</span> <span class="pre">y)</span></tt> undocumented</dd>
-<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
-<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
-<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
-<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dd><code class="docutils literal"><span class="pre">exQuo(x,</span> <span class="pre">y)</span></code> undocumented</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><span>hash</span></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><span>SingleInteger</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><span>hashUpdate!</span></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
 </dl>
 <span class="target" id="l-modular-ring-inv"></span><dl class="docutils" id="index-3">
 <dt><span class="spadfun">inv</span>: % -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">inv(x)</span></tt> undocumented</dd>
-<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
-<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
+<dd><code class="docutils literal"><span class="pre">inv(x)</span></code> undocumented</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><span>latex</span></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
+<dt><a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit-left-power"><span>leftPower</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit"><span>MagmaWithUnit</span></a></dd>
+<dt><a class="reference internal" href="Magma.html#l-magma-left-power"><span>leftPower</span></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Magma.html#l-magma"><span>Magma</span></a></dd>
+<dt><a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit-left-recip"><span>leftRecip</span></a>: % -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit"><span>MagmaWithUnit</span></a></dd>
 </dl>
 <span class="target" id="l-modular-ring-modulus"></span><dl class="docutils" id="index-4">
 <dt><span class="spadfun">modulus</span>: % -&gt; Mod</dt>
-<dd><tt class="docutils literal"><span class="pre">modulus(x)</span></tt> undocumented</dd>
-<dt><a class="reference internal" href="Monoid.html#l-monoid-one"><em>one?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></dd>
-<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-opposite"><em>opposite?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dd><code class="docutils literal"><span class="pre">modulus(x)</span></code> undocumented</dd>
+<dt><a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit-one"><span>one?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit"><span>MagmaWithUnit</span></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-opposite"><span>opposite?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></dd>
 </dl>
 <span class="target" id="l-modular-ring-recip"></span><dl class="docutils" id="index-5">
 <dt><span class="spadfun">recip</span>: % -&gt; Union(%, failed)</dt>
-<dd><tt class="docutils literal"><span class="pre">recip(x)</span></tt> undocumented</dd>
+<dd><code class="docutils literal"><span class="pre">recip(x)</span></code> undocumented</dd>
 </dl>
 <span class="target" id="l-modular-ring-reduce"></span><dl class="docutils" id="index-6">
 <dt><span class="spadfun">reduce</span>: (R, Mod) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">reduce(r,</span> <span class="pre">m)</span></tt> undocumented</dd>
-<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-sample"><em>sample</em></a>: %</dt>
-<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
-<dt><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid-subtract-if-can"><em>subtractIfCan</em></a>: (%, %) -&gt; Union(%, failed)</dt>
-<dd>from <a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a></dd>
-<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-zero"><em>zero?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dd><code class="docutils literal"><span class="pre">reduce(r,</span> <span class="pre">m)</span></code> undocumented</dd>
+<dt><a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit-right-power"><span>rightPower</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit"><span>MagmaWithUnit</span></a></dd>
+<dt><a class="reference internal" href="Magma.html#l-magma-right-power"><span>rightPower</span></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Magma.html#l-magma"><span>Magma</span></a></dd>
+<dt><a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit-right-recip"><span>rightRecip</span></a>: % -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit"><span>MagmaWithUnit</span></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-sample"><span>sample</span></a>: %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></dd>
+<dt><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid-subtract-if-can"><span>subtractIfCan</span></a>: (%, %) -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><span>CancellationAbelianMonoid</span></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-zero"><span>zero?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></dd>
 </dl>
-<p><a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></p>
-<p><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></p>
-<p><a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></p>
-<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
-<p><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a></p>
-<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
-<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> %</p>
-<p><a class="reference internal" href="Monoid.html#l-monoid"><em>Monoid</em></a></p>
-<p><a class="reference internal" href="Ring.html#l-ring"><em>Ring</em></a></p>
-<p><a class="reference internal" href="Rng.html#l-rng"><em>Rng</em></a></p>
-<p><a class="reference internal" href="SemiGroup.html#l-semi-group"><em>SemiGroup</em></a></p>
-<p><a class="reference internal" href="SemiRing.html#l-semi-ring"><em>SemiRing</em></a></p>
-<p><a class="reference internal" href="SemiRng.html#l-semi-rng"><em>SemiRng</em></a></p>
-<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
-<p><a class="reference internal" href="unitsKnown.html#l-units-known"><em>unitsKnown</em></a></p>
+<p><a class="reference internal" href="AbelianGroup.html#l-abelian-group"><span>AbelianGroup</span></a></p>
+<p><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></p>
+<p><a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><span>AbelianSemiGroup</span></a></p>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></p>
+<p><a class="reference internal" href="BiModule.html#l-bi-module"><span>BiModule</span></a>(%, %)</p>
+<p><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><span>CancellationAbelianMonoid</span></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><span>LeftModule</span></a> %</p>
+<p><a class="reference internal" href="Magma.html#l-magma"><span>Magma</span></a></p>
+<p><a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit"><span>MagmaWithUnit</span></a></p>
+<p><a class="reference internal" href="Monoid.html#l-monoid"><span>Monoid</span></a></p>
+<p><a class="reference internal" href="NonAssociativeRing.html#l-non-associative-ring"><span>NonAssociativeRing</span></a></p>
+<p><a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng"><span>NonAssociativeRng</span></a></p>
+<p><a class="reference internal" href="NonAssociativeSemiRing.html#l-non-associative-semi-ring"><span>NonAssociativeSemiRing</span></a></p>
+<p><a class="reference internal" href="NonAssociativeSemiRng.html#l-non-associative-semi-rng"><span>NonAssociativeSemiRng</span></a></p>
+<p><a class="reference internal" href="RightModule.html#l-right-module"><span>RightModule</span></a> %</p>
+<p><a class="reference internal" href="Ring.html#l-ring"><span>Ring</span></a></p>
+<p><a class="reference internal" href="Rng.html#l-rng"><span>Rng</span></a></p>
+<p><a class="reference internal" href="SemiGroup.html#l-semi-group"><span>SemiGroup</span></a></p>
+<p><a class="reference internal" href="SemiRing.html#l-semi-ring"><span>SemiRing</span></a></p>
+<p><a class="reference internal" href="SemiRng.html#l-semi-rng"><span>SemiRng</span></a></p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></p>
+<p><a class="reference internal" href="unitsKnown.html#l-units-known"><span>unitsKnown</span></a></p>
 </div>
 
 
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -170,7 +196,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -187,7 +213,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -199,12 +225,12 @@
         <li class="right" >
           <a href="ModularField.html" title="ModularField(R, Mod, reduction, merge, exactQuo)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>UnaryRecursiveAggregate S &mdash; FriCAS 1.2.7 API</title>
+    <title>UnaryRecursiveAggregate S &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
     <link rel="next" title="UniqueFactorizationDomain" href="UniqueFactorizationDomain.html" />
     <link rel="prev" title="Type" href="Type.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,238 +43,170 @@
         <li class="right" >
           <a href="Type.html" title="Type"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="unaryrecursiveaggregate-s">
 <span id="l-unary-recursive-aggregate"></span><span id="index-0"></span><h1>UnaryRecursiveAggregate S<a class="headerlink" href="#unaryrecursiveaggregate-s" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//aggcat.spad#L1308">aggcat.spad line 1308</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//aggcat.spad#L1278">aggcat.spad line 1278</a></p>
 <ul class="simple">
-<li>S: <a class="reference internal" href="Type.html#l-type"><em>Type</em></a></li>
+<li>S: <a class="reference internal" href="Type.html#l-type"><span>Type</span></a></li>
 </ul>
-<p>A unary-recursive aggregate is a one where nodes may have either 0 or 1 children. This aggregate models, though not precisely, a linked list possibly with a single cycle. A node with one children models a non-empty list, with the <span class="spadfun">value</span> of the list designating the head, or <span class="spadfun">first</span>, of the list, and the child designating the tail, or <span class="spadfun">rest</span>, of the list. A node with no child then designates the empty list. Since these aggregates are recursive aggregates, they may be cyclic.</p>
+<p>A unary-recursive aggregate is an aggregate where nodes may have either 0 or 1 children. This aggregate models, though not precisely, a linked list possibly with a single cycle. A node with one children models a non-empty list, with the <span class="spadfun">value</span> of the list designating the head, or <span class="spadfun">first</span>, of the list, and the child designating the tail, or <span class="spadfun">rest</span>, of the list. A node with no child then designates the empty list. Since these aggregates are recursive aggregates, they may be cyclic.</p>
 <dl class="docutils">
-<dt><a class="reference internal" href="Aggregate.html#id1"><em>#</em></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a> or S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
-<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
-<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a> or S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
-<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-any"><em>any?</em></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-child"><em>child?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-children"><em>children</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if S has <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
-<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><span>=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a> or S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><span>~=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a> or S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-child"><span>child?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-children"><span>children</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> %</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a> if S has <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dd>
 </dl>
 <span class="target" id="l-unary-recursive-aggregate-concat"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">concat!</span>: (%, %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">concat!(u,</span> <span class="pre">v)</span></tt> destructively concatenates <tt class="docutils literal"><span class="pre">v</span></tt> to the end of <tt class="docutils literal"><span class="pre">u</span></tt>. Note: <tt class="docutils literal"><span class="pre">concat!(u,</span> <span class="pre">v)</span> <span class="pre">=</span> <span class="pre">setlast!(u,</span> <span class="pre">v)</span></tt>.</dd>
+<dt><span class="spadfun">concat</span>: (%, %) -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">concat(u,</span> <span class="pre">v)</span></code> returns an aggregate <code class="docutils literal"><span class="pre">w</span></code> consisting of the elements of <code class="docutils literal"><span class="pre">u</span></code> followed by the elements of <code class="docutils literal"><span class="pre">v</span></code>. Note: <code class="docutils literal"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">rest(w,</span> <span class="pre">\#a)</span></code>.</dd>
 </dl>
 <dl class="docutils" id="index-2">
-<dt><span class="spadfun">concat!</span>: (%, S) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">concat!(u,</span> <span class="pre">x)</span></tt> destructively adds element <tt class="docutils literal"><span class="pre">x</span></tt> to the end of <tt class="docutils literal"><span class="pre">u</span></tt>. Note: <tt class="docutils literal"><span class="pre">concat!(a,</span> <span class="pre">x)</span> <span class="pre">=</span> <span class="pre">setlast!(a,</span> <span class="pre">[x])</span></tt>.</dd>
-</dl>
-<span class="target" id="id1"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">concat</span>: (%, %) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">concat(u,</span> <span class="pre">v)</span></tt> returns an aggregate <tt class="docutils literal"><span class="pre">w</span></tt> consisting of the elements of <tt class="docutils literal"><span class="pre">u</span></tt> followed by the elements of <tt class="docutils literal"><span class="pre">v</span></tt>. Note: <tt class="docutils literal"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">rest(w,</span> <span class="pre">\#a)</span></tt>.</dd>
-</dl>
-<dl class="docutils" id="index-4">
 <dt><span class="spadfun">concat</span>: (S, %) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">concat(x,</span> <span class="pre">u)</span></tt> returns aggregate consisting of <tt class="docutils literal"><span class="pre">x</span></tt> followed by the elements of <tt class="docutils literal"><span class="pre">u</span></tt>. Note: if <tt class="docutils literal"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">concat(x,</span> <span class="pre">u)</span></tt> then <tt class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">first</span> <span class="pre">v</span></tt> and <tt class="docutils literal"><span class="pre">u</span> <span class="pre">=</span> <span class="pre">rest</span> <span class="pre">v</span></tt>.</dd>
-<dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><em>copy</em></a>: % -&gt; %</dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><em>count</em></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><em>count</em></a>: (S, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dd><code class="docutils literal"><span class="pre">concat(x,</span> <span class="pre">u)</span></code> returns aggregate consisting of <code class="docutils literal"><span class="pre">x</span></code> followed by the elements of <code class="docutils literal"><span class="pre">u</span></code>. Note: if <code class="docutils literal"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">concat(x,</span> <span class="pre">u)</span></code> then <code class="docutils literal"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">first</span> <span class="pre">v</span></code> and <code class="docutils literal"><span class="pre">u</span> <span class="pre">=</span> <span class="pre">rest</span> <span class="pre">v</span></code>.</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><span>copy</span></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (S, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 </dl>
-<span class="target" id="l-unary-recursive-aggregate-cycle-entry"></span><dl class="docutils" id="index-5">
+<span class="target" id="l-unary-recursive-aggregate-cycle-entry"></span><dl class="docutils" id="index-3">
 <dt><span class="spadfun">cycleEntry</span>: % -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">cycleEntry(u)</span></tt> returns the head of a top-level cycle contained in aggregate <tt class="docutils literal"><span class="pre">u</span></tt>, or <tt class="docutils literal"><span class="pre">empty()</span></tt> if none exists.</dd>
+<dd><code class="docutils literal"><span class="pre">cycleEntry(u)</span></code> returns the head of a top-level cycle contained in aggregate <code class="docutils literal"><span class="pre">u</span></code>, or <code class="docutils literal"><span class="pre">empty()</span></code> if none exists.</dd>
 </dl>
-<span class="target" id="l-unary-recursive-aggregate-cycle-length"></span><dl class="docutils" id="index-6">
-<dt><span class="spadfun">cycleLength</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">cycleLength(u)</span></tt> returns the length of a top-level cycle contained in aggregate <tt class="docutils literal"><span class="pre">u</span></tt>, or 0 is <tt class="docutils literal"><span class="pre">u</span></tt> has no such cycle.</dd>
+<span class="target" id="l-unary-recursive-aggregate-cycle-length"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">cycleLength</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">cycleLength(u)</span></code> returns the length of a top-level cycle contained in aggregate <code class="docutils literal"><span class="pre">u</span></code>, or 0 is <code class="docutils literal"><span class="pre">u</span></code> has no such cycle.</dd>
 </dl>
-<span class="target" id="l-unary-recursive-aggregate-cycle-split"></span><dl class="docutils" id="index-7">
-<dt><span class="spadfun">cycleSplit!</span>: % -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">cycleSplit!(u)</span></tt> splits the aggregate by dropping off the cycle. The value returned is the cycle entry, or nil if none exists. For example, if <tt class="docutils literal"><span class="pre">w</span> <span class="pre">=</span> <span class="pre">concat(u,</span> <span class="pre">v)</span></tt> is the cyclic list where <tt class="docutils literal"><span class="pre">v</span></tt> is the head of the cycle, <tt class="docutils literal"><span class="pre">cycleSplit!(w)</span></tt> will drop <tt class="docutils literal"><span class="pre">v</span></tt> off <tt class="docutils literal"><span class="pre">w</span></tt> thus destructively changing <tt class="docutils literal"><span class="pre">w</span></tt> to <tt class="docutils literal"><span class="pre">u</span></tt>, and returning <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
-</dl>
-<span class="target" id="l-unary-recursive-aggregate-cycle-tail"></span><dl class="docutils" id="index-8">
+<span class="target" id="l-unary-recursive-aggregate-cycle-tail"></span><dl class="docutils" id="index-5">
 <dt><span class="spadfun">cycleTail</span>: % -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">cycleTail(u)</span></tt> returns the last node in the cycle, or empty if none exists.</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-cyclic"><em>cyclic?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-distance"><em>distance</em></a>: (%, %) -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dd><code class="docutils literal"><span class="pre">cycleTail(u)</span></code> returns the last node in the cycle, or empty if none exists.</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-cyclic"><span>cyclic?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-distance"><span>distance</span></a>: (%, %) -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
 </dl>
-<span class="target" id="l-unary-recursive-aggregate-elt"></span><dl class="docutils" id="index-9">
+<span class="target" id="l-unary-recursive-aggregate-elt"></span><dl class="docutils" id="index-6">
 <dt><span class="spadfun">elt</span>: (%, first) -&gt; S</dt>
-<dd><tt class="docutils literal"><span class="pre">elt(u,&quot;first&quot;)</span></tt> (also written: <tt class="docutils literal"><span class="pre">u</span> <span class="pre">.</span> <span class="pre">first</span></tt>) is equivalent to first <tt class="docutils literal"><span class="pre">u</span></tt>.</dd>
+<dd><code class="docutils literal"><span class="pre">elt(u,&quot;first&quot;)</span></code> (also written: <code class="docutils literal"><span class="pre">u</span> <span class="pre">.</span> <span class="pre">first</span></code>) is equivalent to first <code class="docutils literal"><span class="pre">u</span></code>.</dd>
+</dl>
+<dl class="docutils" id="index-7">
+<dt><span class="spadfun">elt</span>: (%, last) -&gt; S</dt>
+<dd><code class="docutils literal"><span class="pre">elt(u,&quot;last&quot;)</span></code> (also written: <code class="docutils literal"><span class="pre">u</span> <span class="pre">.</span> <span class="pre">last</span></code>) is equivalent to last <code class="docutils literal"><span class="pre">u</span></code>.</dd>
+</dl>
+<dl class="docutils" id="index-8">
+<dt><span class="spadfun">elt</span>: (%, rest) -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">elt(\%,&quot;rest&quot;)</span></code> (also written: <code class="docutils literal"><span class="pre">u.rest</span></code>) is equivalent to <code class="docutils literal"><span class="pre">rest</span> <span class="pre">u</span></code>.</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-elt"><span>elt</span></a>: (%, value) -&gt; S</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><span>empty</span></a>: () -&gt; %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#id1"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-eq"><span>eq?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><span>eval</span></a>: (%, <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> S) -&gt; % if S has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S and S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S</dd>
+<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><span>eval</span></a>: (%, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> S) -&gt; % if S has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S and S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><span>eval</span></a>: (%, <a class="reference internal" href="List.html#l-list"><span>List</span></a> S, <a class="reference internal" href="List.html#l-list"><span>List</span></a> S) -&gt; % if S has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S and S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(S, S)</dd>
+<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><span>eval</span></a>: (%, S, S) -&gt; % if S has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S and S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(S, S)</dd>
+</dl>
+<span class="target" id="l-unary-recursive-aggregate-first"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">first</span>: % -&gt; S</dt>
+<dd><code class="docutils literal"><span class="pre">first(u)</span></code> returns the first element of <code class="docutils literal"><span class="pre">u</span></code> (equivalently, the value at the current node).</dd>
 </dl>
 <dl class="docutils" id="index-10">
-<dt><span class="spadfun">elt</span>: (%, last) -&gt; S</dt>
-<dd><tt class="docutils literal"><span class="pre">elt(u,&quot;last&quot;)</span></tt> (also written: <tt class="docutils literal"><span class="pre">u</span> <span class="pre">.</span> <span class="pre">last</span></tt>) is equivalent to last <tt class="docutils literal"><span class="pre">u</span></tt>.</dd>
+<dt><span class="spadfun">first</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">first(u,</span> <span class="pre">n)</span></code> returns a copy of the first <code class="docutils literal"><span class="pre">n</span></code> (<code class="docutils literal"><span class="pre">n</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code>) elements of <code class="docutils literal"><span class="pre">u</span></code>.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><span>hash</span></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><span>SingleInteger</span></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><span>hashUpdate!</span></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
 </dl>
-<dl class="docutils" id="index-11">
-<dt><span class="spadfun">elt</span>: (%, rest) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">elt(\%,&quot;rest&quot;)</span></tt> (also written: <tt class="docutils literal"><span class="pre">u.rest</span></tt>) is equivalent to <tt class="docutils literal"><span class="pre">rest</span> <span class="pre">u</span></tt>.</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-elt"><em>elt</em></a>: (%, value) -&gt; S</dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><em>empty</em></a>: () -&gt; %</dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="Aggregate.html#id2"><em>empty?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="Aggregate.html#l-aggregate-eq"><em>eq?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
-<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dd>
-<dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
-<dd>from <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dd>
-<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> S, <a class="reference internal" href="List.html#l-list"><em>List</em></a> S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
-<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(S, S)</dd>
-<dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><em>eval</em></a>: (%, S, S) -&gt; % if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</dt>
-<dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(S, S)</dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-every"><em>every?</em></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
-</dl>
-<span class="target" id="l-unary-recursive-aggregate-first"></span><dl class="docutils" id="index-12">
-<dt><span class="spadfun">first</span>: % -&gt; S</dt>
-<dd><tt class="docutils literal"><span class="pre">first(u)</span></tt> returns the first element of <tt class="docutils literal"><span class="pre">u</span></tt> (equivalently, the value at the current node).</dd>
-</dl>
-<dl class="docutils" id="index-13">
-<dt><span class="spadfun">first</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">first(u,</span> <span class="pre">n)</span></tt> returns a copy of the first <tt class="docutils literal"><span class="pre">n</span></tt> (<tt class="docutils literal"><span class="pre">n</span> <span class="pre">&gt;=</span> <span class="pre">0</span></tt>) elements of <tt class="docutils literal"><span class="pre">u</span></tt>.</dd>
-<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
-<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
-<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
-<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
-</dl>
-<span class="target" id="l-unary-recursive-aggregate-last"></span><dl class="docutils" id="index-14">
+<span class="target" id="l-unary-recursive-aggregate-last"></span><dl class="docutils" id="index-11">
 <dt><span class="spadfun">last</span>: % -&gt; S</dt>
-<dd><tt class="docutils literal"><span class="pre">last(u)</span></tt> resturn the last element of <tt class="docutils literal"><span class="pre">u</span></tt>. Note: for lists, <tt class="docutils literal"><span class="pre">last(u)</span> <span class="pre">=</span> <span class="pre">u</span> <span class="pre">.</span> <span class="pre">(maxIndex</span> <span class="pre">u)</span> <span class="pre">=</span> <span class="pre">u</span> <span class="pre">.</span> <span class="pre">(\#</span> <span class="pre">u</span> <span class="pre">-</span> <span class="pre">1)</span></tt>.</dd>
+<dd><code class="docutils literal"><span class="pre">last(u)</span></code> returns the last element of <code class="docutils literal"><span class="pre">u</span></code>. Note: for lists, <code class="docutils literal"><span class="pre">last(u)</span> <span class="pre">=</span> <span class="pre">u</span> <span class="pre">.</span> <span class="pre">(maxIndex</span> <span class="pre">u)</span> <span class="pre">=</span> <span class="pre">u</span> <span class="pre">.</span> <span class="pre">(\#</span> <span class="pre">u</span> <span class="pre">-</span> <span class="pre">1)</span></code>.</dd>
 </dl>
-<dl class="docutils" id="index-15">
-<dt><span class="spadfun">last</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">last(u,</span> <span class="pre">n)</span></tt> returns a copy of the last <tt class="docutils literal"><span class="pre">n</span></tt> (<tt class="docutils literal"><span class="pre">n</span> <span class="pre">&gt;=</span> <span class="pre">0</span></tt>) nodes of <tt class="docutils literal"><span class="pre">u</span></tt>. Note: <tt class="docutils literal"><span class="pre">last(u,</span> <span class="pre">n)</span></tt> is a list of <tt class="docutils literal"><span class="pre">n</span></tt> elements.</dd>
-<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
-<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-leaf"><em>leaf?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-leaves"><em>leaves</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S</dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="Aggregate.html#l-aggregate-less"><em>less?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><em>map!</em></a>: (S -&gt; S, %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#id1"><em>map</em></a>: (S -&gt; S, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><em>member?</em></a>: (S, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-members"><em>members</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="Aggregate.html#l-aggregate-more"><em>more?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-node"><em>node?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-nodes"><em>nodes</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> %</dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-parts"><em>parts</em></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> S if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></dt>
-<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</dd>
+<dl class="docutils" id="index-12">
+<dt><span class="spadfun">last</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">last(u,</span> <span class="pre">n)</span></code> returns a copy of the last <code class="docutils literal"><span class="pre">n</span></code> (<code class="docutils literal"><span class="pre">n</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code>) nodes of <code class="docutils literal"><span class="pre">u</span></code>. Note: <code class="docutils literal"><span class="pre">last(u,</span> <span class="pre">n)</span></code> is a list of <code class="docutils literal"><span class="pre">n</span></code> elements.</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><span>latex</span></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-leaf"><span>leaf?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-leaves"><span>leaves</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> S</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-less"><span>less?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map</span></a>: (S -&gt; S, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><span>member?</span></a>: (S, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-more"><span>more?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-node"><span>node?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-nodes"><span>nodes</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> %</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
 </dl>
-<span class="target" id="l-unary-recursive-aggregate-qsetfirst"></span><dl class="docutils" id="index-16">
-<dt><span class="spadfun">qsetfirst!</span>: (%, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>setfirst!(<tt class="docutils literal"><span class="pre">u</span></tt>, <tt class="docutils literal"><span class="pre">x</span></tt>) destructively changes the first element of <tt class="docutils literal"><span class="pre">u</span></tt> to <tt class="docutils literal"><span class="pre">x</span></tt> without checking for errors.</dd>
-</dl>
-<span class="target" id="l-unary-recursive-aggregate-qsetrest"></span><dl class="docutils" id="index-17">
-<dt><span class="spadfun">qsetrest!</span>: (%, %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>setrest!(<tt class="docutils literal"><span class="pre">u</span></tt>, <tt class="docutils literal"><span class="pre">v</span></tt>) destructively changes the rest of <tt class="docutils literal"><span class="pre">u</span></tt> to <tt class="docutils literal"><span class="pre">v</span></tt> without checking for errors.</dd>
-</dl>
-<span class="target" id="l-unary-recursive-aggregate-rest"></span><dl class="docutils" id="index-18">
+<span class="target" id="l-unary-recursive-aggregate-rest"></span><dl class="docutils" id="index-13">
 <dt><span class="spadfun">rest</span>: % -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">rest(u)</span></tt> returns an aggregate consisting of all but the first element of <tt class="docutils literal"><span class="pre">u</span></tt> (equivalently, the next node of <tt class="docutils literal"><span class="pre">u</span></tt>).</dd>
+<dd><code class="docutils literal"><span class="pre">rest(u)</span></code> returns an aggregate consisting of all but the first element of <code class="docutils literal"><span class="pre">u</span></code> (equivalently, the next node of <code class="docutils literal"><span class="pre">u</span></code>).</dd>
 </dl>
-<dl class="docutils" id="index-19">
-<dt><span class="spadfun">rest</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">rest(u,</span> <span class="pre">n)</span></tt> returns the <tt class="docutils literal"><span class="pre">n</span></tt>th (<tt class="docutils literal"><span class="pre">n</span></tt> <tt class="docutils literal"><span class="pre">&gt;=</span></tt> 0) node of <tt class="docutils literal"><span class="pre">u</span></tt>. Note: <tt class="docutils literal"><span class="pre">rest(u,</span> <span class="pre">0)</span> <span class="pre">=</span> <span class="pre">u</span></tt>.</dd>
-<dt><a class="reference internal" href="Aggregate.html#l-aggregate-sample"><em>sample</em></a>: %</dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
+<dl class="docutils" id="index-14">
+<dt><span class="spadfun">rest</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">rest(u,</span> <span class="pre">n)</span></code> returns the <code class="docutils literal"><span class="pre">n</span></code>th (<code class="docutils literal"><span class="pre">n</span></code> <code class="docutils literal"><span class="pre">&gt;=</span></code> 0) node of <code class="docutils literal"><span class="pre">u</span></code>. Note: <code class="docutils literal"><span class="pre">rest(u,</span> <span class="pre">0)</span> <span class="pre">=</span> <span class="pre">u</span></code>.</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-sample"><span>sample</span></a>: %</dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 </dl>
-<span class="target" id="l-unary-recursive-aggregate-second"></span><dl class="docutils" id="index-20">
+<span class="target" id="l-unary-recursive-aggregate-second"></span><dl class="docutils" id="index-15">
 <dt><span class="spadfun">second</span>: % -&gt; S</dt>
-<dd><tt class="docutils literal"><span class="pre">second(u)</span></tt> returns the second element of <tt class="docutils literal"><span class="pre">u</span></tt>. Note: <tt class="docutils literal"><span class="pre">second(u)</span> <span class="pre">=</span> <span class="pre">first(rest(u))</span></tt>.</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-setchildren"><em>setchildren!</em></a>: (%, <a class="reference internal" href="List.html#l-list"><em>List</em></a> %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dd><code class="docutils literal"><span class="pre">second(u)</span></code> returns the second element of <code class="docutils literal"><span class="pre">u</span></code>. Note: <code class="docutils literal"><span class="pre">second(u)</span> <span class="pre">=</span> <span class="pre">first(rest(u))</span></code>.</dd>
+<dt><a class="reference internal" href="Aggregate.html#l-aggregate-size"><span>size?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 </dl>
-<span class="target" id="l-unary-recursive-aggregate-setelt"></span><dl class="docutils" id="index-21">
-<dt><span class="spadfun">setelt!</span>: (%, first, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">setelt!(u,</span> <span class="pre">&quot;first&quot;,</span> <span class="pre">x)</span></tt> (also written: <tt class="docutils literal"><span class="pre">u.first</span> <span class="pre">:=</span> <span class="pre">x</span></tt>) is equivalent to <tt class="docutils literal"><span class="pre">setfirst!(u,</span> <span class="pre">x)</span></tt>.</dd>
-</dl>
-<dl class="docutils" id="index-22">
-<dt><span class="spadfun">setelt!</span>: (%, last, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">setelt!(u,</span> <span class="pre">&quot;last&quot;,</span> <span class="pre">x)</span></tt> (also written: <tt class="docutils literal"><span class="pre">u.last</span> <span class="pre">:=</span> <span class="pre">b</span></tt>) is equivalent to <tt class="docutils literal"><span class="pre">setlast!(u,</span> <span class="pre">v)</span></tt>.</dd>
-</dl>
-<dl class="docutils" id="index-23">
-<dt><span class="spadfun">setelt!</span>: (%, rest, %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">setelt!(u,</span> <span class="pre">&quot;rest&quot;,</span> <span class="pre">v)</span></tt> (also written: <tt class="docutils literal"><span class="pre">u.rest</span> <span class="pre">:=</span> <span class="pre">v</span></tt>) is equivalent to <tt class="docutils literal"><span class="pre">setrest!(u,</span> <span class="pre">v)</span></tt>.</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-setelt"><em>setelt!</em></a>: (%, value, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-</dl>
-<span class="target" id="l-unary-recursive-aggregate-setfirst"></span><dl class="docutils" id="index-24">
-<dt><span class="spadfun">setfirst!</span>: (%, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">setfirst!(u,</span> <span class="pre">x)</span></tt> destructively changes the first element of <tt class="docutils literal"><span class="pre">u</span></tt> to <tt class="docutils literal"><span class="pre">x</span></tt>. Error if <tt class="docutils literal"><span class="pre">u</span></tt> is empty.</dd>
-</dl>
-<span class="target" id="l-unary-recursive-aggregate-setlast"></span><dl class="docutils" id="index-25">
-<dt><span class="spadfun">setlast!</span>: (%, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">setlast!(u,</span> <span class="pre">x)</span></tt> destructively changes the last element of <tt class="docutils literal"><span class="pre">u</span></tt> to <tt class="docutils literal"><span class="pre">x</span></tt>.</dd>
-</dl>
-<span class="target" id="l-unary-recursive-aggregate-setrest"></span><dl class="docutils" id="index-26">
-<dt><span class="spadfun">setrest!</span>: (%, %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">setrest!(u,</span> <span class="pre">v)</span></tt> destructively changes the rest of <tt class="docutils literal"><span class="pre">u</span></tt> to <tt class="docutils literal"><span class="pre">v</span></tt>. Error if <tt class="docutils literal"><span class="pre">u</span></tt> is empty.</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-setvalue"><em>setvalue!</em></a>: (%, S) -&gt; S if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
-<dt><a class="reference internal" href="Aggregate.html#l-aggregate-size"><em>size?</em></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></dd>
-</dl>
-<span class="target" id="l-unary-recursive-aggregate-split"></span><dl class="docutils" id="index-27">
-<dt><span class="spadfun">split!</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><em>shallowlyMutable</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">split!(u,</span> <span class="pre">n)</span></tt> splits <tt class="docutils literal"><span class="pre">u</span></tt> into two aggregates: <tt class="docutils literal"><span class="pre">v</span> <span class="pre">=</span> <span class="pre">rest(u,</span> <span class="pre">n)</span></tt> and <tt class="docutils literal"><span class="pre">w</span> <span class="pre">=</span> <span class="pre">first(u,</span> <span class="pre">n)</span></tt>, returning <tt class="docutils literal"><span class="pre">v</span></tt>. Note: afterwards <tt class="docutils literal"><span class="pre">rest(u,</span> <span class="pre">n)</span></tt> returns <tt class="docutils literal"><span class="pre">empty()</span></tt>.</dd>
-</dl>
-<span class="target" id="l-unary-recursive-aggregate-tail"></span><dl class="docutils" id="index-28">
+<span class="target" id="l-unary-recursive-aggregate-tail"></span><dl class="docutils" id="index-16">
 <dt><span class="spadfun">tail</span>: % -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">tail(u)</span></tt> returns the last node of <tt class="docutils literal"><span class="pre">u</span></tt>. Note: if <tt class="docutils literal"><span class="pre">u</span></tt> is <tt class="docutils literal"><span class="pre">shallowlyMutable</span></tt>, <tt class="docutils literal"><span class="pre">setrest(tail(u),</span> <span class="pre">v)</span> <span class="pre">=</span> <span class="pre">concat(u,</span> <span class="pre">v)</span></tt>.</dd>
+<dd><code class="docutils literal"><span class="pre">tail(u)</span></code> returns the last node of <code class="docutils literal"><span class="pre">u</span></code>. Note: if <code class="docutils literal"><span class="pre">u</span></code> is <code class="docutils literal"><span class="pre">shallowlyMutable</span></code>, <code class="docutils literal"><span class="pre">setrest(tail(u),</span> <span class="pre">v)</span> <span class="pre">=</span> <span class="pre">concat(u,</span> <span class="pre">v)</span></code>.</dd>
 </dl>
-<span class="target" id="l-unary-recursive-aggregate-third"></span><dl class="docutils" id="index-29">
+<span class="target" id="l-unary-recursive-aggregate-third"></span><dl class="docutils" id="index-17">
 <dt><span class="spadfun">third</span>: % -&gt; S</dt>
-<dd><tt class="docutils literal"><span class="pre">third(u)</span></tt> returns the third element of <tt class="docutils literal"><span class="pre">u</span></tt>. Note: <tt class="docutils literal"><span class="pre">third(u)</span> <span class="pre">=</span> <span class="pre">first(rest(rest(u)))</span></tt>.</dd>
-<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-value"><em>value</em></a>: % -&gt; S</dt>
-<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</dd>
+<dd><code class="docutils literal"><span class="pre">third(u)</span></code> returns the third element of <code class="docutils literal"><span class="pre">u</span></code>. Note: <code class="docutils literal"><span class="pre">third(u)</span> <span class="pre">=</span> <span class="pre">first(rest(rest(u)))</span></code>.</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-value"><span>value</span></a>: % -&gt; S</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</dd>
 </dl>
-<p><a class="reference internal" href="Aggregate.html#l-aggregate"><em>Aggregate</em></a></p>
-<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> or S has <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><em>finiteAggregate</em></a></p>
-<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a> if S has <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
-<p><a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</p>
-<p><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><em>HomogeneousAggregate</em></a> S</p>
-<p><a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><em>InnerEvalable</em></a>(S, S) if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> and S has <a class="reference internal" href="Evalable.html#l-evalable"><em>Evalable</em></a> S</p>
-<p><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><em>RecursiveAggregate</em></a> S</p>
-<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
+<p><a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></p>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a> or S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a> if S has <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></p>
+<p><a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S if S has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S and S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></p>
+<p><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</p>
+<p><a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(S, S) if S has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S and S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></p>
+<p><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> S</p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a> if S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></p>
 </div>
 
 
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -283,7 +215,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -300,7 +232,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -312,12 +244,12 @@
         <li class="right" >
           <a href="Type.html" title="Type"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Categories.html" >Categories</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

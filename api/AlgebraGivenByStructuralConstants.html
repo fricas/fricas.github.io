@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>AlgebraGivenByStructuralConstants(R, n, ls, gamma) &mdash; FriCAS 1.2.7 API</title>
+    <title>AlgebraGivenByStructuralConstants(R, n, ls, gamma) &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="AlgebraicFunctionField(F, UP, UPUP, modulus)" href="AlgebraicFunctionField.html" />
     <link rel="prev" title="Domains" href="Domains.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,240 +43,258 @@
         <li class="right" >
           <a href="Domains.html" title="Domains"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="algebragivenbystructuralconstants-r-n-ls-gamma">
 <span id="l-algebra-given-by-structural-constants"></span><span id="index-0"></span><h1>AlgebraGivenByStructuralConstants(R, n, ls, gamma)<a class="headerlink" href="#algebragivenbystructuralconstants-r-n-ls-gamma" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//naalg.spad#L1">naalg.spad line 1</a></p>
 <ul class="simple">
-<li>R: <a class="reference internal" href="Field.html#l-field"><em>Field</em></a></li>
-<li>n: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a></li>
-<li>ls: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a></li>
-<li>gamma: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</li>
+<li>R: <a class="reference internal" href="Field.html#l-field"><span>Field</span></a></li>
+<li>n: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a></li>
+<li>ls: <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Symbol.html#l-symbol"><span>Symbol</span></a></li>
+<li>gamma: <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> R</li>
 </ul>
-<p>AlgebraGivenByStructuralConstants implements finite rank algebras over a commutative ring, given by the structural constants <tt class="docutils literal"><span class="pre">gamma</span></tt> with respect to a fixed basis <tt class="docutils literal"><span class="pre">[a1,</span> <span class="pre">..,</span> <span class="pre">an]</span></tt>, where <tt class="docutils literal"><span class="pre">gamma</span></tt> is an <tt class="docutils literal"><span class="pre">n</span></tt>-vector of <tt class="docutils literal"><span class="pre">n</span></tt> by <tt class="docutils literal"><span class="pre">n</span></tt> matrices <tt class="docutils literal"><span class="pre">[(gammaijk)</span> <span class="pre">for</span> <span class="pre">k</span> <span class="pre">in</span> <span class="pre">1..rank()]</span></tt> defined by <tt class="docutils literal"><span class="pre">ai</span> <span class="pre">*</span> <span class="pre">aj</span> <span class="pre">=</span> <span class="pre">gammaij1</span> <span class="pre">*</span> <span class="pre">a1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">gammaijn</span> <span class="pre">*</span> <span class="pre">an</span></tt>. The symbols for the fixed basis have to be given as a list of symbols.</p>
+<p>AlgebraGivenByStructuralConstants implements finite rank algebras over a commutative ring, given by the structural constants <code class="docutils literal"><span class="pre">gamma</span></code> with respect to a fixed basis <code class="docutils literal"><span class="pre">[a1,</span> <span class="pre">..,</span> <span class="pre">an]</span></code>, where <code class="docutils literal"><span class="pre">gamma</span></code> is an <code class="docutils literal"><span class="pre">n</span></code>-vector of <code class="docutils literal"><span class="pre">n</span></code> by <code class="docutils literal"><span class="pre">n</span></code> matrices <code class="docutils literal"><span class="pre">[(gammaijk)</span> <span class="pre">for</span> <span class="pre">k</span> <span class="pre">in</span> <span class="pre">1..rank()]</span></code> defined by <code class="docutils literal"><span class="pre">ai</span> <span class="pre">*</span> <span class="pre">aj</span> <span class="pre">=</span> <span class="pre">gammaij1</span> <span class="pre">*</span> <span class="pre">a1</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">gammaijn</span> <span class="pre">*</span> <span class="pre">an</span></code>. The symbols for the fixed basis have to be given as a list of symbols.</p>
 <dl class="docutils">
-<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><em>0</em></a>: %</dt>
-<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
-<dt><a class="reference internal" href="Magma.html#id1"><em>*</em></a>: (%, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="Magma.html#l-magma"><em>Magma</em></a></dd>
-<dt><a class="reference internal" href="RightModule.html#id1"><em>*</em></a>: (%, R) -&gt; %</dt>
-<dd>from <a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> R</dd>
-<dt><a class="reference internal" href="AbelianGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
-<dt><a class="reference internal" href="AbelianMonoid.html#id1"><em>*</em></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><em>NonNegativeInteger</em></a>, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
-<dt><a class="reference internal" href="AbelianSemiGroup.html#id1"><em>*</em></a>: (<a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
-<dt><a class="reference internal" href="LeftModule.html#id1"><em>*</em></a>: (R, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> R</dd>
-<dt><a class="reference internal" href="LeftModule.html#id1"><em>*</em></a>: (<a class="reference internal" href="SquareMatrix.html#l-square-matrix"><em>SquareMatrix</em></a>(n, R), %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> <a class="reference internal" href="SquareMatrix.html#l-square-matrix"><em>SquareMatrix</em></a>(n, R)</dd>
-<dt><a class="reference internal" href="AbelianSemiGroup.html#id2"><em>+</em></a>: (%, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></dd>
-<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: % -&gt; %</dt>
-<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
-<dt><a class="reference internal" href="AbelianGroup.html#id2"><em>-</em></a>: (%, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></dd>
-<dt><a class="reference internal" href="BasicType.html#id1"><em>=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
-<dt><a class="reference internal" href="Magma.html#id2"><em>^</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="Magma.html#l-magma"><em>Magma</em></a></dd>
-<dt><a class="reference internal" href="BasicType.html#id2"><em>~=</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-alternative"><em>alternative?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-anti-associative"><em>antiAssociative?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-anti-commutative"><em>antiCommutative?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="NonAssociativeSemiRng.html#l-non-associative-semi-rng-anti-commutator"><em>antiCommutator</em></a>: (%, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="NonAssociativeSemiRng.html#l-non-associative-semi-rng"><em>NonAssociativeSemiRng</em></a></dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-apply"><em>apply</em></a>: (<a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-associative"><em>associative?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng-associator"><em>associator</em></a>: (%, %, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng"><em>NonAssociativeRng</em></a></dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-associator-dependence"><em>associatorDependence</em></a>: () -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-basis"><em>basis</em></a>: () -&gt; <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> %</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><em>coerce</em></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
-<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><span>0</span></a>: %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></dd>
+<dt><a class="reference internal" href="Magma.html#id1"><span>*</span></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Magma.html#l-magma"><span>Magma</span></a></dd>
+<dt><a class="reference internal" href="RightModule.html#id1"><span>*</span></a>: (%, R) -&gt; %</dt>
+<dd>from <a class="reference internal" href="RightModule.html#l-right-module"><span>RightModule</span></a> R</dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id1"><span>*</span></a>: (<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><span>AbelianGroup</span></a></dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#id1"><span>*</span></a>: (<a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id1"><span>*</span></a>: (<a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><span>AbelianSemiGroup</span></a></dd>
+<dt><a class="reference internal" href="LeftModule.html#id1"><span>*</span></a>: (R, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LeftModule.html#l-left-module"><span>LeftModule</span></a> R</dd>
+<dt><a class="reference internal" href="LeftModule.html#id1"><span>*</span></a>: (<a class="reference internal" href="SquareMatrix.html#l-square-matrix"><span>SquareMatrix</span></a>(n, R), %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="LeftModule.html#l-left-module"><span>LeftModule</span></a> <a class="reference internal" href="SquareMatrix.html#l-square-matrix"><span>SquareMatrix</span></a>(n, R)</dd>
+<dt><a class="reference internal" href="AbelianSemiGroup.html#id2"><span>+</span></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><span>AbelianSemiGroup</span></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><span>-</span></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><span>AbelianGroup</span></a></dd>
+<dt><a class="reference internal" href="AbelianGroup.html#id2"><span>-</span></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><span>AbelianGroup</span></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id1"><span>=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="Magma.html#id2"><span>^</span></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Magma.html#l-magma"><span>Magma</span></a></dd>
+<dt><a class="reference internal" href="BasicType.html#id2"><span>~=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-alternative"><span>alternative?</span></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-anti-associative"><span>antiAssociative?</span></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-anti-commutative"><span>antiCommutative?</span></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="NonAssociativeSemiRng.html#l-non-associative-semi-rng-anti-commutator"><span>antiCommutator</span></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="NonAssociativeSemiRng.html#l-non-associative-semi-rng"><span>NonAssociativeSemiRng</span></a></dd>
+<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-apply"><span>apply</span></a>: (<a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> R, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><span>FramedNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-associative"><span>associative?</span></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng-associator"><span>associator</span></a>: (%, %, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng"><span>NonAssociativeRng</span></a></dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-associator-dependence"><span>associatorDependence</span></a>: () -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FramedModule.html#l-framed-module-basis"><span>basis</span></a>: () -&gt; <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> %</dt>
+<dd>from <a class="reference internal" href="FramedModule.html#l-framed-module"><span>FramedModule</span></a> R</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dd>
 </dl>
 <span class="target" id="l-algebra-given-by-structural-constants-coerce"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">coerce</span>: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">coerce(v)</span></tt> converts a vector to a member of the algebra by forming a linear combination with the basis element. Note: the vector is assumed to have length equal to the dimension of the algebra.</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-commutative"><em>commutative?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng-commutator"><em>commutator</em></a>: (%, %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng"><em>NonAssociativeRng</em></a></dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-conditions-for-idempotents"><em>conditionsForIdempotents</em></a>: () -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-conditions-for-idempotents"><em>conditionsForIdempotents</em></a>: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> % -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-convert"><em>convert</em></a>: % -&gt; <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-convert"><em>convert</em></a>: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R -&gt; %</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-coordinates"><em>coordinates</em></a>: % -&gt; <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-coordinates"><em>coordinates</em></a>: (%, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> %) -&gt; <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-coordinates"><em>coordinates</em></a>: (<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> %, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> %) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-coordinates"><em>coordinates</em></a>: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-elt"><em>elt</em></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; R</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-flexible"><em>flexible?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><em>hash</em></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><em>SingleInteger</em></a></dt>
-<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
-<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><em>hashUpdate!</em></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><em>HashState</em></a></dt>
-<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-jacobi-identity"><em>jacobiIdentity?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-jordan-admissible"><em>jordanAdmissible?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-jordan-algebra"><em>jordanAlgebra?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><em>latex</em></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><em>String</em></a></dt>
-<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-alternative"><em>leftAlternative?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-characteristic-polynomial"><em>leftCharacteristicPolynomial</em></a>: % -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-left-discriminant"><em>leftDiscriminant</em></a>: () -&gt; R</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-discriminant"><em>leftDiscriminant</em></a>: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> % -&gt; R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-minimal-polynomial"><em>leftMinimalPolynomial</em></a>: % -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-norm"><em>leftNorm</em></a>: % -&gt; R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="Magma.html#l-magma-left-power"><em>leftPower</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="Magma.html#l-magma"><em>Magma</em></a></dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-left-rank-polynomial"><em>leftRankPolynomial</em></a>: () -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-recip"><em>leftRecip</em></a>: % -&gt; Union(%, failed)</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-left-regular-representation"><em>leftRegularRepresentation</em></a>: % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-regular-representation"><em>leftRegularRepresentation</em></a>: (%, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> %) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-trace"><em>leftTrace</em></a>: % -&gt; R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-left-trace-matrix"><em>leftTraceMatrix</em></a>: () -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-trace-matrix"><em>leftTraceMatrix</em></a>: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-unit"><em>leftUnit</em></a>: () -&gt; Union(%, failed)</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-units"><em>leftUnits</em></a>: () -&gt; Union(Record(particular: %, basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> %), failed)</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-lie-admissible"><em>lieAdmissible?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-lie-algebra"><em>lieAlgebra?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-noncommutative-jordan-algebra"><em>noncommutativeJordanAlgebra?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-opposite"><em>opposite?</em></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
-<dt><a class="reference internal" href="NonAssociativeAlgebra.html#l-non-associative-algebra-plenary-power"><em>plenaryPower</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="NonAssociativeAlgebra.html#l-non-associative-algebra"><em>NonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-power-associative"><em>powerAssociative?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-rank"><em>rank</em></a>: () -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-recip"><em>recip</em></a>: % -&gt; Union(%, failed)</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-represents"><em>represents</em></a>: (<a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> %) -&gt; %</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-represents"><em>represents</em></a>: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> R -&gt; %</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-alternative"><em>rightAlternative?</em></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-characteristic-polynomial"><em>rightCharacteristicPolynomial</em></a>: % -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-right-discriminant"><em>rightDiscriminant</em></a>: () -&gt; R</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-discriminant"><em>rightDiscriminant</em></a>: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> % -&gt; R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-minimal-polynomial"><em>rightMinimalPolynomial</em></a>: % -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-norm"><em>rightNorm</em></a>: % -&gt; R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="Magma.html#l-magma-right-power"><em>rightPower</em></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><em>PositiveInteger</em></a>) -&gt; %</dt>
-<dd>from <a class="reference internal" href="Magma.html#l-magma"><em>Magma</em></a></dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-right-rank-polynomial"><em>rightRankPolynomial</em></a>: () -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><em>SparseUnivariatePolynomial</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-recip"><em>rightRecip</em></a>: % -&gt; Union(%, failed)</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-right-regular-representation"><em>rightRegularRepresentation</em></a>: % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-regular-representation"><em>rightRegularRepresentation</em></a>: (%, <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> %) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-trace"><em>rightTrace</em></a>: % -&gt; R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-right-trace-matrix"><em>rightTraceMatrix</em></a>: () -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-trace-matrix"><em>rightTraceMatrix</em></a>: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-unit"><em>rightUnit</em></a>: () -&gt; Union(%, failed)</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-units"><em>rightUnits</em></a>: () -&gt; Union(Record(particular: %, basis: <a class="reference internal" href="List.html#l-list"><em>List</em></a> %), failed)</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-sample"><em>sample</em></a>: %</dt>
-<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-some-basis"><em>someBasis</em></a>: () -&gt; <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> %</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-structural-constants"><em>structuralConstants</em></a>: () -&gt; <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
-<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-structural-constants"><em>structuralConstants</em></a>: <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> % -&gt; <a class="reference internal" href="Vector.html#l-vector"><em>Vector</em></a> <a class="reference internal" href="Matrix.html#l-matrix"><em>Matrix</em></a> R</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid-subtract-if-can"><em>subtractIfCan</em></a>: (%, %) -&gt; Union(%, failed)</dt>
-<dd>from <a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a></dd>
-<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-unit"><em>unit</em></a>: () -&gt; Union(%, failed)</dt>
-<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</dd>
-<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-zero"><em>zero?</em></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></dd>
+<dt><span class="spadfun">coerce</span>: <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> R -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">coerce(v)</span></code> converts a vector to a member of the algebra by forming a linear combination with the basis element. Note: the vector is assumed to have length equal to the dimension of the algebra.</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-commutative"><span>commutative?</span></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng-commutator"><span>commutator</span></a>: (%, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng"><span>NonAssociativeRng</span></a></dd>
+<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-conditions-for-idempotents"><span>conditionsForIdempotents</span></a>: () -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R</dt>
+<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><span>FramedNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-conditions-for-idempotents"><span>conditionsForIdempotents</span></a>: <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="ConvertibleTo.html#l-convertible-to-convert"><span>convert</span></a>: % -&gt; <a class="reference internal" href="InputForm.html#l-input-form"><span>InputForm</span></a> if R has <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dt>
+<dd>from <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><span>ConvertibleTo</span></a> <a class="reference internal" href="InputForm.html#l-input-form"><span>InputForm</span></a></dd>
+<dt><a class="reference internal" href="FramedModule.html#l-framed-module-convert"><span>convert</span></a>: % -&gt; <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> R</dt>
+<dd>from <a class="reference internal" href="FramedModule.html#l-framed-module"><span>FramedModule</span></a> R</dd>
+<dt><a class="reference internal" href="FramedModule.html#l-framed-module-convert"><span>convert</span></a>: <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> R -&gt; %</dt>
+<dd>from <a class="reference internal" href="FramedModule.html#l-framed-module"><span>FramedModule</span></a> R</dd>
+<dt><a class="reference internal" href="FramedModule.html#l-framed-module-coordinates"><span>coordinates</span></a>: % -&gt; <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> R</dt>
+<dd>from <a class="reference internal" href="FramedModule.html#l-framed-module"><span>FramedModule</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-coordinates"><span>coordinates</span></a>: (%, <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> %) -&gt; <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-coordinates"><span>coordinates</span></a>: (<a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> %, <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> %) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FramedModule.html#l-framed-module-coordinates"><span>coordinates</span></a>: <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> R</dt>
+<dd>from <a class="reference internal" href="FramedModule.html#l-framed-module"><span>FramedModule</span></a> R</dd>
+<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-elt"><span>elt</span></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; R</dt>
+<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><span>FramedNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="Finite.html#l-finite-enumerate"><span>enumerate</span></a>: () -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> % if R has <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dt>
+<dd>from <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-flexible"><span>flexible?</span></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><span>hash</span></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><span>SingleInteger</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><span>hashUpdate!</span></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
+<dt><a class="reference internal" href="Finite.html#l-finite-index"><span>index</span></a>: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a> -&gt; % if R has <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dt>
+<dd>from <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-jacobi-identity"><span>jacobiIdentity?</span></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-jordan-admissible"><span>jordanAdmissible?</span></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-jordan-algebra"><span>jordanAlgebra?</span></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><span>latex</span></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a></dt>
+<dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-alternative"><span>leftAlternative?</span></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-characteristic-polynomial"><span>leftCharacteristicPolynomial</span></a>: % -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-left-discriminant"><span>leftDiscriminant</span></a>: () -&gt; R</dt>
+<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><span>FramedNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-discriminant"><span>leftDiscriminant</span></a>: <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> % -&gt; R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-minimal-polynomial"><span>leftMinimalPolynomial</span></a>: % -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-norm"><span>leftNorm</span></a>: % -&gt; R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="Magma.html#l-magma-left-power"><span>leftPower</span></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Magma.html#l-magma"><span>Magma</span></a></dd>
+<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-left-rank-polynomial"><span>leftRankPolynomial</span></a>: () -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R</dt>
+<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><span>FramedNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-recip"><span>leftRecip</span></a>: % -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-left-regular-representation"><span>leftRegularRepresentation</span></a>: % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> R</dt>
+<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><span>FramedNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-regular-representation"><span>leftRegularRepresentation</span></a>: (%, <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> %) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-trace"><span>leftTrace</span></a>: % -&gt; R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-left-trace-matrix"><span>leftTraceMatrix</span></a>: () -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> R</dt>
+<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><span>FramedNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-trace-matrix"><span>leftTraceMatrix</span></a>: <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-unit"><span>leftUnit</span></a>: () -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-left-units"><span>leftUnits</span></a>: () -&gt; Union(Record(particular: %, basis: <a class="reference internal" href="List.html#l-list"><span>List</span></a> %), failed)</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-lie-admissible"><span>lieAdmissible?</span></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-lie-algebra"><span>lieAlgebra?</span></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="Finite.html#l-finite-lookup"><span>lookup</span></a>: % -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a> if R has <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dt>
+<dd>from <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-noncommutative-jordan-algebra"><span>noncommutativeJordanAlgebra?</span></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-opposite"><span>opposite?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></dd>
+<dt><a class="reference internal" href="NonAssociativeAlgebra.html#l-non-associative-algebra-plenary-power"><span>plenaryPower</span></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="NonAssociativeAlgebra.html#l-non-associative-algebra"><span>NonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-power-associative"><span>powerAssociative?</span></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="Finite.html#l-finite-random"><span>random</span></a>: () -&gt; % if R has <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dt>
+<dd>from <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dd>
+<dt><a class="reference internal" href="FramedModule.html#l-framed-module-rank"><span>rank</span></a>: () -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a></dt>
+<dd>from <a class="reference internal" href="FramedModule.html#l-framed-module"><span>FramedModule</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-recip"><span>recip</span></a>: % -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-represents"><span>represents</span></a>: (<a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> R, <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FramedModule.html#l-framed-module-represents"><span>represents</span></a>: <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> R -&gt; %</dt>
+<dd>from <a class="reference internal" href="FramedModule.html#l-framed-module"><span>FramedModule</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-alternative"><span>rightAlternative?</span></a>: () -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-characteristic-polynomial"><span>rightCharacteristicPolynomial</span></a>: % -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-right-discriminant"><span>rightDiscriminant</span></a>: () -&gt; R</dt>
+<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><span>FramedNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-discriminant"><span>rightDiscriminant</span></a>: <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> % -&gt; R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-minimal-polynomial"><span>rightMinimalPolynomial</span></a>: % -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-norm"><span>rightNorm</span></a>: % -&gt; R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="Magma.html#l-magma-right-power"><span>rightPower</span></a>: (%, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Magma.html#l-magma"><span>Magma</span></a></dd>
+<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-right-rank-polynomial"><span>rightRankPolynomial</span></a>: () -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R</dt>
+<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><span>FramedNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-recip"><span>rightRecip</span></a>: % -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-right-regular-representation"><span>rightRegularRepresentation</span></a>: % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> R</dt>
+<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><span>FramedNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-regular-representation"><span>rightRegularRepresentation</span></a>: (%, <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> %) -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-trace"><span>rightTrace</span></a>: % -&gt; R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-right-trace-matrix"><span>rightTraceMatrix</span></a>: () -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> R</dt>
+<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><span>FramedNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-trace-matrix"><span>rightTraceMatrix</span></a>: <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-unit"><span>rightUnit</span></a>: () -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-right-units"><span>rightUnits</span></a>: () -&gt; Union(Record(particular: %, basis: <a class="reference internal" href="List.html#l-list"><span>List</span></a> %), failed)</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-sample"><span>sample</span></a>: %</dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></dd>
+<dt><a class="reference internal" href="Finite.html#l-finite-size"><span>size</span></a>: () -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> if R has <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dt>
+<dd>from <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dd>
+<dt><a class="reference internal" href="Comparable.html#l-comparable-smaller"><span>smaller?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if R has <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dt>
+<dd>from <a class="reference internal" href="Comparable.html#l-comparable"><span>Comparable</span></a></dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-some-basis"><span>someBasis</span></a>: () -&gt; <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> %</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra-structural-constants"><span>structuralConstants</span></a>: () -&gt; <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> R</dt>
+<dd>from <a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><span>FramedNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-structural-constants"><span>structuralConstants</span></a>: <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> % -&gt; <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> R</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid-subtract-if-can"><span>subtractIfCan</span></a>: (%, %) -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><span>CancellationAbelianMonoid</span></a></dd>
+<dt><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra-unit"><span>unit</span></a>: () -&gt; Union(%, failed)</dt>
+<dd>from <a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</dd>
+<dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-zero"><span>zero?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></dd>
 </dl>
-<p><a class="reference internal" href="AbelianGroup.html#l-abelian-group"><em>AbelianGroup</em></a></p>
-<p><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><em>AbelianMonoid</em></a></p>
-<p><a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><em>AbelianSemiGroup</em></a></p>
-<p><a class="reference internal" href="BasicType.html#l-basic-type"><em>BasicType</em></a></p>
-<p><a class="reference internal" href="BiModule.html#l-bi-module"><em>BiModule</em></a>(R, R)</p>
-<p><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><em>CancellationAbelianMonoid</em></a></p>
-<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><em>CoercibleTo</em></a> <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></p>
-<p><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><em>FiniteRankNonAssociativeAlgebra</em></a> R</p>
-<p><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><em>FramedNonAssociativeAlgebra</em></a> R</p>
-<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> R</p>
-<p><a class="reference internal" href="LeftModule.html#l-left-module"><em>LeftModule</em></a> <a class="reference internal" href="SquareMatrix.html#l-square-matrix"><em>SquareMatrix</em></a>(n, R)</p>
-<p><a class="reference internal" href="Magma.html#l-magma"><em>Magma</em></a></p>
-<p><a class="reference internal" href="Module.html#l-module"><em>Module</em></a> R</p>
-<p><a class="reference internal" href="NonAssociativeAlgebra.html#l-non-associative-algebra"><em>NonAssociativeAlgebra</em></a> R</p>
-<p><a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng"><em>NonAssociativeRng</em></a></p>
-<p><a class="reference internal" href="NonAssociativeSemiRng.html#l-non-associative-semi-rng"><em>NonAssociativeSemiRng</em></a></p>
-<p><a class="reference internal" href="RightModule.html#l-right-module"><em>RightModule</em></a> R</p>
-<p><a class="reference internal" href="SetCategory.html#l-set-category"><em>SetCategory</em></a></p>
-<p><a class="reference internal" href="unitsKnown.html#l-units-known"><em>unitsKnown</em></a></p>
+<p><a class="reference internal" href="AbelianGroup.html#l-abelian-group"><span>AbelianGroup</span></a></p>
+<p><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></p>
+<p><a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><span>AbelianSemiGroup</span></a></p>
+<p><a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></p>
+<p><a class="reference internal" href="BiModule.html#l-bi-module"><span>BiModule</span></a>(R, R)</p>
+<p><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><span>CancellationAbelianMonoid</span></a></p>
+<p><a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></p>
+<p><a class="reference internal" href="Comparable.html#l-comparable"><span>Comparable</span></a> if R has <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></p>
+<p><a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><span>ConvertibleTo</span></a> <a class="reference internal" href="InputForm.html#l-input-form"><span>InputForm</span></a> if R has <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></p>
+<p><a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a> if R has <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></p>
+<p><a class="reference internal" href="FiniteRankNonAssociativeAlgebra.html#l-finite-rank-non-associative-algebra"><span>FiniteRankNonAssociativeAlgebra</span></a> R</p>
+<p><a class="reference internal" href="FramedModule.html#l-framed-module"><span>FramedModule</span></a> R</p>
+<p><a class="reference internal" href="FramedNonAssociativeAlgebra.html#l-framed-non-associative-algebra"><span>FramedNonAssociativeAlgebra</span></a> R</p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><span>LeftModule</span></a> R</p>
+<p><a class="reference internal" href="LeftModule.html#l-left-module"><span>LeftModule</span></a> <a class="reference internal" href="SquareMatrix.html#l-square-matrix"><span>SquareMatrix</span></a>(n, R)</p>
+<p><a class="reference internal" href="Magma.html#l-magma"><span>Magma</span></a></p>
+<p><a class="reference internal" href="Module.html#l-module"><span>Module</span></a> R</p>
+<p><a class="reference internal" href="NonAssociativeAlgebra.html#l-non-associative-algebra"><span>NonAssociativeAlgebra</span></a> R</p>
+<p><a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng"><span>NonAssociativeRng</span></a></p>
+<p><a class="reference internal" href="NonAssociativeSemiRng.html#l-non-associative-semi-rng"><span>NonAssociativeSemiRng</span></a></p>
+<p><a class="reference internal" href="RightModule.html#l-right-module"><span>RightModule</span></a> R</p>
+<p><a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></p>
+<p><a class="reference internal" href="unitsKnown.html#l-units-known"><span>unitsKnown</span></a></p>
 </div>
 
 
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -285,7 +303,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -302,7 +320,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -314,12 +332,12 @@
         <li class="right" >
           <a href="Domains.html" title="Domains"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

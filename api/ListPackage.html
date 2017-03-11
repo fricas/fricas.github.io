@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>ListPackage T &mdash; FriCAS 1.3.1 API</title>
+    
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.3.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="up" title="Packages" href="Packages.html" />
+    <link rel="next" title="ListToMap(A, B)" href="ListToMap.html" />
+    <link rel="prev" title="ListFunctions3(A, B, C)" href="ListFunctions3.html" /> 
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="ListToMap.html" title="ListToMap(A, B)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="ListFunctions3.html" title="ListFunctions3(A, B, C)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="listpackage-t">
+<span id="l-list-package"></span><span id="index-0"></span><h1>ListPackage T<a class="headerlink" href="#listpackage-t" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//logic.spad#L129">logic.spad line 129</a></p>
+<ul class="simple">
+<li>T: <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></li>
+</ul>
+<p>splitting lists</p>
+<span class="target" id="l-list-package-cartesian"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">cartesian</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> T -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> T</dt>
+<dd><code class="docutils literal"><span class="pre">cartesian([S1,</span> <span class="pre">S2,</span> <span class="pre">...])</span></code> returns the set of lists [<code class="docutils literal"><span class="pre">s1</span></code>, <code class="docutils literal"><span class="pre">s2</span></code>, ...] with <code class="docutils literal"><span class="pre">si</span></code> in <code class="docutils literal"><span class="pre">Si</span></code></dd>
+</dl>
+<span class="target" id="l-list-package-cartesian-power"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">cartesianPower</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> T, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> T</dt>
+<dd><code class="docutils literal"><span class="pre">cartesianPower(S,</span> <span class="pre">n)</span></code> returns the <code class="docutils literal"><span class="pre">n</span></code>-th cartesian power of the list <code class="docutils literal"><span class="pre">S</span></code></dd>
+</dl>
+<span class="target" id="l-list-package-min-shift"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">minShift</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> T -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> T if T has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">minShift(l)</span></code> returns the lexicographically minimal cyclic rotation of the list <code class="docutils literal"><span class="pre">l</span></code></dd>
+</dl>
+<span class="target" id="l-list-package-shift-left"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">shiftLeft</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> T -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> T</dt>
+<dd><code class="docutils literal"><span class="pre">leftShift(l)</span></code> rotates the list <code class="docutils literal"><span class="pre">l</span></code> to the left and inserts the first element at the end</dd>
+</dl>
+<span class="target" id="l-list-package-split-list"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">splitList</span>: (T -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, <a class="reference internal" href="List.html#l-list"><span>List</span></a> T) -&gt; Record(yes: <a class="reference internal" href="List.html#l-list"><span>List</span></a> T, no: <a class="reference internal" href="List.html#l-list"><span>List</span></a> T)</dt>
+<dd><code class="docutils literal"><span class="pre">splitList(f,</span> <span class="pre">x)</span></code> splits the list <code class="docutils literal"><span class="pre">x</span></code> into a yes part and a no part according to the boolean function <code class="docutils literal"><span class="pre">f</span></code></dd>
+</dl>
+<span class="target" id="l-list-package-topological-sort"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">topologicalSort!</span>: ((T, T) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, <a class="reference internal" href="List.html#l-list"><span>List</span></a> T) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> T</dt>
+<dd><code class="docutils literal"><span class="pre">topologicalSort(xx)</span></code> returns a rearrangement of the elements which is compatible with the partial order. The argument list <code class="docutils literal"><span class="pre">xx</span></code> is destroyed.</dd>
+</dl>
+<span class="target" id="id1"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">topologicalSort</span>: ((T, T) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, <a class="reference internal" href="List.html#l-list"><span>List</span></a> T) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> T</dt>
+<dd><code class="docutils literal"><span class="pre">topologicalSort(xx)</span></code> returns a rearrangement of the elements which is compatible with the partial order.</dd>
+</dl>
+<dl class="docutils" id="index-8">
+<dt><span class="spadfun">topologicalSort</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, <a class="reference internal" href="List.html#l-list"><span>List</span></a> T) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> T</dt>
+<dd><code class="docutils literal"><span class="pre">topologicalSort(xx)</span></code> returns a rearrangement of the elements which is compatible with the partial order. (Martin Baker) <code class="docutils literal"><span class="pre">I</span></code> added this version because predicate function can be difficult to work with so use table instead.</dd>
+</dl>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Categories.html">Categories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Domains.html">Domains</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="Packages.html">Packages</a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="ListToMap.html" title="ListToMap(A, B)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="ListFunctions3.html" title="ListFunctions3(A, B, C)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
+    </div>
+  </body>
+</html>

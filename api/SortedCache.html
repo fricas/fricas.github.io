@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SortedCache S &mdash; FriCAS 1.2.7 API</title>
+    <title>SortedCache S &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="SortPackage(S, A)" href="SortPackage.html" />
     <link rel="prev" title="SmithNormalForm(R, Row, Col, M)" href="SmithNormalForm.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,38 +43,38 @@
         <li class="right" >
           <a href="SmithNormalForm.html" title="SmithNormalForm(R, Row, Col, M)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="sortedcache-s">
 <span id="l-sorted-cache"></span><span id="index-0"></span><h1>SortedCache S<a class="headerlink" href="#sortedcache-s" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//kl.spad#L15">kl.spad line 15</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//kl.spad#L14">kl.spad line 14</a></p>
 <ul class="simple">
-<li>S: <a class="reference internal" href="CachableSet.html#l-cachable-set"><em>CachableSet</em></a></li>
+<li>S: <a class="reference internal" href="CachableSet.html#l-cachable-set"><span>CachableSet</span></a></li>
 </ul>
-<p>Cache of elements in a set Author: Manuel Bronstein Date Created: 31 Oct 1988 Date Last Updated: 14 May 1991 A sorted cache of a cachable set <tt class="docutils literal"><span class="pre">S</span></tt> is a dynamic structure that keeps the elements of <tt class="docutils literal"><span class="pre">S</span></tt> sorted and assigns an integer to each element of <tt class="docutils literal"><span class="pre">S</span></tt> once it is in the cache. This way, equality and ordering on <tt class="docutils literal"><span class="pre">S</span></tt> are tested directly on the integers associated with the elements of <tt class="docutils literal"><span class="pre">S</span></tt>, once they have been entered in the cache.</p>
+<p>A sorted cache of a cachable set <code class="docutils literal"><span class="pre">S</span></code> is a dynamic structure that keeps the elements of <code class="docutils literal"><span class="pre">S</span></code> sorted and assigns an integer to each element of <code class="docutils literal"><span class="pre">S</span></code> once it is in the cache. This way, equality and ordering on <code class="docutils literal"><span class="pre">S</span></code> are tested directly on the integers associated with the elements of <code class="docutils literal"><span class="pre">S</span></code>, once they have been entered in the cache.</p>
 <span class="target" id="l-sorted-cache-clear-cache"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">clearCache</span>: () -&gt; <a class="reference internal" href="Void.html#l-void"><em>Void</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">clearCache()</span></tt> empties the cache.</dd>
+<dt><span class="spadfun">clearCache</span>: () -&gt; <a class="reference internal" href="Void.html#l-void"><span>Void</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">clearCache()</span></code> empties the cache.</dd>
 </dl>
 <span class="target" id="l-sorted-cache-enter-in-cache"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">enterInCache</span>: (S, (S, S) -&gt; <a class="reference internal" href="Integer.html#l-integer"><em>Integer</em></a>) -&gt; S</dt>
-<dd><tt class="docutils literal"><span class="pre">enterInCache(x,</span> <span class="pre">f)</span></tt> enters <tt class="docutils literal"><span class="pre">x</span></tt> in the cache, calling <tt class="docutils literal"><span class="pre">f(x,</span> <span class="pre">y)</span></tt> to determine whether <tt class="docutils literal"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">y</span> <span class="pre">(f(x,</span> <span class="pre">y)</span> <span class="pre">&lt;</span> <span class="pre">0),</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">y</span> <span class="pre">(f(x,</span> <span class="pre">y)</span> <span class="pre">=</span> <span class="pre">0)</span></tt>, or <tt class="docutils literal"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span> <span class="pre">(f(x,</span> <span class="pre">y)</span> <span class="pre">&gt;</span> <span class="pre">0)</span></tt>. It returns <tt class="docutils literal"><span class="pre">x</span></tt> with an integer associated with it.</dd>
+<dt><span class="spadfun">enterInCache</span>: (S, (S, S) -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; S</dt>
+<dd><code class="docutils literal"><span class="pre">enterInCache(x,</span> <span class="pre">f)</span></code> enters <code class="docutils literal"><span class="pre">x</span></code> in the cache, calling <code class="docutils literal"><span class="pre">f(x,</span> <span class="pre">y)</span></code> to determine whether <code class="docutils literal"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">y</span> <span class="pre">(f(x,</span> <span class="pre">y)</span> <span class="pre">&lt;</span> <span class="pre">0),</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">y</span> <span class="pre">(f(x,</span> <span class="pre">y)</span> <span class="pre">=</span> <span class="pre">0)</span></code>, or <code class="docutils literal"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">y</span> <span class="pre">(f(x,</span> <span class="pre">y)</span> <span class="pre">&gt;</span> <span class="pre">0)</span></code>. It returns <code class="docutils literal"><span class="pre">x</span></code> with an integer associated with it.</dd>
 </dl>
 <dl class="docutils" id="index-3">
-<dt><span class="spadfun">enterInCache</span>: (S, S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; S</dt>
-<dd><tt class="docutils literal"><span class="pre">enterInCache(x,</span> <span class="pre">f)</span></tt> enters <tt class="docutils literal"><span class="pre">x</span></tt> in the cache, calling <tt class="docutils literal"><span class="pre">f(y)</span></tt> to determine whether <tt class="docutils literal"><span class="pre">x</span></tt> is equal to <tt class="docutils literal"><span class="pre">y</span></tt>. It returns <tt class="docutils literal"><span class="pre">x</span></tt> with an integer associated with it.</dd>
+<dt><span class="spadfun">enterInCache</span>: (S, S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>) -&gt; S</dt>
+<dd><code class="docutils literal"><span class="pre">enterInCache(x,</span> <span class="pre">f)</span></code> enters <code class="docutils literal"><span class="pre">x</span></code> in the cache, calling <code class="docutils literal"><span class="pre">f(y)</span></code> to determine whether <code class="docutils literal"><span class="pre">x</span></code> is equal to <code class="docutils literal"><span class="pre">y</span></code>. It returns <code class="docutils literal"><span class="pre">x</span></code> with an integer associated with it.</dd>
 </dl>
 <span class="target" id="l-sorted-cache-linear-search"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">linearSearch</span>: (S, S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a>) -&gt; Union(S, failed)</dt>
-<dd><tt class="docutils literal"><span class="pre">linearSearch(x,</span> <span class="pre">f)</span></tt> searches <tt class="docutils literal"><span class="pre">x</span></tt> in the cache, calling <tt class="docutils literal"><span class="pre">f(y)</span></tt> to determine whether <tt class="docutils literal"><span class="pre">x</span></tt> is equal to <tt class="docutils literal"><span class="pre">y</span></tt>. It returns <tt class="docutils literal"><span class="pre">y</span></tt> from cache such that <tt class="docutils literal"><span class="pre">f</span></tt>(<tt class="docutils literal"><span class="pre">y</span></tt>) or failed is no such <tt class="docutils literal"><span class="pre">y</span></tt> exists.</dd>
+<dt><span class="spadfun">linearSearch</span>: (S, S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>) -&gt; Union(S, failed)</dt>
+<dd><code class="docutils literal"><span class="pre">linearSearch(x,</span> <span class="pre">f)</span></code> searches <code class="docutils literal"><span class="pre">x</span></code> in the cache, calling <code class="docutils literal"><span class="pre">f(y)</span></code> to determine whether <code class="docutils literal"><span class="pre">x</span></code> is equal to <code class="docutils literal"><span class="pre">y</span></code>. It returns <code class="docutils literal"><span class="pre">y</span></code> from cache such that <code class="docutils literal"><span class="pre">f</span></code>(<code class="docutils literal"><span class="pre">y</span></code>) or failed is no such <code class="docutils literal"><span class="pre">y</span></code> exists.</dd>
 </dl>
 </div>
 
@@ -82,7 +82,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -91,7 +91,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -108,7 +108,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -120,12 +120,12 @@
         <li class="right" >
           <a href="SmithNormalForm.html" title="SmithNormalForm(R, Row, Col, M)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

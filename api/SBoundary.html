@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SBoundary PT &mdash; FriCAS 1.2.7 API</title>
+    <title>SBoundary PT &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="SCartesian n" href="SCartesian.html" />
     <link rel="prev" title="SArgand" href="SArgand.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,90 +43,90 @@
         <li class="right" >
           <a href="SArgand.html" title="SArgand"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="sboundary-pt">
 <span id="l-s-boundary"></span><span id="index-0"></span><h1>SBoundary PT<a class="headerlink" href="#sboundary-pt" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//scene.spad#L3344">scene.spad line 3344</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//scene.spad#L3343">scene.spad line 3343</a></p>
 <ul class="simple">
-<li>PT: <a class="reference internal" href="SPointCategory.html#l-s-point-category"><em>SPointCategory</em></a></li>
+<li>PT: <a class="reference internal" href="SPointCategory.html#l-s-point-category"><span>SPointCategory</span></a></li>
 </ul>
-<p>SBoundary implements boundaries for use in scene graph This defines the outer extent of the scene, or of an element in the scene, or of some branch in the scene. The difference between this boundary and an <tt class="docutils literal"><span class="pre">n</span></tt>-dimensional surface, such as IFS, is that boundary must always have a well defined inside and an outside. SBoundary does not necessarily follow the exact outer contours of the shape but just constructs a simple boundary shape where all points of the shape are guaranteed to be inside the boundary. Currently there are the following boundary forms: Simple types: &#8220;box&#8221;::Symbol which is a <tt class="docutils literal"><span class="pre">n</span></tt>-dimensional axis-aligned rectangle. &#8220;ellipoid&#8221;::Symbol which is a <tt class="docutils literal"><span class="pre">n</span></tt>-dimensional axis-aligned ellipse. Compound types: This is a combination of simple and other compound types such as union or intersection. &#8220;union&#8221;::Symbol represents union of supplied list &#8220;intersection&#8221;::Symbol represents intersection of supplied list Null types: &#8220;none&#8221; is used for a node which does not have a boundary in space, for example, when the boundary of a material node is requested. The uses of SBoundary are: 1) So we know how much to scale a given scene to fit in a given size. 2) So that we know where to terminate arrows going in out out of of the shape. 3) To detect if objects intersect (collision detect), or if one object is contained completely inside another.</p>
+<p>SBoundary implements boundaries for use in scene graph This defines the outer extent of the scene, or of an element in the scene, or of some branch in the scene. The difference between this boundary and an <code class="docutils literal"><span class="pre">n</span></code>-dimensional surface, such as IFS, is that boundary must always have a well defined inside and an outside. SBoundary does not necessarily follow the exact outer contours of the shape but just constructs a simple boundary shape where all points of the shape are guaranteed to be inside the boundary. Currently there are the following boundary forms: Simple types: &#8220;box&#8221;::Symbol which is a <code class="docutils literal"><span class="pre">n</span></code>-dimensional axis-aligned rectangle. &#8220;ellipoid&#8221;::Symbol which is a <code class="docutils literal"><span class="pre">n</span></code>-dimensional axis-aligned ellipse. Compound types: This is a combination of simple and other compound types such as union or intersection. &#8220;union&#8221;::Symbol represents union of supplied list &#8220;intersection&#8221;::Symbol represents intersection of supplied list Null types: &#8220;none&#8221; is used for a node which does not have a boundary in space, for example, when the boundary of a material node is requested. The uses of SBoundary are: 1) So we know how much to scale a given scene to fit in a given size. 2) So that we know where to terminate arrows going in out out of of the shape. 3) To detect if objects intersect (collision detect), or if one object is contained completely inside another.</p>
 <span class="target" id="l-s-boundary-box-boundary"></span><dl class="docutils" id="index-1">
 <dt><span class="spadfun">boxBoundary</span>: (PT, PT) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">boxBoundary(c1,</span> <span class="pre">c2)</span></tt> constructs a box boundary (<tt class="docutils literal"><span class="pre">n</span></tt>-dimensional axis-aligned rectangle) with given parameters <tt class="docutils literal"><span class="pre">c1:</span></tt> <tt class="docutils literal"><span class="pre">PT</span></tt> holds minimum coordinates <tt class="docutils literal"><span class="pre">c2:</span></tt> <tt class="docutils literal"><span class="pre">PT</span></tt> holds maximum coordinates</dd>
+<dd><code class="docutils literal"><span class="pre">boxBoundary(c1,</span> <span class="pre">c2)</span></code> constructs a box boundary (<code class="docutils literal"><span class="pre">n</span></code>-dimensional axis-aligned rectangle) with given parameters <code class="docutils literal"><span class="pre">c1:</span></code> <code class="docutils literal"><span class="pre">PT</span></code> holds minimum coordinates <code class="docutils literal"><span class="pre">c2:</span></code> <code class="docutils literal"><span class="pre">PT</span></code> holds maximum coordinates</dd>
 </dl>
 <span class="target" id="l-s-boundary-coerce"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><em>OutputForm</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">coerce(bd)</span></tt> outputs description of <tt class="docutils literal"><span class="pre">bd</span></tt> as formatted text</dd>
+<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">coerce(bd)</span></code> outputs description of <code class="docutils literal"><span class="pre">bd</span></code> as formatted text</dd>
 </dl>
 <span class="target" id="l-s-boundary-contains-point"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">containsPoint?</span>: (%, PT) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">containsPoint?(n,</span> <span class="pre">p)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if the point is inside the boundary. <tt class="docutils literal"><span class="pre">n</span></tt> is the boundary <tt class="docutils literal"><span class="pre">p</span></tt> is the point</dd>
+<dt><span class="spadfun">containsPoint?</span>: (%, PT) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">containsPoint?(n,</span> <span class="pre">p)</span></code> returns <code class="docutils literal"><span class="pre">true</span></code> if the point is inside the boundary. <code class="docutils literal"><span class="pre">n</span></code> is the boundary <code class="docutils literal"><span class="pre">p</span></code> is the point</dd>
 </dl>
 <span class="target" id="l-s-boundary-ellipse-boundary"></span><dl class="docutils" id="index-4">
 <dt><span class="spadfun">ellipseBoundary</span>: (PT, PT) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">ellipseBoundary(c1,</span> <span class="pre">c2)</span></tt> constructs an ellipse boundary <tt class="docutils literal"><span class="pre">n</span></tt>-dimensional axis-aligned ellipoid with given parameters <tt class="docutils literal"><span class="pre">c1:</span></tt> <tt class="docutils literal"><span class="pre">PT</span></tt> holds centre point <tt class="docutils literal"><span class="pre">c2:</span></tt> <tt class="docutils literal"><span class="pre">PT</span></tt> holds extent (radius for each coordinate)</dd>
+<dd><code class="docutils literal"><span class="pre">ellipseBoundary(c1,</span> <span class="pre">c2)</span></code> constructs an ellipse boundary <code class="docutils literal"><span class="pre">n</span></code>-dimensional axis-aligned ellipoid with given parameters <code class="docutils literal"><span class="pre">c1:</span></code> <code class="docutils literal"><span class="pre">PT</span></code> holds centre point <code class="docutils literal"><span class="pre">c2:</span></code> <code class="docutils literal"><span class="pre">PT</span></code> holds extent (radius for each coordinate)</dd>
 </dl>
 <span class="target" id="l-s-boundary-extend-to-point"></span><dl class="docutils" id="index-5">
 <dt><span class="spadfun">extendToPoint</span>: (%, PT) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">extendToPoint(n,</span> <span class="pre">p)</span></tt> creates a boundary that is the union of a boundary and a point. <tt class="docutils literal"><span class="pre">n</span></tt> is the boundary <tt class="docutils literal"><span class="pre">p</span></tt> is the point</dd>
+<dd><code class="docutils literal"><span class="pre">extendToPoint(n,</span> <span class="pre">p)</span></code> creates a boundary that is the union of a boundary and a point. <code class="docutils literal"><span class="pre">n</span></code> is the boundary <code class="docutils literal"><span class="pre">p</span></code> is the point</dd>
 </dl>
 <span class="target" id="l-s-boundary-get-centre"></span><dl class="docutils" id="index-6">
 <dt><span class="spadfun">getCentre</span>: % -&gt; PT</dt>
-<dd><tt class="docutils literal"><span class="pre">getCentre(n)</span></tt> returns centre coordinate of the boundary. <tt class="docutils literal"><span class="pre">n:</span></tt> % is the boundary</dd>
+<dd><code class="docutils literal"><span class="pre">getCentre(n)</span></code> returns centre coordinate of the boundary. <code class="docutils literal"><span class="pre">n:</span></code> % is the boundary</dd>
 </dl>
 <span class="target" id="l-s-boundary-get-max"></span><dl class="docutils" id="index-7">
 <dt><span class="spadfun">getMax</span>: % -&gt; PT</dt>
-<dd><tt class="docutils literal"><span class="pre">getMax(n)</span></tt> returns maximum coordinate of the boundary. <tt class="docutils literal"><span class="pre">n</span></tt> is the boundary</dd>
+<dd><code class="docutils literal"><span class="pre">getMax(n)</span></code> returns maximum coordinate of the boundary. <code class="docutils literal"><span class="pre">n</span></code> is the boundary</dd>
 </dl>
 <span class="target" id="l-s-boundary-get-min"></span><dl class="docutils" id="index-8">
 <dt><span class="spadfun">getMin</span>: % -&gt; PT</dt>
-<dd><tt class="docutils literal"><span class="pre">getMin(n)</span></tt> returns minimum coordinate of the boundary. <tt class="docutils literal"><span class="pre">n</span></tt> is the boundary</dd>
+<dd><code class="docutils literal"><span class="pre">getMin(n)</span></code> returns minimum coordinate of the boundary. <code class="docutils literal"><span class="pre">n</span></code> is the boundary</dd>
 </dl>
 <span class="target" id="l-s-boundary-intersection"></span><dl class="docutils" id="index-9">
-<dt><span class="spadfun">intersection</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">intersection(x)</span></tt> constructs a compound boundary from the intersection of <tt class="docutils literal"><span class="pre">x</span></tt> <tt class="docutils literal"><span class="pre">x:</span></tt> List % is supplied list of boundaries to form intersection.</dd>
+<dt><span class="spadfun">intersection</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> % -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">intersection(x)</span></code> constructs a compound boundary from the intersection of <code class="docutils literal"><span class="pre">x</span></code> <code class="docutils literal"><span class="pre">x:</span></code> List % is supplied list of boundaries to form intersection.</dd>
 </dl>
 <span class="target" id="l-s-boundary-is-box"></span><dl class="docutils" id="index-10">
-<dt><span class="spadfun">isBox?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">isBox?(n)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if this is a rectangular boundary.</dd>
+<dt><span class="spadfun">isBox?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">isBox?(n)</span></code> returns <code class="docutils literal"><span class="pre">true</span></code> if this is a rectangular boundary.</dd>
 </dl>
 <span class="target" id="l-s-boundary-is-ellipse"></span><dl class="docutils" id="index-11">
-<dt><span class="spadfun">isEllipse?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">isEllipse?(n)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if this is a ellipsoid boundary.</dd>
+<dt><span class="spadfun">isEllipse?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">isEllipse?(n)</span></code> returns <code class="docutils literal"><span class="pre">true</span></code> if this is a ellipsoid boundary.</dd>
 </dl>
 <span class="target" id="l-s-boundary-is-null"></span><dl class="docutils" id="index-12">
-<dt><span class="spadfun">isNull?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><em>Boolean</em></a></dt>
-<dd><tt class="docutils literal"><span class="pre">isNull?(n)</span></tt> returns <tt class="docutils literal"><span class="pre">true</span></tt> if this is a null boundary, that is no boundary</dd>
+<dt><span class="spadfun">isNull?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">isNull?(n)</span></code> returns <code class="docutils literal"><span class="pre">true</span></code> if this is a null boundary, that is no boundary</dd>
 </dl>
 <span class="target" id="l-s-boundary-line-intersect"></span><dl class="docutils" id="index-13">
 <dt><span class="spadfun">lineIntersect</span>: (%, PT) -&gt; PT</dt>
-<dd><tt class="docutils literal"><span class="pre">lineIntersect(n,</span> <span class="pre">p)</span></tt> returns the point where a line, from the centre of the boundary to the point <tt class="docutils literal"><span class="pre">p</span></tt>, intersects with the boundary. <tt class="docutils literal"><span class="pre">n:</span></tt> % is the boundary <tt class="docutils literal"><span class="pre">p:</span></tt> <tt class="docutils literal"><span class="pre">PT</span></tt> is the point at the end of the line (outside boundary)</dd>
+<dd><code class="docutils literal"><span class="pre">lineIntersect(n,</span> <span class="pre">p)</span></code> returns the point where a line, from the centre of the boundary to the point <code class="docutils literal"><span class="pre">p</span></code>, intersects with the boundary. <code class="docutils literal"><span class="pre">n:</span></code> % is the boundary <code class="docutils literal"><span class="pre">p:</span></code> <code class="docutils literal"><span class="pre">PT</span></code> is the point at the end of the line (outside boundary)</dd>
 </dl>
 <span class="target" id="l-s-boundary-link"></span><dl class="docutils" id="index-14">
-<dt><span class="spadfun">link</span>: (%, %) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> PT</dt>
-<dd><tt class="docutils literal"><span class="pre">link(m,</span> <span class="pre">n)</span></tt> returns a line which is the shortest distance between the two boundaries. The line is represented by its two endpoints. <tt class="docutils literal"><span class="pre">m:</span></tt> % is the first boundary to be linked <tt class="docutils literal"><span class="pre">n:</span></tt> % is the second boundary to be linked</dd>
+<dt><span class="spadfun">link</span>: (%, %) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> PT</dt>
+<dd><code class="docutils literal"><span class="pre">link(m,</span> <span class="pre">n)</span></code> returns a line which is the shortest distance between the two boundaries. The line is represented by its two endpoints. <code class="docutils literal"><span class="pre">m:</span></code> % is the first boundary to be linked <code class="docutils literal"><span class="pre">n:</span></code> % is the second boundary to be linked</dd>
 </dl>
 <span class="target" id="l-s-boundary-null-boundary"></span><dl class="docutils" id="index-15">
 <dt><span class="spadfun">nullBoundary</span>: () -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">nullBoundary()</span></tt> constructs a null boundary, for example, when the boundary of a material node is requested.</dd>
+<dd><code class="docutils literal"><span class="pre">nullBoundary()</span></code> constructs a null boundary, for example, when the boundary of a material node is requested.</dd>
 </dl>
 <span class="target" id="l-s-boundary-sunion"></span><dl class="docutils" id="index-16">
 <dt><span class="spadfun">sunion</span>: (%, %) -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">sunion(x,</span> <span class="pre">y)</span></tt> gives the union of two boundaries as a box, that is it gives a box that is external to both. <tt class="docutils literal"><span class="pre">x:</span></tt> % is first boundary to be combined <tt class="docutils literal"><span class="pre">y:</span></tt> % is second boundary to be combined</dd>
+<dd><code class="docutils literal"><span class="pre">sunion(x,</span> <span class="pre">y)</span></code> gives the union of two boundaries as a box, that is it gives a box that is external to both. <code class="docutils literal"><span class="pre">x:</span></code> % is first boundary to be combined <code class="docutils literal"><span class="pre">y:</span></code> % is second boundary to be combined</dd>
 </dl>
 <span class="target" id="l-s-boundary-union"></span><dl class="docutils" id="index-17">
-<dt><span class="spadfun">union</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> % -&gt; %</dt>
-<dd><tt class="docutils literal"><span class="pre">union(x)</span></tt> constructs a compound boundary from the union of <tt class="docutils literal"><span class="pre">x</span></tt> <tt class="docutils literal"><span class="pre">x:</span></tt> List % is supplied list of boundaries to form union</dd>
+<dt><span class="spadfun">union</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> % -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">union(x)</span></code> constructs a compound boundary from the union of <code class="docutils literal"><span class="pre">x</span></code> <code class="docutils literal"><span class="pre">x:</span></code> List % is supplied list of boundaries to form union</dd>
 </dl>
 </div>
 
@@ -134,7 +134,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -143,7 +143,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -160,7 +160,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -172,12 +172,12 @@
         <li class="right" >
           <a href="SArgand.html" title="SArgand"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Domains.html" >Domains</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>

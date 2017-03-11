@@ -6,16 +6,16 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SystemSolvePackage R &mdash; FriCAS 1.2.7 API</title>
+    <title>SystemSolvePackage R &mdash; FriCAS 1.3.1 API</title>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.2.7',
+        VERSION:     '1.3.1',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -24,14 +24,14 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.2.7 API" href="index.html" />
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="TableauxBumpers S" href="TableauxBumpers.html" />
     <link rel="prev" title="SystemODESolver(F, LO)" href="SystemODESolver.html" /> 
   </head>
-  <body>
-    <div class="related">
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,58 +43,58 @@
         <li class="right" >
           <a href="SystemODESolver.html" title="SystemODESolver(F, LO)"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
   <div class="section" id="systemsolvepackage-r">
 <span id="l-system-solve-package"></span><span id="index-0"></span><h1>SystemSolvePackage R<a class="headerlink" href="#systemsolvepackage-r" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//syssolp.spad#L1">syssolp.spad line 1</a></p>
 <ul class="simple">
-<li>R: <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><em>IntegralDomain</em></a></li>
+<li>R: <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><span>IntegralDomain</span></a></li>
 </ul>
-<p>Symbolic solver for systems of rational functions with coefficients in an integral domain <tt class="docutils literal"><span class="pre">R</span></tt>. The systems are solved in the field of rational functions over <tt class="docutils literal"><span class="pre">R</span></tt>. Solutions are exact of the form variable = value when the value is a member of the coefficient domain <tt class="docutils literal"><span class="pre">R</span></tt>. Otherwise the solutions are implicitly expressed as roots of univariate polynomial equations over <tt class="docutils literal"><span class="pre">R</span></tt>. Care is taken to guarantee that the denominators of the input equations do not vanish on the solution sets. The arguments to solve can either be given as equations or as rational functions interpreted as equal to zero. The user can specify an explicit list of symbols to be solved for, treating all other symbols appearing as parameters or omit the list of symbols in which case the system tries to solve with respect to all symbols appearing in the input.</p>
+<p>Symbolic solver for systems of rational functions with coefficients in an integral domain <code class="docutils literal"><span class="pre">R</span></code>. The systems are solved in the field of rational functions over <code class="docutils literal"><span class="pre">R</span></code>. Solutions are exact of the form variable = value when the value is a member of the coefficient domain <code class="docutils literal"><span class="pre">R</span></code>. Otherwise the solutions are implicitly expressed as roots of univariate polynomial equations over <code class="docutils literal"><span class="pre">R</span></code>. Care is taken to guarantee that the denominators of the input equations do not vanish on the solution sets. The arguments to solve can either be given as equations or as rational functions interpreted as equal to zero. The user can specify an explicit list of symbols to be solved for, treating all other symbols appearing as parameters or omit the list of symbols in which case the system tries to solve with respect to all symbols appearing in the input.</p>
 <span class="target" id="l-system-solve-package-solve"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">solve</span>: (<a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
-<dd><tt class="docutils literal"><span class="pre">solve(eq,</span> <span class="pre">v)</span></tt> finds the solutions of the equation <tt class="docutils literal"><span class="pre">eq</span></tt> with respect to the variable <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
+<dt><span class="spadfun">solve</span>: (<a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R, <a class="reference internal" href="Symbol.html#l-symbol"><span>Symbol</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R</dt>
+<dd><code class="docutils literal"><span class="pre">solve(eq,</span> <span class="pre">v)</span></code> finds the solutions of the equation <code class="docutils literal"><span class="pre">eq</span></code> with respect to the variable <code class="docutils literal"><span class="pre">v</span></code>.</dd>
 </dl>
 <dl class="docutils" id="index-2">
-<dt><span class="spadfun">solve</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
-<dd><tt class="docutils literal"><span class="pre">solve(p,</span> <span class="pre">v)</span></tt> solves the equation <tt class="docutils literal"><span class="pre">p=0</span></tt>, where <tt class="docutils literal"><span class="pre">p</span></tt> is a rational function with respect to the variable <tt class="docutils literal"><span class="pre">v</span></tt>.</dd>
+<dt><span class="spadfun">solve</span>: (<a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R, <a class="reference internal" href="Symbol.html#l-symbol"><span>Symbol</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R</dt>
+<dd><code class="docutils literal"><span class="pre">solve(p,</span> <span class="pre">v)</span></code> solves the equation <code class="docutils literal"><span class="pre">p=0</span></code>, where <code class="docutils literal"><span class="pre">p</span></code> is a rational function with respect to the variable <code class="docutils literal"><span class="pre">v</span></code>.</dd>
 </dl>
 <dl class="docutils" id="index-3">
-<dt><span class="spadfun">solve</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
-<dd><tt class="docutils literal"><span class="pre">solve(le,</span> <span class="pre">lv)</span></tt> finds the solutions of the list <tt class="docutils literal"><span class="pre">le</span></tt> of equations of rational functions with respect to the list of symbols <tt class="docutils literal"><span class="pre">lv</span></tt>.</dd>
+<dt><span class="spadfun">solve</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Symbol.html#l-symbol"><span>Symbol</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R</dt>
+<dd><code class="docutils literal"><span class="pre">solve(le,</span> <span class="pre">lv)</span></code> finds the solutions of the list <code class="docutils literal"><span class="pre">le</span></code> of equations of rational functions with respect to the list of symbols <code class="docutils literal"><span class="pre">lv</span></code>.</dd>
 </dl>
 <dl class="docutils" id="index-4">
-<dt><span class="spadfun">solve</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
-<dd><tt class="docutils literal"><span class="pre">solve(lp,</span> <span class="pre">lv)</span></tt> finds the solutions of the list <tt class="docutils literal"><span class="pre">lp</span></tt> of rational functions with respect to the list of symbols <tt class="docutils literal"><span class="pre">lv</span></tt>.</dd>
+<dt><span class="spadfun">solve</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Symbol.html#l-symbol"><span>Symbol</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R</dt>
+<dd><code class="docutils literal"><span class="pre">solve(lp,</span> <span class="pre">lv)</span></code> finds the solutions of the list <code class="docutils literal"><span class="pre">lp</span></code> of rational functions with respect to the list of symbols <code class="docutils literal"><span class="pre">lv</span></code>.</dd>
 </dl>
 <dl class="docutils" id="index-5">
-<dt><span class="spadfun">solve</span>: <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
-<dd><tt class="docutils literal"><span class="pre">solve(eq)</span></tt> finds the solutions of the equation <tt class="docutils literal"><span class="pre">eq</span></tt> with respect to the unique variable appearing in <tt class="docutils literal"><span class="pre">eq</span></tt>.</dd>
+<dt><span class="spadfun">solve</span>: <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R</dt>
+<dd><code class="docutils literal"><span class="pre">solve(eq)</span></code> finds the solutions of the equation <code class="docutils literal"><span class="pre">eq</span></code> with respect to the unique variable appearing in <code class="docutils literal"><span class="pre">eq</span></code>.</dd>
 </dl>
 <dl class="docutils" id="index-6">
-<dt><span class="spadfun">solve</span>: <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
-<dd><tt class="docutils literal"><span class="pre">solve(p)</span></tt> finds the solution of a rational function <tt class="docutils literal"><span class="pre">p</span></tt> = 0 with respect to the unique variable appearing in <tt class="docutils literal"><span class="pre">p</span></tt>.</dd>
+<dt><span class="spadfun">solve</span>: <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R</dt>
+<dd><code class="docutils literal"><span class="pre">solve(p)</span></code> finds the solution of a rational function <code class="docutils literal"><span class="pre">p</span></code> = 0 with respect to the unique variable appearing in <code class="docutils literal"><span class="pre">p</span></code>.</dd>
 </dl>
 <dl class="docutils" id="index-7">
-<dt><span class="spadfun">solve</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
-<dd><tt class="docutils literal"><span class="pre">solve(le)</span></tt> finds the solutions of the list <tt class="docutils literal"><span class="pre">le</span></tt> of equations of rational functions with respect to all symbols appearing in <tt class="docutils literal"><span class="pre">le</span></tt>.</dd>
+<dt><span class="spadfun">solve</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R</dt>
+<dd><code class="docutils literal"><span class="pre">solve(le)</span></code> finds the solutions of the list <code class="docutils literal"><span class="pre">le</span></code> of equations of rational functions with respect to all symbols appearing in <code class="docutils literal"><span class="pre">le</span></code>.</dd>
 </dl>
 <dl class="docutils" id="index-8">
-<dt><span class="spadfun">solve</span>: <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Equation.html#l-equation"><em>Equation</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
-<dd><tt class="docutils literal"><span class="pre">solve(lp)</span></tt> finds the solutions of the list <tt class="docutils literal"><span class="pre">lp</span></tt> of rational functions with respect to all symbols appearing in <tt class="docutils literal"><span class="pre">lp</span></tt>.</dd>
+<dt><span class="spadfun">solve</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R</dt>
+<dd><code class="docutils literal"><span class="pre">solve(lp)</span></code> finds the solutions of the list <code class="docutils literal"><span class="pre">lp</span></code> of rational functions with respect to all symbols appearing in <code class="docutils literal"><span class="pre">lp</span></code>.</dd>
 </dl>
 <span class="target" id="l-system-solve-package-triangular-systems"></span><dl class="docutils" id="index-9">
-<dt><span class="spadfun">triangularSystems</span>: (<a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Fraction.html#l-fraction"><em>Fraction</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R, <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Symbol.html#l-symbol"><em>Symbol</em></a>) -&gt; <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="List.html#l-list"><em>List</em></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><em>Polynomial</em></a> R</dt>
-<dd><tt class="docutils literal"><span class="pre">triangularSystems(lf,</span> <span class="pre">lv)</span></tt> solves the system of equations defined by <tt class="docutils literal"><span class="pre">lf</span></tt> with respect to the list of symbols <tt class="docutils literal"><span class="pre">lv</span></tt>; the system of equations is obtaining by equating to zero the list of rational functions <tt class="docutils literal"><span class="pre">lf</span></tt>. The output is a list of solutions where each solution is expressed as a &#8220;reduced&#8221; triangular system of polynomials.</dd>
+<dt><span class="spadfun">triangularSystems</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Symbol.html#l-symbol"><span>Symbol</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Polynomial.html#l-polynomial"><span>Polynomial</span></a> R</dt>
+<dd><code class="docutils literal"><span class="pre">triangularSystems(lf,</span> <span class="pre">lv)</span></code> solves the system of equations defined by <code class="docutils literal"><span class="pre">lf</span></code> with respect to the list of symbols <code class="docutils literal"><span class="pre">lv</span></code>; the system of equations is obtaining by equating to zero the list of rational functions <code class="docutils literal"><span class="pre">lf</span></code>. The output is a list of solutions where each solution is expressed as a &#8220;reduced&#8221; triangular system of polynomials.</dd>
 </dl>
 </div>
 
@@ -102,7 +102,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
 <h3><a href="index.html">Table Of Contents</a></h3>
 <ul class="current">
@@ -111,7 +111,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="Packages.html">Packages</a></li>
 </ul>
 
-<div id="searchbox" style="display: none">
+<div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
@@ -128,7 +128,7 @@
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -140,12 +140,12 @@
         <li class="right" >
           <a href="SystemODESolver.html" title="SystemODESolver(F, LO)"
              >previous</a> |</li>
-        <li><a href="index.html">FriCAS 1.2.7 API</a> &raquo;</li>
-          <li><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2014-2015, FriCAS Team.
+    <div class="footer" role="contentinfo">
+        &copy; Copyright 2014-2017, FriCAS Team.
     </div>
   </body>
 </html>
