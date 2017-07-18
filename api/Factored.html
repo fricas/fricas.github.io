@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Factored R &mdash; FriCAS 1.3.1 API</title>
+    <title>Factored R &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="FakePolynomial" href="FakePolynomial.html" />
     <link rel="prev" title="ExtAlgBasis" href="ExtAlgBasis.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="ExtAlgBasis.html" title="ExtAlgBasis"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,7 +55,7 @@
             
   <div class="section" id="factored-r">
 <span id="l-factored"></span><span id="index-0"></span><h1>Factored R<a class="headerlink" href="#factored-r" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//fr.spad#L1">fr.spad line 1</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/fr.spad#L1">fr.spad line 1</a></p>
 <ul class="simple">
 <li>R: <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><span>IntegralDomain</span></a></li>
 </ul>
@@ -183,24 +183,20 @@
 <span class="target" id="l-factored-expand"></span><dl class="docutils" id="index-1">
 <dt><span class="spadfun">expand</span>: % -&gt; R</dt>
 <dd><code class="docutils literal"><span class="pre">expand(f)</span></code> multiplies the unit and factors together, yielding an &#8220;unfactored&#8221; object. Note: this is purposely not called <span class="spadfun">coerce</span> which would cause the interpreter to do this automatically.</dd>
-</dl>
-<span class="target" id="l-factored-exponent"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">exponent</span>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
-<dd><code class="docutils literal"><span class="pre">exponent(u)</span></code> returns the exponent of the first factor of spadvar{<code class="docutils literal"><span class="pre">u</span></code>}, or 0 if the factored form consists solely of a unit.</dd>
 <dt><a class="reference internal" href="EntireRing.html#l-entire-ring-exquo"><span>exquo</span></a>: (%, %) -&gt; Union(%, failed)</dt>
 <dd>from <a class="reference internal" href="EntireRing.html#l-entire-ring"><span>EntireRing</span></a></dd>
 <dt><a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain-factor"><span>factor</span></a>: % -&gt; <a class="reference internal" href="#l-factored"><span>Factored</span></a> % if R has <a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain"><span>UniqueFactorizationDomain</span></a></dt>
 <dd>from <a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain"><span>UniqueFactorizationDomain</span></a></dd>
 </dl>
-<span class="target" id="l-factored-factor-list"></span><dl class="docutils" id="index-3">
+<span class="target" id="l-factored-factor-list"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">factorList</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Record(flg: Union(nil, sqfr, irred, prime), fctr: R, xpnt: <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>)</dt>
 <dd><code class="docutils literal"><span class="pre">factorList(u)</span></code> returns the list of factors with flags (for use by factoring code).</dd>
 </dl>
-<span class="target" id="l-factored-factors"></span><dl class="docutils" id="index-4">
+<span class="target" id="l-factored-factors"></span><dl class="docutils" id="index-3">
 <dt><span class="spadfun">factors</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Record(factor: R, exponent: <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>)</dt>
 <dd><code class="docutils literal"><span class="pre">factors(u)</span></code> returns a list of the factors in a form suitable for iteration. That is, it returns a list where each element is a record containing a base and exponent. The original object is the product of all the factors and the unit (which can be extracted by <code class="docutils literal"><span class="pre">unit(u)</span></code>).</dd>
 </dl>
-<span class="target" id="l-factored-flag-factor"></span><dl class="docutils" id="index-5">
+<span class="target" id="l-factored-flag-factor"></span><dl class="docutils" id="index-4">
 <dt><span class="spadfun">flagFactor</span>: (R, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, Union(nil, sqfr, irred, prime)) -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">flagFactor(base,</span> <span class="pre">exponent,</span> <span class="pre">flag)</span></code> creates a factored object with a single factor whose <code class="docutils literal"><span class="pre">base</span></code> is asserted to be properly described by the information flag.</dd>
 <dt><a class="reference internal" href="GcdDomain.html#l-gcd-domain-gcd"><span>gcd</span></a>: (%, %) -&gt; % if R has <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><span>GcdDomain</span></a></dt>
@@ -214,7 +210,7 @@
 <dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><span>hashUpdate!</span></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a></dt>
 <dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
 </dl>
-<span class="target" id="l-factored-irreducible-factor"></span><dl class="docutils" id="index-6">
+<span class="target" id="l-factored-irreducible-factor"></span><dl class="docutils" id="index-5">
 <dt><span class="spadfun">irreducibleFactor</span>: (R, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">irreducibleFactor(base,</span> <span class="pre">exponent)</span></code> creates a factored object with a single factor whose <code class="docutils literal"><span class="pre">base</span></code> is asserted to be irreducible (flag = &#8220;irred&#8221;).</dd>
 <dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><span>latex</span></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a></dt>
@@ -232,31 +228,19 @@
 <dt><a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit-left-recip"><span>leftRecip</span></a>: % -&gt; Union(%, failed)</dt>
 <dd>from <a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit"><span>MagmaWithUnit</span></a></dd>
 </dl>
-<span class="target" id="l-factored-make-f-r"></span><dl class="docutils" id="index-7">
+<span class="target" id="l-factored-make-f-r"></span><dl class="docutils" id="index-6">
 <dt><span class="spadfun">makeFR</span>: (R, <a class="reference internal" href="List.html#l-list"><span>List</span></a> Record(flg: Union(nil, sqfr, irred, prime), fctr: R, xpnt: <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>)) -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">makeFR(unit,</span> <span class="pre">listOfFactors)</span></code> creates a factored object (for use by factoring code).</dd>
 </dl>
-<span class="target" id="l-factored-map"></span><dl class="docutils" id="index-8">
+<span class="target" id="l-factored-map"></span><dl class="docutils" id="index-7">
 <dt><span class="spadfun">map</span>: (R -&gt; R, %) -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">map(fn,</span> <span class="pre">u)</span></code> maps the function userfun{<code class="docutils literal"><span class="pre">fn</span></code>} across the factors of spadvar{<code class="docutils literal"><span class="pre">u</span></code>} and creates a new factored object. Note: this clears the information flags (sets them to &#8220;nil&#8221;) because the effect of userfun{<code class="docutils literal"><span class="pre">fn</span></code>} is clearly not known in general.</dd>
 </dl>
-<span class="target" id="l-factored-nil-factor"></span><dl class="docutils" id="index-9">
+<span class="target" id="l-factored-nil-factor"></span><dl class="docutils" id="index-8">
 <dt><span class="spadfun">nilFactor</span>: (R, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">nilFactor(base,</span> <span class="pre">exponent)</span></code> creates a factored object with a single factor with no information about the kind of <code class="docutils literal"><span class="pre">base</span></code> (flag = &#8220;nil&#8221;).</dd>
 </dl>
-<span class="target" id="l-factored-nth-exponent"></span><dl class="docutils" id="index-10">
-<dt><span class="spadfun">nthExponent</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
-<dd><code class="docutils literal"><span class="pre">nthExponent(u,</span> <span class="pre">n)</span></code> returns the exponent of the <code class="docutils literal"><span class="pre">n</span></code>th factor of spadvar{<code class="docutils literal"><span class="pre">u</span></code>}. If spadvar{<code class="docutils literal"><span class="pre">n</span></code>} is not a valid index for a factor (for example, less than 1 or too big), 0 is returned.</dd>
-</dl>
-<span class="target" id="l-factored-nth-factor"></span><dl class="docutils" id="index-11">
-<dt><span class="spadfun">nthFactor</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; R</dt>
-<dd><code class="docutils literal"><span class="pre">nthFactor(u,</span> <span class="pre">n)</span></code> returns the base of the <code class="docutils literal"><span class="pre">n</span></code>th factor of spadvar{<code class="docutils literal"><span class="pre">u</span></code>}. If spadvar{<code class="docutils literal"><span class="pre">n</span></code>} is not a valid index for a factor (for example, less than 1 or too big), 1 is returned. If spadvar{<code class="docutils literal"><span class="pre">u</span></code>} consists only of a unit, the unit is returned.</dd>
-</dl>
-<span class="target" id="l-factored-nth-flag"></span><dl class="docutils" id="index-12">
-<dt><span class="spadfun">nthFlag</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; Union(nil, sqfr, irred, prime)</dt>
-<dd><code class="docutils literal"><span class="pre">nthFlag(u,</span> <span class="pre">n)</span></code> returns the information flag of the <code class="docutils literal"><span class="pre">n</span></code>th factor of spadvar{<code class="docutils literal"><span class="pre">u</span></code>}. If spadvar{<code class="docutils literal"><span class="pre">n</span></code>} is not a valid index for a factor (for example, less than 1 or too big), &#8220;nil&#8221; is returned.</dd>
-</dl>
-<span class="target" id="l-factored-number-of-factors"></span><dl class="docutils" id="index-13">
+<span class="target" id="l-factored-number-of-factors"></span><dl class="docutils" id="index-9">
 <dt><span class="spadfun">numberOfFactors</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">numberOfFactors(u)</span></code> returns the number of factors in spadvar{<code class="docutils literal"><span class="pre">u</span></code>}.</dd>
 <dt><a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit-one"><span>one?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
@@ -266,19 +250,19 @@
 <dt><a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain-prime"><span>prime?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if R has <a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain"><span>UniqueFactorizationDomain</span></a></dt>
 <dd>from <a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain"><span>UniqueFactorizationDomain</span></a></dd>
 </dl>
-<span class="target" id="l-factored-prime-factor"></span><dl class="docutils" id="index-14">
+<span class="target" id="l-factored-prime-factor"></span><dl class="docutils" id="index-10">
 <dt><span class="spadfun">primeFactor</span>: (R, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">primeFactor(base,</span> <span class="pre">exponent)</span></code> creates a factored object with a single factor whose <code class="docutils literal"><span class="pre">base</span></code> is asserted to be prime (flag = &#8220;prime&#8221;).</dd>
 </dl>
-<span class="target" id="l-factored-rational"></span><dl class="docutils" id="index-15">
+<span class="target" id="l-factored-rational"></span><dl class="docutils" id="index-11">
 <dt><span class="spadfun">rational</span>: % -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a> if R has <a class="reference internal" href="IntegerNumberSystem.html#l-integer-number-system"><span>IntegerNumberSystem</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">rational(u)</span></code> assumes spadvar{<code class="docutils literal"><span class="pre">u</span></code>} is actually a rational number and does the conversion to rational number (see <span class="xref std std-ref">Fraction Integer</span>).</dd>
 </dl>
-<span class="target" id="id1"></span><dl class="docutils" id="index-16">
+<span class="target" id="id1"></span><dl class="docutils" id="index-12">
 <dt><span class="spadfun">rational?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if R has <a class="reference internal" href="IntegerNumberSystem.html#l-integer-number-system"><span>IntegerNumberSystem</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">rational?(u)</span></code> tests if spadvar{<code class="docutils literal"><span class="pre">u</span></code>} is actually a rational number (see <span class="xref std std-ref">Fraction Integer</span>).</dd>
 </dl>
-<span class="target" id="l-factored-rational-if-can"></span><dl class="docutils" id="index-17">
+<span class="target" id="l-factored-rational-if-can"></span><dl class="docutils" id="index-13">
 <dt><span class="spadfun">rationalIfCan</span>: % -&gt; Union(<a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, failed) if R has <a class="reference internal" href="IntegerNumberSystem.html#l-integer-number-system"><span>IntegerNumberSystem</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">rationalIfCan(u)</span></code> returns a rational number if <code class="docutils literal"><span class="pre">u</span></code> really is one, and &#8220;failed&#8221; otherwise.</dd>
 <dt><a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit-recip"><span>recip</span></a>: % -&gt; Union(%, failed)</dt>
@@ -304,7 +288,7 @@
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-sample"><span>sample</span></a>: %</dt>
 <dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></dd>
 </dl>
-<span class="target" id="l-factored-sqfr-factor"></span><dl class="docutils" id="index-18">
+<span class="target" id="l-factored-sqfr-factor"></span><dl class="docutils" id="index-14">
 <dt><span class="spadfun">sqfrFactor</span>: (R, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">sqfrFactor(base,</span> <span class="pre">exponent)</span></code> creates a factored object with a single factor whose <code class="docutils literal"><span class="pre">base</span></code> is asserted to be square-free (flag = &#8220;sqfr&#8221;).</dd>
 <dt><a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain-square-free"><span>squareFree</span></a>: % -&gt; <a class="reference internal" href="#l-factored"><span>Factored</span></a> % if R has <a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain"><span>UniqueFactorizationDomain</span></a></dt>
@@ -314,7 +298,7 @@
 <dt><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid-subtract-if-can"><span>subtractIfCan</span></a>: (%, %) -&gt; Union(%, failed)</dt>
 <dd>from <a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid"><span>CancellationAbelianMonoid</span></a></dd>
 </dl>
-<span class="target" id="l-factored-unit"></span><dl class="docutils" id="index-19">
+<span class="target" id="l-factored-unit"></span><dl class="docutils" id="index-15">
 <dt><span class="spadfun">unit</span>: % -&gt; R</dt>
 <dd><code class="docutils literal"><span class="pre">unit(u)</span></code> extracts the unit part of the factorization.</dd>
 <dt><a class="reference internal" href="EntireRing.html#l-entire-ring-unit"><span>unit?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
@@ -324,7 +308,7 @@
 <dt><a class="reference internal" href="EntireRing.html#l-entire-ring-unit-normal"><span>unitNormal</span></a>: % -&gt; Record(unit: %, canonical: %, associate: %)</dt>
 <dd>from <a class="reference internal" href="EntireRing.html#l-entire-ring"><span>EntireRing</span></a></dd>
 </dl>
-<span class="target" id="l-factored-unit-normalize"></span><dl class="docutils" id="index-20">
+<span class="target" id="l-factored-unit-normalize"></span><dl class="docutils" id="index-16">
 <dt><span class="spadfun">unitNormalize</span>: % -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">unitNormalize(u)</span></code> normalizes the unit part of the factorization. For example, when working with factored integers, this operation will ensure that the bases are all positive integers.</dd>
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-zero"><span>zero?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
@@ -432,7 +416,7 @@
         <li class="right" >
           <a href="ExtAlgBasis.html" title="ExtAlgBasis"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>

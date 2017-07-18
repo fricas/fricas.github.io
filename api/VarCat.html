@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>VarCat &mdash; FriCAS 1.3.1 API</title>
+    <title>VarCat &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
     <link rel="next" title="VariablesCommuteWithCoefficients" href="VariablesCommuteWithCoefficients.html" />
     <link rel="prev" title="UnivariateTaylorSeriesCategory Coef" href="UnivariateTaylorSeriesCategory.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="UnivariateTaylorSeriesCategory.html" title="UnivariateTaylorSeriesCategory Coef"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,41 +55,39 @@
             
   <div class="section" id="varcat">
 <span id="l-var-cat"></span><span id="index-0"></span><h1>VarCat<a class="headerlink" href="#varcat" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//computation.spad#L417">computation.spad line 417</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/computation.spad#L417">computation.spad line 417</a></p>
 <p>VarCat represents a variable in Lambda and Ski domains. Since we are working in terms of functions then a variable will be a function (possibly a constant function) a variable has a name represented by a String. If the Lambda or Ski calculus is typed then the variable will also have a type.</p>
 <span class="target" id="id1"></span><dl class="docutils" id="index-1">
 <dt><span class="spadfun">=</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>return <code class="docutils literal"><span class="pre">true</span></code> if equal, that is names are equal and if there is a type then they must also be equal</dd>
+<dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
+<dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dd>
 </dl>
-<span class="target" id="l-var-cat-coerce"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">coerce</span>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
-<dd>output</dd>
-</dl>
-<span class="target" id="l-var-cat-get-name"></span><dl class="docutils" id="index-3">
+<span class="target" id="l-var-cat-get-name"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">getName</span>: % -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a></dt>
 <dd>returns the name of the variable.</dd>
 </dl>
-<span class="target" id="l-var-cat-get-type"></span><dl class="docutils" id="index-4">
+<span class="target" id="l-var-cat-get-type"></span><dl class="docutils" id="index-3">
 <dt><span class="spadfun">getType</span>: % -&gt; <a class="reference internal" href="ILogic.html#l-i-logic"><span>ILogic</span></a></dt>
 <dd>returns the type of the variable. This may be a compound type, for instance [&#8220;a&#8221;,<code class="docutils literal"><span class="pre">&quot;b&quot;</span></code>] represents a-<code class="docutils literal"><span class="pre">&gt;b</span></code> a function from type a to type <code class="docutils literal"><span class="pre">b</span></code> untyped implementations return []</dd>
 </dl>
-<span class="target" id="l-var-cat-parse-var"></span><dl class="docutils" id="index-5">
+<span class="target" id="l-var-cat-parse-var"></span><dl class="docutils" id="index-4">
 <dt><span class="spadfun">parseVar</span>: <a class="reference internal" href="String.html#l-string"><span>String</span></a> -&gt; %</dt>
 <dd>construct a variable by parsing a string</dd>
 </dl>
-<span class="target" id="l-var-cat-parse-var-term"></span><dl class="docutils" id="index-6">
+<span class="target" id="l-var-cat-parse-var-term"></span><dl class="docutils" id="index-5">
 <dt><span class="spadfun">parseVarTerm</span>: (<a class="reference internal" href="String.html#l-string"><span>String</span></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; Record(rft: %, pout: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>)</dt>
 <dd>construct a variable by parsing a string pin is index to string at start of parse pout is index to string at end of parse</dd>
 </dl>
-<span class="target" id="l-var-cat-to-string"></span><dl class="docutils" id="index-7">
+<span class="target" id="l-var-cat-to-string"></span><dl class="docutils" id="index-6">
 <dt><span class="spadfun">toString</span>: % -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a></dt>
 <dd>returns the name and the type in string form.</dd>
 </dl>
-<span class="target" id="l-var-cat-var"></span><dl class="docutils" id="index-8">
+<span class="target" id="l-var-cat-var"></span><dl class="docutils" id="index-7">
 <dt><span class="spadfun">var</span>: (<a class="reference internal" href="String.html#l-string"><span>String</span></a>, <a class="reference internal" href="ILogic.html#l-i-logic"><span>ILogic</span></a>) -&gt; %</dt>
 <dd>constructs variable with a name and also a type.</dd>
 </dl>
-<dl class="docutils" id="index-9">
+<dl class="docutils" id="index-8">
 <dt><span class="spadfun">var</span>: <a class="reference internal" href="String.html#l-string"><span>String</span></a> -&gt; %</dt>
 <dd>constructs variable with a name but no type.</dd>
 </dl>
@@ -138,7 +136,7 @@
         <li class="right" >
           <a href="UnivariateTaylorSeriesCategory.html" title="UnivariateTaylorSeriesCategory Coef"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>

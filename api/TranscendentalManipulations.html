@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>TranscendentalManipulations(R, F) &mdash; FriCAS 1.3.1 API</title>
+    <title>TranscendentalManipulations(R, F) &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="TranscendentalRischDESystem(F, UP)" href="TranscendentalRischDESystem.html" />
     <link rel="prev" title="TranscendentalIntegration(F, UP)" href="TranscendentalIntegration.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="TranscendentalIntegration.html" title="TranscendentalIntegration(F, UP)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,7 +55,7 @@
             
   <div class="section" id="transcendentalmanipulations-r-f">
 <span id="l-transcendental-manipulations"></span><span id="index-0"></span><h1>TranscendentalManipulations(R, F)<a class="headerlink" href="#transcendentalmanipulations-r-f" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//manip.spad#L433">manip.spad line 433</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/manip.spad#L448">manip.spad line 448</a></p>
 <ul class="simple">
 <li>R: Join(<a class="reference internal" href="Comparable.html#l-comparable"><span>Comparable</span></a>, <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><span>GcdDomain</span></a>)</li>
 <li>F: Join(<a class="reference internal" href="FunctionSpace.html#l-function-space"><span>FunctionSpace</span></a> R, <a class="reference internal" href="TranscendentalFunctionCategory.html#l-transcendental-function-category"><span>TranscendentalFunctionCategory</span></a>)</li>
@@ -95,11 +95,11 @@
 </dl>
 <span class="target" id="l-transcendental-manipulations-expand"></span><dl class="docutils" id="index-9">
 <dt><span class="spadfun">expand</span>: F -&gt; F</dt>
-<dd><code class="docutils literal"><span class="pre">expand(f)</span></code> performs the following expansions on <code class="docutils literal"><span class="pre">f:</span></code> begin{items} item 1. logs of products are expanded into sums of logs, item 2. trigonometric and hyperbolic trigonometric functions of sums are expanded into sums of products of trigonometric and hyperbolic trigonometric functions. item 3. formal powers of the form <code class="docutils literal"><span class="pre">(a/b)^c</span></code> are expanded into <code class="docutils literal"><span class="pre">a^c</span> <span class="pre">*</span> <span class="pre">b^(-c)</span></code>. end{items}</dd>
+<dd><code class="docutils literal"><span class="pre">expand(f)</span></code> performs the following expansions on <code class="docutils literal"><span class="pre">f:</span></code> begin{items} item 1. logs of products are expanded into sums of logs. item 2. trigonometric and hyperbolic trigonometric functions of sums are expanded into sums of products of trigonometric and hyperbolic trigonometric functions. item 3. formal powers of the form <code class="docutils literal"><span class="pre">(a/b)^c</span></code> are expanded into <code class="docutils literal"><span class="pre">a^c</span> <span class="pre">*</span> <span class="pre">b^(-c)</span></code>. end{items}</dd>
 </dl>
 <span class="target" id="l-transcendental-manipulations-expand-log"></span><dl class="docutils" id="index-10">
 <dt><span class="spadfun">expandLog</span>: F -&gt; F</dt>
-<dd><code class="docutils literal"><span class="pre">expandLog(f)</span></code> converts every <code class="docutils literal"><span class="pre">log(a/b)</span></code> appearing in <code class="docutils literal"><span class="pre">f</span></code> into <code class="docutils literal"><span class="pre">log(a)</span> <span class="pre">-</span> <span class="pre">log(b)</span></code>, and every <code class="docutils literal"><span class="pre">log(a*b)</span></code> into <code class="docutils literal"><span class="pre">log(a)</span> <span class="pre">+</span> <span class="pre">log(b)</span></code>..</dd>
+<dd><code class="docutils literal"><span class="pre">expandLog(f)</span></code> converts every <code class="docutils literal"><span class="pre">log(a/b)</span></code> appearing in <code class="docutils literal"><span class="pre">f</span></code> into <code class="docutils literal"><span class="pre">log(a)</span> <span class="pre">-</span> <span class="pre">log(b)</span></code>, and every <code class="docutils literal"><span class="pre">log(a*b)</span></code> into <code class="docutils literal"><span class="pre">log(a)</span> <span class="pre">+</span> <span class="pre">log(b)</span></code>.</dd>
 </dl>
 <span class="target" id="l-transcendental-manipulations-expand-power"></span><dl class="docutils" id="index-11">
 <dt><span class="spadfun">expandPower</span>: F -&gt; F</dt>
@@ -107,7 +107,7 @@
 </dl>
 <span class="target" id="l-transcendental-manipulations-expand-trig-products"></span><dl class="docutils" id="index-12">
 <dt><span class="spadfun">expandTrigProducts</span>: F -&gt; F if F has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><span>ConvertibleTo</span></a> <a class="reference internal" href="Pattern.html#l-pattern"><span>Pattern</span></a> R and F has <a class="reference internal" href="PatternMatchable.html#l-pattern-matchable"><span>PatternMatchable</span></a> R and R has <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><span>ConvertibleTo</span></a> <a class="reference internal" href="Pattern.html#l-pattern"><span>Pattern</span></a> R and R has <a class="reference internal" href="PatternMatchable.html#l-pattern-matchable"><span>PatternMatchable</span></a> R</dt>
-<dd><code class="docutils literal"><span class="pre">expandTrigProducts(e)</span></code> replaces <code class="docutils literal"><span class="pre">sin(x)*sin(y)</span></code> by <code class="docutils literal"><span class="pre">(cos(x-y)-cos(x+y))/2</span></code>, <code class="docutils literal"><span class="pre">cos(x)*cos(y)</span></code> by <code class="docutils literal"><span class="pre">(cos(x-y)+cos(x+y))/2</span></code>, and <code class="docutils literal"><span class="pre">sin(x)*cos(y)</span></code> by <code class="docutils literal"><span class="pre">(sin(x-y)+sin(x+y))/2</span></code>. Note that this operation uses the pattern matcher and so is relatively expensive. To avoid getting into an infinite loop the transformations are applied at most ten times.</dd>
+<dd><code class="docutils literal"><span class="pre">expandTrigProducts(e)</span></code> replaces <code class="docutils literal"><span class="pre">sin(x)*sin(y)</span></code> by <code class="docutils literal"><span class="pre">(cos(x-y)-cos(x+y))/2</span></code>, <code class="docutils literal"><span class="pre">cos(x)*cos(y)</span></code> by <code class="docutils literal"><span class="pre">(cos(x-y)+cos(x+y))/2</span></code>, and <code class="docutils literal"><span class="pre">sin(x)*cos(y)</span></code> by <code class="docutils literal"><span class="pre">(sin(x-y)+sin(x+y))/2</span></code>. Note: this operation uses pattern matcher, so it is relatively expensive. To avoid getting into an infinite loop the transformations are applied at most ten times.</dd>
 </dl>
 <span class="target" id="l-transcendental-manipulations-htrigs"></span><dl class="docutils" id="index-13">
 <dt><span class="spadfun">htrigs</span>: F -&gt; F</dt>
@@ -119,7 +119,7 @@
 </dl>
 <span class="target" id="l-transcendental-manipulations-remove-cos-sq"></span><dl class="docutils" id="index-15">
 <dt><span class="spadfun">removeCosSq</span>: F -&gt; F</dt>
-<dd><code class="docutils literal"><span class="pre">removeCosSq(f)</span></code> converts every <code class="docutils literal"><span class="pre">cos(u)^2</span></code> appearing in <code class="docutils literal"><span class="pre">f</span></code> into <code class="docutils literal"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">sin(x)^2</span></code>, and also reduces higher powers of <code class="docutils literal"><span class="pre">cos(u)</span></code> with that formula.</dd>
+<dd><code class="docutils literal"><span class="pre">removeCosSq(f)</span></code> converts every <code class="docutils literal"><span class="pre">cos(u)^2</span></code> appearing in <code class="docutils literal"><span class="pre">f</span></code> into <code class="docutils literal"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">sin(u)^2</span></code>, and also reduces higher powers of <code class="docutils literal"><span class="pre">cos(u)</span></code> with that formula.</dd>
 </dl>
 <span class="target" id="l-transcendental-manipulations-remove-sinh-sq"></span><dl class="docutils" id="index-16">
 <dt><span class="spadfun">removeSinhSq</span>: F -&gt; F</dt>
@@ -127,7 +127,7 @@
 </dl>
 <span class="target" id="l-transcendental-manipulations-remove-sin-sq"></span><dl class="docutils" id="index-17">
 <dt><span class="spadfun">removeSinSq</span>: F -&gt; F</dt>
-<dd><code class="docutils literal"><span class="pre">removeSinSq(f)</span></code> converts every <code class="docutils literal"><span class="pre">sin(u)^2</span></code> appearing in <code class="docutils literal"><span class="pre">f</span></code> into <code class="docutils literal"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">cos(x)^2</span></code>, and also reduces higher powers of <code class="docutils literal"><span class="pre">sin(u)</span></code> with that formula.</dd>
+<dd><code class="docutils literal"><span class="pre">removeSinSq(f)</span></code> converts every <code class="docutils literal"><span class="pre">sin(u)^2</span></code> appearing in <code class="docutils literal"><span class="pre">f</span></code> into <code class="docutils literal"><span class="pre">1</span> <span class="pre">-</span> <span class="pre">cos(u)^2</span></code>, and also reduces higher powers of <code class="docutils literal"><span class="pre">sin(u)</span></code> with that formula.</dd>
 </dl>
 <span class="target" id="l-transcendental-manipulations-sec2cos"></span><dl class="docutils" id="index-18">
 <dt><span class="spadfun">sec2cos</span>: F -&gt; F</dt>
@@ -143,7 +143,7 @@
 </dl>
 <span class="target" id="l-transcendental-manipulations-simplify-exp"></span><dl class="docutils" id="index-21">
 <dt><span class="spadfun">simplifyExp</span>: F -&gt; F</dt>
-<dd><code class="docutils literal"><span class="pre">simplifyExp(f)</span></code> converts every product <code class="docutils literal"><span class="pre">exp(a)*exp(b)</span></code> appearing in <code class="docutils literal"><span class="pre">f</span></code> into <code class="docutils literal"><span class="pre">exp(a+b)</span></code>.</dd>
+<dd><code class="docutils literal"><span class="pre">simplifyExp(f)</span></code> performs the following simplifications on <code class="docutils literal"><span class="pre">f:</span></code> begin{items} item 1. rewrites <code class="docutils literal"><span class="pre">exp(a)*exp(b)</span></code> as <code class="docutils literal"><span class="pre">exp(a+b)</span></code>. item 2. rewrites <code class="docutils literal"><span class="pre">a^b*a^c</span></code> as <code class="docutils literal"><span class="pre">a^(b+c)</span></code>. item 3. rewrites <code class="docutils literal"><span class="pre">exp(a)/exp(b)</span></code> as <code class="docutils literal"><span class="pre">exp(a-b)</span></code>. item 4. rewrites <code class="docutils literal"><span class="pre">a^b/a^c</span></code> as <code class="docutils literal"><span class="pre">a^(b-c)</span></code>. end{items}</dd>
 </dl>
 <span class="target" id="l-transcendental-manipulations-simplify-log"></span><dl class="docutils" id="index-22">
 <dt><span class="spadfun">simplifyLog</span>: F -&gt; F</dt>
@@ -217,7 +217,7 @@
         <li class="right" >
           <a href="TranscendentalIntegration.html" title="TranscendentalIntegration(F, UP)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>IndexedAggregate(Index, Entry) &mdash; FriCAS 1.3.1 API</title>
+    <title>IndexedAggregate(Index, Entry) &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
     <link rel="next" title="IndexedDirectProductCategory(A, S)" href="IndexedDirectProductCategory.html" />
     <link rel="prev" title="HyperbolicFunctionCategory" href="HyperbolicFunctionCategory.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="HyperbolicFunctionCategory.html" title="HyperbolicFunctionCategory"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,21 +55,27 @@
             
   <div class="section" id="indexedaggregate-index-entry">
 <span id="l-indexed-aggregate"></span><span id="index-0"></span><h1>IndexedAggregate(Index, Entry)<a class="headerlink" href="#indexedaggregate-index-entry" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//aggcat.spad#L829">aggcat.spad line 829</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/aggcat.spad#L808">aggcat.spad line 808</a></p>
 <ul class="simple">
 <li>Index: <a class="reference internal" href="Type.html#l-type"><span>Type</span></a></li>
 <li>Entry: <a class="reference internal" href="Type.html#l-type"><span>Type</span></a></li>
 </ul>
 <p>An indexed aggregate is a many-to-one mapping of indices to entries. For example, a one-dimensional-array is an indexed aggregate where the index is an integer. Also, a table is an indexed aggregate where the indices and entries may have any type.</p>
 <dl class="docutils">
+<dt><a class="reference internal" href="Aggregate.html#id1"><span>#</span></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id1"><span>=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a> and Entry has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> or Entry has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id2"><span>~=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a> and Entry has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> or Entry has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-any"><span>any?</span></a>: (Entry -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
 <dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a> if Entry has <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
 <dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><span>copy</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (Entry -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
 <dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (Entry, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a> and Entry has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
 <dt><a class="reference internal" href="Eltable.html#l-eltable-elt"><span>elt</span></a>: (%, Index) -&gt; Entry</dt>
@@ -78,7 +84,7 @@
 <dd>from <a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate"><span>EltableAggregate</span></a>(Index, Entry)</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><span>empty</span></a>: () -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
-<dt><a class="reference internal" href="Aggregate.html#id1"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dt><a class="reference internal" href="Aggregate.html#id2"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 </dl>
 <span class="target" id="l-indexed-aggregate-entries"></span><dl class="docutils" id="index-1">
@@ -98,8 +104,14 @@
 <dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(Entry, Entry)</dd>
 <dt><a class="reference internal" href="Evalable.html#l-evalable-eval"><span>eval</span></a>: (%, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Equation.html#l-equation"><span>Equation</span></a> Entry) -&gt; % if Entry has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a> and Entry has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> Entry</dt>
 <dd>from <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> Entry</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-every"><span>every?</span></a>: (Entry -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
 </dl>
-<span class="target" id="l-indexed-aggregate-first"></span><dl class="docutils" id="index-3">
+<span class="target" id="l-indexed-aggregate-fill"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">fill!</span>: (%, Entry) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><span>shallowlyMutable</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">fill!(u,</span> <span class="pre">x)</span></code> replaces each entry in aggregate <code class="docutils literal"><span class="pre">u</span></code> by <code class="docutils literal"><span class="pre">x</span></code>. The modified <code class="docutils literal"><span class="pre">u</span></code> is returned as value.</dd>
+</dl>
+<span class="target" id="l-indexed-aggregate-first"></span><dl class="docutils" id="index-4">
 <dt><span class="spadfun">first</span>: % -&gt; Entry if Index has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">first(u)</span></code> returns the first element <code class="docutils literal"><span class="pre">x</span></code> of <code class="docutils literal"><span class="pre">u</span></code>. Note: for collections, <code class="docutils literal"><span class="pre">first([x,</span> <span class="pre">y,</span> <span class="pre">...,</span> <span class="pre">z])</span> <span class="pre">=</span> <span class="pre">x</span></code>. Error: if <code class="docutils literal"><span class="pre">u</span></code> is empty.</dd>
 <dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><span>hash</span></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><span>SingleInteger</span></a> if Entry has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
@@ -107,37 +119,51 @@
 <dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><span>hashUpdate!</span></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a> if Entry has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
 <dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
 </dl>
-<span class="target" id="l-indexed-aggregate-index"></span><dl class="docutils" id="index-4">
+<span class="target" id="l-indexed-aggregate-index"></span><dl class="docutils" id="index-5">
 <dt><span class="spadfun">index?</span>: (Index, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">index?(i,</span> <span class="pre">u)</span></code> tests if <code class="docutils literal"><span class="pre">i</span></code> is an index of aggregate <code class="docutils literal"><span class="pre">u</span></code>.</dd>
 </dl>
-<span class="target" id="l-indexed-aggregate-indices"></span><dl class="docutils" id="index-5">
+<span class="target" id="l-indexed-aggregate-indices"></span><dl class="docutils" id="index-6">
 <dt><span class="spadfun">indices</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Index</dt>
 <dd><code class="docutils literal"><span class="pre">indices(u)</span></code> returns a list of indices of aggregate <code class="docutils literal"><span class="pre">u</span></code> in no particular order.</dd>
 <dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><span>latex</span></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a> if Entry has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
 <dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-less"><span>less?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map</span></a>: (Entry -&gt; Entry, %) -&gt; %</dt>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map!</span></a>: (Entry -&gt; Entry, %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><span>shallowlyMutable</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#id1"><span>map</span></a>: (Entry -&gt; Entry, %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
 </dl>
-<span class="target" id="l-indexed-aggregate-max-index"></span><dl class="docutils" id="index-6">
+<span class="target" id="l-indexed-aggregate-max-index"></span><dl class="docutils" id="index-7">
 <dt><span class="spadfun">maxIndex</span>: % -&gt; Index if Index has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">maxIndex(u)</span></code> returns the maximum index <code class="docutils literal"><span class="pre">i</span></code> of aggregate <code class="docutils literal"><span class="pre">u</span></code>. Note: in general, <code class="docutils literal"><span class="pre">maxIndex(u)</span> <span class="pre">=</span> <span class="pre">reduce(max,</span> <span class="pre">[i</span> <span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">indices</span> <span class="pre">u])</span></code>; if <code class="docutils literal"><span class="pre">u</span></code> is a list, <code class="docutils literal"><span class="pre">maxIndex(u)</span> <span class="pre">=</span> <span class="pre">\#u</span></code>.</dd>
 <dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><span>member?</span></a>: (Entry, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a> and Entry has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-members"><span>members</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Entry if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
 </dl>
-<span class="target" id="l-indexed-aggregate-min-index"></span><dl class="docutils" id="index-7">
+<span class="target" id="l-indexed-aggregate-min-index"></span><dl class="docutils" id="index-8">
 <dt><span class="spadfun">minIndex</span>: % -&gt; Index if Index has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">minIndex(u)</span></code> returns the minimum index <code class="docutils literal"><span class="pre">i</span></code> of aggregate <code class="docutils literal"><span class="pre">u</span></code>. Note: in general, <code class="docutils literal"><span class="pre">minIndex(a)</span> <span class="pre">=</span> <span class="pre">reduce(min,</span> <span class="pre">[i</span> <span class="pre">for</span> <span class="pre">i</span> <span class="pre">in</span> <span class="pre">indices</span> <span class="pre">a])</span></code>; for lists, <code class="docutils literal"><span class="pre">minIndex(a)</span> <span class="pre">=</span> <span class="pre">1</span></code>.</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-more"><span>more?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-parts"><span>parts</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Entry if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
 <dt><a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate-qelt"><span>qelt</span></a>: (%, Index) -&gt; Entry</dt>
+<dd>from <a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate"><span>EltableAggregate</span></a>(Index, Entry)</dd>
+<dt><a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate-qsetelt"><span>qsetelt!</span></a>: (%, Index, Entry) -&gt; Entry if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><span>shallowlyMutable</span></a></dt>
 <dd>from <a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate"><span>EltableAggregate</span></a>(Index, Entry)</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-sample"><span>sample</span></a>: %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate-setelt"><span>setelt!</span></a>: (%, Index, Entry) -&gt; Entry if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><span>shallowlyMutable</span></a></dt>
+<dd>from <a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate"><span>EltableAggregate</span></a>(Index, Entry)</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-size"><span>size?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+</dl>
+<span class="target" id="l-indexed-aggregate-swap"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">swap!</span>: (%, Index, Index) -&gt; <a class="reference internal" href="Void.html#l-void"><span>Void</span></a> if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><span>shallowlyMutable</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">swap!(u,</span> <span class="pre">i,</span> <span class="pre">j)</span></code> interchanges elements <code class="docutils literal"><span class="pre">i</span></code> and <code class="docutils literal"><span class="pre">j</span></code> of aggregate <code class="docutils literal"><span class="pre">u</span></code>. No meaningful value is returned.</dd>
 </dl>
 <p><a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></p>
 <p><a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a> and Entry has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> or Entry has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></p>
@@ -192,7 +218,7 @@
         <li class="right" >
           <a href="HyperbolicFunctionCategory.html" title="HyperbolicFunctionCategory"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>

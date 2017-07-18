@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>MonoidRingCategory(R, M) &mdash; FriCAS 1.3.1 API</title>
+    <title>MonoidRingCategory(R, M) &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
     <link rel="next" title="MultiDictionary S" href="MultiDictionary.html" />
     <link rel="prev" title="Monoid" href="Monoid.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="Monoid.html" title="Monoid"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,7 +55,7 @@
             
   <div class="section" id="monoidringcategory-r-m">
 <span id="l-monoid-ring-category"></span><span id="index-0"></span><h1>MonoidRingCategory(R, M)<a class="headerlink" href="#monoidringcategory-r-m" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//mring.spad#L1">mring.spad line 1</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/mring.spad#L1">mring.spad line 1</a></p>
 <ul class="simple">
 <li>R: <a class="reference internal" href="Ring.html#l-ring"><span>Ring</span></a></li>
 <li>M: <a class="reference internal" href="Monoid.html#l-monoid"><span>Monoid</span></a></li>
@@ -122,6 +122,8 @@
 <span class="target" id="l-monoid-ring-category-coefficients"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">coefficients</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> R</dt>
 <dd><code class="docutils literal"><span class="pre">coefficients(f)</span></code> lists all non-zero coefficients.</dd>
+<dt><a class="reference internal" href="Algebra.html#l-algebra-coerce"><span>coerce</span></a>: % -&gt; % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><span>CommutativeRing</span></a> and M has <a class="reference internal" href="CommutativeStar.html#l-commutative-star"><span>CommutativeStar</span></a></dt>
+<dd>from <a class="reference internal" href="Algebra.html#l-algebra"><span>Algebra</span></a> %</dd>
 <dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
 <dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dd>
 <dt><a class="reference internal" href="NonAssociativeRing.html#l-non-associative-ring-coerce"><span>coerce</span></a>: <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a> -&gt; %</dt>
@@ -236,6 +238,8 @@
 <span class="target" id="l-monoid-ring-category-terms"></span><dl class="docutils" id="index-9">
 <dt><span class="spadfun">terms</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Record(k: M, c: R)</dt>
 <dd><code class="docutils literal"><span class="pre">terms(f)</span></code> gives the list of non-zero coefficients combined with their corresponding basis element as records. This is the internal representation.</dd>
+<dt><a class="reference internal" href="FreeModuleCategory.html#l-free-module-category-total-degree"><span>totalDegree</span></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> if M has <span class="spadfun">coerce</span>: M -&gt; <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> and M has <a class="reference internal" href="Comparable.html#l-comparable"><span>Comparable</span></a></dt>
+<dd>from <a class="reference internal" href="FreeModuleCategory.html#l-free-module-category"><span>FreeModuleCategory</span></a>(R, M)</dd>
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-zero"><span>zero?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></dd>
 </dl>
@@ -243,6 +247,7 @@
 <p><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></p>
 <p><a class="reference internal" href="AbelianProductCategory.html#l-abelian-product-category"><span>AbelianProductCategory</span></a> R if M has <a class="reference internal" href="Comparable.html#l-comparable"><span>Comparable</span></a></p>
 <p><a class="reference internal" href="AbelianSemiGroup.html#l-abelian-semi-group"><span>AbelianSemiGroup</span></a></p>
+<p><a class="reference internal" href="Algebra.html#l-algebra"><span>Algebra</span></a> % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><span>CommutativeRing</span></a> and M has <a class="reference internal" href="CommutativeStar.html#l-commutative-star"><span>CommutativeStar</span></a></p>
 <p><a class="reference internal" href="Algebra.html#l-algebra"><span>Algebra</span></a> R if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><span>CommutativeRing</span></a></p>
 <p><a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></p>
 <p><a class="reference internal" href="BiModule.html#l-bi-module"><span>BiModule</span></a>(%, %)</p>
@@ -262,6 +267,7 @@
 <p><a class="reference internal" href="LeftModule.html#l-left-module"><span>LeftModule</span></a> R if M has <a class="reference internal" href="Comparable.html#l-comparable"><span>Comparable</span></a> or R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><span>CommutativeRing</span></a></p>
 <p><a class="reference internal" href="Magma.html#l-magma"><span>Magma</span></a></p>
 <p><a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit"><span>MagmaWithUnit</span></a></p>
+<p><a class="reference internal" href="Module.html#l-module"><span>Module</span></a> % if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><span>CommutativeRing</span></a> and M has <a class="reference internal" href="CommutativeStar.html#l-commutative-star"><span>CommutativeStar</span></a></p>
 <p><a class="reference internal" href="Module.html#l-module"><span>Module</span></a> R if R has <a class="reference internal" href="CommutativeRing.html#l-commutative-ring"><span>CommutativeRing</span></a></p>
 <p><a class="reference internal" href="Monoid.html#l-monoid"><span>Monoid</span></a></p>
 <p><a class="reference internal" href="NonAssociativeRing.html#l-non-associative-ring"><span>NonAssociativeRing</span></a></p>
@@ -329,7 +335,7 @@
         <li class="right" >
           <a href="Monoid.html" title="Monoid"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>

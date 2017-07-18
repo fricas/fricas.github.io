@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SplittingTree(V, C) &mdash; FriCAS 1.3.1 API</title>
+    <title>SplittingTree(V, C) &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="SquareFreeRegularTriangularSet(R, E, V, P)" href="SquareFreeRegularTriangularSet.html" />
     <link rel="prev" title="SplittingNode(V, C)" href="SplittingNode.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="SplittingNode.html" title="SplittingNode(V, C)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,17 +55,21 @@
             
   <div class="section" id="splittingtree-v-c">
 <span id="l-splitting-tree"></span><span id="index-0"></span><h1>SplittingTree(V, C)<a class="headerlink" href="#splittingtree-v-c" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//newdata.spad#L295">newdata.spad line 295</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/newdata.spad#L295">newdata.spad line 295</a></p>
 <ul class="simple">
 <li>V: Join(<a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a>, <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a>)</li>
 <li>C: Join(<a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a>, <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a>)</li>
 </ul>
 <p>This domain exports a modest implementation of splitting trees. Splitting trees are needed when the evaluation of some quantity under some hypothesis requires to split the hypothesis into sub-cases. For instance by adding some new hypothesis on one hand and its negation on another hand. The computations are terminated is a splitting tree <code class="docutils literal"><span class="pre">a</span></code> when <code class="docutils literal"><span class="pre">status(value(a))</span></code> is <code class="docutils literal"><span class="pre">true</span></code>. Thus, if for the splitting tree <code class="docutils literal"><span class="pre">a</span></code> the flag <code class="docutils literal"><span class="pre">status(value(a))</span></code> is <code class="docutils literal"><span class="pre">true</span></code>, then <code class="docutils literal"><span class="pre">status(value(d))</span></code> is <code class="docutils literal"><span class="pre">true</span></code> for any subtree <code class="docutils literal"><span class="pre">d</span></code> of <code class="docutils literal"><span class="pre">a</span></code>. This property of splitting trees is called the termination condition. If no vertex in a splitting tree <code class="docutils literal"><span class="pre">a</span></code> is equal to another, <code class="docutils literal"><span class="pre">a</span></code> is said to satisfy the no-duplicates condition. The splitting tree <code class="docutils literal"><span class="pre">a</span></code> will satisfy this condition if nodes are added to <code class="docutils literal"><span class="pre">a</span></code> by mean of <code class="docutils literal"><span class="pre">splitNodeOf!</span></code> and if <code class="docutils literal"><span class="pre">construct</span></code> is only used to create the root of <code class="docutils literal"><span class="pre">a</span></code> with no children.</p>
 <dl class="docutils">
+<dt><a class="reference internal" href="Aggregate.html#id1"><span>#</span></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id1"><span>=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id2"><span>~=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-any"><span>any?</span></a>: (<a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
 <dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-child"><span>child?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
 <dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-children"><span>children</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> %</dt>
@@ -94,6 +98,10 @@
 <dd><code class="docutils literal"><span class="pre">construct(s)</span></code> creates a splitting tree with value (i.e. root vertex) given by <code class="docutils literal"><span class="pre">s</span></code> and no children. Thus, if the status of <code class="docutils literal"><span class="pre">s</span></code> is <code class="docutils literal"><span class="pre">false</span></code>, <code class="docutils literal"><span class="pre">[s]</span></code> represents the starting point of the evaluation <code class="docutils literal"><span class="pre">value(s)</span></code> under the hypothesis <code class="docutils literal"><span class="pre">condition(s)</span></code>.</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><span>copy</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (<a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (<a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C), %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
 <dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-cyclic"><span>cyclic?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
 <dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-distance"><span>distance</span></a>: (%, %) -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
@@ -102,7 +110,7 @@
 <dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><span>empty</span></a>: () -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
-<dt><a class="reference internal" href="Aggregate.html#id1"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dt><a class="reference internal" href="Aggregate.html#id2"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-eq"><span>eq?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
@@ -114,6 +122,8 @@
 <dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(<a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C), <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C))</dd>
 <dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><span>eval</span></a>: (%, <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C), <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)) -&gt; % if <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C) has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dt>
 <dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(<a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C), <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C))</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-every"><span>every?</span></a>: (<a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
 </dl>
 <span class="target" id="l-splitting-tree-extract-splitting-leaf"></span><dl class="docutils" id="index-6">
 <dt><span class="spadfun">extractSplittingLeaf</span>: % -&gt; Union(%, failed)</dt>
@@ -130,7 +140,13 @@
 <dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-less"><span>less?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map</span></a>: (<a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C) -&gt; <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C), %) -&gt; %</dt>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map!</span></a>: (<a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C) -&gt; <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C), %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#id1"><span>map</span></a>: (<a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C) -&gt; <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C), %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><span>member?</span></a>: (<a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C), %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-members"><span>members</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-more"><span>more?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
@@ -142,6 +158,8 @@
 <dd><code class="docutils literal"><span class="pre">nodeOf?(s,</span> <span class="pre">a)</span></code> returns <code class="docutils literal"><span class="pre">true</span></code> iff some node of <code class="docutils literal"><span class="pre">a</span></code> is equal to <code class="docutils literal"><span class="pre">s</span></code></dd>
 <dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-nodes"><span>nodes</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> %</dt>
 <dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-parts"><span>parts</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
 </dl>
 <span class="target" id="l-splitting-tree-remove"></span><dl class="docutils" id="index-8">
 <dt><span class="spadfun">remove!</span>: (<a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C), %) -&gt; %</dt>
@@ -156,6 +174,12 @@
 <dd><code class="docutils literal"><span class="pre">result(a)</span></code> where <code class="docutils literal"><span class="pre">ls</span></code> is the leaves list of <code class="docutils literal"><span class="pre">a</span></code> returns <code class="docutils literal"><span class="pre">[[value(s),</span> <span class="pre">condition(s)]\$VT</span> <span class="pre">for</span> <span class="pre">s</span> <span class="pre">in</span> <span class="pre">ls]</span></code> if the computations are terminated in <code class="docutils literal"><span class="pre">a</span></code> else an error is produced.</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-sample"><span>sample</span></a>: %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-setchildren"><span>setchildren!</span></a>: (%, <a class="reference internal" href="List.html#l-list"><span>List</span></a> %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-setelt"><span>setelt!</span></a>: (%, value, <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)) -&gt; <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
+<dt><a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate-setvalue"><span>setvalue!</span></a>: (%, <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)) -&gt; <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dt>
+<dd>from <a class="reference internal" href="RecursiveAggregate.html#l-recursive-aggregate"><span>RecursiveAggregate</span></a> <a class="reference internal" href="SplittingNode.html#l-splitting-node"><span>SplittingNode</span></a>(V, C)</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-size"><span>size?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 </dl>
@@ -231,7 +255,7 @@
         <li class="right" >
           <a href="SplittingNode.html" title="SplittingNode(V, C)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>

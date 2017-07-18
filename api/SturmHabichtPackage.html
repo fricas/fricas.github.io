@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>SturmHabichtPackage(R, x) &mdash; FriCAS 1.3.1 API</title>
+    <title>SturmHabichtPackage(R, UP) &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Packages" href="Packages.html" />
     <link rel="next" title="SubResultantPackage(R, UP)" href="SubResultantPackage.html" />
     <link rel="prev" title="StructuralConstantsPackage R" href="StructuralConstantsPackage.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="StructuralConstantsPackage.html" title="StructuralConstantsPackage R"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
       </ul>
     </div>  
@@ -53,41 +53,37 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="sturmhabichtpackage-r-x">
-<span id="l-sturm-habicht-package"></span><span id="index-0"></span><h1>SturmHabichtPackage(R, x)<a class="headerlink" href="#sturmhabichtpackage-r-x" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//sturm.spad#L1">sturm.spad line 1</a></p>
+  <div class="section" id="sturmhabichtpackage-r-up">
+<span id="l-sturm-habicht-package"></span><span id="index-0"></span><h1>SturmHabichtPackage(R, UP)<a class="headerlink" href="#sturmhabichtpackage-r-up" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/sturm.spad#L1">sturm.spad line 1</a></p>
 <ul class="simple">
 <li>R: <a class="reference internal" href="OrderedIntegralDomain.html#l-ordered-integral-domain"><span>OrderedIntegralDomain</span></a></li>
-<li>x: <a class="reference internal" href="Symbol.html#l-symbol"><span>Symbol</span></a></li>
+<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><span>UnivariatePolynomialCategory</span></a> R</li>
 </ul>
-<p>This package produces functions for counting etc. real roots of univariate polynomials in <code class="docutils literal"><span class="pre">x</span></code> over <code class="docutils literal"><span class="pre">R</span></code>, which must be an OrderedIntegralDomain</p>
+<p>This package provides functions for counting real roots of univariate polynomials over an OrderedIntegralDomain.</p>
 <span class="target" id="l-sturm-habicht-package-count-real-roots"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">countRealRoots</span>: <a class="reference internal" href="UnivariatePolynomial.html#l-univariate-polynomial"><span>UnivariatePolynomial</span></a>(x, R) -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
+<dt><span class="spadfun">countRealRoots</span>: UP -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">countRealRoots(p)</span></code> says how many real roots <code class="docutils literal"><span class="pre">p</span></code> has</dd>
 </dl>
 <span class="target" id="l-sturm-habicht-package-count-real-roots-multiple"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">countRealRootsMultiple</span>: <a class="reference internal" href="UnivariatePolynomial.html#l-univariate-polynomial"><span>UnivariatePolynomial</span></a>(x, R) -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a> if R has <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><span>GcdDomain</span></a></dt>
+<dt><span class="spadfun">countRealRootsMultiple</span>: UP -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a> if R has <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><span>GcdDomain</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">countRealRootsMultiple(p)</span></code> says how many real roots <code class="docutils literal"><span class="pre">p</span></code> has, counted with multiplicity</dd>
 </dl>
 <span class="target" id="l-sturm-habicht-package-sturm-habicht"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">SturmHabicht</span>: (<a class="reference internal" href="UnivariatePolynomial.html#l-univariate-polynomial"><span>UnivariatePolynomial</span></a>(x, R), <a class="reference internal" href="UnivariatePolynomial.html#l-univariate-polynomial"><span>UnivariatePolynomial</span></a>(x, R)) -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
+<dt><span class="spadfun">SturmHabicht</span>: (UP, UP) -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">SturmHabicht(p1,</span> <span class="pre">p2)</span></code> computes <code class="docutils literal"><span class="pre">c_</span></code>{+}<code class="docutils literal"><span class="pre">-c_</span></code>{-} where <code class="docutils literal"><span class="pre">c_</span></code>{+} is the number of real roots of <code class="docutils literal"><span class="pre">p1</span></code> with <code class="docutils literal"><span class="pre">p2&gt;0</span></code> and <code class="docutils literal"><span class="pre">c_</span></code>{-} is the number of real roots of <code class="docutils literal"><span class="pre">p1</span></code> with <code class="docutils literal"><span class="pre">p2&lt;0</span></code>. If <code class="docutils literal"><span class="pre">p2=1</span></code> what you get is the number of real roots of <code class="docutils literal"><span class="pre">p1</span></code>.</dd>
 </dl>
 <span class="target" id="l-sturm-habicht-package-sturm-habicht-coefficients"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">SturmHabichtCoefficients</span>: (<a class="reference internal" href="UnivariatePolynomial.html#l-univariate-polynomial"><span>UnivariatePolynomial</span></a>(x, R), <a class="reference internal" href="UnivariatePolynomial.html#l-univariate-polynomial"><span>UnivariatePolynomial</span></a>(x, R)) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> R</dt>
+<dt><span class="spadfun">SturmHabichtCoefficients</span>: (UP, UP) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> R</dt>
 <dd><code class="docutils literal"><span class="pre">SturmHabichtCoefficients(p1,</span> <span class="pre">p2)</span></code> computes the principal Sturm-Habicht coefficients of <code class="docutils literal"><span class="pre">p1</span></code> and <code class="docutils literal"><span class="pre">p2</span></code></dd>
 </dl>
 <span class="target" id="l-sturm-habicht-package-sturm-habicht-multiple"></span><dl class="docutils" id="index-5">
-<dt><span class="spadfun">SturmHabichtMultiple</span>: (<a class="reference internal" href="UnivariatePolynomial.html#l-univariate-polynomial"><span>UnivariatePolynomial</span></a>(x, R), <a class="reference internal" href="UnivariatePolynomial.html#l-univariate-polynomial"><span>UnivariatePolynomial</span></a>(x, R)) -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a> if R has <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><span>GcdDomain</span></a></dt>
+<dt><span class="spadfun">SturmHabichtMultiple</span>: (UP, UP) -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a> if R has <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><span>GcdDomain</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">SturmHabichtMultiple(p1,</span> <span class="pre">p2)</span></code> computes <code class="docutils literal"><span class="pre">c_</span></code>{+}<code class="docutils literal"><span class="pre">-c_</span></code>{-} where <code class="docutils literal"><span class="pre">c_</span></code>{+} is the number of real roots of <code class="docutils literal"><span class="pre">p1</span></code> with <code class="docutils literal"><span class="pre">p2&gt;0</span></code> and <code class="docutils literal"><span class="pre">c_</span></code>{-} is the number of real roots of <code class="docutils literal"><span class="pre">p1</span></code> with <code class="docutils literal"><span class="pre">p2&lt;0</span></code>. If <code class="docutils literal"><span class="pre">p2=1</span></code> what you get is the number of real roots of <code class="docutils literal"><span class="pre">p1</span></code>.</dd>
 </dl>
 <span class="target" id="l-sturm-habicht-package-sturm-habicht-sequence"></span><dl class="docutils" id="index-6">
-<dt><span class="spadfun">SturmHabichtSequence</span>: (<a class="reference internal" href="UnivariatePolynomial.html#l-univariate-polynomial"><span>UnivariatePolynomial</span></a>(x, R), <a class="reference internal" href="UnivariatePolynomial.html#l-univariate-polynomial"><span>UnivariatePolynomial</span></a>(x, R)) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="UnivariatePolynomial.html#l-univariate-polynomial"><span>UnivariatePolynomial</span></a>(x, R)</dt>
+<dt><span class="spadfun">SturmHabichtSequence</span>: (UP, UP) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> UP</dt>
 <dd><code class="docutils literal"><span class="pre">SturmHabichtSequence(p1,</span> <span class="pre">p2)</span></code> computes the Sturm-Habicht sequence of <code class="docutils literal"><span class="pre">p1</span></code> and <code class="docutils literal"><span class="pre">p2</span></code></dd>
-</dl>
-<span class="target" id="l-sturm-habicht-package-subresultant-sequence"></span><dl class="docutils" id="index-7">
-<dt><span class="spadfun">subresultantSequence</span>: (<a class="reference internal" href="UnivariatePolynomial.html#l-univariate-polynomial"><span>UnivariatePolynomial</span></a>(x, R), <a class="reference internal" href="UnivariatePolynomial.html#l-univariate-polynomial"><span>UnivariatePolynomial</span></a>(x, R)) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="UnivariatePolynomial.html#l-univariate-polynomial"><span>UnivariatePolynomial</span></a>(x, R)</dt>
-<dd><code class="docutils literal"><span class="pre">subresultantSequence(p1,</span> <span class="pre">p2)</span></code> computes the (standard) subresultant sequence of <code class="docutils literal"><span class="pre">p1</span></code> and <code class="docutils literal"><span class="pre">p2</span></code></dd>
 </dl>
 </div>
 
@@ -133,7 +129,7 @@
         <li class="right" >
           <a href="StructuralConstantsPackage.html" title="StructuralConstantsPackage R"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
       </ul>
     </div>

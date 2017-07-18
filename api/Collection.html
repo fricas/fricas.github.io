@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Collection S &mdash; FriCAS 1.3.1 API</title>
+    <title>Collection S &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
     <link rel="next" title="CombinatorialFunctionCategory" href="CombinatorialFunctionCategory.html" />
     <link rel="prev" title="CoercibleTo S" href="CoercibleTo.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="CoercibleTo.html" title="CoercibleTo S"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,16 +55,20 @@
             
   <div class="section" id="collection-s">
 <span id="l-collection"></span><span id="index-0"></span><h1>Collection S<a class="headerlink" href="#collection-s" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//aggcat.spad#L160">aggcat.spad line 160</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/aggcat.spad#L161">aggcat.spad line 161</a></p>
 <ul class="simple">
 <li>S: <a class="reference internal" href="Type.html#l-type"><span>Type</span></a></li>
 </ul>
 <p>A collection is a homogeneous aggregate which can be built from a list of members. The operation used to build the aggregate is generically named <span class="spadfun">construct</span>. However, each collection provides its own special function with the same name as the data type, except with an initial lower case letter, e.g. <span class="spadfun">list</span> for <a class="reference internal" href="List.html#l-list"><span>List</span></a>, <span class="spadfun">flexibleArray</span> for <a class="reference internal" href="FlexibleArray.html#l-flexible-array"><span>FlexibleArray</span></a>, and so on.</p>
 <dl class="docutils">
+<dt><a class="reference internal" href="Aggregate.html#id1"><span>#</span></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id1"><span>=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a> or S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id2"><span>~=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a> or S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-any"><span>any?</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a> if S has <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
 <dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dd>
 </dl>
@@ -75,11 +79,13 @@
 <dd>from <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><span>ConvertibleTo</span></a> <a class="reference internal" href="InputForm.html#l-input-form"><span>InputForm</span></a></dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><span>copy</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (S, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><span>empty</span></a>: () -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
-<dt><a class="reference internal" href="Aggregate.html#id1"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dt><a class="reference internal" href="Aggregate.html#id2"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-eq"><span>eq?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
@@ -91,6 +97,8 @@
 <dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(S, S)</dd>
 <dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><span>eval</span></a>: (%, S, S) -&gt; % if S has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S and S has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
 <dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(S, S)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-every"><span>every?</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 </dl>
 <span class="target" id="l-collection-find"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">find</span>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; Union(S, failed)</dt>
@@ -103,26 +111,48 @@
 <dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-less"><span>less?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map</span></a>: (S -&gt; S, %) -&gt; %</dt>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map!</span></a>: (S -&gt; S, %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><span>shallowlyMutable</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#id1"><span>map</span></a>: (S -&gt; S, %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><span>member?</span></a>: (S, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-members"><span>members</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> S if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-more"><span>more?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-parts"><span>parts</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> S if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 </dl>
 <span class="target" id="l-collection-reduce"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">reduce</span>: ((S, S) -&gt; S, %) -&gt; S if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">reduce(f,</span> <span class="pre">u)</span></code> reduces the binary operation <code class="docutils literal"><span class="pre">f</span></code> across <code class="docutils literal"><span class="pre">u</span></code>. For example, if <code class="docutils literal"><span class="pre">u</span></code> is <code class="docutils literal"><span class="pre">[x,</span> <span class="pre">y,</span> <span class="pre">...,</span> <span class="pre">z]</span></code> then <code class="docutils literal"><span class="pre">reduce(f,</span> <span class="pre">u)</span></code> returns <code class="docutils literal"><span class="pre">f(..f(f(x,</span> <span class="pre">y),</span> <span class="pre">...),</span> <span class="pre">z)</span></code>. Note: if <code class="docutils literal"><span class="pre">u</span></code> has one element <code class="docutils literal"><span class="pre">x</span></code>, <code class="docutils literal"><span class="pre">reduce(f,</span> <span class="pre">u)</span></code> returns <code class="docutils literal"><span class="pre">x</span></code>. Error: if <code class="docutils literal"><span class="pre">u</span></code> is empty.</dd>
+</dl>
+<dl class="docutils" id="index-4">
+<dt><span class="spadfun">reduce</span>: ((S, S) -&gt; S, %, S) -&gt; S if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">reduce(f,</span> <span class="pre">u,</span> <span class="pre">x)</span></code> reduces the binary operation <code class="docutils literal"><span class="pre">f</span></code> across <code class="docutils literal"><span class="pre">u</span></code>, where <code class="docutils literal"><span class="pre">x</span></code> is the identity operation of <code class="docutils literal"><span class="pre">f</span></code>. Same as <code class="docutils literal"><span class="pre">reduce(f,</span> <span class="pre">u)</span></code> if <code class="docutils literal"><span class="pre">u</span></code> has 2 or more elements. Returns <code class="docutils literal"><span class="pre">f(y,</span> <span class="pre">x)</span></code> if <code class="docutils literal"><span class="pre">u</span></code> has one element <code class="docutils literal"><span class="pre">y</span></code>. Returns <code class="docutils literal"><span class="pre">x</span></code> if <code class="docutils literal"><span class="pre">u</span></code> is empty. For example, <code class="docutils literal"><span class="pre">reduce(+,</span> <span class="pre">u,</span> <span class="pre">0)</span></code> returns the sum of the elements of <code class="docutils literal"><span class="pre">u</span></code>.</dd>
+</dl>
+<dl class="docutils" id="index-5">
 <dt><span class="spadfun">reduce</span>: ((S, S) -&gt; S, %, S, S) -&gt; S if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">reduce(f,</span> <span class="pre">u,</span> <span class="pre">x,</span> <span class="pre">z)</span></code> reduces the binary operation <code class="docutils literal"><span class="pre">f</span></code> across <code class="docutils literal"><span class="pre">u</span></code>, stopping when an &#8220;absorbing element&#8221; <code class="docutils literal"><span class="pre">z</span></code> is encountered. As for <code class="docutils literal"><span class="pre">reduce(f,</span> <span class="pre">u,</span> <span class="pre">x)</span></code>, <code class="docutils literal"><span class="pre">x</span></code> is the identity element of <code class="docutils literal"><span class="pre">f</span></code>. Same as <code class="docutils literal"><span class="pre">reduce(f,</span> <span class="pre">u,</span> <span class="pre">x)</span></code> when <code class="docutils literal"><span class="pre">u</span></code> contains no element <code class="docutils literal"><span class="pre">z</span></code>. Thus the third argument <code class="docutils literal"><span class="pre">x</span></code> is returned when <code class="docutils literal"><span class="pre">u</span></code> is empty.</dd>
 </dl>
-<span class="target" id="l-collection-remove"></span><dl class="docutils" id="index-4">
+<span class="target" id="l-collection-remove"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">remove</span>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; % if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">remove(p,</span> <span class="pre">u)</span></code> returns a copy of <code class="docutils literal"><span class="pre">u</span></code> removing all elements <code class="docutils literal"><span class="pre">x</span></code> such that <code class="docutils literal"><span class="pre">p(x)</span></code> is <code class="docutils literal"><span class="pre">true</span></code>. Note: <code class="docutils literal"><span class="pre">remove(p,</span> <span class="pre">u)</span> <span class="pre">==</span> <span class="pre">[x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">u</span> <span class="pre">|</span> <span class="pre">not</span> <span class="pre">p(x)]</span></code>.</dd>
+</dl>
+<dl class="docutils" id="index-7">
 <dt><span class="spadfun">remove</span>: (S, %) -&gt; % if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">remove(x,</span> <span class="pre">u)</span></code> returns a copy of <code class="docutils literal"><span class="pre">u</span></code> with all elements equal to <code class="docutils literal"><span class="pre">x</span></code> removed. Note: <code class="docutils literal"><span class="pre">remove(x,</span> <span class="pre">c)</span> <span class="pre">==</span> <span class="pre">[y</span> <span class="pre">for</span> <span class="pre">y</span> <span class="pre">in</span> <span class="pre">c</span> <span class="pre">|</span> <span class="pre">y</span> <span class="pre">~=</span> <span class="pre">x]</span></code>.</dd>
 </dl>
-<span class="target" id="l-collection-remove-duplicates"></span><dl class="docutils" id="index-5">
+<span class="target" id="l-collection-remove-duplicates"></span><dl class="docutils" id="index-8">
 <dt><span class="spadfun">removeDuplicates</span>: % -&gt; % if S has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> and % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">removeDuplicates(u)</span></code> returns a copy of <code class="docutils literal"><span class="pre">u</span></code> with all duplicates removed.</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-sample"><span>sample</span></a>: %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+</dl>
+<span class="target" id="l-collection-select"></span><dl class="docutils" id="index-9">
+<dt><span class="spadfun">select</span>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; % if % has <a class="reference internal" href="finiteAggregate.html#l-finite-aggregate"><span>finiteAggregate</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">select(p,</span> <span class="pre">u)</span></code> returns a copy of <code class="docutils literal"><span class="pre">u</span></code> containing only those elements such <code class="docutils literal"><span class="pre">p(x)</span></code> is <code class="docutils literal"><span class="pre">true</span></code>. Note: <code class="docutils literal"><span class="pre">select(p,</span> <span class="pre">u)</span> <span class="pre">==</span> <span class="pre">[x</span> <span class="pre">for</span> <span class="pre">x</span> <span class="pre">in</span> <span class="pre">u</span> <span class="pre">|</span> <span class="pre">p(x)]</span></code>.</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-size"><span>size?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 </dl>
@@ -178,7 +208,7 @@
         <li class="right" >
           <a href="CoercibleTo.html" title="CoercibleTo S"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>

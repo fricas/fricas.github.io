@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PolynomialFactorizationExplicit &mdash; FriCAS 1.3.1 API</title>
+    <title>PolynomialFactorizationExplicit &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
     <link rel="next" title="PolynomialSetCategory(R, E, VarSet, P)" href="PolynomialSetCategory.html" />
     <link rel="prev" title="PolynomialCategory(R, E, VarSet)" href="PolynomialCategory.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="PolynomialCategory.html" title="PolynomialCategory(R, E, VarSet)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,7 +55,7 @@
             
   <div class="section" id="polynomialfactorizationexplicit">
 <span id="l-polynomial-factorization-explicit"></span><span id="index-0"></span><h1>PolynomialFactorizationExplicit<a class="headerlink" href="#polynomialfactorizationexplicit" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//catdef.spad#L1221">catdef.spad line 1221</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/catdef.spad#L1220">catdef.spad line 1220</a></p>
 <p>This is the category of domains that know &#8220;enough&#8221; about themselves in order to factor univariate polynomials over themselves.</p>
 <dl class="docutils">
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><span>0</span></a>: %</dt>
@@ -94,6 +94,10 @@
 <dd>from <a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng"><span>NonAssociativeRng</span></a></dd>
 <dt><a class="reference internal" href="NonAssociativeRing.html#l-non-associative-ring-characteristic"><span>characteristic</span></a>: () -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
 <dd>from <a class="reference internal" href="NonAssociativeRing.html#l-non-associative-ring"><span>NonAssociativeRing</span></a></dd>
+</dl>
+<span class="target" id="l-polynomial-factorization-explicit-charth-root"></span><dl class="docutils" id="index-1">
+<dt><span class="spadfun">charthRoot</span>: % -&gt; Union(%, failed) if % has <a class="reference internal" href="CharacteristicNonZero.html#l-characteristic-non-zero"><span>CharacteristicNonZero</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">charthRoot(r)</span></code> returns the <code class="docutils literal"><span class="pre">p</span></code><code class="docutils literal"><span class="pre">-</span></code>th root of <code class="docutils literal"><span class="pre">r</span></code>, or &#8220;failed&#8221; if none exists in the domain.</dd>
 <dt><a class="reference internal" href="Algebra.html#l-algebra-coerce"><span>coerce</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="Algebra.html#l-algebra"><span>Algebra</span></a> %</dd>
 <dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
@@ -102,16 +106,20 @@
 <dd>from <a class="reference internal" href="NonAssociativeRing.html#l-non-associative-ring"><span>NonAssociativeRing</span></a></dd>
 <dt><a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng-commutator"><span>commutator</span></a>: (%, %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="NonAssociativeRng.html#l-non-associative-rng"><span>NonAssociativeRng</span></a></dd>
+</dl>
+<span class="target" id="l-polynomial-factorization-explicit-condition-p"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">conditionP</span>: <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> % -&gt; Union(<a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> %, failed) if % has <a class="reference internal" href="CharacteristicNonZero.html#l-characteristic-non-zero"><span>CharacteristicNonZero</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">conditionP(m)</span></code> returns a vector of elements, not all zero, whose <code class="docutils literal"><span class="pre">p</span></code><code class="docutils literal"><span class="pre">-</span></code>th powers (<code class="docutils literal"><span class="pre">p</span></code> is the characteristic of the domain) are a solution of the homogenous linear system represented by <code class="docutils literal"><span class="pre">m</span></code>, or &#8220;failed&#8221; is there is no such vector.</dd>
 <dt><a class="reference internal" href="EntireRing.html#l-entire-ring-exquo"><span>exquo</span></a>: (%, %) -&gt; Union(%, failed)</dt>
 <dd>from <a class="reference internal" href="EntireRing.html#l-entire-ring"><span>EntireRing</span></a></dd>
 <dt><a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain-factor"><span>factor</span></a>: % -&gt; <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> %</dt>
 <dd>from <a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain"><span>UniqueFactorizationDomain</span></a></dd>
 </dl>
-<span class="target" id="l-polynomial-factorization-explicit-factor-polynomial"></span><dl class="docutils" id="index-1">
+<span class="target" id="l-polynomial-factorization-explicit-factor-polynomial"></span><dl class="docutils" id="index-3">
 <dt><span class="spadfun">factorPolynomial</span>: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> % -&gt; <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> %</dt>
 <dd><code class="docutils literal"><span class="pre">factorPolynomial(p)</span></code> returns the factorization into irreducibles of the univariate polynomial <code class="docutils literal"><span class="pre">p</span></code>.</dd>
 </dl>
-<span class="target" id="l-polynomial-factorization-explicit-factor-square-free-polynomial"></span><dl class="docutils" id="index-2">
+<span class="target" id="l-polynomial-factorization-explicit-factor-square-free-polynomial"></span><dl class="docutils" id="index-4">
 <dt><span class="spadfun">factorSquareFreePolynomial</span>: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> % -&gt; <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> %</dt>
 <dd><code class="docutils literal"><span class="pre">factorSquareFreePolynomial(p)</span></code> factors the univariate polynomial <code class="docutils literal"><span class="pre">p</span></code> into irreducibles where <code class="docutils literal"><span class="pre">p</span></code> is known to be square free and primitive with respect to its main variable.</dd>
 <dt><a class="reference internal" href="GcdDomain.html#l-gcd-domain-gcd"><span>gcd</span></a>: (%, %) -&gt; %</dt>
@@ -119,7 +127,7 @@
 <dt><a class="reference internal" href="GcdDomain.html#l-gcd-domain-gcd"><span>gcd</span></a>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> % -&gt; %</dt>
 <dd>from <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><span>GcdDomain</span></a></dd>
 </dl>
-<span class="target" id="l-polynomial-factorization-explicit-gcd-polynomial"></span><dl class="docutils" id="index-3">
+<span class="target" id="l-polynomial-factorization-explicit-gcd-polynomial"></span><dl class="docutils" id="index-5">
 <dt><span class="spadfun">gcdPolynomial</span>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> %, <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> %) -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> %</dt>
 <dd><code class="docutils literal"><span class="pre">gcdPolynomial(p,</span> <span class="pre">q)</span></code> returns the <code class="docutils literal"><span class="pre">gcd</span></code> of the univariate polynomials <code class="docutils literal"><span class="pre">p</span></code> <code class="docutils literal"><span class="pre">qnd</span></code> <code class="docutils literal"><span class="pre">q</span></code>.</dd>
 <dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><span>hash</span></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><span>SingleInteger</span></a></dt>
@@ -157,7 +165,7 @@
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-sample"><span>sample</span></a>: %</dt>
 <dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></dd>
 </dl>
-<span class="target" id="l-polynomial-factorization-explicit-solve-linear-polynomial-equation"></span><dl class="docutils" id="index-4">
+<span class="target" id="l-polynomial-factorization-explicit-solve-linear-polynomial-equation"></span><dl class="docutils" id="index-6">
 <dt><span class="spadfun">solveLinearPolynomialEquation</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> %, <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> %) -&gt; Union(<a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> %, failed)</dt>
 <dd><code class="docutils literal"><span class="pre">solveLinearPolynomialEquation([f1,</span> <span class="pre">...,</span> <span class="pre">fn],</span> <span class="pre">g)</span></code> (where the <code class="docutils literal"><span class="pre">fi</span></code> are relatively prime to each other) returns a list of <code class="docutils literal"><span class="pre">ai</span></code> such that <code class="docutils literal"><span class="pre">g/prod</span> <span class="pre">fi</span> <span class="pre">=</span> <span class="pre">sum</span> <span class="pre">ai/fi</span></code> or returns &#8220;failed&#8221; if no such list of <code class="docutils literal"><span class="pre">ai</span></code><code class="docutils literal"><span class="pre">'s</span></code> exists.</dd>
 <dt><a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain-square-free"><span>squareFree</span></a>: % -&gt; <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> %</dt>
@@ -165,7 +173,7 @@
 <dt><a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain-square-free-part"><span>squareFreePart</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain"><span>UniqueFactorizationDomain</span></a></dd>
 </dl>
-<span class="target" id="l-polynomial-factorization-explicit-square-free-polynomial"></span><dl class="docutils" id="index-5">
+<span class="target" id="l-polynomial-factorization-explicit-square-free-polynomial"></span><dl class="docutils" id="index-7">
 <dt><span class="spadfun">squareFreePolynomial</span>: <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> % -&gt; <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> %</dt>
 <dd><code class="docutils literal"><span class="pre">squareFreePolynomial(p)</span></code> returns the square-free factorization of the univariate polynomial <code class="docutils literal"><span class="pre">p</span></code>.</dd>
 <dt><a class="reference internal" href="CancellationAbelianMonoid.html#l-cancellation-abelian-monoid-subtract-if-can"><span>subtractIfCan</span></a>: (%, %) -&gt; Union(%, failed)</dt>
@@ -256,7 +264,7 @@
         <li class="right" >
           <a href="PolynomialCategory.html" title="PolynomialCategory(R, E, VarSet)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>

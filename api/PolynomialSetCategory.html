@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PolynomialSetCategory(R, E, VarSet, P) &mdash; FriCAS 1.3.1 API</title>
+    <title>PolynomialSetCategory(R, E, VarSet, P) &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
     <link rel="next" title="Poset S" href="Poset.html" />
     <link rel="prev" title="PolynomialFactorizationExplicit" href="PolynomialFactorizationExplicit.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="PolynomialFactorizationExplicit.html" title="PolynomialFactorizationExplicit"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,7 +55,7 @@
             
   <div class="section" id="polynomialsetcategory-r-e-varset-p">
 <span id="l-polynomial-set-category"></span><span id="index-0"></span><h1>PolynomialSetCategory(R, E, VarSet, P)<a class="headerlink" href="#polynomialsetcategory-r-e-varset-p" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//polset.spad#L1">polset.spad line 1</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/polset.spad#L1">polset.spad line 1</a></p>
 <ul class="simple">
 <li>R: <a class="reference internal" href="Ring.html#l-ring"><span>Ring</span></a></li>
 <li>E: <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><span>OrderedAbelianMonoidSup</span></a></li>
@@ -64,10 +64,14 @@
 </ul>
 <p>A category for finite subsets of a polynomial ring. Such a set is only regarded as a set of polynomials and not identified to the ideal it generates. So two distinct sets may generate the same the ideal. Furthermore, for <code class="docutils literal"><span class="pre">R</span></code> being an integral domain, a set of polynomials may be viewed as a representation of the ideal it generates in the polynomial ring <code class="docutils literal"><span class="pre">(R)^(-1)</span> <span class="pre">P</span></code>, or the set of its zeros (described for instance by the radical of the previous ideal, or a split of the associated affine variety) and so on. So this category provides operations about those different notions.</p>
 <dl class="docutils">
+<dt><a class="reference internal" href="Aggregate.html#id1"><span>#</span></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id1"><span>=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id2"><span>~=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-any"><span>any?</span></a>: (P -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> P</dd>
 <dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> P</dt>
 <dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> P</dd>
 <dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
@@ -90,11 +94,13 @@
 <dd>from <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><span>ConvertibleTo</span></a> <a class="reference internal" href="InputForm.html#l-input-form"><span>InputForm</span></a></dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><span>copy</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (P -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> P</dd>
 <dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (P, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> P</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><span>empty</span></a>: () -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
-<dt><a class="reference internal" href="Aggregate.html#id1"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dt><a class="reference internal" href="Aggregate.html#id2"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-eq"><span>eq?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
@@ -106,6 +112,8 @@
 <dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(P, P)</dd>
 <dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><span>eval</span></a>: (%, P, P) -&gt; % if P has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> P</dt>
 <dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(P, P)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-every"><span>every?</span></a>: (P -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> P</dd>
 <dt><a class="reference internal" href="Collection.html#l-collection-find"><span>find</span></a>: (P -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; Union(P, failed)</dt>
 <dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> P</dd>
 <dt><a class="reference internal" href="SetCategory.html#l-set-category-hash"><span>hash</span></a>: % -&gt; <a class="reference internal" href="SingleInteger.html#l-single-integer"><span>SingleInteger</span></a></dt>
@@ -132,9 +140,13 @@
 <span class="target" id="l-polynomial-set-category-main-variables"></span><dl class="docutils" id="index-7">
 <dt><span class="spadfun">mainVariables</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> VarSet</dt>
 <dd><code class="docutils literal"><span class="pre">mainVariables(ps)</span></code> returns the decreasingly sorted list of the variables which are main variables of some polynomial in <code class="docutils literal"><span class="pre">ps</span></code>.</dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map</span></a>: (P -&gt; P, %) -&gt; %</dt>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map!</span></a>: (P -&gt; P, %) -&gt; % if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><span>shallowlyMutable</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> P</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#id1"><span>map</span></a>: (P -&gt; P, %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> P</dd>
 <dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><span>member?</span></a>: (P, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> P</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-members"><span>members</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> P</dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> P</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-more"><span>more?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
@@ -142,12 +154,20 @@
 <span class="target" id="l-polynomial-set-category-mvar"></span><dl class="docutils" id="index-8">
 <dt><span class="spadfun">mvar</span>: % -&gt; VarSet</dt>
 <dd><code class="docutils literal"><span class="pre">mvar(ps)</span></code> returns the main variable of the non constant polynomial with the greatest main variable, if any, else an error is returned.</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-parts"><span>parts</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> P</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> P</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><span>reduce</span></a>: ((P, P) -&gt; P, %) -&gt; P</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> P</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><span>reduce</span></a>: ((P, P) -&gt; P, %, P) -&gt; P</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> P</dd>
 <dt><a class="reference internal" href="Collection.html#l-collection-reduce"><span>reduce</span></a>: ((P, P) -&gt; P, %, P, P) -&gt; P</dt>
 <dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> P</dd>
 </dl>
 <span class="target" id="l-polynomial-set-category-remainder"></span><dl class="docutils" id="index-9">
 <dt><span class="spadfun">remainder</span>: (P, %) -&gt; Record(rnum: R, polnum: P, den: R) if R has <a class="reference internal" href="IntegralDomain.html#l-integral-domain"><span>IntegralDomain</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">remainder(a,</span> <span class="pre">ps)</span></code> returns <code class="docutils literal"><span class="pre">[c,</span> <span class="pre">b,</span> <span class="pre">r]</span></code> such that <code class="docutils literal"><span class="pre">b</span></code> is fully reduced in the sense of Groebner bases <code class="docutils literal"><span class="pre">w</span></code>.<code class="docutils literal"><span class="pre">r</span></code>.<code class="docutils literal"><span class="pre">t</span></code>. <code class="docutils literal"><span class="pre">ps</span></code>, <code class="docutils literal"><span class="pre">r*a</span> <span class="pre">-</span> <span class="pre">c*b</span></code> lies in the ideal generated by <code class="docutils literal"><span class="pre">ps</span></code>. Furthermore, if <code class="docutils literal"><span class="pre">R</span></code> is a <code class="docutils literal"><span class="pre">gcd</span></code>-domain, <code class="docutils literal"><span class="pre">b</span></code> is primitive.</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-remove"><span>remove</span></a>: (P -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> P</dd>
 <dt><a class="reference internal" href="Collection.html#l-collection-remove"><span>remove</span></a>: (P, %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> P</dd>
 <dt><a class="reference internal" href="Collection.html#l-collection-remove-duplicates"><span>removeDuplicates</span></a>: % -&gt; %</dt>
@@ -182,6 +202,8 @@
 <dd><code class="docutils literal"><span class="pre">roughUnitIdeal?(ps)</span></code> returns <code class="docutils literal"><span class="pre">true</span></code> iff <code class="docutils literal"><span class="pre">ps</span></code> contains some non null element lying in the base ring <code class="docutils literal"><span class="pre">R</span></code>.</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-sample"><span>sample</span></a>: %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-select"><span>select</span></a>: (P -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> P</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-size"><span>size?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 </dl>
@@ -257,7 +279,7 @@
         <li class="right" >
           <a href="PolynomialFactorizationExplicit.html" title="PolynomialFactorizationExplicit"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>

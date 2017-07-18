@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Float &mdash; FriCAS 1.3.1 API</title>
+    <title>Float &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="FortranCode" href="FortranCode.html" />
     <link rel="prev" title="FlexibleArray S" href="FlexibleArray.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="FlexibleArray.html" title="FlexibleArray S"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,7 +55,7 @@
             
   <div class="section" id="float">
 <span id="l-float"></span><span id="index-0"></span><h1>Float<a class="headerlink" href="#float" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//float.spad#L1">float.spad line 1</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/float.spad#L1">float.spad line 1</a></p>
 <p><a class="reference internal" href="#l-float"><span>Float</span></a> implements arbitrary precision floating point arithmetic. The number of significant digits of each operation can be set to an arbitrary value (the default is 20 decimal digits). The operation <code class="docutils literal"><span class="pre">float(mantissa,</span> <span class="pre">exponent,</span> <span class="pre">:ref:`base</span> <span class="pre">&lt;l--floating-point-system_base&gt;`)</span></code> for integer <code class="docutils literal"><span class="pre">mantissa</span></code>, <code class="docutils literal"><span class="pre">exponent</span></code> specifies the number <code class="docutils literal"><span class="pre">mantissa</span> <span class="pre">*</span> <span class="pre">:ref:`base</span> <span class="pre">&lt;l--floating-point-system_base&gt;`</span> <span class="pre">^</span> <span class="pre">exponent</span></code> The underlying representation for floats is binary not decimal. The implications of this are described below.   The model adopted is that arithmetic operations are rounded to to nearest unit in the last place, that is, accurate to within <code class="docutils literal"><span class="pre">2^(-:ref:`bits</span> <span class="pre">&lt;l--floating-point-system_bits&gt;`)</span></code>. Also, the elementary functions and constants are accurate to one unit in the last place. A float is represented as a record of two integers, the mantissa and the exponent. The <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-base"><span>base</span></a> of the representation is binary, hence a <code class="docutils literal"><span class="pre">Record(m:</span> <span class="pre">mantissa,</span> <span class="pre">e:</span> <span class="pre">exponent)</span></code> represents the number <code class="docutils literal"><span class="pre">m</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">^</span> <span class="pre">e</span></code>. Though it is not assumed that the underlying integers are represented with a binary <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-base"><span>base</span></a>, the code will be most efficient when this is the the case (this is <code class="docutils literal"><span class="pre">true</span></code> in most implementations of Lisp). The decision to choose the <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-base"><span>base</span></a> to be binary has some unfortunate consequences. First, decimal numbers like 0.3 cannot be represented exactly. Second, there is a further loss of accuracy during conversion to decimal for output. To compensate for this, if <code class="docutils literal"><span class="pre">d</span></code> digits of precision are specified, <code class="docutils literal"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">ceiling(log2(10^d))</span></code> bits are used. Two numbers that are displayed identically may therefore be not equal. On the other hand, a significant efficiency loss would be incurred if we chose to use a decimal <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-base"><span>base</span></a> when the underlying integer base is binary.   Algorithms used: For the elementary functions, the general approach is to apply identities so that the taylor series can be used, and, so that it will converge within <code class="docutils literal"><span class="pre">O(</span> <span class="pre">sqrt</span> <span class="pre">n</span> <span class="pre">)</span></code> steps. For example, using the identity <code class="docutils literal"><span class="pre">exp(x)</span> <span class="pre">=</span> <span class="pre">exp(x/2)^2</span></code>, we can compute <code class="docutils literal"><span class="pre">exp(1/3)</span></code> to <code class="docutils literal"><span class="pre">n</span></code> digits of precision as follows. We have <code class="docutils literal"><span class="pre">exp(1/3)</span> <span class="pre">=</span> <span class="pre">exp(2</span> <span class="pre">^</span> <span class="pre">(-sqrt</span> <span class="pre">s)</span> <span class="pre">/</span> <span class="pre">3)</span> <span class="pre">^</span> <span class="pre">(2</span> <span class="pre">^</span> <span class="pre">sqrt</span> <span class="pre">s)</span></code>. The taylor series will converge in less than sqrt <code class="docutils literal"><span class="pre">n</span></code> steps and the exponentiation requires sqrt <code class="docutils literal"><span class="pre">n</span></code> multiplications for a total of <code class="docutils literal"><span class="pre">2</span> <span class="pre">sqrt</span> <span class="pre">n</span></code> multiplications. Assuming integer multiplication costs <code class="docutils literal"><span class="pre">O(</span> <span class="pre">n^2</span> <span class="pre">)</span></code> the overall running time is <code class="docutils literal"><span class="pre">O(</span> <span class="pre">sqrt(n)</span> <span class="pre">n^2</span> <span class="pre">)</span></code>. This approach is the best known approach for precisions up to about 10, 000 digits at which point the methods of Brent which are <code class="docutils literal"><span class="pre">O(</span> <span class="pre">log(n)</span> <span class="pre">n^2</span> <span class="pre">)</span></code> become competitive. Note also that summing the terms of the taylor series for the elementary functions is done using integer operations. This avoids the overhead of floating point operations and results in efficient code at low precisions. This implementation makes no attempt to reuse storage, relying on the underlying system to do spadgloss{garbage collection}. <code class="docutils literal"><span class="pre">I</span></code> estimate that the efficiency of this package at low precisions could be improved by a factor of 2 if in-place operations were available.   Running times: in the following, <code class="docutils literal"><span class="pre">n</span></code> is the number of bits of precision <code class="docutils literal"><span class="pre">*</span></code>, <code class="docutils literal"><span class="pre">/</span></code>, <code class="docutils literal"><span class="pre">sqrt</span></code>, <code class="docutils literal"><span class="pre">pi</span></code>, <code class="docutils literal"><span class="pre">exp1</span></code>, <code class="docutils literal"><span class="pre">log2</span></code>, <code class="docutils literal"><span class="pre">log10</span></code>: `` O( n^2 )`` <code class="docutils literal"><span class="pre">exp</span></code>, <code class="docutils literal"><span class="pre">log</span></code>, <code class="docutils literal"><span class="pre">sin</span></code>, <code class="docutils literal"><span class="pre">atan</span></code>: `` O( sqrt(n) n^2 )`` The other elementary functions are coded in terms of the ones above.</p>
 <dl class="docutils">
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><span>0</span></a>: %</dt>
@@ -82,10 +82,8 @@
 <dd>from <a class="reference internal" href="AbelianGroup.html#l-abelian-group"><span>AbelianGroup</span></a></dd>
 <dt><a class="reference internal" href="Field.html#id1"><span>/</span></a>: (%, %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="Field.html#l-field"><span>Field</span></a></dd>
-</dl>
-<span class="target" id="id1"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">/</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
-<dd><code class="docutils literal"><span class="pre">x</span> <span class="pre">/</span> <span class="pre">i</span></code> computes the division from <code class="docutils literal"><span class="pre">x</span></code> by an integer <code class="docutils literal"><span class="pre">i</span></code>.</dd>
+<dt><a class="reference internal" href="FloatingPointSystem.html#id1"><span>/</span></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
+<dd>from <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system"><span>FloatingPointSystem</span></a></dd>
 <dt><a class="reference internal" href="PartialOrder.html#id1"><span>&lt;</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><span>PartialOrder</span></a></dd>
 <dt><a class="reference internal" href="PartialOrder.html#id2"><span>&lt;=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
@@ -141,7 +139,7 @@
 <dt><a class="reference internal" href="ArcTrigonometricFunctionCategory.html#l-arc-trigonometric-function-category-atan"><span>atan</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="ArcTrigonometricFunctionCategory.html#l-arc-trigonometric-function-category"><span>ArcTrigonometricFunctionCategory</span></a></dd>
 </dl>
-<span class="target" id="l-float-atan"></span><dl class="docutils" id="index-2">
+<span class="target" id="l-float-atan"></span><dl class="docutils" id="index-1">
 <dt><span class="spadfun">atan</span>: (%, %) -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">atan(x,</span> <span class="pre">y)</span></code> computes the arc tangent from <code class="docutils literal"><span class="pre">x</span></code> with phase <code class="docutils literal"><span class="pre">y</span></code>.</dd>
 <dt><a class="reference internal" href="ArcHyperbolicFunctionCategory.html#l-arc-hyperbolic-function-category-atanh"><span>atanh</span></a>: % -&gt; %</dt>
@@ -149,6 +147,8 @@
 <dt><a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-base"><span>base</span></a>: () -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a></dt>
 <dd>from <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system"><span>FloatingPointSystem</span></a></dd>
 <dt><a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-bits"><span>bits</span></a>: () -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a></dt>
+<dd>from <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system"><span>FloatingPointSystem</span></a></dd>
+<dt><a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-bits"><span>bits</span></a>: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a> -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a></dt>
 <dd>from <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system"><span>FloatingPointSystem</span></a></dd>
 <dt><a class="reference internal" href="RealNumberSystem.html#l-real-number-system-ceiling"><span>ceiling</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="RealNumberSystem.html#l-real-number-system"><span>RealNumberSystem</span></a></dd>
@@ -177,7 +177,7 @@
 <dt><a class="reference internal" href="ConvertibleTo.html#l-convertible-to-convert"><span>convert</span></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a></dt>
 <dd>from <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><span>ConvertibleTo</span></a> <a class="reference internal" href="String.html#l-string"><span>String</span></a></dd>
 </dl>
-<span class="target" id="l-float-convert"></span><dl class="docutils" id="index-3">
+<span class="target" id="l-float-convert"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">convert</span>: <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a> -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">convert(x)</span></code> converts a <a class="reference internal" href="DoubleFloat.html#l-double-float"><span>DoubleFloat</span></a> <code class="docutils literal"><span class="pre">x</span></code> to a <a class="reference internal" href="#l-float"><span>Float</span></a>.</dd>
 <dt><a class="reference internal" href="TrigonometricFunctionCategory.html#l-trigonometric-function-category-cos"><span>cos</span></a>: % -&gt; %</dt>
@@ -196,18 +196,22 @@
 <dd>from <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><span>DifferentialRing</span></a></dd>
 <dt><a class="reference internal" href="DifferentialRing.html#l-differential-ring-d"><span>D</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
 <dd>from <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><span>DifferentialRing</span></a></dd>
+<dt><a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-decrease-precision"><span>decreasePrecision</span></a>: <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a> -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a></dt>
+<dd>from <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system"><span>FloatingPointSystem</span></a></dd>
 <dt><a class="reference internal" href="DifferentialRing.html#l-differential-ring-differentiate"><span>differentiate</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><span>DifferentialRing</span></a></dd>
 <dt><a class="reference internal" href="DifferentialRing.html#l-differential-ring-differentiate"><span>differentiate</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; %</dt>
 <dd>from <a class="reference internal" href="DifferentialRing.html#l-differential-ring"><span>DifferentialRing</span></a></dd>
 <dt><a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-digits"><span>digits</span></a>: () -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a></dt>
 <dd>from <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system"><span>FloatingPointSystem</span></a></dd>
+<dt><a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-digits"><span>digits</span></a>: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a> -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a></dt>
+<dd>from <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system"><span>FloatingPointSystem</span></a></dd>
 <dt><a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain-divide"><span>divide</span></a>: (%, %) -&gt; Record(quotient: %, remainder: %)</dt>
 <dd>from <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><span>EuclideanDomain</span></a></dd>
 <dt><a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain-euclidean-size"><span>euclideanSize</span></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
 <dd>from <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><span>EuclideanDomain</span></a></dd>
 </dl>
-<span class="target" id="l-float-exp1"></span><dl class="docutils" id="index-4">
+<span class="target" id="l-float-exp1"></span><dl class="docutils" id="index-3">
 <dt><span class="spadfun">exp1</span>: () -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">exp1()</span></code> returns exp 1: <code class="docutils literal"><span class="pre">2.7182818284...</span></code>.</dd>
 <dt><a class="reference internal" href="ElementaryFunctionCategory.html#l-elementary-function-category-exp"><span>exp</span></a>: % -&gt; %</dt>
@@ -242,6 +246,8 @@
 <dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
 <dt><a class="reference internal" href="SetCategory.html#l-set-category-hash-update"><span>hashUpdate!</span></a>: (<a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a>, %) -&gt; <a class="reference internal" href="HashState.html#l-hash-state"><span>HashState</span></a></dt>
 <dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
+<dt><a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-increase-precision"><span>increasePrecision</span></a>: <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a> -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a></dt>
+<dd>from <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system"><span>FloatingPointSystem</span></a></dd>
 <dt><a class="reference internal" href="DivisionRing.html#l-division-ring-inv"><span>inv</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="DivisionRing.html#l-division-ring"><span>DivisionRing</span></a></dd>
 <dt><a class="reference internal" href="SetCategory.html#l-set-category-latex"><span>latex</span></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a></dt>
@@ -259,19 +265,19 @@
 <dt><a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit-left-recip"><span>leftRecip</span></a>: % -&gt; Union(%, failed)</dt>
 <dd>from <a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit"><span>MagmaWithUnit</span></a></dd>
 </dl>
-<span class="target" id="l-float-log10"></span><dl class="docutils" id="index-5">
+<span class="target" id="l-float-log10"></span><dl class="docutils" id="index-4">
 <dt><span class="spadfun">log10</span>: % -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">log10(x)</span></code> computes the logarithm for <code class="docutils literal"><span class="pre">x</span></code> to base 10.</dd>
 </dl>
-<dl class="docutils" id="index-6">
+<dl class="docutils" id="index-5">
 <dt><span class="spadfun">log10</span>: () -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">log10()</span></code> returns <code class="docutils literal"><span class="pre">ln</span> <span class="pre">10</span></code>: <code class="docutils literal"><span class="pre">2.3025809299...</span></code>.</dd>
 </dl>
-<span class="target" id="l-float-log2"></span><dl class="docutils" id="index-7">
+<span class="target" id="l-float-log2"></span><dl class="docutils" id="index-6">
 <dt><span class="spadfun">log2</span>: % -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">log2(x)</span></code> computes the logarithm for <code class="docutils literal"><span class="pre">x</span></code> to base 2.</dd>
 </dl>
-<dl class="docutils" id="index-8">
+<dl class="docutils" id="index-7">
 <dt><span class="spadfun">log2</span>: () -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">log2()</span></code> returns <code class="docutils literal"><span class="pre">ln</span> <span class="pre">2</span></code>, i.e. <code class="docutils literal"><span class="pre">0.6931471805...</span></code>.</dd>
 <dt><a class="reference internal" href="ElementaryFunctionCategory.html#l-elementary-function-category-log"><span>log</span></a>: % -&gt; %</dt>
@@ -293,7 +299,7 @@
 <dt><a class="reference internal" href="RealNumberSystem.html#l-real-number-system-norm"><span>norm</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="RealNumberSystem.html#l-real-number-system"><span>RealNumberSystem</span></a></dd>
 </dl>
-<span class="target" id="l-float-normalize"></span><dl class="docutils" id="index-9">
+<span class="target" id="l-float-normalize"></span><dl class="docutils" id="index-8">
 <dt><span class="spadfun">normalize</span>: % -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">normalize(x)</span></code> normalizes <code class="docutils literal"><span class="pre">x</span></code> at current precision.</dd>
 <dt><a class="reference internal" href="RadicalCategory.html#l-radical-category-nth-root"><span>nthRoot</span></a>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
@@ -313,31 +319,31 @@
 <dt><a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-order"><span>order</span></a>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
 <dd>from <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system"><span>FloatingPointSystem</span></a></dd>
 </dl>
-<span class="target" id="l-float-output-fixed"></span><dl class="docutils" id="index-10">
+<span class="target" id="l-float-output-fixed"></span><dl class="docutils" id="index-9">
 <dt><span class="spadfun">outputFixed</span>: () -&gt; <a class="reference internal" href="Void.html#l-void"><span>Void</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">outputFixed()</span></code> sets the output mode to fixed point notation; the output will contain a decimal point.</dd>
 </dl>
-<dl class="docutils" id="index-11">
+<dl class="docutils" id="index-10">
 <dt><span class="spadfun">outputFixed</span>: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> -&gt; <a class="reference internal" href="Void.html#l-void"><span>Void</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">outputFixed(n)</span></code> sets the output mode to fixed point notation, with <code class="docutils literal"><span class="pre">n</span></code> digits displayed after the decimal point.</dd>
 </dl>
-<span class="target" id="l-float-output-floating"></span><dl class="docutils" id="index-12">
+<span class="target" id="l-float-output-floating"></span><dl class="docutils" id="index-11">
 <dt><span class="spadfun">outputFloating</span>: () -&gt; <a class="reference internal" href="Void.html#l-void"><span>Void</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">outputFloating()</span></code> sets the output mode to floating (scientific) notation, i.e. <code class="docutils literal"><span class="pre">mantissa</span> <span class="pre">*</span> <span class="pre">10</span> <span class="pre">exponent</span></code> is displayed as <code class="docutils literal"><span class="pre">0.mantissa</span> <span class="pre">E</span> <span class="pre">exponent</span></code>.</dd>
 </dl>
-<dl class="docutils" id="index-13">
+<dl class="docutils" id="index-12">
 <dt><span class="spadfun">outputFloating</span>: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> -&gt; <a class="reference internal" href="Void.html#l-void"><span>Void</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">outputFloating(n)</span></code> sets the output mode to floating (scientific) notation with <code class="docutils literal"><span class="pre">n</span></code> significant digits displayed after the decimal point.</dd>
 </dl>
-<span class="target" id="l-float-output-general"></span><dl class="docutils" id="index-14">
+<span class="target" id="l-float-output-general"></span><dl class="docutils" id="index-13">
 <dt><span class="spadfun">outputGeneral</span>: () -&gt; <a class="reference internal" href="Void.html#l-void"><span>Void</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">outputGeneral()</span></code> sets the output mode (default mode) to general notation; numbers will be displayed in either fixed or floating (scientific) notation depending on the magnitude.</dd>
 </dl>
-<dl class="docutils" id="index-15">
+<dl class="docutils" id="index-14">
 <dt><span class="spadfun">outputGeneral</span>: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> -&gt; <a class="reference internal" href="Void.html#l-void"><span>Void</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">outputGeneral(n)</span></code> sets the output mode to general notation with <code class="docutils literal"><span class="pre">n</span></code> significant digits displayed.</dd>
 </dl>
-<span class="target" id="l-float-output-spacing"></span><dl class="docutils" id="index-16">
+<span class="target" id="l-float-output-spacing"></span><dl class="docutils" id="index-15">
 <dt><span class="spadfun">outputSpacing</span>: <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> -&gt; <a class="reference internal" href="Void.html#l-void"><span>Void</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">outputSpacing(n)</span></code> inserts a space after <code class="docutils literal"><span class="pre">n</span></code> (default 10) digits on output; outputSpacing(0) means no spaces are inserted.</dd>
 <dt><a class="reference internal" href="PatternMatchable.html#l-pattern-matchable-pattern-match"><span>patternMatch</span></a>: (%, <a class="reference internal" href="Pattern.html#l-pattern"><span>Pattern</span></a> <a class="reference internal" href="#l-float"><span>Float</span></a>, <a class="reference internal" href="PatternMatchResult.html#l-pattern-match-result"><span>PatternMatchResult</span></a>(<a class="reference internal" href="#l-float"><span>Float</span></a>, %)) -&gt; <a class="reference internal" href="PatternMatchResult.html#l-pattern-match-result"><span>PatternMatchResult</span></a>(<a class="reference internal" href="#l-float"><span>Float</span></a>, %)</dt>
@@ -348,6 +354,8 @@
 <dd>from <a class="reference internal" href="OrderedRing.html#l-ordered-ring"><span>OrderedRing</span></a></dd>
 <dt><a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-precision"><span>precision</span></a>: () -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a></dt>
 <dd>from <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system"><span>FloatingPointSystem</span></a></dd>
+<dt><a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-precision"><span>precision</span></a>: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a> -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a></dt>
+<dd>from <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system"><span>FloatingPointSystem</span></a></dd>
 <dt><a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain-prime"><span>prime?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain"><span>UniqueFactorizationDomain</span></a></dd>
 <dt><a class="reference internal" href="PrincipalIdealDomain.html#l-principal-ideal-domain-principal-ideal"><span>principalIdeal</span></a>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> % -&gt; Record(coef: <a class="reference internal" href="List.html#l-list"><span>List</span></a> %, generator: %)</dt>
@@ -355,19 +363,19 @@
 <dt><a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain-quo"><span>quo</span></a>: (%, %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><span>EuclideanDomain</span></a></dd>
 </dl>
-<span class="target" id="l-float-rational-approximation"></span><dl class="docutils" id="index-17">
+<span class="target" id="l-float-rational-approximation"></span><dl class="docutils" id="index-16">
 <dt><span class="spadfun">rationalApproximation</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">rationalApproximation(f,</span> <span class="pre">n)</span></code> computes a rational approximation <code class="docutils literal"><span class="pre">r</span></code> to <code class="docutils literal"><span class="pre">f</span></code> with relative error <code class="docutils literal"><span class="pre">&lt;</span> <span class="pre">10^(-n)</span></code>.</dd>
 </dl>
-<dl class="docutils" id="index-18">
+<dl class="docutils" id="index-17">
 <dt><span class="spadfun">rationalApproximation</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">rationalApproximation(f,</span> <span class="pre">n,</span> <span class="pre">b)</span></code> computes a rational approximation <code class="docutils literal"><span class="pre">r</span></code> to <code class="docutils literal"><span class="pre">f</span></code> with relative error <code class="docutils literal"><span class="pre">&lt;</span> <span class="pre">b^(-n)</span></code>, that is <code class="docutils literal"><span class="pre">|(r-f)/f|</span> <span class="pre">&lt;</span> <span class="pre">b^(-n)</span></code>.</dd>
 <dt><a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit-recip"><span>recip</span></a>: % -&gt; Union(%, failed)</dt>
 <dd>from <a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit"><span>MagmaWithUnit</span></a></dd>
 </dl>
-<span class="target" id="l-float-relerror"></span><dl class="docutils" id="index-19">
-<dt><span class="spadfun">relerror</span>: (%, %) -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
-<dd><code class="docutils literal"><span class="pre">relerror(x,</span> <span class="pre">y)</span></code> computes the absolute value of <code class="docutils literal"><span class="pre">x</span> <span class="pre">-</span> <span class="pre">y</span></code> divided by <code class="docutils literal"><span class="pre">y</span></code>, when <code class="docutils literal"><span class="pre">y</span> <span class="pre">\~=</span> <span class="pre">0</span></code>.</dd>
+<span class="target" id="l-float-relerror"></span><dl class="docutils" id="index-18">
+<dt><span class="spadfun">relerror</span>: (%, %) -&gt; %</dt>
+<dd><code class="docutils literal"><span class="pre">relerror(x,</span> <span class="pre">y)</span></code> computes the absolute value of <code class="docutils literal"><span class="pre">(x</span> <span class="pre">-</span> <span class="pre">y)/y</span></code>, when <code class="docutils literal"><span class="pre">y</span> <span class="pre">\~=</span> <span class="pre">0</span></code>.</dd>
 <dt><a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain-rem"><span>rem</span></a>: (%, %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><span>EuclideanDomain</span></a></dd>
 <dt><a class="reference internal" href="RetractableTo.html#l-retractable-to-retract"><span>retract</span></a>: % -&gt; <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
@@ -393,7 +401,7 @@
 <dt><a class="reference internal" href="HyperbolicFunctionCategory.html#l-hyperbolic-function-category-sech"><span>sech</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="HyperbolicFunctionCategory.html#l-hyperbolic-function-category"><span>HyperbolicFunctionCategory</span></a></dd>
 </dl>
-<span class="target" id="l-float-shift"></span><dl class="docutils" id="index-20">
+<span class="target" id="l-float-shift"></span><dl class="docutils" id="index-19">
 <dt><span class="spadfun">shift</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">shift(x,</span> <span class="pre">n)</span></code> adds <code class="docutils literal"><span class="pre">n</span></code> to the exponent of float <code class="docutils literal"><span class="pre">x</span></code>.</dd>
 <dt><a class="reference internal" href="OrderedRing.html#l-ordered-ring-sign"><span>sign</span></a>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
@@ -418,6 +426,8 @@
 <dd>from <a class="reference internal" href="TrigonometricFunctionCategory.html#l-trigonometric-function-category"><span>TrigonometricFunctionCategory</span></a></dd>
 <dt><a class="reference internal" href="HyperbolicFunctionCategory.html#l-hyperbolic-function-category-tanh"><span>tanh</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="HyperbolicFunctionCategory.html#l-hyperbolic-function-category"><span>HyperbolicFunctionCategory</span></a></dd>
+<dt><a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-to-string"><span>toString</span></a>: % -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a></dt>
+<dd>from <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system"><span>FloatingPointSystem</span></a></dd>
 <dt><a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system-to-string"><span>toString</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a></dt>
 <dd>from <a class="reference internal" href="FloatingPointSystem.html#l-floating-point-system"><span>FloatingPointSystem</span></a></dd>
 <dt><a class="reference internal" href="RealNumberSystem.html#l-real-number-system-truncate"><span>truncate</span></a>: % -&gt; %</dt>
@@ -554,7 +564,7 @@
         <li class="right" >
           <a href="FlexibleArray.html" title="FlexibleArray S"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>

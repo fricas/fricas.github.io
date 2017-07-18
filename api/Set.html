@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Set S &mdash; FriCAS 1.3.1 API</title>
+    <title>Set S &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="SetOfMIntegersInOneToN(m, n)" href="SetOfMIntegersInOneToN.html" />
     <link rel="prev" title="SequentialDifferentialVariable S" href="SequentialDifferentialVariable.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="SequentialDifferentialVariable.html" title="SequentialDifferentialVariable S"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,12 +55,14 @@
             
   <div class="section" id="set-s">
 <span id="l-set"></span><span id="index-0"></span><h1>Set S<a class="headerlink" href="#set-s" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//sets.spad#L1">sets.spad line 1</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/sets.spad#L1">sets.spad line 1</a></p>
 <ul class="simple">
 <li>S: <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></li>
 </ul>
 <p>A set over a domain <code class="docutils literal"><span class="pre">S</span></code> models the usual mathematical notion of a finite set of elements from <code class="docutils literal"><span class="pre">S</span></code>. Sets are unordered collections of distinct elements (that is, order and duplication does not matter). The notation <code class="docutils literal"><span class="pre">set</span> <span class="pre">[a,</span> <span class="pre">b,</span> <span class="pre">c]</span></code> can be used to create a set and the usual operations such as union and intersection are available to form new sets. If <code class="docutils literal"><span class="pre">S</span></code> has OrderdSet, Language{} maintains the entries in sorted order. Specifically, the parts function returns the entries as a list in ascending order and the extract operation returns the maximum entry. Given two sets <code class="docutils literal"><span class="pre">s</span></code> and <code class="docutils literal"><span class="pre">t</span></code> where <code class="docutils literal"><span class="pre">\#s</span> <span class="pre">=</span> <span class="pre">m</span></code> and <code class="docutils literal"><span class="pre">\#t</span> <span class="pre">=</span> <span class="pre">n</span></code>, the complexity of <code class="docutils literal"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">t</span></code> is <code class="docutils literal"><span class="pre">O(min(n,</span> <span class="pre">m))</span></code> <code class="docutils literal"><span class="pre">s</span> <span class="pre">&lt;</span> <span class="pre">t</span></code> is <code class="docutils literal"><span class="pre">O(max(n,</span> <span class="pre">m))</span></code> <code class="docutils literal"><span class="pre">union(s,</span> <span class="pre">t)</span></code>, <code class="docutils literal"><span class="pre">intersect(s,</span> <span class="pre">t)</span></code>, <code class="docutils literal"><span class="pre">minus(s,</span> <span class="pre">t)</span></code>, <code class="docutils literal"><span class="pre">symmetricDifference(s,</span> <span class="pre">t)</span></code> is <code class="docutils literal"><span class="pre">O(max(n,</span> <span class="pre">m))</span></code> <code class="docutils literal"><span class="pre">member(x,</span> <span class="pre">t)</span></code> is <code class="docutils literal"><span class="pre">O(n</span> <span class="pre">log</span> <span class="pre">n)</span></code> <code class="docutils literal"><span class="pre">insert(x,</span> <span class="pre">t)</span></code> and <code class="docutils literal"><span class="pre">remove(x,</span> <span class="pre">t)</span></code> is <code class="docutils literal"><span class="pre">O(n)</span></code></p>
 <dl class="docutils">
+<dt><a class="reference internal" href="Aggregate.html#id1"><span>#</span></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="PartialOrder.html#id1"><span>&lt;</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><span>PartialOrder</span></a></dd>
 <dt><a class="reference internal" href="PartialOrder.html#id2"><span>&lt;=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
@@ -73,10 +75,8 @@
 <dd>from <a class="reference internal" href="PartialOrder.html#l-partial-order"><span>PartialOrder</span></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id2"><span>~=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
-<dt><a class="reference internal" href="SetAggregate.html#l-set-aggregate-brace"><span>brace</span></a>: () -&gt; %</dt>
-<dd>from <a class="reference internal" href="SetAggregate.html#l-set-aggregate"><span>SetAggregate</span></a> S</dd>
-<dt><a class="reference internal" href="SetAggregate.html#l-set-aggregate-brace"><span>brace</span></a>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> S -&gt; %</dt>
-<dd>from <a class="reference internal" href="SetAggregate.html#l-set-aggregate"><span>SetAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-any"><span>any?</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="FiniteSetAggregate.html#l-finite-set-aggregate-cardinality"><span>cardinality</span></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
 <dd>from <a class="reference internal" href="FiniteSetAggregate.html#l-finite-set-aggregate"><span>FiniteSetAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
@@ -89,6 +89,8 @@
 <dd>from <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><span>ConvertibleTo</span></a> <a class="reference internal" href="InputForm.html#l-input-form"><span>InputForm</span></a></dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><span>copy</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (S, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations-dictionary"><span>dictionary</span></a>: () -&gt; %</dt>
@@ -101,7 +103,7 @@
 <dd>from <a class="reference internal" href="SetAggregate.html#l-set-aggregate"><span>SetAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><span>empty</span></a>: () -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
-<dt><a class="reference internal" href="Aggregate.html#id1"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dt><a class="reference internal" href="Aggregate.html#id2"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="Finite.html#l-finite-enumerate"><span>enumerate</span></a>: () -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> % if S has <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dt>
 <dd>from <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dd>
@@ -115,6 +117,8 @@
 <dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(S, S)</dd>
 <dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><span>eval</span></a>: (%, S, S) -&gt; % if S has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S</dt>
 <dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(S, S)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-every"><span>every?</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="BagAggregate.html#l-bag-aggregate-extract"><span>extract!</span></a>: % -&gt; S</dt>
 <dd>from <a class="reference internal" href="BagAggregate.html#l-bag-aggregate"><span>BagAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="Collection.html#l-collection-find"><span>find</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; Union(S, failed)</dt>
@@ -137,28 +141,46 @@
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="Finite.html#l-finite-lookup"><span>lookup</span></a>: % -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a> if S has <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dt>
 <dd>from <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map</span></a>: (S -&gt; S, %) -&gt; %</dt>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map!</span></a>: (S -&gt; S, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#id1"><span>map</span></a>: (S -&gt; S, %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="FiniteSetAggregate.html#l-finite-set-aggregate-max"><span>max</span></a>: % -&gt; S if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a></dt>
 <dd>from <a class="reference internal" href="FiniteSetAggregate.html#l-finite-set-aggregate"><span>FiniteSetAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><span>member?</span></a>: (S, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-members"><span>members</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> S</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="FiniteSetAggregate.html#l-finite-set-aggregate-min"><span>min</span></a>: % -&gt; S if S has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a></dt>
 <dd>from <a class="reference internal" href="FiniteSetAggregate.html#l-finite-set-aggregate"><span>FiniteSetAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-more"><span>more?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-parts"><span>parts</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> S</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="Finite.html#l-finite-random"><span>random</span></a>: () -&gt; % if S has <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dt>
 <dd>from <a class="reference internal" href="Finite.html#l-finite"><span>Finite</span></a></dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><span>reduce</span></a>: ((S, S) -&gt; S, %) -&gt; S</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><span>reduce</span></a>: ((S, S) -&gt; S, %, S) -&gt; S</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
 <dt><a class="reference internal" href="Collection.html#l-collection-reduce"><span>reduce</span></a>: ((S, S) -&gt; S, %, S, S) -&gt; S</dt>
 <dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
+<dt><a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations-remove"><span>remove!</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations"><span>DictionaryOperations</span></a> S</dd>
 <dt><a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations-remove"><span>remove!</span></a>: (S, %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations"><span>DictionaryOperations</span></a> S</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-remove"><span>remove</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
 <dt><a class="reference internal" href="Collection.html#l-collection-remove"><span>remove</span></a>: (S, %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
 <dt><a class="reference internal" href="Collection.html#l-collection-remove-duplicates"><span>removeDuplicates</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-sample"><span>sample</span></a>: %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations-select"><span>select!</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations"><span>DictionaryOperations</span></a> S</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-select"><span>select</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
 <dt><a class="reference internal" href="SetAggregate.html#l-set-aggregate-set"><span>set</span></a>: () -&gt; %</dt>
 <dd>from <a class="reference internal" href="SetAggregate.html#l-set-aggregate"><span>SetAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="SetAggregate.html#l-set-aggregate-set"><span>set</span></a>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> S -&gt; %</dt>
@@ -245,7 +267,7 @@
         <li class="right" >
           <a href="SequentialDifferentialVariable.html" title="SequentialDifferentialVariable S"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>

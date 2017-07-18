@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>ListMultiDictionary S &mdash; FriCAS 1.3.1 API</title>
+    <title>ListMultiDictionary S &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="LocalAlgebra(A, R)" href="LocalAlgebra.html" />
     <link rel="prev" title="ListMonoidOps(S, E, un)" href="ListMonoidOps.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="ListMonoidOps.html" title="ListMonoidOps(S, E, un)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,16 +55,20 @@
             
   <div class="section" id="listmultidictionary-s">
 <span id="l-list-multi-dictionary"></span><span id="index-0"></span><h1>ListMultiDictionary S<a class="headerlink" href="#listmultidictionary-s" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//lmdict.spad#L1">lmdict.spad line 1</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/lmdict.spad#L1">lmdict.spad line 1</a></p>
 <ul class="simple">
 <li>S: <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></li>
 </ul>
 <p>The <a class="reference internal" href="#l-list-multi-dictionary"><span>ListMultiDictionary</span></a> domain implements a dictionary with duplicates allowed. The representation is a list with duplicates represented explicitly. Hence most operations will be relatively inefficient when the number of entries in the dictionary becomes large. If the objects in the dictionary belong to an ordered set, the entries are maintained in ascending order.</p>
 <dl class="docutils">
+<dt><a class="reference internal" href="Aggregate.html#id1"><span>#</span></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id1"><span>=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id2"><span>~=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-any"><span>any?</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
 <dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dd>
 <dt><a class="reference internal" href="Collection.html#l-collection-construct"><span>construct</span></a>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> S -&gt; %</dt>
@@ -73,6 +77,10 @@
 <dd>from <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><span>ConvertibleTo</span></a> <a class="reference internal" href="InputForm.html#l-input-form"><span>InputForm</span></a></dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><span>copy</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (S, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations-dictionary"><span>dictionary</span></a>: () -&gt; %</dt>
 <dd>from <a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations"><span>DictionaryOperations</span></a> S</dd>
 <dt><a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations-dictionary"><span>dictionary</span></a>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> S -&gt; %</dt>
@@ -85,7 +93,7 @@
 <dd><code class="docutils literal"><span class="pre">duplicates?(d)</span></code> tests if dictionary <code class="docutils literal"><span class="pre">d</span></code> has duplicate entries.</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><span>empty</span></a>: () -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
-<dt><a class="reference internal" href="Aggregate.html#id1"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dt><a class="reference internal" href="Aggregate.html#id2"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-eq"><span>eq?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
@@ -97,6 +105,8 @@
 <dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(S, S)</dd>
 <dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><span>eval</span></a>: (%, S, S) -&gt; % if S has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> S</dt>
 <dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(S, S)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-every"><span>every?</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="BagAggregate.html#l-bag-aggregate-extract"><span>extract!</span></a>: % -&gt; S</dt>
 <dd>from <a class="reference internal" href="BagAggregate.html#l-bag-aggregate"><span>BagAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="Collection.html#l-collection-find"><span>find</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; Union(S, failed)</dt>
@@ -115,14 +125,42 @@
 <dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-less"><span>less?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map</span></a>: (S -&gt; S, %) -&gt; %</dt>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map!</span></a>: (S -&gt; S, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#id1"><span>map</span></a>: (S -&gt; S, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><span>member?</span></a>: (S, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-members"><span>members</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> S</dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-more"><span>more?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-parts"><span>parts</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> S</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> S</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><span>reduce</span></a>: ((S, S) -&gt; S, %) -&gt; S</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><span>reduce</span></a>: ((S, S) -&gt; S, %, S) -&gt; S</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><span>reduce</span></a>: ((S, S) -&gt; S, %, S, S) -&gt; S</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
+<dt><a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations-remove"><span>remove!</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations"><span>DictionaryOperations</span></a> S</dd>
+<dt><a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations-remove"><span>remove!</span></a>: (S, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations"><span>DictionaryOperations</span></a> S</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-remove"><span>remove</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-remove"><span>remove</span></a>: (S, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
 <dt><a class="reference internal" href="MultiDictionary.html#l-multi-dictionary-remove-duplicates"><span>removeDuplicates!</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="MultiDictionary.html#l-multi-dictionary"><span>MultiDictionary</span></a> S</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-remove-duplicates"><span>removeDuplicates</span></a>: % -&gt; %</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-sample"><span>sample</span></a>: %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations-select"><span>select!</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations"><span>DictionaryOperations</span></a> S</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-select"><span>select</span></a>: (S -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> S</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-size"><span>size?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 </dl>
@@ -188,7 +226,7 @@
         <li class="right" >
           <a href="ListMonoidOps.html" title="ListMonoidOps(S, E, un)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>

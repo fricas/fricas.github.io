@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>FiniteGraph S &mdash; FriCAS 1.3.1 API</title>
+    <title>FiniteGraph S &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
     <link rel="next" title="FiniteGroup" href="FiniteGroup.html" />
     <link rel="prev" title="FiniteFieldCategory" href="FiniteFieldCategory.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="FiniteFieldCategory.html" title="FiniteFieldCategory"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,7 +55,7 @@
             
   <div class="section" id="finitegraph-s">
 <span id="l-finite-graph"></span><span id="index-0"></span><h1>FiniteGraph S<a class="headerlink" href="#finitegraph-s" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//graph.spad#L1118">graph.spad line 1118</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/graph.spad#L1118">graph.spad line 1118</a></p>
 <ul class="simple">
 <li>S: <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></li>
 </ul>
@@ -161,7 +161,7 @@
 </dl>
 <span class="target" id="l-finite-graph-distance-matrix"></span><dl class="docutils" id="index-25">
 <dt><span class="spadfun">distanceMatrix</span>: % -&gt; <a class="reference internal" href="Matrix.html#l-matrix"><span>Matrix</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
-<dd><code class="docutils literal"><span class="pre">distanceMatrix(s)</span></code> gives matrix of distances between vertices. Element a_{<code class="docutils literal"><span class="pre">i</span></code>, <code class="docutils literal"><span class="pre">j</span></code>} is the distance from <code class="docutils literal"><span class="pre">i</span></code> to <code class="docutils literal"><span class="pre">j</span></code>. Distance matrices are related to adjacency matrices, with the differences that: a) the latter only provides the information which vertices are connected but does not tell about costs or distances between the vertices <code class="docutils literal"><span class="pre">b</span></code>) adjacency matrix only tells us about directly connected vertices while distance matrix also considers indirect connections.</dd>
+<dd><code class="docutils literal"><span class="pre">distanceMatrix(s)</span></code> gives matrix of distances between vertices. Element a_{<code class="docutils literal"><span class="pre">i</span></code>, <code class="docutils literal"><span class="pre">j</span></code>} is the distance from <code class="docutils literal"><span class="pre">i</span></code> to <code class="docutils literal"><span class="pre">j</span></code>. Distance matrices are related to adjacency matrices, with the differences that: a. the latter only provides the information which vertices are connected but does not tell about costs or distances between the vertices <code class="docutils literal"><span class="pre">b</span></code>. adjacency matrix only tells us about directly connected vertices while distance matrix also considers indirect connections.</dd>
 </dl>
 <span class="target" id="l-finite-graph-flatten"></span><dl class="docutils" id="index-26">
 <dt><span class="spadfun">flatten</span>: <a class="reference internal" href="DirectedGraph.html#l-directed-graph"><span>DirectedGraph</span></a> % -&gt; %</dt>
@@ -221,7 +221,7 @@
 </dl>
 <span class="target" id="l-finite-graph-is-greater-than"></span><dl class="docutils" id="index-39">
 <dt><span class="spadfun">isGreaterThan?</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
-<dd>isGreaterThan?((<code class="docutils literal"><span class="pre">s</span></code>, a, <code class="docutils literal"><span class="pre">b</span></code>) is <code class="docutils literal"><span class="pre">true</span></code> if we can get from vertex &#8216;a&#8217; to <code class="docutils literal"><span class="pre">'b'</span></code> through a sequence of arrows but we can<code class="docutils literal"><span class="pre">'t</span></code> go in the opposite direction from <code class="docutils literal"><span class="pre">'b'</span></code> to &#8216;a&#8217;</dd>
+<dd><code class="docutils literal"><span class="pre">isGreaterThan?(s,</span> <span class="pre">a,</span> <span class="pre">b)</span></code> is <code class="docutils literal"><span class="pre">true</span></code> if we can get from vertex &#8216;a&#8217; to <code class="docutils literal"><span class="pre">'b'</span></code> through a sequence of arrows but we can<code class="docutils literal"><span class="pre">'t</span></code> go in the opposite direction from <code class="docutils literal"><span class="pre">'b'</span></code> to &#8216;a&#8217;</dd>
 </dl>
 <span class="target" id="l-finite-graph-kgraph"></span><dl class="docutils" id="index-40">
 <dt><span class="spadfun">kgraph</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> S, <a class="reference internal" href="String.html#l-string"><span>String</span></a>) -&gt; %</dt>
@@ -380,7 +380,7 @@
         <li class="right" >
           <a href="FiniteFieldCategory.html" title="FiniteFieldCategory"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>

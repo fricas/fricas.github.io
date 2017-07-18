@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>EltableAggregate(Dom, Im) &mdash; FriCAS 1.3.1 API</title>
+    <title>EltableAggregate(Dom, Im) &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
     <link rel="next" title="EntireRing" href="EntireRing.html" />
     <link rel="prev" title="Eltable(S, Im)" href="Eltable.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="Eltable.html" title="Eltable(S, Im)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,7 +55,7 @@
             
   <div class="section" id="eltableaggregate-dom-im">
 <span id="l-eltable-aggregate"></span><span id="index-0"></span><h1>EltableAggregate(Dom, Im)<a class="headerlink" href="#eltableaggregate-dom-im" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//aggcat.spad#L783">aggcat.spad line 783</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/aggcat.spad#L762">aggcat.spad line 762</a></p>
 <ul class="simple">
 <li>Dom: <a class="reference internal" href="Type.html#l-type"><span>Type</span></a></li>
 <li>Im: <a class="reference internal" href="Type.html#l-type"><span>Type</span></a></li>
@@ -72,6 +72,14 @@
 <span class="target" id="l-eltable-aggregate-qelt"></span><dl class="docutils" id="index-2">
 <dt><span class="spadfun">qelt</span>: (%, Dom) -&gt; Im</dt>
 <dd><code class="docutils literal"><span class="pre">qelt(u,</span> <span class="pre">x)</span></code> applies <code class="docutils literal"><span class="pre">u</span></code> to <code class="docutils literal"><span class="pre">x</span></code> without checking whether <code class="docutils literal"><span class="pre">x</span></code> is in the domain of <code class="docutils literal"><span class="pre">u</span></code>. If <code class="docutils literal"><span class="pre">x</span></code> is not in the domain of <code class="docutils literal"><span class="pre">u</span></code> a memory-access violation may occur. If a check on whether <code class="docutils literal"><span class="pre">x</span></code> is in the domain of <code class="docutils literal"><span class="pre">u</span></code> is required, use the function <code class="docutils literal"><span class="pre">elt</span></code>.</dd>
+</dl>
+<span class="target" id="l-eltable-aggregate-qsetelt"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">qsetelt!</span>: (%, Dom, Im) -&gt; Im if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><span>shallowlyMutable</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">qsetelt!(u,</span> <span class="pre">x,</span> <span class="pre">y)</span></code> sets the image of <code class="docutils literal"><span class="pre">x</span></code> to be <code class="docutils literal"><span class="pre">y</span></code> under <code class="docutils literal"><span class="pre">u</span></code>, without checking that <code class="docutils literal"><span class="pre">x</span></code> is in the domain of <code class="docutils literal"><span class="pre">u</span></code>. If such a check is required use the function <code class="docutils literal"><span class="pre">setelt</span></code>.</dd>
+</dl>
+<span class="target" id="l-eltable-aggregate-setelt"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">setelt!</span>: (%, Dom, Im) -&gt; Im if % has <a class="reference internal" href="shallowlyMutable.html#l-shallowly-mutable"><span>shallowlyMutable</span></a></dt>
+<dd><code class="docutils literal"><span class="pre">setelt!(u,</span> <span class="pre">x,</span> <span class="pre">y)</span></code> sets the image of <code class="docutils literal"><span class="pre">x</span></code> to be <code class="docutils literal"><span class="pre">y</span></code> under <code class="docutils literal"><span class="pre">u</span></code>, assuming <code class="docutils literal"><span class="pre">x</span></code> is in the domain of <code class="docutils literal"><span class="pre">u</span></code>. Error: if <code class="docutils literal"><span class="pre">x</span></code> is not in the domain of <code class="docutils literal"><span class="pre">u</span></code>.</dd>
 </dl>
 <p><a class="reference internal" href="Eltable.html#l-eltable"><span>Eltable</span></a>(Dom, Im)</p>
 </div>
@@ -118,7 +126,7 @@
         <li class="right" >
           <a href="Eltable.html" title="Eltable(S, Im)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>

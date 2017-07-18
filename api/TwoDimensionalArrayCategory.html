@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>TwoDimensionalArrayCategory(R, Row, Col) &mdash; FriCAS 1.3.1 API</title>
+    <title>TwoDimensionalArrayCategory(R, Row, Col) &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Categories" href="Categories.html" />
     <link rel="next" title="Type" href="Type.html" />
     <link rel="prev" title="TrigonometricFunctionCategory" href="TrigonometricFunctionCategory.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="TrigonometricFunctionCategory.html" title="TrigonometricFunctionCategory"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" accesskey="U">Categories</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,7 +55,7 @@
             
   <div class="section" id="twodimensionalarraycategory-r-row-col">
 <span id="l-two-dimensional-array-category"></span><span id="index-0"></span><h1>TwoDimensionalArrayCategory(R, Row, Col)<a class="headerlink" href="#twodimensionalarraycategory-r-row-col" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//array2.spad#L1">array2.spad line 1</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/array2.spad#L1">array2.spad line 1</a></p>
 <ul class="simple">
 <li>R: <a class="reference internal" href="Type.html#l-type"><span>Type</span></a></li>
 <li>Row: <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><span>IndexedAggregate</span></a>(<a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, R)</li>
@@ -63,10 +63,14 @@
 </ul>
 <p>TwoDimensionalArrayCategory is a general array category which allows different representations and indexing schemes. Rows and columns may be extracted with rows returned as objects of type Row and columns returned as objects of type Col. The index of the &#8216;first&#8217; row may be obtained by calling the function &#8216;minRowIndex&#8217;. The index of the &#8216;first&#8217; column may be obtained by calling the function &#8216;minColIndex&#8217;. The index of the first element of a &#8216;Row&#8217; is the same as the index of the first column in an array and vice versa.</p>
 <dl class="docutils">
+<dt><a class="reference internal" href="Aggregate.html#id1"><span>#</span></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id1"><span>=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if R has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id2"><span>~=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if R has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-any"><span>any?</span></a>: (R -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> R</dd>
 </dl>
 <span class="target" id="l-two-dimensional-array-category-block-concat"></span><dl class="docutils" id="index-1">
 <dt><span class="spadfun">blockConcat</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> % -&gt; %</dt>
@@ -91,6 +95,8 @@
 <dd><code class="docutils literal"><span class="pre">column(m,</span> <span class="pre">j)</span></code> returns the <code class="docutils literal"><span class="pre">j</span></code>th column of <code class="docutils literal"><span class="pre">m</span></code> error check to determine if index is in proper ranges</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><span>copy</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (R -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> R</dd>
 <dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (R, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> if R has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> R</dd>
 </dl>
@@ -104,7 +110,7 @@
 </dl>
 <dl class="docutils" id="index-8">
 <dt><span class="spadfun">elt</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
-<dd><code class="docutils literal"><span class="pre">elt(x,</span> <span class="pre">row,</span> <span class="pre">colList</span></code> returns an 1-by-<code class="docutils literal"><span class="pre">n</span></code> array consisting of elements of <code class="docutils literal"><span class="pre">x</span></code>, where <code class="docutils literal"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">\#</span> <span class="pre">colList</span></code>. If <code class="docutils literal"><span class="pre">colList</span> <span class="pre">=</span> <span class="pre">[j&lt;1&gt;,</span> <span class="pre">j&lt;2&gt;,</span> <span class="pre">...,</span> <span class="pre">j&lt;n&gt;]</span></code>, then the <code class="docutils literal"><span class="pre">(k,</span> <span class="pre">l)</span></code>th entry of <code class="docutils literal"><span class="pre">elt(x,</span> <span class="pre">row,</span> <span class="pre">colList)</span></code> is <code class="docutils literal"><span class="pre">x(row,</span> <span class="pre">j&lt;l&gt;)</span></code>.</dd>
+<dd><code class="docutils literal"><span class="pre">elt(x,</span> <span class="pre">row,</span> <span class="pre">colList)</span></code> returns an 1-by-<code class="docutils literal"><span class="pre">n</span></code> array consisting of elements of <code class="docutils literal"><span class="pre">x</span></code>, where <code class="docutils literal"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">\#</span> <span class="pre">colList</span></code>. If <code class="docutils literal"><span class="pre">colList</span> <span class="pre">=</span> <span class="pre">[j&lt;1&gt;,</span> <span class="pre">j&lt;2&gt;,</span> <span class="pre">...,</span> <span class="pre">j&lt;n&gt;]</span></code>, then the <code class="docutils literal"><span class="pre">(k,</span> <span class="pre">l)</span></code>th entry of <code class="docutils literal"><span class="pre">elt(x,</span> <span class="pre">row,</span> <span class="pre">colList)</span></code> is <code class="docutils literal"><span class="pre">x(row,</span> <span class="pre">j&lt;l&gt;)</span></code>.</dd>
 </dl>
 <dl class="docutils" id="index-9">
 <dt><span class="spadfun">elt</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Segment.html#l-segment"><span>Segment</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
@@ -112,7 +118,7 @@
 </dl>
 <dl class="docutils" id="index-10">
 <dt><span class="spadfun">elt</span>: (%, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
-<dd><code class="docutils literal"><span class="pre">elt(x,</span> <span class="pre">rowList,</span> <span class="pre">col</span></code> returns an <code class="docutils literal"><span class="pre">m</span></code>-by-1 array consisting of elements of <code class="docutils literal"><span class="pre">x</span></code>, where <code class="docutils literal"><span class="pre">m</span> <span class="pre">=</span> <span class="pre">\#</span> <span class="pre">rowList</span></code>. If <code class="docutils literal"><span class="pre">rowList</span> <span class="pre">=</span> <span class="pre">[i&lt;1&gt;,</span> <span class="pre">i&lt;2&gt;,</span> <span class="pre">...,</span> <span class="pre">i&lt;n&gt;]</span></code>, then the <code class="docutils literal"><span class="pre">(k,</span> <span class="pre">l)</span></code>th entry of <code class="docutils literal"><span class="pre">elt(x,</span> <span class="pre">rowList,</span> <span class="pre">col)</span></code> is <code class="docutils literal"><span class="pre">x(i&lt;k&gt;,</span> <span class="pre">col)</span></code>.</dd>
+<dd><code class="docutils literal"><span class="pre">elt(x,</span> <span class="pre">rowList,</span> <span class="pre">col)</span></code> returns an <code class="docutils literal"><span class="pre">m</span></code>-by-1 array consisting of elements of <code class="docutils literal"><span class="pre">x</span></code>, where <code class="docutils literal"><span class="pre">m</span> <span class="pre">=</span> <span class="pre">\#</span> <span class="pre">rowList</span></code>. If <code class="docutils literal"><span class="pre">rowList</span> <span class="pre">=</span> <span class="pre">[i&lt;1&gt;,</span> <span class="pre">i&lt;2&gt;,</span> <span class="pre">...,</span> <span class="pre">i&lt;m&gt;]</span></code>, then the <code class="docutils literal"><span class="pre">(k,</span> <span class="pre">l)</span></code>th entry of <code class="docutils literal"><span class="pre">elt(x,</span> <span class="pre">rowList,</span> <span class="pre">col)</span></code> is <code class="docutils literal"><span class="pre">x(i&lt;k&gt;,</span> <span class="pre">col)</span></code>.</dd>
 </dl>
 <dl class="docutils" id="index-11">
 <dt><span class="spadfun">elt</span>: (%, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
@@ -147,7 +153,7 @@
 <dd><code class="docutils literal"><span class="pre">elt(x,</span> <span class="pre">s1,</span> <span class="pre">s2)</span></code> is equivalent to <code class="docutils literal"><span class="pre">elt(x,</span> <span class="pre">expand(s1),</span> <span class="pre">expand(s2))</span></code> but should be more convenient and more efficient.</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><span>empty</span></a>: () -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
-<dt><a class="reference internal" href="Aggregate.html#id1"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dt><a class="reference internal" href="Aggregate.html#id2"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-eq"><span>eq?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
@@ -159,6 +165,8 @@
 <dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(R, R)</dd>
 <dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><span>eval</span></a>: (%, R, R) -&gt; % if R has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a> and R has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> R</dt>
 <dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(R, R)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-every"><span>every?</span></a>: (R -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> R</dd>
 </dl>
 <span class="target" id="l-two-dimensional-array-category-fill"></span><dl class="docutils" id="index-19">
 <dt><span class="spadfun">fill!</span>: (%, R) -&gt; %</dt>
@@ -216,6 +224,8 @@
 <dt><span class="spadfun">maxRowIndex</span>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">maxRowIndex(m)</span></code> returns the index of the &#8216;last&#8217; row of the array <code class="docutils literal"><span class="pre">m</span></code></dd>
 <dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><span>member?</span></a>: (R, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if R has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> R</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-members"><span>members</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> R</dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> R</dd>
 </dl>
 <span class="target" id="l-two-dimensional-array-category-min-col-index"></span><dl class="docutils" id="index-31">
@@ -420,7 +430,7 @@
         <li class="right" >
           <a href="TrigonometricFunctionCategory.html" title="TrigonometricFunctionCategory"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Categories.html" >Categories</a> &raquo;</li> 
       </ul>
     </div>

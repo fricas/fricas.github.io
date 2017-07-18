@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>XHashTable(Key, Entry) &mdash; FriCAS 1.3.1 API</title>
+    <title>XHashTable(Key, Entry) &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="XmlAttribute" href="XmlAttribute.html" />
     <link rel="prev" title="XDistributedPolynomial(vl, R)" href="XDistributedPolynomial.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="XDistributedPolynomial.html" title="XDistributedPolynomial(vl, R)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,17 +55,23 @@
             
   <div class="section" id="xhashtable-key-entry">
 <span id="l-x-hash-table"></span><span id="index-0"></span><h1>XHashTable(Key, Entry)<a class="headerlink" href="#xhashtable-key-entry" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//xhash.spad#L1">xhash.spad line 1</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/xhash.spad#L1">xhash.spad line 1</a></p>
 <ul class="simple">
 <li>Key: <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></li>
 <li>Entry: <a class="reference internal" href="Type.html#l-type"><span>Type</span></a></li>
 </ul>
 <p>An implementation of a hash table that uses equality of the key domain to decide upon equality of keys.</p>
 <dl class="docutils">
+<dt><a class="reference internal" href="Aggregate.html#id1"><span>#</span></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id1"><span>=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if Entry has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> or Record(key: Key, entry: Entry) has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
 <dt><a class="reference internal" href="BasicType.html#id2"><span>~=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if Entry has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a> or Record(key: Key, entry: Entry) has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
 <dd>from <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-any"><span>any?</span></a>: (Entry -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-any"><span>any?</span></a>: (Record(key: Key, entry: Entry) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Record(key: Key, entry: Entry)</dd>
 <dt><a class="reference internal" href="CoercibleTo.html#l-coercible-to-coerce"><span>coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a> if Record(key: Key, entry: Entry) has <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a> or Entry has <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dt>
 <dd>from <a class="reference internal" href="CoercibleTo.html#l-coercible-to"><span>CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l-output-form"><span>OutputForm</span></a></dd>
 <dt><a class="reference internal" href="Collection.html#l-collection-construct"><span>construct</span></a>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> Record(key: Key, entry: Entry) -&gt; %</dt>
@@ -74,8 +80,12 @@
 <dd>from <a class="reference internal" href="ConvertibleTo.html#l-convertible-to"><span>ConvertibleTo</span></a> <a class="reference internal" href="InputForm.html#l-input-form"><span>InputForm</span></a></dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-copy"><span>copy</span></a>: % -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (Entry -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
 <dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (Entry, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> if Entry has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (Record(key: Key, entry: Entry) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Record(key: Key, entry: Entry)</dd>
 <dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-count"><span>count</span></a>: (Record(key: Key, entry: Entry), %) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a> if Record(key: Key, entry: Entry) has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Record(key: Key, entry: Entry)</dd>
 <dt><a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations-dictionary"><span>dictionary</span></a>: () -&gt; %</dt>
@@ -88,7 +98,7 @@
 <dd>from <a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate"><span>EltableAggregate</span></a>(Key, Entry)</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-empty"><span>empty</span></a>: () -&gt; %</dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
-<dt><a class="reference internal" href="Aggregate.html#id1"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dt><a class="reference internal" href="Aggregate.html#id2"><span>empty?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-entries"><span>entries</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Entry</dt>
 <dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><span>IndexedAggregate</span></a>(Key, Entry)</dd>
@@ -112,8 +122,14 @@
 <dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(Record(key: Key, entry: Entry), Record(key: Key, entry: Entry))</dd>
 <dt><a class="reference internal" href="InnerEvalable.html#l-inner-evalable-eval"><span>eval</span></a>: (%, Record(key: Key, entry: Entry), Record(key: Key, entry: Entry)) -&gt; % if Record(key: Key, entry: Entry) has <a class="reference internal" href="Evalable.html#l-evalable"><span>Evalable</span></a> Record(key: Key, entry: Entry) and Record(key: Key, entry: Entry) has <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dt>
 <dd>from <a class="reference internal" href="InnerEvalable.html#l-inner-evalable"><span>InnerEvalable</span></a>(Record(key: Key, entry: Entry), Record(key: Key, entry: Entry))</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-every"><span>every?</span></a>: (Entry -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-every"><span>every?</span></a>: (Record(key: Key, entry: Entry) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Record(key: Key, entry: Entry)</dd>
 <dt><a class="reference internal" href="BagAggregate.html#l-bag-aggregate-extract"><span>extract!</span></a>: % -&gt; Record(key: Key, entry: Entry)</dt>
 <dd>from <a class="reference internal" href="BagAggregate.html#l-bag-aggregate"><span>BagAggregate</span></a> Record(key: Key, entry: Entry)</dd>
+<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-fill"><span>fill!</span></a>: (%, Entry) -&gt; %</dt>
+<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><span>IndexedAggregate</span></a>(Key, Entry)</dd>
 <dt><a class="reference internal" href="Collection.html#l-collection-find"><span>find</span></a>: (Record(key: Key, entry: Entry) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; Union(Record(key: Key, entry: Entry), failed)</dt>
 <dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> Record(key: Key, entry: Entry)</dd>
 <dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-first"><span>first</span></a>: % -&gt; Entry if Key has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a></dt>
@@ -138,11 +154,15 @@
 <dd>from <a class="reference internal" href="SetCategory.html#l-set-category"><span>SetCategory</span></a></dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-less"><span>less?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map!</span></a>: (Entry -&gt; Entry, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map!</span></a>: (Record(key: Key, entry: Entry) -&gt; Record(key: Key, entry: Entry), %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Record(key: Key, entry: Entry)</dd>
 <dt><a class="reference internal" href="TableAggregate.html#l-table-aggregate-map"><span>map</span></a>: ((Entry, Entry) -&gt; Entry, %, %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="TableAggregate.html#l-table-aggregate"><span>TableAggregate</span></a>(Key, Entry)</dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map</span></a>: (Entry -&gt; Entry, %) -&gt; %</dt>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#id1"><span>map</span></a>: (Entry -&gt; Entry, %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
-<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-map"><span>map</span></a>: (Record(key: Key, entry: Entry) -&gt; Record(key: Key, entry: Entry), %) -&gt; %</dt>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#id1"><span>map</span></a>: (Record(key: Key, entry: Entry) -&gt; Record(key: Key, entry: Entry), %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Record(key: Key, entry: Entry)</dd>
 <dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-max-index"><span>maxIndex</span></a>: % -&gt; Key if Key has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a></dt>
 <dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><span>IndexedAggregate</span></a>(Key, Entry)</dd>
@@ -150,18 +170,36 @@
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
 <dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-member"><span>member?</span></a>: (Record(key: Key, entry: Entry), %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a> if Record(key: Key, entry: Entry) has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
 <dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Record(key: Key, entry: Entry)</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-members"><span>members</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Entry</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-members"><span>members</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Record(key: Key, entry: Entry)</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Record(key: Key, entry: Entry)</dd>
 <dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-min-index"><span>minIndex</span></a>: % -&gt; Key if Key has <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a></dt>
 <dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><span>IndexedAggregate</span></a>(Key, Entry)</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-more"><span>more?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-parts"><span>parts</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Entry</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Entry</dd>
+<dt><a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate-parts"><span>parts</span></a>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Record(key: Key, entry: Entry)</dt>
+<dd>from <a class="reference internal" href="HomogeneousAggregate.html#l-homogeneous-aggregate"><span>HomogeneousAggregate</span></a> Record(key: Key, entry: Entry)</dd>
 <dt><a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate-qelt"><span>qelt</span></a>: (%, Key) -&gt; Entry</dt>
 <dd>from <a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate"><span>EltableAggregate</span></a>(Key, Entry)</dd>
+<dt><a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate-qsetelt"><span>qsetelt!</span></a>: (%, Key, Entry) -&gt; Entry</dt>
+<dd>from <a class="reference internal" href="EltableAggregate.html#l-eltable-aggregate"><span>EltableAggregate</span></a>(Key, Entry)</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><span>reduce</span></a>: ((Record(key: Key, entry: Entry), Record(key: Key, entry: Entry)) -&gt; Record(key: Key, entry: Entry), %) -&gt; Record(key: Key, entry: Entry)</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> Record(key: Key, entry: Entry)</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-reduce"><span>reduce</span></a>: ((Record(key: Key, entry: Entry), Record(key: Key, entry: Entry)) -&gt; Record(key: Key, entry: Entry), %, Record(key: Key, entry: Entry)) -&gt; Record(key: Key, entry: Entry)</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> Record(key: Key, entry: Entry)</dd>
 <dt><a class="reference internal" href="Collection.html#l-collection-reduce"><span>reduce</span></a>: ((Record(key: Key, entry: Entry), Record(key: Key, entry: Entry)) -&gt; Record(key: Key, entry: Entry), %, Record(key: Key, entry: Entry), Record(key: Key, entry: Entry)) -&gt; Record(key: Key, entry: Entry) if Record(key: Key, entry: Entry) has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
 <dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> Record(key: Key, entry: Entry)</dd>
 <dt><a class="reference internal" href="KeyedDictionary.html#l-keyed-dictionary-remove"><span>remove!</span></a>: (Key, %) -&gt; Union(Entry, failed)</dt>
 <dd>from <a class="reference internal" href="KeyedDictionary.html#l-keyed-dictionary"><span>KeyedDictionary</span></a>(Key, Entry)</dd>
+<dt><a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations-remove"><span>remove!</span></a>: (Record(key: Key, entry: Entry) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations"><span>DictionaryOperations</span></a> Record(key: Key, entry: Entry)</dd>
 <dt><a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations-remove"><span>remove!</span></a>: (Record(key: Key, entry: Entry), %) -&gt; % if Record(key: Key, entry: Entry) has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
 <dd>from <a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations"><span>DictionaryOperations</span></a> Record(key: Key, entry: Entry)</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-remove"><span>remove</span></a>: (Record(key: Key, entry: Entry) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> Record(key: Key, entry: Entry)</dd>
 <dt><a class="reference internal" href="Collection.html#l-collection-remove"><span>remove</span></a>: (Record(key: Key, entry: Entry), %) -&gt; % if Record(key: Key, entry: Entry) has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
 <dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> Record(key: Key, entry: Entry)</dd>
 <dt><a class="reference internal" href="Collection.html#l-collection-remove-duplicates"><span>removeDuplicates</span></a>: % -&gt; % if Record(key: Key, entry: Entry) has <a class="reference internal" href="BasicType.html#l-basic-type"><span>BasicType</span></a></dt>
@@ -170,10 +208,16 @@
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
 <dt><a class="reference internal" href="KeyedDictionary.html#l-keyed-dictionary-search"><span>search</span></a>: (Key, %) -&gt; Union(Entry, failed)</dt>
 <dd>from <a class="reference internal" href="KeyedDictionary.html#l-keyed-dictionary"><span>KeyedDictionary</span></a>(Key, Entry)</dd>
+<dt><a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations-select"><span>select!</span></a>: (Record(key: Key, entry: Entry) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="DictionaryOperations.html#l-dictionary-operations"><span>DictionaryOperations</span></a> Record(key: Key, entry: Entry)</dd>
+<dt><a class="reference internal" href="Collection.html#l-collection-select"><span>select</span></a>: (Record(key: Key, entry: Entry) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>, %) -&gt; %</dt>
+<dd>from <a class="reference internal" href="Collection.html#l-collection"><span>Collection</span></a> Record(key: Key, entry: Entry)</dd>
 <dt><a class="reference internal" href="TableAggregate.html#l-table-aggregate-setelt"><span>setelt!</span></a>: (%, Key, Entry) -&gt; Entry</dt>
 <dd>from <a class="reference internal" href="TableAggregate.html#l-table-aggregate"><span>TableAggregate</span></a>(Key, Entry)</dd>
 <dt><a class="reference internal" href="Aggregate.html#l-aggregate-size"><span>size?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l-non-negative-integer"><span>NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="Aggregate.html#l-aggregate"><span>Aggregate</span></a></dd>
+<dt><a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate-swap"><span>swap!</span></a>: (%, Key, Key) -&gt; <a class="reference internal" href="Void.html#l-void"><span>Void</span></a></dt>
+<dd>from <a class="reference internal" href="IndexedAggregate.html#l-indexed-aggregate"><span>IndexedAggregate</span></a>(Key, Entry)</dd>
 <dt><a class="reference internal" href="TableAggregate.html#l-table-aggregate-table"><span>table</span></a>: () -&gt; %</dt>
 <dd>from <a class="reference internal" href="TableAggregate.html#l-table-aggregate"><span>TableAggregate</span></a>(Key, Entry)</dd>
 </dl>
@@ -249,7 +293,7 @@
         <li class="right" >
           <a href="XDistributedPolynomial.html" title="XDistributedPolynomial(vl, R)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>

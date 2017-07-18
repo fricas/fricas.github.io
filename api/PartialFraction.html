@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>PartialFraction R &mdash; FriCAS 1.3.1 API</title>
+    <title>PartialFraction R &mdash; FriCAS 1.3.2 API</title>
     
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.3.1',
+        VERSION:     '1.3.2',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.1 API" href="index.html" />
+    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
     <link rel="up" title="Domains" href="Domains.html" />
     <link rel="next" title="Partition" href="Partition.html" />
     <link rel="prev" title="PartialDifferentialOperator(R, Var)" href="PartialDifferentialOperator.html" /> 
@@ -43,7 +43,7 @@
         <li class="right" >
           <a href="PartialDifferentialOperator.html" title="PartialDifferentialOperator(R, Var)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &raquo;</li> 
       </ul>
     </div>  
@@ -55,11 +55,11 @@
             
   <div class="section" id="partialfraction-r">
 <span id="l-partial-fraction"></span><span id="index-0"></span><h1>PartialFraction R<a class="headerlink" href="#partialfraction-r" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra//pfr.spad#L1">pfr.spad line 1</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/pfr.spad#L1">pfr.spad line 1</a></p>
 <ul class="simple">
 <li>R: <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><span>EuclideanDomain</span></a></li>
 </ul>
-<p>The domain <a class="reference internal" href="#l-partial-fraction"><span>PartialFraction</span></a> implements partial fractions over a euclidean domain <code class="docutils literal"><span class="pre">R</span></code>. This requirement on the argument domain allows us to normalize the fractions. Of particular interest are the 2 forms for these fractions. The <code class="docutils literal"><span class="pre">compact\</span> <span class="pre">``''</span></code> form has only one fractional term per prime in the denominator, while the <code class="docutils literal"><span class="pre">``p</span></code>-adic<code class="docutils literal"><span class="pre">''</span></code> form expands each numerator <code class="docutils literal"><span class="pre">p</span></code>-adically via the prime <code class="docutils literal"><span class="pre">p</span></code> in the denominator. For computational efficiency, the compact form is used, though the <code class="docutils literal"><span class="pre">p</span></code>-adic form may be gotten by calling the function <a class="reference internal" href="#l-partial-fraction-padic-fraction"><span>padicFraction</span></a>. For a general euclidean domain, it is not known how to factor the denominator. Thus the function <a class="reference internal" href="#l-partial-fraction-partial-fraction"><span>partialFraction</span></a> takes as its second argument an element of <span class="xref std std-ref">Factored(R)</span>.</p>
+<p>The domain <a class="reference internal" href="#l-partial-fraction"><span>PartialFraction</span></a> implements partial fractions over a euclidean domain <code class="docutils literal"><span class="pre">R</span></code>. This requirement on the argument domain allows us to normalize the fractions. Of particular interest are the 2 forms for these fractions. The <code class="docutils literal"><span class="pre">compact\</span> <span class="pre">``''</span></code> form has only one fractional term per prime in the denominator, while the <code class="docutils literal"><span class="pre">``p</span></code>-adic<code class="docutils literal"><span class="pre">''</span></code> form expands each numerator <code class="docutils literal"><span class="pre">p</span></code>-adically via the prime <code class="docutils literal"><span class="pre">p</span></code> in the denominator. For computational efficiency, the compact form is used, though the <code class="docutils literal"><span class="pre">p</span></code>-adic form may be gotten by calling the function <a class="reference internal" href="#l-partial-fraction-padic-fraction"><span>padicFraction</span></a>. For a general euclidean domain, it is not known how to factor the denominator. Thus the function <a class="reference internal" href="#l-partial-fraction-partial-fraction"><span>partialFraction</span></a> takes an element of <span class="xref std std-ref">Factored(R)</span> as its second argument.</p>
 <dl class="docutils">
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-0"><span>0</span></a>: %</dt>
 <dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></dd>
@@ -148,17 +148,9 @@
 <dt><a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain-factor"><span>factor</span></a>: % -&gt; <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> %</dt>
 <dd>from <a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain"><span>UniqueFactorizationDomain</span></a></dd>
 </dl>
-<span class="target" id="l-partial-fraction-first-denom"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">firstDenom</span>: % -&gt; <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> R</dt>
-<dd><code class="docutils literal"><span class="pre">firstDenom(p)</span></code> extracts the denominator of the first fractional term. This returns 1 if there is no fractional part (use <a class="reference internal" href="#l-partial-fraction-whole-part"><span>wholePart</span></a> to get the whole part).</dd>
-</dl>
-<span class="target" id="l-partial-fraction-first-numer"></span><dl class="docutils" id="index-5">
-<dt><span class="spadfun">firstNumer</span>: % -&gt; R</dt>
-<dd><code class="docutils literal"><span class="pre">firstNumer(p)</span></code> extracts the numerator of the first fractional term. This returns 0 if there is no fractional part (use <a class="reference internal" href="#l-partial-fraction-whole-part"><span>wholePart</span></a> to get the whole part).</dd>
-</dl>
-<span class="target" id="l-partial-fraction-fractional-terms"></span><dl class="docutils" id="index-6">
-<dt><span class="spadfun">fractionalTerms</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> R</dt>
-<dd><code class="docutils literal"><span class="pre">fractionalTerms(p)</span></code> extracts all fractional terms from <code class="docutils literal"><span class="pre">p</span></code> to a list of Fraction <code class="docutils literal"><span class="pre">R</span></code>. This returns [] if there is no fractional part.</dd>
+<span class="target" id="l-partial-fraction-fractional-terms"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">fractionalTerms</span>: % -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Record(num: R, den: <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> R)</dt>
+<dd><code class="docutils literal"><span class="pre">fractionalTerms(p)</span></code> extracts the fractional part of <code class="docutils literal"><span class="pre">p</span></code> to a list of Record(num : <code class="docutils literal"><span class="pre">R</span></code>, den : Factored <code class="docutils literal"><span class="pre">R</span></code>). This returns [] if there is no fractional part.</dd>
 <dt><a class="reference internal" href="GcdDomain.html#l-gcd-domain-gcd"><span>gcd</span></a>: (%, %) -&gt; %</dt>
 <dd>from <a class="reference internal" href="GcdDomain.html#l-gcd-domain"><span>GcdDomain</span></a></dd>
 <dt><a class="reference internal" href="GcdDomain.html#l-gcd-domain-gcd"><span>gcd</span></a>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> % -&gt; %</dt>
@@ -188,11 +180,7 @@
 <dt><a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain-multi-euclidean"><span>multiEuclidean</span></a>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> %, %) -&gt; Union(<a class="reference internal" href="List.html#l-list"><span>List</span></a> %, failed)</dt>
 <dd>from <a class="reference internal" href="EuclideanDomain.html#l-euclidean-domain"><span>EuclideanDomain</span></a></dd>
 </dl>
-<span class="target" id="l-partial-fraction-nth-fractional-term"></span><dl class="docutils" id="index-7">
-<dt><span class="spadfun">nthFractionalTerm</span>: (%, <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>) -&gt; %</dt>
-<dd><code class="docutils literal"><span class="pre">nthFractionalTerm(p,</span> <span class="pre">n)</span></code> extracts the <code class="docutils literal"><span class="pre">n</span></code>th fractional term from the partial fraction <code class="docutils literal"><span class="pre">p</span></code>. This returns 0 if the index <code class="docutils literal"><span class="pre">n</span></code> is out of range.</dd>
-</dl>
-<span class="target" id="l-partial-fraction-number-of-fractional-terms"></span><dl class="docutils" id="index-8">
+<span class="target" id="l-partial-fraction-number-of-fractional-terms"></span><dl class="docutils" id="index-5">
 <dt><span class="spadfun">numberOfFractionalTerms</span>: % -&gt; <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">numberOfFractionalTerms(p)</span></code> computes the number of fractional terms in <code class="docutils literal"><span class="pre">p</span></code>. This returns 0 if there is no fractional part.</dd>
 <dt><a class="reference internal" href="MagmaWithUnit.html#l-magma-with-unit-one"><span>one?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
@@ -200,19 +188,19 @@
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-opposite"><span>opposite?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
 <dd>from <a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid"><span>AbelianMonoid</span></a></dd>
 </dl>
-<span class="target" id="l-partial-fraction-padically-expand"></span><dl class="docutils" id="index-9">
+<span class="target" id="l-partial-fraction-padically-expand"></span><dl class="docutils" id="index-6">
 <dt><span class="spadfun">padicallyExpand</span>: (R, R) -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l-sparse-univariate-polynomial"><span>SparseUnivariatePolynomial</span></a> R</dt>
 <dd><code class="docutils literal"><span class="pre">padicallyExpand(p,</span> <span class="pre">x)</span></code> is a utility function that expands the second argument <code class="docutils literal"><span class="pre">x</span></code> <code class="docutils literal"><span class="pre">``p</span></code>-adically<code class="docutils literal"><span class="pre">''</span></code> in the first.</dd>
 </dl>
-<span class="target" id="l-partial-fraction-padic-fraction"></span><dl class="docutils" id="index-10">
+<span class="target" id="l-partial-fraction-padic-fraction"></span><dl class="docutils" id="index-7">
 <dt><span class="spadfun">padicFraction</span>: % -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">padicFraction(q)</span></code> expands the fraction <code class="docutils literal"><span class="pre">p</span></code>-adically in the primes <code class="docutils literal"><span class="pre">p</span></code> in the denominator of <code class="docutils literal"><span class="pre">q</span></code>. For example, <code class="docutils literal"><span class="pre">padicFraction(3/(2^2))</span> <span class="pre">=</span> <span class="pre">1/2</span> <span class="pre">+</span> <span class="pre">1/(2^2)</span></code>. Use <a class="reference internal" href="#l-partial-fraction-compact-fraction"><span>compactFraction</span></a> to return to compact form.</dd>
 </dl>
-<span class="target" id="l-partial-fraction-partial-fraction"></span><dl class="docutils" id="index-11">
+<span class="target" id="l-partial-fraction-partial-fraction"></span><dl class="docutils" id="index-8">
 <dt><span class="spadfun">partialFraction</span>: (R, <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> R) -&gt; %</dt>
 <dd><code class="docutils literal"><span class="pre">partialFraction(numer,</span> <span class="pre">denom)</span></code> is the main function for constructing partial fractions. The second argument is the denominator and should be factored.</dd>
 </dl>
-<dl class="docutils" id="index-12">
+<dl class="docutils" id="index-9">
 <dt><span class="spadfun">partialFraction</span>: <a class="reference internal" href="Fraction.html#l-fraction"><span>Fraction</span></a> R -&gt; % if R has <a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain"><span>UniqueFactorizationDomain</span></a></dt>
 <dd><code class="docutils literal"><span class="pre">partialFraction(f)</span></code> is a user friendly interface for partial fractions when <code class="docutils literal"><span class="pre">f</span></code> is a fraction of UniqueFactorizationDomain.</dd>
 <dt><a class="reference internal" href="UniqueFactorizationDomain.html#l-unique-factorization-domain-prime"><span>prime?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
@@ -248,7 +236,7 @@
 <dt><a class="reference internal" href="EntireRing.html#l-entire-ring-unit-normal"><span>unitNormal</span></a>: % -&gt; Record(unit: %, canonical: %, associate: %)</dt>
 <dd>from <a class="reference internal" href="EntireRing.html#l-entire-ring"><span>EntireRing</span></a></dd>
 </dl>
-<span class="target" id="l-partial-fraction-whole-part"></span><dl class="docutils" id="index-13">
+<span class="target" id="l-partial-fraction-whole-part"></span><dl class="docutils" id="index-10">
 <dt><span class="spadfun">wholePart</span>: % -&gt; R</dt>
 <dd><code class="docutils literal"><span class="pre">wholePart(p)</span></code> extracts the whole part of the partial fraction <code class="docutils literal"><span class="pre">p</span></code>.</dd>
 <dt><a class="reference internal" href="AbelianMonoid.html#l-abelian-monoid-zero"><span>zero?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a></dt>
@@ -347,7 +335,7 @@
         <li class="right" >
           <a href="PartialDifferentialOperator.html" title="PartialDifferentialOperator(R, Var)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.1 API</a> &raquo;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &raquo;</li> 
       </ul>
     </div>
