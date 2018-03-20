@@ -1,36 +1,25 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>ComplexRootFindingPackage(R, UP) &mdash; FriCAS 1.3.2 API</title>
-    
+    <title>ComplexRootFindingPackage(R, UP) &#8212; FriCAS 1.3.3 API</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.3.2',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
-    <link rel="up" title="Packages" href="Packages.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="ComplexRootPackage(UP, Par)" href="ComplexRootPackage.html" />
     <link rel="prev" title="ComplexPatternMatch(R, S, CS)" href="ComplexPatternMatch.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -43,8 +32,8 @@
         <li class="right" >
           <a href="ComplexPatternMatch.html" title="ComplexPatternMatch(R, S, CS)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.3 API</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -57,77 +46,77 @@
 <span id="l-complex-root-finding-package"></span><span id="index-0"></span><h1>ComplexRootFindingPackage(R, UP)<a class="headerlink" href="#complexrootfindingpackage-r-up" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/crfp.spad#L1">crfp.spad line 1</a></p>
 <ul class="simple">
-<li>R: Join(<a class="reference internal" href="Field.html#l-field"><span>Field</span></a>, <a class="reference internal" href="OrderedRing.html#l-ordered-ring"><span>OrderedRing</span></a>)</li>
-<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><span>UnivariatePolynomialCategory</span></a> <a class="reference internal" href="Complex.html#l-complex"><span>Complex</span></a> R</li>
+<li>R: Join(<a class="reference internal" href="Field.html#l-field"><span class="std std-ref">Field</span></a>, <a class="reference internal" href="OrderedRing.html#l-ordered-ring"><span class="std std-ref">OrderedRing</span></a>)</li>
+<li>UP: <a class="reference internal" href="UnivariatePolynomialCategory.html#l-univariate-polynomial-category"><span class="std std-ref">UnivariatePolynomialCategory</span></a> <a class="reference internal" href="Complex.html#l-complex"><span class="std std-ref">Complex</span></a> R</li>
 </ul>
-<p><a class="reference internal" href="#l-complex-root-finding-package"><span>ComplexRootFindingPackage</span></a> provides functions to find all roots of a polynomial <code class="docutils literal"><span class="pre">p</span></code> over the complex number by using Plesken<code class="docutils literal"><span class="pre">'s</span></code> idea to calculate in the polynomial ring modulo <code class="docutils literal"><span class="pre">f</span></code> and employing the Chinese Remainder Theorem. In this first version, the precision (see <span class="xref std std-ref">digits</span>) is not increased when this is necessary to avoid rounding errors. Hence it is the user<code class="docutils literal"><span class="pre">'s</span></code> responsibility to increase the precision if necessary. Note also, if this package is called with e.g. <span class="xref std std-ref">Fraction Integer</span>, the precise calculations could require a lot of time. Also note that evaluating the zeros is not necessarily a good check whether the result is correct: already evaluation can cause rounding errors.</p>
+<p><a class="reference internal" href="#l-complex-root-finding-package"><span class="std std-ref">ComplexRootFindingPackage</span></a> provides functions to find all roots of a polynomial <code class="docutils literal notranslate"><span class="pre">p</span></code> over the complex number by using Plesken<code class="docutils literal notranslate"><span class="pre">'s</span></code> idea to calculate in the polynomial ring modulo <code class="docutils literal notranslate"><span class="pre">f</span></code> and employing the Chinese Remainder Theorem. In this first version, the precision (see <span class="xref std std-ref">digits</span>) is not increased when this is necessary to avoid rounding errors. Hence it is the user<code class="docutils literal notranslate"><span class="pre">'s</span></code> responsibility to increase the precision if necessary. Note also, if this package is called with e.g. <span class="xref std std-ref">Fraction Integer</span>, the precise calculations could require a lot of time. Also note that evaluating the zeros is not necessarily a good check whether the result is correct: already evaluation can cause rounding errors.</p>
 <span class="target" id="l-complex-root-finding-package-complex-zeros"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">complexZeros</span>: (UP, R) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Complex.html#l-complex"><span>Complex</span></a> R</dt>
-<dd><code class="docutils literal"><span class="pre">complexZeros(p,</span> <span class="pre">eps)</span></code> tries to determine all complex zeros of the polynomial <code class="docutils literal"><span class="pre">p</span></code> with accuracy given by <em>eps</em>.</dd>
+<dt><span class="spadfun">complexZeros</span>: (UP, R) -&gt; <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> <a class="reference internal" href="Complex.html#l-complex"><span class="std std-ref">Complex</span></a> R</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">complexZeros(p,</span> <span class="pre">eps)</span></code> tries to determine all complex zeros of the polynomial <code class="docutils literal notranslate"><span class="pre">p</span></code> with accuracy given by <em>eps</em>.</dd>
 </dl>
 <dl class="docutils" id="index-2">
-<dt><span class="spadfun">complexZeros</span>: UP -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="Complex.html#l-complex"><span>Complex</span></a> R</dt>
-<dd><code class="docutils literal"><span class="pre">complexZeros(p)</span></code> tries to determine all complex zeros of the polynomial <code class="docutils literal"><span class="pre">p</span></code> with accuracy given by the package constant <em>globalEps</em> which you may change by <em>setErrorBound</em>.</dd>
+<dt><span class="spadfun">complexZeros</span>: UP -&gt; <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> <a class="reference internal" href="Complex.html#l-complex"><span class="std std-ref">Complex</span></a> R</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">complexZeros(p)</span></code> tries to determine all complex zeros of the polynomial <code class="docutils literal notranslate"><span class="pre">p</span></code> with accuracy given by the package constant <em>globalEps</em> which you may change by <em>setErrorBound</em>.</dd>
 </dl>
 <span class="target" id="l-complex-root-finding-package-divisor-cascade"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">divisorCascade</span>: (UP, UP) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Record(factors: <a class="reference internal" href="List.html#l-list"><span>List</span></a> UP, error: R)</dt>
-<dd><code class="docutils literal"><span class="pre">divisorCascade(p,</span> <span class="pre">tp)</span></code> assumes that degree of polynomial <em>tp</em> is smaller than degree of polynomial <code class="docutils literal"><span class="pre">p</span></code>, both monic. A sequence of divisions is calculated using the remainder, made monic, as divisor for the the next division. The result contains also the error of the factorizations, i.e. the norm of the remainder polynomial.</dd>
+<dt><span class="spadfun">divisorCascade</span>: (UP, UP) -&gt; <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Record(factors: <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> UP, error: R)</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">divisorCascade(p,</span> <span class="pre">tp)</span></code> assumes that degree of polynomial <em>tp</em> is smaller than degree of polynomial <code class="docutils literal notranslate"><span class="pre">p</span></code>, both monic. A sequence of divisions is calculated using the remainder, made monic, as divisor for the the next division. The result contains also the error of the factorizations, i.e. the norm of the remainder polynomial.</dd>
 </dl>
 <dl class="docutils" id="index-4">
-<dt><span class="spadfun">divisorCascade</span>: (UP, UP, <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> Record(factors: <a class="reference internal" href="List.html#l-list"><span>List</span></a> UP, error: R)</dt>
-<dd><code class="docutils literal"><span class="pre">divisorCascade(p,</span> <span class="pre">tp)</span></code> assumes that degree of polynomial <em>tp</em> is smaller than degree of polynomial <code class="docutils literal"><span class="pre">p</span></code>, both monic. A sequence of divisions are calculated using the remainder, made monic, as divisor for the the next division. The result contains also the error of the factorizations, i.e. the norm of the remainder polynomial. If <em>info</em> is <em>true</em>, then information messages are issued.</dd>
+<dt><span class="spadfun">divisorCascade</span>: (UP, UP, <a class="reference internal" href="Boolean.html#l-boolean"><span class="std std-ref">Boolean</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Record(factors: <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> UP, error: R)</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">divisorCascade(p,</span> <span class="pre">tp)</span></code> assumes that degree of polynomial <em>tp</em> is smaller than degree of polynomial <code class="docutils literal notranslate"><span class="pre">p</span></code>, both monic. A sequence of divisions are calculated using the remainder, made monic, as divisor for the the next division. The result contains also the error of the factorizations, i.e. the norm of the remainder polynomial. If <em>info</em> is <em>true</em>, then information messages are issued.</dd>
 </dl>
 <span class="target" id="l-complex-root-finding-package-factor"></span><dl class="docutils" id="index-5">
-<dt><span class="spadfun">factor</span>: (UP, R) -&gt; <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> UP</dt>
-<dd><code class="docutils literal"><span class="pre">factor(p,</span> <span class="pre">eps)</span></code> tries to factor <code class="docutils literal"><span class="pre">p</span></code> into linear factors with error atmost <em>eps</em>. An overall error bound <em>eps0</em> is determined and iterated tree-like calls to <em>pleskenSplit</em> are used to get the factorization.</dd>
+<dt><span class="spadfun">factor</span>: (UP, R) -&gt; <a class="reference internal" href="Factored.html#l-factored"><span class="std std-ref">Factored</span></a> UP</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">factor(p,</span> <span class="pre">eps)</span></code> tries to factor <code class="docutils literal notranslate"><span class="pre">p</span></code> into linear factors with error atmost <em>eps</em>. An overall error bound <em>eps0</em> is determined and iterated tree-like calls to <em>pleskenSplit</em> are used to get the factorization.</dd>
 </dl>
 <dl class="docutils" id="index-6">
-<dt><span class="spadfun">factor</span>: (UP, R, <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>) -&gt; <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> UP</dt>
-<dd><code class="docutils literal"><span class="pre">factor(p,</span> <span class="pre">eps,</span> <span class="pre">info)</span></code> tries to factor <code class="docutils literal"><span class="pre">p</span></code> into linear factors with error atmost <em>eps</em>. An overall error bound <em>eps0</em> is determined and iterated tree-like calls to <em>pleskenSplit</em> are used to get the factorization. If <em>info</em> is <em>true</em>, then information messages are given.</dd>
+<dt><span class="spadfun">factor</span>: (UP, R, <a class="reference internal" href="Boolean.html#l-boolean"><span class="std std-ref">Boolean</span></a>) -&gt; <a class="reference internal" href="Factored.html#l-factored"><span class="std std-ref">Factored</span></a> UP</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">factor(p,</span> <span class="pre">eps,</span> <span class="pre">info)</span></code> tries to factor <code class="docutils literal notranslate"><span class="pre">p</span></code> into linear factors with error atmost <em>eps</em>. An overall error bound <em>eps0</em> is determined and iterated tree-like calls to <em>pleskenSplit</em> are used to get the factorization. If <em>info</em> is <em>true</em>, then information messages are given.</dd>
 </dl>
 <dl class="docutils" id="index-7">
-<dt><span class="spadfun">factor</span>: UP -&gt; <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> UP</dt>
-<dd><code class="docutils literal"><span class="pre">factor(p)</span></code> tries to factor <code class="docutils literal"><span class="pre">p</span></code> into linear factors with error atmost <em>globalEps</em>, the internal error bound, which can be set by <em>setErrorBound</em>. An overall error bound <em>eps0</em> is determined and iterated tree-like calls to <em>pleskenSplit</em> are used to get the factorization.</dd>
+<dt><span class="spadfun">factor</span>: UP -&gt; <a class="reference internal" href="Factored.html#l-factored"><span class="std std-ref">Factored</span></a> UP</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">factor(p)</span></code> tries to factor <code class="docutils literal notranslate"><span class="pre">p</span></code> into linear factors with error atmost <em>globalEps</em>, the internal error bound, which can be set by <em>setErrorBound</em>. An overall error bound <em>eps0</em> is determined and iterated tree-like calls to <em>pleskenSplit</em> are used to get the factorization.</dd>
 </dl>
 <span class="target" id="l-complex-root-finding-package-graeffe"></span><dl class="docutils" id="index-8">
 <dt><span class="spadfun">graeffe</span>: UP -&gt; UP</dt>
-<dd><code class="docutils literal"><span class="pre">graeffe</span> <span class="pre">p</span></code> determines <code class="docutils literal"><span class="pre">q</span></code> such that <code class="docutils literal"><span class="pre">q(-z^2)</span> <span class="pre">=</span> <span class="pre">p(z)*p(-z)</span></code>. Note that the roots of <code class="docutils literal"><span class="pre">q</span></code> are the squares of the roots of <code class="docutils literal"><span class="pre">p</span></code>.</dd>
+<dd><code class="docutils literal notranslate"><span class="pre">graeffe</span> <span class="pre">p</span></code> determines <code class="docutils literal notranslate"><span class="pre">q</span></code> such that <code class="docutils literal notranslate"><span class="pre">q(-z^2)</span> <span class="pre">=</span> <span class="pre">p(z)*p(-z)</span></code>. Note that the roots of <code class="docutils literal notranslate"><span class="pre">q</span></code> are the squares of the roots of <code class="docutils literal notranslate"><span class="pre">p</span></code>.</dd>
 </dl>
 <span class="target" id="l-complex-root-finding-package-norm"></span><dl class="docutils" id="index-9">
 <dt><span class="spadfun">norm</span>: UP -&gt; R</dt>
-<dd><code class="docutils literal"><span class="pre">norm(p)</span></code> determines sum of absolute values of coefficients Note: this function depends on <span class="xref std std-ref">abs</span>.</dd>
+<dd><code class="docutils literal notranslate"><span class="pre">norm(p)</span></code> determines sum of absolute values of coefficients Note: this function depends on <span class="xref std std-ref">abs</span>.</dd>
 </dl>
 <span class="target" id="l-complex-root-finding-package-plesken-split"></span><dl class="docutils" id="index-10">
-<dt><span class="spadfun">pleskenSplit</span>: (UP, R) -&gt; <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> UP</dt>
-<dd><code class="docutils literal"><span class="pre">pleskenSplit(poly,</span> <span class="pre">eps)</span></code> determines a start polynomial <em>start</em>\ by using &#8220;startPolynomial then it increases the exponent <code class="docutils literal"><span class="pre">n</span></code> of <em>start ^ n mod poly</em> to get an approximate factor of <em>poly</em>, in general of degree &#8220;degree <code class="docutils literal"><span class="pre">poly</span></code> <code class="docutils literal"><span class="pre">-1&quot;</span></code>. Then a divisor cascade is calculated and the best splitting is chosen, as soon as the error is small enough.</dd>
+<dt><span class="spadfun">pleskenSplit</span>: (UP, R) -&gt; <a class="reference internal" href="Factored.html#l-factored"><span class="std std-ref">Factored</span></a> UP</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">pleskenSplit(poly,</span> <span class="pre">eps)</span></code> determines a start polynomial <em>start</em>\ by using “startPolynomial then it increases the exponent <code class="docutils literal notranslate"><span class="pre">n</span></code> of <em>start ^ n mod poly</em> to get an approximate factor of <em>poly</em>, in general of degree “degree <code class="docutils literal notranslate"><span class="pre">poly</span></code> <code class="docutils literal notranslate"><span class="pre">-1&quot;</span></code>. Then a divisor cascade is calculated and the best splitting is chosen, as soon as the error is small enough.</dd>
 </dl>
 <dl class="docutils" id="index-11">
-<dt><span class="spadfun">pleskenSplit</span>: (UP, R, <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>) -&gt; <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> UP</dt>
-<dd><code class="docutils literal"><span class="pre">pleskenSplit(poly,</span> <span class="pre">eps,</span> <span class="pre">info)</span></code> determines a start polynomial <em>start</em> by using &#8220;startPolynomial then it increases the exponent <code class="docutils literal"><span class="pre">n</span></code> of <em>start ^ n mod poly</em> to get an approximate factor of <em>poly</em>, in general of degree &#8220;degree <code class="docutils literal"><span class="pre">poly</span></code> <code class="docutils literal"><span class="pre">-1&quot;</span></code>. Then a divisor cascade is calculated and the best splitting is chosen, as soon as the error is small enough. If <em>info</em> is <em>true</em>, then information messages are issued.</dd>
+<dt><span class="spadfun">pleskenSplit</span>: (UP, R, <a class="reference internal" href="Boolean.html#l-boolean"><span class="std std-ref">Boolean</span></a>) -&gt; <a class="reference internal" href="Factored.html#l-factored"><span class="std std-ref">Factored</span></a> UP</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">pleskenSplit(poly,</span> <span class="pre">eps,</span> <span class="pre">info)</span></code> determines a start polynomial <em>start</em> by using “startPolynomial then it increases the exponent <code class="docutils literal notranslate"><span class="pre">n</span></code> of <em>start ^ n mod poly</em> to get an approximate factor of <em>poly</em>, in general of degree “degree <code class="docutils literal notranslate"><span class="pre">poly</span></code> <code class="docutils literal notranslate"><span class="pre">-1&quot;</span></code>. Then a divisor cascade is calculated and the best splitting is chosen, as soon as the error is small enough. If <em>info</em> is <em>true</em>, then information messages are issued.</dd>
 </dl>
 <span class="target" id="l-complex-root-finding-package-reciprocal-polynomial"></span><dl class="docutils" id="index-12">
 <dt><span class="spadfun">reciprocalPolynomial</span>: UP -&gt; UP</dt>
-<dd><code class="docutils literal"><span class="pre">reciprocalPolynomial(p)</span></code> calulates a polynomial which has exactly the inverses of the non-zero roots of <code class="docutils literal"><span class="pre">p</span></code> as roots, and the same number of 0-roots.</dd>
+<dd><code class="docutils literal notranslate"><span class="pre">reciprocalPolynomial(p)</span></code> calulates a polynomial which has exactly the inverses of the non-zero roots of <code class="docutils literal notranslate"><span class="pre">p</span></code> as roots, and the same number of 0-roots.</dd>
 </dl>
 <span class="target" id="l-complex-root-finding-package-root-radius"></span><dl class="docutils" id="index-13">
 <dt><span class="spadfun">rootRadius</span>: (UP, R) -&gt; R</dt>
-<dd><code class="docutils literal"><span class="pre">rootRadius(p,</span> <span class="pre">errQuot)</span></code> calculates the root radius of <code class="docutils literal"><span class="pre">p</span></code> with a maximal error quotient of <em>errQuot</em>.</dd>
+<dd><code class="docutils literal notranslate"><span class="pre">rootRadius(p,</span> <span class="pre">errQuot)</span></code> calculates the root radius of <code class="docutils literal notranslate"><span class="pre">p</span></code> with a maximal error quotient of <em>errQuot</em>.</dd>
 </dl>
 <dl class="docutils" id="index-14">
 <dt><span class="spadfun">rootRadius</span>: UP -&gt; R</dt>
-<dd><code class="docutils literal"><span class="pre">rootRadius(p)</span></code> calculates the root radius of <code class="docutils literal"><span class="pre">p</span></code> with a maximal error quotient of <em>1+globalEps</em>, where <em>globalEps</em> is the internal error bound, which can be set by <em>setErrorBound</em>.</dd>
+<dd><code class="docutils literal notranslate"><span class="pre">rootRadius(p)</span></code> calculates the root radius of <code class="docutils literal notranslate"><span class="pre">p</span></code> with a maximal error quotient of <em>1+globalEps</em>, where <em>globalEps</em> is the internal error bound, which can be set by <em>setErrorBound</em>.</dd>
 </dl>
 <span class="target" id="l-complex-root-finding-package-schwerpunkt"></span><dl class="docutils" id="index-15">
-<dt><span class="spadfun">schwerpunkt</span>: UP -&gt; <a class="reference internal" href="Complex.html#l-complex"><span>Complex</span></a> R</dt>
-<dd><code class="docutils literal"><span class="pre">schwerpunkt(p)</span></code> determines the &#8216;Schwerpunkt&#8217; of the roots of the polynomial <code class="docutils literal"><span class="pre">p</span></code> of degree <code class="docutils literal"><span class="pre">n</span></code>, i.e. the center of gravity, which is <a href="#id1"><span class="problematic" id="id2">*</span></a>coefficient of <code class="docutils literal"><span class="pre">x^(n-1)</span></code><a href="#id3"><span class="problematic" id="id4">*</span></a> divided by <a href="#id5"><span class="problematic" id="id6">*</span></a>n times coefficient of <code class="docutils literal"><span class="pre">x^n</span></code><a href="#id7"><span class="problematic" id="id8">*</span></a>.</dd>
+<dt><span class="spadfun">schwerpunkt</span>: UP -&gt; <a class="reference internal" href="Complex.html#l-complex"><span class="std std-ref">Complex</span></a> R</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">schwerpunkt(p)</span></code> determines the ‘Schwerpunkt’ of the roots of the polynomial <code class="docutils literal notranslate"><span class="pre">p</span></code> of degree <code class="docutils literal notranslate"><span class="pre">n</span></code>, i.e. the center of gravity, which is <a href="#id1"><span class="problematic" id="id2">*</span></a>coefficient of <code class="docutils literal notranslate"><span class="pre">x^(n-1)</span></code><a href="#id3"><span class="problematic" id="id4">*</span></a> divided by <a href="#id5"><span class="problematic" id="id6">*</span></a>n times coefficient of <code class="docutils literal notranslate"><span class="pre">x^n</span></code><a href="#id7"><span class="problematic" id="id8">*</span></a>.</dd>
 </dl>
 <span class="target" id="l-complex-root-finding-package-set-error-bound"></span><dl class="docutils" id="index-16">
 <dt><span class="spadfun">setErrorBound</span>: R -&gt; R</dt>
-<dd><code class="docutils literal"><span class="pre">setErrorBound(eps)</span></code> changes the internal error bound, by default being <em>10 ^ (-3)</em> to <code class="docutils literal"><span class="pre">eps</span></code>, if <code class="docutils literal"><span class="pre">R</span></code> is a member in the category <span class="xref std std-ref">QuotientFieldCategory Integer</span>. The internal <em>globalDigits</em> is set to <em>ceiling(1/r)^2*10</em> being <em>10^7</em> by default.</dd>
+<dd><code class="docutils literal notranslate"><span class="pre">setErrorBound(eps)</span></code> changes the internal error bound, by default being <em>10 ^ (-3)</em> to <code class="docutils literal notranslate"><span class="pre">eps</span></code>, if <code class="docutils literal notranslate"><span class="pre">R</span></code> is a member in the category <span class="xref std std-ref">QuotientFieldCategory Integer</span>. The internal <em>globalDigits</em> is set to <em>ceiling(1/r)^2*10</em> being <em>10^7</em> by default.</dd>
 </dl>
 <span class="target" id="l-complex-root-finding-package-start-polynomial"></span><dl class="docutils" id="index-17">
-<dt><span class="spadfun">startPolynomial</span>: UP -&gt; Record(start: UP, factors: <a class="reference internal" href="Factored.html#l-factored"><span>Factored</span></a> UP)</dt>
-<dd><code class="docutils literal"><span class="pre">startPolynomial(p)</span></code> uses the ideas of Schoenhage<code class="docutils literal"><span class="pre">'s</span></code> variant of Graeffe<code class="docutils literal"><span class="pre">'s</span></code> method to construct circles which separate roots to get a good start polynomial, i.e. one whose image under the Chinese Remainder Isomorphism has both entries of norm smaller and greater or equal to 1. In case the roots are found during internal calculations. The corresponding factors are in <em>factors</em> which are otherwise 1.</dd>
+<dt><span class="spadfun">startPolynomial</span>: UP -&gt; Record(start: UP, factors: <a class="reference internal" href="Factored.html#l-factored"><span class="std std-ref">Factored</span></a> UP)</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">startPolynomial(p)</span></code> uses the ideas of Schoenhage<code class="docutils literal notranslate"><span class="pre">'s</span></code> variant of Graeffe<code class="docutils literal notranslate"><span class="pre">'s</span></code> method to construct circles which separate roots to get a good start polynomial, i.e. one whose image under the Chinese Remainder Isomorphism has both entries of norm smaller and greater or equal to 1. In case the roots are found during internal calculations. The corresponding factors are in <em>factors</em> which are otherwise 1.</dd>
 </dl>
 </div>
 
@@ -146,15 +135,14 @@
 
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -173,12 +161,12 @@
         <li class="right" >
           <a href="ComplexPatternMatch.html" title="ComplexPatternMatch(R, S, CS)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.3 API</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2014-2017, FriCAS Team.
+        &#169; Copyright 2014-2018, FriCAS Team.
     </div>
   </body>
 </html>

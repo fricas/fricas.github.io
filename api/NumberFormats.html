@@ -1,36 +1,25 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>NumberFormats &mdash; FriCAS 1.3.2 API</title>
-    
+    <title>NumberFormats &#8212; FriCAS 1.3.3 API</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.3.2',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
-    <link rel="up" title="Packages" href="Packages.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="NumberTheoreticPolynomialFunctions R" href="NumberTheoreticPolynomialFunctions.html" />
     <link rel="prev" title="NumberFieldIntegralBasis(UP, F)" href="NumberFieldIntegralBasis.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -43,8 +32,8 @@
         <li class="right" >
           <a href="NumberFieldIntegralBasis.html" title="NumberFieldIntegralBasis(UP, F)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.3 API</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -58,28 +47,32 @@
 <p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/outform.spad#L2">outform.spad line 2</a></p>
 <p>NumberFormats provides function to format and read arabic and roman numbers, to convert numbers to strings and to read floating-point numbers.</p>
 <span class="target" id="l-number-formats-format-arabic"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">FormatArabic</span>: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a> -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a></dt>
-<dd><code class="docutils literal"><span class="pre">FormatArabic(n)</span></code> forms an Arabic numeral string from an integer <code class="docutils literal"><span class="pre">n</span></code>.</dd>
+<dt><span class="spadfun">FormatArabic</span>: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span class="std std-ref">PositiveInteger</span></a> -&gt; <a class="reference internal" href="String.html#l-string"><span class="std std-ref">String</span></a></dt>
+<dd><code class="docutils literal notranslate"><span class="pre">FormatArabic(n)</span></code> forms an Arabic numeral string from an integer <code class="docutils literal notranslate"><span class="pre">n</span></code>.</dd>
 </dl>
-<span class="target" id="l-number-formats-format-roman"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">FormatRoman</span>: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a> -&gt; <a class="reference internal" href="String.html#l-string"><span>String</span></a></dt>
-<dd><code class="docutils literal"><span class="pre">FormatRoman(n)</span></code> forms a Roman numeral string from an integer <code class="docutils literal"><span class="pre">n</span></code>.</dd>
+<span class="target" id="l-number-formats-format-radix"></span><dl class="docutils" id="index-2">
+<dt><span class="spadfun">FormatRadix</span>: (<a class="reference internal" href="Integer.html#l-integer"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l-integer"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="String.html#l-string"><span class="std std-ref">String</span></a></dt>
+<dd><code class="docutils literal notranslate"><span class="pre">FormatRadix(n,</span> <span class="pre">r)</span></code> forms a string from an integer <code class="docutils literal notranslate"><span class="pre">n</span></code> in radix <code class="docutils literal notranslate"><span class="pre">r</span></code>.</dd>
 </dl>
-<span class="target" id="l-number-formats-scan-arabic"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">ScanArabic</span>: <a class="reference internal" href="String.html#l-string"><span>String</span></a> -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a></dt>
-<dd><code class="docutils literal"><span class="pre">ScanArabic(s)</span></code> forms an integer from an Arabic numeral string <code class="docutils literal"><span class="pre">s</span></code>.</dd>
+<span class="target" id="l-number-formats-format-roman"></span><dl class="docutils" id="index-3">
+<dt><span class="spadfun">FormatRoman</span>: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span class="std std-ref">PositiveInteger</span></a> -&gt; <a class="reference internal" href="String.html#l-string"><span class="std std-ref">String</span></a></dt>
+<dd><code class="docutils literal notranslate"><span class="pre">FormatRoman(n)</span></code> forms a Roman numeral string from an integer <code class="docutils literal notranslate"><span class="pre">n</span></code>.</dd>
 </dl>
-<span class="target" id="l-number-formats-scan-float-ignore-spaces"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">ScanFloatIgnoreSpaces</span>: <a class="reference internal" href="String.html#l-string"><span>String</span></a> -&gt; <a class="reference internal" href="Float.html#l-float"><span>Float</span></a></dt>
-<dd><code class="docutils literal"><span class="pre">ScanFloatIgnoreSpaces(s)</span></code> forms a floating point number from the string <code class="docutils literal"><span class="pre">s</span></code> ignoring any spaces. Error is generated if the string is not recognised as a floating point number.</dd>
+<span class="target" id="l-number-formats-scan-arabic"></span><dl class="docutils" id="index-4">
+<dt><span class="spadfun">ScanArabic</span>: <a class="reference internal" href="String.html#l-string"><span class="std std-ref">String</span></a> -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span class="std std-ref">PositiveInteger</span></a></dt>
+<dd><code class="docutils literal notranslate"><span class="pre">ScanArabic(s)</span></code> forms an integer from an Arabic numeral string <code class="docutils literal notranslate"><span class="pre">s</span></code>.</dd>
 </dl>
-<span class="target" id="l-number-formats-scan-float-ignore-spaces-if-can"></span><dl class="docutils" id="index-5">
-<dt><span class="spadfun">ScanFloatIgnoreSpacesIfCan</span>: <a class="reference internal" href="String.html#l-string"><span>String</span></a> -&gt; Union(<a class="reference internal" href="Float.html#l-float"><span>Float</span></a>, failed)</dt>
-<dd><code class="docutils literal"><span class="pre">ScanFloatIgnoreSpacesIfCan(s)</span></code> tries to form a floating point number from the string <code class="docutils literal"><span class="pre">s</span></code> ignoring any spaces.</dd>
+<span class="target" id="l-number-formats-scan-float-ignore-spaces"></span><dl class="docutils" id="index-5">
+<dt><span class="spadfun">ScanFloatIgnoreSpaces</span>: <a class="reference internal" href="String.html#l-string"><span class="std std-ref">String</span></a> -&gt; <a class="reference internal" href="Float.html#l-float"><span class="std std-ref">Float</span></a></dt>
+<dd><code class="docutils literal notranslate"><span class="pre">ScanFloatIgnoreSpaces(s)</span></code> forms a floating point number from the string <code class="docutils literal notranslate"><span class="pre">s</span></code> ignoring any spaces. Error is generated if the string is not recognised as a floating point number.</dd>
 </dl>
-<span class="target" id="l-number-formats-scan-roman"></span><dl class="docutils" id="index-6">
-<dt><span class="spadfun">ScanRoman</span>: <a class="reference internal" href="String.html#l-string"><span>String</span></a> -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a></dt>
-<dd><code class="docutils literal"><span class="pre">ScanRoman(s)</span></code> forms an integer from a Roman numeral string <code class="docutils literal"><span class="pre">s</span></code>.</dd>
+<span class="target" id="l-number-formats-scan-float-ignore-spaces-if-can"></span><dl class="docutils" id="index-6">
+<dt><span class="spadfun">ScanFloatIgnoreSpacesIfCan</span>: <a class="reference internal" href="String.html#l-string"><span class="std std-ref">String</span></a> -&gt; Union(<a class="reference internal" href="Float.html#l-float"><span class="std std-ref">Float</span></a>, failed)</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">ScanFloatIgnoreSpacesIfCan(s)</span></code> tries to form a floating point number from the string <code class="docutils literal notranslate"><span class="pre">s</span></code> ignoring any spaces.</dd>
+</dl>
+<span class="target" id="l-number-formats-scan-roman"></span><dl class="docutils" id="index-7">
+<dt><span class="spadfun">ScanRoman</span>: <a class="reference internal" href="String.html#l-string"><span class="std std-ref">String</span></a> -&gt; <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span class="std std-ref">PositiveInteger</span></a></dt>
+<dd><code class="docutils literal notranslate"><span class="pre">ScanRoman(s)</span></code> forms an integer from a Roman numeral string <code class="docutils literal notranslate"><span class="pre">s</span></code>.</dd>
 </dl>
 </div>
 
@@ -98,15 +91,14 @@
 
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -125,12 +117,12 @@
         <li class="right" >
           <a href="NumberFieldIntegralBasis.html" title="NumberFieldIntegralBasis(UP, F)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.3 API</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2014-2017, FriCAS Team.
+        &#169; Copyright 2014-2018, FriCAS Team.
     </div>
   </body>
 </html>

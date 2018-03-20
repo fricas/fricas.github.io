@@ -1,36 +1,25 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>GrayCode &mdash; FriCAS 1.3.2 API</title>
-    
+    <title>GrayCode &#8212; FriCAS 1.3.3 API</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.3.2',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
-    <link rel="up" title="Packages" href="Packages.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="GroebnerFactorizationPackage(Dom, Expon, VarSet, Dpol)" href="GroebnerFactorizationPackage.html" />
     <link rel="prev" title="GraphicsDefaults" href="GraphicsDefaults.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -43,8 +32,8 @@
         <li class="right" >
           <a href="GraphicsDefaults.html" title="GraphicsDefaults"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.3 API</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -58,12 +47,12 @@
 <p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/perman.spad#L1">perman.spad line 1</a></p>
 <p>GrayCode provides a function for efficiently running through all subsets of a finite set, only changing one element by another one.</p>
 <span class="target" id="l-gray-code-first-subset-gray"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">firstSubsetGray</span>: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a> -&gt; <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
-<dd><code class="docutils literal"><span class="pre">firstSubsetGray(n)</span></code> creates the first vector <em>ww</em> to start a loop using <em>nextSubsetGray(ww, n)</em></dd>
+<dt><span class="spadfun">firstSubsetGray</span>: <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span class="std std-ref">PositiveInteger</span></a> -&gt; <a class="reference internal" href="Vector.html#l-vector"><span class="std std-ref">Vector</span></a> <a class="reference internal" href="Vector.html#l-vector"><span class="std std-ref">Vector</span></a> <a class="reference internal" href="Integer.html#l-integer"><span class="std std-ref">Integer</span></a></dt>
+<dd><code class="docutils literal notranslate"><span class="pre">firstSubsetGray(n)</span></code> creates the first vector <em>ww</em> to start a loop using <em>nextSubsetGray(ww, n)</em></dd>
 </dl>
 <span class="target" id="l-gray-code-next-subset-gray"></span><dl class="docutils" id="index-2">
-<dt><span class="spadfun">nextSubsetGray</span>: (<a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a>, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span>PositiveInteger</span></a>) -&gt; <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> <a class="reference internal" href="Vector.html#l-vector"><span>Vector</span></a> <a class="reference internal" href="Integer.html#l-integer"><span>Integer</span></a></dt>
-<dd><code class="docutils literal"><span class="pre">nextSubsetGray(ww,</span> <span class="pre">n)</span></code> returns a vector <em>vv</em> whose components have the following meanings: begin{items} item <em>vv.1</em>: a vector of length <code class="docutils literal"><span class="pre">n</span></code> whose entries are 0 or 1. This can be interpreted as a code for a subset of the set 1, ..., <code class="docutils literal"><span class="pre">n</span></code>; <em>vv.1</em> differs from <em>ww.1</em> by exactly one entry; item <em>vv.2.1</em> is the number of the entry of <em>vv.1</em> which will be changed next time; item <em>vv.2.1 = n+1</em> means that <em>vv.1</em> is the last subset; trying to compute nextSubsetGray(<code class="docutils literal"><span class="pre">vv</span></code>) if <em>vv.2.1 = n+1</em> will produce an error! end{items} The other components of <em>vv.2</em> are needed to compute nextSubsetGray efficiently. Note: this is an implementation of [Williamson, Topic II, 3.54, <code class="docutils literal"><span class="pre">p</span></code>. 112] for the special case <em>r1 = r2 = ... = rn = 2</em>; Note: nextSubsetGray produces a side-effect, i.e. <em>nextSubsetGray(vv)</em> and <em>vv := nextSubsetGray(vv)</em> will have the same effect.</dd>
+<dt><span class="spadfun">nextSubsetGray</span>: (<a class="reference internal" href="Vector.html#l-vector"><span class="std std-ref">Vector</span></a> <a class="reference internal" href="Vector.html#l-vector"><span class="std std-ref">Vector</span></a> <a class="reference internal" href="Integer.html#l-integer"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="PositiveInteger.html#l-positive-integer"><span class="std std-ref">PositiveInteger</span></a>) -&gt; <a class="reference internal" href="Vector.html#l-vector"><span class="std std-ref">Vector</span></a> <a class="reference internal" href="Vector.html#l-vector"><span class="std std-ref">Vector</span></a> <a class="reference internal" href="Integer.html#l-integer"><span class="std std-ref">Integer</span></a></dt>
+<dd><code class="docutils literal notranslate"><span class="pre">nextSubsetGray(ww,</span> <span class="pre">n)</span></code> returns a vector <em>vv</em> whose components have the following meanings: begin{items} item <em>vv.1</em>: a vector of length <code class="docutils literal notranslate"><span class="pre">n</span></code> whose entries are 0 or 1. This can be interpreted as a code for a subset of the set 1, …, <code class="docutils literal notranslate"><span class="pre">n</span></code>; <em>vv.1</em> differs from <em>ww.1</em> by exactly one entry; item <em>vv.2.1</em> is the number of the entry of <em>vv.1</em> which will be changed next time; item <em>vv.2.1 = n+1</em> means that <em>vv.1</em> is the last subset; trying to compute nextSubsetGray(<code class="docutils literal notranslate"><span class="pre">vv</span></code>) if <em>vv.2.1 = n+1</em> will produce an error! end{items} The other components of <em>vv.2</em> are needed to compute nextSubsetGray efficiently. Note: this is an implementation of [Williamson, Topic II, 3.54, <code class="docutils literal notranslate"><span class="pre">p</span></code>. 112] for the special case <em>r1 = r2 = … = rn = 2</em>; Note: nextSubsetGray produces a side-effect, i.e. <em>nextSubsetGray(vv)</em> and <em>vv := nextSubsetGray(vv)</em> will have the same effect.</dd>
 </dl>
 </div>
 
@@ -82,15 +71,14 @@
 
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -109,12 +97,12 @@
         <li class="right" >
           <a href="GraphicsDefaults.html" title="GraphicsDefaults"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.3 API</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2014-2017, FriCAS Team.
+        &#169; Copyright 2014-2018, FriCAS Team.
     </div>
   </body>
 </html>

@@ -1,36 +1,25 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>GroebnerFactorizationPackage(Dom, Expon, VarSet, Dpol) &mdash; FriCAS 1.3.2 API</title>
-    
+    <title>GroebnerFactorizationPackage(Dom, Expon, VarSet, Dpol) &#8212; FriCAS 1.3.3 API</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '1.3.2',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
+    <script type="text/javascript" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="FriCAS 1.3.2 API" href="index.html" />
-    <link rel="up" title="Packages" href="Packages.html" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="GroebnerInternalPackage(Dom, Expon, Dpol)" href="GroebnerInternalPackage.html" />
     <link rel="prev" title="GrayCode" href="GrayCode.html" /> 
-  </head>
-  <body role="document">
+  </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
@@ -43,8 +32,8 @@
         <li class="right" >
           <a href="GrayCode.html" title="GrayCode"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.3 API</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" accesskey="U">Packages</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -57,35 +46,35 @@
 <span id="l-groebner-factorization-package"></span><span id="index-0"></span><h1>GroebnerFactorizationPackage(Dom, Expon, VarSet, Dpol)<a class="headerlink" href="#groebnerfactorizationpackage-dom-expon-varset-dpol" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/groebf.spad#L1">groebf.spad line 1</a></p>
 <ul class="simple">
-<li>Dom: Join(<a class="reference internal" href="PolynomialFactorizationExplicit.html#l-polynomial-factorization-explicit"><span>PolynomialFactorizationExplicit</span></a>, <a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><span>CharacteristicZero</span></a>)</li>
-<li>Expon: <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><span>OrderedAbelianMonoidSup</span></a></li>
-<li>VarSet: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span>OrderedSet</span></a></li>
-<li>Dpol: <a class="reference internal" href="PolynomialCategory.html#l-polynomial-category"><span>PolynomialCategory</span></a>(Dom, Expon, VarSet)</li>
+<li>Dom: Join(<a class="reference internal" href="PolynomialFactorizationExplicit.html#l-polynomial-factorization-explicit"><span class="std std-ref">PolynomialFactorizationExplicit</span></a>, <a class="reference internal" href="CharacteristicZero.html#l-characteristic-zero"><span class="std std-ref">CharacteristicZero</span></a>)</li>
+<li>Expon: <a class="reference internal" href="OrderedAbelianMonoidSup.html#l-ordered-abelian-monoid-sup"><span class="std std-ref">OrderedAbelianMonoidSup</span></a></li>
+<li>VarSet: <a class="reference internal" href="OrderedSet.html#l-ordered-set"><span class="std std-ref">OrderedSet</span></a></li>
+<li>Dpol: <a class="reference internal" href="PolynomialCategory.html#l-polynomial-category"><span class="std std-ref">PolynomialCategory</span></a>(Dom, Expon, VarSet)</li>
 </ul>
-<p><a class="reference internal" href="#l-groebner-factorization-package"><span>GroebnerFactorizationPackage</span></a> provides the function groebnerFactor&#8221; which uses the factorization routines of Language{} to factor each polynomial under consideration while doing the groebner basis algorithm. Then it writes the ideal as an intersection of ideals determined by the irreducible factors. Note that the whole ring may occur as well as other redundancies. We also use the fact, that from the second factor on we can assume that the preceding factors are not equal to 0 and we divide all polynomials under considerations by the elements of this list of &#8220;nonZeroRestrictions&#8221;. The result is a list of groebner bases, whose union of solutions of the corresponding systems of equations is the solution of the system of equation corresponding to the input list. The term ordering is determined by the polynomial type used. Suggested types include <a class="reference internal" href="DistributedMultivariatePolynomial.html#l-distributed-multivariate-polynomial"><span>DistributedMultivariatePolynomial</span></a>, <a class="reference internal" href="HomogeneousDistributedMultivariatePolynomial.html#l-homogeneous-distributed-multivariate-polynomial"><span>HomogeneousDistributedMultivariatePolynomial</span></a>, <a class="reference internal" href="GeneralDistributedMultivariatePolynomial.html#l-general-distributed-multivariate-polynomial"><span>GeneralDistributedMultivariatePolynomial</span></a>.</p>
+<p><a class="reference internal" href="#l-groebner-factorization-package"><span class="std std-ref">GroebnerFactorizationPackage</span></a> provides the function groebnerFactor” which uses the factorization routines of Language{} to factor each polynomial under consideration while doing the groebner basis algorithm. Then it writes the ideal as an intersection of ideals determined by the irreducible factors. Note that the whole ring may occur as well as other redundancies. We also use the fact, that from the second factor on we can assume that the preceding factors are not equal to 0 and we divide all polynomials under considerations by the elements of this list of “nonZeroRestrictions”. The result is a list of groebner bases, whose union of solutions of the corresponding systems of equations is the solution of the system of equation corresponding to the input list. The term ordering is determined by the polynomial type used. Suggested types include <a class="reference internal" href="DistributedMultivariatePolynomial.html#l-distributed-multivariate-polynomial"><span class="std std-ref">DistributedMultivariatePolynomial</span></a>, <a class="reference internal" href="HomogeneousDistributedMultivariatePolynomial.html#l-homogeneous-distributed-multivariate-polynomial"><span class="std std-ref">HomogeneousDistributedMultivariatePolynomial</span></a>, <a class="reference internal" href="GeneralDistributedMultivariatePolynomial.html#l-general-distributed-multivariate-polynomial"><span class="std std-ref">GeneralDistributedMultivariatePolynomial</span></a>.</p>
 <span class="target" id="l-groebner-factorization-package-factor-groebner-basis"></span><dl class="docutils" id="index-1">
-<dt><span class="spadfun">factorGroebnerBasis</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> Dpol, <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> Dpol</dt>
-<dd><code class="docutils literal"><span class="pre">factorGroebnerBasis(basis,</span> <span class="pre">info)</span></code> checks whether the <code class="docutils literal"><span class="pre">basis</span></code> contains reducible polynomials and uses these to split the <code class="docutils literal"><span class="pre">basis</span></code>. If argument <em>info</em> is <code class="docutils literal"><span class="pre">true</span></code>, information is printed about partial results.</dd>
+<dt><span class="spadfun">factorGroebnerBasis</span>: (<a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Dpol, <a class="reference internal" href="Boolean.html#l-boolean"><span class="std std-ref">Boolean</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Dpol</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">factorGroebnerBasis(basis,</span> <span class="pre">info)</span></code> checks whether the <code class="docutils literal notranslate"><span class="pre">basis</span></code> contains reducible polynomials and uses these to split the <code class="docutils literal notranslate"><span class="pre">basis</span></code>. If argument <em>info</em> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, information is printed about partial results.</dd>
 </dl>
 <dl class="docutils" id="index-2">
-<dt><span class="spadfun">factorGroebnerBasis</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> Dpol -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> Dpol</dt>
-<dd><code class="docutils literal"><span class="pre">factorGroebnerBasis(basis)</span></code> checks whether the <code class="docutils literal"><span class="pre">basis</span></code> contains reducible polynomials and uses these to split the <code class="docutils literal"><span class="pre">basis</span></code>.</dd>
+<dt><span class="spadfun">factorGroebnerBasis</span>: <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Dpol -&gt; <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Dpol</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">factorGroebnerBasis(basis)</span></code> checks whether the <code class="docutils literal notranslate"><span class="pre">basis</span></code> contains reducible polynomials and uses these to split the <code class="docutils literal notranslate"><span class="pre">basis</span></code>.</dd>
 </dl>
 <span class="target" id="l-groebner-factorization-package-groebner-factorize"></span><dl class="docutils" id="index-3">
-<dt><span class="spadfun">groebnerFactorize</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> Dpol, <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> Dpol</dt>
-<dd><code class="docutils literal"><span class="pre">groebnerFactorize(listOfPolys,</span> <span class="pre">info)</span></code> returns a list of groebner bases. The union of their solutions is the solution of the system of equations given by <em>listOfPolys</em>. At each stage the polynomial <code class="docutils literal"><span class="pre">p</span></code> under consideration (either from the given basis or obtained from a reduction of the next <code class="docutils literal"><span class="pre">S</span></code>-polynomial) is factorized. For each irreducible factors of <code class="docutils literal"><span class="pre">p</span></code>, a new <em>createGroebnerBasis</em> is started doing the usual updates with the factor in place of <code class="docutils literal"><span class="pre">p</span></code>. If <em>info</em> is <code class="docutils literal"><span class="pre">true</span></code>, information is printed about partial results.</dd>
+<dt><span class="spadfun">groebnerFactorize</span>: (<a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Dpol, <a class="reference internal" href="Boolean.html#l-boolean"><span class="std std-ref">Boolean</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Dpol</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">groebnerFactorize(listOfPolys,</span> <span class="pre">info)</span></code> returns a list of groebner bases. The union of their solutions is the solution of the system of equations given by <em>listOfPolys</em>. At each stage the polynomial <code class="docutils literal notranslate"><span class="pre">p</span></code> under consideration (either from the given basis or obtained from a reduction of the next <code class="docutils literal notranslate"><span class="pre">S</span></code>-polynomial) is factorized. For each irreducible factors of <code class="docutils literal notranslate"><span class="pre">p</span></code>, a new <em>createGroebnerBasis</em> is started doing the usual updates with the factor in place of <code class="docutils literal notranslate"><span class="pre">p</span></code>. If <em>info</em> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, information is printed about partial results.</dd>
 </dl>
 <dl class="docutils" id="index-4">
-<dt><span class="spadfun">groebnerFactorize</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> Dpol, <a class="reference internal" href="List.html#l-list"><span>List</span></a> Dpol) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> Dpol</dt>
-<dd><code class="docutils literal"><span class="pre">groebnerFactorize(listOfPolys,</span> <span class="pre">nonZeroRestrictions)</span></code> returns a list of groebner basis. The union of their solutions is the solution of the system of equations given by <em>listOfPolys</em> under the restriction that the polynomials of <em>nonZeroRestrictions</em> don<code class="docutils literal"><span class="pre">'t</span></code> vanish. At each stage the polynomial <code class="docutils literal"><span class="pre">p</span></code> under consideration (either from the given basis or obtained from a reduction of the next <code class="docutils literal"><span class="pre">S</span></code>-polynomial) is factorized. For each irreducible factors of <code class="docutils literal"><span class="pre">p</span></code>, a new <em>createGroebnerBasis</em> is started doing the usual updates with the factor in place of <code class="docutils literal"><span class="pre">p</span></code>.</dd>
+<dt><span class="spadfun">groebnerFactorize</span>: (<a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Dpol, <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Dpol) -&gt; <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Dpol</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">groebnerFactorize(listOfPolys,</span> <span class="pre">nonZeroRestrictions)</span></code> returns a list of groebner basis. The union of their solutions is the solution of the system of equations given by <em>listOfPolys</em> under the restriction that the polynomials of <em>nonZeroRestrictions</em> don<code class="docutils literal notranslate"><span class="pre">'t</span></code> vanish. At each stage the polynomial <code class="docutils literal notranslate"><span class="pre">p</span></code> under consideration (either from the given basis or obtained from a reduction of the next <code class="docutils literal notranslate"><span class="pre">S</span></code>-polynomial) is factorized. For each irreducible factors of <code class="docutils literal notranslate"><span class="pre">p</span></code>, a new <em>createGroebnerBasis</em> is started doing the usual updates with the factor in place of <code class="docutils literal notranslate"><span class="pre">p</span></code>.</dd>
 </dl>
 <dl class="docutils" id="index-5">
-<dt><span class="spadfun">groebnerFactorize</span>: (<a class="reference internal" href="List.html#l-list"><span>List</span></a> Dpol, <a class="reference internal" href="List.html#l-list"><span>List</span></a> Dpol, <a class="reference internal" href="Boolean.html#l-boolean"><span>Boolean</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> Dpol</dt>
-<dd><code class="docutils literal"><span class="pre">groebnerFactorize(listOfPolys,</span> <span class="pre">nonZeroRestrictions,</span> <span class="pre">info)</span></code> returns a list of groebner basis. The union of their solutions is the solution of the system of equations given by <em>listOfPolys</em> under the restriction that the polynomials of <em>nonZeroRestrictions</em> don<code class="docutils literal"><span class="pre">'t</span></code> vanish. At each stage the polynomial <code class="docutils literal"><span class="pre">p</span></code> under consideration (either from the given basis or obtained from a reduction of the next <code class="docutils literal"><span class="pre">S</span></code>-polynomial) is factorized. For each irreducible factors of <code class="docutils literal"><span class="pre">p</span></code> a new <em>createGroebnerBasis</em> is started doing the usual updates with the factor in place of <code class="docutils literal"><span class="pre">p</span></code>. If argument <em>info</em> is <code class="docutils literal"><span class="pre">true</span></code>, information is printed about partial results.</dd>
+<dt><span class="spadfun">groebnerFactorize</span>: (<a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Dpol, <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Dpol, <a class="reference internal" href="Boolean.html#l-boolean"><span class="std std-ref">Boolean</span></a>) -&gt; <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Dpol</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">groebnerFactorize(listOfPolys,</span> <span class="pre">nonZeroRestrictions,</span> <span class="pre">info)</span></code> returns a list of groebner basis. The union of their solutions is the solution of the system of equations given by <em>listOfPolys</em> under the restriction that the polynomials of <em>nonZeroRestrictions</em> don<code class="docutils literal notranslate"><span class="pre">'t</span></code> vanish. At each stage the polynomial <code class="docutils literal notranslate"><span class="pre">p</span></code> under consideration (either from the given basis or obtained from a reduction of the next <code class="docutils literal notranslate"><span class="pre">S</span></code>-polynomial) is factorized. For each irreducible factors of <code class="docutils literal notranslate"><span class="pre">p</span></code> a new <em>createGroebnerBasis</em> is started doing the usual updates with the factor in place of <code class="docutils literal notranslate"><span class="pre">p</span></code>. If argument <em>info</em> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, information is printed about partial results.</dd>
 </dl>
 <dl class="docutils" id="index-6">
-<dt><span class="spadfun">groebnerFactorize</span>: <a class="reference internal" href="List.html#l-list"><span>List</span></a> Dpol -&gt; <a class="reference internal" href="List.html#l-list"><span>List</span></a> <a class="reference internal" href="List.html#l-list"><span>List</span></a> Dpol</dt>
-<dd><code class="docutils literal"><span class="pre">groebnerFactorize(listOfPolys)</span></code> returns a list of groebner bases. The union of their solutions is the solution of the system of equations given by <em>listOfPolys</em>. At each stage the polynomial <code class="docutils literal"><span class="pre">p</span></code> under consideration (either from the given basis or obtained from a reduction of the next <code class="docutils literal"><span class="pre">S</span></code>-polynomial) is factorized. For each irreducible factors of <code class="docutils literal"><span class="pre">p</span></code>, a new <em>createGroebnerBasis</em> is started doing the usual updates with the factor in place of <code class="docutils literal"><span class="pre">p</span></code>.</dd>
+<dt><span class="spadfun">groebnerFactorize</span>: <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Dpol -&gt; <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> Dpol</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">groebnerFactorize(listOfPolys)</span></code> returns a list of groebner bases. The union of their solutions is the solution of the system of equations given by <em>listOfPolys</em>. At each stage the polynomial <code class="docutils literal notranslate"><span class="pre">p</span></code> under consideration (either from the given basis or obtained from a reduction of the next <code class="docutils literal notranslate"><span class="pre">S</span></code>-polynomial) is factorized. For each irreducible factors of <code class="docutils literal notranslate"><span class="pre">p</span></code>, a new <em>createGroebnerBasis</em> is started doing the usual updates with the factor in place of <code class="docutils literal notranslate"><span class="pre">p</span></code>.</dd>
 </dl>
 </div>
 
@@ -104,15 +93,14 @@
 
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
@@ -131,12 +119,12 @@
         <li class="right" >
           <a href="GrayCode.html" title="GrayCode"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.2 API</a> &raquo;</li>
-          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.3 API</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="Packages.html" >Packages</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &copy; Copyright 2014-2017, FriCAS Team.
+        &#169; Copyright 2014-2018, FriCAS Team.
     </div>
   </body>
 </html>
