@@ -6,15 +6,17 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>STransform PT &#8212; FriCAS 1.3.3 API</title>
+    <title>STransform PT &#8212; FriCAS 1.3.5 API</title>
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/style.css" type="text/css" />
-    <script type="text/javascript" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/style.css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Stream S" href="Stream.html" />
@@ -32,7 +34,7 @@
         <li class="right" >
           <a href="Stack.html" title="Stack S"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.3 API</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.5 API</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" accesskey="U">Domains</a> &#187;</li> 
       </ul>
     </div>  
@@ -44,7 +46,7 @@
             
   <div class="section" id="stransform-pt">
 <span id="l-s-transform"></span><span id="index-0"></span><h1>STransform PT<a class="headerlink" href="#stransform-pt" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/scene.spad#L2944">scene.spad line 2944</a></p>
+<p><a class="reference external" href="https://github.com/hemmecke/fricas/blob/master-hemmecke/src/algebra/scene.spad#L2938">scene.spad line 2938</a></p>
 <ul class="simple">
 <li>PT: <a class="reference internal" href="SPointCategory.html#l-s-point-category"><span class="std std-ref">SPointCategory</span></a></li>
 </ul>
@@ -62,20 +64,20 @@
 <dd><code class="docutils literal notranslate"><span class="pre">identity()</span></code> returns the identity element which is do nothing transform</dd>
 </dl>
 <span class="target" id="l-s-transform-stransform"></span><dl class="docutils" id="index-4">
-<dt><span class="spadfun">stransform</span>: <a class="reference internal" href="Complex.html#l-complex"><span class="std std-ref">Complex</span></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><span class="std std-ref">DoubleFloat</span></a> -&gt; <a class="reference internal" href="Complex.html#l-complex"><span class="std std-ref">Complex</span></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><span class="std std-ref">DoubleFloat</span></a> -&gt; %</dt>
+<dt><span class="spadfun">stransform</span>: (<a class="reference internal" href="Complex.html#l-complex"><span class="std std-ref">Complex</span></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><span class="std std-ref">DoubleFloat</span></a> -&gt; <a class="reference internal" href="Complex.html#l-complex"><span class="std std-ref">Complex</span></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><span class="std std-ref">DoubleFloat</span></a>) -&gt; %</dt>
 <dd><code class="docutils literal notranslate"><span class="pre">stransform(cpx)</span></code> construct transform as function of complex variable can only be used when <code class="docutils literal notranslate"><span class="pre">PT</span></code> is SArgand so this can be converted to <code class="docutils literal notranslate"><span class="pre">PT</span></code> <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code> <code class="docutils literal notranslate"><span class="pre">PT</span></code></dd>
 </dl>
 <dl class="docutils" id="index-5">
+<dt><span class="spadfun">stransform</span>: (PT -&gt; PT) -&gt; %</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">stransform(gen)</span></code> construct transform in general form as a mapping from <code class="docutils literal notranslate"><span class="pre">PT</span></code> to <code class="docutils literal notranslate"><span class="pre">PT</span></code></dd>
+</dl>
+<dl class="docutils" id="index-6">
 <dt><span class="spadfun">stransform</span>: <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><span class="std std-ref">DoubleFloat</span></a> -&gt; %</dt>
 <dd><code class="docutils literal notranslate"><span class="pre">stransform(m)</span></code> construct transform using a multivector</dd>
 </dl>
-<dl class="docutils" id="index-6">
+<dl class="docutils" id="index-7">
 <dt><span class="spadfun">stransform</span>: <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> <a class="reference internal" href="List.html#l-list"><span class="std std-ref">List</span></a> <a class="reference internal" href="DoubleFloat.html#l-double-float"><span class="std std-ref">DoubleFloat</span></a> -&gt; %</dt>
 <dd><code class="docutils literal notranslate"><span class="pre">stransform(m)</span></code> constructs transform with given matrix elements</dd>
-</dl>
-<dl class="docutils" id="index-7">
-<dt><span class="spadfun">stransform</span>: PT -&gt; PT -&gt; %</dt>
-<dd><code class="docutils literal notranslate"><span class="pre">stransform(gen)</span></code> construct transform in general form as a mapping from <code class="docutils literal notranslate"><span class="pre">PT</span></code> to <code class="docutils literal notranslate"><span class="pre">PT</span></code></dd>
 </dl>
 <span class="target" id="l-s-transform-stranslate"></span><dl class="docutils" id="index-8">
 <dt><span class="spadfun">stranslate</span>: (<a class="reference internal" href="DoubleFloat.html#l-double-float"><span class="std std-ref">DoubleFloat</span></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><span class="std std-ref">DoubleFloat</span></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><span class="std std-ref">DoubleFloat</span></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><span class="std std-ref">DoubleFloat</span></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><span class="std std-ref">DoubleFloat</span></a>, <a class="reference internal" href="DoubleFloat.html#l-double-float"><span class="std std-ref">DoubleFloat</span></a>) -&gt; %</dt>
@@ -93,7 +95,7 @@
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h3><a href="index.html">Table Of Contents</a></h3>
+<h3><a href="index.html">Table of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Categories.html">Categories</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="Domains.html">Domains</a></li>
@@ -128,12 +130,12 @@
         <li class="right" >
           <a href="Stack.html" title="Stack S"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.3 API</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">FriCAS 1.3.5 API</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="Domains.html" >Domains</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2014-2018, FriCAS Team.
+        &#169; Copyright 2014-2019, FriCAS Team.
     </div>
   </body>
 </html>
