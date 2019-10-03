@@ -13,7 +13,9 @@ You can get the sources from the official SVN repository::
 
     svn co svn://svn.code.sf.net/p/fricas/code/trunk fricas
 
-Alternatively, press the fork button on
+There is also a :ref:`fricas-mirror`.
+
+Press the fork button on
 `https://github.com/fricas/fricas <https://github.com/fricas/fricas>`_
 and send patches in the form of Github patch links, for example, as in
 `https://groups.google.com/forum/#!topic/fricas-devel/tU9DLT1lLes
@@ -46,43 +48,26 @@ patches (say more than thousend lines) and sometimes part of the
 functionality is ready and may be commited before the feature is
 complete..
 
-Contributors
-------------
 
-The following people have contributed to FriCAS since its fork from
-Axiom in 2007.
+Development resources
+---------------------
 
-* Krystian Baclawski
+.. toctree::
+   :maxdepth: 1
 
-* Abhinav Baid
-* Martin Baker
-* Peter Broadbery
-* Raoul Bourquin
-* Frédéric Chapoton
-* Tim Daly
-* Gabriel Dos Reis
-* David Einstein
-* Bertfried Fauser
-* Johannes Grabmeier
-* Riccardo Guida
-* `Waldek Hebisch <http://www.math.uni.wroc.pl/~hebisch/>`_ (lead developer)
-* `Ralf Hemmecke <http://www.hemmecke.org>`_
-* Rainer Joswig
-* Franz Lehner
-* Francois Maltey
-* Piet van Oostrum
-* Humberto Ortiz-Zuazaga
-* Kurt Pagani
-* Bill Page
-* Alfredo Portes
-* Arthur C. Ralfs
-* Anatoly Raportirenko
-* Renaud Rioboo
-* Martin Rubey
-* Grigory Sarnitskiy
-* Aleksej Saushev
-* Konrad Schrempf
-* Alexander Solovets
-* Gregory Vanuxem
-* Stephen Wilson
-* Qian Yun
+   spadstyleguide
+   fricas-git
+
+* `Conventions <http://axiom-wiki.newsynthesis.org/SpadFileConvention>`_
+
+* `Lanuage Differences <http://axiom-wiki.newsynthesis.org/LanguageDifferences>`_
+
+* `The )set command <http://axiom-wiki.newsynthesis.org/FriCASHelpSet>`_
+
+* `Aldor User Guide <http://www.aldor.org/docs/aldorug.pdf>`_
+
+* `Description of the BOOT language (txt) <http://fricas.sourceforge.net/doc/boot.notes>`_
+
+* `Description of the BOOT language <http://www.euclideanspace.com/prog/scratchpad/internals/boot/index.htm>`_
+
+* `Manual for the Boot Language <http://daly.axiom-developer.org/boot.tgz>`_

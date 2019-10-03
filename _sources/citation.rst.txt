@@ -70,7 +70,7 @@ In the following we list publications mentioning FriCAS.
 * **Waldek Hebisch**
   (2016):
   `Integration in terms of exponential integrals and incomplete
-  gamma functions
+  gamma functions (slides)
   <http://www.math.uni.wroc.pl/~hebisch/other/icms.pdf>`_
   Talk at `ICMS <http://icms2016.zib.de/>`_
 
@@ -153,3 +153,6 @@ In the following we list publications mentioning FriCAS.
 
 * `Computer Algebra Independent Integration Tests
   <http://www.12000.org/my_notes/CAS_integration_tests/index.htm>`_
+
+* `Old collection of online articles connected to FriCAS and Axiom
+  <http://axiom-wiki.newsynthesis.org/public/refs/articles.html>`_

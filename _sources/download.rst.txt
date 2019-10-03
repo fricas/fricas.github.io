@@ -9,7 +9,7 @@ Download
 
     svn co svn://svn.code.sf.net/p/fricas/code/trunk fricas
 
-* Mirror of the sources at github::
+* :ref:`fricas-mirror`::
 
     git clone https://github.com/fricas/fricas.git
 

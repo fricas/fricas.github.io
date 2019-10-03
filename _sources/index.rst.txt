@@ -23,4 +23,5 @@ computer algebra system.
    examples
    development
    citation
+   contributors
    history
