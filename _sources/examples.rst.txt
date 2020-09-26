@@ -4,6 +4,9 @@ Examples
 * `Integration
   <http://axiom-wiki.newsynthesis.org/FriCASIntegration>`_
 
+* `Integration and defining polynomial
+  <http://axiom-wiki.newsynthesis.org/ExampleIntegration>`_
+
 * `Integration with special functions
   <http://axiom-wiki.newsynthesis.org/FriCASSpecialIntegration>`_
 
@@ -30,3 +33,6 @@ Examples
 
 * `Free Fields
   <https://github.com/billpage/ncpoly/blob/master/fdalg_20180907.pdf>`_
+
+* `Tensor Products
+  <http://fricas-wiki.math.uni.wroc.pl/SandBoxTensorAlgebra2>`_
