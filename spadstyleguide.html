@@ -1,20 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>SPAD Style Guide &#8212; FriCAS</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -44,23 +46,23 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="spad-style-guide">
-<h1>SPAD Style Guide<a class="headerlink" href="#spad-style-guide" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="maximum-line-length">
-<h2>Maximum line length<a class="headerlink" href="#maximum-line-length" title="Permalink to this headline">¶</a></h2>
+  <section id="spad-style-guide">
+<h1>SPAD Style Guide<a class="headerlink" href="#spad-style-guide" title="Permalink to this heading">¶</a></h1>
+<section id="maximum-line-length">
+<h2>Maximum line length<a class="headerlink" href="#maximum-line-length" title="Permalink to this heading">¶</a></h2>
 <p>No firm rule, but use about 70 characters unless that causes problems.
 Try to avoid lines longer than 78 characters.</p>
-</div>
-<div class="section" id="file-splitting-during-compilation">
-<h2>File splitting during compilation<a class="headerlink" href="#file-splitting-during-compilation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="file-splitting-during-compilation">
+<h2>File splitting during compilation<a class="headerlink" href="#file-splitting-during-compilation" title="Permalink to this heading">¶</a></h2>
 <p>There is a script <a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/scripts/unpack_file">src/scripts/unpack_file</a> that splits
 <code class="docutils literal notranslate"><span class="pre">.spad</span></code> source files at <code class="docutils literal notranslate"><span class="pre">)abbrev</span></code> boundaries. As a result,
 everything before the first <code class="docutils literal notranslate"><span class="pre">)abbrev</span></code> will be discarded.</p>
 <p>In particular, it means that there cannot be a global macro definition
 for the whole <code class="docutils literal notranslate"><span class="pre">.spad</span></code> file.</p>
-</div>
-<div class="section" id="literate-documentation">
-<h2>Literate documentation<a class="headerlink" href="#literate-documentation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="literate-documentation">
+<h2>Literate documentation<a class="headerlink" href="#literate-documentation" title="Permalink to this heading">¶</a></h2>
 <p><a class="reference external" href="http://fricas-wiki.math.uni.wroc.pl/ProgrammingSPAD">SPAD</a> files can contain LaTeX parts.
 Such documentation must be included into blocks of the form:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>)if LiterateDoc
@@ -83,16 +85,16 @@ awk -f src/doc/literatedoc.awk src/algebra/fmt.spad &gt; fmt.tex
 TEXINPUTS=:src/doc pdflatex fmt.tex
 </pre></div>
 </div>
-</div>
-<div class="section" id="whitespace">
-<h2>Whitespace<a class="headerlink" href="#whitespace" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="whitespace">
+<h2>Whitespace<a class="headerlink" href="#whitespace" title="Permalink to this heading">¶</a></h2>
 <p>Do not use tabs, but rather explicit spaces.</p>
-<div class="section" id="block-indentation">
-<h3>Block indentation<a class="headerlink" href="#block-indentation" title="Permalink to this headline">¶</a></h3>
+<section id="block-indentation">
+<h3>Block indentation<a class="headerlink" href="#block-indentation" title="Permalink to this heading">¶</a></h3>
 <p>4 spaces (no tabs)</p>
-</div>
-<div class="section" id="whitespaces-around-punctuation">
-<h3>Whitespaces around punctuation<a class="headerlink" href="#whitespaces-around-punctuation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="whitespaces-around-punctuation">
+<h3>Whitespaces around punctuation<a class="headerlink" href="#whitespaces-around-punctuation" title="Permalink to this heading">¶</a></h3>
 <ul class="simple">
 <li><p>“:” space before and after</p></li>
 <li><p>“,” space after (but not before)</p></li>
@@ -100,14 +102,14 @@ TEXINPUTS=:src/doc pdflatex fmt.tex
 <li><p>‘+’ spaces optional for most arithmetic infix operations</p></li>
 <li><p>“-” no space after for unary operations</p></li>
 </ul>
-</div>
-</div>
-<div class="section" id="continuation-lines">
-<h2>Continuation lines<a class="headerlink" href="#continuation-lines" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="continuation-lines">
+<h2>Continuation lines<a class="headerlink" href="#continuation-lines" title="Permalink to this heading">¶</a></h2>
 <p>Use explicit <code class="docutils literal notranslate"><span class="pre">_</span></code> (underscore) even when not required</p>
-</div>
-<div class="section" id="function-signature">
-<h2>Function signature<a class="headerlink" href="#function-signature" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="function-signature">
+<h2>Function signature<a class="headerlink" href="#function-signature" title="Permalink to this heading">¶</a></h2>
 <p>Use explicit types, that is:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>func(a : Integer) : Integer ==
 </pre></div>
@@ -116,13 +118,13 @@ TEXINPUTS=:src/doc pdflatex fmt.tex
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>func(a) ==
 </pre></div>
 </div>
-</div>
-<div class="section" id="empty-list">
-<h2>Empty list<a class="headerlink" href="#empty-list" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="empty-list">
+<h2>Empty list<a class="headerlink" href="#empty-list" title="Permalink to this heading">¶</a></h2>
 <p>use []$T rather than empty()$T</p>
-</div>
-<div class="section" id="early-exit">
-<h2>=&gt; (early exit)<a class="headerlink" href="#early-exit" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="early-exit">
+<h2>=&gt; (early exit)<a class="headerlink" href="#early-exit" title="Permalink to this heading">¶</a></h2>
 <p>The ternary operator <code class="docutils literal notranslate"><span class="pre">cond</span> <span class="pre">?</span> <span class="pre">a</span> <span class="pre">:</span> <span class="pre">b</span></code> known from the C programming
 language can be encoded in SPAD as follows.</p>
 <p>Either:</p>
@@ -133,9 +135,9 @@ language can be encoded in SPAD as follows.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>e := if v &gt; 0 then 1 else -1
 </pre></div>
 </div>
-</div>
-<div class="section" id="dangling-else">
-<h2>Dangling <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#dangling-else" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="dangling-else">
+<h2>Dangling <code class="docutils literal notranslate"><span class="pre">else</span></code><a class="headerlink" href="#dangling-else" title="Permalink to this heading">¶</a></h2>
 <p>If there is space then the best option is all on one line</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>if .... then .... else ....
 </pre></div>
@@ -147,15 +149,15 @@ else
   ...
 </pre></div>
 </div>
-</div>
-<div class="section" id="elt-vs-qelt">
-<h2>elt vs. qelt<a class="headerlink" href="#elt-vs-qelt" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="elt-vs-qelt">
+<h2>elt vs. qelt<a class="headerlink" href="#elt-vs-qelt" title="Permalink to this heading">¶</a></h2>
 <p>We encourage better error messages over speed, i.e., use <code class="docutils literal notranslate"><span class="pre">elt</span></code>.
 <code class="docutils literal notranslate"><span class="pre">qelt</span></code> should only be used in cases where it is clear from the
 context that no index error can happen.</p>
-</div>
-<div class="section" id="vs">
-<h2>_+ vs. “+”<a class="headerlink" href="#vs" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="vs">
+<h2>_+ vs. “+”<a class="headerlink" href="#vs" title="Permalink to this heading">¶</a></h2>
 <p>Prefer the escaped version of an operator instead of letting it look
 like a string, i.e. use</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>_+(a : %, b : %) : Boolean ==
@@ -165,9 +167,9 @@ like a string, i.e. use</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&quot;+&quot;(a : %, b : %) : Boolean ==
 </pre></div>
 </div>
-</div>
-<div class="section" id="boolean-valued-functions">
-<h2>Boolean valued functions<a class="headerlink" href="#boolean-valued-functions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="boolean-valued-functions">
+<h2>Boolean valued functions<a class="headerlink" href="#boolean-valued-functions" title="Permalink to this heading">¶</a></h2>
 <p>Functions that return boolean values have names that end in <code class="docutils literal notranslate"><span class="pre">?</span></code>.
 Define:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>positive? : Integer -&gt; Boolean
@@ -177,21 +179,21 @@ Define:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>isPositive : Integer -&gt; Boolean
 </pre></div>
 </div>
-</div>
-<div class="section" id="destructive-operations">
-<h2>Destructive operations<a class="headerlink" href="#destructive-operations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="destructive-operations">
+<h2>Destructive operations<a class="headerlink" href="#destructive-operations" title="Permalink to this heading">¶</a></h2>
 <p>Identifiers of functions that modify their arguments should be ended
 with an exclamation mark (<code class="docutils literal notranslate"><span class="pre">!</span></code>) to remind other programmers that they
 should be very careful in using such functions.</p>
 <p>Compare <code class="docutils literal notranslate"><span class="pre">reverse</span></code> with <code class="docutils literal notranslate"><span class="pre">reverse!</span></code>.</p>
-</div>
-<div class="section" id="non-public-constructors">
-<h2>Non-public constructors<a class="headerlink" href="#non-public-constructors" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="non-public-constructors">
+<h2>Non-public constructors<a class="headerlink" href="#non-public-constructors" title="Permalink to this heading">¶</a></h2>
 <p>Constructors starting with “Inner” are meant for library developers
 but not for end-users.</p>
-</div>
-<div class="section" id="calling-unary-functions">
-<h2>Calling unary functions<a class="headerlink" href="#calling-unary-functions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="calling-unary-functions">
+<h2>Calling unary functions<a class="headerlink" href="#calling-unary-functions" title="Permalink to this heading">¶</a></h2>
 <p>Use</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>foo arg
 </pre></div>
@@ -201,8 +203,8 @@ but not for end-users.</p>
 </pre></div>
 </div>
 <p>for unary functions if the argument is simple.</p>
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -236,12 +238,12 @@ but not for end-users.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -264,7 +266,7 @@ but not for end-users.</p>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2007-2020, FriCAS Team.
+        &#169; Copyright 2007-2023, FriCAS Team.
     </div>
   </body>
 </html>

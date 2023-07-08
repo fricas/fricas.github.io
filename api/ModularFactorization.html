@@ -1,24 +1,26 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>ModularFactorization &#8212; FriCAS</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ModularHermitePade" href="ModularHermitePade.html" />
+    <link rel="next" title="ModularFactorizationGeneral(PA, MMT, MD, PMD, MO)" href="ModularFactorizationGeneral.html" />
     <link rel="prev" title="ModularEvaluation2" href="ModularEvaluation2.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -28,7 +30,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="ModularHermitePade.html" title="ModularHermitePade"
+          <a href="ModularFactorizationGeneral.html" title="ModularFactorizationGeneral(PA, MMT, MD, PMD, MO)"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="ModularEvaluation2.html" title="ModularEvaluation2"
@@ -45,43 +47,13 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="modularfactorization">
-<span id="l4d6f64756c6172466163746f72697a6174696f6e"></span><span id="index-0"></span><h1>ModularFactorization<a class="headerlink" href="#modularfactorization" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/ffact.spad#L1">ffact.spad line 1</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/ffact.spad#L1">[edit on github]</a></p>
-<p>This package implements factorization of polynomials over <code class="docutils literal notranslate"><span class="pre">Z_p</span></code> using a variant of Kaltofen-Shoup method.</p>
-<span class="target" id="l4d6f64756c6172466163746f72697a6174696f6e-646466616374"></span><dl class="simple" id="index-1">
-<dt><span class="spadfun">ddfact</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> Record(poly: <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, degree: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>, separate_factors: () -&gt; <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">ddfact(pv,</span> <span class="pre">p)</span></code> computes distint degree factorization of <code class="docutils literal notranslate"><span class="pre">pv</span></code>. <code class="docutils literal notranslate"><span class="pre">pv</span></code> is assumed square-free, <code class="docutils literal notranslate"><span class="pre">p</span></code> is assumed prime.</p>
-</dd>
-</dl>
-<span class="target" id="l4d6f64756c6172466163746f72697a6174696f6e-696e695f7264617461"></span><dl class="simple" id="index-2">
-<dt><span class="spadfun">ini_rdata</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> Record(ind: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>, poly: <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">ini_rdata(pv,</span> <span class="pre">p)</span></code> generates data allowing faster computation of remainders from division by <code class="docutils literal notranslate"><span class="pre">pv</span></code> modulo <code class="docutils literal notranslate"><span class="pre">p</span></code>. Result is used by other function in this package, in particular <code class="docutils literal notranslate"><span class="pre">red_pol</span></code>.</p>
-</dd>
-</dl>
-<span class="target" id="l4d6f64756c6172466163746f72697a6174696f6e-6d666163746f72"></span><dl class="simple" id="index-3">
-<dt><span class="spadfun">mfactor</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">mfactor(pv,</span> <span class="pre">p)</span></code> computes factorization of <code class="docutils literal notranslate"><span class="pre">pv</span></code> into irreducibles modulo <code class="docutils literal notranslate"><span class="pre">p</span></code>. <code class="docutils literal notranslate"><span class="pre">pv</span></code> is assumed square-free, <code class="docutils literal notranslate"><span class="pre">p</span></code> is assumed prime.</p>
-</dd>
-</dl>
-<span class="target" id="l4d6f64756c6172466163746f72697a6174696f6e-6d6d756c"></span><dl class="simple" id="index-4">
-<dt><span class="spadfun">mmul</span>: (<a class="reference internal" href="U32Matrix.html#l5533324d6174726978"><span class="std std-ref">U32Matrix</span></a>, <a class="reference internal" href="U32Matrix.html#l5533324d6174726978"><span class="std std-ref">U32Matrix</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="U32Matrix.html#l5533324d6174726978"><span class="std std-ref">U32Matrix</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">mmul(m1,</span> <span class="pre">m2,</span> <span class="pre">p)</span></code> multiplies <code class="docutils literal notranslate"><span class="pre">m1</span></code> by transpose of <code class="docutils literal notranslate"><span class="pre">m2</span></code> modulo <code class="docutils literal notranslate"><span class="pre">p</span></code>.</p>
-</dd>
-</dl>
-<span class="target" id="l4d6f64756c6172466163746f72697a6174696f6e-6d6f645f657870"></span><dl class="simple" id="index-5">
-<dt><span class="spadfun">mod_exp</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> Record(ind: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>, poly: <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>)) -&gt; <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">mod_exp(pv,</span> <span class="pre">d,</span> <span class="pre">rd)</span></code> computes <code class="docutils literal notranslate"><span class="pre">pv^d</span></code> modulo reduction data in <code class="docutils literal notranslate"><span class="pre">rd</span></code>.</p>
-</dd>
-</dl>
-<span class="target" id="l4d6f64756c6172466163746f72697a6174696f6e-6d6f64756c61725f636f6d706f7365"></span><dl class="simple" id="index-6">
-<dt><span class="spadfun">modular_compose</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="U32Matrix.html#l5533324d6174726978"><span class="std std-ref">U32Matrix</span></a>, <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>, <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>, <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> Record(ind: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>, poly: <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>)) -&gt; <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">modular_compose(pol,</span> <span class="pre">pm,</span> <span class="pre">p1,</span> <span class="pre">l1,</span> <span class="pre">l2,</span> <span class="pre">rd)</span></code> computes composion of <code class="docutils literal notranslate"><span class="pre">pol</span></code> with <code class="docutils literal notranslate"><span class="pre">p0</span></code> modulo reduction data <code class="docutils literal notranslate"><span class="pre">rd</span></code>. <code class="docutils literal notranslate"><span class="pre">pm</span></code> and <code class="docutils literal notranslate"><span class="pre">p1</span></code> are as from call to <code class="docutils literal notranslate"><span class="pre">power_matrix(p0,</span> <span class="pre">l1,</span> <span class="pre">rd)</span></code>. <code class="docutils literal notranslate"><span class="pre">l2</span></code> must be such that <code class="docutils literal notranslate"><span class="pre">l1*l2</span></code> is bigger or equal to degree from <code class="docutils literal notranslate"><span class="pre">rd</span></code>.</p>
-</dd>
-</dl>
-<span class="target" id="l4d6f64756c6172466163746f72697a6174696f6e-706f7765725f6d6174726978"></span><dl class="simple" id="index-7">
-<dt><span class="spadfun">power_matrix</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>, <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> Record(ind: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>, poly: <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>)) -&gt; Record(matr: <a class="reference internal" href="U32Matrix.html#l5533324d6174726978"><span class="std std-ref">U32Matrix</span></a>, poly: <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">power_matrix(s,</span> <span class="pre">l,</span> <span class="pre">rd)</span></code> computes [<code class="docutils literal notranslate"><span class="pre">m</span></code>, <code class="docutils literal notranslate"><span class="pre">p</span></code>] such that <code class="docutils literal notranslate"><span class="pre">p</span> <span class="pre">=</span> <span class="pre">s^l</span></code> modulo reduction data <code class="docutils literal notranslate"><span class="pre">rd</span></code> and column <code class="docutils literal notranslate"><span class="pre">j</span></code> of <code class="docutils literal notranslate"><span class="pre">m</span></code> contain <code class="docutils literal notranslate"><span class="pre">s^j</span></code> modulo reduction data <code class="docutils literal notranslate"><span class="pre">rd</span></code>. Note that lowest column index is <code class="docutils literal notranslate"><span class="pre">j</span> <span class="pre">=</span> <span class="pre">0</span></code> and highest index is <code class="docutils literal notranslate"><span class="pre">j=l-1</span></code>. <code class="docutils literal notranslate"><span class="pre">rd</span></code> should be obtained by earlier call to <code class="docutils literal notranslate"><span class="pre">ini_rdata</span></code>.</p>
-</dd>
-</dl>
-<span class="target" id="l4d6f64756c6172466163746f72697a6174696f6e-7265645f706f6c"></span><dl class="simple" id="index-8">
-<dt><span class="spadfun">red_pol</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> Record(ind: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>, poly: <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>)) -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">red_pol(pv,</span> <span class="pre">rd)</span></code> computes remainder of <code class="docutils literal notranslate"><span class="pre">pv</span></code> using reduction data <code class="docutils literal notranslate"><span class="pre">rd</span></code> produced by earlier call to <code class="docutils literal notranslate"><span class="pre">ini_rdata</span></code>.</p>
-</dd>
-</dl>
-</div>
+  <section id="modularfactorization">
+<span id="l4d6f64756c6172466163746f72697a6174696f6e"></span><span id="index-0"></span><h1>ModularFactorization<a class="headerlink" href="#modularfactorization" title="Permalink to this heading">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/ffact.spad#L604">ffact.spad line 604</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/ffact.spad#L604">[edit on github]</a></p>
+<p>undocumented</p>
+<span class="target" id="l4d6f64756c6172466163746f72697a6174696f6e-646466616374"></span><p id="index-1"><span class="spadfun">ddfact</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> Record(poly: <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, degree: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>, separate_factors: () -&gt; <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>)</p>
+<span class="target" id="l4d6f64756c6172466163746f72697a6174696f6e-6d666163746f72"></span><p id="index-2"><span class="spadfun">mfactor</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a></p>
+</section>
 
 
             <div class="clearer"></div>
@@ -106,12 +78,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -123,7 +95,7 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="ModularHermitePade.html" title="ModularHermitePade"
+          <a href="ModularFactorizationGeneral.html" title="ModularFactorizationGeneral(PA, MMT, MD, PMD, MO)"
              >next</a> |</li>
         <li class="right" >
           <a href="ModularEvaluation2.html" title="ModularEvaluation2"
@@ -135,7 +107,7 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2007-2020, FriCAS Team.
+        &#169; Copyright 2007-2023, FriCAS Team.
     </div>
   </body>
 </html>

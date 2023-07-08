@@ -1,20 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>U32VectorPolynomialOperations &#8212; FriCAS</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -45,9 +47,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="u32vectorpolynomialoperations">
-<span id="l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73"></span><span id="index-0"></span><h1>U32VectorPolynomialOperations<a class="headerlink" href="#u32vectorpolynomialoperations" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/u32vec.spad#L189">u32vec.spad line 189</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/u32vec.spad#L189">[edit on github]</a></p>
+  <section id="u32vectorpolynomialoperations">
+<span id="l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73"></span><span id="index-0"></span><h1>U32VectorPolynomialOperations<a class="headerlink" href="#u32vectorpolynomialoperations" title="Permalink to this heading">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/u32vec.spad#L403">u32vec.spad line 403</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/u32vec.spad#L403">[edit on github]</a></p>
 <p>This is a low-level package which implements operations on vectors treated as univariate modular polynomials. Most operations takes modulus as parameter. Modulus is machine sized prime which should be small enough to avoid overflow in intermediate calculations.</p>
 <span class="target" id="l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-636f70795f6669727374"></span><dl class="simple" id="index-1">
 <dt><span class="spadfun">copy_first</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">copy_first(v1,</span> <span class="pre">v2,</span> <span class="pre">n)</span></code> copies first <code class="docutils literal notranslate"><span class="pre">n</span></code> elements of <code class="docutils literal notranslate"><span class="pre">v2</span></code> into <code class="docutils literal notranslate"><span class="pre">n</span></code> first positions in <code class="docutils literal notranslate"><span class="pre">v1</span></code>.</p>
@@ -129,23 +131,27 @@
 <dt><span class="spadfun">to_mod_pa</span>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l537061727365556e6976617269617465506f6c796e6f6d69616c"><span class="std std-ref">SparseUnivariatePolynomial</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">to_mod_pa(s,</span> <span class="pre">p)</span></code> reduces coefficients of polynomial <code class="docutils literal notranslate"><span class="pre">s</span></code> modulo prime <code class="docutils literal notranslate"><span class="pre">p</span></code> and converts the result to vector</p>
 </dd>
 </dl>
-<span class="target" id="l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-7472756e63617465645f6d756c5f616464"></span><dl class="simple" id="index-21">
-<dt><span class="spadfun">truncated_mul_add</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">truncated_mul_add(x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">d,</span> <span class="pre">p)</span></code> adds to <code class="docutils literal notranslate"><span class="pre">z</span></code> the produce x*y truncated after degree <code class="docutils literal notranslate"><span class="pre">d</span></code></p>
+<span class="target" id="l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-7472756e63617465645f6d756c5f61646432"></span><dl class="simple" id="index-21">
+<dt><span class="spadfun">truncated_mul_add2</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">truncated_mul_add2(x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">d1,</span> <span class="pre">d2,</span> <span class="pre">p)</span></code> adds to <code class="docutils literal notranslate"><span class="pre">z</span></code> the product x*y and the variable to power <code class="docutils literal notranslate"><span class="pre">d1</span></code> truncated after degree <code class="docutils literal notranslate"><span class="pre">d</span></code>.</p>
 </dd>
 </dl>
-<span class="target" id="l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-7472756e63617465645f6d756c7469706c69636174696f6e"></span><dl class="simple" id="index-22">
-<dt><span class="spadfun">truncated_multiplication</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">truncated_multiplication(x,</span> <span class="pre">y,</span> <span class="pre">d,</span> <span class="pre">p)</span></code> computes x*y truncated after degree <code class="docutils literal notranslate"><span class="pre">d</span></code></p>
+<span class="target" id="l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-7472756e63617465645f6d756c5f616464"></span><dl class="simple" id="index-22">
+<dt><span class="spadfun">truncated_mul_add</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">truncated_mul_add(x,</span> <span class="pre">y,</span> <span class="pre">z,</span> <span class="pre">d,</span> <span class="pre">p)</span></code> adds to <code class="docutils literal notranslate"><span class="pre">z</span></code> the product x*y truncated after degree <code class="docutils literal notranslate"><span class="pre">d</span></code>.</p>
 </dd>
 </dl>
-<span class="target" id="l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-766563746f725f6164645f6d756c"></span><dl class="simple" id="index-23">
+<span class="target" id="l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-7472756e63617465645f6d756c7469706c69636174696f6e"></span><dl class="simple" id="index-23">
+<dt><span class="spadfun">truncated_multiplication</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">truncated_multiplication(x,</span> <span class="pre">y,</span> <span class="pre">d,</span> <span class="pre">p)</span></code> computes x*y truncated after degree <code class="docutils literal notranslate"><span class="pre">d</span></code>.</p>
+</dd>
+</dl>
+<span class="target" id="l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-766563746f725f6164645f6d756c"></span><dl class="simple" id="index-24">
 <dt><span class="spadfun">vector_add_mul</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">vector_add_mul(v1,</span> <span class="pre">v2,</span> <span class="pre">m,</span> <span class="pre">n,</span> <span class="pre">c,</span> <span class="pre">p)</span></code> sets <code class="docutils literal notranslate"><span class="pre">v1</span></code>(<code class="docutils literal notranslate"><span class="pre">m</span></code>), …, <code class="docutils literal notranslate"><span class="pre">v1</span></code>(<code class="docutils literal notranslate"><span class="pre">n</span></code>) to corresponding extries in <code class="docutils literal notranslate"><span class="pre">v1</span></code> + <code class="docutils literal notranslate"><span class="pre">c*v2</span></code> modulo <code class="docutils literal notranslate"><span class="pre">p</span></code>.</p>
 </dd>
 </dl>
-<span class="target" id="l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-766563746f725f636f6d62696e6174696f6e"></span><dl class="simple" id="index-24">
+<span class="target" id="l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-766563746f725f636f6d62696e6174696f6e"></span><dl class="simple" id="index-25">
 <dt><span class="spadfun">vector_combination</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">vector_combination(v1,</span> <span class="pre">c1,</span> <span class="pre">v2,</span> <span class="pre">c2,</span> <span class="pre">n,</span> <span class="pre">delta,</span> <span class="pre">p)</span></code> replaces first <code class="docutils literal notranslate"><span class="pre">n</span></code> + 1 entires of <code class="docutils literal notranslate"><span class="pre">v1</span></code> by corresponding entries of <code class="docutils literal notranslate"><span class="pre">c1*v1+c2*x^delta*v2</span></code> mod <code class="docutils literal notranslate"><span class="pre">p</span></code>.</p>
 </dd>
 </dl>
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -170,12 +176,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -199,7 +205,7 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2007-2020, FriCAS Team.
+        &#169; Copyright 2007-2023, FriCAS Team.
     </div>
   </body>
 </html>

@@ -1,20 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>FunctionSpaceToUnivariatePowerSeries(R, FE, Expon, UPS, TRAN, UTS, TEXP, x) &#8212; FriCAS</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -45,9 +47,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="functionspacetounivariatepowerseries-r-fe-expon-ups-tran-uts-texp-x">
-<span id="l46756e6374696f6e5370616365546f556e6976617269617465506f776572536572696573"></span><span id="index-0"></span><h1>FunctionSpaceToUnivariatePowerSeries(R, FE, Expon, UPS, TRAN, UTS, TEXP, x)<a class="headerlink" href="#functionspacetounivariatepowerseries-r-fe-expon-ups-tran-uts-texp-x" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/fs2ups.spad#L1400">fs2ups.spad line 1400</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/fs2ups.spad#L1400">[edit on github]</a></p>
+  <section id="functionspacetounivariatepowerseries-r-fe-expon-ups-tran-uts-texp-x">
+<span id="l46756e6374696f6e5370616365546f556e6976617269617465506f776572536572696573"></span><span id="index-0"></span><h1>FunctionSpaceToUnivariatePowerSeries(R, FE, Expon, UPS, TRAN, UTS, TEXP, x)<a class="headerlink" href="#functionspacetounivariatepowerseries-r-fe-expon-ups-tran-uts-texp-x" title="Permalink to this heading">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/fs2ups.spad#L1435">fs2ups.spad line 1435</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/fs2ups.spad#L1435">[edit on github]</a></p>
 <ul>
 <li><p>R: Join(<a class="reference internal" href="GcdDomain.html#l476364446f6d61696e"><span class="std std-ref">GcdDomain</span></a>, <a class="reference internal" href="Comparable.html#l436f6d70617261626c65"><span class="std std-ref">Comparable</span></a>, <a class="reference internal" href="RetractableTo.html#l5265747261637461626c65546f"><span class="std std-ref">RetractableTo</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="LinearlyExplicitOver.html#l4c696e6561726c794578706c696369744f766572"><span class="std std-ref">LinearlyExplicitOver</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>)</p></li>
 <li><p>FE: Join(<a class="reference internal" href="AlgebraicallyClosedField.html#l416c67656272616963616c6c79436c6f7365644669656c64"><span class="std std-ref">AlgebraicallyClosedField</span></a>, <a class="reference internal" href="TranscendentalFunctionCategory.html#l5472616e7363656e64656e74616c46756e6374696f6e43617465676f7279"><span class="std std-ref">TranscendentalFunctionCategory</span></a>, <a class="reference internal" href="Algebra.html#l416c6765627261"><span class="std std-ref">Algebra</span></a> <a class="reference internal" href="Fraction.html#l4672616374696f6e"><span class="std std-ref">Fraction</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="FunctionSpace.html#l46756e6374696f6e5370616365"><span class="std std-ref">FunctionSpace</span></a> R) with</p>
@@ -79,7 +81,7 @@
 <dt><span class="spadfun">exprToUPS</span>: (FE, <a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a>, Union(complex, real: two sides, real: left side, real: right side, just do it)) -&gt; Union(%series: UPS, %problem: Record(func: <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a>, prob: <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a>))</dt><dd><p><code class="docutils literal notranslate"><span class="pre">exprToUPS(fcn,</span> <span class="pre">posCheck?,</span> <span class="pre">atanFlag)</span></code> converts the expression <code class="docutils literal notranslate"><span class="pre">fcn</span></code> to a power series. If <code class="docutils literal notranslate"><span class="pre">posCheck?</span></code> is <code class="docutils literal notranslate"><span class="pre">true</span></code>, log<code class="docutils literal notranslate"><span class="pre">'s</span></code> of negative numbers are not allowed nor are <code class="docutils literal notranslate"><span class="pre">n</span></code>th roots of negative numbers with <code class="docutils literal notranslate"><span class="pre">n</span></code> even. If <code class="docutils literal notranslate"><span class="pre">posCheck?</span></code> is <code class="docutils literal notranslate"><span class="pre">false</span></code>, these are allowed. <code class="docutils literal notranslate"><span class="pre">atanFlag</span></code> determines how the case <code class="docutils literal notranslate"><span class="pre">atan(f(x))</span></code>, where <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> has a pole, will be treated. The possible values of <code class="docutils literal notranslate"><span class="pre">atanFlag</span></code> are <code class="docutils literal notranslate"><span class="pre">&quot;complex&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;real:</span> <span class="pre">two</span> <span class="pre">sides&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;real:</span> <span class="pre">left</span> <span class="pre">side&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;real:</span> <span class="pre">right</span> <span class="pre">side&quot;</span></code>, and <code class="docutils literal notranslate"><span class="pre">&quot;just</span> <span class="pre">do</span> <span class="pre">it&quot;</span></code>. If <code class="docutils literal notranslate"><span class="pre">atanFlag</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;complex&quot;</span></code>, then no series expansion will be computed because, viewed as a function of a complex variable, <code class="docutils literal notranslate"><span class="pre">atan(f(x))</span></code> has an essential singularity. Otherwise, the sign of the leading coefficient of the series expansion of <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> determines the constant coefficient in the series expansion of <code class="docutils literal notranslate"><span class="pre">atan(f(x))</span></code>. If this sign cannot be determined, a series expansion is computed only when <code class="docutils literal notranslate"><span class="pre">atanFlag</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;just</span> <span class="pre">do</span> <span class="pre">it&quot;</span></code>. When the leading term in the series expansion of <code class="docutils literal notranslate"><span class="pre">f(x)</span></code> is of odd degree (or is a rational degree with odd numerator), then the constant coefficient in the series expansion of <code class="docutils literal notranslate"><span class="pre">atan(f(x))</span></code> for values to the left differs from that for values to the right. If <code class="docutils literal notranslate"><span class="pre">atanFlag</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;real:</span> <span class="pre">two</span> <span class="pre">sides&quot;</span></code>, no series expansion will be computed. If <code class="docutils literal notranslate"><span class="pre">atanFlag</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;real:</span> <span class="pre">left</span> <span class="pre">side&quot;</span></code> the constant coefficient for values to the left will be used and if <code class="docutils literal notranslate"><span class="pre">atanFlag</span></code> <code class="docutils literal notranslate"><span class="pre">&quot;real:</span> <span class="pre">right</span> <span class="pre">side&quot;</span></code> the constant coefficient for values to the right will be used. If there is a problem in converting the function to a power series, a record containing the name of the function that caused the problem and a brief description of the problem is returned. When expanding the expression into a series it is assumed that the series is centered at 0. For a series centered at a, the user should perform the substitution <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">-&gt;</span> <span class="pre">x</span> <span class="pre">+</span> <span class="pre">a</span></code> before calling this function.</p>
 </dd>
 </dl>
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -104,12 +106,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -133,7 +135,7 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2007-2020, FriCAS Team.
+        &#169; Copyright 2007-2023, FriCAS Team.
     </div>
   </body>
 </html>

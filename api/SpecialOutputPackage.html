@@ -1,20 +1,22 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
     <title>SpecialOutputPackage &#8212; FriCAS</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -45,10 +47,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="specialoutputpackage">
-<span id="l5370656369616c4f75747075745061636b616765"></span><span id="index-0"></span><h1>SpecialOutputPackage<a class="headerlink" href="#specialoutputpackage" title="Permalink to this headline">¶</a></h1>
+  <section id="specialoutputpackage">
+<span id="l5370656369616c4f75747075745061636b616765"></span><span id="index-0"></span><h1>SpecialOutputPackage<a class="headerlink" href="#specialoutputpackage" title="Permalink to this heading">¶</a></h1>
 <p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/out.spad#L54">out.spad line 54</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/out.spad#L54">[edit on github]</a></p>
-<p>SpecialOutputPackage allows FORTRAN, Tex and Script Formula Formatter output from programs.</p>
+<p>SpecialOutputPackage allows FORTRAN, Tex and MathML Formatter output from programs.</p>
 <span class="target" id="l5370656369616c4f75747075745061636b616765-6f75747075744173466f727472616e"></span><dl class="simple" id="index-1">
 <dt><span class="spadfun">outputAsFortran</span>: (<a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a>, <a class="reference internal" href="OutputForm.html#l4f7574707574466f726d"><span class="std std-ref">OutputForm</span></a>) -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">outputAsFortran(v,</span> <span class="pre">o)</span></code> sends output <code class="docutils literal notranslate"><span class="pre">v</span></code> = <code class="docutils literal notranslate"><span class="pre">o</span></code> in FORTRAN format to the destination defined by spadsys{)set output fortran}.</p>
 </dd>
@@ -61,12 +63,12 @@
 <dt><span class="spadfun">outputAsFortran</span>: <a class="reference internal" href="OutputForm.html#l4f7574707574466f726d"><span class="std std-ref">OutputForm</span></a> -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">outputAsFortran(o)</span></code> sends output <code class="docutils literal notranslate"><span class="pre">o</span></code> in FORTRAN format.</p>
 </dd>
 </dl>
-<span class="target" id="l5370656369616c4f75747075745061636b616765-6f75747075744173536372697074"></span><dl class="simple" id="index-4">
-<dt><span class="spadfun">outputAsScript</span>: <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> <a class="reference internal" href="OutputForm.html#l4f7574707574466f726d"><span class="std std-ref">OutputForm</span></a> -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">outputAsScript(l)</span></code> sends (for each expression in the list <code class="docutils literal notranslate"><span class="pre">l</span></code>) output in Script Formula Formatter format to the destination defined. by spadsys{)set output forumula}.</p>
+<span class="target" id="l5370656369616c4f75747075745061636b616765-6f757470757441734d6174684d4c"></span><dl class="simple" id="index-4">
+<dt><span class="spadfun">outputAsMathML</span>: <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> <a class="reference internal" href="OutputForm.html#l4f7574707574466f726d"><span class="std std-ref">OutputForm</span></a> -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">outputAsMathML(l)</span></code> sends (for each expression in the list <code class="docutils literal notranslate"><span class="pre">l</span></code>) output in MathML format to the destination as defined by spadsys{)set output mathml}.</p>
 </dd>
 </dl>
 <dl class="simple" id="index-5">
-<dt><span class="spadfun">outputAsScript</span>: <a class="reference internal" href="OutputForm.html#l4f7574707574466f726d"><span class="std std-ref">OutputForm</span></a> -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">outputAsScript(o)</span></code> sends output <code class="docutils literal notranslate"><span class="pre">o</span></code> in Script Formula Formatter format to the destination defined by spadsys{)set output formula}.</p>
+<dt><span class="spadfun">outputAsMathML</span>: <a class="reference internal" href="OutputForm.html#l4f7574707574466f726d"><span class="std std-ref">OutputForm</span></a> -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">outputAsMathML(o)</span></code> sends output <code class="docutils literal notranslate"><span class="pre">o</span></code> in MathML format to the destination as defined by spadsys{)set output mathml}.</p>
 </dd>
 </dl>
 <span class="target" id="l5370656369616c4f75747075745061636b616765-6f75747075744173546578"></span><dl class="simple" id="index-6">
@@ -77,7 +79,7 @@
 <dt><span class="spadfun">outputAsTex</span>: <a class="reference internal" href="OutputForm.html#l4f7574707574466f726d"><span class="std std-ref">OutputForm</span></a> -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">outputAsTex(o)</span></code> sends output <code class="docutils literal notranslate"><span class="pre">o</span></code> in Tex format to the destination defined by spadsys{)set output tex}.</p>
 </dd>
 </dl>
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -102,12 +104,12 @@
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -131,7 +133,7 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2007-2020, FriCAS Team.
+        &#169; Copyright 2007-2023, FriCAS Team.
     </div>
   </body>
 </html>
