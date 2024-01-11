@@ -1,0 +1,50 @@
+.. index:: RectangularMatrixCategoryFunctions2
+
+.. _l52656374616e67756c61724d617472697843617465676f727946756e6374696f6e7332:
+
+RectangularMatrixCategoryFunctions2(m, n, R1, Row1, Col1, M1, R2, Row2, Col2, M2)
+=================================================================================
+
+:viewcode:`matfuns.spad line 344 <matfuns.spad#L344>` :editcode:`[edit on github] <matfuns.spad#L344>`
+
+* m: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ 
+
+* n: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ 
+
+* R1: Join(\ :ref:`SemiRng <l53656d69526e67>`\ , \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ )
+
+* Row1: \ :ref:`DirectProductCategory <l44697265637450726f6475637443617465676f7279>`\ (n, R1)
+
+* Col1: \ :ref:`DirectProductCategory <l44697265637450726f6475637443617465676f7279>`\ (m, R1)
+
+* M1: \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R1, Row1, Col1)
+
+* R2: Join(\ :ref:`SemiRng <l53656d69526e67>`\ , \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ )
+
+* Row2: \ :ref:`DirectProductCategory <l44697265637450726f6475637443617465676f7279>`\ (n, R2)
+
+* Col2: \ :ref:`DirectProductCategory <l44697265637450726f6475637443617465676f7279>`\ (m, R2)
+
+* M2: \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R2, Row2, Col2)
+
+
+\ :ref:`RectangularMatrixCategoryFunctions2 <l52656374616e67756c61724d617472697843617465676f727946756e6374696f6e7332>`\  provides functions between two matrix domains. The functions provided are \ :spadfun:`map`\  and \ :spadfun:`reduce`\ .
+
+
+.. _l52656374616e67756c61724d617472697843617465676f727946756e6374696f6e7332-6d6170:
+
+.. index::
+   pair: RectangularMatrixCategoryFunctions2; map
+
+:spadfun:`map`\: (R1 -> R2, M1) -> M2 
+  \ ``map(f, m)``\  applies the function \ ``f``\  to the elements of the matrix \ ``m``\ .
+
+.. _l52656374616e67756c61724d617472697843617465676f727946756e6374696f6e7332-726564756365:
+
+.. index::
+   pair: RectangularMatrixCategoryFunctions2; reduce
+
+:spadfun:`reduce`\: ((R1, R2) -> R2, M1, R2) -> R2 
+  \ ``reduce(f, m, r)``\  returns a matrix \ ``n``\  where \ ``n[i, j] = f(m[i, j], r)``\  for all indices spad{\ ``i``\ } and \ ``j``\ .
+
+

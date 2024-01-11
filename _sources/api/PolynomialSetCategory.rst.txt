@@ -1,0 +1,399 @@
+.. index:: PolynomialSetCategory
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279:
+
+PolynomialSetCategory(R, E, VarSet, P)
+======================================
+
+:viewcode:`polset.spad line 1 <polset.spad#L1>` :editcode:`[edit on github] <polset.spad#L1>`
+
+* R: \ :ref:`Ring <l52696e67>`\ 
+
+* E: \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+* VarSet: \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+* P: \ :ref:`RecursivePolynomialCategory <l526563757273697665506f6c796e6f6d69616c43617465676f7279>`\ (R, E, VarSet)
+
+
+A category for finite subsets of a polynomial ring. Such a set is only regarded as a set of polynomials and not identified to the ideal it generates. So two distinct sets may generate the same the ideal. Furthermore, for \ ``R``\  being an integral domain, a set of polynomials may be viewed as a representation of the ideal it generates in the polynomial ring \ ``(R)^(-1) P``\ , or the set of its zeros (described for instance by the radical of the previous ideal, or a split of the associated affine variety) and so on. So this category provides operations about those different notions.
+
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-23:
+
+\ :ref:`# <l416767726567617465-23>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-616e793f:
+
+\ :ref:`any? <l486f6d6f67656e656f7573416767726567617465-616e793f>`\ \: (P -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`List <l4c697374>`\  P 
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`List <l4c697374>`\  P
+
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-636f6c6c656374:
+
+.. index::
+   pair: PolynomialSetCategory; collect
+
+:spadfun:`collect`\: (%, VarSet) -> % 
+  \ ``collect(ps, v)``\  returns the set consisting of the polynomials of \ ``ps``\  with \ ``v``\  as main variable.
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-636f6c6c656374556e646572:
+
+.. index::
+   pair: PolynomialSetCategory; collectUnder
+
+:spadfun:`collectUnder`\: (%, VarSet) -> % 
+  \ ``collectUnder(ps, v)``\  returns the set consisting of the polynomials of \ ``ps``\  with main variable less than \ ``v``\ .
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-636f6c6c6563745570706572:
+
+.. index::
+   pair: PolynomialSetCategory; collectUpper
+
+:spadfun:`collectUpper`\: (%, VarSet) -> % 
+  \ ``collectUpper(ps, v)``\  returns the set consisting of the polynomials of \ ``ps``\  with main variable greater than \ ``v``\ .
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-636f6e737472756374:
+
+\ :ref:`construct <l436f6c6c656374696f6e-636f6e737472756374>`\ \: \ :ref:`List <l4c697374>`\  P -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-636f6e76657274:
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`InputForm <l496e707574466f726d>`\  
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-636f7079:
+
+\ :ref:`copy <l416767726567617465-636f7079>`\ \: % -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-636f756e74:
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (P -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (P, %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-656d7074793f:
+
+\ :ref:`empty? <l416767726567617465-656d7074793f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-656d707479:
+
+\ :ref:`empty <l416767726567617465-656d707479>`\ \: () -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-65713f:
+
+\ :ref:`eq? <l416767726567617465-65713f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-6576616c:
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`Equation <l4571756174696f6e>`\  P) -> % if P has \ :ref:`Evalable <l4576616c61626c65>`\  P
+  from \ :ref:`Evalable <l4576616c61626c65>`\  P
+
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  P) -> % if P has \ :ref:`Evalable <l4576616c61626c65>`\  P
+  from \ :ref:`Evalable <l4576616c61626c65>`\  P
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  P, \ :ref:`List <l4c697374>`\  P) -> % if P has \ :ref:`Evalable <l4576616c61626c65>`\  P
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (P, P)
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, P, P) -> % if P has \ :ref:`Evalable <l4576616c61626c65>`\  P
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (P, P)
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-65766572793f:
+
+\ :ref:`every? <l486f6d6f67656e656f7573416767726567617465-65766572793f>`\ \: (P -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-66696e64:
+
+\ :ref:`find <l436f6c6c656374696f6e-66696e64>`\ \: (P -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> Union(P, failed) 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-6865616452656d61696e646572:
+
+.. index::
+   pair: PolynomialSetCategory; headRemainder
+
+:spadfun:`headRemainder`\: (P, %) -> Record(num: P, den: R) if R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  \ ``headRemainder(a, ps)``\  returns \ ``[b, r]``\  such that the leading monomial of \ ``b``\  is reduced in the sense of Groebner bases \ ``w``\ .\ ``r``\ .\ ``t``\ . \ ``ps``\  and \ ``r*a - b``\  lies in the ideal generated by \ ``ps``\ .
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-69657861637451756f:
+
+.. index::
+   pair: PolynomialSetCategory; iexactQuo
+
+:spadfun:`iexactQuo`\: (R, R) -> R if R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  \ ``iexactQuo(x, y)``\  should be local but conditional
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-6c6573733f:
+
+\ :ref:`less? <l416767726567617465-6c6573733f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-6d61696e5661726961626c653f:
+
+.. index::
+   pair: PolynomialSetCategory; mainVariable?
+
+:spadfun:`mainVariable?`\: (VarSet, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``mainVariable?(v, ps)``\  returns \ ``true``\  iff \ ``v``\  is the main variable of some polynomial in \ ``ps``\ .
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-6d61696e5661726961626c6573:
+
+.. index::
+   pair: PolynomialSetCategory; mainVariables
+
+:spadfun:`mainVariables`\: % -> \ :ref:`List <l4c697374>`\  VarSet 
+  \ ``mainVariables(ps)``\  returns the decreasingly sorted list of the variables which are main variables of some polynomial in \ ``ps``\ .
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-6d617021:
+
+\ :ref:`map! <l486f6d6f67656e656f7573416767726567617465-6d617021>`\ \: (P -> P, %) -> % if % has \ :ref:`shallowlyMutable <l7368616c6c6f776c794d757461626c65>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-6d6170:
+
+\ :ref:`map <l486f6d6f67656e656f7573416767726567617465-6d6170>`\ \: (P -> P, %) -> % 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-6d6178:
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: % -> P if P has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: ((P, P) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> P 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-6d656d6265723f:
+
+\ :ref:`member? <l486f6d6f67656e656f7573416767726567617465-6d656d6265723f>`\ \: (P, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-6d656d62657273:
+
+\ :ref:`members <l486f6d6f67656e656f7573416767726567617465-6d656d62657273>`\ \: % -> \ :ref:`List <l4c697374>`\  P 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-6d696e:
+
+\ :ref:`min <l486f6d6f67656e656f7573416767726567617465-6d696e>`\ \: % -> P if P has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-6d6f72653f:
+
+\ :ref:`more? <l416767726567617465-6d6f72653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-6d766172:
+
+.. index::
+   pair: PolynomialSetCategory; mvar
+
+:spadfun:`mvar`\: % -> VarSet 
+  \ ``mvar(ps)``\  returns the main variable of the non constant polynomial with the greatest main variable, if any, else an error is returned.
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-7061727473:
+
+\ :ref:`parts <l486f6d6f67656e656f7573416767726567617465-7061727473>`\ \: % -> \ :ref:`List <l4c697374>`\  P 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-726564756365:
+
+\ :ref:`reduce <l436f6c6c656374696f6e-726564756365>`\ \: ((P, P) -> P, %) -> P 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+
+\ :ref:`reduce <l436f6c6c656374696f6e-726564756365>`\ \: ((P, P) -> P, %, P) -> P 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+
+\ :ref:`reduce <l436f6c6c656374696f6e-726564756365>`\ \: ((P, P) -> P, %, P, P) -> P 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-72656d61696e646572:
+
+.. index::
+   pair: PolynomialSetCategory; remainder
+
+:spadfun:`remainder`\: (P, %) -> Record(rnum: R, polnum: P, den: R) if R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  \ ``remainder(a, ps)``\  returns \ ``[c, b, r]``\  such that \ ``b``\  is fully reduced in the sense of Groebner bases \ ``w``\ .\ ``r``\ .\ ``t``\ . \ ``ps``\ , \ ``r*a - c*b``\  lies in the ideal generated by \ ``ps``\ . Furthermore, if \ ``R``\  is a \ ``gcd``\ -domain, \ ``b``\  is primitive.
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-72656d6f7665:
+
+\ :ref:`remove <l436f6c6c656374696f6e-72656d6f7665>`\ \: (P -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+
+\ :ref:`remove <l436f6c6c656374696f6e-72656d6f7665>`\ \: (P, %) -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-72656d6f76654475706c696361746573:
+
+\ :ref:`removeDuplicates <l436f6c6c656374696f6e-72656d6f76654475706c696361746573>`\ \: % -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-72657472616374:
+
+\ :ref:`retract <l5265747261637461626c6546726f6d-72657472616374>`\ \: \ :ref:`List <l4c697374>`\  P -> % 
+  from \ :ref:`RetractableFrom <l5265747261637461626c6546726f6d>`\  \ :ref:`List <l4c697374>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-72657472616374496643616e:
+
+\ :ref:`retractIfCan <l5265747261637461626c6546726f6d-72657472616374496643616e>`\ \: \ :ref:`List <l4c697374>`\  P -> Union(%, failed) 
+  from \ :ref:`RetractableFrom <l5265747261637461626c6546726f6d>`\  \ :ref:`List <l4c697374>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-72657772697465496465616c576974684865616452656d61696e646572:
+
+.. index::
+   pair: PolynomialSetCategory; rewriteIdealWithHeadRemainder
+
+:spadfun:`rewriteIdealWithHeadRemainder`\: (\ :ref:`List <l4c697374>`\  P, %) -> \ :ref:`List <l4c697374>`\  P if R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  \ ``rewriteIdealWithHeadRemainder(lp, cs)``\  returns \ ``lr``\  such that the leading monomial of every polynomial in \ ``lr``\  is reduced in the sense of Groebner bases \ ``w``\ .\ ``r``\ .\ ``t``\ . \ ``cs``\  and \ ``(lp, cs)``\  and \ ``(lr, cs)``\  generate the same ideal in \ ``(R)^(-1) P``\ .
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-72657772697465496465616c5769746852656d61696e646572:
+
+.. index::
+   pair: PolynomialSetCategory; rewriteIdealWithRemainder
+
+:spadfun:`rewriteIdealWithRemainder`\: (\ :ref:`List <l4c697374>`\  P, %) -> \ :ref:`List <l4c697374>`\  P if R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  \ ``rewriteIdealWithRemainder(lp, cs)``\  returns \ ``lr``\  such that every polynomial in \ ``lr``\  is fully reduced in the sense of Groebner bases \ ``w``\ .\ ``r``\ .\ ``t``\ . \ ``cs``\  and \ ``(lp, cs)``\  and \ ``(lr, cs)``\  generate the same ideal in \ ``(R)^(-1) P``\ .
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-726f756768426173653f:
+
+.. index::
+   pair: PolynomialSetCategory; roughBase?
+
+:spadfun:`roughBase?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  if R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  \ ``roughBase?(ps)``\  returns \ ``true``\  iff for every pair \ ``{p, q}``\  of polynomials in \ ``ps``\  their leading monomials are relatively prime.
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-726f756768457175616c496465616c733f:
+
+.. index::
+   pair: PolynomialSetCategory; roughEqualIdeals?
+
+:spadfun:`roughEqualIdeals?`\: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  \ ``roughEqualIdeals?(ps1, ps2)``\  returns \ ``true``\  iff it can proved that \ ``ps1``\  and \ ``ps2``\  generate the same ideal in \ ``(R)^(-1) P``\  without computing Groebner bases.
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-726f756768537562496465616c3f:
+
+.. index::
+   pair: PolynomialSetCategory; roughSubIdeal?
+
+:spadfun:`roughSubIdeal?`\: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  \ ``roughSubIdeal?(ps1, ps2)``\  returns \ ``true``\  iff it can proved that all polynomials in \ ``ps1``\  lie in the ideal generated by \ ``ps2``\  in \ ``(R)^(-1) P``\  without computing Groebner bases.
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-726f756768556e6974496465616c3f:
+
+.. index::
+   pair: PolynomialSetCategory; roughUnitIdeal?
+
+:spadfun:`roughUnitIdeal?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  if R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  \ ``roughUnitIdeal?(ps)``\  returns \ ``true``\  iff \ ``ps``\  contains some non null element lying in the base ring \ ``R``\ .
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-73616d706c65:
+
+\ :ref:`sample <l416767726567617465-73616d706c65>`\ \: % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-73656c656374:
+
+\ :ref:`select <l436f6c6c656374696f6e-73656c656374>`\ \: (P -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-73697a653f:
+
+\ :ref:`size? <l416767726567617465-73697a653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-736f7274:
+
+.. index::
+   pair: PolynomialSetCategory; sort
+
+:spadfun:`sort`\: (%, VarSet) -> Record(under: %, floor: %, upper: %) 
+  \ ``sort(v, ps)``\  returns \ ``us, vs, ws``\  such that \ ``us``\  is \ ``collectUnder(ps, v)``\ , \ ``vs``\  is \ ``collect(ps, v)``\  and \ ``ws``\  is \ ``collectUpper(ps, v)``\ .
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-747269616e67756c61723f:
+
+.. index::
+   pair: PolynomialSetCategory; triangular?
+
+:spadfun:`triangular?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  if R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  \ ``triangular?(ps)``\  returns \ ``true``\  iff \ ``ps``\  is a triangular set, i.e. two distinct polynomials have distinct main variables and no constant lies in \ ``ps``\ .
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-7472697669616c496465616c3f:
+
+.. index::
+   pair: PolynomialSetCategory; trivialIdeal?
+
+:spadfun:`trivialIdeal?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``trivialIdeal?(ps)``\  returns \ ``true``\  iff \ ``ps``\  does not contain non-zero elements.
+
+.. _l506f6c796e6f6d69616c53657443617465676f7279-7661726961626c6573:
+
+.. index::
+   pair: PolynomialSetCategory; variables
+
+:spadfun:`variables`\: % -> \ :ref:`List <l4c697374>`\  VarSet 
+  \ ``variables(ps)``\  returns the decreasingly sorted list of the variables which are variables of some polynomial in \ ``ps``\ .
+
+
+\ :ref:`Aggregate <l416767726567617465>`\  
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`List <l4c697374>`\  P 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`Collection <l436f6c6c656374696f6e>`\  P 
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\  
+
+\ :ref:`Evalable <l4576616c61626c65>`\  P if P has \ :ref:`Evalable <l4576616c61626c65>`\  P
+
+\ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  
+
+\ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P 
+
+\ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (P, P) if P has \ :ref:`Evalable <l4576616c61626c65>`\  P
+
+\ :ref:`RetractableFrom <l5265747261637461626c6546726f6d>`\  \ :ref:`List <l4c697374>`\  P 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

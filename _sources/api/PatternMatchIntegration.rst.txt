@@ -1,0 +1,34 @@
+.. index:: PatternMatchIntegration
+
+.. _l5061747465726e4d61746368496e746567726174696f6e:
+
+PatternMatchIntegration(R, F)
+=============================
+
+:viewcode:`intpm.spad line 1 <intpm.spad#L1>` :editcode:`[edit on github] <intpm.spad#L1>`
+
+* R: Join(\ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`GcdDomain <l476364446f6d61696e>`\ , \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ )
+
+* F: Join(\ :ref:`AlgebraicallyClosedField <l416c67656272616963616c6c79436c6f7365644669656c64>`\ , \ :ref:`TranscendentalFunctionCategory <l5472616e7363656e64656e74616c46756e6374696f6e43617465676f7279>`\ , \ :ref:`FunctionSpace <l46756e6374696f6e5370616365>`\  R)
+
+
+\ :ref:`PatternMatchIntegration <l5061747465726e4d61746368496e746567726174696f6e>`\  provides functions that use the pattern matcher to find some indefinite and definite integrals involving special functions and found in the literature.
+
+
+.. _l5061747465726e4d61746368496e746567726174696f6e-706d696e74656772617465:
+
+.. index::
+   pair: PatternMatchIntegration; pmintegrate
+
+:spadfun:`pmintegrate`\: (F, \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  F, \ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  F) -> Union(F, failed) if R has \ :ref:`PatternMatchable <l5061747465726e4d6174636861626c65>`\  \ :ref:`Integer <l496e7465676572>`\  and F has \ :ref:`SpecialFunctionCategory <l5370656369616c46756e6374696f6e43617465676f7279>`\  and R has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`Pattern <l5061747465726e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  \ ``pmintegrate(f, x = a..b)``\  returns the integral of \ ``f(x)dx``\  from a to \ ``b``\  if it can be found by the built-in pattern matching rules.
+
+.. _l5061747465726e4d61746368496e746567726174696f6e-73706c6974436f6e7374616e74:
+
+.. index::
+   pair: PatternMatchIntegration; splitConstant
+
+:spadfun:`splitConstant`\: (F, \ :ref:`Symbol <l53796d626f6c>`\ ) -> Record(const: F, nconst: F) 
+  \ ``splitConstant(f, x)``\  returns \ ``[c, g]``\  such that \ ``f = c * g``\  and \ ``c``\  does not involve \ ``t``\ .
+
+

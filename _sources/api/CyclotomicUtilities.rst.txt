@@ -1,0 +1,62 @@
+.. index:: CyclotomicUtilities
+
+.. _l4379636c6f746f6d69635574696c6974696573:
+
+CyclotomicUtilities
+===================
+
+:viewcode:`cyclo.spad line 1 <cyclo.spad#L1>` :editcode:`[edit on github] <cyclo.spad#L1>`
+
+
+Author: \ ``W``\ . Hebisch References: A. Arnold, \ ``M``\ . Monagan, Calculating cyclotomic polynomials, Math. Comp. 80 (276) 2011, 2359-2379.
+
+
+.. _l4379636c6f746f6d69635574696c6974696573-636f6379636c6f746f6d69635f6465636f6d706f736974696f6e:
+
+.. index::
+   pair: CyclotomicUtilities; cocyclotomic_decomposition
+
+:spadfun:`cocyclotomic_decomposition`\: \ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`List <l4c697374>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``cocyclotomic_decomposition(n)``\  computes list of irreducible factors of \ ``x^n + 1``\  over integers.
+
+.. _l4379636c6f746f6d69635574696c6974696573-6379636c6f746f6d69633f:
+
+.. index::
+   pair: CyclotomicUtilities; cyclotomic?
+
+:spadfun:`cyclotomic?`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\  -> Union(\ :ref:`Integer <l496e7465676572>`\ , failed) 
+  \ ``cyclotomic?(p)``\  checks if \ ``p``\  is a cyclotomic polynomial. If yes returns \ ``n``\  such that \ ``p = cyclotomic(n)``\ . Otherwise returns "failed".
+
+.. _l4379636c6f746f6d69635574696c6974696573-6379636c6f746f6d6963:
+
+.. index::
+   pair: CyclotomicUtilities; cyclotomic
+
+:spadfun:`cyclotomic`\: \ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``cyclotomic(n)``\  computes \ ``n``\ -th cyclotomic polynomial.
+
+.. _l4379636c6f746f6d69635574696c6974696573-6379636c6f746f6d69635f6172726179:
+
+.. index::
+   pair: CyclotomicUtilities; cyclotomic_array
+
+:spadfun:`cyclotomic_array`\: \ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`PrimitiveArray <l5072696d69746976654172726179>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``cyclotomic_array(n)``\  computes pa containing lower half of coefficients of \ ``n``\ -th cyclotomic polynomial. maximal index in \ ``pa``\  is \ ``eulerPhi(n)/2``\ . Due to symmetry this is enough to reconstruct cyclotomic polynomial from computed coefficients.
+
+.. _l4379636c6f746f6d69635574696c6974696573-6379636c6f746f6d69635f6465636f6d706f736974696f6e:
+
+.. index::
+   pair: CyclotomicUtilities; cyclotomic_decomposition
+
+:spadfun:`cyclotomic_decomposition`\: \ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`List <l4c697374>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``cyclotomic_decomposition(n)``\  computes list of irreducible factors of \ ``x^n - 1``\  over integers.
+
+.. _l4379636c6f746f6d69635574696c6974696573-696e76657273655f6379636c6f746f6d6963:
+
+.. index::
+   pair: CyclotomicUtilities; inverse_cyclotomic
+
+:spadfun:`inverse_cyclotomic`\: \ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``inverse_cyclotomic(n)``\  computes \ ``n``\ -th inverse cyclotomic polynomial, that is \ ``(x^n - 1)/cyclotomic(n)``\ .
+
+

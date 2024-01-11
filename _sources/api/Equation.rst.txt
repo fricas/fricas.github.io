@@ -1,0 +1,467 @@
+.. index:: Equation
+
+.. _l4571756174696f6e:
+
+Equation S
+==========
+
+:viewcode:`equation1.spad line 48 <equation1.spad#L48>` :editcode:`[edit on github] <equation1.spad#L48>`
+
+* S: \ :ref:`Type <l54797065>`\ 
+
+
+Equations as mathematical objects. All properties of the basis domain, e.g. being an abelian group are carried over the equation domain, by performing the structural operations on the left and on the right hand side.
+
+
+.. _l4571756174696f6e-30:
+
+\ :ref:`0 <l4162656c69616e4d6f6e6f6964-30>`\ \: % if S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l4571756174696f6e-31:
+
+\ :ref:`1 <l4d61676d6157697468556e6974-31>`\ \: % if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l4571756174696f6e-2a:
+
+\ :ref:`\* <l4d61676d61-2a>`\ \: (%, %) -> % if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+
+.. index::
+   pair: Equation; *
+
+:spadfun:`\*`\: (%, S) -> % if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+  \ ``eqn*x``\  produces a new equation by multiplying both sides of equation eqn by \ ``x``\ .
+
+
+\ :ref:`\* <l4162656c69616e47726f7570-2a>`\ \: (\ :ref:`Integer <l496e7465676572>`\ , %) -> % if S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`\* <l4162656c69616e4d6f6e6f6964-2a>`\ \: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , %) -> % if S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`\* <l4162656c69616e53656d6947726f7570-2a>`\ \: (\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , %) -> % if S has \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+
+.. index::
+   pair: Equation; *
+
+:spadfun:`\*`\: (S, %) -> % if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+  \ ``x*eqn``\  produces a new equation by multiplying both sides of equation eqn by \ ``x``\ .
+
+.. _l4571756174696f6e-2b:
+
+\ :ref:`+ <l4162656c69616e53656d6947726f7570-2b>`\ \: (%, %) -> % if S has \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+
+.. index::
+   pair: Equation; +
+
+:spadfun:`+`\: (%, S) -> % if S has \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+  \ ``eqn+x``\  produces a new equation by adding \ ``x``\  to both sides of equation eqn.
+
+
+.. index::
+   pair: Equation; +
+
+:spadfun:`+`\: (S, %) -> % if S has \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+  \ ``x+eqn``\  produces a new equation by adding \ ``x``\  to both sides of equation eqn.
+
+.. _l4571756174696f6e-2d:
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: % -> % if S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: (%, %) -> % if S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+.. index::
+   pair: Equation; -
+
+:spadfun:`-`\: (%, S) -> % if S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  \ ``eqn-x``\  produces a new equation by subtracting \ ``x``\  from both sides of equation eqn.
+
+
+.. index::
+   pair: Equation; -
+
+:spadfun:`-`\: (S, %) -> % if S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  \ ``x-eqn``\  produces a new equation by subtracting both sides of equation eqn from \ ``x``\ .
+
+.. _l4571756174696f6e-2f:
+
+.. index::
+   pair: Equation; /
+
+:spadfun:`/`\: (%, %) -> % if S has \ :ref:`Group <l47726f7570>`\  or S has \ :ref:`Field <l4669656c64>`\ 
+  \ ``e1/e2``\  produces a new equation by dividing the left and right hand sides of equations \ ``e1``\  and \ ``e2``\ .
+
+.. _l4571756174696f6e-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+
+.. index::
+   pair: Equation; =
+
+:spadfun:`=`\: (S, S) -> % 
+  \ ``a=b``\  creates an equation.
+
+.. _l4571756174696f6e-5e:
+
+\ :ref:`^ <l47726f7570-5e>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> % if S has \ :ref:`Group <l47726f7570>`\ 
+  from \ :ref:`Group <l47726f7570>`\ 
+
+
+\ :ref:`^ <l4d61676d6157697468556e6974-5e>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+
+\ :ref:`^ <l4d61676d61-5e>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+.. _l4571756174696f6e-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4571756174696f6e-616e6e6968696c6174653f:
+
+\ :ref:`annihilate? <l526e67-616e6e6968696c6174653f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`Rng <l526e67>`\ 
+
+.. _l4571756174696f6e-616e7469436f6d6d757461746f72:
+
+\ :ref:`antiCommutator <l4e6f6e4173736f6369617469766553656d69526e67-616e7469436f6d6d757461746f72>`\ \: (%, %) -> % if S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`NonAssociativeSemiRng <l4e6f6e4173736f6369617469766553656d69526e67>`\ 
+
+.. _l4571756174696f6e-6173736f636961746f72:
+
+\ :ref:`associator <l4e6f6e4173736f63696174697665526e67-6173736f636961746f72>`\ \: (%, %, %) -> % if S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`NonAssociativeRng <l4e6f6e4173736f63696174697665526e67>`\ 
+
+.. _l4571756174696f6e-6368617261637465726973746963:
+
+\ :ref:`characteristic <l4e6f6e4173736f6369617469766552696e67-6368617261637465726973746963>`\ \: () -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`NonAssociativeRing <l4e6f6e4173736f6369617469766552696e67>`\ 
+
+.. _l4571756174696f6e-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`Boolean <l426f6f6c65616e>`\ 
+
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  if S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+
+\ :ref:`coerce <l4e6f6e4173736f6369617469766552696e67-636f65726365>`\ \: \ :ref:`Integer <l496e7465676572>`\  -> % if S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`NonAssociativeRing <l4e6f6e4173736f6369617469766552696e67>`\ 
+
+.. _l4571756174696f6e-636f6d6d757461746f72:
+
+\ :ref:`commutator <l4e6f6e4173736f63696174697665526e67-636f6d6d757461746f72>`\ \: (%, %) -> % if S has \ :ref:`Group <l47726f7570>`\  or S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`NonAssociativeRng <l4e6f6e4173736f63696174697665526e67>`\ 
+
+.. _l4571756174696f6e-636f6e6a7567617465:
+
+\ :ref:`conjugate <l47726f7570-636f6e6a7567617465>`\ \: (%, %) -> % if S has \ :ref:`Group <l47726f7570>`\ 
+  from \ :ref:`Group <l47726f7570>`\ 
+
+.. _l4571756174696f6e-636f6e76657274:
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`InputForm <l496e707574466f726d>`\  if S has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+.. _l4571756174696f6e-44:
+
+\ :ref:`D <l5061727469616c446966666572656e7469616c52696e67-44>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`D <l5061727469616c446966666572656e7469616c52696e67-44>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`D <l5061727469616c446966666572656e7469616c52696e67-44>`\ \: (%, \ :ref:`Symbol <l53796d626f6c>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`D <l5061727469616c446966666572656e7469616c52696e67-44>`\ \: (%, \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+.. _l4571756174696f6e-646966666572656e7469617465:
+
+\ :ref:`differentiate <l5061727469616c446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`differentiate <l5061727469616c446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`differentiate <l5061727469616c446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: (%, \ :ref:`Symbol <l53796d626f6c>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`differentiate <l5061727469616c446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: (%, \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+.. _l4571756174696f6e-6571756174696f6e:
+
+.. index::
+   pair: Equation; equation
+
+:spadfun:`equation`\: (S, S) -> % 
+  \ ``equation(a, b)``\  creates an equation.
+
+.. _l4571756174696f6e-6576616c:
+
+.. index::
+   pair: Equation; eval
+
+:spadfun:`eval`\: (%, %) -> % if S has \ :ref:`SetCategory <l53657443617465676f7279>`\  and S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+  \ ``eval(eqn, x=f)``\  replaces \ ``x``\  by \ ``f``\  in equation \ ``eqn``\ .
+
+
+.. index::
+   pair: Equation; eval
+
+:spadfun:`eval`\: (%, \ :ref:`List <l4c697374>`\  %) -> % if S has \ :ref:`SetCategory <l53657443617465676f7279>`\  and S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+  \ ``eval(eqn, [x1=v1, ... xn=vn])``\  replaces \ ``xi``\  by \ ``vi``\  in equation \ ``eqn``\ .
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  S) -> % if S has \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (\ :ref:`Symbol <l53796d626f6c>`\ , S)
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (\ :ref:`Symbol <l53796d626f6c>`\ , S)
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, \ :ref:`Symbol <l53796d626f6c>`\ , S) -> % if S has \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (\ :ref:`Symbol <l53796d626f6c>`\ , S)
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (\ :ref:`Symbol <l53796d626f6c>`\ , S)
+
+.. _l4571756174696f6e-666163746f72416e6453706c6974:
+
+.. index::
+   pair: Equation; factorAndSplit
+
+:spadfun:`factorAndSplit`\: % -> \ :ref:`List <l4c697374>`\  % if S has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  \ ``factorAndSplit(eq)``\  make the right hand side 0 and factors the new left hand side. Each factor is equated to 0 and put into the resulting list without repetitions.
+
+.. _l4571756174696f6e-696e76:
+
+.. index::
+   pair: Equation; inv
+
+:spadfun:`inv`\: % -> % if S has \ :ref:`Group <l47726f7570>`\  or S has \ :ref:`Field <l4669656c64>`\ 
+  \ ``inv(x)``\  returns the multiplicative inverse of \ ``x``\ .
+
+.. _l4571756174696f6e-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  if S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l4571756174696f6e-6c6566744f6e65:
+
+.. index::
+   pair: Equation; leftOne
+
+:spadfun:`leftOne`\: % -> Union(%, failed) if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  \ ``leftOne(eq)``\  divides by the left hand side, if possible.
+
+.. _l4571756174696f6e-6c656674506f776572:
+
+\ :ref:`leftPower <l4d61676d6157697468556e6974-6c656674506f776572>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+
+\ :ref:`leftPower <l4d61676d61-6c656674506f776572>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+.. _l4571756174696f6e-6c6566745265636970:
+
+\ :ref:`leftRecip <l4d61676d6157697468556e6974-6c6566745265636970>`\ \: % -> Union(%, failed) if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l4571756174696f6e-6c6566745a65726f:
+
+.. index::
+   pair: Equation; leftZero
+
+:spadfun:`leftZero`\: % -> % if S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  \ ``leftZero(eq)``\  subtracts the left hand side.
+
+.. _l4571756174696f6e-6c6873:
+
+.. index::
+   pair: Equation; lhs
+
+:spadfun:`lhs`\: % -> S 
+  \ ``lhs(eqn)``\  returns the left hand side of equation \ ``eqn``\ .
+
+.. _l4571756174696f6e-6d6170:
+
+.. index::
+   pair: Equation; map
+
+:spadfun:`map`\: (S -> S, %) -> % 
+  \ ``map(f, eqn)``\  constructs a new equation by applying \ ``f``\  to both sides of eqn.
+
+.. _l4571756174696f6e-6f6e653f:
+
+\ :ref:`one? <l4d61676d6157697468556e6974-6f6e653f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l4571756174696f6e-6f70706f736974653f:
+
+\ :ref:`opposite? <l4162656c69616e4d6f6e6f6964-6f70706f736974653f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l4571756174696f6e-7265636970:
+
+\ :ref:`recip <l4d61676d6157697468556e6974-7265636970>`\ \: % -> Union(%, failed) if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l4571756174696f6e-726873:
+
+.. index::
+   pair: Equation; rhs
+
+:spadfun:`rhs`\: % -> S 
+  \ ``rhs(eqn)``\  returns the right hand side of equation \ ``eqn``\ .
+
+.. _l4571756174696f6e-72696768744f6e65:
+
+.. index::
+   pair: Equation; rightOne
+
+:spadfun:`rightOne`\: % -> Union(%, failed) if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  \ ``rightOne(eq)``\  divides by the right hand side, if possible.
+
+.. _l4571756174696f6e-7269676874506f776572:
+
+\ :ref:`rightPower <l4d61676d6157697468556e6974-7269676874506f776572>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+
+\ :ref:`rightPower <l4d61676d61-7269676874506f776572>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+.. _l4571756174696f6e-72696768745265636970:
+
+\ :ref:`rightRecip <l4d61676d6157697468556e6974-72696768745265636970>`\ \: % -> Union(%, failed) if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l4571756174696f6e-72696768745a65726f:
+
+.. index::
+   pair: Equation; rightZero
+
+:spadfun:`rightZero`\: % -> % if S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  \ ``rightZero(eq)``\  subtracts the right hand side.
+
+.. _l4571756174696f6e-73616d706c65:
+
+\ :ref:`sample <l4162656c69616e4d6f6e6f6964-73616d706c65>`\ \: % if S has \ :ref:`Monoid <l4d6f6e6f6964>`\  or S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l4571756174696f6e-7375627374:
+
+.. index::
+   pair: Equation; subst
+
+:spadfun:`subst`\: (%, %) -> % if S has \ :ref:`ExpressionSpace <l45787072657373696f6e5370616365>`\ 
+  \ ``subst(eq1, eq2)``\  substitutes \ ``eq2``\  into both sides of \ ``eq1``\  the \ ``lhs``\  of \ ``eq2``\  should be a kernel
+
+.. _l4571756174696f6e-7375627472616374496643616e:
+
+\ :ref:`subtractIfCan <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964-7375627472616374496643616e>`\ \: (%, %) -> Union(%, failed) if S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l4571756174696f6e-73776170:
+
+.. index::
+   pair: Equation; swap
+
+:spadfun:`swap`\: % -> % 
+  \ ``swap(eq)``\  interchanges left and right hand side of equation \ ``eq``\ .
+
+.. _l4571756174696f6e-7a65726f3f:
+
+\ :ref:`zero? <l4162656c69616e4d6f6e6f6964-7a65726f3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\  if S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+\ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  if S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+\ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\  if S has \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+\ :ref:`BasicType <l426173696354797065>`\  if S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+\ :ref:`BiModule <l42694d6f64756c65>`\ (%, %) if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`BiModule <l42694d6f64756c65>`\ (S, S) if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\  if S has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  if S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\  if S has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+\ :ref:`Group <l47726f7570>`\  if S has \ :ref:`Group <l47726f7570>`\ 
+
+\ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (\ :ref:`Symbol <l53796d626f6c>`\ , S) if S has \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (\ :ref:`Symbol <l53796d626f6c>`\ , S)
+
+\ :ref:`LeftModule <l4c6566744d6f64756c65>`\  % if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`LeftModule <l4c6566744d6f64756c65>`\  S if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`Magma <l4d61676d61>`\  if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+
+\ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\  if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+
+\ :ref:`Module <l4d6f64756c65>`\  S if S has \ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\ 
+
+\ :ref:`Monoid <l4d6f6e6f6964>`\  if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+
+\ :ref:`NonAssociativeRing <l4e6f6e4173736f6369617469766552696e67>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`NonAssociativeRng <l4e6f6e4173736f63696174697665526e67>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`NonAssociativeSemiRing <l4e6f6e4173736f6369617469766553656d6952696e67>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`NonAssociativeSemiRng <l4e6f6e4173736f6369617469766553656d69526e67>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\  if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+\ :ref:`RightModule <l52696768744d6f64756c65>`\  % if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`RightModule <l52696768744d6f64756c65>`\  S if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`Ring <l52696e67>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`Rng <l526e67>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`SemiGroup <l53656d6947726f7570>`\  if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+
+\ :ref:`SemiRing <l53656d6952696e67>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`SemiRng <l53656d69526e67>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  if S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+\ :ref:`TwoSidedRecip <l54776f53696465645265636970>`\  if S has \ :ref:`Group <l47726f7570>`\ 
+
+\ :ref:`unitsKnown <l756e6974734b6e6f776e>`\  if S has \ :ref:`Group <l47726f7570>`\  or S has \ :ref:`Ring <l52696e67>`\ 
+

@@ -1,0 +1,56 @@
+.. index:: OperatorHandlers
+
+.. _l4f70657261746f7248616e646c657273:
+
+OperatorHandlers HANDLER
+========================
+
+:viewcode:`fmt.spad line 322 <fmt.spad#L322>` :editcode:`[edit on github] <fmt.spad#L322>`
+
+* HANDLER: \ :ref:`Type <l54797065>`\ 
+
+
+OperatorHandlers is an auxiliary domain. It is used holds functions for each operator of \ ``OutputForm``\ , classified by the arity and the name of that operator.
+
+
+.. _l4f70657261746f7248616e646c657273-68616e646c6572:
+
+.. index::
+   pair: OperatorHandlers; handler
+
+:spadfun:`handler`\: (%, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`String <l537472696e67>`\ ) -> HANDLER 
+  \ ``handler(x, n, op)``\  is only valid if \ ``knownHandler?(n, op)``\  is \ ``true``\ . It returns the respective handler stored in \ ``x``\ .
+
+.. _l4f70657261746f7248616e646c657273-6b6e6f776e48616e646c65723f:
+
+.. index::
+   pair: OperatorHandlers; knownHandler?
+
+:spadfun:`knownHandler?`\: (%, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``knownHandler?(x, n, op)``\  checks whether a handler for operator \ ``op``\  is known. The number \ ``n``\  denotes the number of arguments that the operator can take. It is OK if both \ ``knownOperator?(m, op)``\  and \ ``knownOperator?(n, op)``\  return \ ``true``\  for different \ ``m``\  and \ ``n``\ .
+
+.. _l4f70657261746f7248616e646c657273-6e6577:
+
+.. index::
+   pair: OperatorHandlers; new
+
+:spadfun:`new`\: () -> % 
+  \ ``new()``\  creates an empty structure of handlers.
+
+.. _l4f70657261746f7248616e646c657273-72656d6f766548616e646c657221:
+
+.. index::
+   pair: OperatorHandlers; removeHandler!
+
+:spadfun:`removeHandler!`\: (%, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``removeHandler!(n, op)``\  removes any handler from an internal data structure (for the pair \ ``(n, op)``\  such that afterwards \ ``knownHandler?(x, n, op)``\  returns \ ``false``\ .
+
+.. _l4f70657261746f7248616e646c657273-73657448616e646c657221:
+
+.. index::
+   pair: OperatorHandlers; setHandler!
+
+:spadfun:`setHandler!`\: (%, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`String <l537472696e67>`\ , HANDLER) -> HANDLER 
+  \ ``setHandler!(x, n, op, hdl)``\  puts \ ``hdl``\  into the data structure \ ``x``\  such that it can be queried afterwards.
+
+

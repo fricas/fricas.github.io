@@ -1,22 +1,18 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="./">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Installation Guide &#8212; FriCAS</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=514cf933" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/documentation_options.js?v=0034329e"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -47,7 +43,7 @@
           <div class="body" role="main">
             
   <section id="installation-guide">
-<h1>Installation Guide<a class="headerlink" href="#installation-guide" title="Permalink to this heading">¶</a></h1>
+<h1>Installation Guide<a class="headerlink" href="#installation-guide" title="Link to this heading">¶</a></h1>
 <nav class="contents local" id="table-of-contents">
 <p class="topic-title">Table of Contents</p>
 <ul class="simple">
@@ -92,7 +88,7 @@
 If you fetched compiled binaries skip to section about
 binary distribution.</p>
 <section id="quick-installation">
-<h2><a class="toc-backref" href="#id2" role="doc-backlink">Quick installation</a><a class="headerlink" href="#quick-installation" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Quick installation</a><a class="headerlink" href="#quick-installation" title="Link to this heading">¶</a></h2>
 <p>FriCAS now tries to support standard GNU build/installation
 conventions.  So if you have sources and all prerequisites, then</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./configure &amp;&amp; make &amp;&amp; sudo make install
@@ -104,14 +100,14 @@ conventions.  So if you have sources and all prerequisites, then</p>
 You can give arguments to <code class="docutils literal notranslate"><span class="pre">configure</span></code> to change those locations.</p>
 </section>
 <section id="prerequisites">
-<h2><a class="toc-backref" href="#id3" role="doc-backlink">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Prerequisites</a><a class="headerlink" href="#prerequisites" title="Link to this heading">¶</a></h2>
 <section id="standard-build-tools">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">Standard build tools</a><a class="headerlink" href="#standard-build-tools" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Standard build tools</a><a class="headerlink" href="#standard-build-tools" title="Link to this heading">¶</a></h3>
 <p>To <em>build</em> FriCAS you need standard build tools like C compiler and
 make.</p>
 </section>
 <section id="lisp">
-<h3><a class="toc-backref" href="#id5" role="doc-backlink">Lisp</a><a class="headerlink" href="#lisp" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Lisp</a><a class="headerlink" href="#lisp" title="Link to this heading">¶</a></h3>
 <p>To <em>build</em> FriCAS you need <em>one</em> of the following Lisp variants:</p>
 <ul>
 <li><p><a class="reference external" href="http://sbcl.sourceforge.net/platform-table.html">SBCL</a> 1.0.7 or later (preferred)</p>
@@ -138,22 +134,23 @@ CMU CL port should be considered experimental, it received only little
 testing.  Also CMU CL seem to have problems on some machines.  By
 default FriCAS tries to use SBCL, since it is fast and reliable.  On
 64-bit AMD64 on average SBCL is the fastest one (9 times faster than
-CLISP), Clozure CL the second (about 1.5 times slower than SBCL), than
-GCL and ECL (about 3 times slower than SBCL) and CLISP is the slowest
-one.  Note: very old versions of ECL were much (about 4 times) slower, you
-should use reasonably new version if you care about speed.</p>
+CLISP), Clozure CL and GCL the second (about 3 times slower than
+SBCL), then ECL (about 7 times slower than SBCL) and CLISP is the
+slowest one.  Note: very old versions of ECL were much (about 4 times)
+slower, versions from about 7-10 years ago gave best performance and
+newest ECL versions are progressively slower.</p>
 <p>Some computation work much faster on 64-bit machines, especially
 when using SBCL.</p>
 </section>
 <section id="jfricas-optional">
-<h3><a class="toc-backref" href="#id6" role="doc-backlink">jFriCAS (optional)</a><a class="headerlink" href="#jfricas-optional" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">jFriCAS (optional)</a><a class="headerlink" href="#jfricas-optional" title="Link to this heading">¶</a></h3>
 <p><a class="reference external" href="https://jfricas.readthedocs.io">jFriCAS</a> is an interface for running <a class="reference external" href="https://fricas.github.io/index.html">FriCAS</a> in a <a class="reference external" href="https://jupyter.org">Jupyter</a> notebook.
 It should be installed <strong>after</strong> <a class="reference external" href="https://fricas.github.io/index.html">FriCAS</a> has been installed.</p>
 <p><strong>Note:</strong> It currently only works with an <a class="reference external" href="http://sbcl.sourceforge.net/platform-table.html">SBCL</a> image that has the
 <a class="reference external" href="https://edicl.github.io/hunchentoot/">Hunchentoot</a> webserver included.  See next section.</p>
 </section>
 <section id="hunchentoot-optional">
-<h3><a class="toc-backref" href="#id7" role="doc-backlink">Hunchentoot (optional)</a><a class="headerlink" href="#hunchentoot-optional" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">Hunchentoot (optional)</a><a class="headerlink" href="#hunchentoot-optional" title="Link to this heading">¶</a></h3>
 <p>The <a class="reference external" href="https://jfricas.readthedocs.io">jFriCAS</a> interface needs a web server built into FRICASsys binary.
 This can be done by using Lisp (currently only <a class="reference external" href="http://sbcl.sourceforge.net/platform-table.html">SBCL</a>) containing
 the <a class="reference external" href="https://edicl.github.io/hunchentoot/">Hunchentoot</a> web server.  You can provide your own Lisp with
@@ -165,9 +162,9 @@ cd hsbcl
 </pre></div>
 </div>
 <p>This assumes that the base Lisp to use is <a class="reference external" href="http://sbcl.sourceforge.net/platform-table.html">SBCL</a> and creates executable
-binary <code class="docutils literal notranslate"><span class="pre">hsbcl</span></code> which contains <a class="reference external" href="https://edicl.github.io/hunchentoot/">Hunchentoot</a>. If your <a class="reference external" href="http://sbcl.sourceforge.net/platform-table.html">SBCL</a> is started
+binary <code class="docutils literal notranslate"><span class="pre">hsbcl</span></code> which contains <a class="reference external" href="https://edicl.github.io/hunchentoot/">Hunchentoot</a>.  If your <a class="reference external" href="http://sbcl.sourceforge.net/platform-table.html">SBCL</a> is started
 in different way (say via full pathname), then edit <code class="docutils literal notranslate"><span class="pre">build_hsbcl</span></code> to
-match. After creating <code class="docutils literal notranslate"><span class="pre">hsbcl</span></code> one can then configure FriCAS like</p>
+match.  After creating <code class="docutils literal notranslate"><span class="pre">hsbcl</span></code> one can then configure FriCAS like</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>../fricas-1.3.9/configure --with-lisp=/path/to/hsbcl --enable-gmp
 </pre></div>
 </div>
@@ -175,7 +172,7 @@ match. After creating <code class="docutils literal notranslate"><span class="pr
 by <a class="reference external" href="https://jfricas.readthedocs.io">jFriCAS</a>.</p>
 </section>
 <section id="x-libraries-optional-but-needed-for-graphics-and-hyperdoc">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">X libraries (optional, but needed for graphics and HyperDoc)</a><a class="headerlink" href="#x-libraries-optional-but-needed-for-graphics-and-hyperdoc" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">X libraries (optional, but needed for graphics and HyperDoc)</a><a class="headerlink" href="#x-libraries-optional-but-needed-for-graphics-and-hyperdoc" title="Link to this heading">¶</a></h3>
 <p>On Debian (or Ubuntu) install the following packages.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt install libx11-dev libxt-dev libice-dev \
                  libsm-dev libxau-dev libxdmcp-dev libxpm-dev
@@ -183,7 +180,7 @@ by <a class="reference external" href="https://jfricas.readthedocs.io">jFriCAS</
 </div>
 </section>
 <section id="xvfb-optional-but-highly-recommended">
-<h3><a class="toc-backref" href="#id9" role="doc-backlink">xvfb (optional, but highly recommended)</a><a class="headerlink" href="#xvfb-optional-but-highly-recommended" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">xvfb (optional, but highly recommended)</a><a class="headerlink" href="#xvfb-optional-but-highly-recommended" title="Link to this heading">¶</a></h3>
 <p>If you compile FriCAS from the <a class="reference external" href="https://github.com/fricas/fricas">FriCAS git repository</a>, and <code class="docutils literal notranslate"><span class="pre">configure</span></code>
 does not detect the <code class="docutils literal notranslate"><span class="pre">xvfb-run</span></code> program, then graphic examples will
 not be built.  See Section <a class="reference internal" href="#hyperdoc-and-graphics">HyperDoc and graphics</a> for more detail.</p>
@@ -192,7 +189,7 @@ not be built.  See Section <a class="reference internal" href="#hyperdoc-and-gra
 </div>
 </section>
 <section id="gmp-optional">
-<h3><a class="toc-backref" href="#id10" role="doc-backlink">GMP (optional)</a><a class="headerlink" href="#gmp-optional" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">GMP (optional)</a><a class="headerlink" href="#gmp-optional" title="Link to this heading">¶</a></h3>
 <p>You you use SBCL or Clozure CL the <code class="docutils literal notranslate"><span class="pre">--enable-gmp</span></code> configure option
 is available only if the development version of GMP is installed.
 Note: using GMP should work on all SBCL and Clozure CL platforms
@@ -202,7 +199,7 @@ except for Clozure CL on Power PC.</p>
 </div>
 </section>
 <section id="latex-optional">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink">LaTeX (optional)</a><a class="headerlink" href="#latex-optional" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">LaTeX (optional)</a><a class="headerlink" href="#latex-optional" title="Link to this heading">¶</a></h3>
 <p>If you run FriCAS in <a class="reference external" href="https://www.gnu.org/software/emacs/">Emacs</a> (efricas) you can enable</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>)set output tex on
 </pre></div>
@@ -229,23 +226,44 @@ tikz
 </div>
 </section>
 <section id="sphinxdoc-optional">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink">SphinxDoc (optional)</a><a class="headerlink" href="#sphinxdoc-optional" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">SphinxDoc (optional)</a><a class="headerlink" href="#sphinxdoc-optional" title="Link to this heading">¶</a></h3>
 <p>The documentation is built via <a class="reference external" href="https://www.sphinx-doc.org">Sphinx</a>.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt install python3 python3-pip
-pip3 install -U Sphinx==5.3.0
+pip3 install -U Sphinx
 </pre></div>
 </div>
-<p><strong>WARNING</strong>: Currently, <a class="reference external" href="https://www.sphinx-doc.org">Sphinx</a> 6 and higher will fail building the
-<code class="docutils literal notranslate"><span class="pre">.html</span></code> pages.</p>
 </section>
 <section id="aldor-optional">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">Aldor (optional)</a><a class="headerlink" href="#aldor-optional" title="Permalink to this heading">¶</a></h3>
-<p>If you want to use <a class="reference external" href="https://github.com/aldorlang/aldor">Aldor</a> to extend the FriCAS library, you must, of
-course, have <a class="reference external" href="https://github.com/aldorlang/aldor">Aldor</a> installed, and add <code class="docutils literal notranslate"><span class="pre">--enable-aldor</span></code> to your
-configure options when you compile FriCAS.</p>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">Aldor (optional)</a><a class="headerlink" href="#aldor-optional" title="Link to this heading">¶</a></h3>
+<p><a class="reference external" href="https://github.com/aldorlang/aldor">Aldor</a> was originally invented to be the next generation compiler for
+<a class="reference external" href="http://axiom-developer.org/">Axiom</a> (the system that <a class="reference external" href="https://fricas.github.io/index.html">FriCAS</a> forked from).  If you want to use
+<a class="reference external" href="https://github.com/aldorlang/aldor">Aldor</a> to extend the <a class="reference external" href="https://fricas.github.io/index.html">FriCAS</a> library, you must, of course, have <a class="reference external" href="https://github.com/aldorlang/aldor">Aldor</a>
+installed, and add <code class="docutils literal notranslate"><span class="pre">--enable-aldor</span></code> to your configure options when
+you compile FriCAS.</p>
+<p>The commands below download the <a class="reference external" href="https://github.com/aldorlang/aldor">Aldor</a> git repository into
+<code class="docutils literal notranslate"><span class="pre">$ALDORDIR</span></code> and install it into <code class="docutils literal notranslate"><span class="pre">$ALDORINSTALLDIR</span></code>.  Adapt the
+directories to whatever you like.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ALDORDIR=$HOME/aldor
+ALDORINSTALLDIR=$ALDORDIR/install
+mkdir -p $ALDORDIR
+cd $ALDORDIR
+git clone https://github.com/aldorlang/aldor.git
+mkdir $ALDORDIR/build
+cd $ALDORDIR/build
+$ALDORDIR/aldor/aldor/configure --prefix=$ALDORINSTALLDIR --disable-maintainer-mode
+make -j8
+make install
+</pre></div>
+</div>
+<p>Then make the aldor executable available in your <code class="docutils literal notranslate"><span class="pre">PATH</span></code> by adding
+the following lines to your <code class="docutils literal notranslate"><span class="pre">.bashrc</span></code>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ALDORINSTALLDIR=/absolute/path/to/aldor/install
+export PATH=$ALDORINSTALLDIR/bin:$PATH
+</pre></div>
+</div>
 </section>
 <section id="extra-libraries-needed-by-ecl">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">Extra libraries needed by ECL</a><a class="headerlink" href="#extra-libraries-needed-by-ecl" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">Extra libraries needed by ECL</a><a class="headerlink" href="#extra-libraries-needed-by-ecl" title="Link to this heading">¶</a></h3>
 <p>This only applies if you use Debian ECL.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt install libffi-dev
 </pre></div>
@@ -253,7 +271,7 @@ configure options when you compile FriCAS.</p>
 </section>
 </section>
 <section id="detailed-installation-instructions">
-<h2><a class="toc-backref" href="#id15" role="doc-backlink">Detailed installation instructions</a><a class="headerlink" href="#detailed-installation-instructions" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id15" role="doc-backlink">Detailed installation instructions</a><a class="headerlink" href="#detailed-installation-instructions" title="Link to this heading">¶</a></h2>
 <p>We assume that you have installed all necessary prerequisites.</p>
 <ol class="arabic" start="0">
 <li><p>Change to a directory with enough (0.8 GB) free space.</p></li>
@@ -306,7 +324,7 @@ run tests</p>
 </li>
 </ol>
 <section id="extra-information">
-<h3><a class="toc-backref" href="#id16" role="doc-backlink">Extra information</a><a class="headerlink" href="#extra-information" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">Extra information</a><a class="headerlink" href="#extra-information" title="Link to this heading">¶</a></h3>
 <p>The preferred way to build FriCAS is to use an already installed Lisp.
 Also, it is preferable to use a separate build directory.  Assuming
 that the source tree is in <code class="docutils literal notranslate"><span class="pre">$HOME/fricas</span></code>, you build in
@@ -324,7 +342,7 @@ adjust as needed.</p>
 <p>Note that <a class="reference external" href="https://jfricas.readthedocs.io">jFriCAS</a> has currently only been tested to work with <a class="reference external" href="http://sbcl.sourceforge.net/platform-table.html">SBCL</a>.</p>
 </section>
 <section id="hyperdoc-and-graphics">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink">HyperDoc and graphics</a><a class="headerlink" href="#hyperdoc-and-graphics" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">HyperDoc and graphics</a><a class="headerlink" href="#hyperdoc-and-graphics" title="Link to this heading">¶</a></h3>
 <p>If you compile FriCAS from the <a class="reference external" href="https://github.com/fricas/fricas">FriCAS git repository</a>, and <code class="docutils literal notranslate"><span class="pre">configure</span></code>
 does not detect the <code class="docutils literal notranslate"><span class="pre">xvfb-run</span></code> program, then graphic examples will
 not be built.  This results in broken HyperDoc pages – all graphic
@@ -350,7 +368,7 @@ may be slow.</p>
 </div>
 </section>
 <section id="algebra-optimization">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink">Algebra optimization</a><a class="headerlink" href="#algebra-optimization" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">Algebra optimization</a><a class="headerlink" href="#algebra-optimization" title="Link to this heading">¶</a></h3>
 <p>When writing/compiling programs there is always tradeoff between speed
 and safety.  Programs may include many checks to detect errors early
 (and allow recovery).  Such programs are safe but checks take time so
@@ -369,7 +387,7 @@ safety.  However, some FriCAS users want different tradeoff.  The</p>
 </div>
 <p>option to configure allows changing this setting: S is a Lisp
 expression specifying speed/safety tradeoff used by Lisp compiler.  For
-example:</p>
+example</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--enable-algebra-optimization=&quot;((speed 3) (safety 0))&quot;
 </pre></div>
 </div>
@@ -384,7 +402,7 @@ that mathematical code is unlikely to contain errors which can crash
 the whole system.</p>
 </section>
 <section id="using-gmp-with-sbcl-or-clozure-cl">
-<h3><a class="toc-backref" href="#id19" role="doc-backlink">Using GMP with SBCL or Clozure CL</a><a class="headerlink" href="#using-gmp-with-sbcl-or-clozure-cl" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">Using GMP with SBCL or Clozure CL</a><a class="headerlink" href="#using-gmp-with-sbcl-or-clozure-cl" title="Link to this heading">¶</a></h3>
 <p>Currently on average FriCAS is fastest when compiled using <a class="reference external" href="http://sbcl.sourceforge.net/platform-table.html">SBCL</a>.
 However, SBCL normally uses its own routines for computations with
 large numbers and those routines are slower than <a class="reference external" href="https://gmplib.org">GMP</a>.  FriCAS now has
@@ -417,9 +435,9 @@ respectively).</p>
 </section>
 </section>
 <section id="post-compilation-steps-optional">
-<h2><a class="toc-backref" href="#id20" role="doc-backlink">Post-compilation steps (optional)</a><a class="headerlink" href="#post-compilation-steps-optional" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">Post-compilation steps (optional)</a><a class="headerlink" href="#post-compilation-steps-optional" title="Link to this heading">¶</a></h2>
 <section id="build-extra-documentation-book-and-website">
-<h3><a class="toc-backref" href="#id21" role="doc-backlink">Build extra documentation (book and website)</a><a class="headerlink" href="#build-extra-documentation-book-and-website" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">Build extra documentation (book and website)</a><a class="headerlink" href="#build-extra-documentation-book-and-website" title="Link to this heading">¶</a></h3>
 <p>After a build of FriCAS, (suppose your build directory is under
 <code class="docutils literal notranslate"><span class="pre">$BUILD</span></code>), you can build the documentation provided at
 the <a class="reference external" href="https://fricas.github.io/index.html">FriCAS home page</a> on your local installation.</p>
@@ -431,13 +449,6 @@ is doing this, then the build of extra documentation will fail.</p>
 <code class="docutils literal notranslate"><span class="pre">/etc/ImageMagick-6/policy.xml</span></code> as <code class="docutils literal notranslate"><span class="pre">root</span></code> and changing the
 respective line to</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;policy domain=&quot;coder&quot; rights=&quot;read|write&quot; pattern=&quot;PS&quot; /&gt;
-</pre></div>
-</div>
-<p>Currently building <code class="docutils literal notranslate"><span class="pre">.html</span></code> pages does not work with Sphinx 6.
-You must install Sphinx 5.3.0 (or smaller) or only build the
-<a class="reference external" href="https://fricas.github.io/book.pdf">FriCAS Book</a> via</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd $BUILD/src/doc
-make book.pdf
 </pre></div>
 </div>
 <p>The <a class="reference external" href="https://fricas.github.io/index.html">FriCAS home page</a> can be built via</p>
@@ -512,24 +523,30 @@ your editor, then clicking on a <code class="docutils literal notranslate"><span
 file in this editor.</p>
 </section>
 <section id="build-fricas-aldor-interface-libfricas-al">
-<h3><a class="toc-backref" href="#id22" role="doc-backlink">Build FriCAS-Aldor interface (libfricas.al)</a><a class="headerlink" href="#build-fricas-aldor-interface-libfricas-al" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">Build FriCAS-Aldor interface (libfricas.al)</a><a class="headerlink" href="#build-fricas-aldor-interface-libfricas-al" title="Link to this heading">¶</a></h3>
 <p>You can not only extend the FriCAS library by <code class="docutils literal notranslate"><span class="pre">.spad</span></code> files (SPAD
 programs), but also by <code class="docutils literal notranslate"><span class="pre">.as</span></code> files (<a class="reference external" href="https://github.com/aldorlang/aldor">Aldor</a> programs).  For the latter
 to work FriCAS needs a library <code class="docutils literal notranslate"><span class="pre">libfricas.al</span></code>.</p>
-<p>This library can be build as follows.
-(An Aldor compiler is of course a prerequisite.)</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>configure --enable-aldor --prefix=/tmp/usr
-( cd src/aldor &amp;&amp;  make )
-make install
-</pre></div>
-</div>
-<p>After that you should be able to compile and use the program below in
-a FriCAS session via</p>
+<p>Note that building the interface temporarily needs about 2 GB extra
+disk space.  Since currently, building the Aldor interface accesses the
+build files of a previous <a class="reference external" href="https://fricas.github.io/index.html">FriCAS</a> build, you need about 3 GB disk
+space.</p>
+<p>If you configured FriCAS using <code class="docutils literal notranslate"><span class="pre">--enable-aldor</span></code> option, then
+<code class="docutils literal notranslate"><span class="pre">make</span></code> will also build <code class="docutils literal notranslate"><span class="pre">libfricas.al</span></code> and <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">install</span></code>
+will install it together with FriCAS.</p>
+<p>If the <code class="docutils literal notranslate"><span class="pre">aldor</span></code> binary is not reachable during build via your
+<code class="docutils literal notranslate"><span class="pre">PATH</span></code>, you can add <code class="docutils literal notranslate"><span class="pre">--with-aldor-binary=/path/to/aldor</span></code> to the
+configure command line.</p>
+<p>Note: at runtime, the Aldor binary is taken as specified by the
+<code class="docutils literal notranslate"><span class="pre">ALDOR_COMPILER</span></code> environment variable or (if not set) must be
+available through the <code class="docutils literal notranslate"><span class="pre">PATH</span></code>.</p>
+<p>After installation you should be able to compile and use the program
+below in a FriCAS session via</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>)compile sieve.as
 sieve 10
 </pre></div>
 </div>
-<p>The program <code class="docutils literal notranslate"><span class="pre">sieve.as</span></code> is:</p>
+<p>The program <code class="docutils literal notranslate"><span class="pre">sieve.as</span></code> is</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>--
 -- sieve.as: A prime number sieve to count primes &lt;= n.
 --
@@ -554,21 +571,29 @@ sieve(n: N): N  == {
 </div>
 </section>
 <section id="install-jfricas">
-<h3><a class="toc-backref" href="#id23" role="doc-backlink">Install jFriCAS</a><a class="headerlink" href="#install-jfricas" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">Install jFriCAS</a><a class="headerlink" href="#install-jfricas" title="Link to this heading">¶</a></h3>
 <p>There are a couple of things to install.</p>
 <ol class="arabic simple">
 <li><p>Jupyter</p></li>
 <li><p>jFriCAS</p></li>
 </ol>
+<p>The simplest way to install <a class="reference external" href="https://jfricas.readthedocs.io">jFriCAS</a> is via <cite>pip</cite> as follows</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt install python3-pip
+pip3 install jupyter
+pip3 install jfricas
+</pre></div>
+</div>
+<p>You can also install <a class="reference external" href="https://jfricas.readthedocs.io">jFriCAS</a> into a python virtual environment from
+<a class="reference external" href="https://pypi.org/project/jfricas/">jfricas at PyPI</a> or from the
+git repository.</p>
+<p>Below, we describe the installation from the git repository.</p>
 <p>Except for the file <code class="docutils literal notranslate"><span class="pre">$HOME/.jupyter/jupyter_notebook_config.py</span></code> that
 maybe necessary to create, the following description will put most of
 the things (in particular the git repositories) under the directory
 <code class="docutils literal notranslate"><span class="pre">$FDIR</span></code>.
 We assume that FriCAS will be installed into <code class="docutils literal notranslate"><span class="pre">$FRICASINSTALL</span></code>.
 <a class="reference external" href="https://jfricas.readthedocs.io">jFriCAS</a> and <a class="reference external" href="https://jupyter.org">Jupyter</a> will go into <code class="docutils literal notranslate"><span class="pre">$JFRICASINSTALL</span></code>
-You can change any of these paths or even install without a python
-virtual environment, but there is no description (yet) for an
-installation without venv.</p>
+You can change any of these paths.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>FDIR=$HOME/fricas
 GITREPOS=$FDIR
 FRICASINSTALL=$FDIR/install
@@ -579,8 +604,8 @@ mkdir -p $FDIR $GITREPOS $FRICASINSTALL $JFRICASINSTALL
 </pre></div>
 </div>
 <section id="jfricas-installation">
-<h4>jFriCAS installation<a class="headerlink" href="#jfricas-installation" title="Permalink to this heading">¶</a></h4>
-<p><a class="reference external" href="https://jfricas.readthedocs.io">jFriCAS</a> is the <a class="reference external" href="https://jupyter.org">Jupyter</a> notebook interface to <a class="reference external" href="https://fricas.github.io/index.html">FriCAS</a>. Of course,
+<h4>jFriCAS installation<a class="headerlink" href="#jfricas-installation" title="Link to this heading">¶</a></h4>
+<p><a class="reference external" href="https://jfricas.readthedocs.io">jFriCAS</a> is the <a class="reference external" href="https://jupyter.org">Jupyter</a> notebook interface to <a class="reference external" href="https://fricas.github.io/index.html">FriCAS</a>.  Of course,
 <a class="reference external" href="https://jfricas.readthedocs.io">jFriCAS</a> needs <a class="reference external" href="https://jupyter.org">Jupyter</a> in a reasonably recent version (at least 4).</p>
 <p>Install prerequisites if not yet available (needs root access, but it
 may already be installed on your system).</p>
@@ -594,10 +619,10 @@ git clone https://github.com/fricas/jfricas
 </div>
 <p>Install prerequisites, <a class="reference external" href="https://jupyter.org">Jupyter</a> and <a class="reference external" href="https://jfricas.readthedocs.io">jFriCAS</a>.</p>
 <p><strong>WARNING</strong>: Do not install jfricas 1.0.0 from PyPI, as that will
-not work. If you have it installed, then uninstall it first.</p>
+not work.  If you have it installed, then uninstall it first.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python3 -m venv $JFRICASINSTALL
 source $JFRICASINSTALL/bin/activate
-pip3 install wheel jupyter
+pip3 install jupyter
 cd $GITREPOS/jfricas
 pip3 install .
 jupyter kernelspec list
@@ -641,14 +666,14 @@ setFormat!(FormatMathJax)$JFriCASSupport
 </div>
 </section>
 <section id="optional-install-jupytext">
-<h4>(optional) Install JupyText<a class="headerlink" href="#optional-install-jupytext" title="Permalink to this heading">¶</a></h4>
+<h4>(optional) Install JupyText<a class="headerlink" href="#optional-install-jupytext" title="Link to this heading">¶</a></h4>
 <p>Ordinary Jupyter notebooks use a special format in order to store
-their content. They have the file extension <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>. It is an
+their content.  They have the file extension <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>.  It is an
 incredible feature to be able to load and store notebooks as ordinary
-FriCAS <code class="docutils literal notranslate"><span class="pre">.input</span></code> files. You can even synchronize between the
+FriCAS <code class="docutils literal notranslate"><span class="pre">.input</span></code> files.  You can even synchronize between the
 <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> and <code class="docutils literal notranslate"><span class="pre">.input</span></code> formats.</p>
 <p>There are two types of cells in <a class="reference external" href="https://jupyter.org">Jupyter</a>: Markdown documentation
-cells and execution cells. With the help of <a class="reference external" href="https://jupytext.readthedocs.io">JupyText</a>, Markdown
+cells and execution cells.  With the help of <a class="reference external" href="https://jupytext.readthedocs.io">JupyText</a>, Markdown
 cells will appear inside an <code class="docutils literal notranslate"><span class="pre">.input</span></code> file as <a class="reference external" href="https://fricas.github.io/index.html">FriCAS</a>
 comments and execution cells appear without the <code class="docutils literal notranslate"><span class="pre">&quot;--</span> <span class="pre">&quot;</span></code>
 comment prefix.</p>
@@ -678,10 +703,10 @@ _SCRIPT_EXTENSIONS = {
 </div>
 </section>
 <section id="make-jupytext-available">
-<h4>Make Jupytext available<a class="headerlink" href="#make-jupytext-available" title="Permalink to this heading">¶</a></h4>
-<p>In Ubuntu 22.04 you need not do run the commands from this section.
+<h4>Make Jupytext available<a class="headerlink" href="#make-jupytext-available" title="Link to this heading">¶</a></h4>
+<p>In Ubuntu 22.04 you need not run the commands from this section.
 It seemingly works without having to change something in the
-configuration file. There were even reports that <a class="reference external" href="https://jfricas.readthedocs.io">jFriCAS</a> stopped
+configuration file.  There were even reports that <a class="reference external" href="https://jfricas.readthedocs.io">jFriCAS</a> stopped
 working if <code class="docutils literal notranslate"><span class="pre">c.NotebookApp.contents_manager_class</span></code> was set.  However,
 for older versions of <a class="reference external" href="https://jupytext.readthedocs.io">JupyText</a> and/or <a class="reference external" href="https://jupyter.org">Jupyter</a>, the following had to be
 configured.</p>
@@ -733,7 +758,7 @@ you see at
 </section>
 </section>
 <section id="install-frimacs">
-<h3><a class="toc-backref" href="#id24" role="doc-backlink">Install frimacs</a><a class="headerlink" href="#install-frimacs" title="Permalink to this heading">¶</a></h3>
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">Install frimacs</a><a class="headerlink" href="#install-frimacs" title="Link to this heading">¶</a></h3>
 <p><a class="reference external" href="https://github.com/pdo/frimacs">frimacs</a> is an <a class="reference external" href="https://www.gnu.org/software/emacs/">Emacs</a> mode for FriCAS with special features to
 edit <code class="docutils literal notranslate"><span class="pre">.input</span></code> and <code class="docutils literal notranslate"><span class="pre">.spad</span></code> files as well as executing a <a class="reference external" href="https://fricas.github.io/index.html">FriCAS</a>
 session inside an <a class="reference external" href="https://www.gnu.org/software/emacs/">Emacs</a> buffer.</p>
@@ -754,7 +779,7 @@ git clone https://github.com/pdo/frimacs.git
 </section>
 </section>
 <section id="creation-of-distribution-tarballs">
-<h2><a class="toc-backref" href="#id25" role="doc-backlink">Creation of distribution tarballs</a><a class="headerlink" href="#creation-of-distribution-tarballs" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id25" role="doc-backlink">Creation of distribution tarballs</a><a class="headerlink" href="#creation-of-distribution-tarballs" title="Link to this heading">¶</a></h2>
 <p>The source distribution can be created as follows.  Fetch and
 build sources, taking care to build Hyperdoc pages and graphic
 examples.  Make sure that text of help pages is available in some
@@ -785,7 +810,7 @@ tar -cjf fricas-x.y.z.amd64.tar.bz2 usr
 </div>
 </section>
 <section id="installation-from-binary-distribution">
-<h2><a class="toc-backref" href="#id26" role="doc-backlink">Installation from binary distribution</a><a class="headerlink" href="#installation-from-binary-distribution" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id26" role="doc-backlink">Installation from binary distribution</a><a class="headerlink" href="#installation-from-binary-distribution" title="Link to this heading">¶</a></h2>
 <p>You can download the latest release as a <code class="docutils literal notranslate"><span class="pre">.tar.bz2</span></code> from
 <a class="reference external" href="https://github.com/fricas/fricas/releases">https://github.com/fricas/fricas/releases</a> and install as follows (of
 course, you can set <code class="docutils literal notranslate"><span class="pre">FDIR</span></code> to anything you like).</p>
@@ -833,7 +858,7 @@ export PATH=$FDIR/usr/local/bin:$PATH
 </div>
 </section>
 <section id="known-problems">
-<h2><a class="toc-backref" href="#id27" role="doc-backlink">Known problems</a><a class="headerlink" href="#known-problems" title="Permalink to this heading">¶</a></h2>
+<h2><a class="toc-backref" href="#id27" role="doc-backlink">Known problems</a><a class="headerlink" href="#known-problems" title="Link to this heading">¶</a></h2>
 <ul>
 <li><p>currently when using case insensitive filesystem (typically on
 macOS and Windows), the git version can only be built in a
@@ -892,15 +917,6 @@ memory available to gcl.  This can be done by setting environment
 variable GCL_MEM_MULTIPLE.  Set it to floating point value which
 multiplied by total memory gives about 2Gb.  For example, on
 32Gb machine set GCL_MEM_MULTIPLE to 0.07.</p></li>
-<li><p>On Gentoo system installed gcl probably will not work, one need to
-build own one.</p></li>
-<li><p>gcl needs bfd library.  Many Linux systems include version of bfd
-library which is incompatible with gcl.  In the past we advised to
-use in such case the following configure line</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>configure --disable-xgcl --disable-dynsysbfd --disable-statsysbfd --enable-locbfd
-</pre></div>
-</div>
-</li>
 <li><p>Boehm garbage collector included in old ECL (version 6.8) is incompatible
 with Fedora strong address space randomization (setting randomize_va_space
 to 2).   Using newer version of Boehm garbage collector (7.0 or 7.1) or
@@ -1006,7 +1022,7 @@ confused.</p></li>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2007-2023, FriCAS Team.
+    &#169; Copyright 2007-2024, FriCAS Team.
     </div>
   </body>
 </html>

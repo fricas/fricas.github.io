@@ -1,0 +1,241 @@
+.. index:: IndexedDirectProductObject
+
+.. _l496e646578656444697265637450726f647563744f626a656374:
+
+IndexedDirectProductObject(A, S)
+================================
+
+:viewcode:`indexedp.spad line 112 <indexedp.spad#L112>` :editcode:`[edit on github] <indexedp.spad#L112>`
+
+* A: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+* S: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+
+Indexed direct products of objects over a set \ ``A``\  of generators indexed by an ordered set \ ``S``\ . It currently provides the ground for, e.g. \ :ref:`FreeModule <l467265654d6f64756c65>`\  which lies at the basis of polynomials of all sorts. All items have finite support. If A is a monoid, then only non-zero terms are stored. If A has additive structure, it is propagated coordinatewise to the product. Similarly, comparisons are propagated using lexicographic ordering.
+
+
+.. _l496e646578656444697265637450726f647563744f626a656374-30:
+
+\ :ref:`0 <l4162656c69616e4d6f6e6f6964-30>`\ \: % if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-2a:
+
+\ :ref:`\* <l4162656c69616e47726f7570-2a>`\ \: (\ :ref:`Integer <l496e7465676572>`\ , %) -> % if A has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`\* <l4162656c69616e4d6f6e6f6964-2a>`\ \: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , %) -> % if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`\* <l4162656c69616e53656d6947726f7570-2a>`\ \: (\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , %) -> % if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-2b:
+
+\ :ref:`+ <l4162656c69616e53656d6947726f7570-2b>`\ \: (%, %) -> % if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-2d:
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: % -> % if A has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: (%, %) -> % if A has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-3c3d:
+
+\ :ref:`<= <l5061727469616c4f72646572-3c3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\  or S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-3c:
+
+\ :ref:`< <l5061727469616c4f72646572-3c>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\  or S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`Hashable <l4861736861626c65>`\  and A has \ :ref:`Hashable <l4861736861626c65>`\  or A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  or A has \ :ref:`Comparable <l436f6d70617261626c65>`\  and S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-3e3d:
+
+\ :ref:`>= <l5061727469616c4f72646572-3e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\  or S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-3e:
+
+\ :ref:`> <l5061727469616c4f72646572-3e>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\  or S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`Hashable <l4861736861626c65>`\  and A has \ :ref:`Hashable <l4861736861626c65>`\  or A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  or A has \ :ref:`Comparable <l436f6d70617261626c65>`\  and S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  or A has \ :ref:`Comparable <l436f6d70617261626c65>`\  and S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-636f6e737472756374:
+
+\ :ref:`construct <l496e646578656450726f6475637443617465676f7279-636f6e737472756374>`\ \: \ :ref:`List <l4c697374>`\  Record(k: S, c: A) -> % 
+  from \ :ref:`IndexedProductCategory <l496e646578656450726f6475637443617465676f7279>`\ (A, S)
+
+.. _l496e646578656444697265637450726f647563744f626a656374-636f6e7374727563744f726465726564:
+
+\ :ref:`constructOrdered <l496e646578656450726f6475637443617465676f7279-636f6e7374727563744f726465726564>`\ \: \ :ref:`List <l4c697374>`\  Record(k: S, c: A) -> % if S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  from \ :ref:`IndexedProductCategory <l496e646578656450726f6475637443617465676f7279>`\ (A, S)
+
+.. _l496e646578656444697265637450726f647563744f626a656374-68617368:
+
+\ :ref:`hash <l4861736861626c65-68617368>`\ \: % -> \ :ref:`SingleInteger <l53696e676c65496e7465676572>`\  if S has \ :ref:`Hashable <l4861736861626c65>`\  and A has \ :ref:`Hashable <l4861736861626c65>`\ 
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-6861736855706461746521:
+
+\ :ref:`hashUpdate! <l4861736861626c65-6861736855706461746521>`\ \: (\ :ref:`HashState <l486173685374617465>`\ , %) -> \ :ref:`HashState <l486173685374617465>`\  if S has \ :ref:`Hashable <l4861736861626c65>`\  and A has \ :ref:`Hashable <l4861736861626c65>`\ 
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-696e66:
+
+\ :ref:`inf <l4f7264657265644162656c69616e4d6f6e6f6964537570-696e66>`\ \: (%, %) -> % if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+  from \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  or A has \ :ref:`Comparable <l436f6d70617261626c65>`\  and S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-6c656164696e67436f656666696369656e74:
+
+\ :ref:`leadingCoefficient <l496e646578656450726f6475637443617465676f7279-6c656164696e67436f656666696369656e74>`\ \: % -> A if S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  from \ :ref:`IndexedProductCategory <l496e646578656450726f6475637443617465676f7279>`\ (A, S)
+
+.. _l496e646578656444697265637450726f647563744f626a656374-6c656164696e674d6f6e6f6d69616c:
+
+\ :ref:`leadingMonomial <l496e646578656450726f6475637443617465676f7279-6c656164696e674d6f6e6f6d69616c>`\ \: % -> % if S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  from \ :ref:`IndexedProductCategory <l496e646578656450726f6475637443617465676f7279>`\ (A, S)
+
+.. _l496e646578656444697265637450726f647563744f626a656374-6c656164696e67537570706f7274:
+
+\ :ref:`leadingSupport <l496e646578656450726f6475637443617465676f7279-6c656164696e67537570706f7274>`\ \: % -> S if S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  from \ :ref:`IndexedProductCategory <l496e646578656450726f6475637443617465676f7279>`\ (A, S)
+
+.. _l496e646578656444697265637450726f647563744f626a656374-6c656164696e675465726d:
+
+\ :ref:`leadingTerm <l496e646578656450726f6475637443617465676f7279-6c656164696e675465726d>`\ \: % -> Record(k: S, c: A) if S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  from \ :ref:`IndexedProductCategory <l496e646578656450726f6475637443617465676f7279>`\ (A, S)
+
+.. _l496e646578656444697265637450726f647563744f626a656374-6c6973744f665465726d73:
+
+\ :ref:`listOfTerms <l496e646578656444697265637450726f6475637443617465676f7279-6c6973744f665465726d73>`\ \: % -> \ :ref:`List <l4c697374>`\  Record(k: S, c: A) 
+  from \ :ref:`IndexedDirectProductCategory <l496e646578656444697265637450726f6475637443617465676f7279>`\ (A, S)
+
+.. _l496e646578656444697265637450726f647563744f626a656374-6d6170:
+
+\ :ref:`map <l496e646578656450726f6475637443617465676f7279-6d6170>`\ \: (A -> A, %) -> % 
+  from \ :ref:`IndexedProductCategory <l496e646578656450726f6475637443617465676f7279>`\ (A, S)
+
+.. _l496e646578656444697265637450726f647563744f626a656374-6d6178:
+
+\ :ref:`max <l4f726465726564536574-6d6178>`\ \: (%, %) -> % if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\  or S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-6d696e:
+
+\ :ref:`min <l4f726465726564536574-6d696e>`\ \: (%, %) -> % if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\  or S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-6d6f6e6f6d69616c3f:
+
+\ :ref:`monomial? <l496e646578656450726f6475637443617465676f7279-6d6f6e6f6d69616c3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`IndexedProductCategory <l496e646578656450726f6475637443617465676f7279>`\ (A, S)
+
+.. _l496e646578656444697265637450726f647563744f626a656374-6d6f6e6f6d69616c:
+
+\ :ref:`monomial <l496e646578656450726f6475637443617465676f7279-6d6f6e6f6d69616c>`\ \: (A, S) -> % 
+  from \ :ref:`IndexedProductCategory <l496e646578656450726f6475637443617465676f7279>`\ (A, S)
+
+.. _l496e646578656444697265637450726f647563744f626a656374-6e756d6265724f664d6f6e6f6d69616c73:
+
+\ :ref:`numberOfMonomials <l496e646578656444697265637450726f6475637443617465676f7279-6e756d6265724f664d6f6e6f6d69616c73>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`IndexedDirectProductCategory <l496e646578656444697265637450726f6475637443617465676f7279>`\ (A, S)
+
+.. _l496e646578656444697265637450726f647563744f626a656374-6f70706f736974653f:
+
+\ :ref:`opposite? <l4162656c69616e4d6f6e6f6964-6f70706f736974653f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-726564756374756d:
+
+\ :ref:`reductum <l496e646578656450726f6475637443617465676f7279-726564756374756d>`\ \: % -> % if S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  from \ :ref:`IndexedProductCategory <l496e646578656450726f6475637443617465676f7279>`\ (A, S)
+
+.. _l496e646578656444697265637450726f647563744f626a656374-73616d706c65:
+
+\ :ref:`sample <l4162656c69616e4d6f6e6f6964-73616d706c65>`\ \: % if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-736d616c6c65723f:
+
+\ :ref:`smaller? <l436f6d70617261626c65-736d616c6c65723f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\  or A has \ :ref:`Comparable <l436f6d70617261626c65>`\  and S has \ :ref:`Comparable <l436f6d70617261626c65>`\  or S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+  from \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-7375627472616374496643616e:
+
+\ :ref:`subtractIfCan <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964-7375627472616374496643616e>`\ \: (%, %) -> Union(%, failed) if A has \ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-737570:
+
+\ :ref:`sup <l4f7264657265644162656c69616e4d6f6e6f6964537570-737570>`\ \: (%, %) -> % if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+  from \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+.. _l496e646578656444697265637450726f647563744f626a656374-7a65726f3f:
+
+\ :ref:`zero? <l4162656c69616e4d6f6e6f6964-7a65726f3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\  if A has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+\ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+\ :ref:`AbelianProductCategory <l4162656c69616e50726f6475637443617465676f7279>`\  A 
+
+\ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+\ :ref:`BasicType <l426173696354797065>`\  if S has \ :ref:`Hashable <l4861736861626c65>`\  and A has \ :ref:`Hashable <l4861736861626c65>`\  or A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  or A has \ :ref:`Comparable <l436f6d70617261626c65>`\  and S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+
+\ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\  if A has \ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\ 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  or A has \ :ref:`Comparable <l436f6d70617261626c65>`\  and S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+
+\ :ref:`Comparable <l436f6d70617261626c65>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\  or A has \ :ref:`Comparable <l436f6d70617261626c65>`\  and S has \ :ref:`Comparable <l436f6d70617261626c65>`\  or S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+\ :ref:`Hashable <l4861736861626c65>`\  if S has \ :ref:`Hashable <l4861736861626c65>`\  and A has \ :ref:`Hashable <l4861736861626c65>`\ 
+
+\ :ref:`IndexedDirectProductCategory <l496e646578656444697265637450726f6475637443617465676f7279>`\ (A, S) 
+
+\ :ref:`IndexedProductCategory <l496e646578656450726f6475637443617465676f7279>`\ (A, S) 
+
+\ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\  or S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\ 
+
+\ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+\ :ref:`OrderedAbelianSemiGroup <l4f7264657265644162656c69616e53656d6947726f7570>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\  or S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\ 
+
+\ :ref:`OrderedCancellationAbelianMonoid <l4f72646572656443616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+\ :ref:`OrderedSet <l4f726465726564536574>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\  or S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\ 
+
+\ :ref:`PartialOrder <l5061727469616c4f72646572>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\  or S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and A has \ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\ 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  or A has \ :ref:`Comparable <l436f6d70617261626c65>`\  and S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+

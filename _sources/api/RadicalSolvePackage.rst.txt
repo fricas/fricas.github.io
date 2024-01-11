@@ -1,0 +1,111 @@
+.. index:: RadicalSolvePackage
+
+.. _l5261646963616c536f6c76655061636b616765:
+
+RadicalSolvePackage R
+=====================
+
+:viewcode:`solverad.spad line 325 <solverad.spad#L325>` :editcode:`[edit on github] <solverad.spad#L325>`
+
+* R: Join(\ :ref:`PolynomialFactorizationExplicit <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974>`\ , \ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`CharacteristicZero <l43686172616374657269737469635a65726f>`\ )
+
+
+This package tries to find solutions expressed in terms of radicals for systems of equations of rational functions with coefficients in an integral domain \ ``R``\ .
+
+
+.. _l5261646963616c536f6c76655061636b616765-636f6e7472616374536f6c7665:
+
+.. index::
+   pair: RadicalSolvePackage; contractSolve
+
+:spadfun:`contractSolve`\: (\ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`SuchThat <l5375636854686174>`\ (\ :ref:`List <l4c697374>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R, \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R) 
+  \ ``contractSolve(eq, x)``\  finds the solutions expressed in terms of radicals of the equation of rational functions \ ``eq``\  with respect to the symbol \ ``x``\ . The result contains new symbols for common subexpressions in order to reduce the size of the output.
+
+
+.. index::
+   pair: RadicalSolvePackage; contractSolve
+
+:spadfun:`contractSolve`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`SuchThat <l5375636854686174>`\ (\ :ref:`List <l4c697374>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R, \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R) 
+  \ ``contractSolve(rf, x)``\  finds the solutions expressed in terms of radicals of the equation \ ``rf``\  = 0 with respect to the symbol \ ``x``\ , where \ ``rf``\  is a rational function. The result contains new symbols for common subexpressions in order to reduce the size of the output.
+
+.. _l5261646963616c536f6c76655061636b616765-6379636c6f746f6d69635f636173653f:
+
+.. index::
+   pair: RadicalSolvePackage; cyclotomic_case?
+
+:spadfun:`cyclotomic_case?`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R -> Union(\ :ref:`Integer <l496e7465676572>`\ , failed) 
+  \ ``cyclotomic_case?(u)``\  should be local but conditional
+
+.. _l5261646963616c536f6c76655061636b616765-7261646963616c526f6f7473:
+
+.. index::
+   pair: RadicalSolvePackage; radicalRoots
+
+:spadfun:`radicalRoots`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``radicalRoots(rf, x)``\  finds the roots expressed in terms of radicals of the rational function \ ``rf``\  with respect to the symbol \ ``x``\ .
+
+
+.. index::
+   pair: RadicalSolvePackage; radicalRoots
+
+:spadfun:`radicalRoots`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``radicalRoots(lrf, lvar)``\  finds the roots expressed in terms of radicals of the list of rational functions \ ``lrf``\  with respect to the list of symbols lvar.
+
+.. _l5261646963616c536f6c76655061636b616765-7261646963616c536f6c7665:
+
+.. index::
+   pair: RadicalSolvePackage; radicalSolve
+
+:spadfun:`radicalSolve`\: (\ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``radicalSolve(eq, x)``\  finds the solutions expressed in terms of radicals of the equation of rational functions \ ``eq``\  with respect to the symbol \ ``x``\ .
+
+
+.. index::
+   pair: RadicalSolvePackage; radicalSolve
+
+:spadfun:`radicalSolve`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``radicalSolve(rf, x)``\  finds the solutions expressed in terms of radicals of the equation \ ``rf``\  = 0 with respect to the symbol \ ``x``\ , where \ ``rf``\  is a rational function.
+
+
+.. index::
+   pair: RadicalSolvePackage; radicalSolve
+
+:spadfun:`radicalSolve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``radicalSolve(leq, lvar)``\  finds the solutions expressed in terms of radicals of the system of equations of rational functions \ ``leq``\  with respect to the list of symbols lvar.
+
+
+.. index::
+   pair: RadicalSolvePackage; radicalSolve
+
+:spadfun:`radicalSolve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``radicalSolve(lrf, lvar)``\  finds the solutions expressed in terms of radicals of the system of equations \ ``lrf``\  = 0 with respect to the list of symbols lvar, where \ ``lrf``\  is a list of rational functions.
+
+
+.. index::
+   pair: RadicalSolvePackage; radicalSolve
+
+:spadfun:`radicalSolve`\: \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R -> \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``radicalSolve(eq)``\  finds the solutions expressed in terms of radicals of the equation of rational functions \ ``eq``\  with respect to the unique symbol \ ``x``\  appearing in \ ``eq``\ .
+
+
+.. index::
+   pair: RadicalSolvePackage; radicalSolve
+
+:spadfun:`radicalSolve`\: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R -> \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``radicalSolve(rf)``\  finds the solutions expressed in terms of radicals of the equation \ ``rf``\  = 0, where \ ``rf``\  is a univariate rational function.
+
+
+.. index::
+   pair: RadicalSolvePackage; radicalSolve
+
+:spadfun:`radicalSolve`\: \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``radicalSolve(leq)``\  finds the solutions expressed in terms of radicals of the system of equations of rational functions \ ``leq``\  with respect to all symbols appearing in \ ``leq``\ .
+
+
+.. index::
+   pair: RadicalSolvePackage; radicalSolve
+
+:spadfun:`radicalSolve`\: \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``radicalSolve(lrf)``\  finds the solutions expressed in terms of radicals of the system of equations \ ``lrf``\  = 0, where \ ``lrf``\  is a list of rational functions.
+
+

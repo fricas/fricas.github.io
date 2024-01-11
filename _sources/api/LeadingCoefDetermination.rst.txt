@@ -1,0 +1,38 @@
+.. index:: LeadingCoefDetermination
+
+.. _l4c656164696e67436f656644657465726d696e6174696f6e:
+
+LeadingCoefDetermination(OV, E, Z, P)
+=====================================
+
+:viewcode:`leadcdet.spad line 1 <leadcdet.spad#L1>` :editcode:`[edit on github] <leadcdet.spad#L1>`
+
+* OV: \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+* E: \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+* Z: \ :ref:`GcdDomain <l476364446f6d61696e>`\ 
+
+* P: \ :ref:`PolynomialCategory <l506f6c796e6f6d69616c43617465676f7279>`\ (Z, E, OV)
+
+
+Package for leading coefficient determination in the lifting step. Package working for every unique factorization domain \ ``R``\  . Uses algorithm given in section 3 of [1] generalized to arbitrary unique factorization domain.
+
+
+.. _l4c656164696e67436f656644657465726d696e6174696f6e-6469737446616374:
+
+.. index::
+   pair: LeadingCoefDetermination; distFact
+
+:spadfun:`distFact`\: (Z, \ :ref:`List <l4c697374>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  Z, Record(contp: Z, factors: \ :ref:`List <l4c697374>`\  Record(irr: P, pow: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ )), \ :ref:`List <l4c697374>`\  Z, \ :ref:`List <l4c697374>`\  OV, \ :ref:`List <l4c697374>`\  Z) -> Union(Record(polfac: \ :ref:`List <l4c697374>`\  P, correct: Z, corrfact: \ :ref:`List <l4c697374>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  Z), failed) 
+  \ ``distFact(contm, unilist, plead, vl, lvar, lval)``\ , where \ ``contm``\  is the content of the evaluated polynomial, \ ``unilist``\  is the list of factors of the evaluated polynomial, \ ``plead``\  is the complete factorization of the leading coefficient, \ ``vl``\  is the list of factors of the leading coefficient evaluated, \ ``lvar``\  is the list of variables, lval is the list of values, returns a record giving the list of leading coefficients to impose on the univariate factors,
+
+.. _l4c656164696e67436f656644657465726d696e6174696f6e-706f6c43617365:
+
+.. index::
+   pair: LeadingCoefDetermination; polCase
+
+:spadfun:`polCase`\: (Z, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  Z) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``polCase(contprod, numFacts, evallcs)``\ , where \ ``contprod``\  is the product of the content of the leading coefficient of the polynomial to be factored with the content of the evaluated polynomial, \ ``numFacts``\  is the number of factors of the leadingCoefficient, and evallcs is the list of the evaluated factors of the leadingCoefficient, returns \ ``true``\  if the factors of the leading Coefficient can be distributed with this valuation.
+
+

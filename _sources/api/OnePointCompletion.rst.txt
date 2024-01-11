@@ -1,0 +1,149 @@
+.. index:: OnePointCompletion
+
+.. _l4f6e65506f696e74436f6d706c6574696f6e:
+
+OnePointCompletion R
+====================
+
+:viewcode:`complet.spad line 138 <complet.spad#L138>` :editcode:`[edit on github] <complet.spad#L138>`
+
+* R: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+
+Adjunction of a complex infinity to a set. Date Created: 4 Oct 1989
+
+
+.. _l4f6e65506f696e74436f6d706c6574696f6e-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4f6e65506f696e74436f6d706c6574696f6e-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4f6e65506f696e74436f6d706c6574696f6e-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+
+\ :ref:`coerce <l436f65726369626c6546726f6d-636f65726365>`\ \: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  -> % if R has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`coerce <l436f65726369626c6546726f6d-636f65726365>`\ \: \ :ref:`Integer <l496e7465676572>`\  -> % if R has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`coerce <l436f65726369626c6546726f6d-636f65726365>`\ \: R -> % 
+  from \ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  R
+
+.. _l4f6e65506f696e74436f6d706c6574696f6e-636f6e76657274:
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`InputForm <l496e707574466f726d>`\  if R has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+.. _l4f6e65506f696e74436f6d706c6574696f6e-66696e6974653f:
+
+.. index::
+   pair: OnePointCompletion; finite?
+
+:spadfun:`finite?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``finite?(x)``\  tests if \ ``x``\  is finite.
+
+.. _l4f6e65506f696e74436f6d706c6574696f6e-696e66696e6974653f:
+
+.. index::
+   pair: OnePointCompletion; infinite?
+
+:spadfun:`infinite?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``infinite?(x)``\  tests if \ ``x``\  is infinite.
+
+.. _l4f6e65506f696e74436f6d706c6574696f6e-696e66696e697479:
+
+.. index::
+   pair: OnePointCompletion; infinity
+
+:spadfun:`infinity`\: () -> % 
+  \ ``infinity()``\  returns infinity.
+
+.. _l4f6e65506f696e74436f6d706c6574696f6e-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l4f6e65506f696e74436f6d706c6574696f6e-726174696f6e616c3f:
+
+.. index::
+   pair: OnePointCompletion; rational?
+
+:spadfun:`rational?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  if R has \ :ref:`IntegerNumberSystem <l496e74656765724e756d62657253797374656d>`\ 
+  \ ``rational?(x)``\  tests if \ ``x``\  is a finite rational number.
+
+.. _l4f6e65506f696e74436f6d706c6574696f6e-726174696f6e616c:
+
+.. index::
+   pair: OnePointCompletion; rational
+
+:spadfun:`rational`\: % -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  if R has \ :ref:`IntegerNumberSystem <l496e74656765724e756d62657253797374656d>`\ 
+  \ ``rational(x)``\  returns \ ``x``\  as a finite rational number. Error: if \ ``x``\  is not a rational number.
+
+.. _l4f6e65506f696e74436f6d706c6574696f6e-726174696f6e616c496643616e:
+
+.. index::
+   pair: OnePointCompletion; rationalIfCan
+
+:spadfun:`rationalIfCan`\: % -> Union(\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , failed) if R has \ :ref:`IntegerNumberSystem <l496e74656765724e756d62657253797374656d>`\ 
+  \ ``rationalIfCan(x)``\  returns \ ``x``\  as a finite rational number if it is one, "failed" otherwise.
+
+.. _l4f6e65506f696e74436f6d706c6574696f6e-72657472616374:
+
+\ :ref:`retract <l5265747261637461626c65546f-72657472616374>`\ \: % -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  if R has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`retract <l5265747261637461626c65546f-72657472616374>`\ \: % -> \ :ref:`Integer <l496e7465676572>`\  if R has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`retract <l5265747261637461626c65546f-72657472616374>`\ \: % -> R 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  R
+
+.. _l4f6e65506f696e74436f6d706c6574696f6e-72657472616374496643616e:
+
+\ :ref:`retractIfCan <l5265747261637461626c65546f-72657472616374496643616e>`\ \: % -> Union(\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , failed) if R has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`retractIfCan <l5265747261637461626c65546f-72657472616374496643616e>`\ \: % -> Union(\ :ref:`Integer <l496e7465676572>`\ , failed) if R has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`retractIfCan <l5265747261637461626c65546f-72657472616374496643616e>`\ \: % -> Union(R, failed) 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  R
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  if R has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  \ :ref:`Integer <l496e7465676572>`\  if R has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  R 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\  if R has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+\ :ref:`FullyRetractableTo <l46756c6c795265747261637461626c65546f>`\  R 
+
+\ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  if R has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\  if R has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`RetractableTo <l5265747261637461626c65546f>`\  R 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

@@ -1,0 +1,75 @@
+.. index:: FakePolynomial
+
+.. _l46616b65506f6c796e6f6d69616c:
+
+FakePolynomial
+==============
+
+:viewcode:`evalut.spad line 234 <evalut.spad#L234>` :editcode:`[edit on github] <evalut.spad#L234>`
+
+
+FakePolynomial is a domain of univariate polynomials with coefficients being fractions of multivariate integer polynomials. Coefficients are kept in unsimplified form. This domain exists to avoid cost of recursive \ ``GCD``\  calls during polynomial evaluation.
+
+
+.. _l46616b65506f6c796e6f6d69616c-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l46616b65506f6c796e6f6d69616c-646567726565:
+
+.. index::
+   pair: FakePolynomial; degree
+
+:spadfun:`degree`\: (%, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  
+
+.. _l46616b65506f6c796e6f6d69616c-67726f756e64:
+
+.. index::
+   pair: FakePolynomial; ground
+
+:spadfun:`ground`\: % -> Record(numer: \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , denom: \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ ) 
+  
+
+.. _l46616b65506f6c796e6f6d69616c-6d6170:
+
+.. index::
+   pair: FakePolynomial; map
+
+:spadfun:`map`\: (\ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , %) -> Union(%, failed) 
+  
+
+
+.. index::
+   pair: FakePolynomial; map
+
+:spadfun:`map`\: (\ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , Record(var: \ :ref:`Symbol <l53796d626f6c>`\ , coef: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ )) -> % 
+  
+
+
+.. index::
+   pair: FakePolynomial; map
+
+:spadfun:`map`\: (Record(numer: \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , denom: \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> Union(\ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , failed), %) -> Union(\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , failed) 
+  
+
+.. _l46616b65506f6c796e6f6d69616c-73756273745f766172:
+
+.. index::
+   pair: FakePolynomial; subst_var
+
+:spadfun:`subst_var`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> % 
+  
+
+.. _l46616b65506f6c796e6f6d69616c-746f5f5550:
+
+.. index::
+   pair: FakePolynomial; to_UP
+
+:spadfun:`to_UP`\: % -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\  
+  
+
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+

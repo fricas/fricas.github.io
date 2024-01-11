@@ -1,0 +1,42 @@
+.. index:: AlgebraicIntegration
+
+.. _l416c67656272616963496e746567726174696f6e:
+
+AlgebraicIntegration(R, F)
+==========================
+
+:viewcode:`intaf.spad line 708 <intaf.spad#L708>` :editcode:`[edit on github] <intaf.spad#L708>`
+
+* R: Join(\ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ )
+
+* F: Join(\ :ref:`AlgebraicallyClosedField <l416c67656272616963616c6c79436c6f7365644669656c64>`\ , \ :ref:`FunctionSpace <l46756e6374696f6e5370616365>`\  R)
+
+
+This package provides functions for the integration of algebraic integrands over transcendental functions.
+
+
+.. _l416c67656272616963496e746567726174696f6e-616c67657874696e74:
+
+.. index::
+   pair: AlgebraicIntegration; algextint
+
+:spadfun:`algextint`\: (\ :ref:`Kernel <l4b65726e656c>`\  F, \ :ref:`Kernel <l4b65726e656c>`\  F, \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F -> \ :ref:`List <l4c697374>`\  Record(ratpart: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, coeffs: \ :ref:`Vector <l566563746f72>`\  F), (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F) -> \ :ref:`List <l4c697374>`\  Record(ratpart: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, coeffs: \ :ref:`Vector <l566563746f72>`\  F), \ :ref:`Matrix <l4d6174726978>`\  F -> \ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  F, \ :ref:`List <l4c697374>`\  F) -> \ :ref:`List <l4c697374>`\  Record(ratpart: F, coeffs: \ :ref:`Vector <l566563746f72>`\  F) 
+  \ ``algextint(x, y, d, ext, rde, csolve, [g1, ..., gn])``\  returns \ ``[h, [c1, ..., cn]]``\  such that \ ``f = dh/dx + sum(ci gi)``\  and dci/dx = 0, if such \ ``[h, [c1, ..., cn]]``\  exist, "failed" otherwise.
+
+.. _l416c67656272616963496e746567726174696f6e-616c67657874696e745f62617365:
+
+.. index::
+   pair: AlgebraicIntegration; algextint_base
+
+:spadfun:`algextint_base`\: (\ :ref:`Kernel <l4b65726e656c>`\  F, \ :ref:`Kernel <l4b65726e656c>`\  F, \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, \ :ref:`Matrix <l4d6174726978>`\  F -> \ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  F, \ :ref:`List <l4c697374>`\  F) -> \ :ref:`List <l4c697374>`\  Record(ratpart: F, coeffs: \ :ref:`Vector <l566563746f72>`\  F) 
+  \ ``algextint_base(x, y, d, csolve, [g1, ..., gn])``\  is like algextint but assumes that \ ``y``\  and \ ``gi``\ -\ ``s``\  are purely algebraic
+
+.. _l416c67656272616963496e746567726174696f6e-616c67696e74:
+
+.. index::
+   pair: AlgebraicIntegration; algint
+
+:spadfun:`algint`\: (F, \ :ref:`Kernel <l4b65726e656c>`\  F, \ :ref:`Kernel <l4b65726e656c>`\  F, \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, F -> \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  F) -> \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  F 
+  \ ``algint(f, x, y, d)``\  returns the integral of \ ``f(x, y)dx``\  where \ ``y``\  is an algebraic function of \ ``x``\ ; \ ``d``\  is the derivation to use on \ ``k[x]``\ .
+
+

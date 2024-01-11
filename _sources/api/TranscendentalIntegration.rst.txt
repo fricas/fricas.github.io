@@ -1,0 +1,58 @@
+.. index:: TranscendentalIntegration
+
+.. _l5472616e7363656e64656e74616c496e746567726174696f6e:
+
+TranscendentalIntegration(F, UP)
+================================
+
+:viewcode:`intrf.spad line 283 <intrf.spad#L283>` :editcode:`[edit on github] <intrf.spad#L283>`
+
+* F: \ :ref:`Field <l4669656c64>`\ 
+
+* UP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  F
+
+
+This package provides functions for the transcendental case of the Risch algorithm.
+
+
+.. _l5472616e7363656e64656e74616c496e746567726174696f6e-657870696e74656772617465:
+
+.. index::
+   pair: TranscendentalIntegration; expintegrate
+
+:spadfun:`expintegrate`\: (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UP -> UP, \ :ref:`Fraction <l4672616374696f6e>`\  UP -> Record(answer: \ :ref:`Fraction <l4672616374696f6e>`\  UP, logpart: \ :ref:`Fraction <l4672616374696f6e>`\  UP, ir: \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP), (\ :ref:`Integer <l496e7465676572>`\ , F) -> Record(ans: F, right: F, primpart: F, sol?: \ :ref:`Boolean <l426f6f6c65616e>`\ )) -> Record(answer: \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP, a0: F) 
+  \ ``expintegrate(f, ', foo)``\  returns \ ``[g, a]``\  such that \ ``f = g' + a``\ , and \ ``a = 0``\  or \ ``a``\  has no integral in \ ``F``\ ; Argument foo is a Risch differential equation solver on \ ``F``\ .
+
+.. _l5472616e7363656e64656e74616c496e746567726174696f6e-6c616d62696e74656772617465:
+
+.. index::
+   pair: TranscendentalIntegration; lambintegrate
+
+:spadfun:`lambintegrate`\: (\ :ref:`Fraction <l4672616374696f6e>`\  UP, F, F -> F, UP -> UP, F -> Union(Record(ratpart: F, coeff: F), failed), F -> \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  F) -> Record(answer: \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP, a0: \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  F) 
+  \ ``lambintegrate(f, dx, D1, D2, extint, int)``\  integrates \ ``f``\  in extension by LambertW function. \ ``dx``\  is derivative of the argument of LambertW, \ ``D1``\  is dervative on \ ``F``\ , \ ``D2``\  is derivative on UP, \ ``extint``\  is extended integration function on \ ``F``\ , int is integration function on \ ``F``\ .
+
+.. _l5472616e7363656e64656e74616c496e746567726174696f6e-6d6f6e6f6d69616c496e74656772617465:
+
+.. index::
+   pair: TranscendentalIntegration; monomialIntegrate
+
+:spadfun:`monomialIntegrate`\: (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UP -> UP) -> Record(ir: \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP, specpart: \ :ref:`Fraction <l4672616374696f6e>`\  UP, polypart: UP) 
+  \ ``monomialIntegrate(f, ')``\  returns \ ``[ir, s, p]``\  such that \ ``f = ir' + s + p``\  and all the squarefree factors of the denominator of \ ``s``\  are special \ ``w``\ .\ ``r``\ .\ ``t``\  the derivation '.
+
+.. _l5472616e7363656e64656e74616c496e746567726174696f6e-6d6f6e6f6d69616c496e74506f6c79:
+
+.. index::
+   pair: TranscendentalIntegration; monomialIntPoly
+
+:spadfun:`monomialIntPoly`\: (UP, UP -> UP) -> Record(answer: UP, polypart: UP) 
+  \ ``monomialIntPoly(p, ')``\  returns [\ ``q``\ , \ ``r``\ ] such that \ ``p = q' + r``\  and \ ``degree(r) < degree(t')``\ . Error if \ ``degree(t') < 2``\ .
+
+.. _l5472616e7363656e64656e74616c496e746567726174696f6e-7072696d696e74656772617465:
+
+.. index::
+   pair: TranscendentalIntegration; primintegrate
+
+:spadfun:`primintegrate`\: (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UP -> UP, \ :ref:`Fraction <l4672616374696f6e>`\  UP -> Record(answer: \ :ref:`Fraction <l4672616374696f6e>`\  UP, logpart: \ :ref:`Fraction <l4672616374696f6e>`\  UP, ir: \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP), (F, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> Union(Record(ratpart: F, coeff: F, prim: F), failed)) -> Record(answer: \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP, a0: F) 
+  \ ``primintegrate(f, ', foo)``\  returns \ ``[g, a]``\  such that \ ``f = g' + a``\ , and \ ``a = 0``\  or \ ``a``\  has no integral in UP. Argument foo is an extended integration function on \ ``F``\ .
+
+

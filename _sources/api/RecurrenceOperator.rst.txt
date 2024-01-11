@@ -1,0 +1,65 @@
+.. index:: RecurrenceOperator
+
+.. _l526563757272656e63654f70657261746f72:
+
+RecurrenceOperator(R, F)
+========================
+
+:viewcode:`rec.spad line 24 <rec.spad#L24>` :editcode:`[edit on github] <rec.spad#L24>`
+
+* R: Join(\ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ , \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ )
+
+* F: Join(\ :ref:`FunctionSpace <l46756e6374696f6e5370616365>`\  R, \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`CombinatorialOpsCategory <l436f6d62696e61746f7269616c4f707343617465676f7279>`\ )
+
+
+This package provides an operator for the \ ``n``\ -th term of a recurrence and an operator for the coefficient of \ ``x^n``\  in a function specified by a functional equation.
+
+
+.. _l526563757272656e63654f70657261746f72-656c7461626c653f:
+
+.. index::
+   pair: RecurrenceOperator; eltable?
+
+:spadfun:`eltable?`\: F -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``eltable? r``\  returns whether the operator determines (most likely) the sequence completely.
+
+.. _l526563757272656e63654f70657261746f72-6765744571:
+
+.. index::
+   pair: RecurrenceOperator; getEq
+
+:spadfun:`getEq`\: F -> F 
+  \ ``getEq f``\  returns the defining equation, if \ ``f``\  represents the coefficient of an ADE or a recurrence.
+
+.. _l526563757272656e63654f70657261746f72-6d616b65464571:
+
+.. index::
+   pair: RecurrenceOperator; makeFEq
+
+:spadfun:`makeFEq`\: (\ :ref:`BasicOperator <l42617369634f70657261746f72>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , F, \ :ref:`List <l4c697374>`\  F, \ :ref:`Stream <l53747265616d>`\  F) -> F 
+  \ ``evalADE(f, x, n, eq, parameters, values)``\  creates an expression that stands for the coefficient of \ ``x^n``\  in the Taylor expansion of \ ``f``\ (\ ``x``\ ), where \ ``f``\ (\ ``x``\ ) is given by the functional equation \ ``eq``\ . The argument values specifies the first few Taylor coefficients.
+
+.. _l526563757272656e63654f70657261746f72-6d616b65526563:
+
+.. index::
+   pair: RecurrenceOperator; makeRec
+
+:spadfun:`makeRec`\: (\ :ref:`BasicOperator <l42617369634f70657261746f72>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , F, \ :ref:`List <l4c697374>`\  F, \ :ref:`Stream <l53747265616d>`\  F) -> F 
+  \ ``makeRec(u, n, eq, parameters, values)``\  creates an expression that stands for \ ``u``\ (\ ``n``\ ), where \ ``u``\ (\ ``n``\ ) is given by the equation \ ``eq``\ . The argument \ ``parameters``\  has to contain all variables (or kernels) that appear eventually in the stream of values. The argument values specifies the initial values of the recurrence \ ``u``\ (0), \ ``u``\ (1), ... For the moment we don\ ``'t``\  allow recursions that contain \ ``u``\  inside of another operator.
+
+.. _l526563757272656e63654f70657261746f72-76616c756573:
+
+.. index::
+   pair: RecurrenceOperator; values
+
+:spadfun:`values`\: () -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``values()``\  returns the number of initial values to display at most.
+
+
+.. index::
+   pair: RecurrenceOperator; values
+
+:spadfun:`values`\: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``values N``\  sets the number of initial values to display at most.
+
+

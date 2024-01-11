@@ -1,0 +1,176 @@
+.. index:: SplittingNode
+
+.. _l53706c697474696e674e6f6465:
+
+SplittingNode(V, C)
+===================
+
+:viewcode:`newdata.spad line 147 <newdata.spad#L147>` :editcode:`[edit on github] <newdata.spad#L147>`
+
+* V: Join(\ :ref:`SetCategory <l53657443617465676f7279>`\ , \ :ref:`Aggregate <l416767726567617465>`\ )
+
+* C: Join(\ :ref:`SetCategory <l53657443617465676f7279>`\ , \ :ref:`Aggregate <l416767726567617465>`\ )
+
+
+This domain exports a modest implementation for the vertices of splitting trees. These vertices are called here splitting nodes. Every of these nodes store 3 informations. The first one is its value, that is the current expression to evaluate. The second one is its condition, that is the hypothesis under which the value has to be evaluated. The last one is its status, that is a boolean flag which is \ ``true``\  iff the value is the result of its evaluation under its condition. Two splitting vertices are equal iff they have the sane values and the same conditions (so their status do not matter).
+
+
+.. _l53706c697474696e674e6f6465-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l53706c697474696e674e6f6465-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l53706c697474696e674e6f6465-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l53706c697474696e674e6f6465-636f6e646974696f6e:
+
+.. index::
+   pair: SplittingNode; condition
+
+:spadfun:`condition`\: % -> C 
+  \ ``condition(n)``\  returns the condition of the node \ ``n``\ .
+
+.. _l53706c697474696e674e6f6465-636f6e737472756374:
+
+.. index::
+   pair: SplittingNode; construct
+
+:spadfun:`construct`\: (V, C) -> % 
+  \ ``construct(v, t)``\  returns the same as \ ``construct(v, t, false)``\ 
+
+
+.. index::
+   pair: SplittingNode; construct
+
+:spadfun:`construct`\: (V, C, \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> % 
+  \ ``construct(v, t, b)``\  returns the non-empty node with value \ ``v``\ , condition \ ``t``\  and flag \ ``b``\ 
+
+
+.. index::
+   pair: SplittingNode; construct
+
+:spadfun:`construct`\: (V, \ :ref:`List <l4c697374>`\  C) -> \ :ref:`List <l4c697374>`\  % 
+  \ ``construct(v, lt)``\  returns the same as \ ``[construct(v, t) for t in lt]``\ 
+
+
+.. index::
+   pair: SplittingNode; construct
+
+:spadfun:`construct`\: \ :ref:`List <l4c697374>`\  Record(val: V, tower: C) -> \ :ref:`List <l4c697374>`\  % 
+  \ ``construct(lvt)``\  returns the same as \ ``[construct(vt.val, vt.tower) for vt in lvt]``\ 
+
+
+.. index::
+   pair: SplittingNode; construct
+
+:spadfun:`construct`\: Record(val: V, tower: C) -> % 
+  \ ``construct(vt)``\  returns the same as \ ``construct(vt.val, vt.tower)``\ 
+
+.. _l53706c697474696e674e6f6465-636f7079:
+
+.. index::
+   pair: SplittingNode; copy
+
+:spadfun:`copy`\: % -> % 
+  \ ``copy(n)``\  returns a copy of \ ``n``\ .
+
+.. _l53706c697474696e674e6f6465-656d7074793f:
+
+.. index::
+   pair: SplittingNode; empty?
+
+:spadfun:`empty?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``empty?(n)``\  returns \ ``true``\  iff the node \ ``n``\  is \ ``empty()\$\%``\ .
+
+.. _l53706c697474696e674e6f6465-656d707479:
+
+.. index::
+   pair: SplittingNode; empty
+
+:spadfun:`empty`\: () -> % 
+  \ ``empty()``\  returns the same as \ ``[empty()\$V, empty()\$C, false]\$\%``\ 
+
+.. _l53706c697474696e674e6f6465-696e664c65783f:
+
+.. index::
+   pair: SplittingNode; infLex?
+
+:spadfun:`infLex?`\: (%, %, (V, V) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , (C, C) -> \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``infLex?(n1, n2, o1, o2)``\  returns \ ``true``\  iff \ ``o1(value(n1), value(n2))``\  or \ ``value(n1) = value(n2)``\  and \ ``o2(condition(n1), condition(n2))``\ .
+
+.. _l53706c697474696e674e6f6465-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l53706c697474696e674e6f6465-736574436f6e646974696f6e21:
+
+.. index::
+   pair: SplittingNode; setCondition!
+
+:spadfun:`setCondition!`\: (%, C) -> % 
+  \ ``setCondition!(n, t)``\  returns \ ``n``\  whose condition has been replaced by \ ``t``\  if it is not empty, else an error is produced.
+
+.. _l53706c697474696e674e6f6465-736574456d70747921:
+
+.. index::
+   pair: SplittingNode; setEmpty!
+
+:spadfun:`setEmpty!`\: % -> % 
+  \ ``setEmpty!(n)``\  replaces \ ``n``\  by \ ``empty()\$\%``\ .
+
+.. _l53706c697474696e674e6f6465-73657453746174757321:
+
+.. index::
+   pair: SplittingNode; setStatus!
+
+:spadfun:`setStatus!`\: (%, \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> % 
+  \ ``setStatus!(n, b)``\  returns \ ``n``\  whose status has been replaced by \ ``b``\  if it is not empty, else an error is produced.
+
+.. _l53706c697474696e674e6f6465-73657456616c756521:
+
+.. index::
+   pair: SplittingNode; setValue!
+
+:spadfun:`setValue!`\: (%, V) -> % 
+  \ ``setValue!(n, v)``\  returns \ ``n``\  whose value has been replaced by \ ``v``\  if it is not empty, else an error is produced.
+
+.. _l53706c697474696e674e6f6465-737461747573:
+
+.. index::
+   pair: SplittingNode; status
+
+:spadfun:`status`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``status(n)``\  returns the status of the node \ ``n``\ .
+
+.. _l53706c697474696e674e6f6465-7375624e6f64653f:
+
+.. index::
+   pair: SplittingNode; subNode?
+
+:spadfun:`subNode?`\: (%, %, (C, C) -> \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``subNode?(n1, n2, o2)``\  returns \ ``true``\  iff \ ``value(n1) = value(n2)``\  and \ ``o2(condition(n1), condition(n2))``\ 
+
+.. _l53706c697474696e674e6f6465-76616c7565:
+
+.. index::
+   pair: SplittingNode; value
+
+:spadfun:`value`\: % -> V 
+  \ ``value(n)``\  returns the value of the node \ ``n``\ .
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

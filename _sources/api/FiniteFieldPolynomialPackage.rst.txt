@@ -1,0 +1,199 @@
+.. index:: FiniteFieldPolynomialPackage
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765:
+
+FiniteFieldPolynomialPackage GF
+===============================
+
+:viewcode:`ffdoms.spad line 271 <ffdoms.spad#L271>` :editcode:`[edit on github] <ffdoms.spad#L271>`
+
+* GF: \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+
+This package provides a number of functions for generating, counting and testing irreducible, normal, primitive, random polynomials over finite fields.
+
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-636c6578536d616c6c65723f:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; clexSmaller?
+
+:spadfun:`clexSmaller?`\: (\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF, \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``clexSmaller?(f, g)``\  compares monic \ ``f``\  and \ ``g``\  of the same degree in the following order. Error: if \ ``f``\  or \ ``g``\  is not monic or if \ ``f``\  and \ ``g``\  have different degrees or if common degree is 0. \ ``f < g``\  if the constant term of \ ``f``\  is zero and constant term of \ ``g``\  is nonzero. If both constant term of \ ``f``\  and \ ``g``\  are nonzero then \ ``f < g``\  if the \ *lookup*\  of the constant term of \ ``f``\  is less than this number for \ ``g``\ . If these values are equal, then \ ``lexSmaller?``\  is used as ordering predicate.
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-636e6c6578536d616c6c65723f:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; cnlexSmaller?
+
+:spadfun:`cnlexSmaller?`\: (\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF, \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``cnlexSmaller?(f, g)``\  compares monic \ ``f``\  and \ ``g``\  of the same degree \ ``n``\  in the following order. Error: if \ ``f``\  or \ ``g``\  is not monic or if \ ``f``\  and \ ``g``\  have different degrees or if common degree is 0. \ ``f < g``\  if the constant term of \ ``f``\  is zero and constant term of \ ``g``\  is nonzero. If both constant term of \ ``f``\  and \ ``g``\  are nonzero then \ ``f < g``\  if the \ *lookup*\  of the constant term of \ ``f``\  is less than this number for \ ``g``\ . If constant terms are equal then \ ``nlexSmaller?``\  is used as ordering predicate.
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6372656174654972726564756369626c65506f6c79:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; createIrreduciblePoly
+
+:spadfun:`createIrreduciblePoly`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF 
+  \ ``createIrreduciblePoly(n)``\ \$FFPOLY(\ ``GF``\ ) generates a monic irreducible univariate polynomial of degree \ ``n``\  over the finite field \ *GF*\ .
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6372656174654e6f726d616c506f6c79:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; createNormalPoly
+
+:spadfun:`createNormalPoly`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF 
+  \ ``createNormalPoly(n)``\ \$FFPOLY(\ ``GF``\ ) generates a normal polynomial of degree \ ``n``\  over the finite field \ *GF*\ .
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6372656174654e6f726d616c5072696d6974697665506f6c79:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; createNormalPrimitivePoly
+
+:spadfun:`createNormalPrimitivePoly`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF 
+  \ ``createNormalPrimitivePoly(n)``\ \$FFPOLY(\ ``GF``\ ) generates a normal and primitive polynomial of degree \ ``n``\  over the field \ *GF*\ . Note: this function is equivalent to createPrimitiveNormalPoly(\ ``n``\ )
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6372656174655072696d69746976654e6f726d616c506f6c79:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; createPrimitiveNormalPoly
+
+:spadfun:`createPrimitiveNormalPoly`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF 
+  \ ``createPrimitiveNormalPoly(n)``\ \$FFPOLY(\ ``GF``\ ) generates a normal and primitive polynomial of degree \ ``n``\  over the field \ *GF*\ .
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6372656174655072696d6974697665506f6c79:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; createPrimitivePoly
+
+:spadfun:`createPrimitivePoly`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF 
+  \ ``createPrimitivePoly(n)``\ \$FFPOLY(\ ``GF``\ ) generates a primitive polynomial of degree \ ``n``\  over the finite field \ *GF*\ .
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6c65617374416666696e654d756c7469706c65:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; leastAffineMultiple
+
+:spadfun:`leastAffineMultiple`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF 
+  \ ``leastAffineMultiple(f)``\  computes the least affine polynomial which is divisible by the polynomial \ ``f``\  over the finite field \ *GF*\ , i.e. a polynomial whose exponents are 0 or a power of \ ``q``\ , the size of \ *GF*\ .
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6c6578536d616c6c65723f:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; lexSmaller?
+
+:spadfun:`lexSmaller?`\: (\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF, \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``lexSmaller?(f, g)``\  compares monic \ ``f``\  and \ ``g``\  of the same degree in the following order. Error: if \ ``f``\  or \ ``g``\  is not monic or if \ ``f``\  and \ ``g``\  have different degrees or if common degree is 0. \ ``f < g``\  if the number of monomials of \ ``f``\  is less than this number for \ ``g``\ . If \ ``f``\  and \ ``g``\  have the same number of monomials, the lists of exponents are compared lexicographically. If these lists are also equal, the lists of coefficients are compared according to the lexicographic ordering induced by the ordering of the elements of \ *GF*\  given by \ *lookup*\ .
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6e6578744972726564756369626c65506f6c79:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; nextIrreduciblePoly
+
+:spadfun:`nextIrreduciblePoly`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF -> Union(\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF, failed) 
+  \ ``nextIrreduciblePoly(f)``\  yields the next monic irreducible polynomial over a finite field \ *GF*\  of the same degree as \ ``f``\  in the following order, or "failed" if there are no greater ones. Error: if \ ``f``\  has degree 0. Note: the input polynomial \ ``f``\  is made monic. \ ``lexSmaller?``\  is used as ordering predicate.
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6e6578744e6f726d616c506f6c79:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; nextNormalPoly
+
+:spadfun:`nextNormalPoly`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF -> Union(\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF, failed) 
+  \ ``nextNormalPoly(f)``\  yields the next normal polynomial over a finite field \ *GF*\  of the same degree as \ ``f``\  in the following order, or "failed" if there are no greater ones. Error: if \ ``f``\  has degree 0. Note: the input polynomial \ ``f``\  is made monic. \ ``nlexSmaller?``\  is used as ordering predicate.
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6e6578744e6f726d616c5072696d6974697665506f6c79:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; nextNormalPrimitivePoly
+
+:spadfun:`nextNormalPrimitivePoly`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF -> Union(\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF, failed) 
+  \ ``nextNormalPrimitivePoly(f)``\  yields the next normal primitive polynomial over a finite field \ *GF*\  of the same degree as \ ``f``\  in the following order, or "failed" if there are no greater ones. Error: if \ ``f``\  has degree 0. Note: the input polynomial \ ``f``\  is made monic. \ ``cnlexSmaller?``\  is used as ordering predicate. This operation is equivalent to nextPrimitiveNormalPoly(\ ``f``\ ).
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6e6578745072696d69746976654e6f726d616c506f6c79:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; nextPrimitiveNormalPoly
+
+:spadfun:`nextPrimitiveNormalPoly`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF -> Union(\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF, failed) 
+  \ ``nextPrimitiveNormalPoly(f)``\  yields the next primitive normal polynomial over a finite field \ *GF*\  of the same degree as \ ``f``\  in the following order, or "failed" if there are no greater ones. Error: if \ ``f``\  has degree 0. Note: the input polynomial \ ``f``\  is made monic. \ ``cnlexSmaller?``\  is used as ordering predicate. This operation is equivalent to nextNormalPrimitivePoly(\ ``f``\ ).
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6e6578745072696d6974697665506f6c79:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; nextPrimitivePoly
+
+:spadfun:`nextPrimitivePoly`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF -> Union(\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF, failed) 
+  \ ``nextPrimitivePoly(f)``\  yields the next primitive polynomial over a finite field \ *GF*\  of the same degree as \ ``f``\  in the following order, or "failed" if there are no greater ones. Error: if \ ``f``\  has degree 0. Note: the input polynomial \ ``f``\  is made monic. \ ``clexSmaller?``\  is used as ordering predicate.
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6e6c6578536d616c6c65723f:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; nlexSmaller?
+
+:spadfun:`nlexSmaller?`\: (\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF, \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``nlexSmaller?(f, g)``\  compares monic \ ``f``\  and \ ``g``\  of the same degree \ ``n``\  in the following order. Error: if \ ``f``\  or \ ``g``\  is not monic or if \ ``f``\  and \ ``g``\  have different degrees or if common degree is 0. \ ``f < g``\  if the coefficient of the term of degree \ *n-1*\  of \ ``f``\  is zero and than that for \ ``g``\  is nonzero. Also, \ ``f < g``\  if both coefficients are nonzero and \ *lookup*\  of the coefficient of \ ``f``\  is less than that for \ ``g``\ . In case those coefficients are equal, then \ ``lexSmaller?``\  is used as ordering predicate.
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6e6f726d616c3f:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; normal?
+
+:spadfun:`normal?`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``normal?(f)``\  tests whether the polynomial \ ``f``\  over a finite field is normal, i.e. its roots are linearly independent over the field.
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6e756d6265724f664972726564756369626c65506f6c79:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; numberOfIrreduciblePoly
+
+:spadfun:`numberOfIrreduciblePoly`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  
+  \ ``numberOfIrreduciblePoly(n)``\ \$FFPOLY(\ ``GF``\ ) yields the number of monic irreducible univariate polynomials of degree \ ``n``\  over the finite field \ *GF*\ .
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6e756d6265724f664e6f726d616c506f6c79:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; numberOfNormalPoly
+
+:spadfun:`numberOfNormalPoly`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  
+  \ ``numberOfNormalPoly(n)``\ \$FFPOLY(\ ``GF``\ ) yields the number of normal polynomials of degree \ ``n``\  over the finite field \ *GF*\ .
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6e756d6265724f665072696d6974697665506f6c79:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; numberOfPrimitivePoly
+
+:spadfun:`numberOfPrimitivePoly`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  
+  \ ``numberOfPrimitivePoly(n)``\ \$FFPOLY(\ ``GF``\ ) yields the number of primitive polynomials of degree \ ``n``\  over the finite field \ *GF*\ .
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-7072696d69746976653f:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; primitive?
+
+:spadfun:`primitive?`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``primitive?(f)``\  tests whether the polynomial \ ``f``\  over a finite field is primitive, i.e. all its roots are primitive.
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-72616e646f6d:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; random
+
+:spadfun:`random`\: (\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF 
+  \ ``random(m, n)``\ \$FFPOLY(\ ``GF``\ ) generates a random monic polynomial of degree \ ``d``\  over the finite field \ *GF*\ , \ ``d``\  between \ ``m``\  and \ ``n``\ .
+
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; random
+
+:spadfun:`random`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF 
+  \ ``random(n)``\ \$FFPOLY(\ ``GF``\ ) generates a random monic polynomial of degree \ ``n``\  over the finite field \ *GF*\ .
+
+.. _l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-7265647563656451506f77657273:
+
+.. index::
+   pair: FiniteFieldPolynomialPackage; reducedQPowers
+
+:spadfun:`reducedQPowers`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF -> \ :ref:`PrimitiveArray <l5072696d69746976654172726179>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF 
+  \ ``reducedQPowers(f)``\  generates \ ``[x, x^q, x^(q^2), ..., x^(q^(n-1))]``\  reduced modulo \ ``f``\  where \ ``q = size()\$GF``\  and \ ``n = degree f``\ .
+
+

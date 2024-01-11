@@ -1,0 +1,40 @@
+.. index:: LUDecomposition
+
+.. _l4c554465636f6d706f736974696f6e:
+
+LUDecomposition D
+=================
+
+:viewcode:`jet.spad line 6222 <jet.spad#L6222>` :editcode:`[edit on github] <jet.spad#L6222>`
+
+* D: \ :ref:`Field <l4669656c64>`\ 
+
+
+\ :ref:`LUDecomposition <l4c554465636f6d706f736974696f6e>`\  contains procedures to solve linear systems of equations or to compute inverses using a LU decomposition.
+
+
+.. _l4c554465636f6d706f736974696f6e-4c554465636f6d70:
+
+.. index::
+   pair: LUDecomposition; LUDecomp
+
+:spadfun:`LUDecomp`\: \ :ref:`Matrix <l4d6174726978>`\  D -> Record(LU: \ :ref:`Matrix <l4d6174726978>`\  D, Perm: \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , Pivots: \ :ref:`List <l4c697374>`\  D) 
+  \ ``LUDecomp(A)``\  computes a LU decomposition of \ ``A``\  using the algorithm of Crout. \ ``LU``\  contains both triangular matrices; \ ``Perm``\  is the permutation used for partial pivoting and \ ``Pivots``\  yields the used pivots.
+
+.. _l4c554465636f6d706f736974696f6e-4c55496e7665727365:
+
+.. index::
+   pair: LUDecomposition; LUInverse
+
+:spadfun:`LUInverse`\: \ :ref:`Matrix <l4d6174726978>`\  D -> Record(Inv: \ :ref:`Matrix <l4d6174726978>`\  D, Pivots: \ :ref:`List <l4c697374>`\  D) 
+  \ ``LUInverse(A)``\  computes the inverse of \ ``A``\  using a LU decomposition.
+
+.. _l4c554465636f6d706f736974696f6e-4c55536f6c7665:
+
+.. index::
+   pair: LUDecomposition; LUSolve
+
+:spadfun:`LUSolve`\: (\ :ref:`Matrix <l4d6174726978>`\  D, \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Vector <l566563746f72>`\  D) -> \ :ref:`Vector <l566563746f72>`\  D 
+  \ ``LUSolve(LU, Perm, B)``\  uses a previously computed \ ``LU``\  decomposition to solve a linear system with right hand side \ ``B``\ . \ ``LU``\  and \ ``Perm``\  are as given by \ ``LUDecomp``\ .
+
+

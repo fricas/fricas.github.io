@@ -1,0 +1,215 @@
+.. index:: LatticeMeetOfJoins
+
+.. _l4c6174746963654d6565744f664a6f696e73:
+
+LatticeMeetOfJoins
+==================
+
+:viewcode:`logic.spad line 3219 <logic.spad#L3219>` :editcode:`[edit on github] <logic.spad#L3219>`
+
+
+parse result includes term returned and new index
+
+
+.. _l4c6174746963654d6565744f664a6f696e73-2f5c:
+
+\ :ref:`/\\ <l4d65657453656d696c617474696365-2f5c>`\ \: (%, %) -> % 
+  from \ :ref:`MeetSemilattice <l4d65657453656d696c617474696365>`\ 
+
+.. _l4c6174746963654d6565744f664a6f696e73-3d:
+
+.. index::
+   pair: LatticeMeetOfJoins; =
+
+:spadfun:`=`\: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  returns \ ``true``\  (boolean \ ``true``\ ) if intuitionisticLogic values are the same. Translates from Intuitionistic Logic to Boolean Logic
+
+.. _l4c6174746963654d6565744f664a6f696e73-5c2f:
+
+\ :ref:`\\/ <l4a6f696e53656d696c617474696365-5c2f>`\ \: (%, %) -> % 
+  from \ :ref:`JoinSemilattice <l4a6f696e53656d696c617474696365>`\ 
+
+.. _l4c6174746963654d6565744f664a6f696e73-5f7c5f:
+
+\ :ref:`_|_ <l426f756e6465644a6f696e53656d696c617474696365-5f7c5f>`\ \: % 
+  from \ :ref:`BoundedJoinSemilattice <l426f756e6465644a6f696e53656d696c617474696365>`\ 
+
+.. _l4c6174746963654d6565744f664a6f696e73-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4c6174746963654d6565744f664a6f696e73-61746f6d3f:
+
+.. index::
+   pair: LatticeMeetOfJoins; atom?
+
+:spadfun:`atom?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  returns \ ``true``\  if this is an atom, that is a leaf node otherwise return \ ``false``\  if this is a compound term
+
+.. _l4c6174746963654d6565744f664a6f696e73-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l4c6174746963654d6565744f664a6f696e73-646564756374696f6e73:
+
+.. index::
+   pair: LatticeMeetOfJoins; deductions
+
+:spadfun:`deductions`\: \ :ref:`List <l4c697374>`\  % -> \ :ref:`List <l4c697374>`\  % 
+  assumes \ ``ln``\  contains a list of factors which must be \ ``true``\  for the whole to be \ ``true``\  (such as the list produced by factor). From this deductions attempts to produce a list of other proposition that must also be \ ``true``\  by using modus ponens. This is used to determine the returned type when converting ILogic to types by using the Curry-Howard isomorphism.
+
+.. _l4c6174746963654d6565744f664a6f696e73-656d7074793f:
+
+.. index::
+   pair: LatticeMeetOfJoins; empty?
+
+:spadfun:`empty?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``true``\  if empty
+
+.. _l4c6174746963654d6565744f664a6f696e73-656d7074794c617474696365:
+
+.. index::
+   pair: LatticeMeetOfJoins; emptyLattice
+
+:spadfun:`emptyLattice`\: () -> % 
+  construct an empty lattice
+
+.. _l4c6174746963654d6565744f664a6f696e73-666163746f72:
+
+.. index::
+   pair: LatticeMeetOfJoins; factor
+
+:spadfun:`factor`\: % -> \ :ref:`List <l4c697374>`\  % 
+  splits \ ``n``\  into a list of factors which must be \ ``true``\  for the whole to be \ ``true``\ . This assumes that the top level is already a set of factors separated by \ ``/\``\  otherwise the result will just be a list with one entry: \ ``'n'``\ . This is used when converting ILogic to types by using the Curry-Howard isomorphism.
+
+.. _l4c6174746963654d6565744f664a6f696e73-6765744368696c6472656e:
+
+.. index::
+   pair: LatticeMeetOfJoins; getChildren
+
+:spadfun:`getChildren`\: % -> \ :ref:`List <l4c697374>`\  % 
+  returns child nodes if this is a compound term otherwise returns []
+
+.. _l4c6174746963654d6565744f664a6f696e73-6a6f696e:
+
+.. index::
+   pair: LatticeMeetOfJoins; join
+
+:spadfun:`join`\: \ :ref:`List <l4c697374>`\  % -> % 
+  \ ``join of``\  set of elements
+
+.. _l4c6174746963654d6565744f664a6f696e73-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l4c6174746963654d6565744f664a6f696e73-6c6174746963654d6565744f664a6f696e73:
+
+.. index::
+   pair: LatticeMeetOfJoins; latticeMeetOfJoins
+
+:spadfun:`latticeMeetOfJoins`\: Union(const: Record val: \ :ref:`Symbol <l53796d626f6c>`\ , var: Record str: \ :ref:`String <l537472696e67>`\ ) -> % 
+  construct a lattice with one element
+
+.. _l4c6174746963654d6565744f664a6f696e73-6c6f67696346:
+
+.. index::
+   pair: LatticeMeetOfJoins; logicF
+
+:spadfun:`logicF`\: () -> % 
+  construct \ ``false``\  (contradiction): a logical constant.
+
+.. _l4c6174746963654d6565744f664a6f696e73-6c6f67696354:
+
+.. index::
+   pair: LatticeMeetOfJoins; logicT
+
+:spadfun:`logicT`\: () -> % 
+  construct true: a logical constant.
+
+.. _l4c6174746963654d6565744f664a6f696e73-6d656574:
+
+.. index::
+   pair: LatticeMeetOfJoins; meet
+
+:spadfun:`meet`\: \ :ref:`List <l4c697374>`\  % -> % 
+  \ ``meet of``\  set of elements
+
+.. _l4c6174746963654d6565744f664a6f696e73-6f7054797065:
+
+.. index::
+   pair: LatticeMeetOfJoins; opType
+
+:spadfun:`opType`\: % -> \ :ref:`Symbol <l53796d626f6c>`\  
+  if this is a compound op then opType returns the type of that op: "IMPLY"::Symbol =implies "AND"::Symbol=/\ "OR"::Symbol=\ ``\/``\  "NOT"::Symbol=~ "OTHER"::Symbol=not compound op
+
+.. _l4c6174746963654d6565744f664a6f696e73-7265647578:
+
+.. index::
+   pair: LatticeMeetOfJoins; redux
+
+:spadfun:`redux`\: % -> % 
+  attempt to simplify terms
+
+.. _l4c6174746963654d6565744f664a6f696e73-54:
+
+\ :ref:`T <l426f756e6465644d65657453656d696c617474696365-54>`\ \: % 
+  from \ :ref:`BoundedMeetSemilattice <l426f756e6465644d65657453656d696c617474696365>`\ 
+
+.. _l4c6174746963654d6565744f664a6f696e73-746f537472696e67:
+
+.. index::
+   pair: LatticeMeetOfJoins; toString
+
+:spadfun:`toString`\: % -> \ :ref:`String <l537472696e67>`\  
+  creates a string representation of this term and its sub-terms
+
+.. _l4c6174746963654d6565744f664a6f696e73-746f537472696e67556e77726170706564:
+
+.. index::
+   pair: LatticeMeetOfJoins; toStringUnwrapped
+
+:spadfun:`toStringUnwrapped`\: % -> \ :ref:`String <l537472696e67>`\  
+  similar to 'toString' but does not put outer compound terms in brackets
+
+.. _l4c6174746963654d6565744f664a6f696e73-76616c7565:
+
+.. index::
+   pair: LatticeMeetOfJoins; value
+
+:spadfun:`value`\: % -> \ :ref:`Symbol <l53796d626f6c>`\  
+  returns: "T"::Symbol = \ ``T``\  "F"::Symbol = \ ``_|_``\  "E"::Symbol = error "P"::Symbol = proposition "C"::Symbol = compound Constructs lambda term and bind any variables with the name provided
+
+.. _l4c6174746963654d6565744f664a6f696e73-7661726961626c65:
+
+.. index::
+   pair: LatticeMeetOfJoins; variable
+
+:spadfun:`variable`\: \ :ref:`String <l537472696e67>`\  -> % 
+  construct a variable
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`BoundedDistributiveLattice <l426f756e6465644469737472696275746976654c617474696365>`\  
+
+\ :ref:`BoundedJoinSemilattice <l426f756e6465644a6f696e53656d696c617474696365>`\  
+
+\ :ref:`BoundedLattice <l426f756e6465644c617474696365>`\  
+
+\ :ref:`BoundedMeetSemilattice <l426f756e6465644d65657453656d696c617474696365>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`DistributiveLattice <l4469737472696275746976654c617474696365>`\  
+
+\ :ref:`JoinSemilattice <l4a6f696e53656d696c617474696365>`\  
+
+\ :ref:`Lattice <l4c617474696365>`\  
+
+\ :ref:`MeetSemilattice <l4d65657453656d696c617474696365>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

@@ -1,0 +1,315 @@
+.. index:: InputForm
+
+.. _l496e707574466f726d:
+
+InputForm
+=========
+
+:viewcode:`mkfunc.spad line 1 <mkfunc.spad#L1>` :editcode:`[edit on github] <mkfunc.spad#L1>`
+
+
+Domain of parsed forms which can be passed to the interpreter. This is also the interface between algebra code and facilities in the interpreter.
+
+
+.. _l496e707574466f726d-30:
+
+.. index::
+   pair: InputForm; 0
+
+:spadfun:`0`\: % 
+  \ ``0``\  returns the input form corresponding to 0.
+
+.. _l496e707574466f726d-31:
+
+.. index::
+   pair: InputForm; 1
+
+:spadfun:`1`\: % 
+  \ ``1``\  returns the input form corresponding to 1.
+
+.. _l496e707574466f726d-23:
+
+\ :ref:`# <l5345787072657373696f6e43617465676f7279-23>`\ \: % -> \ :ref:`Integer <l496e7465676572>`\  
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-2a:
+
+.. index::
+   pair: InputForm; *
+
+:spadfun:`\*`\: (%, %) -> % 
+  \ ``a * b``\  returns the input form corresponding to \ ``a * b``\ .
+
+.. _l496e707574466f726d-2b:
+
+.. index::
+   pair: InputForm; +
+
+:spadfun:`+`\: (%, %) -> % 
+  \ ``a + b``\  returns the input form corresponding to \ ``a + b``\ .
+
+.. _l496e707574466f726d-2f:
+
+.. index::
+   pair: InputForm; /
+
+:spadfun:`/`\: (%, %) -> % 
+  \ ``a / b``\  returns the input form corresponding to \ ``a / b``\ .
+
+.. _l496e707574466f726d-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l496e707574466f726d-5e:
+
+.. index::
+   pair: InputForm; ^
+
+:spadfun:`^`\: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  \ ``a ^ b``\  returns the input form corresponding to \ ``a ^ b``\ .
+
+
+.. index::
+   pair: InputForm; ^
+
+:spadfun:`^`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``a ^ b``\  returns the input form corresponding to \ ``a ^ b``\ .
+
+.. _l496e707574466f726d-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l496e707574466f726d-61746f6d3f:
+
+\ :ref:`atom? <l5345787072657373696f6e43617465676f7279-61746f6d3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-62696e617279:
+
+.. index::
+   pair: InputForm; binary
+
+:spadfun:`binary`\: (%, \ :ref:`List <l4c697374>`\  %) -> % 
+  \ ``binary(op, [a1, ..., an])``\  returns the input form corresponding to \ ``a1 op a2 op ... op an``\ .
+
+.. _l496e707574466f726d-636172:
+
+\ :ref:`car <l5345787072657373696f6e43617465676f7279-636172>`\ \: % -> % 
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-636472:
+
+\ :ref:`cdr <l5345787072657373696f6e43617465676f7279-636472>`\ \: % -> % 
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l496e707574466f726d-636f6d70696c65:
+
+.. index::
+   pair: InputForm; compile
+
+:spadfun:`compile`\: (\ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  %) -> \ :ref:`Symbol <l53796d626f6c>`\  
+  \ ``compile(f, [t1, ..., tn])``\  forces the interpreter to compile the function \ ``f``\  with signature \ ``(t1, ..., tn) -> ?``\ . returns the symbol \ ``f``\  if successful. Error: if \ ``f``\  was not defined beforehand in the interpreter, or if the \ ``ti``\ \ ``'s``\  are not valid types, or if the compiler fails.
+
+.. _l496e707574466f726d-636f6e76657274:
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> % 
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  %
+
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`SExpression <l5345787072657373696f6e>`\  
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`SExpression <l5345787072657373696f6e>`\ 
+
+
+\ :ref:`convert <l5345787072657373696f6e43617465676f7279-636f6e76657274>`\ \: \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  -> % 
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+
+\ :ref:`convert <l5345787072657373696f6e43617465676f7279-636f6e76657274>`\ \: \ :ref:`Integer <l496e7465676572>`\  -> % 
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+
+\ :ref:`convert <l5345787072657373696f6e43617465676f7279-636f6e76657274>`\ \: \ :ref:`List <l4c697374>`\  % -> % 
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+
+.. index::
+   pair: InputForm; convert
+
+:spadfun:`convert`\: \ :ref:`SExpression <l5345787072657373696f6e>`\  -> % 
+  \ ``convert(s)``\  makes \ ``s``\  into an input form.
+
+
+\ :ref:`convert <l5345787072657373696f6e43617465676f7279-636f6e76657274>`\ \: \ :ref:`String <l537472696e67>`\  -> % 
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+
+\ :ref:`convert <l5345787072657373696f6e43617465676f7279-636f6e76657274>`\ \: \ :ref:`Symbol <l53796d626f6c>`\  -> % 
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-6465636c617265:
+
+.. index::
+   pair: InputForm; declare
+
+:spadfun:`declare`\: \ :ref:`List <l4c697374>`\  % -> \ :ref:`Symbol <l53796d626f6c>`\  
+  \ ``declare(t)``\  returns a name \ ``f``\  such that \ ``f``\  has been declared to the interpreter to be of type \ ``t``\ , but has not been assigned a value yet. Note: \ ``t``\  should be created as \ ``devaluate(T)\$Lisp``\  where \ ``T``\  is the actual type of \ ``f``\  (this hack is required for the case where \ ``T``\  is a mapping type).
+
+.. _l496e707574466f726d-6465737472756374:
+
+\ :ref:`destruct <l5345787072657373696f6e43617465676f7279-6465737472756374>`\ \: % -> \ :ref:`List <l4c697374>`\  % 
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-656c74:
+
+\ :ref:`elt <l5345787072657373696f6e43617465676f7279-656c74>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+
+\ :ref:`elt <l5345787072657373696f6e43617465676f7279-656c74>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-6571:
+
+\ :ref:`eq <l5345787072657373696f6e43617465676f7279-6571>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-666c617474656e:
+
+.. index::
+   pair: InputForm; flatten
+
+:spadfun:`flatten`\: % -> % 
+  \ ``flatten(s)``\  returns an input form corresponding to \ ``s``\  with all the nested operations flattened to triples using new local variables. If \ ``s``\  is a piece of code, this speeds up the compilation tremendously later on.
+
+.. _l496e707574466f726d-666c6f61743f:
+
+\ :ref:`float? <l5345787072657373696f6e43617465676f7279-666c6f61743f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-666c6f6174:
+
+\ :ref:`float <l5345787072657373696f6e43617465676f7279-666c6f6174>`\ \: % -> \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-66756e6374696f6e:
+
+.. index::
+   pair: InputForm; function
+
+:spadfun:`function`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ) -> % 
+  \ ``function(code, [x1, ..., xn], f)``\  returns the input form corresponding to \ ``f(x1, ..., xn) == code``\ .
+
+.. _l496e707574466f726d-68617368:
+
+\ :ref:`hash <l4861736861626c65-68617368>`\ \: % -> \ :ref:`SingleInteger <l53696e676c65496e7465676572>`\  
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l496e707574466f726d-6861736855706461746521:
+
+\ :ref:`hashUpdate! <l4861736861626c65-6861736855706461746521>`\ \: (\ :ref:`HashState <l486173685374617465>`\ , %) -> \ :ref:`HashState <l486173685374617465>`\  
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l496e707574466f726d-696e74656765723f:
+
+\ :ref:`integer? <l5345787072657373696f6e43617465676f7279-696e74656765723f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-696e7465676572:
+
+\ :ref:`integer <l5345787072657373696f6e43617465676f7279-696e7465676572>`\ \: % -> \ :ref:`Integer <l496e7465676572>`\  
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-696e74657270726574:
+
+.. index::
+   pair: InputForm; interpret
+
+:spadfun:`interpret`\: % -> \ :ref:`Any <l416e79>`\  
+  \ ``interpret(f)``\  passes \ ``f``\  to the interpreter.
+
+.. _l496e707574466f726d-6c616d626461:
+
+.. index::
+   pair: InputForm; lambda
+
+:spadfun:`lambda`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> % 
+  \ ``lambda(code, [x1, ..., xn])``\  returns the input form corresponding to \ ``(x1, ..., xn) +-> code``\  if \ ``n > 1``\ , or to \ ``x1 +-> code``\  if \ ``n = 1``\ .
+
+.. _l496e707574466f726d-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l496e707574466f726d-6c6973743f:
+
+\ :ref:`list? <l5345787072657373696f6e43617465676f7279-6c6973743f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-6e756c6c3f:
+
+\ :ref:`null? <l5345787072657373696f6e43617465676f7279-6e756c6c3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-706169723f:
+
+\ :ref:`pair? <l5345787072657373696f6e43617465676f7279-706169723f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-7061727365:
+
+.. index::
+   pair: InputForm; parse
+
+:spadfun:`parse`\: \ :ref:`String <l537472696e67>`\  -> % 
+  \ ``parse(s)``\  is the inverse of unparse. It parses a string to InputForm
+
+.. _l496e707574466f726d-737472696e673f:
+
+\ :ref:`string? <l5345787072657373696f6e43617465676f7279-737472696e673f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-737472696e67:
+
+\ :ref:`string <l5345787072657373696f6e43617465676f7279-737472696e67>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-73796d626f6c3f:
+
+\ :ref:`symbol? <l5345787072657373696f6e43617465676f7279-73796d626f6c3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-73796d626f6c:
+
+\ :ref:`symbol <l5345787072657373696f6e43617465676f7279-73796d626f6c>`\ \: % -> \ :ref:`Symbol <l53796d626f6c>`\  
+  from \ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ )
+
+.. _l496e707574466f726d-756e7061727365:
+
+.. index::
+   pair: InputForm; unparse
+
+:spadfun:`unparse`\: % -> \ :ref:`String <l537472696e67>`\  
+  \ ``unparse(f)``\  returns a string \ ``s``\  such that the parser would transform \ ``s``\  to \ ``f``\ . Error: if \ ``f``\  is not the parsed form of a string.
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  % 
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`SExpression <l5345787072657373696f6e>`\  
+
+\ :ref:`Hashable <l4861736861626c65>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+
+\ :ref:`SExpressionCategory <l5345787072657373696f6e43617465676f7279>`\ (\ :ref:`String <l537472696e67>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ ) 
+

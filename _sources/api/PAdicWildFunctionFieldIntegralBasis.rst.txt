@@ -1,0 +1,46 @@
+.. index:: PAdicWildFunctionFieldIntegralBasis
+
+.. _l504164696357696c6446756e6374696f6e4669656c64496e74656772616c4261736973:
+
+PAdicWildFunctionFieldIntegralBasis(K, R, UP, F)
+================================================
+
+:viewcode:`padiclib.spad line 261 <padiclib.spad#L261>` :editcode:`[edit on github] <padiclib.spad#L261>`
+
+* K: \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+* R: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  K
+
+* UP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  R
+
+* F: \ :ref:`MonogenicAlgebra <l4d6f6e6f67656e6963416c6765627261>`\ (R, UP)
+
+
+In this package \ ``K``\  is a finite field, \ ``R``\  is a ring of univariate polynomials over \ ``K``\ , and \ ``F``\  is a monogenic algebra over \ ``R``\ . We require that \ ``F``\  is monogenic, i.e. that \ ``F = K[x, y]/(f(x, y))``\ , because the integral basis algorithm used will factor the polynomial \ ``f(x, y)``\ . The package provides a function to compute the integral closure of \ ``R``\  in the quotient field of \ ``F``\  as well as a function to compute a "local integral basis" at a specific prime.
+
+
+.. _l504164696357696c6446756e6374696f6e4669656c64496e74656772616c4261736973-696e74656772616c4261736973:
+
+.. index::
+   pair: PAdicWildFunctionFieldIntegralBasis; integralBasis
+
+:spadfun:`integralBasis`\: () -> Record(basis: \ :ref:`Matrix <l4d6174726978>`\  R, basisDen: R, basisInv: \ :ref:`Matrix <l4d6174726978>`\  R) 
+  \ ``integralBasis()``\  returns a record \ ``[basis, basisDen, basisInv] ``\  containing information regarding the integral closure of \ ``R``\  in the quotient field of the framed algebra \ ``F``\ . \ ``F``\  is a framed algebra with \ ``R``\ -module basis \ ``w1, w2, ..., wn``\ . If 'basis' is the matrix \ ``(aij, i = 1..n, j = 1..n)``\ , then the \ ``i``\ th element of the integral basis is \ ``vi = (1/basisDen) * sum(aij * wj, j = 1..n)``\ , i.e. the \ ``i``\ th row of 'basis' contains the coordinates of the \ ``i``\ th basis vector. Similarly, the \ ``i``\ th row of the matrix 'basisInv' contains the coordinates of \ ``wi``\  with respect to the basis \ ``v1, ..., vn``\ : if 'basisInv' is the matrix \ ``(bij, i = 1..n, j = 1..n)``\ , then \ ``wi = sum(bij * vj, j = 1..n)``\ .
+
+.. _l504164696357696c6446756e6374696f6e4669656c64496e74656772616c4261736973-6c6f63616c496e74656772616c4261736973:
+
+.. index::
+   pair: PAdicWildFunctionFieldIntegralBasis; localIntegralBasis
+
+:spadfun:`localIntegralBasis`\: R -> Record(basis: \ :ref:`Matrix <l4d6174726978>`\  R, basisDen: R, basisInv: \ :ref:`Matrix <l4d6174726978>`\  R) 
+  \ ``integralBasis(p)``\  returns a record \ ``[basis, basisDen, basisInv] ``\  containing information regarding the local integral closure of \ ``R``\  at the prime \ ``p``\  in the quotient field of the framed algebra \ ``F``\ . \ ``F``\  is a framed algebra with \ ``R``\ -module basis \ ``w1, w2, ..., wn``\ . If 'basis' is the matrix \ ``(aij, i = 1..n, j = 1..n)``\ , then the \ ``i``\ th element of the local integral basis is \ ``vi = (1/basisDen) * sum(aij * wj, j = 1..n)``\ , i.e. the \ ``i``\ th row of 'basis' contains the coordinates of the \ ``i``\ th basis vector. Similarly, the \ ``i``\ th row of the matrix 'basisInv' contains the coordinates of \ ``wi``\  with respect to the basis \ ``v1, ..., vn``\ : if 'basisInv' is the matrix \ ``(bij, i = 1..n, j = 1..n)``\ , then \ ``wi = sum(bij * vj, j = 1..n)``\ .
+
+.. _l504164696357696c6446756e6374696f6e4669656c64496e74656772616c4261736973-726564756365644469736372696d696e616e74:
+
+.. index::
+   pair: PAdicWildFunctionFieldIntegralBasis; reducedDiscriminant
+
+:spadfun:`reducedDiscriminant`\: UP -> R 
+  \ ``reducedDiscriminant(up)``\  \undocumented
+
+

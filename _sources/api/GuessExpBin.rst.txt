@@ -1,0 +1,66 @@
+.. index:: GuessExpBin
+
+.. _l477565737345787042696e:
+
+GuessExpBin(F, S, EXPRR, retract, coerce)
+=========================================
+
+:viewcode:`mantepse.spad line 494 <mantepse.spad#L494>` :editcode:`[edit on github] <mantepse.spad#L494>`
+
+* F: Join(\ :ref:`Field <l4669656c64>`\ , \ :ref:`PolynomialFactorizationExplicit <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974>`\ )
+
+* S: \ :ref:`GcdDomain <l476364446f6d61696e>`\ 
+
+* EXPRR: Join(\ :ref:`FunctionSpace <l46756e6374696f6e5370616365>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`CombinatorialOpsCategory <l436f6d62696e61746f7269616c4f707343617465676f7279>`\ , \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) with
+
+    \*\: (%, %) -> %
+
+    /\: (%, %) -> %
+
+    ^\: (%, %) -> %
+
+    denominator\: % -> %
+
+    ground?\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\ 
+
+    numerator\: % -> %
+
+* retract: EXPRR -> F
+
+* coerce: F -> EXPRR
+
+
+This package implements guessing GuessExpRat and GuessBinRat functions of guessing package.
+
+
+.. _l477565737345787042696e-677565737342696e526174:
+
+.. index::
+   pair: GuessExpBin; guessBinRat
+
+:spadfun:`guessBinRat`\: (\ :ref:`List <l4c697374>`\  F, \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\ ) -> \ :ref:`List <l4c697374>`\  EXPRR 
+  \ ``guessBinRat(l, options)``\  tries to find a function of the form \ ``n+``\ ->binomial(a+b \ ``n``\ , \ ``n``\ ) \ ``r``\ (\ ``n``\ ), where \ ``r``\ (\ ``n``\ ) is a rational function, that fits \ ``l``\ .
+
+
+.. index::
+   pair: GuessExpBin; guessBinRat
+
+:spadfun:`guessBinRat`\: \ :ref:`Symbol <l53796d626f6c>`\  -> (\ :ref:`List <l4c697374>`\  F, \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\ ) -> \ :ref:`List <l4c697374>`\  EXPRR if F has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Symbol <l53796d626f6c>`\  and S has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  \ ``guessBinRat q``\  returns a guesser that tries to find a function of the form \ ``n+``\ ->qbinomial(a+b \ ``n``\ , \ ``n``\ ) \ ``r``\ (\ ``n``\ ), where \ ``r``\ (\ ``q^n``\ ) is a \ ``q``\ -rational function, that fits \ ``l``\ .
+
+.. _l477565737345787042696e-6775657373457870526174:
+
+.. index::
+   pair: GuessExpBin; guessExpRat
+
+:spadfun:`guessExpRat`\: (\ :ref:`List <l4c697374>`\  F, \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\ ) -> \ :ref:`List <l4c697374>`\  EXPRR 
+  \ ``guessExpRat(l, options)``\  tries to find a function of the form \ ``n+``\ ->(a+b \ ``n``\ )\ ``^n``\  \ ``r``\ (\ ``n``\ ), where \ ``r``\ (\ ``n``\ ) is a rational function, that fits \ ``l``\ .
+
+
+.. index::
+   pair: GuessExpBin; guessExpRat
+
+:spadfun:`guessExpRat`\: \ :ref:`Symbol <l53796d626f6c>`\  -> (\ :ref:`List <l4c697374>`\  F, \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\ ) -> \ :ref:`List <l4c697374>`\  EXPRR if F has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Symbol <l53796d626f6c>`\  and S has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  \ ``guessExpRat q``\  returns a guesser that tries to find a function of the form \ ``n+``\ ->(a+b \ ``q^n``\ )\ ``^n``\  \ ``r``\ (\ ``q^n``\ ), where \ ``r``\ (\ ``q^n``\ ) is a \ ``q``\ -rational function, that fits \ ``l``\ .
+
+

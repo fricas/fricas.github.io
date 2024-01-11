@@ -1,0 +1,75 @@
+.. index:: ChangeOfVariable
+
+.. _l4368616e67654f665661726961626c65:
+
+ChangeOfVariable(F, UP, UPUP)
+=============================
+
+:viewcode:`curve.spad line 438 <curve.spad#L438>` :editcode:`[edit on github] <curve.spad#L438>`
+
+* F: \ :ref:`UniqueFactorizationDomain <l556e69717565466163746f72697a6174696f6e446f6d61696e>`\ 
+
+* UP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  F
+
+* UPUP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+
+Tools to send a point to infinity on an algebraic curve.
+
+
+.. _l4368616e67654f665661726961626c65-6368766172:
+
+.. index::
+   pair: ChangeOfVariable; chvar
+
+:spadfun:`chvar`\: (\ :ref:`List <l4c697374>`\  UPUP, UPUP) -> Record(func: \ :ref:`List <l4c697374>`\  UPUP, poly: UPUP, c1: \ :ref:`Fraction <l4672616374696f6e>`\  UP, c2: \ :ref:`Fraction <l4672616374696f6e>`\  UP, deg: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) 
+  \ ``chvar(lf, p)``\  is like chvar(\ ``f``\ , \ ``p``\ ) but handles list of functions
+
+
+.. index::
+   pair: ChangeOfVariable; chvar
+
+:spadfun:`chvar`\: (UPUP, UPUP) -> Record(func: UPUP, poly: UPUP, c1: \ :ref:`Fraction <l4672616374696f6e>`\  UP, c2: \ :ref:`Fraction <l4672616374696f6e>`\  UP, deg: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) 
+  \ ``chvar(f(x, y), p(x, y))``\  returns \ ``[g(z, t), q(z, t), c1(x), c2(x), n]``\  such that under the change of variable \ ``z = c1(x)``\ , \ ``t = y * c2(x)``\ , one gets \ ``f(x, y) = c1'(x)g(c1(x), c2(x)y)``\  The algebraic relation between \ ``x``\  and \ ``y``\  is \ ``p(x, y) = 0``\ . The algebraic relation between \ ``z``\  and \ ``t``\  is \ ``q(z, t) = 0``\ .
+
+.. _l4368616e67654f665661726961626c65-6576616c:
+
+.. index::
+   pair: ChangeOfVariable; eval
+
+:spadfun:`eval`\: (UPUP, \ :ref:`Fraction <l4672616374696f6e>`\  UP, \ :ref:`Fraction <l4672616374696f6e>`\  UP) -> UPUP 
+  \ ``eval(p(x, y), f(x), g(x))``\  returns \ ``p(f(x), y * g(x))``\ .
+
+.. _l4368616e67654f665661726961626c65-676f6f64506f696e74:
+
+.. index::
+   pair: ChangeOfVariable; goodPoint
+
+:spadfun:`goodPoint`\: (\ :ref:`List <l4c697374>`\  UPUP, UPUP) -> F 
+  \ ``goodPoint([p1, ..., pn], q)``\  returns an integer a such that a is neither a pole of \ ``pi(x, y)``\  for some \ ``i``\  nor a branch point of \ ``q(x, y) = 0``\ .
+
+.. _l4368616e67654f665661726961626c65-6d6b496e74656772616c:
+
+.. index::
+   pair: ChangeOfVariable; mkIntegral
+
+:spadfun:`mkIntegral`\: UPUP -> Record(coef: \ :ref:`Fraction <l4672616374696f6e>`\  UP, poly: UPUP) 
+  \ ``mkIntegral(p(x, y))``\  returns \ ``[c(x), q(x, z)]``\  such that \ ``z = c * y``\  is integral. The algebraic relation between \ ``x``\  and \ ``y``\  is \ ``p(x, y) = 0``\ . The algebraic relation between \ ``x``\  and \ ``z``\  is \ ``q(x, z) = 0``\ .
+
+.. _l4368616e67654f665661726961626c65-726164506f6c79:
+
+.. index::
+   pair: ChangeOfVariable; radPoly
+
+:spadfun:`radPoly`\: UPUP -> Union(Record(radicand: \ :ref:`Fraction <l4672616374696f6e>`\  UP, deg: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ), failed) 
+  \ ``radPoly(p(x, y))``\  returns \ ``[c(x), n]``\  if \ ``p``\  is of the form \ ``y^n - c(x)``\ , "failed" otherwise.
+
+.. _l4368616e67654f665661726961626c65-726f6f74506f6c79:
+
+.. index::
+   pair: ChangeOfVariable; rootPoly
+
+:spadfun:`rootPoly`\: (\ :ref:`Fraction <l4672616374696f6e>`\  UP, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> Record(exponent: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , coef: \ :ref:`Fraction <l4672616374696f6e>`\  UP, radicand: UP) 
+  \ ``rootPoly(g, n)``\  returns \ ``[m, c, P]``\  such that \ ``c * g ^ (1/n) = P ^ (1/m)``\  thus if \ ``y^n = g``\ , then \ ``z^m = P``\  where \ ``z = c * y``\ .
+
+

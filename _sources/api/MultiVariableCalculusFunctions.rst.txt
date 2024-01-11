@@ -1,0 +1,78 @@
+.. index:: MultiVariableCalculusFunctions
+
+.. _l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73:
+
+MultiVariableCalculusFunctions(S, F, FLAF, FLAS)
+================================================
+
+:viewcode:`fortpak.spad line 245 <fortpak.spad#L245>` :editcode:`[edit on github] <fortpak.spad#L245>`
+
+* S: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+* F: \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  S
+
+* FLAF: \ :ref:`FiniteLinearAggregate <l46696e6974654c696e656172416767726567617465>`\  F
+
+* FLAS: \ :ref:`FiniteLinearAggregate <l46696e6974654c696e656172416767726567617465>`\  S
+
+
+\ :ref:`MultiVariableCalculusFunctions <l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73>`\  Package provides several functions for multivariable calculus. These include gradient, hessian and jacobian, divergence and laplacian. Various forms for banded and sparse storage of matrices are included.
+
+
+.. _l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-62616e6465644865737369616e:
+
+.. index::
+   pair: MultiVariableCalculusFunctions; bandedHessian
+
+:spadfun:`bandedHessian`\: (F, FLAS, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Matrix <l4d6174726978>`\  F 
+  \ ``bandedHessian(v, xlist, k)``\  computes the hessian, the matrix of second partial derivatives, of the scalar field \ ``v``\ , \ ``v``\  a function of the variables listed in \ ``xlist``\ , \ ``k``\  is the semi-bandwidth, the number of nonzero subdiagonals, 2*k+1 being actual bandwidth. Stores the nonzero band in lower triangle in a matrix, dimensions \ ``k+1``\  by \#xlist, whose rows are the vectors formed by diagonal, subdiagonal, etc. of the real, full-matrix, hessian. (The notation conforms to LAPACK/NAG-\ ``F07``\  conventions.)
+
+.. _l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-62616e6465644a61636f6269616e:
+
+.. index::
+   pair: MultiVariableCalculusFunctions; bandedJacobian
+
+:spadfun:`bandedJacobian`\: (FLAF, FLAS, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Matrix <l4d6174726978>`\  F 
+  \ ``bandedJacobian(vf, xlist, kl, ku)``\  computes the jacobian, the matrix of first partial derivatives, of the vector field \ ``vf``\ , \ ``vf``\  a vector function of the variables listed in \ ``xlist``\ , \ ``kl``\  is the number of nonzero subdiagonals, ku is the number of nonzero superdiagonals, \ ``kl+ku+1``\  being actual bandwidth. Stores the nonzero band in a matrix, dimensions \ ``kl+ku+1``\  by \#xlist. The upper triangle is in the top ku rows, the diagonal is in row \ ``ku+1``\ , the lower triangle in the last \ ``kl``\  rows. Entries in a column in the band store correspond to entries in same column of full store. (The notation conforms to LAPACK/NAG-\ ``F07``\  conventions.)
+
+.. _l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-646976657267656e6365:
+
+.. index::
+   pair: MultiVariableCalculusFunctions; divergence
+
+:spadfun:`divergence`\: (FLAF, FLAS) -> F 
+  \ ``divergence(vf, xlist)``\  computes the divergence of the vector field \ ``vf``\ , \ ``vf``\  a vector function of the variables listed in xlist.
+
+.. _l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-6772616469656e74:
+
+.. index::
+   pair: MultiVariableCalculusFunctions; gradient
+
+:spadfun:`gradient`\: (F, FLAS) -> \ :ref:`Vector <l566563746f72>`\  F 
+  \ ``gradient(v, xlist)``\  computes the gradient, the vector of first partial derivatives, of the scalar field \ ``v``\ , \ ``v``\  a function of the variables listed in xlist.
+
+.. _l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-6865737369616e:
+
+.. index::
+   pair: MultiVariableCalculusFunctions; hessian
+
+:spadfun:`hessian`\: (F, FLAS) -> \ :ref:`Matrix <l4d6174726978>`\  F 
+  \ ``hessian(v, xlist)``\  computes the hessian, the matrix of second partial derivatives, of the scalar field \ ``v``\ , \ ``v``\  a function of the variables listed in xlist.
+
+.. _l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-6a61636f6269616e:
+
+.. index::
+   pair: MultiVariableCalculusFunctions; jacobian
+
+:spadfun:`jacobian`\: (FLAF, FLAS) -> \ :ref:`Matrix <l4d6174726978>`\  F 
+  \ ``jacobian(vf, xlist)``\  computes the jacobian, the matrix of first partial derivatives, of the vector field \ ``vf``\ , \ ``vf``\  a vector function of the variables listed in xlist.
+
+.. _l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-6c61706c616369616e:
+
+.. index::
+   pair: MultiVariableCalculusFunctions; laplacian
+
+:spadfun:`laplacian`\: (F, FLAS) -> F 
+  \ ``laplacian(v, xlist)``\  computes the laplacian of the scalar field \ ``v``\ , \ ``v``\  a function of the variables listed in xlist.
+
+

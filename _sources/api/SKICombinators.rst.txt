@@ -1,0 +1,180 @@
+.. index:: SKICombinators
+
+.. _l534b49436f6d62696e61746f7273:
+
+SKICombinators UT
+=================
+
+:viewcode:`computation.spad line 1631 <computation.spad#L1631>` :editcode:`[edit on github] <computation.spad#L1631>`
+
+* UT: \ :ref:`VarCat <l566172436174>`\ 
+
+
+parse result includes term returned and new index
+
+
+.. _l534b49436f6d62696e61746f7273-3d:
+
+.. index::
+   pair: SKICombinators; =
+
+:spadfun:`=`\: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  return \ ``true``\  if equal (deep search) that is: all terms at all levels in tree must be equal to return \ ``true``\  all terms must be exactly equal, not just equivalent, that is SKK=I will return \ ``false``\  even though 'SKK' and 'I' have the same effect
+
+.. _l534b49436f6d62696e61746f7273-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l534b49436f6d62696e61746f7273-61746f6d3f:
+
+.. index::
+   pair: SKICombinators; atom?
+
+:spadfun:`atom?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  returns \ ``true``\  if this is an atom, that is a leaf node otherwise return \ ``false``\  if this is a compound term
+
+.. _l534b49436f6d62696e61746f7273-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l534b49436f6d62696e61746f7273-667265655661726961626c653f:
+
+.. index::
+   pair: SKICombinators; freeVariable?
+
+:spadfun:`freeVariable?`\: (%, UT) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  the variable indicated by \ ``'s'``\  is free if it does not appear in node \ ``'n'``\  or any of its subnodes.
+
+.. _l534b49436f6d62696e61746f7273-6765744368696c6472656e:
+
+.. index::
+   pair: SKICombinators; getChildren
+
+:spadfun:`getChildren`\: % -> \ :ref:`List <l4c697374>`\  % 
+  returns child nodes if this is a compound term otherwise returns []
+
+.. _l534b49436f6d62696e61746f7273-6765745661726961626c65:
+
+.. index::
+   pair: SKICombinators; getVariable
+
+:spadfun:`getVariable`\: % -> UT 
+  returns the variable, if this is not a variable then return \ ``I``\ 
+
+.. _l534b49436f6d62696e61746f7273-49:
+
+.. index::
+   pair: SKICombinators; I
+
+:spadfun:`I`\: () -> % 
+  Constructs a \ ``I``\  combinator
+
+.. _l534b49436f6d62696e61746f7273-6973493f:
+
+.. index::
+   pair: SKICombinators; isI?
+
+:spadfun:`isI?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  returns \ ``true``\  if this is an \ ``I``\  combinator node
+
+.. _l534b49436f6d62696e61746f7273-69734b3f:
+
+.. index::
+   pair: SKICombinators; isK?
+
+:spadfun:`isK?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  returns \ ``true``\  if this is a \ ``K``\  combinator node
+
+.. _l534b49436f6d62696e61746f7273-6973533f:
+
+.. index::
+   pair: SKICombinators; isS?
+
+:spadfun:`isS?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  returns \ ``true``\  if this is a \ ``S``\  combinator node
+
+.. _l534b49436f6d62696e61746f7273-4b:
+
+.. index::
+   pair: SKICombinators; K
+
+:spadfun:`K`\: () -> % 
+  Constructs a \ ``K``\  combinator
+
+.. _l534b49436f6d62696e61746f7273-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l534b49436f6d62696e61746f7273-7061727365536b69:
+
+.. index::
+   pair: SKICombinators; parseSki
+
+:spadfun:`parseSki`\: \ :ref:`String <l537472696e67>`\  -> % 
+  Constructs combinators from a string
+
+.. _l534b49436f6d62696e61746f7273-70617273655465726d:
+
+.. index::
+   pair: SKICombinators; parseTerm
+
+:spadfun:`parseTerm`\: (\ :ref:`String <l537472696e67>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> Record(rft: %, pout: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) 
+  parseTerm is used by parseSki. It would rarely be called externally but it is here to allow it to call parseSki that is to allow circular calls
+
+.. _l534b49436f6d62696e61746f7273-7265647578:
+
+.. index::
+   pair: SKICombinators; redux
+
+:spadfun:`redux`\: % -> % 
+  weak reduction - apply this combinator to rearrange its subnodes then apply recursively to its subnodes.
+
+.. _l534b49436f6d62696e61746f7273-53:
+
+.. index::
+   pair: SKICombinators; S
+
+:spadfun:`S`\: () -> % 
+  Constructs a \ ``S``\  combinator
+
+.. _l534b49436f6d62696e61746f7273-736b69:
+
+.. index::
+   pair: SKICombinators; ski
+
+:spadfun:`ski`\: (%, %) -> % 
+  Constructs a node combinator over combinators
+
+
+.. index::
+   pair: SKICombinators; ski
+
+:spadfun:`ski`\: UT -> % 
+  Constructs variable combinator
+
+.. _l534b49436f6d62696e61746f7273-746f537472696e67:
+
+.. index::
+   pair: SKICombinators; toString
+
+:spadfun:`toString`\: % -> \ :ref:`String <l537472696e67>`\  
+  output
+
+.. _l534b49436f6d62696e61746f7273-7661726961626c653f:
+
+.. index::
+   pair: SKICombinators; variable?
+
+:spadfun:`variable?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  returns \ ``true``\  if this is an variable
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

@@ -1,0 +1,209 @@
+.. index:: ILogic
+
+.. _l494c6f676963:
+
+ILogic
+======
+
+:viewcode:`logic.spad line 2454 <logic.spad#L2454>` :editcode:`[edit on github] <logic.spad#L2454>`
+
+
+parse result includes term returned and new index
+
+
+.. _l494c6f676963-2f5c:
+
+\ :ref:`/\\ <l4d65657453656d696c617474696365-2f5c>`\ \: (%, %) -> % 
+  from \ :ref:`MeetSemilattice <l4d65657453656d696c617474696365>`\ 
+
+.. _l494c6f676963-3d:
+
+.. index::
+   pair: ILogic; =
+
+:spadfun:`=`\: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  returns \ ``true``\  (boolean \ ``true``\ ) if intuitionisticLogic values are the same. Translates from Intuitionistic Logic to Boolean Logic
+
+.. _l494c6f676963-5c2f:
+
+\ :ref:`\\/ <l4a6f696e53656d696c617474696365-5c2f>`\ \: (%, %) -> % 
+  from \ :ref:`JoinSemilattice <l4a6f696e53656d696c617474696365>`\ 
+
+.. _l494c6f676963-5f7c5f:
+
+\ :ref:`_|_ <l426f756e6465644a6f696e53656d696c617474696365-5f7c5f>`\ \: % 
+  from \ :ref:`BoundedJoinSemilattice <l426f756e6465644a6f696e53656d696c617474696365>`\ 
+
+.. _l494c6f676963-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l494c6f676963-7e:
+
+.. index::
+   pair: ILogic; ~
+
+:spadfun:`~`\: % -> % 
+  \ ``~(x)``\  returns the logical complement of \ ``x``\ . TODO not sure if complement should be included here? intuitionistic logic can have complement but has different axioms to complement in Boolean algebra. Equivalent capability can be provided by implication.
+
+.. _l494c6f676963-61746f6d3f:
+
+.. index::
+   pair: ILogic; atom?
+
+:spadfun:`atom?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  returns \ ``true``\  if this is an atom, that is a leaf node otherwise return \ ``false``\  if this is a compound term
+
+.. _l494c6f676963-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l494c6f676963-646564756374696f6e73:
+
+.. index::
+   pair: ILogic; deductions
+
+:spadfun:`deductions`\: \ :ref:`List <l4c697374>`\  % -> \ :ref:`List <l4c697374>`\  % 
+  assumes \ ``ln``\  contains a list of factors which must be \ ``true``\  for the whole to be \ ``true``\  (such as the list produced by factor). From this deductions attempts to produce a list of other proposition that must also be \ ``true``\  by using modus ponens. This is used to determine the returned type when converting ILogic to types by using the Curry-Howard isomorphism.
+
+.. _l494c6f676963-666163746f72:
+
+.. index::
+   pair: ILogic; factor
+
+:spadfun:`factor`\: % -> \ :ref:`List <l4c697374>`\  % 
+  splits \ ``n``\  into a list of factors which must be \ ``true``\  for the whole to be \ ``true``\ . This assumes that the top level is already a set of factors separated by \ ``/\``\  otherwise the result will just be a list with one entry: \ ``'n'``\ . This is used when converting ILogic to types by using the Curry-Howard isomorphism.
+
+.. _l494c6f676963-6765744368696c6472656e:
+
+.. index::
+   pair: ILogic; getChildren
+
+:spadfun:`getChildren`\: % -> \ :ref:`List <l4c697374>`\  % 
+  returns child nodes if this is a compound term otherwise returns []
+
+.. _l494c6f676963-696d706c696573:
+
+.. index::
+   pair: ILogic; implies
+
+:spadfun:`implies`\: (%, %) -> % 
+  \ ``implies(a, b)``\  returns the logical implication of ILogic a and \ ``b``\ . a is premise, \ ``b``\  is conclusion, result is \ ``false``\  (contradiction) if premise=true and conclusion=false does not mean there is a causal connection
+
+.. _l494c6f676963-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l494c6f676963-6c6f67696346:
+
+.. index::
+   pair: ILogic; logicF
+
+:spadfun:`logicF`\: () -> % 
+  \ ``false``\  (contradiction) is a logical constant.
+
+.. _l494c6f676963-6c6f67696354:
+
+.. index::
+   pair: ILogic; logicT
+
+:spadfun:`logicT`\: () -> % 
+  \ ``true``\  is a logical constant.
+
+.. _l494c6f676963-6f7054797065:
+
+.. index::
+   pair: ILogic; opType
+
+:spadfun:`opType`\: % -> \ :ref:`Symbol <l53796d626f6c>`\  
+  if this is a compound op then opType returns the type of that op: "IMPLY"::Symbol =implies "AND"::Symbol=/\ "OR"::Symbol=\ ``\/``\  "NOT"::Symbol=~ "OTHER"::Symbol=not compound op
+
+.. _l494c6f676963-7061727365494c32:
+
+.. index::
+   pair: ILogic; parseIL2
+
+:spadfun:`parseIL2`\: (\ :ref:`String <l537472696e67>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> Record(rft: %, pout: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) 
+  Constructs intuitionistic logic terms from a string notation assumes format like this: <term2> : \ ``:=``\  var | "("<term>")" <term> : \ ``:=``\  var | <term>/\ ``\<``\ term> | <term>\ ``\/``\ <term> | <term>-><term> | "("<term>")"
+
+.. _l494c6f676963-7061727365494c:
+
+.. index::
+   pair: ILogic; parseIL
+
+:spadfun:`parseIL`\: \ :ref:`String <l537472696e67>`\  -> % 
+  Constructs intuitionistic logic terms from a string notation assumes format like this: <term> : \ ``:=``\  var | <term>/\ ``\<``\ term> | <term>\ ``\/``\ <term> | <term>-><term> | "("<term>")"
+
+.. _l494c6f676963-7061727365494c5465726d:
+
+.. index::
+   pair: ILogic; parseILTerm
+
+:spadfun:`parseILTerm`\: (\ :ref:`String <l537472696e67>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> Record(rft: %, pout: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) 
+  parseTerm is used by parseIL. It would rarely be called externally but it is here to allow it to call parseIL that is to allow circular calls
+
+.. _l494c6f676963-70726f706f736974696f6e:
+
+.. index::
+   pair: ILogic; proposition
+
+:spadfun:`proposition`\: \ :ref:`String <l537472696e67>`\  -> % 
+  Constructs a proposition
+
+.. _l494c6f676963-7265647578:
+
+.. index::
+   pair: ILogic; redux
+
+:spadfun:`redux`\: % -> % 
+  attempt to simplify theory apply recursively to subnodes normally this should not be necessary since logic values are interpreted when constructed
+
+.. _l494c6f676963-54:
+
+\ :ref:`T <l426f756e6465644d65657453656d696c617474696365-54>`\ \: % 
+  from \ :ref:`BoundedMeetSemilattice <l426f756e6465644d65657453656d696c617474696365>`\ 
+
+.. _l494c6f676963-746f537472696e67:
+
+.. index::
+   pair: ILogic; toString
+
+:spadfun:`toString`\: % -> \ :ref:`String <l537472696e67>`\  
+  creates a string representation of this term and its sub-terms
+
+.. _l494c6f676963-746f537472696e67556e77726170706564:
+
+.. index::
+   pair: ILogic; toStringUnwrapped
+
+:spadfun:`toStringUnwrapped`\: % -> \ :ref:`String <l537472696e67>`\  
+  similar to 'toString' but does not put outer compound terms in brackets
+
+.. _l494c6f676963-76616c7565:
+
+.. index::
+   pair: ILogic; value
+
+:spadfun:`value`\: % -> \ :ref:`Symbol <l53796d626f6c>`\  
+  returns: "T"::Symbol = \ ``T``\  "F"::Symbol = \ ``_|_``\  "E"::Symbol = error "P"::Symbol = proposition "C"::Symbol = compound Constructs lambda term and bind any variables with the name provided
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`BoundedJoinSemilattice <l426f756e6465644a6f696e53656d696c617474696365>`\  
+
+\ :ref:`BoundedLattice <l426f756e6465644c617474696365>`\  
+
+\ :ref:`BoundedMeetSemilattice <l426f756e6465644d65657453656d696c617474696365>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`JoinSemilattice <l4a6f696e53656d696c617474696365>`\  
+
+\ :ref:`MeetSemilattice <l4d65657453656d696c617474696365>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

@@ -1,0 +1,62 @@
+.. index:: PolynomialRoots
+
+.. _l506f6c796e6f6d69616c526f6f7473:
+
+PolynomialRoots(E, V, R, P, F)
+==============================
+
+:viewcode:`manip.spad line 39 <manip.spad#L39>` :editcode:`[edit on github] <manip.spad#L39>`
+
+* E: \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+* V: \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+* R: \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+
+* P: \ :ref:`PolynomialCategory <l506f6c796e6f6d69616c43617465676f7279>`\ (R, E, V)
+
+* F: \ :ref:`Field <l4669656c64>`\  with
+
+    coerce\: P -> %
+
+    denom\: % -> P
+
+    numer\: % -> P
+
+
+computes \ ``n``\ -th roots of quotients of multivariate polynomials
+
+
+.. _l506f6c796e6f6d69616c526f6f7473-66726f6f74:
+
+.. index::
+   pair: PolynomialRoots; froot
+
+:spadfun:`froot`\: (F, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> Record(exponent: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , coef: F, radicand: F) if R has \ :ref:`GcdDomain <l476364446f6d61696e>`\ 
+  \ ``froot(f, n)``\  returns \ ``[m, c, r]``\  such that \ ``f^(1/n) = c * r^(1/m)``\ .
+
+.. _l506f6c796e6f6d69616c526f6f7473-6e746872:
+
+.. index::
+   pair: PolynomialRoots; nthr
+
+:spadfun:`nthr`\: (P, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> Record(exponent: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , coef: P, radicand: \ :ref:`List <l4c697374>`\  P) 
+  \ ``nthr(p, n)``\  should be local but conditional
+
+.. _l506f6c796e6f6d69616c526f6f7473-71726f6f74:
+
+.. index::
+   pair: PolynomialRoots; qroot
+
+:spadfun:`qroot`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> Record(exponent: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , coef: F, radicand: F) 
+  \ ``qroot(f, n)``\  returns \ ``[m, c, r]``\  such that \ ``f^(1/n) = c * r^(1/m)``\ .
+
+.. _l506f6c796e6f6d69616c526f6f7473-72726f6f74:
+
+.. index::
+   pair: PolynomialRoots; rroot
+
+:spadfun:`rroot`\: (R, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> Record(exponent: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , coef: F, radicand: F) 
+  \ ``rroot(f, n)``\  returns \ ``[m, c, r]``\  such that \ ``f^(1/n) = c * r^(1/m)``\ .
+
+

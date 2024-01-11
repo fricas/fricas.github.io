@@ -1,0 +1,113 @@
+.. index:: GradedAlgebra
+
+.. _l477261646564416c6765627261:
+
+GradedAlgebra(R, E)
+===================
+
+:viewcode:`carten.spad line 48 <carten.spad#L48>` :editcode:`[edit on github] <carten.spad#L48>`
+
+* R: \ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\ 
+
+* E: \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+GradedAlgebra(\ ``R``\ , \ ``E``\ ) denotes ``E-graded \ ``R``\ -algebra\ ``''``\ . A graded algebra is a graded module together with a degree preserving \ ``R``\ -linear map, called the \ *product*\ .   The name ``product\ ``''``\  is written out in full so inner and outer products with the same mapping type can be distinguished by name.
+
+
+.. _l477261646564416c6765627261-30:
+
+\ :ref:`0 <l4772616465644d6f64756c65-30>`\ \: % 
+  from \ :ref:`GradedModule <l4772616465644d6f64756c65>`\ (R, E)
+
+.. _l477261646564416c6765627261-31:
+
+.. index::
+   pair: GradedAlgebra; 1
+
+:spadfun:`1`\: % 
+  1 is the identity for \ ``product``\ .
+
+.. _l477261646564416c6765627261-2a:
+
+\ :ref:`\* <l4772616465644d6f64756c65-2a>`\ \: (%, R) -> % 
+  from \ :ref:`GradedModule <l4772616465644d6f64756c65>`\ (R, E)
+
+
+\ :ref:`\* <l4772616465644d6f64756c65-2a>`\ \: (R, %) -> % 
+  from \ :ref:`GradedModule <l4772616465644d6f64756c65>`\ (R, E)
+
+.. _l477261646564416c6765627261-2b:
+
+\ :ref:`+ <l4772616465644d6f64756c65-2b>`\ \: (%, %) -> % 
+  from \ :ref:`GradedModule <l4772616465644d6f64756c65>`\ (R, E)
+
+.. _l477261646564416c6765627261-2d:
+
+\ :ref:`- <l4772616465644d6f64756c65-2d>`\ \: % -> % 
+  from \ :ref:`GradedModule <l4772616465644d6f64756c65>`\ (R, E)
+
+
+\ :ref:`- <l4772616465644d6f64756c65-2d>`\ \: (%, %) -> % 
+  from \ :ref:`GradedModule <l4772616465644d6f64756c65>`\ (R, E)
+
+.. _l477261646564416c6765627261-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l477261646564416c6765627261-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l477261646564416c6765627261-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+
+\ :ref:`coerce <l436f65726369626c6546726f6d-636f65726365>`\ \: R -> % 
+  from \ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  R
+
+.. _l477261646564416c6765627261-646567726565:
+
+\ :ref:`degree <l4772616465644d6f64756c65-646567726565>`\ \: % -> E 
+  from \ :ref:`GradedModule <l4772616465644d6f64756c65>`\ (R, E)
+
+.. _l477261646564416c6765627261-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l477261646564416c6765627261-70726f64756374:
+
+.. index::
+   pair: GradedAlgebra; product
+
+:spadfun:`product`\: (%, %) -> % 
+  \ ``product(a, b)``\  is the degree-preserving \ ``R``\ -linear product:   \ ``degree product(a, b) = degree a + degree b``\  \ ``product(a1+a2, b) = product(a1, b) + product(a2, b)``\  \ ``product(a, b1+b2) = product(a, b1) + product(a, b2)``\  \ ``product(r*a, b) = product(a, r*b) = r*product(a, b)``\  \ ``product(a, product(b, c)) = product(product(a, b), c)``\ 
+
+.. _l477261646564416c6765627261-72657472616374:
+
+\ :ref:`retract <l5265747261637461626c65546f-72657472616374>`\ \: % -> R 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  R
+
+.. _l477261646564416c6765627261-72657472616374496643616e:
+
+\ :ref:`retractIfCan <l5265747261637461626c65546f-72657472616374496643616e>`\ \: % -> Union(R, failed) 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  R
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  R 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`GradedModule <l4772616465644d6f64756c65>`\ (R, E) 
+
+\ :ref:`RetractableTo <l5265747261637461626c65546f>`\  R 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

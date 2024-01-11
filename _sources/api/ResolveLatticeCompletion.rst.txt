@@ -1,0 +1,31 @@
+.. index:: ResolveLatticeCompletion
+
+.. _l5265736f6c76654c617474696365436f6d706c6574696f6e:
+
+ResolveLatticeCompletion S
+==========================
+
+:viewcode:`any.spad line 218 <any.spad#L218>` :editcode:`[edit on github] <any.spad#L218>`
+
+* S: \ :ref:`Type <l54797065>`\ 
+
+
+This package provides coercions for the special types \ :ref:`Exit <l45786974>`\  and \ :ref:`Void <l566f6964>`\ .
+
+
+.. _l5265736f6c76654c617474696365436f6d706c6574696f6e-636f65726365:
+
+.. index::
+   pair: ResolveLatticeCompletion; coerce
+
+:spadfun:`coerce`\: \ :ref:`Exit <l45786974>`\  -> S 
+  \ ``coerce(e)``\  is never really evaluated. This coercion is used for formal type correctness when a function will not return directly to its caller.
+
+
+.. index::
+   pair: ResolveLatticeCompletion; coerce
+
+:spadfun:`coerce`\: S -> \ :ref:`Void <l566f6964>`\  
+  \ ``coerce(s)``\  throws all information about \ ``s``\  away. This coercion allows values of any type to appear in contexts where they will not be used. For example, it allows the resolution of different types in the \ ``then``\  and \ ``else``\  branches when an \ ``if``\  is in a context where the resulting value is not used.
+
+

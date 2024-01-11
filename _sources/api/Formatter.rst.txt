@@ -1,0 +1,128 @@
+.. index:: Formatter
+
+.. _l466f726d6174746572:
+
+Formatter F
+===========
+
+:viewcode:`fmt.spad line 1514 <fmt.spad#L1514>` :editcode:`[edit on github] <fmt.spad#L1514>`
+
+* F: \ :ref:`FormatterCategory <l466f726d617474657243617465676f7279>`\ 
+
+
+undocumented
+
+
+.. _l466f726d6174746572-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+
+\ :ref:`coerce <l436f65726369626c6546726f6d-636f65726365>`\ \: \ :ref:`OutputForm <l4f7574707574466f726d>`\  -> % 
+  from \ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l466f726d6174746572-636f6e76657274:
+
+\ :ref:`convert <l4f7574707574466f726d617474657243617465676f7279-636f6e76657274>`\ \: (\ :ref:`OutputForm <l4f7574707574466f726d>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  from \ :ref:`OutputFormatterCategory <l4f7574707574466f726d617474657243617465676f7279>`\ 
+
+.. _l466f726d6174746572-646973706c6179:
+
+\ :ref:`display <l4f7574707574466f726d617474657243617465676f7279-646973706c6179>`\ \: % -> \ :ref:`Void <l566f6964>`\  
+  from \ :ref:`OutputFormatterCategory <l4f7574707574466f726d617474657243617465676f7279>`\ 
+
+.. _l466f726d6174746572-6570696c6f677565:
+
+.. index::
+   pair: Formatter; epilogue
+
+:spadfun:`epilogue`\: % -> \ :ref:`OutputBox <l4f7574707574426f78>`\  
+  \ ``epilogue(t)``\  extracts the epilogue section of the form \ ``t``\ . This is a function \ ``f``\  such that \ ``f``\ (\ ``l``\ ) returns a box with label \ ``l``\ .
+
+.. _l466f726d6174746572-666f726d6174:
+
+.. index::
+   pair: Formatter; format
+
+:spadfun:`format`\: % -> \ :ref:`OutputBox <l4f7574707574426f78>`\  
+  \ ``format(t)``\  extracts the \ ``fmt``\  section of a 2D-form \ ``t``\ .
+
+
+.. index::
+   pair: Formatter; format
+
+:spadfun:`format`\: \ :ref:`OutputForm <l4f7574707574466f726d>`\  -> % 
+  \ ``format(o)``\  creates a formatted form of the \ ``OutputForm``\  \ ``o``\ .
+
+.. _l466f726d6174746572-666f726d617453746570:
+
+.. index::
+   pair: Formatter; formatStep
+
+:spadfun:`formatStep`\: (\ :ref:`OutputForm <l4f7574707574466f726d>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  \ ``format(o, n)``\  creates a formatted form of the \ ``OutputForm``\  \ ``o``\  with step number \ ``n``\ .
+
+.. _l466f726d6174746572-6e6577:
+
+.. index::
+   pair: Formatter; new
+
+:spadfun:`new`\: () -> % 
+  \ ``new()``\  create a new, empty object with defaultPrologue(\ ``""``\ ) and defaultEpilogue(\ ``""``\ ). Use \ :spadfun:`setPrologue!`\ , \ :spadfun:`setFormat!`\  and \ :spadfun:`setEpilogue!`\  to set the various components of this object.
+
+.. _l466f726d6174746572-6f70657261746f7248616e646c657273:
+
+.. index::
+   pair: Formatter; operatorHandlers
+
+:spadfun:`operatorHandlers`\: () -> \ :ref:`OperatorHandlers <l4f70657261746f7248616e646c657273>`\ ((\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ ) -> \ :ref:`OutputBox <l4f7574707574426f78>`\ ) 
+  \ ``operatorHandlers()``\  returns an internal data structure that is used for the selection of respective handlers.
+
+.. _l466f726d6174746572-70726f6c6f677565:
+
+.. index::
+   pair: Formatter; prologue
+
+:spadfun:`prologue`\: % -> \ :ref:`OutputBox <l4f7574707574426f78>`\  
+  \ ``prologue(t)``\  extracts the prologue section of the form \ ``t``\ .
+
+.. _l466f726d6174746572-73657444656661756c7421:
+
+.. index::
+   pair: Formatter; setDefault!
+
+:spadfun:`setDefault!`\: (\ :ref:`String <l537472696e67>`\  -> \ :ref:`OutputBox <l4f7574707574426f78>`\ , \ :ref:`String <l537472696e67>`\  -> \ :ref:`OutputBox <l4f7574707574426f78>`\ ) -> Record(prolog: \ :ref:`String <l537472696e67>`\  -> \ :ref:`OutputBox <l4f7574707574426f78>`\ , epilog: \ :ref:`String <l537472696e67>`\  -> \ :ref:`OutputBox <l4f7574707574426f78>`\ ) 
+  Set the prologue and epilogue that is used by default. Between the elements of the list the stepnumber will be inserted. The old values are returned.
+
+.. _l466f726d6174746572-7365744570696c6f67756521:
+
+.. index::
+   pair: Formatter; setEpilogue!
+
+:spadfun:`setEpilogue!`\: (%, \ :ref:`OutputBox <l4f7574707574426f78>`\ ) -> \ :ref:`OutputBox <l4f7574707574426f78>`\  
+  \ ``setEpilogue!(t, epi)``\  sets the epilogue section of the form \ ``t``\  to epi and returns the previous epilogue.
+
+.. _l466f726d6174746572-736574466f726d617421:
+
+.. index::
+   pair: Formatter; setFormat!
+
+:spadfun:`setFormat!`\: (%, \ :ref:`OutputBox <l4f7574707574426f78>`\ ) -> \ :ref:`OutputBox <l4f7574707574426f78>`\  
+  \ ``setFormat!(t, box)``\  sets the \ ``fmt``\  section of a form \ ``t``\  and returns the previous box.
+
+.. _l466f726d6174746572-73657450726f6c6f67756521:
+
+.. index::
+   pair: Formatter; setPrologue!
+
+:spadfun:`setPrologue!`\: (%, \ :ref:`OutputBox <l4f7574707574426f78>`\ ) -> \ :ref:`OutputBox <l4f7574707574426f78>`\  
+  \ ``setPrologue!(t, pro)``\  sets the prologue section of the form \ ``t``\  to pro and returns the previous prologue.
+
+
+\ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`OutputFormatterCategory <l4f7574707574466f726d617474657243617465676f7279>`\  
+

@@ -1,0 +1,619 @@
+.. index:: TriangularSetCategory
+
+.. _l547269616e67756c617253657443617465676f7279:
+
+TriangularSetCategory(R, E, V, P)
+=================================
+
+:viewcode:`triset.spad line 1 <triset.spad#L1>` :editcode:`[edit on github] <triset.spad#L1>`
+
+* R: \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+
+* E: \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+* V: \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+* P: \ :ref:`RecursivePolynomialCategory <l526563757273697665506f6c796e6f6d69616c43617465676f7279>`\ (R, E, V)
+
+
+The category of triangular sets of multivariate polynomials with coefficients in an integral domain. Let \ ``R``\  be an integral domain and \ ``V``\  a finite ordered set of variables, say \ ``X1 < X2 < ... < Xn``\ . A set \ ``S``\  of polynomials in \ ``R[X1, X2, ..., Xn]``\  is triangular if no elements of \ ``S``\  lies in \ ``R``\ , and if two distinct elements of \ ``S``\  have distinct main variables. Note that the empty set is a triangular set. A triangular set is not necessarily a (lexicographical) Groebner basis and the notion of reduction related to triangular sets is based on the recursive view of polynomials. We recall this notion here and refer to [1] for more details. A polynomial \ ``P``\  is reduced \ ``w``\ .\ ``r``\ .\ ``t``\  a non-constant polynomial \ ``Q``\  if the degree of \ ``P``\  in the main variable of \ ``Q``\  is less than the main degree of \ ``Q``\ . A polynomial \ ``P``\  is reduced \ ``w``\ .\ ``r``\ .\ ``t``\  a triangular set \ ``T``\  if it is reduced \ ``w``\ .\ ``r``\ .\ ``t``\ . every polynomial of \ ``T``\ .  
+
+
+.. _l547269616e67756c617253657443617465676f7279-23:
+
+\ :ref:`# <l416767726567617465-23>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l547269616e67756c617253657443617465676f7279-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l547269616e67756c617253657443617465676f7279-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l547269616e67756c617253657443617465676f7279-616c676562726169633f:
+
+.. index::
+   pair: TriangularSetCategory; algebraic?
+
+:spadfun:`algebraic?`\: (V, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``algebraic?(v, ts)``\  returns \ ``true``\  iff \ ``v``\  is the main variable of some polynomial in \ ``ts``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-616c676562726169635661726961626c6573:
+
+.. index::
+   pair: TriangularSetCategory; algebraicVariables
+
+:spadfun:`algebraicVariables`\: % -> \ :ref:`List <l4c697374>`\  V 
+  \ ``algebraicVariables(ts)``\  returns the decreasingly sorted list of the main variables of the polynomials of \ ``ts``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-616e793f:
+
+\ :ref:`any? <l486f6d6f67656e656f7573416767726567617465-616e793f>`\ \: (P -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-6175746f526564756365643f:
+
+.. index::
+   pair: TriangularSetCategory; autoReduced?
+
+:spadfun:`autoReduced?`\: (%, (P, \ :ref:`List <l4c697374>`\  P) -> \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``autoReduced?(ts, redOp?)``\  returns \ ``true``\  iff every element of \ ``ts``\  is reduced \ ``w``\ .\ ``r``\ .\ ``t``\  to every other in the sense of \ ``redOp?``\ 
+
+.. _l547269616e67756c617253657443617465676f7279-6261736963536574:
+
+.. index::
+   pair: TriangularSetCategory; basicSet
+
+:spadfun:`basicSet`\: (\ :ref:`List <l4c697374>`\  P, (P, P) -> \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> Union(Record(bas: %, top: \ :ref:`List <l4c697374>`\  P), failed) 
+  \ ``basicSet(ps, redOp?)``\  returns \ ``[bs, ts]``\  where \ ``concat(bs, ts)``\  is \ ``ps``\  and \ ``bs``\  is a basic set in Wu Wen Tsun sense of \ ``ps``\  \ ``w``\ .\ ``r``\ .\ ``t``\  the reduction-test \ ``redOp?``\ , if no non-zero constant polynomial lie in \ ``ps``\ , otherwise \ ``"failed"``\  is returned.
+
+
+.. index::
+   pair: TriangularSetCategory; basicSet
+
+:spadfun:`basicSet`\: (\ :ref:`List <l4c697374>`\  P, P -> \ :ref:`Boolean <l426f6f6c65616e>`\ , (P, P) -> \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> Union(Record(bas: %, top: \ :ref:`List <l4c697374>`\  P), failed) 
+  \ ``basicSet(ps, pred?, redOp?)``\  returns the same as \ ``basicSet(qs, redOp?)``\  where \ ``qs``\  consists of the polynomials of \ ``ps``\  satisfying property \ ``pred?``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`List <l4c697374>`\  P 
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`List <l4c697374>`\  P
+
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l547269616e67756c617253657443617465676f7279-636f486569676874:
+
+.. index::
+   pair: TriangularSetCategory; coHeight
+
+:spadfun:`coHeight`\: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if V has \ :ref:`Finite <l46696e697465>`\ 
+  \ ``coHeight(ts)``\  returns \ ``size()\$V``\  minus \ ``\#ts``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-636f6c6c656374:
+
+\ :ref:`collect <l506f6c796e6f6d69616c53657443617465676f7279-636f6c6c656374>`\ \: (%, V) -> % 
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-636f6c6c65637451756173694d6f6e6963:
+
+.. index::
+   pair: TriangularSetCategory; collectQuasiMonic
+
+:spadfun:`collectQuasiMonic`\: % -> % 
+  \ ``collectQuasiMonic(ts)``\  returns the subset of \ ``ts``\  consisting of the polynomials with initial in \ ``R``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-636f6c6c656374556e646572:
+
+\ :ref:`collectUnder <l506f6c796e6f6d69616c53657443617465676f7279-636f6c6c656374556e646572>`\ \: (%, V) -> % 
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-636f6c6c6563745570706572:
+
+\ :ref:`collectUpper <l506f6c796e6f6d69616c53657443617465676f7279-636f6c6c6563745570706572>`\ \: (%, V) -> % 
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-636f6e737472756374:
+
+\ :ref:`construct <l436f6c6c656374696f6e-636f6e737472756374>`\ \: \ :ref:`List <l4c697374>`\  P -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-636f6e76657274:
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`InputForm <l496e707574466f726d>`\  
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+.. _l547269616e67756c617253657443617465676f7279-636f7079:
+
+\ :ref:`copy <l416767726567617465-636f7079>`\ \: % -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l547269616e67756c617253657443617465676f7279-636f756e74:
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (P -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (P, %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-646567726565:
+
+.. index::
+   pair: TriangularSetCategory; degree
+
+:spadfun:`degree`\: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``degree(ts)``\  returns the product of main degrees of the members of \ ``ts``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-656d7074793f:
+
+\ :ref:`empty? <l416767726567617465-656d7074793f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l547269616e67756c617253657443617465676f7279-656d707479:
+
+\ :ref:`empty <l416767726567617465-656d707479>`\ \: () -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l547269616e67756c617253657443617465676f7279-65713f:
+
+\ :ref:`eq? <l416767726567617465-65713f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l547269616e67756c617253657443617465676f7279-6576616c:
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`Equation <l4571756174696f6e>`\  P) -> % if P has \ :ref:`Evalable <l4576616c61626c65>`\  P
+  from \ :ref:`Evalable <l4576616c61626c65>`\  P
+
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  P) -> % if P has \ :ref:`Evalable <l4576616c61626c65>`\  P
+  from \ :ref:`Evalable <l4576616c61626c65>`\  P
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  P, \ :ref:`List <l4c697374>`\  P) -> % if P has \ :ref:`Evalable <l4576616c61626c65>`\  P
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (P, P)
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, P, P) -> % if P has \ :ref:`Evalable <l4576616c61626c65>`\  P
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (P, P)
+
+.. _l547269616e67756c617253657443617465676f7279-65766572793f:
+
+\ :ref:`every? <l486f6d6f67656e656f7573416767726567617465-65766572793f>`\ \: (P -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-657874656e64:
+
+.. index::
+   pair: TriangularSetCategory; extend
+
+:spadfun:`extend`\: (%, P) -> % 
+  \ ``extend(ts, p)``\  returns a triangular set which encodes the simple extension by \ ``p``\  of the extension of the base field defined by \ ``ts``\ , according to the properties of triangular sets of the current category If the required properties do not hold an error is returned.
+
+.. _l547269616e67756c617253657443617465676f7279-657874656e64496643616e:
+
+.. index::
+   pair: TriangularSetCategory; extendIfCan
+
+:spadfun:`extendIfCan`\: (%, P) -> Union(%, failed) 
+  \ ``extendIfCan(ts, p)``\  returns a triangular set which encodes the simple extension by \ ``p``\  of the extension of the base field defined by \ ``ts``\ , according to the properties of triangular sets of the current domain. If the required properties do not hold then "failed" is returned. This operation encodes in some sense the properties of the triangular sets of the current category. Is is used to implement the \ ``construct``\  operation to guarantee that every triangular set build from a list of polynomials has the required properties.
+
+.. _l547269616e67756c617253657443617465676f7279-66696e64:
+
+\ :ref:`find <l436f6c6c656374696f6e-66696e64>`\ \: (P -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> Union(P, failed) 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-6669727374:
+
+.. index::
+   pair: TriangularSetCategory; first
+
+:spadfun:`first`\: % -> Union(P, failed) 
+  \ ``first(ts)``\  returns the polynomial of \ ``ts``\  with greatest main variable if \ ``ts``\  is not empty, otherwise returns \ ``"failed"``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-68656164526564756365:
+
+.. index::
+   pair: TriangularSetCategory; headReduce
+
+:spadfun:`headReduce`\: (P, %) -> P 
+  \ ``headReduce(p, ts)``\  returns a polynomial \ ``r``\  such that \ ``headReduce?(r, ts)``\  holds and there exists some product \ ``h``\  of \ ``initials(ts)``\  such that \ ``h*p - r``\  lies in the ideal generated by \ ``ts``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-68656164526564756365643f:
+
+.. index::
+   pair: TriangularSetCategory; headReduced?
+
+:spadfun:`headReduced?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``headReduced?(ts)``\  returns \ ``true``\  iff the head of every element of \ ``ts``\  is reduced \ ``w``\ .\ ``r``\ .\ ``t``\  to any other element of \ ``ts``\ .
+
+
+.. index::
+   pair: TriangularSetCategory; headReduced?
+
+:spadfun:`headReduced?`\: (P, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``headReduced?(p, ts)``\  returns \ ``true``\  iff the head of \ ``p``\  is reduced \ ``w``\ .\ ``r``\ .\ ``t``\ . \ ``ts``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-6865616452656d61696e646572:
+
+\ :ref:`headRemainder <l506f6c796e6f6d69616c53657443617465676f7279-6865616452656d61696e646572>`\ \: (P, %) -> Record(num: P, den: R) 
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-69657861637451756f:
+
+\ :ref:`iexactQuo <l506f6c796e6f6d69616c53657443617465676f7279-69657861637451756f>`\ \: (R, R) -> R 
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-696e665269747457753f:
+
+.. index::
+   pair: TriangularSetCategory; infRittWu?
+
+:spadfun:`infRittWu?`\: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``infRittWu?(ts1, ts2)``\  returns \ ``true``\  iff \ ``ts2``\  has higher rank than \ ``ts1``\  in Wu Wen Tsun sense.
+
+.. _l547269616e67756c617253657443617465676f7279-696e697469616c6c79526564756365:
+
+.. index::
+   pair: TriangularSetCategory; initiallyReduce
+
+:spadfun:`initiallyReduce`\: (P, %) -> P 
+  \ ``initiallyReduce(p, ts)``\  returns a polynomial \ ``r``\  such that \ ``initiallyReduced?(r, ts)``\  holds and there exists some product \ ``h``\  of \ ``initials(ts)``\  such that \ ``h*p - r``\  lies in the ideal generated by \ ``ts``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-696e697469616c6c79526564756365643f:
+
+.. index::
+   pair: TriangularSetCategory; initiallyReduced?
+
+:spadfun:`initiallyReduced?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``initiallyReduced?(ts)``\  returns \ ``true``\  iff for every element \ ``p``\  of \ ``ts``\  \ ``p``\  and all its iterated initials are reduced \ ``w``\ .\ ``r``\ .\ ``t``\ . to the other elements of \ ``ts``\  with the same main variable.
+
+
+.. index::
+   pair: TriangularSetCategory; initiallyReduced?
+
+:spadfun:`initiallyReduced?`\: (P, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``initiallyReduced?(p, ts)``\  returns \ ``true``\  iff \ ``p``\  and all its iterated initials are reduced \ ``w``\ .\ ``r``\ .\ ``t``\ . to the elements of \ ``ts``\  with the same main variable.
+
+.. _l547269616e67756c617253657443617465676f7279-696e697469616c73:
+
+.. index::
+   pair: TriangularSetCategory; initials
+
+:spadfun:`initials`\: % -> \ :ref:`List <l4c697374>`\  P 
+  \ ``initials(ts)``\  returns the list of the non-constant initials of the members of \ ``ts``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-6c617374:
+
+.. index::
+   pair: TriangularSetCategory; last
+
+:spadfun:`last`\: % -> Union(P, failed) 
+  \ ``last(ts)``\  returns the polynomial of \ ``ts``\  with smallest main variable if \ ``ts``\  is not empty, otherwise returns \ ``"failed"``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l547269616e67756c617253657443617465676f7279-6c6573733f:
+
+\ :ref:`less? <l416767726567617465-6c6573733f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l547269616e67756c617253657443617465676f7279-6d61696e5661726961626c653f:
+
+\ :ref:`mainVariable? <l506f6c796e6f6d69616c53657443617465676f7279-6d61696e5661726961626c653f>`\ \: (V, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-6d61696e5661726961626c6573:
+
+\ :ref:`mainVariables <l506f6c796e6f6d69616c53657443617465676f7279-6d61696e5661726961626c6573>`\ \: % -> \ :ref:`List <l4c697374>`\  V 
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-6d617021:
+
+\ :ref:`map! <l486f6d6f67656e656f7573416767726567617465-6d617021>`\ \: (P -> P, %) -> % 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-6d6170:
+
+\ :ref:`map <l486f6d6f67656e656f7573416767726567617465-6d6170>`\ \: (P -> P, %) -> % 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-6d6178:
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: % -> P if P has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: ((P, P) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> P 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-6d656d6265723f:
+
+\ :ref:`member? <l486f6d6f67656e656f7573416767726567617465-6d656d6265723f>`\ \: (P, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-6d656d62657273:
+
+\ :ref:`members <l486f6d6f67656e656f7573416767726567617465-6d656d62657273>`\ \: % -> \ :ref:`List <l4c697374>`\  P 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-6d696e:
+
+\ :ref:`min <l486f6d6f67656e656f7573416767726567617465-6d696e>`\ \: % -> P if P has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-6d6f72653f:
+
+\ :ref:`more? <l416767726567617465-6d6f72653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l547269616e67756c617253657443617465676f7279-6d766172:
+
+\ :ref:`mvar <l506f6c796e6f6d69616c53657443617465676f7279-6d766172>`\ \: % -> V 
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-6e6f726d616c697a65643f:
+
+.. index::
+   pair: TriangularSetCategory; normalized?
+
+:spadfun:`normalized?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``normalized?(ts)``\  returns \ ``true``\  iff for every \ ``p``\  in \ ``ts``\  we have \ ``normalized?(p, us)``\  where \ ``us``\  is \ ``collectUnder(ts, mvar(p))``\ .
+
+
+.. index::
+   pair: TriangularSetCategory; normalized?
+
+:spadfun:`normalized?`\: (P, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``normalized?(p, ts)``\  returns \ ``true``\  iff \ ``p``\  and all its iterated initials have degree zero \ ``w``\ .\ ``r``\ .\ ``t``\ . the main variables of the polynomials of \ ``ts``\ 
+
+.. _l547269616e67756c617253657443617465676f7279-7061727473:
+
+\ :ref:`parts <l486f6d6f67656e656f7573416767726567617465-7061727473>`\ \: % -> \ :ref:`List <l4c697374>`\  P 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-7175617369436f6d706f6e656e74:
+
+.. index::
+   pair: TriangularSetCategory; quasiComponent
+
+:spadfun:`quasiComponent`\: % -> Record(close: \ :ref:`List <l4c697374>`\  P, open: \ :ref:`List <l4c697374>`\  P) 
+  \ ``quasiComponent(ts)``\  returns \ ``[lp, lq]``\  where \ ``lp``\  is the list of the members of \ ``ts``\  and \ ``lq``\ is \ ``initials(ts)``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-726564756365:
+
+\ :ref:`reduce <l436f6c6c656374696f6e-726564756365>`\ \: ((P, P) -> P, %) -> P 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+
+\ :ref:`reduce <l436f6c6c656374696f6e-726564756365>`\ \: ((P, P) -> P, %, P) -> P 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+
+\ :ref:`reduce <l436f6c6c656374696f6e-726564756365>`\ \: ((P, P) -> P, %, P, P) -> P 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+
+.. index::
+   pair: TriangularSetCategory; reduce
+
+:spadfun:`reduce`\: (P, %, (P, P) -> P, (P, P) -> \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> P 
+  \ ``reduce(p, ts, redOp, redOp?)``\  returns a polynomial \ ``r``\  such that \ ``redOp?(r, p)``\  holds for every \ ``p``\  of \ ``ts``\  and there exists some product \ ``h``\  of the initials of the members of \ ``ts``\  such that \ ``h*p - r``\  lies in the ideal generated by \ ``ts``\ . The operation \ ``redOp``\  must satisfy the following conditions. For every \ ``p``\  and \ ``q``\  we have \ ``redOp?(redOp(p, q), q)``\  and there exists an integer \ ``e``\  and a polynomial \ ``f``\  such that \ ``init(q)^e*p = f*q + redOp(p, q)``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-726564756365427951756173694d6f6e6963:
+
+.. index::
+   pair: TriangularSetCategory; reduceByQuasiMonic
+
+:spadfun:`reduceByQuasiMonic`\: (P, %) -> P 
+  \ ``reduceByQuasiMonic(p, ts)``\  returns the same as \ ``remainder(p, collectQuasiMonic(ts)).polnum``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-726564756365643f:
+
+.. index::
+   pair: TriangularSetCategory; reduced?
+
+:spadfun:`reduced?`\: (P, %, (P, P) -> \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``reduced?(p, ts, redOp?)``\  returns \ ``true``\  iff \ ``p``\  is reduced \ ``w``\ .\ ``r``\ .\ ``t``\ . in the sense of the operation \ ``redOp?``\ , that is if for every \ ``t``\  in \ ``ts``\  \ ``redOp?(p, t)``\  holds.
+
+.. _l547269616e67756c617253657443617465676f7279-72656d61696e646572:
+
+\ :ref:`remainder <l506f6c796e6f6d69616c53657443617465676f7279-72656d61696e646572>`\ \: (P, %) -> Record(rnum: R, polnum: P, den: R) 
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-72656d6f7665:
+
+\ :ref:`remove <l436f6c6c656374696f6e-72656d6f7665>`\ \: (P -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+
+\ :ref:`remove <l436f6c6c656374696f6e-72656d6f7665>`\ \: (P, %) -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-72656d6f76654475706c696361746573:
+
+\ :ref:`removeDuplicates <l436f6c6c656374696f6e-72656d6f76654475706c696361746573>`\ \: % -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-72656d6f76655a65726f:
+
+.. index::
+   pair: TriangularSetCategory; removeZero
+
+:spadfun:`removeZero`\: (P, %) -> P 
+  \ ``removeZero(p, ts)``\  returns \ ``0``\  if \ ``p``\  reduces to \ ``0``\  by pseudo-division \ ``w``\ .\ ``r``\ .\ ``t``\  \ ``ts``\  otherwise returns a polynomial \ ``q``\  computed from \ ``p``\  by removing any coefficient in \ ``p``\  reducing to \ ``0``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-72657374:
+
+.. index::
+   pair: TriangularSetCategory; rest
+
+:spadfun:`rest`\: % -> Union(%, failed) 
+  \ ``rest(ts)``\  returns the polynomials of \ ``ts``\  with smaller main variable than \ ``mvar(ts)``\  if \ ``ts``\  is not empty, otherwise returns "failed"
+
+.. _l547269616e67756c617253657443617465676f7279-72657472616374:
+
+\ :ref:`retract <l5265747261637461626c6546726f6d-72657472616374>`\ \: \ :ref:`List <l4c697374>`\  P -> % 
+  from \ :ref:`RetractableFrom <l5265747261637461626c6546726f6d>`\  \ :ref:`List <l4c697374>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-72657472616374496643616e:
+
+\ :ref:`retractIfCan <l5265747261637461626c6546726f6d-72657472616374496643616e>`\ \: \ :ref:`List <l4c697374>`\  P -> Union(%, failed) 
+  from \ :ref:`RetractableFrom <l5265747261637461626c6546726f6d>`\  \ :ref:`List <l4c697374>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-72657772697465496465616c576974684865616452656d61696e646572:
+
+\ :ref:`rewriteIdealWithHeadRemainder <l506f6c796e6f6d69616c53657443617465676f7279-72657772697465496465616c576974684865616452656d61696e646572>`\ \: (\ :ref:`List <l4c697374>`\  P, %) -> \ :ref:`List <l4c697374>`\  P 
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-72657772697465496465616c5769746852656d61696e646572:
+
+\ :ref:`rewriteIdealWithRemainder <l506f6c796e6f6d69616c53657443617465676f7279-72657772697465496465616c5769746852656d61696e646572>`\ \: (\ :ref:`List <l4c697374>`\  P, %) -> \ :ref:`List <l4c697374>`\  P 
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-7265777269746553657457697468526564756374696f6e:
+
+.. index::
+   pair: TriangularSetCategory; rewriteSetWithReduction
+
+:spadfun:`rewriteSetWithReduction`\: (\ :ref:`List <l4c697374>`\  P, %, (P, P) -> P, (P, P) -> \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  P 
+  \ ``rewriteSetWithReduction(lp, ts, redOp, redOp?)``\  returns a list \ ``lq``\  of polynomials such that \ ``[reduce(p, ts, redOp, redOp?) for p in lp]``\  and \ ``lp``\  have the same zeros inside the regular zero set of \ ``ts``\ . Moreover, for every polynomial \ ``q``\  in \ ``lq``\  and every polynomial \ ``t``\  in \ ``ts``\  \ ``redOp?(q, t)``\  holds and there exists a polynomial \ ``p``\  in the ideal generated by \ ``lp``\  and a product \ ``h``\  of \ ``initials(ts)``\  such that \ ``h*p - r``\  lies in the ideal generated by \ ``ts``\ . The operation \ ``redOp``\  must satisfy the following conditions. For every \ ``p``\  and \ ``q``\  we have \ ``redOp?(redOp(p, q), q)``\  and there exists an integer \ ``e``\  and a polynomial \ ``f``\  such that \ ``init(q)^e*p = f*q + redOp(p, q)``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-726f756768426173653f:
+
+\ :ref:`roughBase? <l506f6c796e6f6d69616c53657443617465676f7279-726f756768426173653f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-726f756768457175616c496465616c733f:
+
+\ :ref:`roughEqualIdeals? <l506f6c796e6f6d69616c53657443617465676f7279-726f756768457175616c496465616c733f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-726f756768537562496465616c3f:
+
+\ :ref:`roughSubIdeal? <l506f6c796e6f6d69616c53657443617465676f7279-726f756768537562496465616c3f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-726f756768556e6974496465616c3f:
+
+\ :ref:`roughUnitIdeal? <l506f6c796e6f6d69616c53657443617465676f7279-726f756768556e6974496465616c3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-73616d706c65:
+
+\ :ref:`sample <l416767726567617465-73616d706c65>`\ \: % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l547269616e67756c617253657443617465676f7279-73656c656374:
+
+.. index::
+   pair: TriangularSetCategory; select
+
+:spadfun:`select`\: (%, V) -> Union(P, failed) 
+  \ ``select(ts, v)``\  returns the polynomial of \ ``ts``\  with \ ``v``\  as main variable, if any.
+
+
+\ :ref:`select <l436f6c6c656374696f6e-73656c656374>`\ \: (P -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  P
+
+.. _l547269616e67756c617253657443617465676f7279-73697a653f:
+
+\ :ref:`size? <l416767726567617465-73697a653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l547269616e67756c617253657443617465676f7279-736f7274:
+
+\ :ref:`sort <l506f6c796e6f6d69616c53657443617465676f7279-736f7274>`\ \: (%, V) -> Record(under: %, floor: %, upper: %) 
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-7374726f6e676c79526564756365:
+
+.. index::
+   pair: TriangularSetCategory; stronglyReduce
+
+:spadfun:`stronglyReduce`\: (P, %) -> P 
+  \ ``stronglyReduce(p, ts)``\  returns a polynomial \ ``r``\  such that \ ``stronglyReduced?(r, ts)``\  holds and there exists some product \ ``h``\  of \ ``initials(ts)``\  such that \ ``h*p - r``\  lies in the ideal generated by \ ``ts``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-7374726f6e676c79526564756365643f:
+
+.. index::
+   pair: TriangularSetCategory; stronglyReduced?
+
+:spadfun:`stronglyReduced?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``stronglyReduced?(ts)``\  returns \ ``true``\  iff every element of \ ``ts``\  is reduced \ ``w``\ .\ ``r``\ .\ ``t``\  to any other element of \ ``ts``\ .
+
+
+.. index::
+   pair: TriangularSetCategory; stronglyReduced?
+
+:spadfun:`stronglyReduced?`\: (P, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``stronglyReduced?(p, ts)``\  returns \ ``true``\  iff \ ``p``\  is reduced \ ``w``\ .\ ``r``\ .\ ``t``\ . \ ``ts``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-747269616e67756c61723f:
+
+\ :ref:`triangular? <l506f6c796e6f6d69616c53657443617465676f7279-747269616e67756c61723f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-7472697669616c496465616c3f:
+
+\ :ref:`trivialIdeal? <l506f6c796e6f6d69616c53657443617465676f7279-7472697669616c496465616c3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-7661726961626c6573:
+
+\ :ref:`variables <l506f6c796e6f6d69616c53657443617465676f7279-7661726961626c6573>`\ \: % -> \ :ref:`List <l4c697374>`\  V 
+  from \ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P)
+
+.. _l547269616e67756c617253657443617465676f7279-7a65726f53657453706c6974:
+
+.. index::
+   pair: TriangularSetCategory; zeroSetSplit
+
+:spadfun:`zeroSetSplit`\: \ :ref:`List <l4c697374>`\  P -> \ :ref:`List <l4c697374>`\  % 
+  \ ``zeroSetSplit(lp)``\  returns a list \ ``lts``\  of triangular sets such that the zero set of \ ``lp``\  is the union of the closures of the regular zero sets of the members of \ ``lts``\ .
+
+.. _l547269616e67756c617253657443617465676f7279-7a65726f53657453706c6974496e746f547269616e67756c617253797374656d73:
+
+.. index::
+   pair: TriangularSetCategory; zeroSetSplitIntoTriangularSystems
+
+:spadfun:`zeroSetSplitIntoTriangularSystems`\: \ :ref:`List <l4c697374>`\  P -> \ :ref:`List <l4c697374>`\  Record(close: %, open: \ :ref:`List <l4c697374>`\  P) 
+  \ ``zeroSetSplitIntoTriangularSystems(lp)``\  returns a list of triangular systems \ ``[[ts1, qs1], ..., [tsn, qsn]]``\  such that the zero set of \ ``lp``\  is the union of the closures of the \ ``W_i``\  where \ ``W_i``\  consists of the zeros of \ ``ts``\  which do not cancel any polynomial in \ ``qsi``\ .
+
+
+\ :ref:`Aggregate <l416767726567617465>`\  
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`List <l4c697374>`\  P 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`Collection <l436f6c6c656374696f6e>`\  P 
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\  
+
+\ :ref:`Evalable <l4576616c61626c65>`\  P if P has \ :ref:`Evalable <l4576616c61626c65>`\  P
+
+\ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  
+
+\ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  P 
+
+\ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (P, P) if P has \ :ref:`Evalable <l4576616c61626c65>`\  P
+
+\ :ref:`PolynomialSetCategory <l506f6c796e6f6d69616c53657443617465676f7279>`\ (R, E, V, P) 
+
+\ :ref:`RetractableFrom <l5265747261637461626c6546726f6d>`\  \ :ref:`List <l4c697374>`\  P 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+
+\ :ref:`shallowlyMutable <l7368616c6c6f776c794d757461626c65>`\  
+

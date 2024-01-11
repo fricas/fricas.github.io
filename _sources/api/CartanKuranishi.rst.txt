@@ -1,0 +1,122 @@
+.. index:: CartanKuranishi
+
+.. _l43617274616e4b7572616e69736869:
+
+CartanKuranishi(JB, D)
+======================
+
+:viewcode:`jet.spad line 4569 <jet.spad#L4569>` :editcode:`[edit on github] <jet.spad#L4569>`
+
+* JB: \ :ref:`JetBundleCategory <l4a657442756e646c6543617465676f7279>`\ 
+
+* D: \ :ref:`JetBundleFunctionCategory <l4a657442756e646c6546756e6374696f6e43617465676f7279>`\  JB
+
+
+\ :ref:`CartanKuranishi <l43617274616e4b7572616e69736869>`\  is a package for the completion of a given differential equation to an involutive equation. Procedures for Cartan characters and Hilbert polynomial are also provided. Based on the Cartan-Kuranishi theorem as it is used in formal theory.
+
+
+.. _l43617274616e4b7572616e69736869-616c706861:
+
+.. index::
+   pair: CartanKuranishi; alpha
+
+:spadfun:`alpha`\: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``alpha(q, beta)``\  computes the Cartan characters for a differential equation of order \ ``q``\  and with characters \ ``beta``\ .
+
+.. _l43617274616e4b7572616e69736869-616c70686148696c62657274:
+
+.. index::
+   pair: CartanKuranishi; alphaHilbert
+
+:spadfun:`alphaHilbert`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``alphaHilbert(hp)``\  computes the Cartan characters for the Hilbert polynomial \ ``hp``\ .
+
+.. _l43617274616e4b7572616e69736869-61726246756e6374696f6e73:
+
+.. index::
+   pair: CartanKuranishi; arbFunctions
+
+:spadfun:`arbFunctions`\: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``arbFunctions(q, j, cc)``\  uses the Cartan characters \ ``cc``\  to compute the number of arbitrary functions of differentiation order \ ``j``\  in the general solution of a differential equation of order \ ``q``\ .
+
+.. _l43617274616e4b7572616e69736869-626f756e64:
+
+.. index::
+   pair: CartanKuranishi; bound
+
+:spadfun:`bound`\: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``bound(n, m, q)``\  computes an upper bound for the number of prolongations needed to make the symbol of an equation of order \ ``q``\  with \ ``n``\  independent and \ ``m``\  dependent variables involutive.
+
+.. _l43617274616e4b7572616e69736869-636f6d706c65746532:
+
+.. index::
+   pair: CartanKuranishi; complete2
+
+:spadfun:`complete2`\: \ :ref:`JetDifferentialEquation <l4a6574446966666572656e7469616c4571756174696f6e>`\ (JB, D) -> Record(IDe: \ :ref:`JetDifferentialEquation <l4a6574446966666572656e7469616c4571756174696f6e>`\ (JB, D), ISys: \ :ref:`List <l4c697374>`\  D, Order: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , NumProj: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , Dim: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , CarChar: \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) 
+  \ ``complete2(de)``\  is like \ :spadfun:`complete`\  but returns the involutive equation \ ``IDe``\ , a basis \ ``ISys``\  for the involutive system without prolongations, its order \ ``Order``\ , the number \ ``NumProj``\  of needed projections and the Cartan characters \ ``CarChar``\ .
+
+.. _l43617274616e4b7572616e69736869-636f6d706c657465:
+
+.. index::
+   pair: CartanKuranishi; complete
+
+:spadfun:`complete`\: \ :ref:`JetDifferentialEquation <l4a6574446966666572656e7469616c4571756174696f6e>`\ (JB, D) -> \ :ref:`Void <l566f6964>`\  
+  \ ``complete(de)``\  completes \ ``de``\  to an involutive equation. No result is returned; the display depends of the setting of the output flags with \ :spadfun:`setOutput`\ .
+
+.. _l43617274616e4b7572616e69736869-6761756765:
+
+.. index::
+   pair: CartanKuranishi; gauge
+
+:spadfun:`gauge`\: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``gauge(q, j, gamma)``\  computes the gauge corrections to the number of arbitrary functions of differentiation order \ ``j``\  for a system of order \ ``q``\  with \ ``gamma``\  gauge functions.
+
+.. _l43617274616e4b7572616e69736869-676175676548696c62657274:
+
+.. index::
+   pair: CartanKuranishi; gaugeHilbert
+
+:spadfun:`gaugeHilbert`\: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``gaugeHilbert(q, gamma)``\  computes the gauge correction to the Hilbert polynomial for a system of order \ ``q``\  with \ ``gamma``\  gauge functions.
+
+.. _l43617274616e4b7572616e69736869-68696c62657274:
+
+.. index::
+   pair: CartanKuranishi; hilbert
+
+:spadfun:`hilbert`\: \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``hilbert(cc)``\  computes the Hilbert polynomial to the Cartan characters \ ``cc``\ .
+
+.. _l43617274616e4b7572616e69736869-7365744f75744d6f6465:
+
+.. index::
+   pair: CartanKuranishi; setOutMode
+
+:spadfun:`setOutMode`\: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``setOutput(i)``\  controls amount of generated output during the completion algorithm: \ ``i = 0``\  --> no display, \ ``i = 1``\  --> result is displayed, \ ``i = 2``\  --> Cartan characters are displayed, \ ``i = 3``\  --> integrability conditions are traced, \ ``i = 4``\  --> intermediate dimensions are traced, \ ``i = 5``\  --> all intermediate systems are traced, \ ``i = 6``\  --> all intermediate systems and symbols are traced, if \ ``i > 10``\  then TeX output is produced. Default is 0. The old value is returned.
+
+.. _l43617274616e4b7572616e69736869-7365745265644d6f6465:
+
+.. index::
+   pair: CartanKuranishi; setRedMode
+
+:spadfun:`setRedMode`\: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``setRedMode(i)``\  sets the flag for the reduction mode. Returns old value. Current values are: \ ``i = 0``\  --> No reduction of integrability conditions etc. \ ``i = 1``\  --> Autoreduction of complete system and reduction of all integrability conditions. Default is 0.
+
+.. _l43617274616e4b7572616e69736869-73657453696d704d6f6465:
+
+.. index::
+   pair: CartanKuranishi; setSimpMode
+
+:spadfun:`setSimpMode`\: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``setSimpMode(i)``\  sets the simplification mode used in \ ``JetDifferentialEquation``\ . Returns old value.
+
+.. _l43617274616e4b7572616e69736869-737469726c696e67:
+
+.. index::
+   pair: CartanKuranishi; stirling
+
+:spadfun:`stirling`\: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``stirling(i, k, q)``\  computes the corresponding modified Stirling number.
+
+

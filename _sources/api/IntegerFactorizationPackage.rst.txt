@@ -1,0 +1,48 @@
+.. index:: IntegerFactorizationPackage
+
+.. _l496e7465676572466163746f72697a6174696f6e5061636b616765:
+
+IntegerFactorizationPackage I
+=============================
+
+:viewcode:`intfact.spad line 310 <intfact.spad#L310>` :editcode:`[edit on github] <intfact.spad#L310>`
+
+* I: \ :ref:`IntegerNumberSystem <l496e74656765724e756d62657253797374656d>`\ 
+
+
+This Package contains basic methods for integer factorization. The factor operation employs trial division up to 10, 000. It then tests to see if \ ``n``\  is a perfect power before using Pollards rho method. Because Pollards method may fail, the result of factor may contain composite factors. We should also employ Lenstra\ ``'s``\  eliptic curve method.
+
+
+.. _l496e7465676572466163746f72697a6174696f6e5061636b616765-42617369634d6574686f64:
+
+.. index::
+   pair: IntegerFactorizationPackage; BasicMethod
+
+:spadfun:`BasicMethod`\: I -> \ :ref:`Factored <l466163746f726564>`\  I 
+  \ ``BasicMethod(n)``\  returns the factorization of integer \ ``n``\  by trial division
+
+.. _l496e7465676572466163746f72697a6174696f6e5061636b616765-666163746f72:
+
+.. index::
+   pair: IntegerFactorizationPackage; factor
+
+:spadfun:`factor`\: I -> \ :ref:`Factored <l466163746f726564>`\  I 
+  \ ``factor(n)``\  returns the full factorization of integer \ ``n``\ 
+
+.. _l496e7465676572466163746f72697a6174696f6e5061636b616765-506f6c6c617264536d616c6c466163746f72:
+
+.. index::
+   pair: IntegerFactorizationPackage; PollardSmallFactor
+
+:spadfun:`PollardSmallFactor`\: I -> Union(I, failed) 
+  \ ``PollardSmallFactor(n)``\  returns a factor of \ ``n``\  or "failed" if no one is found
+
+.. _l496e7465676572466163746f72697a6174696f6e5061636b616765-73717561726546726565:
+
+.. index::
+   pair: IntegerFactorizationPackage; squareFree
+
+:spadfun:`squareFree`\: I -> \ :ref:`Factored <l466163746f726564>`\  I 
+  \ ``squareFree(n)``\  returns the square free factorization of integer \ ``n``\ 
+
+

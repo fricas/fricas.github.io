@@ -1,0 +1,58 @@
+.. index:: XPolynomialFactor
+
+.. _l58506f6c796e6f6d69616c466163746f72:
+
+XPolynomialFactor(vl, F)
+========================
+
+:viewcode:`xpfact.spad line 1 <xpfact.spad#L1>` :editcode:`[edit on github] <xpfact.spad#L1>`
+
+* vl: \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+* F: \ :ref:`Field <l4669656c64>`\ 
+
+
+undocumented
+
+
+.. _l58506f6c796e6f6d69616c466163746f72-666163746f72:
+
+.. index::
+   pair: XPolynomialFactor; factor
+
+:spadfun:`factor`\: \ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F) -> \ :ref:`List <l4c697374>`\  \ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F) if F has \ :ref:`PolynomialFactorizationExplicit <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974>`\ 
+  \ ``factor(p)``\  returns a factorization of \ ``p``\  into irreducible factors. Note: in general thare are finitely many nonequivalent factorizations into irreducible factors, this routine returns only one.
+
+.. _l58506f6c796e6f6d69616c466163746f72-686f6d6f5f66616374:
+
+.. index::
+   pair: XPolynomialFactor; homo_fact
+
+:spadfun:`homo_fact`\: \ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F) -> \ :ref:`List <l4c697374>`\  \ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F) 
+  \ ``homo_fact(p)``\  factors homogeneous polynomial \ ``p``\  into irreducible factors.
+
+.. _l58506f6c796e6f6d69616c466163746f72-6c646976696465:
+
+.. index::
+   pair: XPolynomialFactor; ldivide
+
+:spadfun:`ldivide`\: (\ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F), \ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F)) -> Record(quotient: \ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F), remainder: \ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F)) 
+  \ ``ldivide(a, b)``\  returns [\ ``c``\ , \ ``r``\ ] such that a = \ ``b*c``\  + \ ``r``\ , \ ``r``\  is is of minimal possible degree and homogeneous part of of \ ``r``\  of maximal degree contains no terms divisible from left by leading term of \ ``b``\ .
+
+.. _l58506f6c796e6f6d69616c466163746f72-6c6566745f6578745f474344:
+
+.. index::
+   pair: XPolynomialFactor; left_ext_GCD
+
+:spadfun:`left_ext_GCD`\: (\ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F), \ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F)) -> Union(Record(g: \ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F), c1: \ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F), c2: \ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F), cu: \ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F), cv: \ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F)), failed) 
+  \ ``left_ext_GCD(a, b)``\  returns [\ ``g``\ , \ ``u0``\ , \ ``v0``\ , \ ``u``\ , \ ``v``\ ] where \ ``g``\  is left \ ``GCD``\  of a and \ ``b``\ , \ ``g``\  = \ ``a*u0``\  + \ ``b*v0``\  and au = - \ ``bv``\  is least common right multiple of a and \ ``b``\  when a and \ ``b``\  have least common right multiple. Otherwise left_ext_GCD(a, \ ``b``\ ) returns "failed".
+
+.. _l58506f6c796e6f6d69616c466163746f72-746f705f73706c6974:
+
+.. index::
+   pair: XPolynomialFactor; top_split
+
+:spadfun:`top_split`\: \ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F) -> \ :ref:`List <l4c697374>`\  \ :ref:`XDistributedPolynomial <l584469737472696275746564506f6c796e6f6d69616c>`\ (vl, F) 
+  \ ``top_split(p)``\  returns [\ ``p1``\ , \ ``p2``\ ] where \ ``p1``\  is homogeneous part of \ ``p``\  of maximal degree and \ ``p2``\  is sum of lower order terms of \ ``p``\ .
+
+

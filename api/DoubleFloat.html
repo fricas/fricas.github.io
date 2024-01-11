@@ -1,22 +1,18 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>DoubleFloat &#8212; FriCAS</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=0034329e"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -48,7 +44,7 @@
           <div class="body" role="main">
             
   <section id="doublefloat">
-<span id="l446f75626c65466c6f6174"></span><span id="index-0"></span><h1>DoubleFloat<a class="headerlink" href="#doublefloat" title="Permalink to this heading">¶</a></h1>
+<span id="l446f75626c65466c6f6174"></span><span id="index-0"></span><h1>DoubleFloat<a class="headerlink" href="#doublefloat" title="Link to this heading">¶</a></h1>
 <p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/sf.spad#L303">sf.spad line 303</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/sf.spad#L303">[edit on github]</a></p>
 <p><a class="reference internal" href="#l446f75626c65466c6f6174"><span class="std std-ref">DoubleFloat</span></a> is intended to make accessible hardware floating point arithmetic in Language{}, either native double precision, or IEEE. On most machines, there will be hardware support for the arithmetic operations: <a class="reference internal" href="#l446f75626c65466c6f6174-2b"><span class="std std-ref">+</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-2a"><span class="std std-ref">*</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-2f"><span class="std std-ref">/</span></a> and possibly also the <a class="reference internal" href="#l446f75626c65466c6f6174-73717274"><span class="std std-ref">sqrt</span></a> operation. The operations <a class="reference internal" href="#l446f75626c65466c6f6174-657870"><span class="std std-ref">exp</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-6c6f67"><span class="std std-ref">log</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-73696e"><span class="std std-ref">sin</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-636f73"><span class="std std-ref">cos</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-6174616e"><span class="std std-ref">atan</span></a> are normally coded in software based on minimax polynomial/rational approximations. Some general comments about the accuracy of the operations: the operations <a class="reference internal" href="#l446f75626c65466c6f6174-2b"><span class="std std-ref">+</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-2a"><span class="std std-ref">*</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-2f"><span class="std std-ref">/</span></a> and <a class="reference internal" href="#l446f75626c65466c6f6174-73717274"><span class="std std-ref">sqrt</span></a> are expected to be fully accurate. The operations <a class="reference internal" href="#l446f75626c65466c6f6174-657870"><span class="std std-ref">exp</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-6c6f67"><span class="std std-ref">log</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-73696e"><span class="std std-ref">sin</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-636f73"><span class="std std-ref">cos</span></a> and <a class="reference internal" href="#l446f75626c65466c6f6174-6174616e"><span class="std std-ref">atan</span></a> are not expected to be fully accurate. In particular, <a class="reference internal" href="#l446f75626c65466c6f6174-73696e"><span class="std std-ref">sin</span></a> and <a class="reference internal" href="#l446f75626c65466c6f6174-636f73"><span class="std std-ref">cos</span></a> will lose all precision for large arguments.   The <a class="reference internal" href="Float.html#l466c6f6174"><span class="std std-ref">Float</span></a> domain provides an alternative to the <code class="docutils literal notranslate"><span class="pre">DoubleFloat</span></code> domain. It provides an arbitrary precision model of floating point arithmetic. This means that accuracy problems like those above are eliminated by increasing the working precision where necessary. <a class="reference internal" href="Float.html#l466c6f6174"><span class="std std-ref">Float</span></a> provides some special functions such as erf, the error function in addition to the elementary functions. The disadvantage of <a class="reference internal" href="Float.html#l466c6f6174"><span class="std std-ref">Float</span></a> is that it is much more expensive than small floats when the latter can be used.</p>
 <dl class="simple" id="l446f75626c65466c6f6174-30">
@@ -240,6 +236,8 @@
 <dl class="simple" id="l446f75626c65466c6f6174-42657461">
 <dt><a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279-42657461"><span class="std std-ref">Beta</span></a>: (%, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279"><span class="std std-ref">SpecialFunctionCategory</span></a></p>
 </dd>
+<dt><a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279-42657461"><span class="std std-ref">Beta</span></a>: (%, %, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279"><span class="std std-ref">SpecialFunctionCategory</span></a></p>
+</dd>
 </dl>
 <dl class="simple" id="l446f75626c65466c6f6174-62697473">
 <dt><a class="reference internal" href="FloatingPointSystem.html#l466c6f6174696e67506f696e7453797374656d-62697473"><span class="std std-ref">bits</span></a>: () -&gt; <a class="reference internal" href="PositiveInteger.html#l506f736974697665496e7465676572"><span class="std std-ref">PositiveInteger</span></a></dt><dd><p>from <a class="reference internal" href="FloatingPointSystem.html#l466c6f6174696e67506f696e7453797374656d"><span class="std std-ref">FloatingPointSystem</span></a></p>
@@ -339,7 +337,7 @@
 <dt><a class="reference internal" href="EuclideanDomain.html#l4575636c696465616e446f6d61696e-646976696465"><span class="std std-ref">divide</span></a>: (%, %) -&gt; Record(quotient: %, remainder: %)</dt><dd><p>from <a class="reference internal" href="EuclideanDomain.html#l4575636c696465616e446f6d61696e"><span class="std std-ref">EuclideanDomain</span></a></p>
 </dd>
 </dl>
-<span class="target" id="l446f75626c65466c6f6174-646f75626c65466c6f6174466f726d6174"></span><dl class="simple" id="index-2">
+<span id="l446f75626c65466c6f6174-646f75626c65466c6f6174466f726d6174"></span><dl class="simple" id="index-2">
 <dt><span class="spadfun">doubleFloatFormat</span>: <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a> -&gt; <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a></dt><dd><p>change the output format for doublefloats using lisp format strings</p>
 </dd>
 </dl>
@@ -365,7 +363,7 @@
 <dt><a class="reference internal" href="EuclideanDomain.html#l4575636c696465616e446f6d61696e-6575636c696465616e53697a65"><span class="std std-ref">euclideanSize</span></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a></dt><dd><p>from <a class="reference internal" href="EuclideanDomain.html#l4575636c696465616e446f6d61696e"><span class="std std-ref">EuclideanDomain</span></a></p>
 </dd>
 </dl>
-<span class="target" id="l446f75626c65466c6f6174-65787031"></span><dl class="simple" id="index-3">
+<span id="l446f75626c65466c6f6174-65787031"></span><dl class="simple" id="index-3">
 <dt><span class="spadfun">exp1</span>: () -&gt; %</dt><dd><p><code class="docutils literal notranslate"><span class="pre">exp1()</span></code> returns the natural log base <code class="docutils literal notranslate"><span class="pre">2.718281828...</span></code>.</p>
 </dd>
 </dl>
@@ -545,11 +543,11 @@
 <dt><a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279-6c65726368506869"><span class="std std-ref">lerchPhi</span></a>: (%, %, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279"><span class="std std-ref">SpecialFunctionCategory</span></a></p>
 </dd>
 </dl>
-<span class="target" id="l446f75626c65466c6f6174-6c6f673130"></span><dl class="simple" id="index-4">
+<span id="l446f75626c65466c6f6174-6c6f673130"></span><dl class="simple" id="index-4">
 <dt><span class="spadfun">log10</span>: % -&gt; %</dt><dd><p><code class="docutils literal notranslate"><span class="pre">log10(x)</span></code> computes the logarithm with base 10 for <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
 </dd>
 </dl>
-<span class="target" id="l446f75626c65466c6f6174-6c6f6732"></span><dl class="simple" id="index-5">
+<span id="l446f75626c65466c6f6174-6c6f6732"></span><dl class="simple" id="index-5">
 <dt><span class="spadfun">log2</span>: % -&gt; %</dt><dd><p><code class="docutils literal notranslate"><span class="pre">log2(x)</span></code> computes the logarithm with base 2 for <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
 </dd>
 </dl>
@@ -663,11 +661,11 @@
 <dt><a class="reference internal" href="PrincipalIdealDomain.html#l5072696e636970616c496465616c446f6d61696e-7072696e636970616c496465616c"><span class="std std-ref">principalIdeal</span></a>: <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> % -&gt; Record(coef: <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> %, generator: %)</dt><dd><p>from <a class="reference internal" href="PrincipalIdealDomain.html#l5072696e636970616c496465616c446f6d61696e"><span class="std std-ref">PrincipalIdealDomain</span></a></p>
 </dd>
 </dl>
-<span class="target" id="l446f75626c65466c6f6174-716c6f67"></span><dl class="simple" id="index-6">
+<span id="l446f75626c65466c6f6174-716c6f67"></span><dl class="simple" id="index-6">
 <dt><span class="spadfun">qlog</span>: % -&gt; %</dt><dd><p><code class="docutils literal notranslate"><span class="pre">qlog(x)</span></code> computes natural logarithm of <code class="docutils literal notranslate"><span class="pre">x</span></code>. It assumes that <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>.</p>
 </dd>
 </dl>
-<span class="target" id="l446f75626c65466c6f6174-7173717274"></span><dl class="simple" id="index-7">
+<span id="l446f75626c65466c6f6174-7173717274"></span><dl class="simple" id="index-7">
 <dt><span class="spadfun">qsqrt</span>: % -&gt; %</dt><dd><p><code class="docutils literal notranslate"><span class="pre">qsqrt(x)</span></code> computes square root of <code class="docutils literal notranslate"><span class="pre">x</span></code>. It assumes that <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&gt;=</span> <span class="pre">0</span></code>.</p>
 </dd>
 </dl>
@@ -675,7 +673,7 @@
 <dt><a class="reference internal" href="EuclideanDomain.html#l4575636c696465616e446f6d61696e-71756f"><span class="std std-ref">quo</span></a>: (%, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="EuclideanDomain.html#l4575636c696465616e446f6d61696e"><span class="std std-ref">EuclideanDomain</span></a></p>
 </dd>
 </dl>
-<span class="target" id="l446f75626c65466c6f6174-726174696f6e616c417070726f78696d6174696f6e"></span><dl class="simple" id="index-8">
+<span id="l446f75626c65466c6f6174-726174696f6e616c417070726f78696d6174696f6e"></span><dl class="simple" id="index-8">
 <dt><span class="spadfun">rationalApproximation</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Fraction.html#l4672616374696f6e"><span class="std std-ref">Fraction</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">rationalApproximation(f,</span> <span class="pre">n)</span></code> computes a rational approximation <code class="docutils literal notranslate"><span class="pre">r</span></code> to <code class="docutils literal notranslate"><span class="pre">f</span></code> with relative error <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">10^(-n)</span></code>.</p>
 </dd>
 </dl>
@@ -988,7 +986,7 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2007-2023, FriCAS Team.
+    &#169; Copyright 2007-2024, FriCAS Team.
     </div>
   </body>
 </html>

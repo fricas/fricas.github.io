@@ -1,0 +1,214 @@
+.. index:: ModularFactorizationOperations
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73:
+
+ModularFactorizationOperations(PA, MMT, MD, PMD)
+================================================
+
+:viewcode:`ffact.spad line 1 <ffact.spad#L1>` :editcode:`[edit on github] <ffact.spad#L1>`
+
+* PA: \ :ref:`Type <l54797065>`\ 
+
+* MMT: \ :ref:`Type <l54797065>`\ 
+
+* MD: \ :ref:`Type <l54797065>`\ 
+
+* PMD: \ :ref:`Type <l54797065>`\ 
+
+
+This category specifies operations needed by univariate factorization over finite fields
+
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-6164645f706f6c79:
+
+.. index::
+   pair: ModularFactorizationOperations; add_poly
+
+:spadfun:`add_poly`\: (PA, PA, MD) -> PA 
+  \ ``add_poly(pol1, pol2, md)``\  add polynomials \ ``pol1``\  and \ ``pol2``\ .
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-636f70795f6d61745f70617274:
+
+.. index::
+   pair: ModularFactorizationOperations; copy_mat_part
+
+:spadfun:`copy_mat_part`\: (MMT, \ :ref:`Integer <l496e7465676572>`\ ) -> MMT 
+  \ ``copy_mat_part(man, nr)``\  creates copy of modular composition matrix stored in first \ ``nr``\  rows of mat.
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-636f70795f706f6c79:
+
+.. index::
+   pair: ModularFactorizationOperations; copy_poly
+
+:spadfun:`copy_poly`\: (PA, \ :ref:`Integer <l496e7465676572>`\ , MD) -> PA 
+  \ ``copy_poly(pol, d, m)``\  creates copy of \ ``pol``\  with enough space to represent polynomials of degree smaller than \ ``d``\ . Error if degree of \ ``pol``\  is bigger or equal than \ ``d``\ .
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-646567726565:
+
+.. index::
+   pair: ModularFactorizationOperations; degree
+
+:spadfun:`degree`\: PA -> \ :ref:`Integer <l496e7465676572>`\  
+  \ ``degree(pol)``\  returns degree of the polynomial \ ``pol``\ .
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-64697669646521:
+
+.. index::
+   pair: ModularFactorizationOperations; divide!
+
+:spadfun:`divide!`\: (PA, PA, MD) -> PA 
+  \ ``divide!(pol1, pol2, md)``\  performs division with remainder of \ ``pol1``\  by \ ``pol2``\ . \ ``pol1``\  is modified in place to contain remainder. Quotient is return value.
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-656d7074795f6d61743f:
+
+.. index::
+   pair: ModularFactorizationOperations; empty_mat?
+
+:spadfun:`empty_mat?`\: MMT -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``empty_mat?(mat)``\  returns \ ``true``\  if matrix is empty, \ ``false``\  otherwise.
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-656d7074795f6d6174:
+
+.. index::
+   pair: ModularFactorizationOperations; empty_mat
+
+:spadfun:`empty_mat`\: () -> MMT 
+  \ ``empty_mat()``\  returns empty (that is of dimensions 0) matrix.
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-656d7074795f706f6c79:
+
+.. index::
+   pair: ModularFactorizationOperations; empty_poly
+
+:spadfun:`empty_poly`\: () -> PA 
+  \ ``empty_poly()``\  returns empty (that is 0) polynomial.
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-676364:
+
+.. index::
+   pair: ModularFactorizationOperations; gcd
+
+:spadfun:`gcd`\: (PA, PA, MD) -> PA 
+  \ ``gcd(pol1, pol2, md)``\  computes \ ``gcd``\  of \ ``pol1``\  and \ ``pol2``\ .
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-6765745f63686172:
+
+.. index::
+   pair: ModularFactorizationOperations; get_char
+
+:spadfun:`get_char`\: MD -> \ :ref:`Integer <l496e7465676572>`\  
+  \ ``get_char(md)``\  returns characteristic of the field described by info \ ``md``\ .
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-6765745f657874656e73696f6e5f646567726565:
+
+.. index::
+   pair: ModularFactorizationOperations; get_extension_degree
+
+:spadfun:`get_extension_degree`\: MD -> \ :ref:`Integer <l496e7465676572>`\  
+  \ ``get_extension_degree(md)``\  returns degree of the field described by info \ ``md``\  over its prime subfield.
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-6765745f6d6f64:
+
+.. index::
+   pair: ModularFactorizationOperations; get_mod
+
+:spadfun:`get_mod`\: PMD -> MD 
+  \ ``get_mod(pmd)``\  extracts field info from reduction data.
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-696e695f7264617461:
+
+.. index::
+   pair: ModularFactorizationOperations; ini_rdata
+
+:spadfun:`ini_rdata`\: (PA, MD) -> PMD 
+  \ ``ini_rdata(pv, p)``\  generates data allowing faster computation of remainders from division by \ ``pv``\  modulo \ ``p``\ . Result is used by other functions in this package, in particular \ ``red_pol!``\ .
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-6d6f645f657870:
+
+.. index::
+   pair: ModularFactorizationOperations; mod_exp
+
+:spadfun:`mod_exp`\: (PA, \ :ref:`Integer <l496e7465676572>`\ , PMD) -> PA 
+  \ ``mod_exp(pv, d, rd)``\  computes \ ``pv^d``\  modulo reduction data in \ ``rd``\ .
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-6d6f64756c61725f636f6d706f7365:
+
+.. index::
+   pair: ModularFactorizationOperations; modular_compose
+
+:spadfun:`modular_compose`\: (PA, MMT, PA, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , PMD) -> PA 
+  \ ``modular_compose(pol, pm, p1, l1, rd)``\  computes composion of \ ``pol``\  with \ ``p0``\  modulo reduction data \ ``rd``\ . \ ``pm``\  and \ ``p1``\  are as from call to \ ``power_matrix(p0, l1, rd)``\ .
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-6d6f6e6f6d69616c31:
+
+.. index::
+   pair: ModularFactorizationOperations; monomial1
+
+:spadfun:`monomial1`\: MD -> PA 
+  \ ``monomial1(md)``\  returns monomial of degree 1 with coefficient 1.
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-706f7765725f6d6174726978:
+
+.. index::
+   pair: ModularFactorizationOperations; power_matrix
+
+:spadfun:`power_matrix`\: (PA, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , PMD) -> Record(matr: MMT, poly: PA) 
+  \ ``power_matrix(s, l, rd)``\  computes [\ ``m``\ , \ ``p``\ ] such that \ ``p = s^l``\  modulo reduction data \ ``rd``\  and column \ ``j``\  of \ ``m``\  contain \ ``s^j``\  modulo reduction data \ ``rd``\ . Note that lowest column index is \ ``j = 0``\  and highest index is \ ``j=l-1``\ . \ ``rd``\  should be obtained by earlier call to \ ``ini_rdata``\ .
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-72616e646f6d5f706f6c79:
+
+.. index::
+   pair: ModularFactorizationOperations; random_poly
+
+:spadfun:`random_poly`\: (\ :ref:`Integer <l496e7465676572>`\ , MD) -> PA 
+  \ ``random_poly(n, md)``\  generated random polynomial of degree \ ``n``\ .
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-7265645f706f6c21:
+
+.. index::
+   pair: ModularFactorizationOperations; red_pol!
+
+:spadfun:`red_pol!`\: (PA, PMD) -> PA 
+  \ ``red_pol!(pv, rd)``\  computes remainder of \ ``pv``\  using reduction data \ ``rd``\  produced by earlier call to \ ``ini_rdata``\ .
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-73686966745f6d617421:
+
+.. index::
+   pair: ModularFactorizationOperations; shift_mat!
+
+:spadfun:`shift_mat!`\: (MMT, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``shift_mat!(mat, sa, nr)``\  moves modular composition matrix stored in \ ``nr``\  rows of \ ``mat``\  starting at \ ``sa``\  to first \ ``nr``\  rows of \ ``mat``\ . This is designed to work on output of split_mat!.
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-73706c69745f6d617421:
+
+.. index::
+   pair: ModularFactorizationOperations; split_mat!
+
+:spadfun:`split_mat!`\: (MMT, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , PMD, PMD) -> \ :ref:`Void <l566f6964>`\  
+  \ ``split_mat!(mat, nr0, nr1, nr2, pmod1, pmod2)``\  splits modular composition matrix \ ``mat``\  into two matrices, first modulo \ ``pmod1``\ , second modulo \ ``pmod2``\ . To save space first result replaces first \ ``nr1``\  rows of \ ``mat``\ , second result is stored in next \ ``nr2``\  rows of \ ``mat``\ . \ ``nr0``\  is number of rows used in argument.
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-7375623121:
+
+.. index::
+   pair: ModularFactorizationOperations; sub1!
+
+:spadfun:`sub1!`\: (PA, MD) -> PA 
+  \ ``sub1!(pol, md)``\  subtracts 1 from the polynomial \ ``pol``\ .
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-7375625f706f6c79:
+
+.. index::
+   pair: ModularFactorizationOperations; sub_poly
+
+:spadfun:`sub_poly`\: (PA, PA, MD) -> PA 
+  \ ``sub_poly(pol1, pol2, md)``\  subtracts polynomials \ ``pol2``\  from \ ``pol1``\ .
+
+.. _l4d6f64756c6172466163746f72697a6174696f6e4f7065726174696f6e73-7472696d5f6d617421:
+
+.. index::
+   pair: ModularFactorizationOperations; trim_mat!
+
+:spadfun:`trim_mat!`\: (MMT, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , PMD) -> \ :ref:`Void <l566f6964>`\  
+  \ ``trim_mat!(mat, nr0, nc1, pmod)``\  reduces modular composition matrix \ ``mat``\  modulo reduction data pmod. \ ``nr0``\  is number of rows used in argument, \ ``nr1``\  is number of rows used in the result. \ ``mat``\  is is modified in place.
+
+

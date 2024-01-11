@@ -1,0 +1,109 @@
+.. index:: Database
+
+.. _l4461746162617365:
+
+Database S
+==========
+
+:viewcode:`alql.spad line 115 <alql.spad#L115>` :editcode:`[edit on github] <alql.spad#L115>`
+
+* S: \ :ref:`OrderedSet <l4f726465726564536574>`\  with
+
+    display\: % -> \ :ref:`Void <l566f6964>`\ 
+
+    elt\: (%, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`String <l537472696e67>`\ 
+
+    fullDisplay\: % -> \ :ref:`Void <l566f6964>`\ 
+
+
+This domain implements a simple view of a database whose fields are indexed by symbols
+
+
+.. _l4461746162617365-2b:
+
+.. index::
+   pair: Database; +
+
+:spadfun:`+`\: (%, %) -> % 
+  \ ``db1+db2``\  returns the merge of databases \ ``db1``\  and \ ``db2``\ 
+
+.. _l4461746162617365-2d:
+
+.. index::
+   pair: Database; -
+
+:spadfun:`-`\: (%, %) -> % 
+  \ ``db1-db2``\  returns the difference of databases \ ``db1``\  and \ ``db2``\  i.e. consisting of elements in \ ``db1``\  but not in \ ``db2``\ 
+
+.. _l4461746162617365-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4461746162617365-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4461746162617365-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+
+.. index::
+   pair: Database; coerce
+
+:spadfun:`coerce`\: \ :ref:`List <l4c697374>`\  S -> % 
+  \ ``coerce(l)``\  makes a database out of a list
+
+.. _l4461746162617365-646973706c6179:
+
+.. index::
+   pair: Database; display
+
+:spadfun:`display`\: % -> \ :ref:`Void <l566f6964>`\  
+  \ ``display(x)``\  displays \ ``x``\  in some form
+
+.. _l4461746162617365-656c74:
+
+.. index::
+   pair: Database; elt
+
+:spadfun:`elt`\: (%, \ :ref:`QueryEquation <l51756572794571756174696f6e>`\ ) -> % 
+  \ ``elt(db, q)``\  returns all elements of \ ``db``\  which satisfy \ ``q``\ .
+
+
+.. index::
+   pair: Database; elt
+
+:spadfun:`elt`\: (%, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`DataList <l446174614c697374>`\  \ :ref:`String <l537472696e67>`\  
+  \ ``elt(db, s)``\  returns the \ ``s``\  field of each element of \ ``db``\ .
+
+.. _l4461746162617365-66756c6c446973706c6179:
+
+.. index::
+   pair: Database; fullDisplay
+
+:spadfun:`fullDisplay`\: % -> \ :ref:`Void <l566f6964>`\  
+  \ ``fullDisplay(x)``\  displays \ ``x``\  in detail
+
+
+.. index::
+   pair: Database; fullDisplay
+
+:spadfun:`fullDisplay`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``fullDisplay(db, start, end )``\  prints full details of entries in the range \ ``start..end``\  in \ ``db``\ .
+
+.. _l4461746162617365-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

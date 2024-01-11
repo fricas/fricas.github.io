@@ -1,0 +1,42 @@
+.. index:: DenominatorIntegration
+
+.. _l44656e6f6d696e61746f72496e746567726174696f6e:
+
+DenominatorIntegration(R, F)
+============================
+
+:viewcode:`intden.spad line 28 <intden.spad#L28>` :editcode:`[edit on github] <intden.spad#L28>`
+
+* R: Join(\ :ref:`GcdDomain <l476364446f6d61696e>`\ , \ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`CharacteristicZero <l43686172616374657269737469635a65726f>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ )
+
+* F: Join(\ :ref:`AlgebraicallyClosedField <l416c67656272616963616c6c79436c6f7365644669656c64>`\ , \ :ref:`TranscendentalFunctionCategory <l5472616e7363656e64656e74616c46756e6374696f6e43617465676f7279>`\ , \ :ref:`LiouvillianFunctionCategory <l4c696f7576696c6c69616e46756e6374696f6e43617465676f7279>`\ , \ :ref:`SpecialFunctionCategory <l5370656369616c46756e6374696f6e43617465676f7279>`\ , \ :ref:`FunctionSpace <l46756e6374696f6e5370616365>`\  R)
+
+
+This package generates logarithmic integrals and polylogs corresponding to denominator of the integrand.
+
+
+.. _l44656e6f6d696e61746f72496e746567726174696f6e-6c695f696e74:
+
+.. index::
+   pair: DenominatorIntegration; li_int
+
+:spadfun:`li_int`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, \ :ref:`Kernel <l4b65726e656c>`\  F, \ :ref:`Symbol <l53796d626f6c>`\ ) -> Record(answer: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, logpart: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, ir: \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F) 
+  \ ``li_int(f, k, x)``\  generates logarithmic integrals.
+
+.. _l44656e6f6d696e61746f72496e746567726174696f6e-706f6c795f696e74:
+
+.. index::
+   pair: DenominatorIntegration; poly_int
+
+:spadfun:`poly_int`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, \ :ref:`Kernel <l4b65726e656c>`\  F, \ :ref:`Symbol <l53796d626f6c>`\ ) -> Record(answer: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, logpart: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, ir: \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F) 
+  \ ``poly_int(f, k, x)``\  generates polylogarithms.
+
+.. _l44656e6f6d696e61746f72496e746567726174696f6e-736f6c76655f75:
+
+.. index::
+   pair: DenominatorIntegration; solve_u
+
+:spadfun:`solve_u`\: (F, F, \ :ref:`Symbol <l53796d626f6c>`\ ) -> Union(\ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  F, failed) 
+  \ ``solve_u(f1, u, x)``\  returns [[\ ``c1``\ , \ ``k1``\ ], ..., [\ ``cn``\ , \ ``kn``\ ]] such that \ ``f1``\  = \ ``c1*u^k1``\  + ... + cn^kn and \ ``D``\ (\ ``ci``\ , \ ``x``\ ) = 0 or "failed".
+
+

@@ -1,0 +1,208 @@
+.. index:: GuessOptionFunctions0
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330:
+
+GuessOptionFunctions0
+=====================
+
+:viewcode:`mantepse.spad line 229 <mantepse.spad#L229>` :editcode:`[edit on github] <mantepse.spad#L229>`
+
+
+\ ``GuessOptionFunctions0``\  provides operations that extract the values of options for \ :ref:`Guess <l4775657373>`\ .
+
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-616c6c44656772656573:
+
+.. index::
+   pair: GuessOptionFunctions0; allDegrees
+
+:spadfun:`allDegrees`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``allDegrees returns``\  whether all possibilities of the degree vector should be tried, the default being \ ``false``\ .
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-636865636b:
+
+.. index::
+   pair: GuessOptionFunctions0; check
+
+:spadfun:`check`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> Union(skip, MonteCarlo, deterministic) 
+  \ ``check(d)``\  specifies how we want to check the solution. If the value is "skip", we return the solutions found by the interpolation routine without checking. If the value is "MonteCarlo", we use a probabilistic check. The default is "deterministic".
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-636865636b457874726156616c756573:
+
+.. index::
+   pair: GuessOptionFunctions0; checkExtraValues
+
+:spadfun:`checkExtraValues`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``checkExtraValues(d)``\  specifies whether we want to check the solution beyond the order given by the degree bounds. The default is \ ``true``\ .
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-636865636b4f7074696f6e73:
+
+.. index::
+   pair: GuessOptionFunctions0; checkOptions
+
+:spadfun:`checkOptions`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> \ :ref:`Void <l566f6964>`\  
+  \ ``checkOptions checks``\  whether the given options are consistent, and yields an error otherwise
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-6465627567:
+
+.. index::
+   pair: GuessOptionFunctions0; debug
+
+:spadfun:`debug`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``debug returns``\  whether we want additional output on the progress, default being \ ``false``\ 
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-646973706c61794b696e64:
+
+.. index::
+   pair: GuessOptionFunctions0; displayKind
+
+:spadfun:`displayKind`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> \ :ref:`Symbol <l53796d626f6c>`\  
+  \ ``displayKind(d)``\  specifies kind of the result: generating function, recurrence or equation. This option should not be set by the user, but rather by the \ ``HP``\ -specification.
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-66756e6374696f6e4e616d65:
+
+.. index::
+   pair: GuessOptionFunctions0; functionName
+
+:spadfun:`functionName`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> \ :ref:`Symbol <l53796d626f6c>`\  
+  \ ``functionName returns``\  the name of the function given by the algebraic differential equation, default being \ ``f``\ 
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-66756e6374696f6e4e616d6573:
+
+.. index::
+   pair: GuessOptionFunctions0; functionNames
+
+:spadfun:`functionNames`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\  
+  \ ``functionNames returns``\  the names for the function in the algebraic dependence, default being \%\ ``f1``\ , \%\ ``f2``\ , ...
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-686f6d6f67656e656f7573:
+
+.. index::
+   pair: GuessOptionFunctions0; homogeneous
+
+:spadfun:`homogeneous`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> Union(\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`Boolean <l426f6f6c65616e>`\ ) 
+  \ ``homogeneous returns``\  whether we allow only homogeneous algebraic differential equations, default being \ ``false``\ 
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-696e6465784e616d65:
+
+.. index::
+   pair: GuessOptionFunctions0; indexName
+
+:spadfun:`indexName`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> \ :ref:`Symbol <l53796d626f6c>`\  
+  \ ``indexName returns``\  the name of the index variable used for the formulas, default being \ ``n``\ 
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-6d6178446567726565:
+
+.. index::
+   pair: GuessOptionFunctions0; maxDegree
+
+:spadfun:`maxDegree`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> Union(\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , arbitrary) 
+  \ ``maxDegree returns``\  the specified maxDegree.
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-6d617844657269766174697665:
+
+.. index::
+   pair: GuessOptionFunctions0; maxDerivative
+
+:spadfun:`maxDerivative`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> Union(\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , arbitrary) 
+  \ ``maxDerivative returns``\  the specified maxDerivative.
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-6d61784c6576656c:
+
+.. index::
+   pair: GuessOptionFunctions0; maxLevel
+
+:spadfun:`maxLevel`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> Union(\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , arbitrary) 
+  \ ``maxLevel returns``\  the specified maxLevel.
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-6d61784d69786564446567726565:
+
+.. index::
+   pair: GuessOptionFunctions0; maxMixedDegree
+
+:spadfun:`maxMixedDegree`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``maxMixedDegree returns``\  the specified maxMixedDegree.
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-6d6178506f776572:
+
+.. index::
+   pair: GuessOptionFunctions0; maxPower
+
+:spadfun:`maxPower`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> Union(\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , arbitrary) 
+  \ ``maxPower returns``\  the specified maxPower.
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-6d61785368696674:
+
+.. index::
+   pair: GuessOptionFunctions0; maxShift
+
+:spadfun:`maxShift`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> Union(\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , arbitrary) 
+  \ ``maxShift returns``\  the specified maxShift.
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-6d61785375627374:
+
+.. index::
+   pair: GuessOptionFunctions0; maxSubst
+
+:spadfun:`maxSubst`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> Union(\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , arbitrary) 
+  \ ``maxSubst returns``\  the specified maxSubst.
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-6f6e65:
+
+.. index::
+   pair: GuessOptionFunctions0; one
+
+:spadfun:`one`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``one returns``\  whether we need only one solution, default being \ ``true``\ .
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-736166657479:
+
+.. index::
+   pair: GuessOptionFunctions0; safety
+
+:spadfun:`safety`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``safety returns``\  the specified safety or 1 as default.
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-536f6d6f73:
+
+.. index::
+   pair: GuessOptionFunctions0; Somos
+
+:spadfun:`Somos`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> Union(\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`Boolean <l426f6f6c65616e>`\ ) 
+  \ ``Somos returns``\  whether we allow only Somos-like operators, default being \ ``false``\ 
+
+.. _l47756573734f7074696f6e46756e6374696f6e7330-7661726961626c654e616d65:
+
+.. index::
+   pair: GuessOptionFunctions0; variableName
+
+:spadfun:`variableName`\: \ :ref:`List <l4c697374>`\  \ :ref:`GuessOption <l47756573734f7074696f6e>`\  -> \ :ref:`Symbol <l53796d626f6c>`\  
+  \ ``variableName returns``\  the name of the variable used in by the algebraic differential equation, default being \ ``x``\ 
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

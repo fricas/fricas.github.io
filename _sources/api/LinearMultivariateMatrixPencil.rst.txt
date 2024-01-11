@@ -1,0 +1,612 @@
+.. index:: LinearMultivariateMatrixPencil
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c:
+
+LinearMultivariateMatrixPencil R
+================================
+
+:viewcode:`linpen.spad line 9 <linpen.spad#L9>` :editcode:`[edit on github] <linpen.spad#L9>`
+
+* R: \ :ref:`Ring <l52696e67>`\ 
+
+
+Author: Konrad Schrempf <schrempf@math.tugraz.at> Date Created: Mit 2016-02-03 17:20 Date Changed: Sam 2018-09-01 10:37 Basic Functions: Related Constructors: Matrix Also See: FreeDivisionAlgebra AMS Classifications: Keywords: References: Description:
+
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-2a:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; *
+
+:spadfun:`\*`\: (%, \ :ref:`Matrix <l4d6174726978>`\  R) -> % 
+  \ ``p * U``\  column transformation ...
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; *
+
+:spadfun:`\*`\: (\ :ref:`Matrix <l4d6174726978>`\  R, %) -> % 
+  \ ``T * P``\  row transformation ...
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-3d:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; =
+
+:spadfun:`=`\: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``p = q``\  entrywise equality.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-616464436f6c756d6e7321:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; addColumns!
+
+:spadfun:`addColumns!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , R) -> % 
+  \ ``addColumns!(p, i, j, alpha)``\  adds alpha*column(\ ``i``\ ) to column(\ ``j``\ ) in all matrices of the linear pencil \ ``p``\ .
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-616464526f777321:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; addRows!
+
+:spadfun:`addRows!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , R) -> % 
+  \ ``addRows!(p, i, j, alpha)``\  adds alpha*row(\ ``i``\ ) to row(\ ``j``\ ) in all matrices of the linear pencil \ ``p``\ .
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-617070656e6421:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; append!
+
+:spadfun:`append!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``append!(p, l)``\  appends \ ``l``\  matrices to the linear pencil.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-617070656e64:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; append
+
+:spadfun:`append`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``append(p, l)``\  appends \ ``l``\  matrices to the linear pencil.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-626c6f636b456c696d696e6174696f6e:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; blockElimination
+
+:spadfun:`blockElimination`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Matrix <l4d6174726978>`\  R if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``blockElimination(p, rsrc, rdst, rext, csrc, cdst, cext)``\  r___ rows, c___ columns _src source, _dst destination, _ext extra (zeros) Uses a linear system of equations to determine row and column transformation matrices to eliminate the entries in rdst+rext \times cdst+cext and returns an empty list if there is no solution.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-636f65726365:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; coerce
+
+:spadfun:`coerce`\: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  \ ``coerce(p)``\  prints the linear pencil \ ``p``\  in list form.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-636f7079:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; copy
+
+:spadfun:`copy`\: % -> % 
+  \ ``copy(p)``\  returns a copy of the linear pencil \ ``p``\ .
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-646961676f6e616c3f:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; diagonal?
+
+:spadfun:`diagonal?`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``diagonal?(p, l)``\  is the matrix \ ``l``\  diagonal?
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-646961676f6e616c:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; diagonal
+
+:spadfun:`diagonal`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  R 
+  \ ``diagonal(p, l)``\  returns the entries along the diagonal in a list.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-656c696d696e6174696f6e4571756174696f6e73:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; eliminationEquations
+
+:spadfun:`eliminationEquations`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``eliminationEquations(p, row_P, col_P, row_Q, col_Q, rdst, cdst)``\  returns a list of matrices with equations to eliminate the entries in rows/columns rdst/cdst.
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; eliminationEquations
+
+:spadfun:`eliminationEquations`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``eliminationEquations(p, row_P, col_P, row_Q, col_Q, rdst, cdst, rex1, cex1, rex2, cex2)``\  returns a list of matrices with equations to eliminate the entries in rows/columns rdst/cdst, \ ``rex1/cex1``\  and \ ``rex2/cex2``\ .
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; eliminationEquations
+
+:spadfun:`eliminationEquations`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``eliminationEquations(p, row_P, col_P, row_Q, col_Q, rdst, cdst, rex1, cex1, rex2, cex2)``\  returns a list of equations with equations to eliminate the entries in rows/columns rdst/cdst, \ ``rex1/cex1``\  and \ ``rex2/cex2``\ , including det(\ ``P``\ )\ ``-1``\  and det(\ ``Q``\ )\ ``-1``\ .
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-656c696d696e6174696f6e47726f65626e6572:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; eliminationGroebner
+
+:spadfun:`eliminationGroebner`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``eliminationGroebner(p, row_P, col_P, row_Q, col_Q, rdst, cdst, rex1, cex1, rex2, cex2)``\  computes a Groebner--Shirshov basis for the ideal generated by the equations from eliminationEquations(...) using the domain DistributedMultivariatePolynomial.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-656c696d696e6174696f6e536f6c7665:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; eliminationSolve
+
+:spadfun:`eliminationSolve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`List <l4c697374>`\  R, \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``eliminationSolve(lst_eqn, lst_val, lst_sub)``\  computes all solutions of the first equation of \ ``lst_eqn``\  by trying the values of \ ``lst_val``\  for undetermined variables with respect to given subsolutions lst_sub and return those which fulfill all other equations in \ ``lst_eqn``\ .
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; eliminationSolve
+
+:spadfun:`eliminationSolve`\: (\ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`List <l4c697374>`\  R) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``eliminationSolve(eqn, lst_val)``\  computes all solutions of equation \ ``eqn``\  by trying the values of lst_val for undetermined variables.
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; eliminationSolve
+
+:spadfun:`eliminationSolve`\: (\ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`List <l4c697374>`\  R, \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``eliminationSolve(eqn, lst_val, sub)``\  computes all solutions of equation \ ``eqn``\  by trying the values of \ ``lst_val``\  for undetermined variables with respect to given subsolution sub.
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; eliminationSolve
+
+:spadfun:`eliminationSolve`\: (\ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`List <l4c697374>`\  R, \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``eliminationSolve(eqn, lst_val, lst_sub)``\  computes all solutions of equation \ ``eqn``\  by trying the values of \ ``lst_val``\  for undetermined variables with respect to given subsolutions lst_sub.
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; eliminationSolve
+
+:spadfun:`eliminationSolve`\: \ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``eliminationSolve(lst_eqn)``\  calls eliminationSolve(\ ``lst_eqn``\ , [0,1], []).
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-656c696d696e6174696f6e5472616e73666f726d6174696f6e73:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; eliminationTransformations
+
+:spadfun:`eliminationTransformations`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``eliminationTransformations(p, row_P, col_P, row_Q, col_Q)``\  returns a pair of transformation matrices with commutative variables 'a[\ ``i``\ ] in rows/columns row_P/col_P respectively \ ``'b``\ [\ ``i``\ ] in rows/columns row_Q/col_Q.
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; eliminationTransformations
+
+:spadfun:`eliminationTransformations`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R) -> \ :ref:`List <l4c697374>`\  \ :ref:`Matrix <l4d6174726978>`\  R if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``eliminationTransformations(p, row_P, col_P, row_Q, col_Q, sol)``\  Uses eval to set the values in sol into the variables in the transformation matrices.
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; eliminationTransformations
+
+:spadfun:`eliminationTransformations`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``eliminationTransformations(p, row_P, col_P, sym_P, row_Q, col_Q, sym_Q)``\  returns a pair of transformation matrices with commutative variables \ ``sym_P``\ [\ ``i``\ ] in rows/columns row_P/col_P respectively sym_Q[\ ``i``\ ] in rows/columns row_Q/col_Q.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-656c74:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; elt
+
+:spadfun:`elt`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  R 
+  \ ``elt(p, i, j)``\  returns the elements (\ ``i``\ ,\ ``j``\ ) from the linear pencil \ ``p``\  as a list.
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; elt
+
+:spadfun:`elt`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> R 
+  \ ``elt(p, i, j, l)``\  returns the element (\ ``i``\ ,\ ``j``\ ) in matrix \ ``l``\  of the linear pencil \ ``p``\ .
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-657175616c3f:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; equal?
+
+:spadfun:`equal?`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , %, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``equal?(p, pos_p, q, pos_q)``\  checks, if the matrices \ ``pos_p``\  in \ ``p``\  are equal to the pos_q in \ ``q``\ . Not spacified matrices have to be zero.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-696e73657274526f7773436f6c756d6e73:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; insertRowsColumns
+
+:spadfun:`insertRowsColumns`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``insertRowsColumns(p, lst_row, lst_col)``\  returns a new pencil with additional rows and columns after the specified indices. addRowsColumns(\ ``p``\ , [0,0,1], [0,0,3]) would insert 2 rows and columns at the beginning an one row and column between rows 1 and 2 and columns 3 and 4 respectively.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-6c6566744964656e74697479:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; leftIdentity
+
+:spadfun:`leftIdentity`\: % -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``leftIdentity(p)``\  returns the left identity matrix.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-6d6174726978:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; matrix
+
+:spadfun:`matrix`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``matrix(p, l)``\  returns matrix \ ``l``\  in the linear pencil \ ``p``\ .
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-6d756c7469706c79436f6c756d6e21:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; multiplyColumn!
+
+:spadfun:`multiplyColumn!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , R) -> % 
+  \ ``multiplyColumn!(p, j, alphat)``\  multiplies column(\ ``j``\ ) by alpha.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-6d756c7469706c79526f7721:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; multiplyRow!
+
+:spadfun:`multiplyRow!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , R) -> % 
+  \ ``multiplyRow!(p, i, alpha)``\  multiplies row(\ ``i``\ ) by alpha.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-6e636f6c73:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; ncols
+
+:spadfun:`ncols`\: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``ncols(p)``\  returns the number of columns.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-6e656c656d:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; nelem
+
+:spadfun:`nelem`\: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``nelem(p)``\  returns the number of elements.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-6e726f7773:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; nrows
+
+:spadfun:`nrows`\: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``nrows(p)``\  returns the number of rows.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-71616464436f6c756d6e7321:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qaddColumns!
+
+:spadfun:`qaddColumns!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , R) -> % 
+  \ ``addColumns!(p, i, j, alpha)``\  adds alpha*column(\ ``i``\ ) to column(\ ``j``\ ) in all matrices of the linear pencil \ ``p``\ . (no index check)
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-71616464526f777321:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qaddRows!
+
+:spadfun:`qaddRows!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , R) -> % 
+  \ ``qaddRows!(p, i, j, alpha)``\  adds alpha*row(\ ``i``\ ) to row(\ ``j``\ ) in all matrices of the linear pencil \ ``p``\  (no index check). (no index check)
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-71636f6c756d6e496e6469636573:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qcolumnIndices
+
+:spadfun:`qcolumnIndices`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``qcolumnIndices(p, off)``\  returns a list of column indices for nozero elements for every row starting at the specified offset. (no range check)
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qcolumnIndices
+
+:spadfun:`qcolumnIndices`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``qcolumnIndices(p, off, l)``\  returns a list of column indices for nonzero elements in matrix \ ``l``\  for every row starting at the specified offset. (no range check)
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qcolumnIndices
+
+:spadfun:`qcolumnIndices`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``qcolumnIndices(p, off, i, l)``\  returns a list of column indices for nonzero elements in the specified row of matrix \ ``l``\  for starting at the specified offset. (no range check)
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-71646961676f6e616c3f:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qdiagonal?
+
+:spadfun:`qdiagonal?`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``qdiagonal?(p, k_min, k_max, l)``\  is the matrix \ ``l``\  diagonal between \ ``k_min``\  and k_max? (no range check)
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-71646961676f6e616c:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qdiagonal
+
+:spadfun:`qdiagonal`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  R 
+  \ ``qdiagonal(p, k_min, k_max, l)``\  returns the entries along the diagonal between \ ``k_min``\  and \ ``k_max``\ . (no range check)
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-71656c74:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qelt
+
+:spadfun:`qelt`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  R 
+  \ ``elt(p, i, j)``\  returns the elements (\ ``i``\ ,\ ``j``\ ) from the linear pencil \ ``p``\  as a list (no check).
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qelt
+
+:spadfun:`qelt`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> R 
+  \ ``elt(p, i, j, l)``\  returns the element (\ ``i``\ ,\ ``j``\ ) in matrix \ ``l``\  of the linear pencil \ ``p``\  (no index-check).
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-71657175616c3f:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qequal?
+
+:spadfun:`qequal?`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , %, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``qequal?(p, pos_p, q, pos_q, offset)``\  checks, if the matrices are equal starting at offset.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-716d756c7469706c79436f6c756d6e21:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qmultiplyColumn!
+
+:spadfun:`qmultiplyColumn!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , R) -> % 
+  \ ``multiplyColumn!(p, j, alphat)``\  multiplies column(\ ``j``\ ) by alpha.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-716d756c7469706c79526f7721:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qmultiplyRow!
+
+:spadfun:`qmultiplyRow!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , R) -> % 
+  \ ``qmultiplyRow!(p, i, alpha)``\  multiplies row(\ ``i``\ ) by alpha. (no index check)
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-716e6577:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qnew
+
+:spadfun:`qnew`\: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``qnew(m, n, l)``\  creates an empty linear pencil with \ ``l``\  matrices with \ ``m``\  rows and \ ``n``\  columns.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-716e696c706f74656e743f:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qnilpotent?
+
+:spadfun:`qnilpotent?`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``qnilpotent?(p, k_min, k_max, l)``\  ist the matrix \ ``l``\  nilpotent with respect to the specified block? (no range check)
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-71726f77496e6469636573:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qrowIndices
+
+:spadfun:`qrowIndices`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``qrowIndices(p, off)``\  returns a list of row indices for nonzero elements for every column starting at the specified offset. (no range check)
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qrowIndices
+
+:spadfun:`qrowIndices`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``qrowIndices(p, off, l)``\  returns a list of row indices for nonzero elements in matrix \ ``l``\  for every column starting at the specified offset. (no range check)
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qrowIndices
+
+:spadfun:`qrowIndices`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``qrowIndices(p, off, j, l)``\  returns a list of row indices for nozero elements in column \ ``j``\  in matrix \ ``l``\  (no range check)
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-717363616c65426c6f636b21:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qscaleBlock!
+
+:spadfun:`qscaleBlock!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , R) -> % 
+  \ ``qscalesubMatrix!(p, i_min, i_max, j_min, j_max, l, alpha)``\  multiplies the entries in the specified block of matrix \ ``l``\  with alpha.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-7173656d697a65726f3f:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qsemizero?
+
+:spadfun:`qsemizero?`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``qsemizero?(p, i_min, i_max, j_min, j_max, l)``\  checks, if the specified submatrix is zero except for matrix \ ``l``\  (no index check).
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-71736574656c7421:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qsetelt!
+
+:spadfun:`qsetelt!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  R) -> \ :ref:`List <l4c697374>`\  R 
+  \ ``qsetelt!(p, i, j, lst)``\  sets the element (\ ``i``\ ,\ ``j``\ ) in the matrices of the linear pencil \ ``p``\  according to the elements in \ ``lst``\ .
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qsetelt!
+
+:spadfun:`qsetelt!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , R) -> R 
+  \ ``qselelt!(p, i, j, l, alpha)``\  sets the element (\ ``i``\ ,\ ``j``\ ) in matrix \ ``l``\  of the linear pencil \ ``p``\  to alpha.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-7173776170436f6c756d6e7321:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qswapColumns!
+
+:spadfun:`qswapColumns!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``qswapColumns!(p, i, j)``\  exchanges columns \ ``i``\  and \ ``j``\  in all matrices of the linear pencil \ ``p``\  (no index check)
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-7173776170526f777321:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qswapRows!
+
+:spadfun:`qswapRows!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``qswapRows!(p, i, j)``\  exchanges rows \ ``i``\  and \ ``j``\  in all matrices of the linear pencil \ ``p``\  (no index check).
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-717570706572747269616e67756c61723f:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; quppertriangular?
+
+:spadfun:`quppertriangular?`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``quppertriangular?(p, k_min, k_max, l)``\  is the matrix \ ``l``\  upper triangular with respect to the specified block? (no range check)
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-717a65726f3f:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qzero?
+
+:spadfun:`qzero?`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``qzero?(p, i, j)``\  checks if all the entries (\ ``i``\ ,\ ``j``\ ) of the linear pencil \ ``p``\  are zero. (no index check)
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qzero?
+
+:spadfun:`qzero?`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``qzero?(p, i_min, i_max, j_min, j_max)``\  checks if the specified block of the linear pencil \ ``p``\  is zero for all matrices. (no index check)
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; qzero?
+
+:spadfun:`qzero?`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``qzero?(p, i_min, i_max, j_min, j_max, l)``\  checks if the specified block of matrix \ ``l``\  of the linear pencil \ ``p``\  is zero (no index check)
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-72656d6f7665526f7773436f6c756d6e73:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; removeRowsColumns
+
+:spadfun:`removeRowsColumns`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``removeRowsColumns(p, lst_row, lst_col)``\  returns a new pencil with submatrices specified by the complement of the list of rows and columns.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-72696768744964656e74697479:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; rightIdentity
+
+:spadfun:`rightIdentity`\: % -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``rightIdentity(p)``\  returns the right identity matrix.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-736574656c7421:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; setelt!
+
+:spadfun:`setelt!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  R) -> \ :ref:`List <l4c697374>`\  R 
+  \ ``setelt!(p, i, j, lst)``\  sets the element (\ ``i``\ ,\ ``j``\ ) in the matrices of the linear pencil \ ``p``\  according to the elements in \ ``lst``\ .
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; setelt!
+
+:spadfun:`setelt!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , R) -> R 
+  \ ``selelt!(p, i, j, l, alpha)``\  sets the element (\ ``i``\ ,\ ``j``\ ) in matrix \ ``l``\  of the linear pencil \ ``p``\  to alpha.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-7365747375624d617472697821:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; setsubMatrix!
+
+:spadfun:`setsubMatrix!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Matrix <l4d6174726978>`\  R) -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``setsubMatrix!(p, i, j, l, a)``\  sets the matrix a into the matrix \ ``l``\  of \ ``p``\  in position (\ ``i``\ ,\ ``j``\ ).
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-73657473756250656e63696c21:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; setsubPencil!
+
+:spadfun:`setsubPencil!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , %) -> % 
+  \ ``setsubPencil!(p, i, j, q)``\  sets the matrices of pencil \ ``q``\  into the matrices of \ ``p``\  in position (\ ``i``\ ,\ ``j``\ ).
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-7375624d6174726978:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; subMatrix
+
+:spadfun:`subMatrix`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``subMatrix(p, r_min, r_max, c_min, c_max, l)``\  returns the specified submatrix \ ``l``\  of the linear pencil \ ``p``\ .
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-73756250656e63696c:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; subPencil
+
+:spadfun:`subPencil`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``subPencil(p, lst_row, lst_col)``\  returns a pencil with submatrices specified by a list of rows and columns.
+
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; subPencil
+
+:spadfun:`subPencil`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``subPencil(p, r_min, r_max, c_min, c_max)``\  returns a pencil with the specified submatrices.
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-73776170436f6c756d6e7321:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; swapColumns!
+
+:spadfun:`swapColumns!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``swapColumns!(p, i, j)``\  exchanges columns \ ``i``\  and \ ``j``\  in all matrices of the linear pencil \ ``p``\ .
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-73776170526f777321:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; swapRows!
+
+:spadfun:`swapRows!`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``swapRows!(p, i, j)``\  exchanges rows \ ``i``\  and \ ``j``\  in all matrices of the linear pencil \ ``p``\ .
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-7472616e73666f726d436f6c756d6e7321:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; transformColumns!
+
+:spadfun:`transformColumns!`\: (%, \ :ref:`Matrix <l4d6174726978>`\  R) -> % 
+  \ ``transformColumns!(p, U)``\  multiplies the matrices of the linear pencil from the right by \ ``U``\ .
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-7472616e73666f726d526f777321:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; transformRows!
+
+:spadfun:`transformRows!`\: (%, \ :ref:`Matrix <l4d6174726978>`\  R) -> % 
+  \ ``transformRows!(p, T)``\  multiplies the matrices of the linear pencil from the left by \ ``T``\ .
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-7570706572747269616e67756c61723f:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; uppertriangular?
+
+:spadfun:`uppertriangular?`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``uppertriangular?(p, l)``\  is the matrix \ ``l``\  upper triangular?
+
+.. _l4c696e6561724d756c7469766172696174654d617472697850656e63696c-7a65726f3f:
+
+.. index::
+   pair: LinearMultivariateMatrixPencil; zero?
+
+:spadfun:`zero?`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``zero?(p, i, j)``\  checks if all the entries (\ ``i``\ ,\ ``j``\ ) of the linear pencil \ ``p``\  are zero.
+
+

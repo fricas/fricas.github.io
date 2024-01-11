@@ -1,0 +1,215 @@
+.. index:: JetDifferential
+
+.. _l4a6574446966666572656e7469616c:
+
+JetDifferential(JB, D)
+======================
+
+:viewcode:`jet.spad line 3591 <jet.spad#L3591>` :editcode:`[edit on github] <jet.spad#L3591>`
+
+* JB: \ :ref:`JetBundleCategory <l4a657442756e646c6543617465676f7279>`\ 
+
+* D: \ :ref:`JetBundleFunctionCategory <l4a657442756e646c6546756e6374696f6e43617465676f7279>`\  JB
+
+
+\ ``JetDifferential(JB, D)``\  implements differentials (one-forms) over the jet bundle \ ``JB``\  with coefficients from \ ``D``\ . The differentials operate on \ ``JetVectorField(JB, D)``\ .
+
+
+.. _l4a6574446966666572656e7469616c-30:
+
+\ :ref:`0 <l4162656c69616e4d6f6e6f6964-30>`\ \: % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l4a6574446966666572656e7469616c-2a:
+
+\ :ref:`\* <l52696768744d6f64756c65-2a>`\ \: (%, D) -> % 
+  from \ :ref:`RightModule <l52696768744d6f64756c65>`\  D
+
+
+\ :ref:`\* <l4c6566744d6f64756c65-2a>`\ \: (D, %) -> % 
+  from \ :ref:`LeftModule <l4c6566744d6f64756c65>`\  D
+
+
+\ :ref:`\* <l4162656c69616e47726f7570-2a>`\ \: (\ :ref:`Integer <l496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`\* <l4162656c69616e4d6f6e6f6964-2a>`\ \: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`\* <l4162656c69616e53656d6947726f7570-2a>`\ \: (\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l4a6574446966666572656e7469616c-2b:
+
+\ :ref:`+ <l4162656c69616e53656d6947726f7570-2b>`\ \: (%, %) -> % 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l4a6574446966666572656e7469616c-2d:
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: % -> % 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: (%, %) -> % 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+.. _l4a6574446966666572656e7469616c-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4a6574446966666572656e7469616c-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4a6574446966666572656e7469616c-636f656666696369656e74:
+
+.. index::
+   pair: JetDifferential; coefficient
+
+:spadfun:`coefficient`\: (%, JB) -> D 
+  \ ``coefficient(om, jb)``\  returns the coefficient of \ ``om``\  for the differential of \ ``jb``\ .
+
+.. _l4a6574446966666572656e7469616c-636f656666696369656e7473:
+
+.. index::
+   pair: JetDifferential; coefficients
+
+:spadfun:`coefficients`\: % -> \ :ref:`List <l4c697374>`\  D 
+  \ ``coefficients(om)``\  yields the coefficients of \ ``om``\ .
+
+.. _l4a6574446966666572656e7469616c-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l4a6574446966666572656e7469616c-636f6e7472616374:
+
+.. index::
+   pair: JetDifferential; contract
+
+:spadfun:`contract`\: (\ :ref:`JetVectorField <l4a6574566563746f724669656c64>`\ (JB, D), %) -> D 
+  \ ``contract(v, om)``\  computes the interior derivative of \ ``om``\  with respect to \ ``v``\ .
+
+.. _l4a6574446966666572656e7469616c-636f7079:
+
+.. index::
+   pair: JetDifferential; copy
+
+:spadfun:`copy`\: % -> % 
+  \ ``copy(om)``\  returns a copy of the differential \ ``om``\ .
+
+.. _l4a6574446966666572656e7469616c-64:
+
+.. index::
+   pair: JetDifferential; d
+
+:spadfun:`d`\: D -> % 
+  \ ``d(f)``\  computes the differential of \ ``f``\ .
+
+
+.. index::
+   pair: JetDifferential; d
+
+:spadfun:`d`\: JB -> % 
+  \ ``d(jb)``\  returns the differential of \ ``jb``\ .
+
+.. _l4a6574446966666572656e7469616c-646966666572656e7469616c73:
+
+.. index::
+   pair: JetDifferential; differentials
+
+:spadfun:`differentials`\: % -> \ :ref:`List <l4c697374>`\  JB 
+  \ ``directions(om)``\  yields the differentials where \ ``om``\  has non-vanishing coefficients.
+
+.. _l4a6574446966666572656e7469616c-6450:
+
+.. index::
+   pair: JetDifferential; dP
+
+:spadfun:`dP`\: (\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``dP(i, mu)``\  returns the differential of \ ``P(i, mu)``\ .
+
+.. _l4a6574446966666572656e7469616c-6455:
+
+.. index::
+   pair: JetDifferential; dU
+
+:spadfun:`dU`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> % 
+  \ ``dU(i)``\  returns the differential of \ ``U(i)``\ .
+
+.. _l4a6574446966666572656e7469616c-6458:
+
+.. index::
+   pair: JetDifferential; dX
+
+:spadfun:`dX`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> % 
+  \ ``dX(i)``\  returns the differential of \ ``X(i)``\ .
+
+.. _l4a6574446966666572656e7469616c-6576616c:
+
+.. index::
+   pair: JetDifferential; eval
+
+:spadfun:`eval`\: (%, \ :ref:`JetVectorField <l4a6574566563746f724669656c64>`\ (JB, D)) -> D 
+  \ ``eval(om, v)``\  applies the differential \ ``om``\  to the vector field \ ``v``\ .
+
+.. _l4a6574446966666572656e7469616c-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l4a6574446966666572656e7469616c-6c6965:
+
+.. index::
+   pair: JetDifferential; lie
+
+:spadfun:`lie`\: (\ :ref:`JetVectorField <l4a6574566563746f724669656c64>`\ (JB, D), %) -> % 
+  \ ``lie(v, om)``\  calculates the Lie derivative of \ ``om``\  with respect to \ ``v``\ .
+
+.. _l4a6574446966666572656e7469616c-6f70706f736974653f:
+
+\ :ref:`opposite? <l4162656c69616e4d6f6e6f6964-6f70706f736974653f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l4a6574446966666572656e7469616c-73616d706c65:
+
+\ :ref:`sample <l4162656c69616e4d6f6e6f6964-73616d706c65>`\ \: % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l4a6574446966666572656e7469616c-7375627472616374496643616e:
+
+\ :ref:`subtractIfCan <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964-7375627472616374496643616e>`\ \: (%, %) -> Union(%, failed) 
+  from \ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l4a6574446966666572656e7469616c-7a65726f3f:
+
+\ :ref:`zero? <l4162656c69616e4d6f6e6f6964-7a65726f3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\  
+
+\ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  
+
+\ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\  
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`BiModule <l42694d6f64756c65>`\ (D, D) 
+
+\ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`LeftModule <l4c6566744d6f64756c65>`\  D 
+
+\ :ref:`Module <l4d6f64756c65>`\  D 
+
+\ :ref:`RightModule <l52696768744d6f64756c65>`\  D 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

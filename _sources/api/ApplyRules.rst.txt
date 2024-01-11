@@ -1,0 +1,35 @@
+.. index:: ApplyRules
+
+.. _l4170706c7952756c6573:
+
+ApplyRules(Base, R, F)
+======================
+
+:viewcode:`rule.spad line 130 <rule.spad#L130>` :editcode:`[edit on github] <rule.spad#L130>`
+
+* Base: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+* R: Join(\ :ref:`Ring <l52696e67>`\ , \ :ref:`PatternMatchable <l5061747465726e4d6174636861626c65>`\  Base, \ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`Pattern <l5061747465726e>`\  Base)
+
+* F: Join(\ :ref:`FunctionSpace <l46756e6374696f6e5370616365>`\  R, \ :ref:`PatternMatchable <l5061747465726e4d6174636861626c65>`\  Base, \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`Pattern <l5061747465726e>`\  Base)
+
+
+This package apply rewrite rules to expressions, calling the pattern matcher.
+
+
+.. _l4170706c7952756c6573-6170706c7952756c6573:
+
+.. index::
+   pair: ApplyRules; applyRules
+
+:spadfun:`applyRules`\: (\ :ref:`List <l4c697374>`\  \ :ref:`RewriteRule <l5265777269746552756c65>`\ (Base, R, F), F) -> F 
+  \ ``applyRules([r1, ..., rn], expr)``\  applies the rules \ ``r1``\ , ..., \ ``rn``\  to \ ``f``\  an unlimited number of times, i.e. until none of \ ``r1``\ , ..., \ ``rn``\  is applicable to the expression.
+
+
+.. index::
+   pair: ApplyRules; applyRules
+
+:spadfun:`applyRules`\: (\ :ref:`List <l4c697374>`\  \ :ref:`RewriteRule <l5265777269746552756c65>`\ (Base, R, F), F, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> F 
+  \ ``applyRules([r1, ..., rn], expr, n)``\  applies the rules \ ``r1``\ , ..., \ ``rn``\  to \ ``f``\  a most \ ``n``\  times.
+
+

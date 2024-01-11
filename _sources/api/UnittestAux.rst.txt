@@ -1,0 +1,136 @@
+.. index:: UnittestAux
+
+.. _l556e697474657374417578:
+
+UnittestAux R
+=============
+
+:viewcode:`unittest.spad line 376 <unittest.spad#L376>` :editcode:`[edit on github] <unittest.spad#L376>`
+
+* R: \ :ref:`BasicType <l426173696354797065>`\ 
+
+
+UnittestAux is an auxiliary package to Unittest, that performs checking of tests, dealing also with fatal errors.
+
+
+.. _l556e697474657374417578-746573744162736f6c757465507265636973696f6e:
+
+.. index::
+   pair: UnittestAux; testAbsolutePrecision
+
+:spadfun:`testAbsolutePrecision`\: R -> R if R has \ :ref:`RealNumberSystem <l5265616c4e756d62657253797374656d>`\ 
+  \ ``testAbsolutePrecision(eps)``\  returns the current absolute precision used for floating point comparison, and then sets it to \ ``eps``\ . The default value is 1.0e-15.
+
+.. _l556e697474657374417578-74657374436f6d706c6578457175616c73417578:
+
+.. index::
+   pair: UnittestAux; testComplexEqualsAux
+
+:spadfun:`testComplexEqualsAux`\: (\ :ref:`String <l537472696e67>`\ , \ :ref:`Complex <l436f6d706c6578>`\  R, \ :ref:`Complex <l436f6d706c6578>`\  R) -> \ :ref:`Void <l566f6964>`\  if R has \ :ref:`RealNumberSystem <l5265616c4e756d62657253797374656d>`\ 
+  \ ``testComplexEqualsAux(inp ex1, ex2)``\  states that \ ``ex1``\  and \ ``ex2``\  should be approximately equal as complex numbers, taking into acount \ :spadfun:`testAbsolutePrecision`\  and \ :spadfun:`testRelativePrecision`\ .
+
+.. _l556e697474657374417578-74657374457175616c73417578:
+
+.. index::
+   pair: UnittestAux; testEqualsAux
+
+:spadfun:`testEqualsAux`\: (\ :ref:`String <l537472696e67>`\ , R, R) -> \ :ref:`Void <l566f6964>`\  
+  testEquals(inp, \ ``ex1``\ , \ ``ex2``\ ) states that \ ``ex1``\  and \ ``ex2``\  should be equal. To sidestep the possibility that the equality function of the domain \ ``R``\  performs some simplifications, we convert \ ``ex1``\  and \ ``ex2``\  to \ ``InputForm``\ , if possible.
+
+.. _l556e697474657374417578-74657374457175616c73417578436d70:
+
+.. index::
+   pair: UnittestAux; testEqualsAuxCmp
+
+:spadfun:`testEqualsAuxCmp`\: (R, R) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``testEqualsAuxCmp should``\  be local but is conditional
+
+.. _l556e697474657374417578-746573744c6962726172794572726f72417578:
+
+.. index::
+   pair: UnittestAux; testLibraryErrorAux
+
+:spadfun:`testLibraryErrorAux`\: (\ :ref:`String <l537472696e67>`\ , R) -> \ :ref:`Void <l566f6964>`\  
+  \ ``testLibraryErrorAux(inp, ex)``\  states that ex should throw an error. Such a test will never count as a fatal error.
+
+.. _l556e697474657374417578-746573744e6f74457175616c73417578:
+
+.. index::
+   pair: UnittestAux; testNotEqualsAux
+
+:spadfun:`testNotEqualsAux`\: (\ :ref:`String <l537472696e67>`\ , R, R) -> \ :ref:`Void <l566f6964>`\  
+  testNotEquals(inp, \ ``ex1``\ , \ ``ex2``\ ) states that \ ``ex1``\  and \ ``ex2``\  should be different.
+
+.. _l556e697474657374417578-746573745265616c457175616c73417578:
+
+.. index::
+   pair: UnittestAux; testRealEqualsAux
+
+:spadfun:`testRealEqualsAux`\: (\ :ref:`String <l537472696e67>`\ , R, R) -> \ :ref:`Void <l566f6964>`\  if R has \ :ref:`RealNumberSystem <l5265616c4e756d62657253797374656d>`\ 
+  \ ``testRealEqualsAux(inp, ex1, ex2)``\  states that \ ``ex1``\  and \ ``ex2``\  should be approximately equal as real numbers, taking into acount \ :spadfun:`testAbsolutePrecision`\  and \ :spadfun:`testRelativePrecision`\ .
+
+.. _l556e697474657374417578-7465737452656c6174697665507265636973696f6e:
+
+.. index::
+   pair: UnittestAux; testRelativePrecision
+
+:spadfun:`testRelativePrecision`\: R -> R if R has \ :ref:`RealNumberSystem <l5265616c4e756d62657253797374656d>`\ 
+  \ ``testRelativePrecision(eps)``\  returns the current absolute precision used for floating point comparison, and then sets it to \ ``eps``\ . The default value is 1.0e-15.
+
+.. _l556e697474657374417578-7465737454727565417578:
+
+.. index::
+   pair: UnittestAux; testTrueAux
+
+:spadfun:`testTrueAux`\: (\ :ref:`String <l537472696e67>`\ , R) -> \ :ref:`Void <l566f6964>`\  
+  \ ``testTrueAux(inp, ex)``\  states that ex should be \ ``true``\ .
+
+.. _l556e697474657374417578-786674657374436f6d706c6578457175616c73417578:
+
+.. index::
+   pair: UnittestAux; xftestComplexEqualsAux
+
+:spadfun:`xftestComplexEqualsAux`\: (\ :ref:`String <l537472696e67>`\ , \ :ref:`Complex <l436f6d706c6578>`\  R, \ :ref:`Complex <l436f6d706c6578>`\  R) -> \ :ref:`Void <l566f6964>`\  if R has \ :ref:`RealNumberSystem <l5265616c4e756d62657253797374656d>`\ 
+  like testEquals, but expects failure.
+
+.. _l556e697474657374417578-786674657374457175616c73417578:
+
+.. index::
+   pair: UnittestAux; xftestEqualsAux
+
+:spadfun:`xftestEqualsAux`\: (\ :ref:`String <l537472696e67>`\ , R, R) -> \ :ref:`Void <l566f6964>`\  
+  like testEquals, but expects failure.
+
+.. _l556e697474657374417578-7866746573744c6962726172794572726f72417578:
+
+.. index::
+   pair: UnittestAux; xftestLibraryErrorAux
+
+:spadfun:`xftestLibraryErrorAux`\: (\ :ref:`String <l537472696e67>`\ , R) -> \ :ref:`Void <l566f6964>`\  
+  like testEquals, but expects failure.
+
+.. _l556e697474657374417578-7866746573744e6f74457175616c73417578:
+
+.. index::
+   pair: UnittestAux; xftestNotEqualsAux
+
+:spadfun:`xftestNotEqualsAux`\: (\ :ref:`String <l537472696e67>`\ , R, R) -> \ :ref:`Void <l566f6964>`\  
+  like testEquals, but expects failure.
+
+.. _l556e697474657374417578-7866746573745265616c457175616c73417578:
+
+.. index::
+   pair: UnittestAux; xftestRealEqualsAux
+
+:spadfun:`xftestRealEqualsAux`\: (\ :ref:`String <l537472696e67>`\ , R, R) -> \ :ref:`Void <l566f6964>`\  if R has \ :ref:`RealNumberSystem <l5265616c4e756d62657253797374656d>`\ 
+  like testEquals, but expects failure.
+
+.. _l556e697474657374417578-78667465737454727565417578:
+
+.. index::
+   pair: UnittestAux; xftestTrueAux
+
+:spadfun:`xftestTrueAux`\: (\ :ref:`String <l537472696e67>`\ , R) -> \ :ref:`Void <l566f6964>`\  
+  like testEquals, but expects failure.
+
+

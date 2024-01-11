@@ -1,0 +1,53 @@
+.. index:: MatrixCategoryFunctions2
+
+.. _l4d617472697843617465676f727946756e6374696f6e7332:
+
+MatrixCategoryFunctions2(R1, Row1, Col1, M1, R2, Row2, Col2, M2)
+================================================================
+
+:viewcode:`matfuns.spad line 276 <matfuns.spad#L276>` :editcode:`[edit on github] <matfuns.spad#L276>`
+
+* R1: Join(\ :ref:`SemiRng <l53656d69526e67>`\ , \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ )
+
+* Row1: \ :ref:`FiniteLinearAggregate <l46696e6974654c696e656172416767726567617465>`\  R1
+
+* Col1: \ :ref:`FiniteLinearAggregate <l46696e6974654c696e656172416767726567617465>`\  R1
+
+* M1: \ :ref:`MatrixCategory <l4d617472697843617465676f7279>`\ (R1, Row1, Col1)
+
+* R2: Join(\ :ref:`SemiRng <l53656d69526e67>`\ , \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ )
+
+* Row2: \ :ref:`FiniteLinearAggregate <l46696e6974654c696e656172416767726567617465>`\  R2
+
+* Col2: \ :ref:`FiniteLinearAggregate <l46696e6974654c696e656172416767726567617465>`\  R2
+
+* M2: \ :ref:`MatrixCategory <l4d617472697843617465676f7279>`\ (R2, Row2, Col2)
+
+
+\ :ref:`MatrixCategoryFunctions2 <l4d617472697843617465676f727946756e6374696f6e7332>`\  provides functions between two matrix domains. The functions provided are \ :spadfun:`map`\  and \ :spadfun:`reduce`\ .
+
+
+.. _l4d617472697843617465676f727946756e6374696f6e7332-6d6170:
+
+.. index::
+   pair: MatrixCategoryFunctions2; map
+
+:spadfun:`map`\: (R1 -> R2, M1) -> M2 
+  \ ``map(f, m)``\  applies the function \ ``f``\  to the elements of the matrix \ ``m``\ .
+
+
+.. index::
+   pair: MatrixCategoryFunctions2; map
+
+:spadfun:`map`\: (R1 -> Union(R2, failed), M1) -> Union(M2, failed) 
+  \ ``map(f, m)``\  applies the function \ ``f``\  to the elements of the matrix \ ``m``\ .
+
+.. _l4d617472697843617465676f727946756e6374696f6e7332-726564756365:
+
+.. index::
+   pair: MatrixCategoryFunctions2; reduce
+
+:spadfun:`reduce`\: ((R1, R2) -> R2, M1, R2) -> R2 
+  \ ``reduce(f, m, r)``\  traverses \ ``m``\  row by row passing \ ``m``\ (\ ``i``\ , \ ``j``\ ) as first argument to \ ``f``\ . The second argument to \ ``f``\  works as accumulator, value from previous call is passed to next call. On first call \ ``r``\  is passed as second argument to \ ``f``\ . Return value is the last result returned by \ ``f``\ .
+
+

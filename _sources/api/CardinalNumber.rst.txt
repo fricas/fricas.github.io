@@ -1,0 +1,260 @@
+.. index:: CardinalNumber
+
+.. _l43617264696e616c4e756d626572:
+
+CardinalNumber
+==============
+
+:viewcode:`card.spad line 1 <card.spad#L1>` :editcode:`[edit on github] <card.spad#L1>`
+
+
+Members of the domain CardinalNumber are values indicating the cardinality of sets, both finite and infinite. Arithmetic operations are defined on cardinal numbers as follows.   If \ ``x = \#X``\  and \ ``y = \#Y``\  then \ ``x+y = \#(X+Y)``\   disjoint union \ ``x-y = \#(X-Y)``\   relative complement \ ``x*y = \#(X*Y)``\   cartesian product \ ``x^y = \#(X^Y)``\   \ ``X^Y = \{g| g: Y->X\}``\    The non-negative integers have a natural construction as cardinals \ ``0 = \#\{\}``\ , \ ``1 = \{0\}``\ , \ ``2 = \{0, 1\}``\ , ..., \ ``n = \{i| 0 <= i < n\}``\ .   That \ ``0``\  acts as a zero for the multiplication of cardinals is equivalent to the axiom of choice.   The generalized continuum hypothesis asserts \center{\ ``2^Aleph i = Aleph(i+1)``\ } and is independent of the axioms of set theory [Goedel 1940].   Three commonly encountered cardinal numbers are \ ``a = \#Z``\   countable infinity \ ``c = \#R``\   the continuum \ ``f = \#\{g| g: [0, 1]->R\}``\    In this domain, these values are obtained using \ ``a := Aleph 0``\ , \ ``c := 2^a``\ , \ ``f := 2^c``\ .  
+
+
+.. _l43617264696e616c4e756d626572-30:
+
+\ :ref:`0 <l4162656c69616e4d6f6e6f6964-30>`\ \: % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l43617264696e616c4e756d626572-31:
+
+\ :ref:`1 <l4d61676d6157697468556e6974-31>`\ \: % 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l43617264696e616c4e756d626572-2a:
+
+\ :ref:`\* <l4d61676d61-2a>`\ \: (%, %) -> % 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+
+\ :ref:`\* <l4162656c69616e4d6f6e6f6964-2a>`\ \: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`\* <l4162656c69616e53656d6947726f7570-2a>`\ \: (\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l43617264696e616c4e756d626572-2b:
+
+\ :ref:`+ <l4162656c69616e53656d6947726f7570-2b>`\ \: (%, %) -> % 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l43617264696e616c4e756d626572-2d:
+
+.. index::
+   pair: CardinalNumber; -
+
+:spadfun:`-`\: (%, %) -> Union(%, failed) 
+  \ ``x - y``\  returns an element \ ``z``\  such that \ ``z+y=x``\  or "failed" if no such element exists.
+
+.. _l43617264696e616c4e756d626572-3c3d:
+
+\ :ref:`<= <l5061727469616c4f72646572-3c3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l43617264696e616c4e756d626572-3c:
+
+\ :ref:`< <l5061727469616c4f72646572-3c>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l43617264696e616c4e756d626572-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l43617264696e616c4e756d626572-3e3d:
+
+\ :ref:`>= <l5061727469616c4f72646572-3e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l43617264696e616c4e756d626572-3e:
+
+\ :ref:`> <l5061727469616c4f72646572-3e>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l43617264696e616c4e756d626572-5e:
+
+.. index::
+   pair: CardinalNumber; ^
+
+:spadfun:`^`\: (%, %) -> % 
+  \ ``x^y``\  returns \ ``\#(X^Y)``\  where \ ``X^Y``\  is defined as \ ``\{g| g: Y->X\}``\ .
+
+
+\ :ref:`^ <l4d61676d6157697468556e6974-5e>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+
+\ :ref:`^ <l4d61676d61-5e>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+.. _l43617264696e616c4e756d626572-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l43617264696e616c4e756d626572-416c657068:
+
+.. index::
+   pair: CardinalNumber; Aleph
+
+:spadfun:`Aleph`\: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  -> % 
+  \ ``Aleph(n)``\  provides the named (infinite) cardinal number.
+
+.. _l43617264696e616c4e756d626572-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+
+\ :ref:`coerce <l436f65726369626c6546726f6d-636f65726365>`\ \: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  -> % 
+  from \ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ 
+
+.. _l43617264696e616c4e756d626572-636f756e7461626c653f:
+
+.. index::
+   pair: CardinalNumber; countable?
+
+:spadfun:`countable?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``countable?(a)``\  determines whether \ ``a``\  is a countable cardinal, i.e. an integer or \ ``Aleph 0``\ .
+
+.. _l43617264696e616c4e756d626572-66696e6974653f:
+
+.. index::
+   pair: CardinalNumber; finite?
+
+:spadfun:`finite?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``finite?(a)``\  determines whether \ ``a``\  is a finite cardinal, i.e. an integer.
+
+.. _l43617264696e616c4e756d626572-67656e6572616c697a6564436f6e74696e75756d4879706f746865736973417373756d65643f:
+
+.. index::
+   pair: CardinalNumber; generalizedContinuumHypothesisAssumed?
+
+:spadfun:`generalizedContinuumHypothesisAssumed?`\: () -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``generalizedContinuumHypothesisAssumed?()``\  tests if the hypothesis is currently assumed.
+
+.. _l43617264696e616c4e756d626572-67656e6572616c697a6564436f6e74696e75756d4879706f746865736973417373756d6564:
+
+.. index::
+   pair: CardinalNumber; generalizedContinuumHypothesisAssumed
+
+:spadfun:`generalizedContinuumHypothesisAssumed`\: \ :ref:`Boolean <l426f6f6c65616e>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``generalizedContinuumHypothesisAssumed(bool)``\  is used to dictate whether the hypothesis is to be assumed.
+
+.. _l43617264696e616c4e756d626572-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l43617264696e616c4e756d626572-6c656674506f776572:
+
+\ :ref:`leftPower <l4d61676d6157697468556e6974-6c656674506f776572>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+
+\ :ref:`leftPower <l4d61676d61-6c656674506f776572>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+.. _l43617264696e616c4e756d626572-6c6566745265636970:
+
+\ :ref:`leftRecip <l4d61676d6157697468556e6974-6c6566745265636970>`\ \: % -> Union(%, failed) 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l43617264696e616c4e756d626572-6d6178:
+
+\ :ref:`max <l4f726465726564536574-6d6178>`\ \: (%, %) -> % 
+  from \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+.. _l43617264696e616c4e756d626572-6d696e:
+
+\ :ref:`min <l4f726465726564536574-6d696e>`\ \: (%, %) -> % 
+  from \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+.. _l43617264696e616c4e756d626572-6f6e653f:
+
+\ :ref:`one? <l4d61676d6157697468556e6974-6f6e653f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l43617264696e616c4e756d626572-6f70706f736974653f:
+
+\ :ref:`opposite? <l4162656c69616e4d6f6e6f6964-6f70706f736974653f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l43617264696e616c4e756d626572-7265636970:
+
+\ :ref:`recip <l4d61676d6157697468556e6974-7265636970>`\ \: % -> Union(%, failed) 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l43617264696e616c4e756d626572-72657472616374:
+
+\ :ref:`retract <l5265747261637461626c65546f-72657472616374>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ 
+
+.. _l43617264696e616c4e756d626572-72657472616374496643616e:
+
+\ :ref:`retractIfCan <l5265747261637461626c65546f-72657472616374496643616e>`\ \: % -> Union(\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , failed) 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ 
+
+.. _l43617264696e616c4e756d626572-7269676874506f776572:
+
+\ :ref:`rightPower <l4d61676d6157697468556e6974-7269676874506f776572>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+
+\ :ref:`rightPower <l4d61676d61-7269676874506f776572>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+.. _l43617264696e616c4e756d626572-72696768745265636970:
+
+\ :ref:`rightRecip <l4d61676d6157697468556e6974-72696768745265636970>`\ \: % -> Union(%, failed) 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l43617264696e616c4e756d626572-73616d706c65:
+
+\ :ref:`sample <l4d61676d6157697468556e6974-73616d706c65>`\ \: % 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l43617264696e616c4e756d626572-736d616c6c65723f:
+
+\ :ref:`smaller? <l436f6d70617261626c65-736d616c6c65723f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+
+.. _l43617264696e616c4e756d626572-7a65726f3f:
+
+\ :ref:`zero? <l4162656c69616e4d6f6e6f6964-7a65726f3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  
+
+\ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\  
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`CommutativeStar <l436f6d6d7574617469766553746172>`\  
+
+\ :ref:`Comparable <l436f6d70617261626c65>`\  
+
+\ :ref:`Magma <l4d61676d61>`\  
+
+\ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\  
+
+\ :ref:`Monoid <l4d6f6e6f6964>`\  
+
+\ :ref:`OrderedSet <l4f726465726564536574>`\  
+
+\ :ref:`PartialOrder <l5061727469616c4f72646572>`\  
+
+\ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+
+\ :ref:`SemiGroup <l53656d6947726f7570>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+
+\ :ref:`TwoSidedRecip <l54776f53696465645265636970>`\  
+

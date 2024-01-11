@@ -1,0 +1,295 @@
+.. index:: SubSpace
+
+.. _l5375625370616365:
+
+SubSpace(n, R)
+==============
+
+:viewcode:`newpoint.spad line 101 <newpoint.spad#L101>` :editcode:`[edit on github] <newpoint.spad#L101>`
+
+* n: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ 
+
+* R: \ :ref:`Ring <l52696e67>`\ 
+
+
+This domain \undocumented
+
+
+.. _l5375625370616365-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l5375625370616365-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l5375625370616365-616464506f696e7432:
+
+.. index::
+   pair: SubSpace; addPoint2
+
+:spadfun:`addPoint2`\: (%, \ :ref:`Point <l506f696e74>`\  R) -> % 
+  \ ``addPoint2(s, p)``\  adds the 4 dimensional point, \ ``p``\ , to the 3 dimensional subspace, \ ``s``\ . The subspace \ ``s``\  is returned with the additional point.
+
+.. _l5375625370616365-616464506f696e74:
+
+.. index::
+   pair: SubSpace; addPoint
+
+:spadfun:`addPoint`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``addPoint(s, li, i)``\  adds the 4 dimensional point indicated by the index location, \ ``i``\ , to the 3 dimensional subspace, \ ``s``\ . The list of non negative integers, \ ``li``\ , dictates the path to follow, or, to look at it another way, points to the component in which the point is to be added. It\ ``'s``\  length should range from 0 to \ ``n - 1``\  where \ ``n``\  is the dimension of the subspace. If the length is \ ``n - 1``\ , then a specific lowest level component is being referenced. If it is less than \ ``n - 1``\ , then some higher level component (0 indicates top level component) is being referenced and a component of that level with the desired point is created. The subspace \ ``s``\  is returned with the additional point.
+
+
+.. index::
+   pair: SubSpace; addPoint
+
+:spadfun:`addPoint`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Point <l506f696e74>`\  R) -> % 
+  \ ``addPoint(s, li, p)``\  adds the 4 dimensional point, \ ``p``\ , to the 3 dimensional subspace, \ ``s``\ . The list of non negative integers, \ ``li``\ , dictates the path to follow, or, to look at it another way, points to the component in which the point is to be added. It\ ``'s``\  length should range from 0 to \ ``n - 1``\  where \ ``n``\  is the dimension of the subspace. If the length is \ ``n - 1``\ , then a specific lowest level component is being referenced. If it is less than \ ``n - 1``\ , then some higher level component (0 indicates top level component) is being referenced and a component of that level with the desired point is created. The subspace \ ``s``\  is returned with the additional point.
+
+
+.. index::
+   pair: SubSpace; addPoint
+
+:spadfun:`addPoint`\: (%, \ :ref:`Point <l506f696e74>`\  R) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``addPoint(s, p)``\  adds the point, \ ``p``\ , to the 3 dimensional subspace, \ ``s``\ , and returns the new total number of points in \ ``s``\ .
+
+.. _l5375625370616365-616464506f696e744c617374:
+
+.. index::
+   pair: SubSpace; addPointLast
+
+:spadfun:`addPointLast`\: (%, %, \ :ref:`Point <l506f696e74>`\  R, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``addPointLast(s, s2, li, p)``\  adds the 4 dimensional point, \ ``p``\ , to the 3 dimensional subspace, \ ``s``\ . \ ``s2``\  point to the end of the subspace \ ``s``\ . \ ``n``\  is the path in the \ ``s2``\  component. The subspace \ ``s``\  is returned with the additional point.
+
+.. _l5375625370616365-6269727468:
+
+.. index::
+   pair: SubSpace; birth
+
+:spadfun:`birth`\: % -> % 
+  \ ``birth(x)``\  \undocumented
+
+.. _l5375625370616365-6368696c64:
+
+.. index::
+   pair: SubSpace; child
+
+:spadfun:`child`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``child(x, n)``\  \undocumented
+
+.. _l5375625370616365-6368696c6472656e:
+
+.. index::
+   pair: SubSpace; children
+
+:spadfun:`children`\: % -> \ :ref:`List <l4c697374>`\  % 
+  \ ``children(x)``\  \undocumented
+
+.. _l5375625370616365-636c6f7365436f6d706f6e656e74:
+
+.. index::
+   pair: SubSpace; closeComponent
+
+:spadfun:`closeComponent`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> % 
+  \ ``closeComponent(s, li, b)``\  sets the property of the component in the 3 dimensional subspace, \ ``s``\ , to be closed if \ ``b``\  is \ ``true``\ , or open if \ ``b``\  is \ ``false``\ . The list of non negative integers, \ ``li``\ , dictates the path to follow, or, to look at it another way, points to the component whose closed property is to be set. The subspace, \ ``s``\ , is returned with the component property modification.
+
+.. _l5375625370616365-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l5375625370616365-64656570436f7079:
+
+.. index::
+   pair: SubSpace; deepCopy
+
+:spadfun:`deepCopy`\: % -> % 
+  \ ``deepCopy(x)``\  \undocumented
+
+.. _l5375625370616365-646566696e6550726f7065727479:
+
+.. index::
+   pair: SubSpace; defineProperty
+
+:spadfun:`defineProperty`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`SubSpaceComponentProperty <l5375625370616365436f6d706f6e656e7450726f7065727479>`\ ) -> % 
+  \ ``defineProperty(s, li, p)``\  defines the component property in the 3 dimensional subspace, \ ``s``\ , to be that of \ ``p``\ , where \ ``p``\  is of the domain \ :ref:`SubSpaceComponentProperty <l5375625370616365436f6d706f6e656e7450726f7065727479>`\ . The list of non negative integers, \ ``li``\ , dictates the path to follow, or, to look at it another way, points to the component whose property is being defined. The subspace, \ ``s``\ , is returned with the component property definition.
+
+.. _l5375625370616365-65787472616374436c6f736564:
+
+.. index::
+   pair: SubSpace; extractClosed
+
+:spadfun:`extractClosed`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``extractClosed(s)``\  returns the \ :ref:`Boolean <l426f6f6c65616e>`\  value of the closed property for the indicated 3 dimensional subspace \ ``s``\ . If the property is closed, \ ``True``\  is returned, otherwise \ ``False``\  is returned.
+
+.. _l5375625370616365-65787472616374496e646578:
+
+.. index::
+   pair: SubSpace; extractIndex
+
+:spadfun:`extractIndex`\: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``extractIndex(s)``\  returns a non negative integer which is the current index of the 3 dimensional subspace \ ``s``\ .
+
+.. _l5375625370616365-65787472616374506f696e74:
+
+.. index::
+   pair: SubSpace; extractPoint
+
+:spadfun:`extractPoint`\: % -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``extractPoint(s)``\  returns the point which is given by the current index location into the point data field of the 3 dimensional subspace \ ``s``\ .
+
+.. _l5375625370616365-6578747261637450726f7065727479:
+
+.. index::
+   pair: SubSpace; extractProperty
+
+:spadfun:`extractProperty`\: % -> \ :ref:`SubSpaceComponentProperty <l5375625370616365436f6d706f6e656e7450726f7065727479>`\  
+  \ ``extractProperty(s)``\  returns the property of domain \ :ref:`SubSpaceComponentProperty <l5375625370616365436f6d706f6e656e7450726f7065727479>`\  of the indicated 3 dimensional subspace \ ``s``\ .
+
+.. _l5375625370616365-696e7465726e616c3f:
+
+.. index::
+   pair: SubSpace; internal?
+
+:spadfun:`internal?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``internal?(x)``\  \undocumented
+
+.. _l5375625370616365-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l5375625370616365-6c6561663f:
+
+.. index::
+   pair: SubSpace; leaf?
+
+:spadfun:`leaf?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``leaf?(x)``\  \undocumented
+
+.. _l5375625370616365-6c6576656c:
+
+.. index::
+   pair: SubSpace; level
+
+:spadfun:`level`\: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``level(s)``\  returns a non negative integer which is the current level field of the indicated 3 dimensional subspace \ ``s``\ .
+
+.. _l5375625370616365-6d65726765:
+
+.. index::
+   pair: SubSpace; merge
+
+:spadfun:`merge`\: (%, %) -> % 
+  \ ``merge(s1, s2)``\  the subspaces \ ``s1``\  and \ ``s2``\  into a single subspace.
+
+
+.. index::
+   pair: SubSpace; merge
+
+:spadfun:`merge`\: \ :ref:`List <l4c697374>`\  % -> % 
+  \ ``merge(ls)``\  a list of subspaces, \ ``ls``\ , into one subspace.
+
+.. _l5375625370616365-6d6f64696679506f696e74:
+
+.. index::
+   pair: SubSpace; modifyPoint
+
+:spadfun:`modifyPoint`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``modifyPoint(s, li, i)``\  replaces an existing point in the 3 dimensional subspace, \ ``s``\ , with the 4 dimensional point indicated by the index location, \ ``i``\ . The list of non negative integers, \ ``li``\ , dictates the path to follow, or, to look at it another way, points to the component in which the existing point is to be modified. An error message occurs if \ ``s``\  is empty, otherwise the subspace \ ``s``\  is returned with the point modification.
+
+
+.. index::
+   pair: SubSpace; modifyPoint
+
+:spadfun:`modifyPoint`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Point <l506f696e74>`\  R) -> % 
+  \ ``modifyPoint(s, li, p)``\  replaces an existing point in the 3 dimensional subspace, \ ``s``\ , with the 4 dimensional point, \ ``p``\ . The list of non negative integers, \ ``li``\ , dictates the path to follow, or, to look at it another way, points to the component in which the existing point is to be modified. An error message occurs if \ ``s``\  is empty, otherwise the subspace \ ``s``\  is returned with the point modification.
+
+
+.. index::
+   pair: SubSpace; modifyPoint
+
+:spadfun:`modifyPoint`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Point <l506f696e74>`\  R) -> % 
+  \ ``modifyPoint(s, ind, p)``\  modifies the point referenced by the index location, \ ``ind``\ , by replacing it with the point, \ ``p``\  in the 3 dimensional subspace, \ ``s``\ . An error message occurs if \ ``s``\  is empty, otherwise the subspace \ ``s``\  is returned with the point modification.
+
+.. _l5375625370616365-6e6577:
+
+.. index::
+   pair: SubSpace; new
+
+:spadfun:`new`\: () -> % 
+  \ ``new()``\  \undocumented
+
+.. _l5375625370616365-6e756d6265724f664368696c6472656e:
+
+.. index::
+   pair: SubSpace; numberOfChildren
+
+:spadfun:`numberOfChildren`\: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``numberOfChildren(x)``\  \undocumented
+
+.. _l5375625370616365-706172656e74:
+
+.. index::
+   pair: SubSpace; parent
+
+:spadfun:`parent`\: % -> % 
+  \ ``parent(s)``\  returns the subspace which is the parent of the indicated 3 dimensional subspace \ ``s``\ . If \ ``s``\  is the top level subspace an error message is returned.
+
+.. _l5375625370616365-706f696e7444617461:
+
+.. index::
+   pair: SubSpace; pointData
+
+:spadfun:`pointData`\: % -> \ :ref:`List <l4c697374>`\  \ :ref:`Point <l506f696e74>`\  R 
+  \ ``pointData(s)``\  returns the list of points from the point data field of the 3 dimensional subspace \ ``s``\ .
+
+.. _l5375625370616365-726f6f743f:
+
+.. index::
+   pair: SubSpace; root?
+
+:spadfun:`root?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``root?(x)``\  \undocumented
+
+.. _l5375625370616365-7365706172617465:
+
+.. index::
+   pair: SubSpace; separate
+
+:spadfun:`separate`\: % -> \ :ref:`List <l4c697374>`\  % 
+  \ ``separate(s)``\  makes each of the components of the \ :ref:`SubSpace <l5375625370616365>`\ , \ ``s``\ , into a list of separate and distinct subspaces and returns the list.
+
+.. _l5375625370616365-7368616c6c6f77436f7079:
+
+.. index::
+   pair: SubSpace; shallowCopy
+
+:spadfun:`shallowCopy`\: % -> % 
+  \ ``shallowCopy(x)``\  \undocumented
+
+.. _l5375625370616365-7375627370616365:
+
+.. index::
+   pair: SubSpace; subspace
+
+:spadfun:`subspace`\: () -> % 
+  \ ``subspace()``\  \undocumented
+
+.. _l5375625370616365-7472617665727365:
+
+.. index::
+   pair: SubSpace; traverse
+
+:spadfun:`traverse`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``traverse(s, li)``\  follows the branch list of the 3 dimensional subspace, \ ``s``\ , along the path dictated by the list of non negative integers, \ ``li``\ , which points to the component which has been traversed to. The subspace, \ ``s``\ , is returned, where \ ``s``\  is now the subspace pointed to by \ ``li``\ .
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

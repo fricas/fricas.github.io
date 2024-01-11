@@ -1,0 +1,70 @@
+.. index:: PrimGCD
+
+.. _l5072696d474344:
+
+PrimGCD
+=======
+
+:viewcode:`amodgcd.spad line 67 <amodgcd.spad#L67>` :editcode:`[edit on github] <amodgcd.spad#L67>`
+
+
+This is unfinished package for computing primitive \ ``gcd``\  over algebraic extensions. Algebraic extension is defined by list of polynomial forming triangular system. Currently implemented is only trial division.
+
+
+.. _l5072696d474344-616c675f72656475636530:
+
+.. index::
+   pair: PrimGCD; alg_reduce0
+
+:spadfun:`alg_reduce0`\: (\ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ), \ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ), \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ) 
+  \ ``alg_reduce0(x, m, lv, z)``\  performs single reduction step.
+
+.. _l5072696d474344-616c675f726564756365:
+
+.. index::
+   pair: PrimGCD; alg_reduce
+
+:spadfun:`alg_reduce`\: (\ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ), \ :ref:`List <l4c697374>`\  \ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ), \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ) 
+  \ ``alg_reduce(x, lm, lv, lz)``\  reduces \ ``x``\  modulo elements of \ ``lm``\ .
+
+.. _l5072696d474344-616c675f747269616c5f6469766973696f6e:
+
+.. index::
+   pair: PrimGCD; alg_trial_division
+
+:spadfun:`alg_trial_division`\: (\ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ), \ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ), \ :ref:`List <l4c697374>`\  \ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ), \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``alg_trial_division(x, y, lm, lv, lz)``\  checks if \ ``x``\  is divisible by \ ``y``\  in algebraic extension defined by \ ``lm``\ . \ ``lz``\  is list of algebraic variables, \ ``lv``\  is list of independent (polynomial) variables. Other variables serve as parameters.
+
+.. _l5072696d474344-636f6566667330:
+
+.. index::
+   pair: PrimGCD; coeffs0
+
+:spadfun:`coeffs0`\: (\ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ), \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ )) -> \ :ref:`List <l4c697374>`\  \ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ) 
+  \ ``coeffs0(x, lv, lp)``\  is used by \ ``coeffs1``\ 
+
+.. _l5072696d474344-636f6566667331:
+
+.. index::
+   pair: PrimGCD; coeffs1
+
+:spadfun:`coeffs1`\: (\ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ), \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ) 
+  \ ``coeffs1(x, lv)``\  computes list of coefficients of \ ``x``\  with respect to variables in \ ``lv``\ . Variables in \ ``lv``\  must be decreasing and bigger than all other variables of \ ``x``\ .
+
+.. _l5072696d474344-6c637830:
+
+.. index::
+   pair: PrimGCD; lcx0
+
+:spadfun:`lcx0`\: (\ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ), \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> Record(lcx0lc: \ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ), lcx0m: \ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ )) 
+  \ ``lcx0(x, lv)``\  computes leading coefficient of \ ``x``\  and corresponding product of variables (monomial with coefficient 1) with respect to variables in \ ``lv``\  Variables in \ ``lv``\  must be decreasing and bigger than all other variables of \ ``x``\ .
+
+.. _l5072696d474344-6c637a:
+
+.. index::
+   pair: PrimGCD; lcz
+
+:spadfun:`lcz`\: (\ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ), \ :ref:`Symbol <l53796d626f6c>`\ ) -> Record(lczlc: \ :ref:`SparseMultivariatePolynomial <l5370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ), k: \ :ref:`Integer <l496e7465676572>`\ ) 
+  \ ``lcz(x, z)``\  computes leading coefficient and degree of \ ``x``\  with respect to variable \ ``z``\ .
+
+

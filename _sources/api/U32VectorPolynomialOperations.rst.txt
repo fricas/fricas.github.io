@@ -1,0 +1,211 @@
+.. index:: U32VectorPolynomialOperations
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73:
+
+U32VectorPolynomialOperations
+=============================
+
+:viewcode:`u32vec.spad line 403 <u32vec.spad#L403>` :editcode:`[edit on github] <u32vec.spad#L403>`
+
+
+This is a low-level package which implements operations on vectors treated as univariate modular polynomials. Most operations takes modulus as parameter. Modulus is machine sized prime which should be small enough to avoid overflow in intermediate calculations.
+
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-636f70795f6669727374:
+
+.. index::
+   pair: U32VectorPolynomialOperations; copy_first
+
+:spadfun:`copy_first`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``copy_first(v1, v2, n)``\  copies first \ ``n``\  elements of \ ``v2``\  into \ ``n``\  first positions in \ ``v1``\ .
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-636f70795f736c696365:
+
+.. index::
+   pair: U32VectorPolynomialOperations; copy_slice
+
+:spadfun:`copy_slice`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``copy_slice(v1, v2, m, n)``\  copies the slice of \ ``v2``\  starting at \ ``m``\  elements and having \ ``n``\  elements into corresponding positions in \ ``v1``\ .
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-646567726565:
+
+.. index::
+   pair: U32VectorPolynomialOperations; degree
+
+:spadfun:`degree`\: \ :ref:`U32Vector <l553332566563746f72>`\  -> \ :ref:`Integer <l496e7465676572>`\  
+  \ ``degree(v)``\  is degree of \ ``v``\  treated as polynomial
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-646966666572656e7469617465:
+
+.. index::
+   pair: U32VectorPolynomialOperations; differentiate
+
+:spadfun:`differentiate`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`U32Vector <l553332566563746f72>`\  
+  Polynomial differentiation.
+
+
+.. index::
+   pair: U32VectorPolynomialOperations; differentiate
+
+:spadfun:`differentiate`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`U32Vector <l553332566563746f72>`\  
+  Polynomial differentiation.
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-64697669646521:
+
+.. index::
+   pair: U32VectorPolynomialOperations; divide!
+
+:spadfun:`divide!`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  Polynomial division.
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-6576616c5f6174:
+
+.. index::
+   pair: U32VectorPolynomialOperations; eval_at
+
+:spadfun:`eval_at`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Integer <l496e7465676572>`\  
+  \ ``eval_at(v, deg, pt, p)``\  treats \ ``v``\  as coefficients of polynomial of degree \ ``deg``\  and evaluates the polynomial at point \ ``pt``\  modulo \ ``p``\ 
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-657874656e6465645f676364:
+
+.. index::
+   pair: U32VectorPolynomialOperations; extended_gcd
+
+:spadfun:`extended_gcd`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`U32Vector <l553332566563746f72>`\  
+  \ ``extended_gcd(v1, v2, p)``\  gives [\ ``g``\ , \ ``c1``\ , \ ``c2``\ ] such that \ ``g``\  is \ ``gcd(v1, v2, p)``\ , \ ``g = c1*v1 + c2*v2``\  and degree(\ ``c1``\ ) < max(degree(\ ``v2``\ ) - degree(\ ``g``\ ), 0) and degree(\ ``c2``\ ) < max(degree(\ ``v1``\ ) - degree(\ ``g``\ ), 1)
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-676364:
+
+.. index::
+   pair: U32VectorPolynomialOperations; gcd
+
+:spadfun:`gcd`\: (\ :ref:`PrimitiveArray <l5072696d69746976654172726179>`\  \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`U32Vector <l553332566563746f72>`\  
+  \ ``gcd(a, lo, hi, p)``\  computes \ ``gcd``\  of elements a(\ ``lo``\ ), a(\ ``lo+1``\ ), ..., a(\ ``hi``\ ).
+
+
+.. index::
+   pair: U32VectorPolynomialOperations; gcd
+
+:spadfun:`gcd`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`U32Vector <l553332566563746f72>`\  
+  \ ``gcd(v1, v2, p)``\  computes monic \ ``gcd``\  of \ ``v1``\  and \ ``v2``\  modulo \ ``p``\ .
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-6c636d:
+
+.. index::
+   pair: U32VectorPolynomialOperations; lcm
+
+:spadfun:`lcm`\: (\ :ref:`PrimitiveArray <l5072696d69746976654172726179>`\  \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`U32Vector <l553332566563746f72>`\  
+  \ ``lcm(a, lo, hi, p)``\  computes \ ``lcm``\  of elements a(\ ``lo``\ ), a(\ ``lo+1``\ ), ..., a(\ ``hi``\ ).
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-6d756c:
+
+.. index::
+   pair: U32VectorPolynomialOperations; mul
+
+:spadfun:`mul`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`U32Vector <l553332566563746f72>`\  
+  Polynomial multiplication.
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-6d756c5f62795f62696e6f6d69616c:
+
+.. index::
+   pair: U32VectorPolynomialOperations; mul_by_binomial
+
+:spadfun:`mul_by_binomial`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``mul_by_binomial(v, pt, p)``\  treats \ ``v``\  a polynomial and multiplies in place this polynomial by binomial (\ ``x``\  + \ ``pt``\ ). Highest coefficient of product is ignored.
+
+
+.. index::
+   pair: U32VectorPolynomialOperations; mul_by_binomial
+
+:spadfun:`mul_by_binomial`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``mul_by_binomial(v, deg, pt, p)``\  treats \ ``v``\  as coefficients of polynomial of degree \ ``deg``\  - 1 and multiplies in place this polynomial by binomial (\ ``x``\  + \ ``pt``\ ). Highest coefficient of product is ignored.
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-6d756c5f62795f7363616c6172:
+
+.. index::
+   pair: U32VectorPolynomialOperations; mul_by_scalar
+
+:spadfun:`mul_by_scalar`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``mul_by_scalar(v, deg, c, p)``\  treats \ ``v``\  as coefficients of polynomial of degree \ ``deg``\  and multiplies in place this polynomial by scalar \ ``c``\ 
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-70615f746f5f737570:
+
+.. index::
+   pair: U32VectorPolynomialOperations; pa_to_sup
+
+:spadfun:`pa_to_sup`\: \ :ref:`U32Vector <l553332566563746f72>`\  -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``pa_to_sup(v)``\  converts vector of coefficients to a polynomial
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-706f77:
+
+.. index::
+   pair: U32VectorPolynomialOperations; pow
+
+:spadfun:`pow`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`U32Vector <l553332566563746f72>`\  
+  \ ``pow(u, n, d, p)``\  returns u^n truncated after degree \ ``d``\ , except if \ ``n=1``\ , in which case \ ``u``\  itself is returned
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-72656d61696e64657221:
+
+.. index::
+   pair: U32VectorPolynomialOperations; remainder!
+
+:spadfun:`remainder!`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  Polynomial remainder
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-726573756c74616e74:
+
+.. index::
+   pair: U32VectorPolynomialOperations; resultant
+
+:spadfun:`resultant`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Integer <l496e7465676572>`\  
+  \ ``resultant(v1, v2, p)``\  computes resultant of \ ``v1``\  and \ ``v2``\  modulo \ ``p``\ .
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-746f5f6d6f645f7061:
+
+.. index::
+   pair: U32VectorPolynomialOperations; to_mod_pa
+
+:spadfun:`to_mod_pa`\: (\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`U32Vector <l553332566563746f72>`\  
+  \ ``to_mod_pa(s, p)``\  reduces coefficients of polynomial \ ``s``\  modulo prime \ ``p``\  and converts the result to vector
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-7472756e63617465645f6d756c5f61646432:
+
+.. index::
+   pair: U32VectorPolynomialOperations; truncated_mul_add2
+
+:spadfun:`truncated_mul_add2`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``truncated_mul_add2(x, y, z, d1, d2, p)``\  adds to \ ``z``\  the product x*y and the variable to power \ ``d1``\  truncated after degree \ ``d``\ .
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-7472756e63617465645f6d756c5f616464:
+
+.. index::
+   pair: U32VectorPolynomialOperations; truncated_mul_add
+
+:spadfun:`truncated_mul_add`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``truncated_mul_add(x, y, z, d, p)``\  adds to \ ``z``\  the product x*y truncated after degree \ ``d``\ .
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-7472756e63617465645f6d756c7469706c69636174696f6e:
+
+.. index::
+   pair: U32VectorPolynomialOperations; truncated_multiplication
+
+:spadfun:`truncated_multiplication`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`U32Vector <l553332566563746f72>`\  
+  \ ``truncated_multiplication(x, y, d, p)``\  computes x*y truncated after degree \ ``d``\ .
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-766563746f725f6164645f6d756c:
+
+.. index::
+   pair: U32VectorPolynomialOperations; vector_add_mul
+
+:spadfun:`vector_add_mul`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``vector_add_mul(v1, v2, m, n, c, p)``\  sets \ ``v1``\ (\ ``m``\ ), ..., \ ``v1``\ (\ ``n``\ ) to corresponding extries in \ ``v1``\  + \ ``c*v2``\  modulo \ ``p``\ .
+
+.. _l553332566563746f72506f6c796e6f6d69616c4f7065726174696f6e73-766563746f725f636f6d62696e6174696f6e:
+
+.. index::
+   pair: U32VectorPolynomialOperations; vector_combination
+
+:spadfun:`vector_combination`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``vector_combination(v1, c1, v2, c2, n, delta, p)``\  replaces first \ ``n``\  + 1 entires of \ ``v1``\  by corresponding entries of \ ``c1*v1+c2*x^delta*v2``\  mod \ ``p``\ .
+
+

@@ -1,0 +1,47 @@
+.. index:: MakeFloatCompiledFunction
+
+.. _l4d616b65466c6f6174436f6d70696c656446756e6374696f6e:
+
+MakeFloatCompiledFunction S
+===========================
+
+:viewcode:`mkfunc.spad line 325 <mkfunc.spad#L325>` :editcode:`[edit on github] <mkfunc.spad#L325>`
+
+* S: \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+
+MakeFloatCompiledFunction transforms top-level objects into compiled Lisp functions whose arguments are Lisp floats. This by-passes the \Language{} compiler and interpreter, thereby gaining several orders of magnitude.
+
+
+.. _l4d616b65466c6f6174436f6d70696c656446756e6374696f6e-6d616b655f696d6167696e6172795f706172745f66756e6374696f6e:
+
+.. index::
+   pair: MakeFloatCompiledFunction; make_imaginary_part_function
+
+:spadfun:`make_imaginary_part_function`\: (S, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  -> \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  
+  \ ``make_imaginary_part_function(expr, x)``\  returns a Lisp function \ ``f``\ : \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  \ ``->``\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  defined by \ ``f(x) == imag(expr)``\ . Function \ ``f``\  is compiled and directly applicable to objects of type \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ .
+
+.. _l4d616b65466c6f6174436f6d70696c656446756e6374696f6e-6d616b655f7265616c5f706172745f66756e6374696f6e:
+
+.. index::
+   pair: MakeFloatCompiledFunction; make_real_part_function
+
+:spadfun:`make_real_part_function`\: (S, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  -> \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  
+  \ ``make_real_part_function(expr, x)``\  returns a Lisp function \ ``f``\ : \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  \ ``->``\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  defined by \ ``f(x) == real(expr)``\ . Function \ ``f``\  is compiled and directly applicable to objects of type \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ .
+
+.. _l4d616b65466c6f6174436f6d70696c656446756e6374696f6e-6d616b65466c6f617446756e6374696f6e:
+
+.. index::
+   pair: MakeFloatCompiledFunction; makeFloatFunction
+
+:spadfun:`makeFloatFunction`\: (S, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  -> \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  
+  \ ``makeFloatFunction(expr, x)``\  returns a Lisp function \ ``f``\ : \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  \ ``->``\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  defined by \ ``f(x) == expr``\ . Function \ ``f``\  is compiled and directly applicable to objects of type \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ .
+
+
+.. index::
+   pair: MakeFloatCompiledFunction; makeFloatFunction
+
+:spadfun:`makeFloatFunction`\: (S, \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ) -> (\ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ ) -> \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  
+  \ ``makeFloatFunction(expr, x, y)``\  returns a Lisp function \ ``f``\ : (\ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ ) \ ``->``\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  defined by \ ``f(x, y) == expr``\ . Function \ ``f``\  is compiled and directly applicable to objects of type (\ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ ).
+
+

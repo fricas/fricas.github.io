@@ -1,0 +1,32 @@
+.. index:: TransSolvePackageService
+
+.. _l5472616e73536f6c76655061636b61676553657276696365:
+
+TransSolvePackageService R
+==========================
+
+:viewcode:`transsolve.spad line 598 <transsolve.spad#L598>` :editcode:`[edit on github] <transsolve.spad#L598>`
+
+* R: Join(\ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ )
+
+
+This package finds the function \ ``func3``\  where \ ``func1``\  and \ ``func2``\  are given and \ ``func1``\  = \ ``func3``\ (\ ``func2``\ ) . If there is no solution then function \ ``func1``\  will be returned. An example would be \ ``func1 := 8*X^3+32*X^2-14*X ::EXPR INT``\  and \ ``func2 := 2*X ::EXPR INT``\  convert them via univariate to FRAC SUP EXPR INT and then the solution is \ ``func3 := X^3+X^2-X``\  of type FRAC SUP EXPR INT
+
+
+.. _l5472616e73536f6c76655061636b61676553657276696365-6465636f6d706f736546756e63:
+
+.. index::
+   pair: TransSolvePackageService; decomposeFunc
+
+:spadfun:`decomposeFunc`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R, \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R, \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R) -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``decomposeFunc(func1, func2, newvar)``\  returns a function \ ``func3``\  where \ ``func1``\  = \ ``func3``\ (\ ``func2``\ ) and expresses it in the new variable newvar. If there is no solution then \ ``func1``\  will be returned.
+
+.. _l5472616e73536f6c76655061636b61676553657276696365-756e766563746f72697365:
+
+.. index::
+   pair: TransSolvePackageService; unvectorise
+
+:spadfun:`unvectorise`\: (\ :ref:`Vector <l566563746f72>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R, \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R, \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``unvectorise(vect, var, n)``\  returns \ ``vect(1) + vect(2)*var + ... + vect(n+1)*var^(n)``\  where \ ``vect``\  is the vector of the coefficients of the polynomial, \ ``var``\  the new variable and \ ``n``\  the degree.
+
+

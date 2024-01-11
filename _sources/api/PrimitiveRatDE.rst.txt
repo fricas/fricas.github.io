@@ -1,0 +1,89 @@
+.. index:: PrimitiveRatDE
+
+.. _l5072696d69746976655261744445:
+
+PrimitiveRatDE(F, UP, L, LQ)
+============================
+
+:viewcode:`oderf.spad line 73 <oderf.spad#L73>` :editcode:`[edit on github] <oderf.spad#L73>`
+
+* F: Join(\ :ref:`Field <l4669656c64>`\ , \ :ref:`CharacteristicZero <l43686172616374657269737469635a65726f>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ )
+
+* UP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  F
+
+* L: \ :ref:`LinearOrdinaryDifferentialOperatorCategory <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7243617465676f7279>`\  UP
+
+* LQ: \ :ref:`LinearOrdinaryDifferentialOperatorCategory <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7243617465676f7279>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+
+\ ``PrimitiveRatDE``\  provides functions for in-field solutions of linear ordinary differential equations, in the transcendental case. The derivation to use is given by the parameter \ ``L``\ .
+
+
+.. _l5072696d69746976655261744445-64656e6f6d4c4f4445:
+
+.. index::
+   pair: PrimitiveRatDE; denomLODE
+
+:spadfun:`denomLODE`\: (L, \ :ref:`Fraction <l4672616374696f6e>`\  UP) -> Union(UP, failed) 
+  \ ``denomLODE(op, g)``\  returns a polynomial \ ``d``\  such that any rational solution of \ ``op y = g``\  is of the form \ ``p/d``\  for some polynomial \ ``p``\ , and "failed", if the equation has no rational solution.
+
+
+.. index::
+   pair: PrimitiveRatDE; denomLODE
+
+:spadfun:`denomLODE`\: (L, \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP) -> UP 
+  \ ``denomLODE(op, [g1, ..., gm])``\  returns a polynomial \ ``d``\  such that any rational solution of \ ``op y = c1 g1 + ... + cm gm``\  is of the form \ ``p/d``\  for some polynomial \ ``p``\ .
+
+.. _l5072696d69746976655261744445-696e64696369616c4571756174696f6e:
+
+.. index::
+   pair: PrimitiveRatDE; indicialEquation
+
+:spadfun:`indicialEquation`\: (L, F) -> UP 
+  \ ``indicialEquation(op, a)``\  returns the indicial equation of \ ``op``\  at \ ``a``\ .
+
+
+.. index::
+   pair: PrimitiveRatDE; indicialEquation
+
+:spadfun:`indicialEquation`\: (LQ, F) -> UP 
+  \ ``indicialEquation(op, a)``\  returns the indicial equation of \ ``op``\  at \ ``a``\ .
+
+.. _l5072696d69746976655261744445-696e64696369616c4571756174696f6e73:
+
+.. index::
+   pair: PrimitiveRatDE; indicialEquations
+
+:spadfun:`indicialEquations`\: (L, UP) -> \ :ref:`List <l4c697374>`\  Record(center: UP, equation: UP) 
+  \ ``indicialEquations(op, p)``\  returns \ ``[[d1, e1], ..., [dq, eq]]``\  where the \ ``d_i``\ \ ``'s``\  are the affine singularities of \ ``op``\  above the roots of \ ``p``\ , and the \ ``e_i``\ \ ``'s``\  are the indicial equations at each \ ``d_i``\ .
+
+
+.. index::
+   pair: PrimitiveRatDE; indicialEquations
+
+:spadfun:`indicialEquations`\: (LQ, UP) -> \ :ref:`List <l4c697374>`\  Record(center: UP, equation: UP) 
+  \ ``indicialEquations(op, p)``\  returns \ ``[[d1, e1], ..., [dq, eq]]``\  where the \ ``d_i``\ \ ``'s``\  are the affine singularities of \ ``op``\  above the roots of \ ``p``\ , and the \ ``e_i``\ \ ``'s``\  are the indicial equations at each \ ``d_i``\ .
+
+
+.. index::
+   pair: PrimitiveRatDE; indicialEquations
+
+:spadfun:`indicialEquations`\: L -> \ :ref:`List <l4c697374>`\  Record(center: UP, equation: UP) 
+  \ ``indicialEquations op``\  returns \ ``[[d1, e1], ..., [dq, eq]]``\  where the \ ``d_i``\ \ ``'s``\  are the affine singularities of \ ``op``\ , and the \ ``e_i``\ \ ``'s``\  are the indicial equations at each \ ``d_i``\ .
+
+
+.. index::
+   pair: PrimitiveRatDE; indicialEquations
+
+:spadfun:`indicialEquations`\: LQ -> \ :ref:`List <l4c697374>`\  Record(center: UP, equation: UP) 
+  \ ``indicialEquations op``\  returns \ ``[[d1, e1], ..., [dq, eq]]``\  where the \ ``d_i``\ \ ``'s``\  are the affine singularities of \ ``op``\ , and the \ ``e_i``\ \ ``'s``\  are the indicial equations at each \ ``d_i``\ .
+
+.. _l5072696d69746976655261744445-73706c697444656e6f6d696e61746f72:
+
+.. index::
+   pair: PrimitiveRatDE; splitDenominator
+
+:spadfun:`splitDenominator`\: (LQ, \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP) -> Record(eq: L, rh: \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP) 
+  \ ``splitDenominator(op, [g1, ..., gm])``\  returns \ ``op0, [h1, ..., hm]``\  such that the equations \ ``op y = c1 g1 + ... + cm gm``\  and \ ``op0 y = c1 h1 + ... + cm hm``\  have the same solutions.
+
+

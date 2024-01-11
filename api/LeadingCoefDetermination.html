@@ -1,22 +1,18 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>LeadingCoefDetermination(OV, E, Z, P) &#8212; FriCAS</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=0034329e"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -48,7 +44,7 @@
           <div class="body" role="main">
             
   <section id="leadingcoefdetermination-ov-e-z-p">
-<span id="l4c656164696e67436f656644657465726d696e6174696f6e"></span><span id="index-0"></span><h1>LeadingCoefDetermination(OV, E, Z, P)<a class="headerlink" href="#leadingcoefdetermination-ov-e-z-p" title="Permalink to this heading">¶</a></h1>
+<span id="l4c656164696e67436f656644657465726d696e6174696f6e"></span><span id="index-0"></span><h1>LeadingCoefDetermination(OV, E, Z, P)<a class="headerlink" href="#leadingcoefdetermination-ov-e-z-p" title="Link to this heading">¶</a></h1>
 <p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/leadcdet.spad#L1">leadcdet.spad line 1</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/leadcdet.spad#L1">[edit on github]</a></p>
 <ul class="simple">
 <li><p>OV: <a class="reference internal" href="OrderedSet.html#l4f726465726564536574"><span class="std std-ref">OrderedSet</span></a></p></li>
@@ -57,11 +53,11 @@
 <li><p>P: <a class="reference internal" href="PolynomialCategory.html#l506f6c796e6f6d69616c43617465676f7279"><span class="std std-ref">PolynomialCategory</span></a>(Z, E, OV)</p></li>
 </ul>
 <p>Package for leading coefficient determination in the lifting step. Package working for every unique factorization domain <code class="docutils literal notranslate"><span class="pre">R</span></code> . Uses algorithm given in section 3 of [1] generalized to arbitrary unique factorization domain.</p>
-<span class="target" id="l4c656164696e67436f656644657465726d696e6174696f6e-6469737446616374"></span><dl class="simple" id="index-1">
+<span id="l4c656164696e67436f656644657465726d696e6174696f6e-6469737446616374"></span><dl class="simple" id="index-1">
 <dt><span class="spadfun">distFact</span>: (Z, <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l537061727365556e6976617269617465506f6c796e6f6d69616c"><span class="std std-ref">SparseUnivariatePolynomial</span></a> Z, Record(contp: Z, factors: <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> Record(irr: P, pow: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>)), <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> Z, <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> OV, <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> Z) -&gt; Union(Record(polfac: <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> P, correct: Z, corrfact: <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> <a class="reference internal" href="SparseUnivariatePolynomial.html#l537061727365556e6976617269617465506f6c796e6f6d69616c"><span class="std std-ref">SparseUnivariatePolynomial</span></a> Z), failed)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">distFact(contm,</span> <span class="pre">unilist,</span> <span class="pre">plead,</span> <span class="pre">vl,</span> <span class="pre">lvar,</span> <span class="pre">lval)</span></code>, where <code class="docutils literal notranslate"><span class="pre">contm</span></code> is the content of the evaluated polynomial, <code class="docutils literal notranslate"><span class="pre">unilist</span></code> is the list of factors of the evaluated polynomial, <code class="docutils literal notranslate"><span class="pre">plead</span></code> is the complete factorization of the leading coefficient, <code class="docutils literal notranslate"><span class="pre">vl</span></code> is the list of factors of the leading coefficient evaluated, <code class="docutils literal notranslate"><span class="pre">lvar</span></code> is the list of variables, lval is the list of values, returns a record giving the list of leading coefficients to impose on the univariate factors,</p>
 </dd>
 </dl>
-<span class="target" id="l4c656164696e67436f656644657465726d696e6174696f6e-706f6c43617365"></span><dl class="simple" id="index-2">
+<span id="l4c656164696e67436f656644657465726d696e6174696f6e-706f6c43617365"></span><dl class="simple" id="index-2">
 <dt><span class="spadfun">polCase</span>: (Z, <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>, <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> Z) -&gt; <a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">polCase(contprod,</span> <span class="pre">numFacts,</span> <span class="pre">evallcs)</span></code>, where <code class="docutils literal notranslate"><span class="pre">contprod</span></code> is the product of the content of the leading coefficient of the polynomial to be factored with the content of the evaluated polynomial, <code class="docutils literal notranslate"><span class="pre">numFacts</span></code> is the number of factors of the leadingCoefficient, and evallcs is the list of the evaluated factors of the leadingCoefficient, returns <code class="docutils literal notranslate"><span class="pre">true</span></code> if the factors of the leading Coefficient can be distributed with this valuation.</p>
 </dd>
 </dl>
@@ -119,7 +115,7 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2007-2023, FriCAS Team.
+    &#169; Copyright 2007-2024, FriCAS Team.
     </div>
   </body>
 </html>

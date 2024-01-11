@@ -1,0 +1,722 @@
+.. index:: DirectProductModule
+
+.. _l44697265637450726f647563744d6f64756c65:
+
+DirectProductModule(n, R, S)
+============================
+
+:viewcode:`vector.spad line 537 <vector.spad#L537>` :editcode:`[edit on github] <vector.spad#L537>`
+
+* n: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ 
+
+* R: \ :ref:`Ring <l52696e67>`\ 
+
+* S: \ :ref:`LeftModule <l4c6566744d6f64756c65>`\  R
+
+
+This constructor provides a direct product of \ ``R``\ -modules with an \ ``R``\ -module view.
+
+
+.. _l44697265637450726f647563744d6f64756c65-30:
+
+\ :ref:`0 <l4162656c69616e4d6f6e6f6964-30>`\ \: % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-31:
+
+\ :ref:`1 <l4d61676d6157697468556e6974-31>`\ \: % if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-23:
+
+\ :ref:`# <l416767726567617465-23>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-2a:
+
+\ :ref:`\* <l4c6566744d6f64756c65-2a>`\ \: (%, %) -> % if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+  from \ :ref:`LeftModule <l4c6566744d6f64756c65>`\  %
+
+
+\ :ref:`\* <l52696768744d6f64756c65-2a>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> % if S has \ :ref:`Ring <l52696e67>`\  and S has \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`RightModule <l52696768744d6f64756c65>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`\* <l44697265637450726f6475637443617465676f7279-2a>`\ \: (%, S) -> % if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+  from \ :ref:`DirectProductCategory <l44697265637450726f6475637443617465676f7279>`\ (n, S)
+
+
+\ :ref:`\* <l4162656c69616e47726f7570-2a>`\ \: (\ :ref:`Integer <l496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`\* <l4162656c69616e4d6f6e6f6964-2a>`\ \: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`\* <l4162656c69616e53656d6947726f7570-2a>`\ \: (\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+
+\ :ref:`\* <l4c6566744d6f64756c65-2a>`\ \: (R, %) -> % 
+  from \ :ref:`LeftModule <l4c6566744d6f64756c65>`\  R
+
+
+\ :ref:`\* <l44697265637450726f6475637443617465676f7279-2a>`\ \: (S, %) -> % if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+  from \ :ref:`DirectProductCategory <l44697265637450726f6475637443617465676f7279>`\ (n, S)
+
+.. _l44697265637450726f647563744d6f64756c65-2b:
+
+\ :ref:`+ <l4162656c69616e53656d6947726f7570-2b>`\ \: (%, %) -> % 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-2d:
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: % -> % 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: (%, %) -> % 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-3c3d:
+
+\ :ref:`<= <l5061727469616c4f72646572-3c3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-3c:
+
+\ :ref:`< <l5061727469616c4f72646572-3c>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-3e3d:
+
+\ :ref:`>= <l5061727469616c4f72646572-3e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-3e:
+
+\ :ref:`> <l5061727469616c4f72646572-3e>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-5e:
+
+\ :ref:`^ <l4d61676d6157697468556e6974-5e>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+
+\ :ref:`^ <l4d61676d61-5e>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-616e6e6968696c6174653f:
+
+\ :ref:`annihilate? <l526e67-616e6e6968696c6174653f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`Rng <l526e67>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-616e7469436f6d6d757461746f72:
+
+\ :ref:`antiCommutator <l4e6f6e4173736f6369617469766553656d69526e67-616e7469436f6d6d757461746f72>`\ \: (%, %) -> % if S has \ :ref:`SemiRng <l53656d69526e67>`\ 
+  from \ :ref:`NonAssociativeSemiRng <l4e6f6e4173736f6369617469766553656d69526e67>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-616e793f:
+
+\ :ref:`any? <l486f6d6f67656e656f7573416767726567617465-616e793f>`\ \: (S -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l44697265637450726f647563744d6f64756c65-6173736f636961746f72:
+
+\ :ref:`associator <l4e6f6e4173736f63696174697665526e67-6173736f636961746f72>`\ \: (%, %, %) -> % if S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`NonAssociativeRng <l4e6f6e4173736f63696174697665526e67>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-6368617261637465726973746963:
+
+\ :ref:`characteristic <l4e6f6e4173736f6369617469766552696e67-6368617261637465726973746963>`\ \: () -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`NonAssociativeRing <l4e6f6e4173736f6369617469766552696e67>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-636f65726365:
+
+\ :ref:`coerce <l416c6765627261-636f65726365>`\ \: % -> % if S has \ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\ 
+  from \ :ref:`Algebra <l416c6765627261>`\  %
+
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`Vector <l566563746f72>`\  S 
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`Vector <l566563746f72>`\  S
+
+
+\ :ref:`coerce <l436f65726369626c6546726f6d-636f65726365>`\ \: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  -> % if S has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`coerce <l4e6f6e4173736f6369617469766552696e67-636f65726365>`\ \: \ :ref:`Integer <l496e7465676572>`\  -> % if S has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\  or S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`NonAssociativeRing <l4e6f6e4173736f6369617469766552696e67>`\ 
+
+
+\ :ref:`coerce <l416c6765627261-636f65726365>`\ \: S -> % 
+  from \ :ref:`Algebra <l416c6765627261>`\  S
+
+.. _l44697265637450726f647563744d6f64756c65-636f6d6d757461746f72:
+
+\ :ref:`commutator <l4e6f6e4173736f63696174697665526e67-636f6d6d757461746f72>`\ \: (%, %) -> % if S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`NonAssociativeRng <l4e6f6e4173736f63696174697665526e67>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-636f6e76657274:
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`InputForm <l496e707574466f726d>`\  if S has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-636f7079:
+
+\ :ref:`copy <l416767726567617465-636f7079>`\ \: % -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-636f756e74:
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (S -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (S, %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l44697265637450726f647563744d6f64756c65-44:
+
+\ :ref:`D <l446966666572656e7469616c52696e67-44>`\ \: % -> % if S has \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\  and S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\ 
+
+
+\ :ref:`D <l5061727469616c446966666572656e7469616c52696e67-44>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\  and S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`D <l5061727469616c446966666572656e7469616c52696e67-44>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\  and S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`D <l446966666572656e7469616c52696e67-44>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\  and S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\ 
+
+
+\ :ref:`D <l446966666572656e7469616c457874656e73696f6e-44>`\ \: (%, S -> S) -> % if S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`DifferentialExtension <l446966666572656e7469616c457874656e73696f6e>`\  S
+
+
+\ :ref:`D <l446966666572656e7469616c457874656e73696f6e-44>`\ \: (%, S -> S, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`DifferentialExtension <l446966666572656e7469616c457874656e73696f6e>`\  S
+
+
+\ :ref:`D <l5061727469616c446966666572656e7469616c52696e67-44>`\ \: (%, \ :ref:`Symbol <l53796d626f6c>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\  and S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`D <l5061727469616c446966666572656e7469616c52696e67-44>`\ \: (%, \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\  and S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-646966666572656e7469617465:
+
+\ :ref:`differentiate <l446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: % -> % if S has \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\  and S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\ 
+
+
+\ :ref:`differentiate <l5061727469616c446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\  and S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`differentiate <l5061727469616c446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\  and S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`differentiate <l446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\  and S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\ 
+
+
+\ :ref:`differentiate <l446966666572656e7469616c457874656e73696f6e-646966666572656e7469617465>`\ \: (%, S -> S) -> % if S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`DifferentialExtension <l446966666572656e7469616c457874656e73696f6e>`\  S
+
+
+\ :ref:`differentiate <l446966666572656e7469616c457874656e73696f6e-646966666572656e7469617465>`\ \: (%, S -> S, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`DifferentialExtension <l446966666572656e7469616c457874656e73696f6e>`\  S
+
+
+\ :ref:`differentiate <l5061727469616c446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: (%, \ :ref:`Symbol <l53796d626f6c>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\  and S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`differentiate <l5061727469616c446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: (%, \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\  and S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-64697265637450726f64756374:
+
+\ :ref:`directProduct <l44697265637450726f6475637443617465676f7279-64697265637450726f64756374>`\ \: \ :ref:`Vector <l566563746f72>`\  S -> % 
+  from \ :ref:`DirectProductCategory <l44697265637450726f6475637443617465676f7279>`\ (n, S)
+
+.. _l44697265637450726f647563744d6f64756c65-646f74:
+
+\ :ref:`dot <l44697265637450726f6475637443617465676f7279-646f74>`\ \: (%, %) -> S if S has \ :ref:`SemiRng <l53656d69526e67>`\ 
+  from \ :ref:`DirectProductCategory <l44697265637450726f6475637443617465676f7279>`\ (n, S)
+
+.. _l44697265637450726f647563744d6f64756c65-656c74:
+
+\ :ref:`elt <l456c7461626c65-656c74>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> S 
+  from \ :ref:`Eltable <l456c7461626c65>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+
+\ :ref:`elt <l456c7461626c65416767726567617465-656c74>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ , S) -> S 
+  from \ :ref:`EltableAggregate <l456c7461626c65416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l44697265637450726f647563744d6f64756c65-656d7074793f:
+
+\ :ref:`empty? <l416767726567617465-656d7074793f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-656d707479:
+
+\ :ref:`empty <l416767726567617465-656d707479>`\ \: () -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-656e7472696573:
+
+\ :ref:`entries <l496e6465786564416767726567617465-656e7472696573>`\ \: % -> \ :ref:`List <l4c697374>`\  S 
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l44697265637450726f647563744d6f64756c65-656e7472793f:
+
+\ :ref:`entry? <l496e6465786564416767726567617465-656e7472793f>`\ \: (S, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l44697265637450726f647563744d6f64756c65-656e756d6572617465:
+
+\ :ref:`enumerate <l46696e697465-656e756d6572617465>`\ \: () -> \ :ref:`List <l4c697374>`\  % if S has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-65713f:
+
+\ :ref:`eq? <l416767726567617465-65713f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-6576616c:
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`Equation <l4571756174696f6e>`\  S) -> % if S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+  from \ :ref:`Evalable <l4576616c61626c65>`\  S
+
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  S) -> % if S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+  from \ :ref:`Evalable <l4576616c61626c65>`\  S
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  S, \ :ref:`List <l4c697374>`\  S) -> % if S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (S, S)
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, S, S) -> % if S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (S, S)
+
+.. _l44697265637450726f647563744d6f64756c65-65766572793f:
+
+\ :ref:`every? <l486f6d6f67656e656f7573416767726567617465-65766572793f>`\ \: (S -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l44697265637450726f647563744d6f64756c65-6669727374:
+
+\ :ref:`first <l496e6465786564416767726567617465-6669727374>`\ \: % -> S 
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l44697265637450726f647563744d6f64756c65-68617368:
+
+\ :ref:`hash <l4861736861626c65-68617368>`\ \: % -> \ :ref:`SingleInteger <l53696e676c65496e7465676572>`\  if S has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-6861736855706461746521:
+
+\ :ref:`hashUpdate! <l4861736861626c65-6861736855706461746521>`\ \: (\ :ref:`HashState <l486173685374617465>`\ , %) -> \ :ref:`HashState <l486173685374617465>`\  if S has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-696e6465783f:
+
+\ :ref:`index? <l496e6465786564416767726567617465-696e6465783f>`\ \: (\ :ref:`Integer <l496e7465676572>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l44697265637450726f647563744d6f64756c65-696e646578:
+
+\ :ref:`index <l46696e697465-696e646578>`\ \: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> % if S has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-696e6469636573:
+
+\ :ref:`indices <l496e6465786564416767726567617465-696e6469636573>`\ \: % -> \ :ref:`List <l4c697374>`\  \ :ref:`Integer <l496e7465676572>`\  
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l44697265637450726f647563744d6f64756c65-696e66:
+
+\ :ref:`inf <l4f7264657265644162656c69616e4d6f6e6f6964537570-696e66>`\ \: (%, %) -> % if S has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+  from \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-6c656674506f776572:
+
+\ :ref:`leftPower <l4d61676d6157697468556e6974-6c656674506f776572>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+
+\ :ref:`leftPower <l4d61676d61-6c656674506f776572>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-6c6566745265636970:
+
+\ :ref:`leftRecip <l4d61676d6157697468556e6974-6c6566745265636970>`\ \: % -> Union(%, failed) if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-6c6573733f:
+
+\ :ref:`less? <l416767726567617465-6c6573733f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-6c6f6f6b7570:
+
+\ :ref:`lookup <l46696e697465-6c6f6f6b7570>`\ \: % -> \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  if S has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-6d6170:
+
+\ :ref:`map <l486f6d6f67656e656f7573416767726567617465-6d6170>`\ \: (S -> S, %) -> % 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l44697265637450726f647563744d6f64756c65-6d6178:
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: % -> S if S has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+
+\ :ref:`max <l4f726465726564536574-6d6178>`\ \: (%, %) -> % if S has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  from \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: ((S, S) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> S 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l44697265637450726f647563744d6f64756c65-6d6178496e646578:
+
+\ :ref:`maxIndex <l496e6465786564416767726567617465-6d6178496e646578>`\ \: % -> \ :ref:`Integer <l496e7465676572>`\  
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l44697265637450726f647563744d6f64756c65-6d656d6265723f:
+
+\ :ref:`member? <l486f6d6f67656e656f7573416767726567617465-6d656d6265723f>`\ \: (S, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l44697265637450726f647563744d6f64756c65-6d656d62657273:
+
+\ :ref:`members <l486f6d6f67656e656f7573416767726567617465-6d656d62657273>`\ \: % -> \ :ref:`List <l4c697374>`\  S 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l44697265637450726f647563744d6f64756c65-6d696e:
+
+\ :ref:`min <l486f6d6f67656e656f7573416767726567617465-6d696e>`\ \: % -> S if S has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+
+\ :ref:`min <l4f726465726564536574-6d696e>`\ \: (%, %) -> % if S has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  from \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-6d696e496e646578:
+
+\ :ref:`minIndex <l496e6465786564416767726567617465-6d696e496e646578>`\ \: % -> \ :ref:`Integer <l496e7465676572>`\  
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l44697265637450726f647563744d6f64756c65-6d6f72653f:
+
+\ :ref:`more? <l416767726567617465-6d6f72653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-6f6e653f:
+
+\ :ref:`one? <l4d61676d6157697468556e6974-6f6e653f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-6f70706f736974653f:
+
+\ :ref:`opposite? <l4162656c69616e4d6f6e6f6964-6f70706f736974653f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-7061727473:
+
+\ :ref:`parts <l486f6d6f67656e656f7573416767726567617465-7061727473>`\ \: % -> \ :ref:`List <l4c697374>`\  S 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l44697265637450726f647563744d6f64756c65-706c656e617279506f776572:
+
+\ :ref:`plenaryPower <l4e6f6e4173736f63696174697665416c6765627261-706c656e617279506f776572>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % if S has \ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\ 
+  from \ :ref:`NonAssociativeAlgebra <l4e6f6e4173736f63696174697665416c6765627261>`\  S
+
+.. _l44697265637450726f647563744d6f64756c65-71656c74:
+
+\ :ref:`qelt <l456c7461626c65416767726567617465-71656c74>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> S 
+  from \ :ref:`EltableAggregate <l456c7461626c65416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l44697265637450726f647563744d6f64756c65-72616e646f6d:
+
+\ :ref:`random <l46696e697465-72616e646f6d>`\ \: () -> % if S has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-7265636970:
+
+\ :ref:`recip <l4d61676d6157697468556e6974-7265636970>`\ \: % -> Union(%, failed) if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-7265647563656453797374656d:
+
+\ :ref:`reducedSystem <l4c696e6561726c794578706c696369744f766572-7265647563656453797374656d>`\ \: (\ :ref:`Matrix <l4d6174726978>`\  %, \ :ref:`Vector <l566563746f72>`\  %) -> Record(mat: \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Integer <l496e7465676572>`\ , vec: \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ ) if S has \ :ref:`Ring <l52696e67>`\  and S has \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`reducedSystem <l4c696e6561726c794578706c696369744f766572-7265647563656453797374656d>`\ \: (\ :ref:`Matrix <l4d6174726978>`\  %, \ :ref:`Vector <l566563746f72>`\  %) -> Record(mat: \ :ref:`Matrix <l4d6174726978>`\  S, vec: \ :ref:`Vector <l566563746f72>`\  S) if S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  S
+
+
+\ :ref:`reducedSystem <l4c696e6561726c794578706c696369744f766572-7265647563656453797374656d>`\ \: \ :ref:`Matrix <l4d6174726978>`\  % -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Integer <l496e7465676572>`\  if S has \ :ref:`Ring <l52696e67>`\  and S has \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`reducedSystem <l4c696e6561726c794578706c696369744f766572-7265647563656453797374656d>`\ \: \ :ref:`Matrix <l4d6174726978>`\  % -> \ :ref:`Matrix <l4d6174726978>`\  S if S has \ :ref:`Ring <l52696e67>`\ 
+  from \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  S
+
+.. _l44697265637450726f647563744d6f64756c65-72657472616374:
+
+\ :ref:`retract <l5265747261637461626c65546f-72657472616374>`\ \: % -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  if S has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`retract <l5265747261637461626c65546f-72657472616374>`\ \: % -> \ :ref:`Integer <l496e7465676572>`\  if S has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`retract <l5265747261637461626c65546f-72657472616374>`\ \: % -> S 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  S
+
+.. _l44697265637450726f647563744d6f64756c65-72657472616374496643616e:
+
+\ :ref:`retractIfCan <l5265747261637461626c65546f-72657472616374496643616e>`\ \: % -> Union(\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , failed) if S has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`retractIfCan <l5265747261637461626c65546f-72657472616374496643616e>`\ \: % -> Union(\ :ref:`Integer <l496e7465676572>`\ , failed) if S has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`retractIfCan <l5265747261637461626c65546f-72657472616374496643616e>`\ \: % -> Union(S, failed) 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  S
+
+.. _l44697265637450726f647563744d6f64756c65-7269676874506f776572:
+
+\ :ref:`rightPower <l4d61676d6157697468556e6974-7269676874506f776572>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+
+\ :ref:`rightPower <l4d61676d61-7269676874506f776572>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-72696768745265636970:
+
+\ :ref:`rightRecip <l4d61676d6157697468556e6974-72696768745265636970>`\ \: % -> Union(%, failed) if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-73616d706c65:
+
+\ :ref:`sample <l4162656c69616e4d6f6e6f6964-73616d706c65>`\ \: % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-73697a653f:
+
+\ :ref:`size? <l416767726567617465-73697a653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-73697a65:
+
+\ :ref:`size <l46696e697465-73697a65>`\ \: () -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if S has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-736d616c6c65723f:
+
+\ :ref:`smaller? <l436f6d70617261626c65-736d616c6c65723f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  or S has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-7375627472616374496643616e:
+
+\ :ref:`subtractIfCan <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964-7375627472616374496643616e>`\ \: (%, %) -> Union(%, failed) 
+  from \ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-737570:
+
+\ :ref:`sup <l4f7264657265644162656c69616e4d6f6e6f6964537570-737570>`\ \: (%, %) -> % if S has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+  from \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+.. _l44697265637450726f647563744d6f64756c65-756e6974566563746f72:
+
+\ :ref:`unitVector <l44697265637450726f6475637443617465676f7279-756e6974566563746f72>`\ \: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> % if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+  from \ :ref:`DirectProductCategory <l44697265637450726f6475637443617465676f7279>`\ (n, S)
+
+.. _l44697265637450726f647563744d6f64756c65-7a65726f3f:
+
+\ :ref:`zero? <l4162656c69616e4d6f6e6f6964-7a65726f3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\  
+
+\ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  
+
+\ :ref:`AbelianProductCategory <l4162656c69616e50726f6475637443617465676f7279>`\  S 
+
+\ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\  
+
+\ :ref:`Aggregate <l416767726567617465>`\  
+
+\ :ref:`Algebra <l416c6765627261>`\  % if S has \ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\ 
+
+\ :ref:`Algebra <l416c6765627261>`\  S if S has \ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\ 
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`BiModule <l42694d6f64756c65>`\ (%, %) if S has \ :ref:`SemiRng <l53656d69526e67>`\ 
+
+\ :ref:`BiModule <l42694d6f64756c65>`\ (S, S) if S has \ :ref:`SemiRng <l53656d69526e67>`\ 
+
+\ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\  
+
+\ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  if S has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  \ :ref:`Integer <l496e7465676572>`\  if S has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  S 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`Vector <l566563746f72>`\  S 
+
+\ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\  if S has \ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\ 
+
+\ :ref:`CommutativeStar <l436f6d6d7574617469766553746172>`\  if S has \ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\ 
+
+\ :ref:`Comparable <l436f6d70617261626c65>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  or S has \ :ref:`Finite <l46696e697465>`\ 
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\  if S has \ :ref:`Finite <l46696e697465>`\ 
+
+\ :ref:`DifferentialExtension <l446966666572656e7469616c457874656e73696f6e>`\  S if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\  if S has \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\  and S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`DirectProductCategory <l44697265637450726f6475637443617465676f7279>`\ (n, S) 
+
+\ :ref:`Eltable <l456c7461626c65>`\ (\ :ref:`Integer <l496e7465676572>`\ , S) 
+
+\ :ref:`EltableAggregate <l456c7461626c65416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S) 
+
+\ :ref:`Evalable <l4576616c61626c65>`\  S if S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+
+\ :ref:`Finite <l46696e697465>`\  if S has \ :ref:`Finite <l46696e697465>`\ 
+
+\ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  
+
+\ :ref:`FullyLinearlyExplicitOver <l46756c6c794c696e6561726c794578706c696369744f766572>`\  S if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`FullyRetractableTo <l46756c6c795265747261637461626c65546f>`\  S 
+
+\ :ref:`Hashable <l4861736861626c65>`\  if S has \ :ref:`Finite <l46696e697465>`\ 
+
+\ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S 
+
+\ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S) 
+
+\ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (S, S) if S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+
+\ :ref:`LeftModule <l4c6566744d6f64756c65>`\  % if S has \ :ref:`SemiRng <l53656d69526e67>`\ 
+
+\ :ref:`LeftModule <l4c6566744d6f64756c65>`\  R 
+
+\ :ref:`LeftModule <l4c6566744d6f64756c65>`\  S if S has \ :ref:`SemiRng <l53656d69526e67>`\ 
+
+\ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\  if S has \ :ref:`Ring <l52696e67>`\  and S has \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  S if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`Magma <l4d61676d61>`\  if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+
+\ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\  if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+
+\ :ref:`Module <l4d6f64756c65>`\  % if S has \ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\ 
+
+\ :ref:`Module <l4d6f64756c65>`\  S if S has \ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\ 
+
+\ :ref:`Monoid <l4d6f6e6f6964>`\  if S has \ :ref:`Monoid <l4d6f6e6f6964>`\ 
+
+\ :ref:`NonAssociativeAlgebra <l4e6f6e4173736f63696174697665416c6765627261>`\  % if S has \ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\ 
+
+\ :ref:`NonAssociativeAlgebra <l4e6f6e4173736f63696174697665416c6765627261>`\  S if S has \ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\ 
+
+\ :ref:`NonAssociativeRing <l4e6f6e4173736f6369617469766552696e67>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`NonAssociativeRng <l4e6f6e4173736f63696174697665526e67>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`NonAssociativeSemiRing <l4e6f6e4173736f6369617469766553656d6952696e67>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`NonAssociativeSemiRng <l4e6f6e4173736f6369617469766553656d69526e67>`\  if S has \ :ref:`SemiRng <l53656d69526e67>`\ 
+
+\ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\  if S has \ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\ 
+
+\ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\  if S has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+\ :ref:`OrderedAbelianSemiGroup <l4f7264657265644162656c69616e53656d6947726f7570>`\  if S has \ :ref:`OrderedAbelianMonoid <l4f7264657265644162656c69616e4d6f6e6f6964>`\ 
+
+\ :ref:`OrderedCancellationAbelianMonoid <l4f72646572656443616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\  if S has \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+\ :ref:`OrderedSet <l4f726465726564536574>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+\ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\  if S has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\  and S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`PartialOrder <l5061727469616c4f72646572>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+\ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  if S has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\  if S has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`RetractableTo <l5265747261637461626c65546f>`\  S 
+
+\ :ref:`RightModule <l52696768744d6f64756c65>`\  % if S has \ :ref:`SemiRng <l53656d69526e67>`\ 
+
+\ :ref:`RightModule <l52696768744d6f64756c65>`\  \ :ref:`Integer <l496e7465676572>`\  if S has \ :ref:`Ring <l52696e67>`\  and S has \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`RightModule <l52696768744d6f64756c65>`\  S if S has \ :ref:`SemiRng <l53656d69526e67>`\ 
+
+\ :ref:`Ring <l52696e67>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`Rng <l526e67>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`SemiGroup <l53656d6947726f7570>`\  if S has \ :ref:`SemiGroup <l53656d6947726f7570>`\ 
+
+\ :ref:`SemiRing <l53656d6952696e67>`\  if S has \ :ref:`Ring <l52696e67>`\ 
+
+\ :ref:`SemiRng <l53656d69526e67>`\  if S has \ :ref:`SemiRng <l53656d69526e67>`\ 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+
+\ :ref:`TwoSidedRecip <l54776f53696465645265636970>`\  if S has \ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\ 
+
+\ :ref:`unitsKnown <l756e6974734b6e6f776e>`\  if S has \ :ref:`unitsKnown <l756e6974734b6e6f776e>`\ 
+

@@ -1,0 +1,579 @@
+.. index:: ExtensibleLinearAggregate
+
+.. _l457874656e7369626c654c696e656172416767726567617465:
+
+ExtensibleLinearAggregate S
+===========================
+
+:viewcode:`aggcat.spad line 2179 <aggcat.spad#L2179>` :editcode:`[edit on github] <aggcat.spad#L2179>`
+
+* S: \ :ref:`Type <l54797065>`\ 
+
+
+An extensible aggregate is one which allows insertion and deletion of entries. These aggregates are models of lists which are represented by linked structures so as to make insertion, deletion, and concatenation efficient. However, access to elements of these extensible aggregates is generally slow since access is made from the end. See \ :ref:`FlexibleArray <l466c657869626c654172726179>`\  for an exception.
+
+
+.. _l457874656e7369626c654c696e656172416767726567617465-23:
+
+\ :ref:`# <l416767726567617465-23>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-3c3d:
+
+\ :ref:`<= <l5061727469616c4f72646572-3c3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-3c:
+
+\ :ref:`< <l5061727469616c4f72646572-3c>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`Hashable <l4861736861626c65>`\  or S has \ :ref:`SetCategory <l53657443617465676f7279>`\  or % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-3e3d:
+
+\ :ref:`>= <l5061727469616c4f72646572-3e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-3e:
+
+\ :ref:`> <l5061727469616c4f72646572-3e>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`Hashable <l4861736861626c65>`\  or S has \ :ref:`SetCategory <l53657443617465676f7279>`\  or % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-616e793f:
+
+\ :ref:`any? <l486f6d6f67656e656f7573416767726567617465-616e793f>`\ \: (S -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  if S has \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-636f6e63617421:
+
+.. index::
+   pair: ExtensibleLinearAggregate; concat!
+
+:spadfun:`concat!`\: (%, %) -> % 
+  \ ``concat!(u, v)``\  destructively appends \ ``v``\  to the end of \ ``u``\ . \ ``v``\  is unchanged
+
+
+.. index::
+   pair: ExtensibleLinearAggregate; concat!
+
+:spadfun:`concat!`\: (%, S) -> % 
+  \ ``concat!(u, x)``\  destructively adds element \ ``x``\  to the end of \ ``u``\ .
+
+.. _l457874656e7369626c654c696e656172416767726567617465-636f6e636174:
+
+\ :ref:`concat <l4c696e656172416767726567617465-636f6e636174>`\ \: (%, %) -> % 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+
+\ :ref:`concat <l4c696e656172416767726567617465-636f6e636174>`\ \: (%, S) -> % 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+
+\ :ref:`concat <l4c696e656172416767726567617465-636f6e636174>`\ \: (S, %) -> % 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+
+\ :ref:`concat <l4c696e656172416767726567617465-636f6e636174>`\ \: \ :ref:`List <l4c697374>`\  % -> % 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-636f6e737472756374:
+
+\ :ref:`construct <l436f6c6c656374696f6e-636f6e737472756374>`\ \: \ :ref:`List <l4c697374>`\  S -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-636f6e76657274:
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`InputForm <l496e707574466f726d>`\  if S has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-636f7079:
+
+\ :ref:`copy <l416767726567617465-636f7079>`\ \: % -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-636f7079496e746f21:
+
+\ :ref:`copyInto! <l4c696e656172416767726567617465-636f7079496e746f21>`\ \: (%, %, \ :ref:`Integer <l496e7465676572>`\ ) -> % if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-636f756e74:
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (S -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (S, %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-64656c65746521:
+
+.. index::
+   pair: ExtensibleLinearAggregate; delete!
+
+:spadfun:`delete!`\: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  \ ``delete!(u, i)``\  destructively deletes the \ ``i``\ th element of \ ``u``\ .
+
+
+.. index::
+   pair: ExtensibleLinearAggregate; delete!
+
+:spadfun:`delete!`\: (%, \ :ref:`UniversalSegment <l556e6976657273616c5365676d656e74>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  \ ``delete!(u, i..j)``\  destructively deletes elements \ ``u``\ .\ ``i``\  through \ ``u``\ .\ ``j``\ .
+
+.. _l457874656e7369626c654c696e656172416767726567617465-64656c657465:
+
+\ :ref:`delete <l4c696e656172416767726567617465-64656c657465>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+
+\ :ref:`delete <l4c696e656172416767726567617465-64656c657465>`\ \: (%, \ :ref:`UniversalSegment <l556e6976657273616c5365676d656e74>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-656c74:
+
+\ :ref:`elt <l456c7461626c65-656c74>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> S 
+  from \ :ref:`Eltable <l456c7461626c65>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+
+\ :ref:`elt <l456c7461626c65416767726567617465-656c74>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ , S) -> S 
+  from \ :ref:`EltableAggregate <l456c7461626c65416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+
+\ :ref:`elt <l456c7461626c65-656c74>`\ \: (%, \ :ref:`UniversalSegment <l556e6976657273616c5365676d656e74>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  from \ :ref:`Eltable <l456c7461626c65>`\ (\ :ref:`UniversalSegment <l556e6976657273616c5365676d656e74>`\  \ :ref:`Integer <l496e7465676572>`\ , %)
+
+.. _l457874656e7369626c654c696e656172416767726567617465-656d7074793f:
+
+\ :ref:`empty? <l416767726567617465-656d7074793f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-656d707479:
+
+\ :ref:`empty <l416767726567617465-656d707479>`\ \: () -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-656e7472696573:
+
+\ :ref:`entries <l496e6465786564416767726567617465-656e7472696573>`\ \: % -> \ :ref:`List <l4c697374>`\  S 
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l457874656e7369626c654c696e656172416767726567617465-656e7472793f:
+
+\ :ref:`entry? <l496e6465786564416767726567617465-656e7472793f>`\ \: (S, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l457874656e7369626c654c696e656172416767726567617465-65713f:
+
+\ :ref:`eq? <l416767726567617465-65713f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6576616c:
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`Equation <l4571756174696f6e>`\  S) -> % if S has \ :ref:`SetCategory <l53657443617465676f7279>`\  and S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+  from \ :ref:`Evalable <l4576616c61626c65>`\  S
+
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  S) -> % if S has \ :ref:`SetCategory <l53657443617465676f7279>`\  and S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+  from \ :ref:`Evalable <l4576616c61626c65>`\  S
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  S, \ :ref:`List <l4c697374>`\  S) -> % if S has \ :ref:`SetCategory <l53657443617465676f7279>`\  and S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (S, S)
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, S, S) -> % if S has \ :ref:`SetCategory <l53657443617465676f7279>`\  and S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (S, S)
+
+.. _l457874656e7369626c654c696e656172416767726567617465-65766572793f:
+
+\ :ref:`every? <l486f6d6f67656e656f7573416767726567617465-65766572793f>`\ \: (S -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-66696c6c21:
+
+\ :ref:`fill! <l496e6465786564416767726567617465-66696c6c21>`\ \: (%, S) -> % 
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l457874656e7369626c654c696e656172416767726567617465-66696e64:
+
+\ :ref:`find <l436f6c6c656374696f6e-66696e64>`\ \: (S -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> Union(S, failed) 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6669727374:
+
+\ :ref:`first <l496e6465786564416767726567617465-6669727374>`\ \: % -> S 
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+
+\ :ref:`first <l4c696e656172416767726567617465-6669727374>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-68617368:
+
+\ :ref:`hash <l4861736861626c65-68617368>`\ \: % -> \ :ref:`SingleInteger <l53696e676c65496e7465676572>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`Hashable <l4861736861626c65>`\ 
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6861736855706461746521:
+
+\ :ref:`hashUpdate! <l4861736861626c65-6861736855706461746521>`\ \: (\ :ref:`HashState <l486173685374617465>`\ , %) -> \ :ref:`HashState <l486173685374617465>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`Hashable <l4861736861626c65>`\ 
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-696e6465783f:
+
+\ :ref:`index? <l496e6465786564416767726567617465-696e6465783f>`\ \: (\ :ref:`Integer <l496e7465676572>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l457874656e7369626c654c696e656172416767726567617465-696e6469636573:
+
+\ :ref:`indices <l496e6465786564416767726567617465-696e6469636573>`\ \: % -> \ :ref:`List <l4c697374>`\  \ :ref:`Integer <l496e7465676572>`\  
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l457874656e7369626c654c696e656172416767726567617465-696e7365727421:
+
+.. index::
+   pair: ExtensibleLinearAggregate; insert!
+
+:spadfun:`insert!`\: (%, %, \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  \ ``insert!(v, u, i)``\  destructively inserts aggregate \ ``v``\  into \ ``u``\  at position \ ``i``\ .
+
+
+.. index::
+   pair: ExtensibleLinearAggregate; insert!
+
+:spadfun:`insert!`\: (S, %, \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  \ ``insert!(x, u, i)``\  destructively inserts \ ``x``\  into \ ``u``\  at position \ ``i``\ .
+
+.. _l457874656e7369626c654c696e656172416767726567617465-696e73657274:
+
+\ :ref:`insert <l4c696e656172416767726567617465-696e73657274>`\ \: (%, %, \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+
+\ :ref:`insert <l4c696e656172416767726567617465-696e73657274>`\ \: (S, %, \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  if S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6c6566745472696d:
+
+\ :ref:`leftTrim <l4c696e656172416767726567617465-6c6566745472696d>`\ \: (%, S) -> % if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6c6573733f:
+
+\ :ref:`less? <l416767726567617465-6c6573733f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6d617021:
+
+\ :ref:`map! <l486f6d6f67656e656f7573416767726567617465-6d617021>`\ \: (S -> S, %) -> % 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6d6170:
+
+\ :ref:`map <l4c696e656172416767726567617465-6d6170>`\ \: ((S, S) -> S, %, %) -> % 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+
+\ :ref:`map <l486f6d6f67656e656f7573416767726567617465-6d6170>`\ \: (S -> S, %) -> % 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6d6178:
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: % -> S if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+
+\ :ref:`max <l4f726465726564536574-6d6178>`\ \: (%, %) -> % if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: ((S, S) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> S if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6d6178496e646578:
+
+\ :ref:`maxIndex <l496e6465786564416767726567617465-6d6178496e646578>`\ \: % -> \ :ref:`Integer <l496e7465676572>`\  
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6d656d6265723f:
+
+\ :ref:`member? <l486f6d6f67656e656f7573416767726567617465-6d656d6265723f>`\ \: (S, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6d656d62657273:
+
+\ :ref:`members <l486f6d6f67656e656f7573416767726567617465-6d656d62657273>`\ \: % -> \ :ref:`List <l4c697374>`\  S if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6d6572676521:
+
+.. index::
+   pair: ExtensibleLinearAggregate; merge!
+
+:spadfun:`merge!`\: (%, %) -> % if S has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  \ ``merge!(u, v)``\  destructively merges \ ``u``\  and \ ``v``\  in ascending order.
+
+
+.. index::
+   pair: ExtensibleLinearAggregate; merge!
+
+:spadfun:`merge!`\: ((S, S) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %, %) -> % 
+  \ ``merge!(p, u, v)``\  destructively merges \ ``u``\  and \ ``v``\  using predicate \ ``p``\ .
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6d65726765:
+
+\ :ref:`merge <l4c696e656172416767726567617465-6d65726765>`\ \: (%, %) -> % if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+
+\ :ref:`merge <l4c696e656172416767726567617465-6d65726765>`\ \: ((S, S) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %, %) -> % if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6d696e:
+
+\ :ref:`min <l486f6d6f67656e656f7573416767726567617465-6d696e>`\ \: % -> S if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+
+\ :ref:`min <l4f726465726564536574-6d696e>`\ \: (%, %) -> % if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6d696e496e646578:
+
+\ :ref:`minIndex <l496e6465786564416767726567617465-6d696e496e646578>`\ \: % -> \ :ref:`Integer <l496e7465676572>`\  
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6d6f72653f:
+
+\ :ref:`more? <l416767726567617465-6d6f72653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-6e6577:
+
+\ :ref:`new <l4c696e656172416767726567617465-6e6577>`\ \: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , S) -> % 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-7061727473:
+
+\ :ref:`parts <l486f6d6f67656e656f7573416767726567617465-7061727473>`\ \: % -> \ :ref:`List <l4c697374>`\  S if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-706f736974696f6e:
+
+\ :ref:`position <l4c696e656172416767726567617465-706f736974696f6e>`\ \: (S -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Integer <l496e7465676572>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+
+\ :ref:`position <l4c696e656172416767726567617465-706f736974696f6e>`\ \: (S, %) -> \ :ref:`Integer <l496e7465676572>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+
+\ :ref:`position <l4c696e656172416767726567617465-706f736974696f6e>`\ \: (S, %, \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Integer <l496e7465676572>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-71656c74:
+
+\ :ref:`qelt <l456c7461626c65416767726567617465-71656c74>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> S 
+  from \ :ref:`EltableAggregate <l456c7461626c65416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l457874656e7369626c654c696e656172416767726567617465-71736574656c7421:
+
+\ :ref:`qsetelt! <l456c7461626c65416767726567617465-71736574656c7421>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ , S) -> S 
+  from \ :ref:`EltableAggregate <l456c7461626c65416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l457874656e7369626c654c696e656172416767726567617465-726564756365:
+
+\ :ref:`reduce <l436f6c6c656374696f6e-726564756365>`\ \: ((S, S) -> S, %) -> S if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  S
+
+
+\ :ref:`reduce <l436f6c6c656374696f6e-726564756365>`\ \: ((S, S) -> S, %, S) -> S if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  S
+
+
+\ :ref:`reduce <l436f6c6c656374696f6e-726564756365>`\ \: ((S, S) -> S, %, S, S) -> S if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-72656d6f766521:
+
+.. index::
+   pair: ExtensibleLinearAggregate; remove!
+
+:spadfun:`remove!`\: (S -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> % 
+  \ ``remove!(p, u)``\  destructively removes all elements \ ``x``\  of \ ``u``\  such that \ ``p(x)``\  is \ ``true``\ .
+
+
+.. index::
+   pair: ExtensibleLinearAggregate; remove!
+
+:spadfun:`remove!`\: (S, %) -> % if S has \ :ref:`BasicType <l426173696354797065>`\ 
+  \ ``remove!(x, u)``\  destructively removes all values \ ``x``\  from \ ``u``\ .
+
+.. _l457874656e7369626c654c696e656172416767726567617465-72656d6f7665:
+
+\ :ref:`remove <l436f6c6c656374696f6e-72656d6f7665>`\ \: (S -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> % if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  S
+
+
+\ :ref:`remove <l436f6c6c656374696f6e-72656d6f7665>`\ \: (S, %) -> % if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-72656d6f76654475706c69636174657321:
+
+.. index::
+   pair: ExtensibleLinearAggregate; removeDuplicates!
+
+:spadfun:`removeDuplicates!`\: % -> % if S has \ :ref:`BasicType <l426173696354797065>`\ 
+  \ ``removeDuplicates!(u)``\  destructively removes duplicates from \ ``u``\ .
+
+.. _l457874656e7369626c654c696e656172416767726567617465-72656d6f76654475706c696361746573:
+
+\ :ref:`removeDuplicates <l436f6c6c656374696f6e-72656d6f76654475706c696361746573>`\ \: % -> % if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-7265766572736521:
+
+\ :ref:`reverse! <l4c696e656172416767726567617465-7265766572736521>`\ \: % -> % if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-72657665727365:
+
+\ :ref:`reverse <l4c696e656172416767726567617465-72657665727365>`\ \: % -> % if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-72696768745472696d:
+
+\ :ref:`rightTrim <l4c696e656172416767726567617465-72696768745472696d>`\ \: (%, S) -> % if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-73616d706c65:
+
+\ :ref:`sample <l416767726567617465-73616d706c65>`\ \: % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-73656c65637421:
+
+.. index::
+   pair: ExtensibleLinearAggregate; select!
+
+:spadfun:`select!`\: (S -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> % 
+  \ ``select!(p, u)``\  destructively changes \ ``u``\  by keeping only values \ ``x``\  such that \ ``p(x)``\ .
+
+.. _l457874656e7369626c654c696e656172416767726567617465-73656c656374:
+
+\ :ref:`select <l436f6c6c656374696f6e-73656c656374>`\ \: (S -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> % if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-736574656c7421:
+
+\ :ref:`setelt! <l456c7461626c65416767726567617465-736574656c7421>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ , S) -> S 
+  from \ :ref:`EltableAggregate <l456c7461626c65416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+
+\ :ref:`setelt! <l4c696e656172416767726567617465-736574656c7421>`\ \: (%, \ :ref:`UniversalSegment <l556e6976657273616c5365676d656e74>`\  \ :ref:`Integer <l496e7465676572>`\ , S) -> S 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-73697a653f:
+
+\ :ref:`size? <l416767726567617465-73697a653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-736d616c6c65723f:
+
+\ :ref:`smaller? <l436f6d70617261626c65-736d616c6c65723f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  or S has \ :ref:`Comparable <l436f6d70617261626c65>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+
+.. _l457874656e7369626c654c696e656172416767726567617465-736f727421:
+
+\ :ref:`sort! <l4c696e656172416767726567617465-736f727421>`\ \: % -> % if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+
+\ :ref:`sort! <l4c696e656172416767726567617465-736f727421>`\ \: ((S, S) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> % if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-736f7274:
+
+\ :ref:`sort <l4c696e656172416767726567617465-736f7274>`\ \: % -> % if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+
+\ :ref:`sort <l4c696e656172416767726567617465-736f7274>`\ \: ((S, S) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> % if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-736f727465643f:
+
+\ :ref:`sorted? <l4c696e656172416767726567617465-736f727465643f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+
+\ :ref:`sorted? <l4c696e656172416767726567617465-736f727465643f>`\ \: ((S, S) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+.. _l457874656e7369626c654c696e656172416767726567617465-7377617021:
+
+\ :ref:`swap! <l496e6465786564416767726567617465-7377617021>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  from \ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S)
+
+.. _l457874656e7369626c654c696e656172416767726567617465-7472696d:
+
+\ :ref:`trim <l4c696e656172416767726567617465-7472696d>`\ \: (%, S) -> % if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+  from \ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S
+
+
+\ :ref:`Aggregate <l416767726567617465>`\  
+
+\ :ref:`BasicType <l426173696354797065>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`Hashable <l4861736861626c65>`\  or S has \ :ref:`SetCategory <l53657443617465676f7279>`\  or % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  if S has \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+\ :ref:`Collection <l436f6c6c656374696f6e>`\  S 
+
+\ :ref:`Comparable <l436f6d70617261626c65>`\  if S has \ :ref:`Comparable <l436f6d70617261626c65>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  or S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\  if S has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+\ :ref:`Eltable <l456c7461626c65>`\ (\ :ref:`Integer <l496e7465676572>`\ , S) 
+
+\ :ref:`Eltable <l456c7461626c65>`\ (\ :ref:`UniversalSegment <l556e6976657273616c5365676d656e74>`\  \ :ref:`Integer <l496e7465676572>`\ , %) 
+
+\ :ref:`EltableAggregate <l456c7461626c65416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S) 
+
+\ :ref:`Evalable <l4576616c61626c65>`\  S if S has \ :ref:`SetCategory <l53657443617465676f7279>`\  and S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+
+\ :ref:`Hashable <l4861736861626c65>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`Hashable <l4861736861626c65>`\ 
+
+\ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S 
+
+\ :ref:`IndexedAggregate <l496e6465786564416767726567617465>`\ (\ :ref:`Integer <l496e7465676572>`\ , S) 
+
+\ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (S, S) if S has \ :ref:`SetCategory <l53657443617465676f7279>`\  and S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+
+\ :ref:`LinearAggregate <l4c696e656172416767726567617465>`\  S 
+
+\ :ref:`OrderedSet <l4f726465726564536574>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+
+\ :ref:`PartialOrder <l5061727469616c4f72646572>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  if S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+\ :ref:`shallowlyMutable <l7368616c6c6f776c794d757461626c65>`\  
+

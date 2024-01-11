@@ -1,0 +1,250 @@
+.. index:: DrawOption
+
+.. _l447261774f7074696f6e:
+
+DrawOption
+==========
+
+:viewcode:`drawopt.spad line 1 <drawopt.spad#L1>` :editcode:`[edit on github] <drawopt.spad#L1>`
+
+
+DrawOption allows the user to specify defaults for the creation and rendering of plots.
+
+
+.. _l447261774f7074696f6e-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l447261774f7074696f6e-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l447261774f7074696f6e-6164617074697665:
+
+.. index::
+   pair: DrawOption; adaptive
+
+:spadfun:`adaptive`\: \ :ref:`Boolean <l426f6f6c65616e>`\  -> % 
+  \ ``adaptive(b)``\  turns adaptive 2D plotting on if \ ``b``\  is \ ``true``\ , or off if \ ``b``\  is \ ``false``\ . This option is expressed in the form \ ``adaptive == b``\ .
+
+.. _l447261774f7074696f6e-636c6970:
+
+.. index::
+   pair: DrawOption; clip
+
+:spadfun:`clip`\: \ :ref:`Boolean <l426f6f6c65616e>`\  -> % 
+  \ ``clip(b)``\  turns 2D clipping on if \ ``b``\  is \ ``true``\ , or off if \ ``b``\  is \ ``false``\ . This option is expressed in the form \ ``clip == b``\ .
+
+
+.. index::
+   pair: DrawOption; clip
+
+:spadfun:`clip`\: \ :ref:`List <l4c697374>`\  \ :ref:`Segment <l5365676d656e74>`\  \ :ref:`Float <l466c6f6174>`\  -> % 
+  \ ``clip([l])``\  provides ranges for user-defined clipping as specified in the list \ ``l``\ . This option is expressed in the form \ ``clip == [l]``\ .
+
+.. _l447261774f7074696f6e-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l447261774f7074696f6e-636f6c6f7246756e6374696f6e:
+
+.. index::
+   pair: DrawOption; colorFunction
+
+:spadfun:`colorFunction`\: ((\ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ ) -> \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ ) -> % 
+  \ ``colorFunction(f(u, v))``\  specifies the color for three dimensional plots as a function based upon the two parametric variables. This option is expressed in the form \ ``colorFunction == f(u, v)``\ .
+
+
+.. index::
+   pair: DrawOption; colorFunction
+
+:spadfun:`colorFunction`\: ((\ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ ) -> \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ ) -> % 
+  \ ``colorFunction(f(x, y, z))``\  specifies the color for three dimensional plots as a function of \ ``x``\ , \ ``y``\ , and \ ``z``\  coordinates. This option is expressed in the form \ ``colorFunction == f(x, y, z)``\ .
+
+
+.. index::
+   pair: DrawOption; colorFunction
+
+:spadfun:`colorFunction`\: (\ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  -> \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ ) -> % 
+  \ ``colorFunction(f(z))``\  specifies the color based upon the \ ``z``\ -component of three dimensional plots. This option is expressed in the form \ ``colorFunction == f(z)``\ .
+
+.. _l447261774f7074696f6e-636f6f7264:
+
+.. index::
+   pair: DrawOption; coord
+
+:spadfun:`coord`\: (\ :ref:`Point <l506f696e74>`\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  -> \ :ref:`Point <l506f696e74>`\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ ) -> % 
+  \ ``coord(p)``\  specifies a change of coordinates of point \ ``p``\ . This option is expressed in the form \ ``coord == p``\ .
+
+.. _l447261774f7074696f6e-636f6f7264696e61746573:
+
+.. index::
+   pair: DrawOption; coordinates
+
+:spadfun:`coordinates`\: (\ :ref:`Point <l506f696e74>`\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  -> \ :ref:`Point <l506f696e74>`\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ ) -> % 
+  \ ``coordinates(p)``\  specifies a change of coordinate systems of point \ ``p``\ . This option is expressed in the form \ ``coordinates == p``\ .
+
+.. _l447261774f7074696f6e-6375727665436f6c6f72:
+
+.. index::
+   pair: DrawOption; curveColor
+
+:spadfun:`curveColor`\: \ :ref:`Float <l466c6f6174>`\  -> % 
+  \ ``curveColor(v)``\  specifies a color, \ ``v``\ , for 2D graph curves. This option is expressed in the form \ ``curveColor == v``\ .
+
+
+.. index::
+   pair: DrawOption; curveColor
+
+:spadfun:`curveColor`\: \ :ref:`Palette <l50616c65747465>`\  -> % 
+  \ ``curveColor(p)``\  specifies a color index for 2D graph curves from the spadcolors palette \ ``p``\ . This option is expressed in the form \ ``curveColor ==p``\ .
+
+.. _l447261774f7074696f6e-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l447261774f7074696f6e-6f7074696f6e3f:
+
+.. index::
+   pair: DrawOption; option?
+
+:spadfun:`option?`\: (\ :ref:`List <l4c697374>`\  %, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``option?()``\  is not to be used at the top level; option? internally returns \ ``true``\  for drawing options which are indicated in a draw command, or \ ``false``\  for those which are not.
+
+.. _l447261774f7074696f6e-6f7074696f6e:
+
+.. index::
+   pair: DrawOption; option
+
+:spadfun:`option`\: (\ :ref:`List <l4c697374>`\  %, \ :ref:`Symbol <l53796d626f6c>`\ ) -> Union(\ :ref:`Any <l416e79>`\ , failed) 
+  \ ``option()``\  is not to be used at the top level; option determines internally which drawing options are indicated in a draw command.
+
+.. _l447261774f7074696f6e-706f696e74436f6c6f72:
+
+.. index::
+   pair: DrawOption; pointColor
+
+:spadfun:`pointColor`\: \ :ref:`Float <l466c6f6174>`\  -> % 
+  \ ``pointColor(v)``\  specifies a color, \ ``v``\ , for 2D graph points. This option is expressed in the form \ ``pointColor == v``\ .
+
+
+.. index::
+   pair: DrawOption; pointColor
+
+:spadfun:`pointColor`\: \ :ref:`Palette <l50616c65747465>`\  -> % 
+  \ ``pointColor(p)``\  specifies a color index for 2D graph points from the spadcolors palette \ ``p``\ . This option is expressed in the form \ ``pointColor == p``\ .
+
+.. _l447261774f7074696f6e-72616e6765:
+
+.. index::
+   pair: DrawOption; range
+
+:spadfun:`range`\: \ :ref:`List <l4c697374>`\  \ :ref:`Segment <l5365676d656e74>`\  \ :ref:`Float <l466c6f6174>`\  -> % 
+  \ ``range([l])``\  provides a user-specified range \ ``l``\ . This option is expressed in the form \ ``range == [l]``\ .
+
+
+.. index::
+   pair: DrawOption; range
+
+:spadfun:`range`\: \ :ref:`List <l4c697374>`\  \ :ref:`Segment <l5365676d656e74>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  -> % 
+  \ ``range([i])``\  provides a user-specified range \ ``i``\ . This option is expressed in the form \ ``range == [i]``\ .
+
+.. _l447261774f7074696f6e-72616e676573:
+
+.. index::
+   pair: DrawOption; ranges
+
+:spadfun:`ranges`\: \ :ref:`List <l4c697374>`\  \ :ref:`Segment <l5365676d656e74>`\  \ :ref:`Float <l466c6f6174>`\  -> % 
+  \ ``ranges(l)``\  provides a list of user-specified ranges \ ``l``\ . This option is expressed in the form \ ``ranges == l``\ .
+
+.. _l447261774f7074696f6e-7370616365:
+
+.. index::
+   pair: DrawOption; space
+
+:spadfun:`space`\: \ :ref:`ThreeSpace <l54687265655370616365>`\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  -> % 
+  \ ``space specifies``\  the space into which we will draw. If none is given then a new space is created.
+
+.. _l447261774f7074696f6e-7374796c65:
+
+.. index::
+   pair: DrawOption; style
+
+:spadfun:`style`\: \ :ref:`String <l537472696e67>`\  -> % 
+  \ ``style(s)``\  specifies the drawing style in which the graph will be plotted by the indicated string \ ``s``\ . This option is expressed in the form \ ``style == s``\ .
+
+.. _l447261774f7074696f6e-7469746c65:
+
+.. index::
+   pair: DrawOption; title
+
+:spadfun:`title`\: \ :ref:`String <l537472696e67>`\  -> % 
+  \ ``title(s)``\  specifies a title for a plot by the indicated string \ ``s``\ . This option is expressed in the form \ ``title == s``\ .
+
+.. _l447261774f7074696f6e-746f5363616c65:
+
+.. index::
+   pair: DrawOption; toScale
+
+:spadfun:`toScale`\: \ :ref:`Boolean <l426f6f6c65616e>`\  -> % 
+  \ ``toScale(b)``\  specifies whether or not a plot is to be drawn to scale; if \ ``b``\  is \ ``true``\  it is drawn to scale, if \ ``b``\  is \ ``false``\  it is not. This option is expressed in the form \ ``toScale == b``\ .
+
+.. _l447261774f7074696f6e-74756265506f696e7473:
+
+.. index::
+   pair: DrawOption; tubePoints
+
+:spadfun:`tubePoints`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> % 
+  \ ``tubePoints(n)``\  specifies the number of points, \ ``n``\ , defining the circle which creates the tube around a 3D curve, the default is 6. This option is expressed in the form \ ``tubePoints == n``\ .
+
+.. _l447261774f7074696f6e-74756265526164697573:
+
+.. index::
+   pair: DrawOption; tubeRadius
+
+:spadfun:`tubeRadius`\: \ :ref:`Float <l466c6f6174>`\  -> % 
+  \ ``tubeRadius(r)``\  specifies a radius, \ ``r``\ , for a tube plot around a 3D curve; is expressed in the form \ ``tubeRadius == 4``\ .
+
+.. _l447261774f7074696f6e-756e6974:
+
+.. index::
+   pair: DrawOption; unit
+
+:spadfun:`unit`\: \ :ref:`List <l4c697374>`\  \ :ref:`Float <l466c6f6174>`\  -> % 
+  \ ``unit(lf)``\  will mark off the units according to the indicated list \ ``lf``\ . This option is expressed in the form \ ``unit == [f1, f2]``\ .
+
+.. _l447261774f7074696f6e-766172315374657073:
+
+.. index::
+   pair: DrawOption; var1Steps
+
+:spadfun:`var1Steps`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> % 
+  \ ``var1Steps(n)``\  indicates the number of subdivisions, \ ``n``\ , of the first range variable. This option is expressed in the form \ ``var1Steps == n``\ .
+
+.. _l447261774f7074696f6e-766172325374657073:
+
+.. index::
+   pair: DrawOption; var2Steps
+
+:spadfun:`var2Steps`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> % 
+  \ ``var2Steps(n)``\  indicates the number of subdivisions, \ ``n``\ , of the second range variable. This option is expressed in the form \ ``var2Steps == n``\ .
+
+.. _l447261774f7074696f6e-76696577706f696e74:
+
+.. index::
+   pair: DrawOption; viewpoint
+
+:spadfun:`viewpoint`\: Record(theta: \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , phi: \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , scale: \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , scaleX: \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , scaleY: \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , scaleZ: \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , deltaX: \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , deltaY: \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ ) -> % 
+  \ ``viewpoint(vp)``\  creates a viewpoint data structure corresponding to the list of values. The values are interpreted as [theta, phi, scale, scaleX, scaleY, scaleZ, deltaX, deltaY]. This option is expressed in the form \ ``viewpoint == ls``\ .
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

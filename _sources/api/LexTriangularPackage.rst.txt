@@ -1,0 +1,73 @@
+.. index:: LexTriangularPackage
+
+.. _l4c6578547269616e67756c61725061636b616765:
+
+LexTriangularPackage(R, ls)
+===========================
+
+:viewcode:`zerodim.spad line 110 <zerodim.spad#L110>` :editcode:`[edit on github] <zerodim.spad#L110>`
+
+* R: \ :ref:`GcdDomain <l476364446f6d61696e>`\ 
+
+* ls: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+A package for solving polynomial systems with finitely many solutions. The decompositions are given by means of regular triangular sets. The computations use lexicographical Groebner bases. The main operations are \ :ref:`lexTriangular <l4c6578547269616e67756c61725061636b616765-6c6578547269616e67756c6172>`\  and \ :ref:`squareFreeLexTriangular <l4c6578547269616e67756c61725061636b616765-737175617265467265654c6578547269616e67756c6172>`\ . The second one provide decompositions by means of square-free regular triangular sets. Both are based on the \ *lexTriangular*\  method described in [1]. They differ from the algorithm described in [2] by the fact that multiciplities of the roots are not kept. With the \ :ref:`squareFreeLexTriangular <l4c6578547269616e67756c61725061636b616765-737175617265467265654c6578547269616e67756c6172>`\  operation all multiciplities are removed. With the other operation some multiciplities may remain. Both operations admit an optional argument to produce normalized triangular sets.  
+
+
+.. _l4c6578547269616e67756c61725061636b616765-66676c6d496643616e:
+
+.. index::
+   pair: LexTriangularPackage; fglmIfCan
+
+:spadfun:`fglmIfCan`\: \ :ref:`List <l4c697374>`\  \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls) -> Union(\ :ref:`List <l4c697374>`\  \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls), failed) 
+  \ ``fglmIfCan(lp)``\  returns the lexicographical Groebner basis of \ ``lp``\  by using the \ *FGLM*\  strategy, if \ ``zeroDimensional?(lp)``\  holds .
+
+.. _l4c6578547269616e67756c61725061636b616765-67726f65626e6572:
+
+.. index::
+   pair: LexTriangularPackage; groebner
+
+:spadfun:`groebner`\: \ :ref:`List <l4c697374>`\  \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls) -> \ :ref:`List <l4c697374>`\  \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls) 
+  \ ``groebner(lp)``\  returns the lexicographical Groebner basis of \ ``lp``\ . If \ ``lp``\  generates a zero-dimensional ideal then the \ *FGLM*\  strategy is used, otherwise the \ *Sugar*\  strategy is used.
+
+.. _l4c6578547269616e67756c61725061636b616765-6c6578547269616e67756c6172:
+
+.. index::
+   pair: LexTriangularPackage; lexTriangular
+
+:spadfun:`lexTriangular`\: (\ :ref:`List <l4c697374>`\  \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls), \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`RegularChain <l526567756c6172436861696e>`\ (R, ls) 
+  \ ``lexTriangular(base, norm?)``\  decomposes the variety associated with \ ``base``\  into regular chains. Thus a point belongs to this variety iff it is a regular zero of a regular set in in the output. Note that \ ``base``\  needs to be a lexicographical Groebner basis of a zero-dimensional ideal. If \ ``norm?``\  is \ ``true``\  then the regular sets are normalized.
+
+.. _l4c6578547269616e67756c61725061636b616765-737175617265467265654c6578547269616e67756c6172:
+
+.. index::
+   pair: LexTriangularPackage; squareFreeLexTriangular
+
+:spadfun:`squareFreeLexTriangular`\: (\ :ref:`List <l4c697374>`\  \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls), \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`SquareFreeRegularTriangularSet <l53717561726546726565526567756c6172547269616e67756c6172536574>`\ (R, \ :ref:`IndexedExponents <l496e64657865644578706f6e656e7473>`\  \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls, \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls)) 
+  \ ``squareFreeLexTriangular(base, norm?)``\  decomposes the variety associated with \ ``base``\  into square-free regular chains. Thus a point belongs to this variety iff it is a regular zero of a regular set in in the output. Note that \ ``base``\  needs to be a lexicographical Groebner basis of a zero-dimensional ideal. If \ ``norm?``\  is \ ``true``\  then the regular sets are normalized.
+
+.. _l4c6578547269616e67756c61725061636b616765-7a65726f44696d656e73696f6e616c3f:
+
+.. index::
+   pair: LexTriangularPackage; zeroDimensional?
+
+:spadfun:`zeroDimensional?`\: \ :ref:`List <l4c697374>`\  \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``zeroDimensional?(lp)``\  returns \ ``true``\  iff \ ``lp``\  generates a zero-dimensional ideal \ ``w``\ .\ ``r``\ .\ ``t``\ . the variables involved in \ ``lp``\ .
+
+.. _l4c6578547269616e67756c61725061636b616765-7a65726f53657453706c6974:
+
+.. index::
+   pair: LexTriangularPackage; zeroSetSplit
+
+:spadfun:`zeroSetSplit`\: (\ :ref:`List <l4c697374>`\  \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls), \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`RegularChain <l526567756c6172436861696e>`\ (R, ls) 
+  \ ``zeroSetSplit(lp, norm?)``\  decomposes the variety associated with \ ``lp``\  into regular chains. Thus a point belongs to this variety iff it is a regular zero of a regular set in in the output. Note that \ ``lp``\  needs to generate a zero-dimensional ideal. If \ ``norm?``\  is \ ``true``\  then the regular sets are normalized.
+
+
+.. index::
+   pair: LexTriangularPackage; zeroSetSplit
+
+:spadfun:`zeroSetSplit`\: (\ :ref:`List <l4c697374>`\  \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls), \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`SquareFreeRegularTriangularSet <l53717561726546726565526567756c6172547269616e67756c6172536574>`\ (R, \ :ref:`IndexedExponents <l496e64657865644578706f6e656e7473>`\  \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls, \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls)) 
+  \ ``zeroSetSplit(lp, norm?)``\  decomposes the variety associated with \ ``lp``\  into square-free regular chains. Thus a point belongs to this variety iff it is a regular zero of a regular set in in the output. Note that \ ``lp``\  needs to generate a zero-dimensional ideal. If \ ``norm?``\  is \ ``true``\  then the regular sets are normalized.
+
+

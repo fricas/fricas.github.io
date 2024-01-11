@@ -1,0 +1,224 @@
+.. index:: JetVectorField
+
+.. _l4a6574566563746f724669656c64:
+
+JetVectorField(JB, D)
+=====================
+
+:viewcode:`jet.spad line 3319 <jet.spad#L3319>` :editcode:`[edit on github] <jet.spad#L3319>`
+
+* JB: \ :ref:`JetBundleCategory <l4a657442756e646c6543617465676f7279>`\ 
+
+* D: \ :ref:`JetBundleFunctionCategory <l4a657442756e646c6546756e6374696f6e43617465676f7279>`\  JB
+
+
+\ ``JetVectorField(JB, D)``\  implements vector fields over the jet bundle \ ``JB``\  with coefficients from \ ``D``\ . The fields operate on functions from \ ``D``\ .
+
+
+.. _l4a6574566563746f724669656c64-30:
+
+\ :ref:`0 <l4162656c69616e4d6f6e6f6964-30>`\ \: % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l4a6574566563746f724669656c64-2a:
+
+\ :ref:`\* <l52696768744d6f64756c65-2a>`\ \: (%, D) -> % 
+  from \ :ref:`RightModule <l52696768744d6f64756c65>`\  D
+
+
+\ :ref:`\* <l4c6566744d6f64756c65-2a>`\ \: (D, %) -> % 
+  from \ :ref:`LeftModule <l4c6566744d6f64756c65>`\  D
+
+
+\ :ref:`\* <l4162656c69616e47726f7570-2a>`\ \: (\ :ref:`Integer <l496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`\* <l4162656c69616e4d6f6e6f6964-2a>`\ \: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`\* <l4162656c69616e53656d6947726f7570-2a>`\ \: (\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l4a6574566563746f724669656c64-2b:
+
+\ :ref:`+ <l4162656c69616e53656d6947726f7570-2b>`\ \: (%, %) -> % 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l4a6574566563746f724669656c64-2d:
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: % -> % 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: (%, %) -> % 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+.. _l4a6574566563746f724669656c64-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4a6574566563746f724669656c64-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4a6574566563746f724669656c64-636f656666696369656e74:
+
+.. index::
+   pair: JetVectorField; coefficient
+
+:spadfun:`coefficient`\: (%, JB) -> D 
+  \ ``coefficient(v, jb)``\  returns the coefficient of \ ``v``\  in direction \ ``jb``\ .
+
+.. _l4a6574566563746f724669656c64-636f656666696369656e7473:
+
+.. index::
+   pair: JetVectorField; coefficients
+
+:spadfun:`coefficients`\: % -> \ :ref:`List <l4c697374>`\  D 
+  \ ``coefficients(v)``\  yields the coefficients of \ ``v``\ .
+
+.. _l4a6574566563746f724669656c64-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l4a6574566563746f724669656c64-636f6d6d757461746f72:
+
+.. index::
+   pair: JetVectorField; commutator
+
+:spadfun:`commutator`\: (%, %) -> % 
+  \ ``commutator(v, w)``\  calculates the commutator of two vector fields.
+
+.. _l4a6574566563746f724669656c64-636f7079:
+
+.. index::
+   pair: JetVectorField; copy
+
+:spadfun:`copy`\: % -> % 
+  \ ``copy(v)``\  returns a copy of the vector field \ ``v``\ .
+
+.. _l4a6574566563746f724669656c64-64696666:
+
+.. index::
+   pair: JetVectorField; diff
+
+:spadfun:`diff`\: JB -> % 
+  \ ``diff(jb)``\  returns the base vector field in direction \ ``jb``\ .
+
+.. _l4a6574566563746f724669656c64-6469666650:
+
+.. index::
+   pair: JetVectorField; diffP
+
+:spadfun:`diffP`\: (\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``diffP(i, mu)``\  returns the base vector field in direction \ ``P(i, mu)``\ .
+
+.. _l4a6574566563746f724669656c64-6469666655:
+
+.. index::
+   pair: JetVectorField; diffU
+
+:spadfun:`diffU`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> % 
+  \ ``diffU(i)``\  returns the base vector field in direction \ ``U(i)``\ .
+
+.. _l4a6574566563746f724669656c64-6469666658:
+
+.. index::
+   pair: JetVectorField; diffX
+
+:spadfun:`diffX`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> % 
+  \ ``diffX(i)``\  returns the base vector field in direction \ ``X(i)``\ .
+
+.. _l4a6574566563746f724669656c64-646972656374696f6e73:
+
+.. index::
+   pair: JetVectorField; directions
+
+:spadfun:`directions`\: % -> \ :ref:`List <l4c697374>`\  JB 
+  \ ``directions(v)``\  yields the directions of the base vectors where \ ``v``\  has non-vanishing coefficients.
+
+.. _l4a6574566563746f724669656c64-6576616c:
+
+.. index::
+   pair: JetVectorField; eval
+
+:spadfun:`eval`\: (%, D) -> D 
+  \ ``eval(v, f)``\  applies the vector field \ ``v``\  to the function \ ``f``\ .
+
+.. _l4a6574566563746f724669656c64-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l4a6574566563746f724669656c64-6c6965:
+
+.. index::
+   pair: JetVectorField; lie
+
+:spadfun:`lie`\: (%, %) -> % 
+  \ ``lie(v, w)``\  calculates the Lie derivative of \ ``w``\  with respect to \ ``v``\ . (This yields the commutator of the fields.)
+
+.. _l4a6574566563746f724669656c64-6f70706f736974653f:
+
+\ :ref:`opposite? <l4162656c69616e4d6f6e6f6964-6f70706f736974653f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l4a6574566563746f724669656c64-70726f6c6f6e67:
+
+.. index::
+   pair: JetVectorField; prolong
+
+:spadfun:`prolong`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``prolong(v, q)``\  prolongs a vector field \ ``v``\  defined on the base space into the jet bundle of order \ ``q``\ .
+
+.. _l4a6574566563746f724669656c64-73616d706c65:
+
+\ :ref:`sample <l4162656c69616e4d6f6e6f6964-73616d706c65>`\ \: % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l4a6574566563746f724669656c64-7375627472616374496643616e:
+
+\ :ref:`subtractIfCan <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964-7375627472616374496643616e>`\ \: (%, %) -> Union(%, failed) 
+  from \ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l4a6574566563746f724669656c64-7461626c65:
+
+.. index::
+   pair: JetVectorField; table
+
+:spadfun:`table`\: \ :ref:`List <l4c697374>`\  % -> \ :ref:`TwoDimensionalArray <l54776f44696d656e73696f6e616c4172726179>`\  % 
+  \ ``table(lv)``\  computes the commutator table for a given list of vector fields.
+
+.. _l4a6574566563746f724669656c64-7a65726f3f:
+
+\ :ref:`zero? <l4162656c69616e4d6f6e6f6964-7a65726f3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\  
+
+\ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  
+
+\ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\  
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`BiModule <l42694d6f64756c65>`\ (D, D) 
+
+\ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`LeftModule <l4c6566744d6f64756c65>`\  D 
+
+\ :ref:`Module <l4d6f64756c65>`\  D 
+
+\ :ref:`RightModule <l52696768744d6f64756c65>`\  D 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

@@ -1,0 +1,129 @@
+.. index:: SegmentExpansionCategory
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279:
+
+SegmentExpansionCategory(S, L)
+==============================
+
+:viewcode:`seg.spad line 50 <seg.spad#L50>` :editcode:`[edit on github] <seg.spad#L50>`
+
+* S: \ :ref:`OrderedRing <l4f72646572656452696e67>`\ 
+
+* L: \ :ref:`StreamAggregate <l53747265616d416767726567617465>`\  S
+
+
+This category provides an interface for expanding segments to a stream of elements.
+
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-2b:
+
+\ :ref:`+ <l5365676d656e7443617465676f7279-2b>`\ \: (%, S) -> % 
+  from \ :ref:`SegmentCategory <l5365676d656e7443617465676f7279>`\  S
+
+
+\ :ref:`+ <l5365676d656e7443617465676f7279-2b>`\ \: (S, %) -> % 
+  from \ :ref:`SegmentCategory <l5365676d656e7443617465676f7279>`\  S
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-2d:
+
+\ :ref:`- <l5365676d656e7443617465676f7279-2d>`\ \: (%, S) -> % 
+  from \ :ref:`SegmentCategory <l5365676d656e7443617465676f7279>`\  S
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-4259:
+
+\ :ref:`BY <l5365676d656e7443617465676f7279-4259>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  from \ :ref:`SegmentCategory <l5365676d656e7443617465676f7279>`\  S
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-636f6e76657274:
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`InputForm <l496e707574466f726d>`\  if S has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+
+\ :ref:`convert <l5365676d656e7443617465676f7279-636f6e76657274>`\ \: S -> % 
+  from \ :ref:`SegmentCategory <l5365676d656e7443617465676f7279>`\  S
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-657870616e64:
+
+.. index::
+   pair: SegmentExpansionCategory; expand
+
+:spadfun:`expand`\: % -> L 
+  \ ``expand(l..h by k)``\  creates value of type \ ``L``\  with elements \ ``l, l+k, ... lN``\  where \ ``lN <= h < lN+k``\ . For example, \ ``expand(1..5 by 2) = [1, 3, 5]``\ .
+
+
+.. index::
+   pair: SegmentExpansionCategory; expand
+
+:spadfun:`expand`\: \ :ref:`List <l4c697374>`\  % -> L 
+  \ ``expand(l)``\  creates a new value of type \ ``L``\  in which each segment \ ``l..h by k``\  is replaced with \ ``l, l+k, ... lN``\ , where \ ``lN <= h < lN+k``\ . For example, \ ``expand [1..4, 7..9] = [1, 2, 3, 4, 7, 8, 9]``\ .
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-68696768:
+
+\ :ref:`high <l5365676d656e7443617465676f7279-68696768>`\ \: % -> S 
+  from \ :ref:`SegmentCategory <l5365676d656e7443617465676f7279>`\  S
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-696e6372:
+
+\ :ref:`incr <l5365676d656e7443617465676f7279-696e6372>`\ \: % -> \ :ref:`Integer <l496e7465676572>`\  
+  from \ :ref:`SegmentCategory <l5365676d656e7443617465676f7279>`\  S
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-6c6f77:
+
+\ :ref:`low <l5365676d656e7443617465676f7279-6c6f77>`\ \: % -> S 
+  from \ :ref:`SegmentCategory <l5365676d656e7443617465676f7279>`\  S
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-6d6170:
+
+.. index::
+   pair: SegmentExpansionCategory; map
+
+:spadfun:`map`\: (S -> S, %) -> L 
+  \ ``map(f, l..h by k)``\  produces a value of type \ ``L``\  by applying \ ``f``\  to each of the successive elements of the segment, that is, \ ``[f(l), f(l+k), ..., f(lN)]``\ , where \ ``lN <= h < lN+k``\ .
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-72657665727365:
+
+\ :ref:`reverse <l5365676d656e7443617465676f7279-72657665727365>`\ \: % -> % 
+  from \ :ref:`SegmentCategory <l5365676d656e7443617465676f7279>`\  S
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-7365676d656e74:
+
+\ :ref:`segment <l5365676d656e7443617465676f7279-7365676d656e74>`\ \: (S, S) -> % 
+  from \ :ref:`SegmentCategory <l5365676d656e7443617465676f7279>`\  S
+
+.. _l5365676d656e74457870616e73696f6e43617465676f7279-5345474d454e54:
+
+\ :ref:`SEGMENT <l5365676d656e7443617465676f7279-5345474d454e54>`\ \: (S, S) -> % 
+  from \ :ref:`SegmentCategory <l5365676d656e7443617465676f7279>`\  S
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\  if S has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+\ :ref:`SegmentCategory <l5365676d656e7443617465676f7279>`\  S 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

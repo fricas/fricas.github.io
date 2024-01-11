@@ -1,0 +1,88 @@
+.. index:: SceneIFS
+
+.. _l5363656e65494653:
+
+SceneIFS PT
+===========
+
+:viewcode:`scene.spad line 1837 <scene.spad#L1837>` :editcode:`[edit on github] <scene.spad#L1837>`
+
+* PT: \ :ref:`SPointCategory <l53506f696e7443617465676f7279>`\ 
+
+
+Generates various surfaces (2 dimensional subsets of 3D space). When 1 dimensional subspace (a line) needs to be represented in a 3D editor then we convert the line into a tube. Many of the functions here are from NumericTubePlot and related packages. However \ ``I``\  needed them to be defined over SPointCategory so \ ``I``\  adapted them here.
+
+
+.. _l5363656e65494653-636f65726365:
+
+.. index::
+   pair: SceneIFS; coerce
+
+:spadfun:`coerce`\: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  \ ``coerce(me)``\  list this instance to the command line
+
+.. _l5363656e65494653-63757276654c6f6f7073:
+
+.. index::
+   pair: SceneIFS; curveLoops
+
+:spadfun:`curveLoops`\: (\ :ref:`List <l4c697374>`\  PT, \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  PT 
+  \ ``curveLoops(pts1, r, nn)``\  generates ifs from line given by \ ``pts1``\ 
+
+.. _l5363656e65494653-696e6465786573:
+
+.. index::
+   pair: SceneIFS; indexes
+
+:spadfun:`indexes`\: % -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``indexes(me)``\  returns indexes into pointList(\ ``me``\ )
+
+.. _l5363656e65494653-706f696e744c697374:
+
+.. index::
+   pair: SceneIFS; pointList
+
+:spadfun:`pointList`\: % -> \ :ref:`List <l4c697374>`\  PT 
+  \ ``pointList(me)``\  returns points at vertices of this mesh.
+
+.. _l5363656e65494653-7369657270696e736b69446976696465:
+
+.. index::
+   pair: SceneIFS; sierpinskiDivide
+
+:spadfun:`sierpinskiDivide`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``sierpinskiDivide(me, level)``\  for each edge of each face calculate a new point in the centre of the edge, then build a new set of faces which include the new points.
+
+.. _l5363656e65494653-73696e676c6546616365:
+
+.. index::
+   pair: SceneIFS; singleFace
+
+:spadfun:`singleFace`\: \ :ref:`List <l4c697374>`\  PT -> % 
+  \ ``singleFace(ptin)``\  constructs a ifs representation of a face from an array of points
+
+.. _l5363656e65494653-736d657368:
+
+.. index::
+   pair: SceneIFS; smesh
+
+:spadfun:`smesh`\: (\ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  PT, \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> % 
+  \ ``smesh(ptin, clos)``\  constructs a ifs representation of a mesh from a 2 dimensional array of points
+
+.. _l5363656e65494653-7374756265:
+
+.. index::
+   pair: SceneIFS; stube
+
+:spadfun:`stube`\: (\ :ref:`List <l4c697374>`\  Record(source: \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  -> PT, ranges: \ :ref:`List <l4c697374>`\  \ :ref:`Segment <l5365676d656e74>`\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , knots: \ :ref:`List <l4c697374>`\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , points: \ :ref:`List <l4c697374>`\  PT), \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  \ ``stube(functions: List Clipd, r, n)``\  creates a tube of radius \ ``r``\  around the curve functions.
+
+.. _l5363656e65494653-737562646976696465:
+
+.. index::
+   pair: SceneIFS; subdivide
+
+:spadfun:`subdivide`\: % -> % 
+  \ ``subdivide(me)``\  for each face calculate a new point in the centre of the face, then build a new set of faces which include the new point.
+
+

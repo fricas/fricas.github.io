@@ -1,0 +1,137 @@
+.. index:: SceneNamedPoints
+
+.. _l5363656e654e616d6564506f696e7473:
+
+SceneNamedPoints PT
+===================
+
+:viewcode:`scene.spad line 2200 <scene.spad#L2200>` :editcode:`[edit on github] <scene.spad#L2200>`
+
+* PT: \ :ref:`SPointCategory <l53506f696e7443617465676f7279>`\ 
+
+
+Associates points or nodes in Scene structure with names (or a hierarchy of names). The aim is, where a point or node is used in several different constructions, it only needs to be specified once.
+
+
+.. _l5363656e654e616d6564506f696e7473-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l5363656e654e616d6564506f696e7473-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l5363656e654e616d6564506f696e7473-6164644e6f646521:
+
+.. index::
+   pair: SceneNamedPoints; addNode!
+
+:spadfun:`addNode!`\: (%, \ :ref:`String <l537472696e67>`\ , \ :ref:`Scene <l5363656e65>`\  PT) -> % 
+  \ ``addNode!(n, ptName, sc)``\  adds a scene node.
+
+.. _l5363656e654e616d6564506f696e7473-616464506f696e747321:
+
+.. index::
+   pair: SceneNamedPoints; addPoints!
+
+:spadfun:`addPoints!`\: (%, \ :ref:`String <l537472696e67>`\ , %) -> % 
+  \ ``addPoints!(n, ptName, pts)``\  adds a points node.
+
+.. _l5363656e654e616d6564506f696e7473-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l5363656e654e616d6564506f696e7473-66696e644e6f6465:
+
+.. index::
+   pair: SceneNamedPoints; findNode
+
+:spadfun:`findNode`\: (%, \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`Scene <l5363656e65>`\  PT 
+  \ ``findNode(n, ptName)``\  finds a scene node
+
+.. _l5363656e654e616d6564506f696e7473-66696e64506f696e74:
+
+.. index::
+   pair: SceneNamedPoints; findPoint
+
+:spadfun:`findPoint`\: (%, \ :ref:`String <l537472696e67>`\ ) -> PT 
+  \ ``findPoint(n, ptName)``\  find the point associated with a given string.
+
+.. _l5363656e654e616d6564506f696e7473-6765744e616d6573:
+
+.. index::
+   pair: SceneNamedPoints; getNames
+
+:spadfun:`getNames`\: % -> \ :ref:`List <l4c697374>`\  \ :ref:`String <l537472696e67>`\  
+  \ ``getNames(n)``\  returns a list of names for this node
+
+.. _l5363656e654e616d6564506f696e7473-69734e6f64654272616e63683f:
+
+.. index::
+   pair: SceneNamedPoints; isNodeBranch?
+
+:spadfun:`isNodeBranch?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``isNodeBranch?(n)``\  returns \ ``true``\  if this is a branch.
+
+.. _l5363656e654e616d6564506f696e7473-69734e6f64654c6561663f:
+
+.. index::
+   pair: SceneNamedPoints; isNodeLeaf?
+
+:spadfun:`isNodeLeaf?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``isNodeLeaf?(n)``\  returns \ ``true``\  if this is a leaf which holds Scene nodes.
+
+.. _l5363656e654e616d6564506f696e7473-6973506f696e744c6561663f:
+
+.. index::
+   pair: SceneNamedPoints; isPointLeaf?
+
+:spadfun:`isPointLeaf?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``isPointLeaf?(n)``\  returns \ ``true``\  if this is a \ ``pt``\  node, that is, if this node contains points
+
+.. _l5363656e654e616d6564506f696e7473-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l5363656e654e616d6564506f696e7473-6e616d65644272616e6368:
+
+.. index::
+   pair: SceneNamedPoints; namedBranch
+
+:spadfun:`namedBranch`\: (\ :ref:`List <l4c697374>`\  %, \ :ref:`List <l4c697374>`\  \ :ref:`String <l537472696e67>`\ ) -> % 
+  \ ``namedBranch(chin, nmin)``\  constructs a branch in the tree structure
+
+.. _l5363656e654e616d6564506f696e7473-6e616d6564506f696e7473:
+
+.. index::
+   pair: SceneNamedPoints; namedPoints
+
+:spadfun:`namedPoints`\: (\ :ref:`List <l4c697374>`\  PT, \ :ref:`List <l4c697374>`\  \ :ref:`String <l537472696e67>`\ ) -> % 
+  \ ``namedPoints(ptin, nmin)``\  constructs a list of named points.
+
+
+.. index::
+   pair: SceneNamedPoints; namedPoints
+
+:spadfun:`namedPoints`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Scene <l5363656e65>`\  PT, \ :ref:`List <l4c697374>`\  \ :ref:`String <l537472696e67>`\ ) -> % 
+  \ ``namedPoints(scin, nmin)``\  constructs a list of named nodes.
+
+.. _l5363656e654e616d6564506f696e7473-746f537472696e67:
+
+.. index::
+   pair: SceneNamedPoints; toString
+
+:spadfun:`toString`\: % -> \ :ref:`String <l537472696e67>`\  
+  \ ``toString(n)``\  returns string representation for debug purposes.
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

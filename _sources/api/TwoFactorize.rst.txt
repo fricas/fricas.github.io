@@ -1,0 +1,40 @@
+.. index:: TwoFactorize
+
+.. _l54776f466163746f72697a65:
+
+TwoFactorize F
+==============
+
+:viewcode:`twofact.spad line 53 <twofact.spad#L53>` :editcode:`[edit on github] <twofact.spad#L53>`
+
+* F: \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+
+A basic package for the factorization of bivariate polynomials over a finite field. The functions here represent the base step for the multivariate factorizer.
+
+
+.. _l54776f466163746f72697a65-646f466163746f72:
+
+.. index::
+   pair: TwoFactorize; doFactor
+
+:spadfun:`doFactor`\: (\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`Factored <l466163746f726564>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F 
+  \ ``doFactor(p, n, ext?)``\  returns the factorisation of polynomial \ ``p``\ , \ ``p``\  is assumed to be primitive and squarefree, \ ``n``\  is degree in auxilary variable, ext? if \ ``false``\  inhibits use of extension field.
+
+.. _l54776f466163746f72697a65-67656e6572616c54776f466163746f72:
+
+.. index::
+   pair: TwoFactorize; generalTwoFactor
+
+:spadfun:`generalTwoFactor`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F -> \ :ref:`Factored <l466163746f726564>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F 
+  \ ``generalTwoFactor(p)``\  returns the factorisation of polynomial \ ``p``\ , a sparse univariate polynomial (sup) over a sup over \ ``F``\ .
+
+.. _l54776f466163746f72697a65-74727954776f466163746f72:
+
+.. index::
+   pair: TwoFactorize; tryTwoFactor
+
+:spadfun:`tryTwoFactor`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F -> \ :ref:`Factored <l466163746f726564>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F 
+  \ ``tryTwoFactor(p)``\  returns the factorisation of polynomial \ ``p``\ , if it does not require using field extensions, otherwise returns \ ``p``\  unfactored (nil factorization).
+
+

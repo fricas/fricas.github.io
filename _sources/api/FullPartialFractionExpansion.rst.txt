@@ -1,0 +1,121 @@
+.. index:: FullPartialFractionExpansion
+
+.. _l46756c6c5061727469616c4672616374696f6e457870616e73696f6e:
+
+FullPartialFractionExpansion(F, UP)
+===================================
+
+:viewcode:`fparfrac.spad line 1 <fparfrac.spad#L1>` :editcode:`[edit on github] <fparfrac.spad#L1>`
+
+* F: Join(\ :ref:`Field <l4669656c64>`\ , \ :ref:`CharacteristicZero <l43686172616374657269737469635a65726f>`\ )
+
+* UP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  F
+
+
+Full partial fraction expansion of rational functions Author: Manuel Bronstein Date Created: 9 December 1992 References: \ ``M``\ .Bronstein & \ ``B``\ .Salvy, Full Partial Fraction Decomposition of Rational Functions, in Proceedings of \ ``ISSAC'93``\ , Kiev, ACM Press.
+
+
+.. _l46756c6c5061727469616c4672616374696f6e457870616e73696f6e-2b:
+
+.. index::
+   pair: FullPartialFractionExpansion; +
+
+:spadfun:`+`\: (UP, %) -> % 
+  \ ``p + x``\  returns the sum of \ ``p``\  and \ ``x``\ 
+
+.. _l46756c6c5061727469616c4672616374696f6e457870616e73696f6e-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l46756c6c5061727469616c4672616374696f6e457870616e73696f6e-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l46756c6c5061727469616c4672616374696f6e457870616e73696f6e-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l46756c6c5061727469616c4672616374696f6e457870616e73696f6e-636f6e737472756374:
+
+.. index::
+   pair: FullPartialFractionExpansion; construct
+
+:spadfun:`construct`\: \ :ref:`List <l4c697374>`\  Record(exponent: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , center: UP, num: UP) -> % 
+  \ ``construct(l)``\  is the inverse of fracPart.
+
+.. _l46756c6c5061727469616c4672616374696f6e457870616e73696f6e-636f6e76657274:
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+.. _l46756c6c5061727469616c4672616374696f6e457870616e73696f6e-44:
+
+.. index::
+   pair: FullPartialFractionExpansion; D
+
+:spadfun:`D`\: % -> % 
+  \ ``D(f)``\  returns the derivative of \ ``f``\ .
+
+
+.. index::
+   pair: FullPartialFractionExpansion; D
+
+:spadfun:`D`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``D(f, n)``\  returns the \ ``n``\ -th derivative of \ ``f``\ .
+
+.. _l46756c6c5061727469616c4672616374696f6e457870616e73696f6e-646966666572656e7469617465:
+
+.. index::
+   pair: FullPartialFractionExpansion; differentiate
+
+:spadfun:`differentiate`\: % -> % 
+  \ ``differentiate(f)``\  returns the derivative of \ ``f``\ .
+
+
+.. index::
+   pair: FullPartialFractionExpansion; differentiate
+
+:spadfun:`differentiate`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``differentiate(f, n)``\  returns the \ ``n``\ -th derivative of \ ``f``\ .
+
+.. _l46756c6c5061727469616c4672616374696f6e457870616e73696f6e-6672616350617274:
+
+.. index::
+   pair: FullPartialFractionExpansion; fracPart
+
+:spadfun:`fracPart`\: % -> \ :ref:`List <l4c697374>`\  Record(exponent: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , center: UP, num: UP) 
+  \ ``fracPart(f)``\  returns the list of summands of the fractional part of \ ``f``\ .
+
+.. _l46756c6c5061727469616c4672616374696f6e457870616e73696f6e-66756c6c5061727469616c4672616374696f6e:
+
+.. index::
+   pair: FullPartialFractionExpansion; fullPartialFraction
+
+:spadfun:`fullPartialFraction`\: \ :ref:`Fraction <l4672616374696f6e>`\  UP -> % 
+  \ ``fullPartialFraction(f)``\  returns \ ``[p, [[j, Dj, Hj]...]]``\  such that \ ``f = p(x) + \sum_{[j, Dj, Hj] in l} \sum_{Dj(a)=0} Hj(a)/(x - a)\^j``\ .
+
+.. _l46756c6c5061727469616c4672616374696f6e457870616e73696f6e-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l46756c6c5061727469616c4672616374696f6e457870616e73696f6e-706f6c7950617274:
+
+.. index::
+   pair: FullPartialFractionExpansion; polyPart
+
+:spadfun:`polyPart`\: % -> UP 
+  \ ``polyPart(f)``\  returns the polynomial part of \ ``f``\ .
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

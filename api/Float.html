@@ -1,22 +1,18 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Float &#8212; FriCAS</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=0034329e"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -48,7 +44,7 @@
           <div class="body" role="main">
             
   <section id="float">
-<span id="l466c6f6174"></span><span id="index-0"></span><h1>Float<a class="headerlink" href="#float" title="Permalink to this heading">¶</a></h1>
+<span id="l466c6f6174"></span><span id="index-0"></span><h1>Float<a class="headerlink" href="#float" title="Link to this heading">¶</a></h1>
 <p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/float.spad#L1">float.spad line 1</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/float.spad#L1">[edit on github]</a></p>
 <p><a class="reference internal" href="#l466c6f6174"><span class="std std-ref">Float</span></a> implements arbitrary precision floating point arithmetic. The number of significant digits of each operation can be set to an arbitrary value (the default is 20 decimal digits). The operation <a class="reference internal" href="FloatingPointSystem.html#l466c6f6174696e67506f696e7453797374656d-666c6f6174"><span class="std std-ref">float</span></a>(mantissa, exponent, <a class="reference internal" href="FloatingPointSystem.html#l466c6f6174696e67506f696e7453797374656d-62617365"><span class="std std-ref">base</span></a>) for integer <code class="docutils literal notranslate"><span class="pre">mantissa</span></code>, <code class="docutils literal notranslate"><span class="pre">exponent</span></code> specifies the number <code class="docutils literal notranslate"><span class="pre">mantissa</span></code> * <a class="reference internal" href="FloatingPointSystem.html#l466c6f6174696e67506f696e7453797374656d-62617365"><span class="std std-ref">base</span></a> ^ <code class="docutils literal notranslate"><span class="pre">exponent</span></code> The underlying representation for floats is binary not decimal. The implications of this are described below.   The model adopted is that arithmetic operations are rounded to to nearest unit in the last place, that is, accurate to within 2^(-<a class="reference internal" href="FloatingPointSystem.html#l466c6f6174696e67506f696e7453797374656d-62697473"><span class="std std-ref">bits</span></a>). Also, the elementary functions and constants are accurate to one unit in the last place. A float is represented as a record of two integers, the mantissa and the exponent. The <a class="reference internal" href="FloatingPointSystem.html#l466c6f6174696e67506f696e7453797374656d-62617365"><span class="std std-ref">base</span></a> of the representation is binary, hence a <code class="docutils literal notranslate"><span class="pre">Record(m:</span> <span class="pre">mantissa,</span> <span class="pre">e:</span> <span class="pre">exponent)</span></code> represents the number <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">^</span> <span class="pre">e</span></code>. Though it is not assumed that the underlying integers are represented with a binary <a class="reference internal" href="FloatingPointSystem.html#l466c6f6174696e67506f696e7453797374656d-62617365"><span class="std std-ref">base</span></a>, the code will be most efficient when this is the the case (this is <code class="docutils literal notranslate"><span class="pre">true</span></code> in most implementations of Lisp). The decision to choose the <a class="reference internal" href="FloatingPointSystem.html#l466c6f6174696e67506f696e7453797374656d-62617365"><span class="std std-ref">base</span></a> to be binary has some unfortunate consequences. First, decimal numbers like 0.3 cannot be represented exactly. Second, there is a further loss of accuracy during conversion to decimal for output. To compensate for this, if <code class="docutils literal notranslate"><span class="pre">d</span></code> digits of precision are specified, <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">+</span> <span class="pre">ceiling(log2(10^d))</span></code> bits are used. Two numbers that are displayed identically may therefore be not equal. On the other hand, a significant efficiency loss would be incurred if we chose to use a decimal <a class="reference internal" href="FloatingPointSystem.html#l466c6f6174696e67506f696e7453797374656d-62617365"><span class="std std-ref">base</span></a> when the underlying integer base is binary.   Algorithms used: For the elementary functions, the general approach is to apply identities so that the taylor series can be used, and, so that it will converge within <code class="docutils literal notranslate"><span class="pre">O(</span> <span class="pre">sqrt</span> <span class="pre">n</span> <span class="pre">)</span></code> steps. For example, using the identity <code class="docutils literal notranslate"><span class="pre">exp(x)</span> <span class="pre">=</span> <span class="pre">exp(x/2)^2</span></code>, we can compute <code class="docutils literal notranslate"><span class="pre">exp(1/3)</span></code> to <code class="docutils literal notranslate"><span class="pre">n</span></code> digits of precision as follows. We have <code class="docutils literal notranslate"><span class="pre">exp(1/3)</span> <span class="pre">=</span> <span class="pre">exp(2</span> <span class="pre">^</span> <span class="pre">(-sqrt</span> <span class="pre">s)</span> <span class="pre">/</span> <span class="pre">3)</span> <span class="pre">^</span> <span class="pre">(2</span> <span class="pre">^</span> <span class="pre">sqrt</span> <span class="pre">s)</span></code>. The taylor series will converge in less than sqrt <code class="docutils literal notranslate"><span class="pre">n</span></code> steps and the exponentiation requires sqrt <code class="docutils literal notranslate"><span class="pre">n</span></code> multiplications for a total of <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">sqrt</span> <span class="pre">n</span></code> multiplications. Assuming integer multiplication costs <code class="docutils literal notranslate"><span class="pre">O(</span> <span class="pre">n^2</span> <span class="pre">)</span></code> the overall running time is <code class="docutils literal notranslate"><span class="pre">O(</span> <span class="pre">sqrt(n)</span> <span class="pre">n^2</span> <span class="pre">)</span></code>. This approach is the best known approach for precisions up to about 10, 000 digits at which point the methods of Brent which are <code class="docutils literal notranslate"><span class="pre">O(</span> <span class="pre">log(n)</span> <span class="pre">n^2</span> <span class="pre">)</span></code> become competitive. Note also that summing the terms of the taylor series for the elementary functions is done using integer operations. This avoids the overhead of floating point operations and results in efficient code at low precisions. This implementation makes no attempt to reuse storage, relying on the underlying system to do spadgloss{garbage collection}. <code class="docutils literal notranslate"><span class="pre">I</span></code> estimate that the efficiency of this package at low precisions could be improved by a factor of 2 if in-place operations were available.   Running times: in the following, <code class="docutils literal notranslate"><span class="pre">n</span></code> is the number of bits of precision <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code>, <code class="docutils literal notranslate"><span class="pre">sqrt</span></code>, <code class="docutils literal notranslate"><span class="pre">pi</span></code>, <code class="docutils literal notranslate"><span class="pre">exp1</span></code>, <code class="docutils literal notranslate"><span class="pre">log2</span></code>, <code class="docutils literal notranslate"><span class="pre">log10</span></code>: `` O( n^2 )`` <code class="docutils literal notranslate"><span class="pre">exp</span></code>, <code class="docutils literal notranslate"><span class="pre">log</span></code>, <code class="docutils literal notranslate"><span class="pre">sin</span></code>, <code class="docutils literal notranslate"><span class="pre">atan</span></code>: `` O( sqrt(n) n^2 )`` The other elementary functions are coded in terms of the ones above.</p>
 <dl class="simple" id="l466c6f6174-30">
@@ -301,7 +297,7 @@
 <dt><a class="reference internal" href="EuclideanDomain.html#l4575636c696465616e446f6d61696e-6575636c696465616e53697a65"><span class="std std-ref">euclideanSize</span></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a></dt><dd><p>from <a class="reference internal" href="EuclideanDomain.html#l4575636c696465616e446f6d61696e"><span class="std std-ref">EuclideanDomain</span></a></p>
 </dd>
 </dl>
-<span class="target" id="l466c6f6174-65787031"></span><dl class="simple" id="index-3">
+<span id="l466c6f6174-65787031"></span><dl class="simple" id="index-3">
 <dt><span class="spadfun">exp1</span>: () -&gt; %</dt><dd><p><code class="docutils literal notranslate"><span class="pre">exp1()</span></code> returns exp 1: <code class="docutils literal notranslate"><span class="pre">2.7182818284...</span></code>.</p>
 </dd>
 </dl>
@@ -395,7 +391,7 @@
 <dt><a class="reference internal" href="MagmaWithUnit.html#l4d61676d6157697468556e6974-6c6566745265636970"><span class="std std-ref">leftRecip</span></a>: % -&gt; Union(%, failed)</dt><dd><p>from <a class="reference internal" href="MagmaWithUnit.html#l4d61676d6157697468556e6974"><span class="std std-ref">MagmaWithUnit</span></a></p>
 </dd>
 </dl>
-<span class="target" id="l466c6f6174-6c6f673130"></span><dl class="simple" id="index-4">
+<span id="l466c6f6174-6c6f673130"></span><dl class="simple" id="index-4">
 <dt><span class="spadfun">log10</span>: % -&gt; %</dt><dd><p><code class="docutils literal notranslate"><span class="pre">log10(x)</span></code> computes the logarithm for <code class="docutils literal notranslate"><span class="pre">x</span></code> to base 10.</p>
 </dd>
 </dl>
@@ -403,7 +399,7 @@
 <dt><span class="spadfun">log10</span>: () -&gt; %</dt><dd><p><code class="docutils literal notranslate"><span class="pre">log10()</span></code> returns <code class="docutils literal notranslate"><span class="pre">ln</span> <span class="pre">10</span></code>: <code class="docutils literal notranslate"><span class="pre">2.3025809299...</span></code>.</p>
 </dd>
 </dl>
-<span class="target" id="l466c6f6174-6c6f6732"></span><dl class="simple" id="index-6">
+<span id="l466c6f6174-6c6f6732"></span><dl class="simple" id="index-6">
 <dt><span class="spadfun">log2</span>: % -&gt; %</dt><dd><p><code class="docutils literal notranslate"><span class="pre">log2(x)</span></code> computes the logarithm for <code class="docutils literal notranslate"><span class="pre">x</span></code> to base 2.</p>
 </dd>
 </dl>
@@ -443,7 +439,7 @@
 <dt><a class="reference internal" href="RealNumberSystem.html#l5265616c4e756d62657253797374656d-6e6f726d"><span class="std std-ref">norm</span></a>: % -&gt; %</dt><dd><p>from <a class="reference internal" href="RealNumberSystem.html#l5265616c4e756d62657253797374656d"><span class="std std-ref">RealNumberSystem</span></a></p>
 </dd>
 </dl>
-<span class="target" id="l466c6f6174-6e6f726d616c697a65"></span><dl class="simple" id="index-8">
+<span id="l466c6f6174-6e6f726d616c697a65"></span><dl class="simple" id="index-8">
 <dt><span class="spadfun">normalize</span>: % -&gt; %</dt><dd><p><code class="docutils literal notranslate"><span class="pre">normalize(x)</span></code> normalizes <code class="docutils literal notranslate"><span class="pre">x</span></code> at current precision.</p>
 </dd>
 </dl>
@@ -473,7 +469,7 @@
 <dt><a class="reference internal" href="FloatingPointSystem.html#l466c6f6174696e67506f696e7453797374656d-6f72646572"><span class="std std-ref">order</span></a>: % -&gt; <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a></dt><dd><p>from <a class="reference internal" href="FloatingPointSystem.html#l466c6f6174696e67506f696e7453797374656d"><span class="std std-ref">FloatingPointSystem</span></a></p>
 </dd>
 </dl>
-<span class="target" id="l466c6f6174-6f75747075744669786564"></span><dl class="simple" id="index-9">
+<span id="l466c6f6174-6f75747075744669786564"></span><dl class="simple" id="index-9">
 <dt><span class="spadfun">outputFixed</span>: () -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">outputFixed()</span></code> sets the output mode to fixed point notation; the output will contain a decimal point.</p>
 </dd>
 </dl>
@@ -481,7 +477,7 @@
 <dt><span class="spadfun">outputFixed</span>: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a> -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">outputFixed(n)</span></code> sets the output mode to fixed point notation, with <code class="docutils literal notranslate"><span class="pre">n</span></code> digits displayed after the decimal point.</p>
 </dd>
 </dl>
-<span class="target" id="l466c6f6174-6f7574707574466c6f6174696e67"></span><dl class="simple" id="index-11">
+<span id="l466c6f6174-6f7574707574466c6f6174696e67"></span><dl class="simple" id="index-11">
 <dt><span class="spadfun">outputFloating</span>: () -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">outputFloating()</span></code> sets the output mode to floating (scientific) notation, i.e. <code class="docutils literal notranslate"><span class="pre">mantissa</span> <span class="pre">*</span> <span class="pre">10</span> <span class="pre">exponent</span></code> is displayed as <code class="docutils literal notranslate"><span class="pre">0.mantissa</span> <span class="pre">E</span> <span class="pre">exponent</span></code>.</p>
 </dd>
 </dl>
@@ -489,7 +485,7 @@
 <dt><span class="spadfun">outputFloating</span>: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a> -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">outputFloating(n)</span></code> sets the output mode to floating (scientific) notation with <code class="docutils literal notranslate"><span class="pre">n</span></code> significant digits displayed after the decimal point.</p>
 </dd>
 </dl>
-<span class="target" id="l466c6f6174-6f757470757447656e6572616c"></span><dl class="simple" id="index-13">
+<span id="l466c6f6174-6f757470757447656e6572616c"></span><dl class="simple" id="index-13">
 <dt><span class="spadfun">outputGeneral</span>: () -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">outputGeneral()</span></code> sets the output mode (default mode) to general notation; numbers will be displayed in either fixed or floating (scientific) notation depending on the magnitude.</p>
 </dd>
 </dl>
@@ -497,7 +493,7 @@
 <dt><span class="spadfun">outputGeneral</span>: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a> -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">outputGeneral(n)</span></code> sets the output mode to general notation with <code class="docutils literal notranslate"><span class="pre">n</span></code> significant digits displayed.</p>
 </dd>
 </dl>
-<span class="target" id="l466c6f6174-6f757470757453706163696e67"></span><dl class="simple" id="index-15">
+<span id="l466c6f6174-6f757470757453706163696e67"></span><dl class="simple" id="index-15">
 <dt><span class="spadfun">outputSpacing</span>: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a> -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">outputSpacing(n)</span></code> inserts a space after <code class="docutils literal notranslate"><span class="pre">n</span></code> (default 10) digits on output; outputSpacing(0) means no spaces are inserted.</p>
 </dd>
 </dl>
@@ -535,7 +531,7 @@
 <dt><a class="reference internal" href="EuclideanDomain.html#l4575636c696465616e446f6d61696e-71756f"><span class="std std-ref">quo</span></a>: (%, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="EuclideanDomain.html#l4575636c696465616e446f6d61696e"><span class="std std-ref">EuclideanDomain</span></a></p>
 </dd>
 </dl>
-<span class="target" id="l466c6f6174-726174696f6e616c417070726f78696d6174696f6e"></span><dl class="simple" id="index-16">
+<span id="l466c6f6174-726174696f6e616c417070726f78696d6174696f6e"></span><dl class="simple" id="index-16">
 <dt><span class="spadfun">rationalApproximation</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Fraction.html#l4672616374696f6e"><span class="std std-ref">Fraction</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">rationalApproximation(f,</span> <span class="pre">n)</span></code> computes a rational approximation <code class="docutils literal notranslate"><span class="pre">r</span></code> to <code class="docutils literal notranslate"><span class="pre">f</span></code> with relative error <code class="docutils literal notranslate"><span class="pre">&lt;</span> <span class="pre">10^(-n)</span></code>.</p>
 </dd>
 </dl>
@@ -547,7 +543,7 @@
 <dt><a class="reference internal" href="MagmaWithUnit.html#l4d61676d6157697468556e6974-7265636970"><span class="std std-ref">recip</span></a>: % -&gt; Union(%, failed)</dt><dd><p>from <a class="reference internal" href="MagmaWithUnit.html#l4d61676d6157697468556e6974"><span class="std std-ref">MagmaWithUnit</span></a></p>
 </dd>
 </dl>
-<span class="target" id="l466c6f6174-72656c6572726f72"></span><dl class="simple" id="index-18">
+<span id="l466c6f6174-72656c6572726f72"></span><dl class="simple" id="index-18">
 <dt><span class="spadfun">relerror</span>: (%, %) -&gt; %</dt><dd><p><code class="docutils literal notranslate"><span class="pre">relerror(x,</span> <span class="pre">y)</span></code> computes the absolute value of <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">-</span> <span class="pre">y)/y</span></code>, when <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">\~=</span> <span class="pre">0</span></code>.</p>
 </dd>
 </dl>
@@ -593,7 +589,7 @@
 <dt><a class="reference internal" href="HyperbolicFunctionCategory.html#l4879706572626f6c696346756e6374696f6e43617465676f7279-73656368"><span class="std std-ref">sech</span></a>: % -&gt; %</dt><dd><p>from <a class="reference internal" href="HyperbolicFunctionCategory.html#l4879706572626f6c696346756e6374696f6e43617465676f7279"><span class="std std-ref">HyperbolicFunctionCategory</span></a></p>
 </dd>
 </dl>
-<span class="target" id="l466c6f6174-7368696674"></span><dl class="simple" id="index-19">
+<span id="l466c6f6174-7368696674"></span><dl class="simple" id="index-19">
 <dt><span class="spadfun">shift</span>: (%, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; %</dt><dd><p><code class="docutils literal notranslate"><span class="pre">shift(x,</span> <span class="pre">n)</span></code> adds <code class="docutils literal notranslate"><span class="pre">n</span></code> to the exponent of float <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
 </dd>
 </dl>
@@ -808,7 +804,7 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2007-2023, FriCAS Team.
+    &#169; Copyright 2007-2024, FriCAS Team.
     </div>
   </body>
 </html>

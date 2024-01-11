@@ -1,0 +1,38 @@
+.. index:: PolynomialCategoryLifting
+
+.. _l506f6c796e6f6d69616c43617465676f72794c696674696e67:
+
+PolynomialCategoryLifting(E, Vars, R, P, S)
+===========================================
+
+:viewcode:`polycat.spad line 727 <polycat.spad#L727>` :editcode:`[edit on github] <polycat.spad#L727>`
+
+* E: \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+* Vars: \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+* R: Join(\ :ref:`SemiRng <l53656d69526e67>`\ , \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ )
+
+* P: \ :ref:`PolynomialCategory <l506f6c796e6f6d69616c43617465676f7279>`\ (R, E, Vars)
+
+* S:  with
+
+    \*\: (%, %) -> %
+
+    +\: (%, %) -> %
+
+    ^\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> %
+
+
+This package provides a very general map function, which given a set \ ``S``\  and polynomials over \ ``R``\  with maps from the variables into \ ``S``\  and the coefficients into \ ``S``\ , maps polynomials into \ ``S``\ . \ ``S``\  is assumed to support \ ``+``\ , \ ``*``\  and \ ``^``\ .
+
+
+.. _l506f6c796e6f6d69616c43617465676f72794c696674696e67-6d6170:
+
+.. index::
+   pair: PolynomialCategoryLifting; map
+
+:spadfun:`map`\: (Vars -> S, R -> S, P) -> S 
+  \ ``map(varmap, coefmap, p)``\  takes a \ ``varmap``\ , a mapping from the variables of polynomial \ ``p``\  into \ ``S``\ , \ ``coefmap``\ , a mapping from coefficients of \ ``p``\  into \ ``S``\ , and \ ``p``\ , and produces a member of \ ``S``\  using the corresponding arithmetic in \ ``S``\ .
+
+

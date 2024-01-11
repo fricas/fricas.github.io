@@ -1,0 +1,136 @@
+.. index:: CoordinateSystems
+
+.. _l436f6f7264696e61746553797374656d73:
+
+CoordinateSystems R
+===================
+
+:viewcode:`coordsys.spad line 1 <coordsys.spad#L1>` :editcode:`[edit on github] <coordsys.spad#L1>`
+
+* R: Join(\ :ref:`Field <l4669656c64>`\ , \ :ref:`TranscendentalFunctionCategory <l5472616e7363656e64656e74616c46756e6374696f6e43617465676f7279>`\ , \ :ref:`RadicalCategory <l5261646963616c43617465676f7279>`\ )
+
+
+CoordinateSystems provides coordinate transformation functions for plotting. Functions in this package return conversion functions which take points expressed in other coordinate systems and return points with the corresponding Cartesian coordinates.
+
+
+.. _l436f6f7264696e61746553797374656d73-6269706f6c6172:
+
+.. index::
+   pair: CoordinateSystems; bipolar
+
+:spadfun:`bipolar`\: R -> \ :ref:`Point <l506f696e74>`\  R -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``bipolar(a)``\  transforms from bipolar coordinates to Cartesian coordinates: \ ``bipolar(a)``\  is a function which will map the point \ ``(u, v)``\  to \ ``x = a*sinh(v)/(cosh(v)-cos(u))``\ , \ ``y = a*sin(u)/(cosh(v)-cos(u))``\ .
+
+.. _l436f6f7264696e61746553797374656d73-6269706f6c617243796c696e64726963616c:
+
+.. index::
+   pair: CoordinateSystems; bipolarCylindrical
+
+:spadfun:`bipolarCylindrical`\: R -> \ :ref:`Point <l506f696e74>`\  R -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``bipolarCylindrical(a)``\  transforms from bipolar cylindrical coordinates to Cartesian coordinates: \ ``bipolarCylindrical(a)``\  is a function which \ ``++``\  will map the point \ ``(u, v, z)``\  to \ ``x = a*sinh(v)/(cosh(v)-cos(u))``\ , \ ``y = a*sin(u)/(cosh(v)-cos(u))``\ , \ ``z``\ .
+
+.. _l436f6f7264696e61746553797374656d73-63617274657369616e:
+
+.. index::
+   pair: CoordinateSystems; cartesian
+
+:spadfun:`cartesian`\: \ :ref:`Point <l506f696e74>`\  R -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``cartesian(pt)``\  returns the Cartesian coordinates of point \ ``pt``\ .
+
+.. _l436f6f7264696e61746553797374656d73-636f6e6963616c:
+
+.. index::
+   pair: CoordinateSystems; conical
+
+:spadfun:`conical`\: (R, R) -> \ :ref:`Point <l506f696e74>`\  R -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``conical(a, b)``\  transforms from conical coordinates to Cartesian coordinates: \ ``conical(a, b)``\  is a function which will map the point \ ``(lambda, mu, nu)``\  to \ ``x = lambda*mu*nu/(a*b)``\ , \ ``y = lambda/a*sqrt((mu^2-a^2)*(nu^2-a^2)/(a^2-b^2))``\ , \ ``z = lambda/b*sqrt((mu^2-b^2)*(nu^2-b^2)/(b^2-a^2))``\ .
+
+.. _l436f6f7264696e61746553797374656d73-63796c696e64726963616c:
+
+.. index::
+   pair: CoordinateSystems; cylindrical
+
+:spadfun:`cylindrical`\: \ :ref:`Point <l506f696e74>`\  R -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``cylindrical(pt)``\  transforms \ ``pt``\  from polar coordinates to Cartesian coordinates: the function produced will map the point \ ``(r, theta, z)``\  to \ ``x = r * cos(theta)``\ , \ ``y = r * sin(theta)``\ , \ ``z``\ .
+
+.. _l436f6f7264696e61746553797374656d73-656c6c6970746963:
+
+.. index::
+   pair: CoordinateSystems; elliptic
+
+:spadfun:`elliptic`\: R -> \ :ref:`Point <l506f696e74>`\  R -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``elliptic(a)``\  transforms from elliptic coordinates to Cartesian coordinates: \ ``elliptic(a)``\  is a function which will map the point \ ``(u, v)``\  to \ ``x = a*cosh(u)*cos(v)``\ , \ ``y = a*sinh(u)*sin(v)``\ .
+
+.. _l436f6f7264696e61746553797374656d73-656c6c697074696343796c696e64726963616c:
+
+.. index::
+   pair: CoordinateSystems; ellipticCylindrical
+
+:spadfun:`ellipticCylindrical`\: R -> \ :ref:`Point <l506f696e74>`\  R -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``ellipticCylindrical(a)``\  transforms from elliptic cylindrical coordinates to Cartesian coordinates: \ ``ellipticCylindrical(a)``\  is a function which will map the point \ ``(u, v, z)``\  to \ ``x = a*cosh(u)*cos(v)``\ , \ ``y = a*sinh(u)*sin(v)``\ , \ ``z``\ .
+
+.. _l436f6f7264696e61746553797374656d73-6f626c61746553706865726f6964616c:
+
+.. index::
+   pair: CoordinateSystems; oblateSpheroidal
+
+:spadfun:`oblateSpheroidal`\: R -> \ :ref:`Point <l506f696e74>`\  R -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``oblateSpheroidal(a)``\  transforms from oblate spheroidal coordinates to Cartesian coordinates: \ ``oblateSpheroidal(a)``\  is a function which will map the point \ ``(xi, eta, phi)``\  to \ ``x = a*sinh(xi)*sin(eta)*cos(phi)``\ , \ ``y = a*sinh(xi)*sin(eta)*sin(phi)``\ , \ ``z = a*cosh(xi)*cos(eta)``\ .
+
+.. _l436f6f7264696e61746553797374656d73-70617261626f6c6963:
+
+.. index::
+   pair: CoordinateSystems; parabolic
+
+:spadfun:`parabolic`\: \ :ref:`Point <l506f696e74>`\  R -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``parabolic(pt)``\  transforms \ ``pt``\  from parabolic coordinates to Cartesian coordinates: the function produced will map the point \ ``(u, v)``\  to \ ``x = 1/2*(u^2 - v^2)``\ , \ ``y = u*v``\ .
+
+.. _l436f6f7264696e61746553797374656d73-70617261626f6c696343796c696e64726963616c:
+
+.. index::
+   pair: CoordinateSystems; parabolicCylindrical
+
+:spadfun:`parabolicCylindrical`\: \ :ref:`Point <l506f696e74>`\  R -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``parabolicCylindrical(pt)``\  transforms \ ``pt``\  from parabolic cylindrical coordinates to Cartesian coordinates: the function produced will map the point \ ``(u, v, z)``\  to \ ``x = 1/2*(u^2 - v^2)``\ , \ ``y = u*v``\ , \ ``z``\ .
+
+.. _l436f6f7264696e61746553797374656d73-70617261626f6c6f6964616c:
+
+.. index::
+   pair: CoordinateSystems; paraboloidal
+
+:spadfun:`paraboloidal`\: \ :ref:`Point <l506f696e74>`\  R -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``paraboloidal(pt)``\  transforms \ ``pt``\  from paraboloidal coordinates to Cartesian coordinates: the function produced will map the point \ ``(u, v, phi)``\  to \ ``x = u*v*cos(phi)``\ , \ ``y = u*v*sin(phi)``\ , \ ``z = 1/2 * (u^2 - v^2)``\ .
+
+.. _l436f6f7264696e61746553797374656d73-706f6c6172:
+
+.. index::
+   pair: CoordinateSystems; polar
+
+:spadfun:`polar`\: \ :ref:`Point <l506f696e74>`\  R -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``polar(pt)``\  transforms \ ``pt``\  from polar coordinates to Cartesian coordinates: the function produced will map the point \ ``(r, theta)``\  to \ ``x = r * cos(theta)``\ , \ ``y = r * sin(theta)``\ .
+
+.. _l436f6f7264696e61746553797374656d73-70726f6c61746553706865726f6964616c:
+
+.. index::
+   pair: CoordinateSystems; prolateSpheroidal
+
+:spadfun:`prolateSpheroidal`\: R -> \ :ref:`Point <l506f696e74>`\  R -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``prolateSpheroidal(a)``\  transforms from prolate spheroidal coordinates to Cartesian coordinates: \ ``prolateSpheroidal(a)``\  is a function which will map the point \ ``(xi, eta, phi)``\  to \ ``x = a*sinh(xi)*sin(eta)*cos(phi)``\ , \ ``y = a*sinh(xi)*sin(eta)*sin(phi)``\ , \ ``z = a*cosh(xi)*cos(eta)``\ .
+
+.. _l436f6f7264696e61746553797374656d73-73706865726963616c:
+
+.. index::
+   pair: CoordinateSystems; spherical
+
+:spadfun:`spherical`\: \ :ref:`Point <l506f696e74>`\  R -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``spherical(pt)``\  transforms \ ``pt``\  from spherical coordinates to Cartesian coordinates: the function produced will map the point \ ``(r, theta, phi)``\  to \ ``x = r*sin(phi)*cos(theta)``\ , \ ``y = r*sin(phi)*sin(theta)``\ , \ ``z = r*cos(phi)``\ .
+
+.. _l436f6f7264696e61746553797374656d73-746f726f6964616c:
+
+.. index::
+   pair: CoordinateSystems; toroidal
+
+:spadfun:`toroidal`\: R -> \ :ref:`Point <l506f696e74>`\  R -> \ :ref:`Point <l506f696e74>`\  R 
+  \ ``toroidal(a)``\  transforms from toroidal coordinates to Cartesian coordinates: \ ``toroidal(a)``\  is a function which will map the point \ ``(u, v, phi)``\  to \ ``x = a*sinh(v)*cos(phi)/(cosh(v)-cos(u))``\ , \ ``y = a*sinh(v)*sin(phi)/(cosh(v)-cos(u))``\ , \ ``z = a*sin(u)/(cosh(v)-cos(u))``\ .
+
+

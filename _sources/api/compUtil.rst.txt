@@ -1,0 +1,38 @@
+.. index:: compUtil
+
+.. _l636f6d705574696c:
+
+compUtil UT
+===========
+
+:viewcode:`computation.spad line 2259 <computation.spad#L2259>` :editcode:`[edit on github] <computation.spad#L2259>`
+
+* UT: \ :ref:`VarCat <l566172436174>`\ 
+
+
+macro to simplify output
+
+
+.. _l636f6d705574696c-636f65726365:
+
+.. index::
+   pair: compUtil; coerce
+
+:spadfun:`coerce`\: \ :ref:`Lambda <l4c616d626461>`\  UT -> \ :ref:`SKICombinators <l534b49436f6d62696e61746f7273>`\  UT 
+  \ ``coerce Lambda``\  term to SKI combinators. this process is known as abstraction elimination. it is done by applying the following rules until all lambda terms have been eliminated. rule LS1: Lam[\ ``x``\ ] \ ``=>``\  \ ``x``\  rule LS2: Lam[(\ ``E1``\  \ ``E2``\ )] \ ``=>``\  (Lam[\ ``E1``\ ] Lam[\ ``E2``\ ]) rule LS3: Lam[\ ``\x``\ .\ ``E``\ ] \ ``=>``\  (\ ``K``\  Lam[\ ``E``\ ]) (if \ ``x``\  does not occur free in \ ``E``\ ) rule LS4: Lam[\ ``\x``\ .\ ``x``\ ] \ ``=>``\  \ ``I``\  rule LS5: Lam[\ ``\x``\ .\y.\ ``E``\ ] \ ``=>``\  Lam[\ ``\x``\ .Lam[\y.\ ``E``\ ]] (if \ ``x``\  occurs free in \ ``E``\ ) rule LS6: Lam[\ ``\x``\ .(\ ``E1``\  \ ``E2``\ )] \ ``=>``\  (\ ``S``\  Lam[\ ``\x``\ .\ ``E1``\ ] Lam[\ ``\x``\ .\ ``E2``\ ])
+
+
+.. index::
+   pair: compUtil; coerce
+
+:spadfun:`coerce`\: \ :ref:`SKICombinators <l534b49436f6d62696e61746f7273>`\  UT -> \ :ref:`ILogic <l494c6f676963>`\  
+  \ ``coerce combinators``\  to intuitionistic logic this is known as the Curry-Howard isomorphism it uses the following rules: rule SI1: Ski[Kab] \ ``=>``\  a \ ``->``\  (\ ``b``\  \ ``->``\  a), rule SI2: Ski[Sabc] \ ``=>``\  (a \ ``->``\  (\ ``b``\  \ ``->``\  \ ``c``\ )) \ ``->``\  ((a \ ``->``\  \ ``b``\ ) \ ``->``\  (a \ ``->``\  \ ``c``\ )), rule SI3: Ski[a a-\ ``>b``\ ] \ ``=>``\  \ ``b``\  the last rule is function application (modus ponens)
+
+
+.. index::
+   pair: compUtil; coerce
+
+:spadfun:`coerce`\: \ :ref:`SKICombinators <l534b49436f6d62696e61746f7273>`\  UT -> \ :ref:`Lambda <l4c616d626461>`\  UT 
+  \ ``coerce SKI``\  combinators to Lambda term. this conversion is done by applying the following rules rule SL1: Ski[\ ``I``\ ] = \ ``\x``\ .0 rule SL2: Ski[\ ``K``\ ] = \ ``\x``\ .\y.1 rule SL3: Ski[\ ``S``\ ] = \ ``\x``\ .\y.\ ``\z``\ .(2 0 (1 0)) rule SL4: Ski[(\ ``E1``\  \ ``E2``\ )] = (Ski[\ ``E1``\ ] Ski[\ ``E2``\ ])
+
+

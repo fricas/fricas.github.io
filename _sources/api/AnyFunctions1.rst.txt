@@ -1,0 +1,48 @@
+.. index:: AnyFunctions1
+
+.. _l416e7946756e6374696f6e7331:
+
+AnyFunctions1 S
+===============
+
+:viewcode:`any.spad line 125 <any.spad#L125>` :editcode:`[edit on github] <any.spad#L125>`
+
+* S: \ :ref:`Type <l54797065>`\ 
+
+
+\ :ref:`AnyFunctions1 <l416e7946756e6374696f6e7331>`\  implements several utility functions for working with \ :ref:`Any <l416e79>`\ . These functions are used to go back and forth between objects of \ :ref:`Any <l416e79>`\  and objects of other types.
+
+
+.. _l416e7946756e6374696f6e7331-636f65726365:
+
+.. index::
+   pair: AnyFunctions1; coerce
+
+:spadfun:`coerce`\: S -> \ :ref:`Any <l416e79>`\  
+  \ ``coerce(s)``\  creates an object of \ :ref:`Any <l416e79>`\  from the object \ ``s``\  of type \ ``S``\ .
+
+.. _l416e7946756e6374696f6e7331-72657472616374:
+
+.. index::
+   pair: AnyFunctions1; retract
+
+:spadfun:`retract`\: \ :ref:`Any <l416e79>`\  -> S 
+  \ ``retract(a)``\  tries to convert \ ``a``\  into an object of type \ ``S``\ . If possible, it returns the object. Error: if no such retraction is possible.
+
+.. _l416e7946756e6374696f6e7331-7265747261637461626c653f:
+
+.. index::
+   pair: AnyFunctions1; retractable?
+
+:spadfun:`retractable?`\: \ :ref:`Any <l416e79>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``retractable?(a)``\  tests if \ ``a``\  can be converted into an object of type \ ``S``\ .
+
+.. _l416e7946756e6374696f6e7331-72657472616374496643616e:
+
+.. index::
+   pair: AnyFunctions1; retractIfCan
+
+:spadfun:`retractIfCan`\: \ :ref:`Any <l416e79>`\  -> Union(S, failed) 
+  \ ``retractIfCan(a)``\  tries change \ ``a``\  into an object of type \ ``S``\ . If it can, then such an object is returned. Otherwise, "failed" is returned.
+
+

@@ -1,0 +1,64 @@
+.. index:: FiniteFieldFunctions
+
+.. _l46696e6974654669656c6446756e6374696f6e73:
+
+FiniteFieldFunctions GF
+=======================
+
+:viewcode:`ffdoms.spad line 3152 <ffdoms.spad#L3152>` :editcode:`[edit on github] <ffdoms.spad#L3152>`
+
+* GF: \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+
+FiniteFieldFunctions(\ ``GF``\ ) is a package with functions concerning finite extension fields of the finite ground field \ *GF*\ , e.g. Zech logarithms.
+
+
+.. _l46696e6974654669656c6446756e6374696f6e73-6372656174654c6f77436f6d706c65786974794e6f726d616c4261736973:
+
+.. index::
+   pair: FiniteFieldFunctions; createLowComplexityNormalBasis
+
+:spadfun:`createLowComplexityNormalBasis`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> Union(\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF, \ :ref:`Vector <l566563746f72>`\  \ :ref:`List <l4c697374>`\  Record(value: GF, index: \ :ref:`SingleInteger <l53696e676c65496e7465676572>`\ )) 
+  \ ``createLowComplexityNormalBasis(n)``\  tries to find a a low complexity normal basis of degree \ *n*\  over \ *GF*\  and returns its multiplication matrix If no low complexity basis is found it calls \ :ref:`createNormalPoly <l46696e6974654669656c64506f6c796e6f6d69616c5061636b616765-6372656174654e6f726d616c506f6c79>`\ (\ ``n``\ ) to produce a normal polynomial of degree \ *n*\  over \ *GF*\ 
+
+.. _l46696e6974654669656c6446756e6374696f6e73-6372656174654c6f77436f6d706c65786974795461626c65:
+
+.. index::
+   pair: FiniteFieldFunctions; createLowComplexityTable
+
+:spadfun:`createLowComplexityTable`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> Union(\ :ref:`Vector <l566563746f72>`\  \ :ref:`List <l4c697374>`\  Record(value: GF, index: \ :ref:`SingleInteger <l53696e676c65496e7465676572>`\ ), failed) 
+  \ ``createLowComplexityTable(n)``\  tries to find a low complexity normal basis of degree \ *n*\  over \ *GF*\  and returns its multiplication matrix Fails, if it does not find a low complexity basis
+
+.. _l46696e6974654669656c6446756e6374696f6e73-6372656174654d756c7469706c69636174696f6e4d6174726978:
+
+.. index::
+   pair: FiniteFieldFunctions; createMultiplicationMatrix
+
+:spadfun:`createMultiplicationMatrix`\: \ :ref:`Vector <l566563746f72>`\  \ :ref:`List <l4c697374>`\  Record(value: GF, index: \ :ref:`SingleInteger <l53696e676c65496e7465676572>`\ ) -> \ :ref:`Matrix <l4d6174726978>`\  GF 
+  \ ``createMultiplicationMatrix(m)``\  forms the multiplication table \ *m*\  into a matrix over the ground field.
+
+.. _l46696e6974654669656c6446756e6374696f6e73-6372656174654d756c7469706c69636174696f6e5461626c65:
+
+.. index::
+   pair: FiniteFieldFunctions; createMultiplicationTable
+
+:spadfun:`createMultiplicationTable`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF -> \ :ref:`Vector <l566563746f72>`\  \ :ref:`List <l4c697374>`\  Record(value: GF, index: \ :ref:`SingleInteger <l53696e676c65496e7465676572>`\ ) 
+  \ ``createMultiplicationTable(f)``\  generates a multiplication table for the normal basis of the field extension determined by \ *f*\ . This is needed to perform multiplications between elements represented as coordinate vectors to this basis. See FFNBP, FFNBX.
+
+.. _l46696e6974654669656c6446756e6374696f6e73-6372656174655a6563685461626c65:
+
+.. index::
+   pair: FiniteFieldFunctions; createZechTable
+
+:spadfun:`createZechTable`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  GF -> \ :ref:`PrimitiveArray <l5072696d69746976654172726179>`\  \ :ref:`SingleInteger <l53696e676c65496e7465676572>`\  
+  \ ``createZechTable(f)``\  generates a Zech logarithm table for the cyclic group representation of a extension of the ground field by the primitive polynomial \ *f(x)*\ , i.e. \ ``Z(i)``\ , defined by \ *x^Z(i) = 1+x^i*\  is stored at index \ ``i``\ . This is needed in particular to perform addition of field elements in finite fields represented in this way. See FFCGP, FFCGX.
+
+.. _l46696e6974654669656c6446756e6374696f6e73-73697a654d756c7469706c69636174696f6e:
+
+.. index::
+   pair: FiniteFieldFunctions; sizeMultiplication
+
+:spadfun:`sizeMultiplication`\: \ :ref:`Vector <l566563746f72>`\  \ :ref:`List <l4c697374>`\  Record(value: GF, index: \ :ref:`SingleInteger <l53696e676c65496e7465676572>`\ ) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``sizeMultiplication(m)``\  returns the number of entries of the multiplication table \ *m*\ .
+
+

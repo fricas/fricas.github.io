@@ -1,0 +1,69 @@
+.. index:: VectorIntegerReconstructor
+
+.. _l566563746f72496e74656765725265636f6e7374727563746f72:
+
+VectorIntegerReconstructor
+==========================
+
+:viewcode:`vecrec.spad line 383 <vecrec.spad#L383>` :editcode:`[edit on github] <vecrec.spad#L383>`
+
+
+This domain supports modular methods based on evaluation and rational reconstruction. Each evaluation is done modulo machine sized prime \ ``p``\ . Both Chinese remaindering and (linear) Hensel lift are supported. Once enough evaluations are known rational reconstruction produces vector of rational numbers or integers.
+
+
+.. _l566563746f72496e74656765725265636f6e7374727563746f72-6368696e6573655f757064617465:
+
+.. index::
+   pair: VectorIntegerReconstructor; chinese_update
+
+:spadfun:`chinese_update`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , %) -> \ :ref:`Void <l566f6964>`\  
+  \ ``chinese_update(v, p, r)``\  informs \ ``r``\  about evaluation at \ ``p``\ 
+
+.. _l566563746f72496e74656765725265636f6e7374727563746f72-656d707479:
+
+.. index::
+   pair: VectorIntegerReconstructor; empty
+
+:spadfun:`empty`\: \ :ref:`Integer <l496e7465676572>`\  -> % 
+  \ ``empty(n)``\  produces reconstructor with \ ``n``\  slots
+
+.. _l566563746f72496e74656765725265636f6e7374727563746f72-68656e73656c5f757064617465:
+
+.. index::
+   pair: VectorIntegerReconstructor; hensel_update
+
+:spadfun:`hensel_update`\: (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , %) -> \ :ref:`Void <l566f6964>`\  
+  one step of Hensel lifting
+
+.. _l566563746f72496e74656765725265636f6e7374727563746f72-726174696f6e616c5f7265636f6e737472756374696f6e:
+
+.. index::
+   pair: VectorIntegerReconstructor; rational_reconstruction
+
+:spadfun:`rational_reconstruction`\: % -> Union(Record(numers: \ :ref:`PrimitiveArray <l5072696d69746976654172726179>`\  \ :ref:`Integer <l496e7465676572>`\ , denoms: \ :ref:`PrimitiveArray <l5072696d69746976654172726179>`\  \ :ref:`Integer <l496e7465676572>`\ ), failed) 
+  
+
+
+.. index::
+   pair: VectorIntegerReconstructor; rational_reconstruction
+
+:spadfun:`rational_reconstruction`\: (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> Union(Record(num: \ :ref:`Integer <l496e7465676572>`\ , den: \ :ref:`Integer <l496e7465676572>`\ ), failed) 
+  
+
+.. _l566563746f72496e74656765725265636f6e7374727563746f72-7265636f6e737472756374:
+
+.. index::
+   pair: VectorIntegerReconstructor; reconstruct
+
+:spadfun:`reconstruct`\: (%, \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> Union(\ :ref:`PrimitiveArray <l5072696d69746976654172726179>`\  \ :ref:`Integer <l496e7465676572>`\ , failed) 
+  combines rational reconstruction with removal of common denominators in blocks.
+
+.. _l566563746f72496e74656765725265636f6e7374727563746f72-72656d6f76655f64656e6f6d73:
+
+.. index::
+   pair: VectorIntegerReconstructor; remove_denoms
+
+:spadfun:`remove_denoms`\: (\ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`PrimitiveArray <l5072696d69746976654172726179>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`PrimitiveArray <l5072696d69746976654172726179>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`PrimitiveArray <l5072696d69746976654172726179>`\  \ :ref:`Integer <l496e7465676572>`\  
+  remove common denominators in blocks
+
+

@@ -1,0 +1,42 @@
+.. index:: LazardSetSolvingPackage
+
+.. _l4c617a617264536574536f6c76696e675061636b616765:
+
+LazardSetSolvingPackage(R, E, V, P, TS, ST)
+===========================================
+
+:viewcode:`nsregset.spad line 21 <nsregset.spad#L21>` :editcode:`[edit on github] <nsregset.spad#L21>`
+
+* R: \ :ref:`GcdDomain <l476364446f6d61696e>`\ 
+
+* E: \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+* V: \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+* P: \ :ref:`RecursivePolynomialCategory <l526563757273697665506f6c796e6f6d69616c43617465676f7279>`\ (R, E, V)
+
+* TS: \ :ref:`RegularTriangularSetCategory <l526567756c6172547269616e67756c617253657443617465676f7279>`\ (R, E, V, P)
+
+* ST: \ :ref:`SquareFreeRegularTriangularSetCategory <l53717561726546726565526567756c6172547269616e67756c617253657443617465676f7279>`\ (R, E, V, P)
+
+
+A package for solving polynomial systems by means of Lazard triangular sets [1]. This package provides two operations. One for solving in the sense of the regular zeros, and the other for solving in the sense of the Zariski closure. Both produce square-free regular sets. Moreover, the decompositions do not contain any redundant component. However, only zero-dimensional regular sets are normalized, since normalization may be time consumming in positive dimension. The decomposition process is that of [2]. 
+
+
+.. _l4c617a617264536574536f6c76696e675061636b616765-6e6f726d616c697a65496643616e:
+
+.. index::
+   pair: LazardSetSolvingPackage; normalizeIfCan
+
+:spadfun:`normalizeIfCan`\: ST -> ST 
+  \ ``normalizeIfCan(ts)``\  returns \ ``ts``\  in an normalized shape if \ ``ts``\  is zero-dimensional.
+
+.. _l4c617a617264536574536f6c76696e675061636b616765-7a65726f53657453706c6974:
+
+.. index::
+   pair: LazardSetSolvingPackage; zeroSetSplit
+
+:spadfun:`zeroSetSplit`\: (\ :ref:`List <l4c697374>`\  P, \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  ST 
+  \ ``zeroSetSplit(lp, clos?)``\  has the same specifications as \ :ref:`zeroSetSplit <l526567756c6172547269616e67756c617253657443617465676f7279-7a65726f53657453706c6974>`\ (\ ``lp``\ , clos?).
+
+

@@ -1,0 +1,98 @@
+.. index:: AlgebraicFunction
+
+.. _l416c6765627261696346756e6374696f6e:
+
+AlgebraicFunction(R, F)
+=======================
+
+:viewcode:`algfunc.spad line 257 <algfunc.spad#L257>` :editcode:`[edit on github] <algfunc.spad#L257>`
+
+* R: Join(\ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ )
+
+* F: \ :ref:`FunctionSpace <l46756e6374696f6e5370616365>`\  R
+
+
+This package provides algebraic functions over an integral domain.
+
+
+.. _l416c6765627261696346756e6374696f6e-5e:
+
+.. index::
+   pair: AlgebraicFunction; ^
+
+:spadfun:`^`\: (F, \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> F if R has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  \ ``x ^ q``\  is \ ``x``\  raised to the rational power \ ``q``\ .
+
+.. _l416c6765627261696346756e6374696f6e-62656c6f6e673f:
+
+.. index::
+   pair: AlgebraicFunction; belong?
+
+:spadfun:`belong?`\: \ :ref:`BasicOperator <l42617369634f70657261746f72>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``belong?(op)``\  is \ ``true``\  if \ ``op``\  is an algebraic operator, that is, an \ ``n``\ th root or implicit algebraic operator.
+
+.. _l416c6765627261696346756e6374696f6e-646566696e696e67506f6c796e6f6d69616c:
+
+.. index::
+   pair: AlgebraicFunction; definingPolynomial
+
+:spadfun:`definingPolynomial`\: F -> F if R has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  \ ``definingPolynomial(f)``\  returns the defining polynomial of \ ``f``\  as an element of \ ``F``\ . Error: if \ ``f``\  is not a kernel.
+
+.. _l416c6765627261696346756e6374696f6e-64726f6f74:
+
+.. index::
+   pair: AlgebraicFunction; droot
+
+:spadfun:`droot`\: \ :ref:`List <l4c697374>`\  F -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  \ ``droot(l)``\  should be a non-exported function.
+
+.. _l416c6765627261696346756e6374696f6e-696e726f6f746f66:
+
+.. index::
+   pair: AlgebraicFunction; inrootof
+
+:spadfun:`inrootof`\: (\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, F) -> F 
+  \ ``inrootof(p, x)``\  should be a non-exported function.
+
+.. _l416c6765627261696346756e6374696f6e-69726f6f74:
+
+.. index::
+   pair: AlgebraicFunction; iroot
+
+:spadfun:`iroot`\: (R, \ :ref:`Integer <l496e7465676572>`\ ) -> F if R has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  \ ``iroot(p, n)``\  should be a non-exported function.
+
+.. _l416c6765627261696346756e6374696f6e-6d696e506f6c79:
+
+.. index::
+   pair: AlgebraicFunction; minPoly
+
+:spadfun:`minPoly`\: \ :ref:`Kernel <l4b65726e656c>`\  F -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F if R has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  \ ``minPoly(k)``\  returns the defining polynomial of \ ``k``\ .
+
+.. _l416c6765627261696346756e6374696f6e-6f70657261746f72:
+
+.. index::
+   pair: AlgebraicFunction; operator
+
+:spadfun:`operator`\: \ :ref:`BasicOperator <l42617369634f70657261746f72>`\  -> \ :ref:`BasicOperator <l42617369634f70657261746f72>`\  
+  \ ``operator(op)``\  returns a copy of \ ``op``\  with the domain-dependent properties appropriate for \ ``F``\ . Error: if \ ``op``\  is not an algebraic operator, that is, an \ ``n``\ th root or implicit algebraic operator.
+
+.. _l416c6765627261696346756e6374696f6e-726f6f744f66:
+
+.. index::
+   pair: AlgebraicFunction; rootOf
+
+:spadfun:`rootOf`\: (\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, \ :ref:`Symbol <l53796d626f6c>`\ ) -> F 
+  \ ``rootOf(p, y)``\  returns \ ``y``\  such that \ ``p(y) = 0``\ . The object returned displays as \ ``'y``\ .
+
+.. _l416c6765627261696346756e6374696f6e-726f6f7453756d:
+
+.. index::
+   pair: AlgebraicFunction; rootSum
+
+:spadfun:`rootSum`\: (F, \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, \ :ref:`Symbol <l53796d626f6c>`\ ) -> F 
+  \ ``rootSum(expr, p, s)``\ 
+
+

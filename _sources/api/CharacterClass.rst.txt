@@ -1,0 +1,475 @@
+.. index:: CharacterClass
+
+.. _l436861726163746572436c617373:
+
+CharacterClass
+==============
+
+:viewcode:`string.spad line 109 <string.spad#L109>` :editcode:`[edit on github] <string.spad#L109>`
+
+
+This domain allows classes of characters to be defined and manipulated efficiently.
+
+
+.. _l436861726163746572436c617373-23:
+
+\ :ref:`# <l416767726567617465-23>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l436861726163746572436c617373-3c3d:
+
+\ :ref:`<= <l5061727469616c4f72646572-3c3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l436861726163746572436c617373-3c:
+
+\ :ref:`< <l5061727469616c4f72646572-3c>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l436861726163746572436c617373-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l436861726163746572436c617373-3e3d:
+
+\ :ref:`>= <l5061727469616c4f72646572-3e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l436861726163746572436c617373-3e:
+
+\ :ref:`> <l5061727469616c4f72646572-3e>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l436861726163746572436c617373-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l436861726163746572436c617373-616c7068616265746963:
+
+.. index::
+   pair: CharacterClass; alphabetic
+
+:spadfun:`alphabetic`\: % 
+  \ ``alphabetic()``\  returns the class of all characters for which \ :ref:`alphabetic? <l436861726163746572-616c70686162657469633f>`\  is \ ``true``\ .
+
+.. _l436861726163746572436c617373-616c7068616e756d65726963:
+
+.. index::
+   pair: CharacterClass; alphanumeric
+
+:spadfun:`alphanumeric`\: % 
+  \ ``alphanumeric()``\  returns the class of all characters for which \ :ref:`alphanumeric? <l436861726163746572-616c7068616e756d657269633f>`\  is \ ``true``\ .
+
+.. _l436861726163746572436c617373-616e793f:
+
+\ :ref:`any? <l486f6d6f67656e656f7573416767726567617465-616e793f>`\ \: (\ :ref:`Character <l436861726163746572>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-63617264696e616c697479:
+
+\ :ref:`cardinality <l46696e697465536574416767726567617465-63617264696e616c697479>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`FiniteSetAggregate <l46696e697465536574416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-63686172436c617373:
+
+.. index::
+   pair: CharacterClass; charClass
+
+:spadfun:`charClass`\: \ :ref:`List <l4c697374>`\  \ :ref:`Character <l436861726163746572>`\  -> % 
+  \ ``charClass(l)``\  creates a character class which contains exactly the characters given in the list \ ``l``\ .
+
+
+.. index::
+   pair: CharacterClass; charClass
+
+:spadfun:`charClass`\: \ :ref:`String <l537472696e67>`\  -> % 
+  \ ``charClass(s)``\  creates a character class which contains exactly the characters given in the string \ ``s``\ .
+
+.. _l436861726163746572436c617373-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l436861726163746572436c617373-636f6d706c656d656e74:
+
+\ :ref:`complement <l46696e697465536574416767726567617465-636f6d706c656d656e74>`\ \: % -> % 
+  from \ :ref:`FiniteSetAggregate <l46696e697465536574416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-636f6e737472756374:
+
+\ :ref:`construct <l436f6c6c656374696f6e-636f6e737472756374>`\ \: \ :ref:`List <l4c697374>`\  \ :ref:`Character <l436861726163746572>`\  -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-636f6e76657274:
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`InputForm <l496e707574466f726d>`\  
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`List <l4c697374>`\  \ :ref:`Character <l436861726163746572>`\  
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`String <l537472696e67>`\ 
+
+.. _l436861726163746572436c617373-636f7079:
+
+\ :ref:`copy <l416767726567617465-636f7079>`\ \: % -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l436861726163746572436c617373-636f756e74:
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (\ :ref:`Character <l436861726163746572>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (\ :ref:`Character <l436861726163746572>`\ , %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-64696374696f6e617279:
+
+\ :ref:`dictionary <l44696374696f6e6172794f7065726174696f6e73-64696374696f6e617279>`\ \: () -> % 
+  from \ :ref:`DictionaryOperations <l44696374696f6e6172794f7065726174696f6e73>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+
+\ :ref:`dictionary <l44696374696f6e6172794f7065726174696f6e73-64696374696f6e617279>`\ \: \ :ref:`List <l4c697374>`\  \ :ref:`Character <l436861726163746572>`\  -> % 
+  from \ :ref:`DictionaryOperations <l44696374696f6e6172794f7065726174696f6e73>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-646966666572656e6365:
+
+\ :ref:`difference <l536574416767726567617465-646966666572656e6365>`\ \: (%, %) -> % 
+  from \ :ref:`SetAggregate <l536574416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+
+\ :ref:`difference <l536574416767726567617465-646966666572656e6365>`\ \: (%, \ :ref:`Character <l436861726163746572>`\ ) -> % 
+  from \ :ref:`SetAggregate <l536574416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-6469676974:
+
+.. index::
+   pair: CharacterClass; digit
+
+:spadfun:`digit`\: % 
+  \ ``digit()``\  returns the class of all characters for which \ :ref:`digit? <l436861726163746572-64696769743f>`\  is \ ``true``\ .
+
+.. _l436861726163746572436c617373-656d7074793f:
+
+\ :ref:`empty? <l416767726567617465-656d7074793f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l436861726163746572436c617373-656d707479:
+
+\ :ref:`empty <l416767726567617465-656d707479>`\ \: () -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l436861726163746572436c617373-656e756d6572617465:
+
+\ :ref:`enumerate <l46696e697465-656e756d6572617465>`\ \: () -> \ :ref:`List <l4c697374>`\  % 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l436861726163746572436c617373-65713f:
+
+\ :ref:`eq? <l416767726567617465-65713f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l436861726163746572436c617373-6576616c:
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, \ :ref:`Character <l436861726163746572>`\ , \ :ref:`Character <l436861726163746572>`\ ) -> % if \ :ref:`Character <l436861726163746572>`\  has \ :ref:`Evalable <l4576616c61626c65>`\  \ :ref:`Character <l436861726163746572>`\ 
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (\ :ref:`Character <l436861726163746572>`\ , \ :ref:`Character <l436861726163746572>`\ )
+
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Character <l436861726163746572>`\ ) -> % if \ :ref:`Character <l436861726163746572>`\  has \ :ref:`Evalable <l4576616c61626c65>`\  \ :ref:`Character <l436861726163746572>`\ 
+  from \ :ref:`Evalable <l4576616c61626c65>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Character <l436861726163746572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`Character <l436861726163746572>`\ ) -> % if \ :ref:`Character <l436861726163746572>`\  has \ :ref:`Evalable <l4576616c61626c65>`\  \ :ref:`Character <l436861726163746572>`\ 
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (\ :ref:`Character <l436861726163746572>`\ , \ :ref:`Character <l436861726163746572>`\ )
+
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Character <l436861726163746572>`\ ) -> % if \ :ref:`Character <l436861726163746572>`\  has \ :ref:`Evalable <l4576616c61626c65>`\  \ :ref:`Character <l436861726163746572>`\ 
+  from \ :ref:`Evalable <l4576616c61626c65>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-65766572793f:
+
+\ :ref:`every? <l486f6d6f67656e656f7573416767726567617465-65766572793f>`\ \: (\ :ref:`Character <l436861726163746572>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-6578747261637421:
+
+\ :ref:`extract! <l426167416767726567617465-6578747261637421>`\ \: % -> \ :ref:`Character <l436861726163746572>`\  
+  from \ :ref:`BagAggregate <l426167416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-66696e64:
+
+\ :ref:`find <l436f6c6c656374696f6e-66696e64>`\ \: (\ :ref:`Character <l436861726163746572>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> Union(\ :ref:`Character <l436861726163746572>`\ , failed) 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-68617368:
+
+\ :ref:`hash <l4861736861626c65-68617368>`\ \: % -> \ :ref:`SingleInteger <l53696e676c65496e7465676572>`\  
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l436861726163746572436c617373-6861736855706461746521:
+
+\ :ref:`hashUpdate! <l4861736861626c65-6861736855706461746521>`\ \: (\ :ref:`HashState <l486173685374617465>`\ , %) -> \ :ref:`HashState <l486173685374617465>`\  
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l436861726163746572436c617373-6865784469676974:
+
+.. index::
+   pair: CharacterClass; hexDigit
+
+:spadfun:`hexDigit`\: % 
+  \ ``hexDigit()``\  returns the class of all characters for which \ :ref:`hexDigit? <l436861726163746572-68657844696769743f>`\  is \ ``true``\ .
+
+.. _l436861726163746572436c617373-696e646578:
+
+\ :ref:`index <l46696e697465-696e646578>`\ \: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> % 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l436861726163746572436c617373-696e7365727421:
+
+\ :ref:`insert! <l426167416767726567617465-696e7365727421>`\ \: (\ :ref:`Character <l436861726163746572>`\ , %) -> % 
+  from \ :ref:`BagAggregate <l426167416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-696e7370656374:
+
+\ :ref:`inspect <l426167416767726567617465-696e7370656374>`\ \: % -> \ :ref:`Character <l436861726163746572>`\  
+  from \ :ref:`BagAggregate <l426167416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-696e74657273656374:
+
+\ :ref:`intersect <l536574416767726567617465-696e74657273656374>`\ \: (%, %) -> % 
+  from \ :ref:`SetAggregate <l536574416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l436861726163746572436c617373-6c6573733f:
+
+\ :ref:`less? <l416767726567617465-6c6573733f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l436861726163746572436c617373-6c6f6f6b7570:
+
+\ :ref:`lookup <l46696e697465-6c6f6f6b7570>`\ \: % -> \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l436861726163746572436c617373-6c6f77657243617365:
+
+.. index::
+   pair: CharacterClass; lowerCase
+
+:spadfun:`lowerCase`\: % 
+  \ ``lowerCase()``\  returns the class of all characters for which \ :ref:`lowerCase? <l436861726163746572-6c6f776572436173653f>`\  is \ ``true``\ .
+
+.. _l436861726163746572436c617373-6d617021:
+
+\ :ref:`map! <l486f6d6f67656e656f7573416767726567617465-6d617021>`\ \: (\ :ref:`Character <l436861726163746572>`\  -> \ :ref:`Character <l436861726163746572>`\ , %) -> % 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-6d6170:
+
+\ :ref:`map <l486f6d6f67656e656f7573416767726567617465-6d6170>`\ \: (\ :ref:`Character <l436861726163746572>`\  -> \ :ref:`Character <l436861726163746572>`\ , %) -> % 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-6d6178:
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: % -> \ :ref:`Character <l436861726163746572>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: ((\ :ref:`Character <l436861726163746572>`\ , \ :ref:`Character <l436861726163746572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Character <l436861726163746572>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-6d656d6265723f:
+
+\ :ref:`member? <l486f6d6f67656e656f7573416767726567617465-6d656d6265723f>`\ \: (\ :ref:`Character <l436861726163746572>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-6d656d62657273:
+
+\ :ref:`members <l486f6d6f67656e656f7573416767726567617465-6d656d62657273>`\ \: % -> \ :ref:`List <l4c697374>`\  \ :ref:`Character <l436861726163746572>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-6d696e:
+
+\ :ref:`min <l486f6d6f67656e656f7573416767726567617465-6d696e>`\ \: % -> \ :ref:`Character <l436861726163746572>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-6d6f72653f:
+
+\ :ref:`more? <l416767726567617465-6d6f72653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l436861726163746572436c617373-7061727473:
+
+\ :ref:`parts <l486f6d6f67656e656f7573416767726567617465-7061727473>`\ \: % -> \ :ref:`List <l4c697374>`\  \ :ref:`Character <l436861726163746572>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-72616e646f6d:
+
+\ :ref:`random <l46696e697465-72616e646f6d>`\ \: () -> % 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l436861726163746572436c617373-726564756365:
+
+\ :ref:`reduce <l436f6c6c656374696f6e-726564756365>`\ \: ((\ :ref:`Character <l436861726163746572>`\ , \ :ref:`Character <l436861726163746572>`\ ) -> \ :ref:`Character <l436861726163746572>`\ , %) -> \ :ref:`Character <l436861726163746572>`\  
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+
+\ :ref:`reduce <l436f6c6c656374696f6e-726564756365>`\ \: ((\ :ref:`Character <l436861726163746572>`\ , \ :ref:`Character <l436861726163746572>`\ ) -> \ :ref:`Character <l436861726163746572>`\ , %, \ :ref:`Character <l436861726163746572>`\ ) -> \ :ref:`Character <l436861726163746572>`\  
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+
+\ :ref:`reduce <l436f6c6c656374696f6e-726564756365>`\ \: ((\ :ref:`Character <l436861726163746572>`\ , \ :ref:`Character <l436861726163746572>`\ ) -> \ :ref:`Character <l436861726163746572>`\ , %, \ :ref:`Character <l436861726163746572>`\ , \ :ref:`Character <l436861726163746572>`\ ) -> \ :ref:`Character <l436861726163746572>`\  
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-72656d6f766521:
+
+\ :ref:`remove! <l44696374696f6e6172794f7065726174696f6e73-72656d6f766521>`\ \: (\ :ref:`Character <l436861726163746572>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> % 
+  from \ :ref:`DictionaryOperations <l44696374696f6e6172794f7065726174696f6e73>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+
+\ :ref:`remove! <l44696374696f6e6172794f7065726174696f6e73-72656d6f766521>`\ \: (\ :ref:`Character <l436861726163746572>`\ , %) -> % 
+  from \ :ref:`DictionaryOperations <l44696374696f6e6172794f7065726174696f6e73>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-72656d6f7665:
+
+\ :ref:`remove <l436f6c6c656374696f6e-72656d6f7665>`\ \: (\ :ref:`Character <l436861726163746572>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+
+\ :ref:`remove <l436f6c6c656374696f6e-72656d6f7665>`\ \: (\ :ref:`Character <l436861726163746572>`\ , %) -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-72656d6f76654475706c696361746573:
+
+\ :ref:`removeDuplicates <l436f6c6c656374696f6e-72656d6f76654475706c696361746573>`\ \: % -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-73616d706c65:
+
+\ :ref:`sample <l416767726567617465-73616d706c65>`\ \: % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l436861726163746572436c617373-73656c65637421:
+
+\ :ref:`select! <l44696374696f6e6172794f7065726174696f6e73-73656c65637421>`\ \: (\ :ref:`Character <l436861726163746572>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> % 
+  from \ :ref:`DictionaryOperations <l44696374696f6e6172794f7065726174696f6e73>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-73656c656374:
+
+\ :ref:`select <l436f6c6c656374696f6e-73656c656374>`\ \: (\ :ref:`Character <l436861726163746572>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> % 
+  from \ :ref:`Collection <l436f6c6c656374696f6e>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-736574:
+
+\ :ref:`set <l536574416767726567617465-736574>`\ \: () -> % 
+  from \ :ref:`SetAggregate <l536574416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+
+\ :ref:`set <l536574416767726567617465-736574>`\ \: \ :ref:`List <l4c697374>`\  \ :ref:`Character <l436861726163746572>`\  -> % 
+  from \ :ref:`SetAggregate <l536574416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-73697a653f:
+
+\ :ref:`size? <l416767726567617465-73697a653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l436861726163746572436c617373-73697a65:
+
+\ :ref:`size <l46696e697465-73697a65>`\ \: () -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l436861726163746572436c617373-736d616c6c65723f:
+
+\ :ref:`smaller? <l436f6d70617261626c65-736d616c6c65723f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+
+.. _l436861726163746572436c617373-7375627365743f:
+
+\ :ref:`subset? <l536574416767726567617465-7375627365743f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`SetAggregate <l536574416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-73796d6d6574726963446966666572656e6365:
+
+\ :ref:`symmetricDifference <l536574416767726567617465-73796d6d6574726963446966666572656e6365>`\ \: (%, %) -> % 
+  from \ :ref:`SetAggregate <l536574416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-756e696f6e:
+
+\ :ref:`union <l536574416767726567617465-756e696f6e>`\ \: (%, %) -> % 
+  from \ :ref:`SetAggregate <l536574416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+
+\ :ref:`union <l536574416767726567617465-756e696f6e>`\ \: (%, \ :ref:`Character <l436861726163746572>`\ ) -> % 
+  from \ :ref:`SetAggregate <l536574416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+
+\ :ref:`union <l536574416767726567617465-756e696f6e>`\ \: (\ :ref:`Character <l436861726163746572>`\ , %) -> % 
+  from \ :ref:`SetAggregate <l536574416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-756e697665727365:
+
+\ :ref:`universe <l46696e697465536574416767726567617465-756e697665727365>`\ \: () -> % 
+  from \ :ref:`FiniteSetAggregate <l46696e697465536574416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+.. _l436861726163746572436c617373-757070657243617365:
+
+.. index::
+   pair: CharacterClass; upperCase
+
+:spadfun:`upperCase`\: % 
+  \ ``upperCase()``\  returns the class of all characters for which \ :ref:`upperCase? <l436861726163746572-7570706572436173653f>`\  is \ ``true``\ .
+
+
+\ :ref:`Aggregate <l416767726567617465>`\  
+
+\ :ref:`BagAggregate <l426167416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\  
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`Collection <l436f6c6c656374696f6e>`\  \ :ref:`Character <l436861726163746572>`\  
+
+\ :ref:`Comparable <l436f6d70617261626c65>`\  
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\  
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Character <l436861726163746572>`\  
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`String <l537472696e67>`\  
+
+\ :ref:`Dictionary <l44696374696f6e617279>`\  \ :ref:`Character <l436861726163746572>`\  
+
+\ :ref:`DictionaryOperations <l44696374696f6e6172794f7065726174696f6e73>`\  \ :ref:`Character <l436861726163746572>`\  
+
+\ :ref:`Evalable <l4576616c61626c65>`\  \ :ref:`Character <l436861726163746572>`\  if \ :ref:`Character <l436861726163746572>`\  has \ :ref:`Evalable <l4576616c61626c65>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+\ :ref:`Finite <l46696e697465>`\  
+
+\ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  
+
+\ :ref:`FiniteSetAggregate <l46696e697465536574416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\  
+
+\ :ref:`Hashable <l4861736861626c65>`\  
+
+\ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\  
+
+\ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (\ :ref:`Character <l436861726163746572>`\ , \ :ref:`Character <l436861726163746572>`\ ) if \ :ref:`Character <l436861726163746572>`\  has \ :ref:`Evalable <l4576616c61626c65>`\  \ :ref:`Character <l436861726163746572>`\ 
+
+\ :ref:`PartialOrder <l5061727469616c4f72646572>`\  
+
+\ :ref:`SetAggregate <l536574416767726567617465>`\  \ :ref:`Character <l436861726163746572>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+
+\ :ref:`shallowlyMutable <l7368616c6c6f776c794d757461626c65>`\  
+

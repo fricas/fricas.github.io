@@ -1,0 +1,161 @@
+.. index:: Kernel
+
+.. _l4b65726e656c:
+
+Kernel S
+========
+
+:viewcode:`kl.spad line 263 <kl.spad#L263>` :editcode:`[edit on github] <kl.spad#L263>`
+
+* S: \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+
+
+A kernel over a set \ ``S``\  is an operator applied to a given list of arguments from \ ``S``\ .
+
+
+.. _l4b65726e656c-3c3d:
+
+\ :ref:`<= <l5061727469616c4f72646572-3c3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l4b65726e656c-3c:
+
+\ :ref:`< <l5061727469616c4f72646572-3c>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l4b65726e656c-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4b65726e656c-3e3d:
+
+\ :ref:`>= <l5061727469616c4f72646572-3e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l4b65726e656c-3e:
+
+\ :ref:`> <l5061727469616c4f72646572-3e>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l4b65726e656c-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4b65726e656c-617267756d656e74:
+
+\ :ref:`argument <l4b65726e656c43617465676f7279-617267756d656e74>`\ \: % -> \ :ref:`List <l4c697374>`\  S 
+  from \ :ref:`KernelCategory <l4b65726e656c43617465676f7279>`\  S
+
+.. _l4b65726e656c-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l4b65726e656c-636f6e76657274:
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`InputForm <l496e707574466f726d>`\  if S has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`Pattern <l5061747465726e>`\  \ :ref:`Float <l466c6f6174>`\  if S has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`Pattern <l5061747465726e>`\  \ :ref:`Float <l466c6f6174>`\ 
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`Pattern <l5061747465726e>`\  \ :ref:`Float <l466c6f6174>`\ 
+
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`Pattern <l5061747465726e>`\  \ :ref:`Integer <l496e7465676572>`\  if S has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`Pattern <l5061747465726e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`Pattern <l5061747465726e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+.. _l4b65726e656c-686569676874:
+
+\ :ref:`height <l4b65726e656c43617465676f7279-686569676874>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`KernelCategory <l4b65726e656c43617465676f7279>`\  S
+
+.. _l4b65726e656c-69733f:
+
+\ :ref:`is? <l4b65726e656c43617465676f7279-69733f>`\ \: (%, \ :ref:`BasicOperator <l42617369634f70657261746f72>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`KernelCategory <l4b65726e656c43617465676f7279>`\  S
+
+
+\ :ref:`is? <l4b65726e656c43617465676f7279-69733f>`\ \: (%, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`KernelCategory <l4b65726e656c43617465676f7279>`\  S
+
+.. _l4b65726e656c-6b65726e656c:
+
+\ :ref:`kernel <l4b65726e656c43617465676f7279-6b65726e656c>`\ \: (\ :ref:`BasicOperator <l42617369634f70657261746f72>`\ , \ :ref:`List <l4c697374>`\  S, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  from \ :ref:`KernelCategory <l4b65726e656c43617465676f7279>`\  S
+
+
+\ :ref:`kernel <l4b65726e656c43617465676f7279-6b65726e656c>`\ \: \ :ref:`Symbol <l53796d626f6c>`\  -> % 
+  from \ :ref:`KernelCategory <l4b65726e656c43617465676f7279>`\  S
+
+.. _l4b65726e656c-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l4b65726e656c-6d6178:
+
+\ :ref:`max <l4f726465726564536574-6d6178>`\ \: (%, %) -> % 
+  from \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+.. _l4b65726e656c-6d696e:
+
+\ :ref:`min <l4f726465726564536574-6d696e>`\ \: (%, %) -> % 
+  from \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+.. _l4b65726e656c-6e616d65:
+
+\ :ref:`name <l4b65726e656c43617465676f7279-6e616d65>`\ \: % -> \ :ref:`Symbol <l53796d626f6c>`\  
+  from \ :ref:`KernelCategory <l4b65726e656c43617465676f7279>`\  S
+
+.. _l4b65726e656c-6f70657261746f72:
+
+\ :ref:`operator <l4b65726e656c43617465676f7279-6f70657261746f72>`\ \: % -> \ :ref:`BasicOperator <l42617369634f70657261746f72>`\  
+  from \ :ref:`KernelCategory <l4b65726e656c43617465676f7279>`\  S
+
+.. _l4b65726e656c-706f736974696f6e:
+
+\ :ref:`position <l4361636861626c65536574-706f736974696f6e>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`CachableSet <l4361636861626c65536574>`\ 
+
+.. _l4b65726e656c-736574506f736974696f6e:
+
+\ :ref:`setPosition <l4361636861626c65536574-736574506f736974696f6e>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  from \ :ref:`CachableSet <l4361636861626c65536574>`\ 
+
+.. _l4b65726e656c-736d616c6c65723f:
+
+\ :ref:`smaller? <l436f6d70617261626c65-736d616c6c65723f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+
+.. _l4b65726e656c-73796d626f6c496643616e:
+
+\ :ref:`symbolIfCan <l4b65726e656c43617465676f7279-73796d626f6c496643616e>`\ \: % -> Union(\ :ref:`Symbol <l53796d626f6c>`\ , failed) 
+  from \ :ref:`KernelCategory <l4b65726e656c43617465676f7279>`\  S
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CachableSet <l4361636861626c65536574>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`Comparable <l436f6d70617261626c65>`\  
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\  if S has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`Pattern <l5061747465726e>`\  \ :ref:`Float <l466c6f6174>`\  if S has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`Pattern <l5061747465726e>`\  \ :ref:`Float <l466c6f6174>`\ 
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`Pattern <l5061747465726e>`\  \ :ref:`Integer <l496e7465676572>`\  if S has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`Pattern <l5061747465726e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`KernelCategory <l4b65726e656c43617465676f7279>`\  S 
+
+\ :ref:`OrderedSet <l4f726465726564536574>`\  
+
+\ :ref:`PartialOrder <l5061727469616c4f72646572>`\  
+
+\ :ref:`Patternable <l5061747465726e61626c65>`\  S 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

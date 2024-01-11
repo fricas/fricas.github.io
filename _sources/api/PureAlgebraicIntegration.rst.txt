@@ -1,0 +1,60 @@
+.. index:: PureAlgebraicIntegration
+
+.. _l50757265416c67656272616963496e746567726174696f6e:
+
+PureAlgebraicIntegration(R, F, L)
+=================================
+
+:viewcode:`intaf.spad line 321 <intaf.spad#L321>` :editcode:`[edit on github] <intaf.spad#L321>`
+
+* R: Join(\ :ref:`GcdDomain <l476364446f6d61696e>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`CharacteristicZero <l43686172616374657269737469635a65726f>`\ , \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ )
+
+* F: Join(\ :ref:`FunctionSpace <l46756e6374696f6e5370616365>`\  R, \ :ref:`AlgebraicallyClosedField <l416c67656272616963616c6c79436c6f7365644669656c64>`\ , \ :ref:`TranscendentalFunctionCategory <l5472616e7363656e64656e74616c46756e6374696f6e43617465676f7279>`\ )
+
+* L: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+
+This package provides functions for integration, limited integration, extended integration and the risch differential equation for pure algebraic integrands.
+
+
+.. _l50757265416c67656272616963496e746567726174696f6e-70616c67696e74:
+
+.. index::
+   pair: PureAlgebraicIntegration; palgint
+
+:spadfun:`palgint`\: (F, \ :ref:`Kernel <l4b65726e656c>`\  F, \ :ref:`Kernel <l4b65726e656c>`\  F) -> \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  F 
+  \ ``palgint(f, x, y)``\  returns the integral of \ ``f(x, y)dx``\  where \ ``y``\  is an algebraic function of \ ``x``\ .
+
+.. _l50757265416c67656272616963496e746567726174696f6e-70616c674c4f4445:
+
+.. index::
+   pair: PureAlgebraicIntegration; palgLODE
+
+:spadfun:`palgLODE`\: (L, F, \ :ref:`Kernel <l4b65726e656c>`\  F, \ :ref:`Kernel <l4b65726e656c>`\  F, \ :ref:`Symbol <l53796d626f6c>`\ ) -> Record(particular: Union(F, failed), basis: \ :ref:`List <l4c697374>`\  F) if L has \ :ref:`LinearOrdinaryDifferentialOperatorCategory <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7243617465676f7279>`\  F
+  \ ``palgLODE(op, g, kx, y, x)``\  returns the solution of \ ``op f = g``\ . \ ``y``\  is an algebraic function of \ ``x``\ .
+
+.. _l50757265416c67656272616963496e746567726174696f6e-70616c67524445:
+
+.. index::
+   pair: PureAlgebraicIntegration; palgRDE
+
+:spadfun:`palgRDE`\: (F, F, F, \ :ref:`Kernel <l4b65726e656c>`\  F, \ :ref:`Kernel <l4b65726e656c>`\  F, (F, F, \ :ref:`Symbol <l53796d626f6c>`\ ) -> Union(F, failed)) -> Union(F, failed) 
+  \ ``palgRDE(nfp, f, g, x, y, foo)``\  returns a function \ ``z(x, y)``\  such that \ ``dz/dx + n * df/dx z(x, y) = g(x, y)``\  if such a \ ``z``\  exists, "failed" otherwise; \ ``y``\  is an algebraic function of \ ``x``\ ; \ ``foo(a, b, x)``\  is a function that solves \ ``du/dx + n * da/dx u(x) = u(x)``\  for an unknown \ ``u(x)``\  not involving \ ``y``\ . \ ``nfp``\  is \ ``n * df/dx``\ .
+
+.. _l50757265416c67656272616963496e746567726174696f6e-706172616d5f4c4f4445:
+
+.. index::
+   pair: PureAlgebraicIntegration; param_LODE
+
+:spadfun:`param_LODE`\: (\ :ref:`List <l4c697374>`\  F, \ :ref:`List <l4c697374>`\  F, \ :ref:`Kernel <l4b65726e656c>`\  F, \ :ref:`Kernel <l4b65726e656c>`\  F) -> Record(particular: \ :ref:`List <l4c697374>`\  Record(ratpart: F, coeffs: \ :ref:`Vector <l566563746f72>`\  F), basis: \ :ref:`List <l4c697374>`\  F) 
+  \ ``param_LODE(eq, lg, x, y)``\ 
+
+.. _l50757265416c67656272616963496e746567726174696f6e-706172616d5f524445:
+
+.. index::
+   pair: PureAlgebraicIntegration; param_RDE
+
+:spadfun:`param_RDE`\: (F, \ :ref:`List <l4c697374>`\  F, \ :ref:`Kernel <l4b65726e656c>`\  F, \ :ref:`Kernel <l4b65726e656c>`\  F) -> Record(particular: \ :ref:`List <l4c697374>`\  Record(ratpart: F, coeffs: \ :ref:`Vector <l566563746f72>`\  F), basis: \ :ref:`List <l4c697374>`\  F) 
+  \ ``param_RDE(fp, lg, x, y)``\ 
+
+

@@ -1,0 +1,85 @@
+.. index:: RationalFunction
+
+.. _l526174696f6e616c46756e6374696f6e:
+
+RationalFunction R
+==================
+
+:viewcode:`rf.spad line 153 <rf.spad#L153>` :editcode:`[edit on github] <rf.spad#L153>`
+
+* R: \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+
+
+Utilities that provide the same top-level manipulations on fractions than on polynomials.
+
+
+.. _l526174696f6e616c46756e6374696f6e-636f65726365:
+
+.. index::
+   pair: RationalFunction; coerce
+
+:spadfun:`coerce`\: R -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R 
+  \ ``coerce(r)``\  returns \ ``r``\  viewed as a rational function over \ ``R``\ .
+
+.. _l526174696f6e616c46756e6374696f6e-6576616c:
+
+.. index::
+   pair: RationalFunction; eval
+
+:spadfun:`eval`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R) -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R 
+  \ ``eval(f, v = g)``\  returns \ ``f``\  with \ ``v``\  replaced by \ ``g``\ . Error: if \ ``v``\  is not a symbol.
+
+
+.. index::
+   pair: RationalFunction; eval
+
+:spadfun:`eval`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R) -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R 
+  \ ``eval(f, [v1 = g1, ..., vn = gn])``\  returns \ ``f``\  with each \ ``vi``\  replaced by \ ``gi``\  in parallel, i.e. \ ``vi``\ \ ``'s``\  appearing inside the \ ``gi``\ \ ``'s``\  are not replaced. Error: if any \ ``vi``\  is not a symbol.
+
+
+.. index::
+   pair: RationalFunction; eval
+
+:spadfun:`eval`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R) -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R 
+  \ ``eval(f, [v1, ..., vn], [g1, ..., gn])``\  returns \ ``f``\  with each \ ``vi``\  replaced by \ ``gi``\  in parallel, i.e. \ ``vi``\ \ ``'s``\  appearing inside the \ ``gi``\ \ ``'s``\  are not replaced.
+
+
+.. index::
+   pair: RationalFunction; eval
+
+:spadfun:`eval`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R) -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R 
+  \ ``eval(f, v, g)``\  returns \ ``f``\  with \ ``v``\  replaced by \ ``g``\ .
+
+.. _l526174696f6e616c46756e6374696f6e-6d61696e5661726961626c65:
+
+.. index::
+   pair: RationalFunction; mainVariable
+
+:spadfun:`mainVariable`\: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R -> Union(\ :ref:`Symbol <l53796d626f6c>`\ , failed) 
+  \ ``mainVariable(f)``\  returns the highest variable appearing in the numerator or the denominator of \ ``f``\ , "failed" if \ ``f``\  has no variables.
+
+.. _l526174696f6e616c46756e6374696f6e-6d756c746976617269617465:
+
+.. index::
+   pair: RationalFunction; multivariate
+
+:spadfun:`multivariate`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R 
+  \ ``multivariate(f, v)``\  applies both the numerator and denominator of \ ``f``\  to \ ``v``\ .
+
+.. _l526174696f6e616c46756e6374696f6e-756e6976617269617465:
+
+.. index::
+   pair: RationalFunction; univariate
+
+:spadfun:`univariate`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R 
+  \ ``univariate(f, v)``\  returns \ ``f``\  viewed as a univariate rational function in \ ``v``\ .
+
+.. _l526174696f6e616c46756e6374696f6e-7661726961626c6573:
+
+.. index::
+   pair: RationalFunction; variables
+
+:spadfun:`variables`\: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R -> \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\  
+  \ ``variables(f)``\  returns the list of variables appearing in the numerator or the denominator of \ ``f``\ .
+
+

@@ -1,0 +1,135 @@
+.. index:: FractionFreeFastGaussian
+
+.. _l4672616374696f6e4672656546617374476175737369616e:
+
+FractionFreeFastGaussian(D, V)
+==============================
+
+:viewcode:`fffg.spad line 45 <fffg.spad#L45>` :editcode:`[edit on github] <fffg.spad#L45>`
+
+* D: Join(\ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ , \ :ref:`GcdDomain <l476364446f6d61696e>`\ )
+
+* V: \ :ref:`AbelianMonoidRing <l4162656c69616e4d6f6e6f696452696e67>`\ (D, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ )
+
+
+This package implements the interpolation algorithm proposed in Beckermann, Bernhard and Labahn, George, Fraction-free computation of matrix rational interpolants and matrix GCDs, SIAM Journal on Matrix Analysis and Applications 22.
+
+
+.. _l4672616374696f6e4672656546617374476175737369616e-44696666416374696f6e:
+
+.. index::
+   pair: FractionFreeFastGaussian; DiffAction
+
+:spadfun:`DiffAction`\: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , V) -> D 
+  \ ``DiffAction(k, l, g)``\  gives the coefficient of \ ``x^k``\  in \ ``z^l``\  \ ``g``\ (\ ``x``\ ), where \ ``z*``\ (a+b*x+c*x^2+d*x^3+...) = (a*x+b*x^2+c*x^3+...), i.e. multiplication with \ ``x``\ .
+
+.. _l4672616374696f6e4672656546617374476175737369616e-4469666643:
+
+.. index::
+   pair: FractionFreeFastGaussian; DiffC
+
+:spadfun:`DiffC`\: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  -> \ :ref:`List <l4c697374>`\  D 
+  \ ``DiffC``\  gives the coefficients \ ``c_``\ {\ ``k``\ , \ ``k``\ } in the expansion <x^k> \ ``z``\  \ ``g``\ (\ ``x``\ ) = sum_{\ ``i=0``\ }\ ``^k``\  \ ``c_``\ {\ ``k``\ , \ ``i``\ } <x^i> \ ``g``\ (\ ``x``\ ), where \ ``z``\  acts on \ ``g``\ (\ ``x``\ ) by shifting. In fact, the result is [0, 0, 0, ...]
+
+.. _l4672616374696f6e4672656546617374476175737369616e-66666667:
+
+.. index::
+   pair: FractionFreeFastGaussian; fffg
+
+:spadfun:`fffg`\: (\ :ref:`List <l4c697374>`\  D, (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Vector <l566563746f72>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  D) -> D, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  D 
+  \ ``fffg(C, c, eta)``\  is version of fffg which uses sum of eta as order
+
+
+.. index::
+   pair: FractionFreeFastGaussian; fffg
+
+:spadfun:`fffg`\: (\ :ref:`List <l4c697374>`\  D, (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Vector <l566563746f72>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  D) -> D, \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  D 
+  \ ``fffg(C, c, vd, K)``\  is the general algorithm as proposed by Beckermann and Labahn.   The first argument is the list of \ ``c_``\ {\ ``i``\ , \ ``i``\ }. These are the only values of \ ``C``\  explicitly needed in \ ``fffg``\ .   The second argument \ ``c``\ , computes \ ``c_k``\ (\ ``M``\ ), i.e. \ ``c_k``\ (.) is the dual basis of the vector space \ ``V``\ , but also knows about the special multiplication rule as described in Equation (2). Note that the information about \ ``f``\  is therefore encoded in \ ``c``\ .   \ ``vd``\  is modified by the routine, on input it is the vector of degree bounds \ ``n``\ , as introduced in Definition 2.1. On output it is vector of defects (degree bound minus degree of solution).   \ ``K``\  is requested order of solution.
+
+.. _l4672616374696f6e4672656546617374476175737369616e-67656e6572616c436f656666696369656e74:
+
+.. index::
+   pair: FractionFreeFastGaussian; generalCoefficient
+
+:spadfun:`generalCoefficient`\: ((\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , V) -> D, \ :ref:`Vector <l566563746f72>`\  V, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Vector <l566563746f72>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  D) -> D 
+  \ ``generalCoefficient(action, f, k, p)``\  gives the coefficient of \ ``x^k``\  in \ ``p``\ (\ ``z``\ )\dot \ ``f``\ (\ ``x``\ ), where the \ ``action``\  of \ ``z^l``\  on a polynomial in \ ``x``\  is given by \ ``action``\ , i.e. \ ``action``\ (\ ``k``\ , \ ``l``\ , \ ``f``\ ) should return the coefficient of \ ``x^k``\  in \ ``z^l``\  \ ``f``\ (\ ``x``\ ).
+
+.. _l4672616374696f6e4672656546617374476175737369616e-67656e6572616c496e746572706f6c6174696f6e:
+
+.. index::
+   pair: FractionFreeFastGaussian; generalInterpolation
+
+:spadfun:`generalInterpolation`\: (\ :ref:`List <l4c697374>`\  D, (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , V) -> D, \ :ref:`Vector <l566563746f72>`\  V, \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  D 
+  \ ``generalInterpolation(C, CA, f, eta)``\  performs Hermite-Pade approximation using the given action \ ``CA``\  of polynomials on the elements of \ ``f``\ . The result is guaranteed to be correct up to order |eta|-1. Given that eta is a "normal" point, the degrees on the diagonal are given by eta. The degrees of column \ ``i``\  are in this case eta + \ ``e``\ .\ ``i``\  - [1, 1, ..., 1], where the degree of zero is \ ``-1``\ .   The first argument \ ``C``\  is the list of coefficients \ ``c_``\ {\ ``k``\ , \ ``k``\ } in the expansion <x^k> \ ``z``\  \ ``g``\ (\ ``x``\ ) = sum_{\ ``i=0``\ }\ ``^k``\  \ ``c_``\ {\ ``k``\ , \ ``i``\ } <x^i> \ ``g``\ (\ ``x``\ ).   The second argument, \ ``CA``\ (\ ``k``\ , \ ``l``\ , \ ``f``\ ), should return the coefficient of \ ``x^k``\  in \ ``z^l``\  \ ``f``\ (\ ``x``\ ).
+
+
+.. index::
+   pair: FractionFreeFastGaussian; generalInterpolation
+
+:spadfun:`generalInterpolation`\: (\ :ref:`List <l4c697374>`\  D, (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , V) -> D, \ :ref:`Vector <l566563746f72>`\  V, \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  D 
+  \ ``generalInterpolation(C, CA, f, vd, K)``\  is like \ ``generalInterpolation(C, CA, f, eta)``\  but solves up to order \ ``K``\  and modifies \ ``vd``\  to return defects of solutions
+
+.. _l4672616374696f6e4672656546617374476175737369616e-67656e566563746f7253747265616d32:
+
+.. index::
+   pair: FractionFreeFastGaussian; genVectorStream2
+
+:spadfun:`genVectorStream2`\: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Stream <l53747265616d>`\  \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  like genVectorStream, but skips every second vector.
+
+.. _l4672616374696f6e4672656546617374476175737369616e-67656e566563746f7253747265616d:
+
+.. index::
+   pair: FractionFreeFastGaussian; genVectorStream
+
+:spadfun:`genVectorStream`\: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Stream <l53747265616d>`\  \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``genVectorStream(sumEta, maxEta, k)``\  generates stream of all possible non-increasing lists \ ``eta``\  with maximal entry \ ``maxEta``\  and sum of entries at most \ ``sumEta``\ .
+
+.. _l4672616374696f6e4672656546617374476175737369616e-696e746572706f6c617465:
+
+.. index::
+   pair: FractionFreeFastGaussian; interpolate
+
+:spadfun:`interpolate`\: (\ :ref:`List <l4c697374>`\  D, \ :ref:`List <l4c697374>`\  D, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  D 
+  \ ``interpolate(xlist, ylist, deg)``\  returns the rational function with numerator degree at most \ ``deg``\  and denominator degree at most \ ``\#xlist-deg-1``\  that interpolates the given points using fraction free arithmetic. Note that rational interpolation does not guarantee that all given points are interpolated correctly: unattainable points may make this impossible.
+
+
+.. index::
+   pair: FractionFreeFastGaussian; interpolate
+
+:spadfun:`interpolate`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  D, \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  D, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  D 
+  \ ``interpolate(xlist, ylist, deg)``\  returns the rational function with numerator degree \ ``deg``\  that interpolates the given points using fraction free arithmetic.
+
+.. _l4672616374696f6e4672656546617374476175737369616e-715368696674416374696f6e:
+
+.. index::
+   pair: FractionFreeFastGaussian; qShiftAction
+
+:spadfun:`qShiftAction`\: (D, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , V) -> D 
+  \ ``qShiftAction(q, k, l, g)``\  gives the coefficient of \ ``x^k``\  in \ ``z^l``\  \ ``g``\ (\ ``x``\ ), where \ ``z*``\ (a+b*x+c*x^2+d*x^3+...) = (a+q*b*x+q^2*c*x^2+q^3*d*x^3+...). In terms of sequences, z*u(\ ``n``\ )=q^n*u(\ ``n``\ ).
+
+.. _l4672616374696f6e4672656546617374476175737369616e-71536869667443:
+
+.. index::
+   pair: FractionFreeFastGaussian; qShiftC
+
+:spadfun:`qShiftC`\: (D, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  D 
+  \ ``qShiftC``\  gives the coefficients \ ``c_``\ {\ ``k``\ , \ ``k``\ } in the expansion <x^k> \ ``z``\  \ ``g``\ (\ ``x``\ ) = sum_{\ ``i=0``\ }\ ``^k``\  \ ``c_``\ {\ ``k``\ , \ ``i``\ } <x^i> \ ``g``\ (\ ``x``\ ), where \ ``z``\  acts on \ ``g``\ (\ ``x``\ ) by shifting. In fact, the result is [1, \ ``q``\ , \ ``q^2``\ , ...]
+
+.. _l4672616374696f6e4672656546617374476175737369616e-5368696674416374696f6e:
+
+.. index::
+   pair: FractionFreeFastGaussian; ShiftAction
+
+:spadfun:`ShiftAction`\: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , V) -> D 
+  \ ``ShiftAction(k, l, g)``\  gives the coefficient of \ ``x^k``\  in \ ``z^l``\  \ ``g``\ (\ ``x``\ ), where \ ``z*(a+b*x+c*x^2+d*x^3+...) = (b*x+2*c*x^2+3*d*x^3+...)``\ . In terms of sequences, z*u(\ ``n``\ )=n*u(\ ``n``\ ).
+
+.. _l4672616374696f6e4672656546617374476175737369616e-536869667443:
+
+.. index::
+   pair: FractionFreeFastGaussian; ShiftC
+
+:spadfun:`ShiftC`\: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  -> \ :ref:`List <l4c697374>`\  D 
+  \ ``ShiftC``\  gives the coefficients \ ``c_``\ {\ ``k``\ , \ ``k``\ } in the expansion <x^k> \ ``z``\  \ ``g``\ (\ ``x``\ ) = sum_{\ ``i=0``\ }\ ``^k``\  \ ``c_``\ {\ ``k``\ , \ ``i``\ } <x^i> \ ``g``\ (\ ``x``\ ), where \ ``z``\  acts on \ ``g``\ (\ ``x``\ ) by shifting. In fact, the result is [0, 1, 2, ...]
+
+

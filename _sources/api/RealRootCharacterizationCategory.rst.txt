@@ -1,0 +1,124 @@
+.. index:: RealRootCharacterizationCategory
+
+.. _l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279:
+
+RealRootCharacterizationCategory(TheField, ThePols)
+===================================================
+
+:viewcode:`reclos.spad line 170 <reclos.spad#L170>` :editcode:`[edit on github] <reclos.spad#L170>`
+
+* TheField: Join(\ :ref:`OrderedRing <l4f72646572656452696e67>`\ , \ :ref:`Field <l4669656c64>`\ )
+
+* ThePols: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  TheField
+
+
+\ :ref:`RealRootCharacterizationCategory <l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279>`\  provides common access functions for all real root codings.
+
+
+.. _l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279-616c6c526f6f74734f66:
+
+.. index::
+   pair: RealRootCharacterizationCategory; allRootsOf
+
+:spadfun:`allRootsOf`\: ThePols -> \ :ref:`List <l4c697374>`\  % 
+  \ ``allRootsOf(pol)``\  creates all the roots of \ ``pol``\  in the Real Closure, assumed in order.
+
+.. _l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279-617070726f78696d617465:
+
+.. index::
+   pair: RealRootCharacterizationCategory; approximate
+
+:spadfun:`approximate`\: (ThePols, %, TheField) -> TheField 
+  \ ``approximate(term, root, prec)``\  gives an approximation of \ ``term``\  over \ ``root``\  with precision \ ``prec``\ 
+
+.. _l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279-646566696e696e67506f6c796e6f6d69616c:
+
+.. index::
+   pair: RealRootCharacterizationCategory; definingPolynomial
+
+:spadfun:`definingPolynomial`\: % -> ThePols 
+  \ ``definingPolynomial(aRoot)``\  gives a polynomial such that \ ``definingPolynomial(aRoot).aRoot = 0``\ 
+
+.. _l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279-6e656761746976653f:
+
+.. index::
+   pair: RealRootCharacterizationCategory; negative?
+
+:spadfun:`negative?`\: (ThePols, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``negative?(pol, aRoot)``\  answers if \ ``pol``\  interpreted as \ ``aRoot``\  is negative
+
+.. _l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279-706f7369746976653f:
+
+.. index::
+   pair: RealRootCharacterizationCategory; positive?
+
+:spadfun:`positive?`\: (ThePols, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``positive?(pol, aRoot)``\  answers if \ ``pol``\  interpreted as \ ``aRoot``\  is positive
+
+.. _l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279-7265636970:
+
+.. index::
+   pair: RealRootCharacterizationCategory; recip
+
+:spadfun:`recip`\: (ThePols, %) -> Union(ThePols, failed) 
+  \ ``recip(pol, aRoot)``\  tries to inverse \ ``pol``\  interpreted as \ ``aRoot``\ 
+
+.. _l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279-72656c6174697665417070726f78:
+
+.. index::
+   pair: RealRootCharacterizationCategory; relativeApprox
+
+:spadfun:`relativeApprox`\: (ThePols, %, TheField) -> TheField 
+  \ ``approximate(term, root, prec)``\  gives an approximation of \ ``term``\  over \ ``root``\  with precision \ ``prec``\ 
+
+.. _l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279-726f6f744f66:
+
+.. index::
+   pair: RealRootCharacterizationCategory; rootOf
+
+:spadfun:`rootOf`\: (ThePols, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> Union(%, failed) 
+  \ ``rootOf(pol, n)``\  gives the \ ``n``\ th root for the order of the Real Closure
+
+.. _l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279-7369676e:
+
+.. index::
+   pair: RealRootCharacterizationCategory; sign
+
+:spadfun:`sign`\: (ThePols, %) -> \ :ref:`Integer <l496e7465676572>`\  
+  \ ``sign(pol, aRoot)``\  gives the sign of \ ``pol``\  interpreted as \ ``aRoot``\ 
+
+.. _l5265616c526f6f74436861726163746572697a6174696f6e43617465676f7279-7a65726f3f:
+
+.. index::
+   pair: RealRootCharacterizationCategory; zero?
+
+:spadfun:`zero?`\: (ThePols, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``zero?(pol, aRoot)``\  answers if \ ``pol``\  interpreted as \ ``aRoot``\  is \ ``0``\ 
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

@@ -1,0 +1,56 @@
+.. index:: StepThrough
+
+.. _l537465705468726f756768:
+
+StepThrough
+===========
+
+:viewcode:`catdef.spad line 1476 <catdef.spad#L1476>` :editcode:`[edit on github] <catdef.spad#L1476>`
+
+
+A class of objects which can be 'stepped through'. Repeated applications of \ :spadfun:`nextItem`\  is guaranteed never to return duplicate items and only return "failed" after exhausting all elements of the domain. This assumes that the sequence starts with \ ``init()``\ . For infinite domains, repeated application of \ :spadfun:`nextItem`\  is not required to reach all possible domain elements starting from any initial element.   Conditional attributes: infinite repeated \ ``nextItem``\ \ ``'s``\  are never "failed".
+
+
+.. _l537465705468726f756768-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l537465705468726f756768-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l537465705468726f756768-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l537465705468726f756768-696e6974:
+
+.. index::
+   pair: StepThrough; init
+
+:spadfun:`init`\: % 
+  \ ``init()``\  chooses an initial object for stepping.
+
+.. _l537465705468726f756768-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l537465705468726f756768-6e6578744974656d:
+
+.. index::
+   pair: StepThrough; nextItem
+
+:spadfun:`nextItem`\: % -> Union(%, failed) 
+  \ ``nextItem(x)``\  returns the next item, or "failed" if domain is exhausted.
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

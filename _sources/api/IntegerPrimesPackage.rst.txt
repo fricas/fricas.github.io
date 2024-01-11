@@ -1,0 +1,48 @@
+.. index:: IntegerPrimesPackage
+
+.. _l496e74656765725072696d65735061636b616765:
+
+IntegerPrimesPackage I
+======================
+
+:viewcode:`intfact.spad line 1 <intfact.spad#L1>` :editcode:`[edit on github] <intfact.spad#L1>`
+
+* I: \ :ref:`IntegerNumberSystem <l496e74656765724e756d62657253797374656d>`\ 
+
+
+The \ :ref:`IntegerPrimesPackage <l496e74656765725072696d65735061636b616765>`\  implements a modification of Rabin\ ``'s``\  probabilistic primality test and the utility functions \ :spadfun:`nextPrime`\ , \ :spadfun:`prevPrime`\  and \ :spadfun:`primes`\ .
+
+
+.. _l496e74656765725072696d65735061636b616765-6e6578745072696d65:
+
+.. index::
+   pair: IntegerPrimesPackage; nextPrime
+
+:spadfun:`nextPrime`\: I -> I 
+  \ ``nextPrime(n)``\  returns the smallest prime strictly larger than \ ``n``\ 
+
+.. _l496e74656765725072696d65735061636b616765-707265765072696d65:
+
+.. index::
+   pair: IntegerPrimesPackage; prevPrime
+
+:spadfun:`prevPrime`\: I -> I 
+  \ ``prevPrime(n)``\  returns the largest prime strictly smaller than \ ``n``\ 
+
+.. _l496e74656765725072696d65735061636b616765-7072696d653f:
+
+.. index::
+   pair: IntegerPrimesPackage; prime?
+
+:spadfun:`prime?`\: I -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``prime?(n)``\  returns \ ``true``\  if \ ``n``\  is prime and \ ``false``\  if not. Note that we ignore sign of \ ``n``\ , so \ ``-5``\  is considered prime. The algorithm used is Rabin\ ``'s``\  probabilistic primality test (reference: Knuth Volume 2 Semi Numerical Algorithms). If \ ``prime? n``\  returns \ ``false``\ , \ ``n``\  is proven composite. If \ ``prime? n``\  returns \ ``true``\ , prime? may be in error however, the probability of error is very low. and is zero below 25*10^9 (due to a result of Pomerance et al), below 10^12 and 10^13 due to results of Pinch, and below 341550071728321 due to a result of Jaeschke. Specifically, this implementation does at least 10 pseudo prime tests and so the probability of error is \ ``< 4^(-10)``\ . The running time of this method is cubic in the length of the input \ ``n``\ , that is \ ``O( (log n)^3 )``\ , for \ ``n<10^20``\ . beyond that, the algorithm is quartic, \ ``O( (log n)^4 )``\ . Two improvements due to Davenport have been incorporated which catches some trivial strong pseudo-primes, such as [Jaeschke, 1991] 1377161253229053 * 413148375987157, which the original algorithm regards as prime
+
+.. _l496e74656765725072696d65735061636b616765-7072696d6573:
+
+.. index::
+   pair: IntegerPrimesPackage; primes
+
+:spadfun:`primes`\: (I, I) -> \ :ref:`List <l4c697374>`\  I 
+  \ ``primes(a, b)``\  returns a list of all primes \ ``p``\  with \ ``a <= p <= b``\ 
+
+

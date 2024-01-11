@@ -1,0 +1,83 @@
+.. index:: BasicOperatorFunctions1
+
+.. _l42617369634f70657261746f7246756e6374696f6e7331:
+
+BasicOperatorFunctions1 A
+=========================
+
+:viewcode:`op.spad line 183 <op.spad#L183>` :editcode:`[edit on github] <op.spad#L183>`
+
+* A: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+
+This package exports functions to set some commonly used properties of operators, including properties which contain functions.
+
+
+.. _l42617369634f70657261746f7246756e6374696f6e7331-636f6e7374616e744f70657261746f72:
+
+.. index::
+   pair: BasicOperatorFunctions1; constantOperator
+
+:spadfun:`constantOperator`\: A -> \ :ref:`BasicOperator <l42617369634f70657261746f72>`\  
+  \ ``constantOperator(a)``\  returns a nullary operator op such that \ ``op()``\  always evaluate to \ ``a``\ .
+
+.. _l42617369634f70657261746f7246756e6374696f6e7331-636f6e7374616e744f70496643616e:
+
+.. index::
+   pair: BasicOperatorFunctions1; constantOpIfCan
+
+:spadfun:`constantOpIfCan`\: \ :ref:`BasicOperator <l42617369634f70657261746f72>`\  -> Union(A, failed) 
+  \ ``constantOpIfCan(op)``\  returns \ ``a``\  if \ ``op``\  is the constant nullary operator always returning \ ``a``\ , "failed" otherwise.
+
+.. _l42617369634f70657261746f7246756e6374696f6e7331-64657269766174697665:
+
+.. index::
+   pair: BasicOperatorFunctions1; derivative
+
+:spadfun:`derivative`\: (\ :ref:`BasicOperator <l42617369634f70657261746f72>`\ , A -> A) -> \ :ref:`BasicOperator <l42617369634f70657261746f72>`\  
+  \ ``derivative(op, foo)``\  attaches foo as the "\%diff" property of \ ``op``\ . If \ ``op``\  has an "\%diff" property \ ``f``\ , then applying a derivation \ ``D``\  to \ ``op``\ (a) returns \ ``f(a) * D(a)``\ . Argument \ ``op``\  must be unary.
+
+
+.. index::
+   pair: BasicOperatorFunctions1; derivative
+
+:spadfun:`derivative`\: (\ :ref:`BasicOperator <l42617369634f70657261746f72>`\ , \ :ref:`List <l4c697374>`\ (\ :ref:`List <l4c697374>`\  A -> A)) -> \ :ref:`BasicOperator <l42617369634f70657261746f72>`\  
+  \ ``derivative(op, [foo1, ..., foon])``\  attaches [\ ``foo1``\ , ..., foon] as the "\%diff" property of \ ``op``\ . If \ ``op``\  has an "\%diff" property \ ``[f1, ..., fn]``\  then applying a derivation \ ``D``\  to \ ``op(a1, ..., an)``\  returns \ ``f1(a1, ..., an) * D(a1) + ... + fn(a1, ..., an) * D(an)``\ .
+
+
+.. index::
+   pair: BasicOperatorFunctions1; derivative
+
+:spadfun:`derivative`\: \ :ref:`BasicOperator <l42617369634f70657261746f72>`\  -> Union(\ :ref:`List <l4c697374>`\ (\ :ref:`List <l4c697374>`\  A -> A), failed) 
+  \ ``derivative(op)``\  returns the value of the "\%diff" property of \ ``op``\  if it has one, and "failed" otherwise.
+
+.. _l42617369634f70657261746f7246756e6374696f6e7331-6576616c75617465:
+
+.. index::
+   pair: BasicOperatorFunctions1; evaluate
+
+:spadfun:`evaluate`\: (\ :ref:`BasicOperator <l42617369634f70657261746f72>`\ , A -> A) -> \ :ref:`BasicOperator <l42617369634f70657261746f72>`\  
+  \ ``evaluate(op, foo)``\  attaches foo as the "\%eval" property of \ ``op``\ . If \ ``op``\  has an "\%eval" property \ ``f``\ , then applying \ ``op``\  to a returns the result of \ ``f(a)``\ . Argument \ ``op``\  must be unary.
+
+
+.. index::
+   pair: BasicOperatorFunctions1; evaluate
+
+:spadfun:`evaluate`\: (\ :ref:`BasicOperator <l42617369634f70657261746f72>`\ , \ :ref:`List <l4c697374>`\  A -> A) -> \ :ref:`BasicOperator <l42617369634f70657261746f72>`\  
+  \ ``evaluate(op, foo)``\  attaches foo as the "\%eval" property of \ ``op``\ . If \ ``op``\  has an "\%eval" property \ ``f``\ , then applying \ ``op``\  to \ ``(a1, ..., an)``\  returns the result of \ ``f(a1, ..., an)``\ .
+
+
+.. index::
+   pair: BasicOperatorFunctions1; evaluate
+
+:spadfun:`evaluate`\: (\ :ref:`BasicOperator <l42617369634f70657261746f72>`\ , \ :ref:`List <l4c697374>`\  A) -> Union(A, failed) 
+  \ ``evaluate(op, [a1,...,an])``\  checks if \ ``op``\  has an "\%eval" property \ ``f``\ . If it has, then \ ``f(a1, ..., an)``\  is returned, and "failed" otherwise.
+
+
+.. index::
+   pair: BasicOperatorFunctions1; evaluate
+
+:spadfun:`evaluate`\: \ :ref:`BasicOperator <l42617369634f70657261746f72>`\  -> Union(\ :ref:`List <l4c697374>`\  A -> A, failed) 
+  \ ``evaluate(op)``\  returns the value of the "\%eval" property of \ ``op``\  if it has one, and "failed" otherwise.
+
+

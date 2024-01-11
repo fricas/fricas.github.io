@@ -1,0 +1,38 @@
+.. index:: GosperSummationMethod
+
+.. _l476f7370657253756d6d6174696f6e4d6574686f64:
+
+GosperSummationMethod(E, V, R, P, Q)
+====================================
+
+:viewcode:`sum.spad line 53 <sum.spad#L53>` :editcode:`[edit on github] <sum.spad#L53>`
+
+* E: \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+* V: \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+* R: \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+
+* P: \ :ref:`PolynomialCategory <l506f6c796e6f6d69616c43617465676f7279>`\ (R, E, V)
+
+* Q: Join(\ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Field <l4669656c64>`\ ) with
+
+    coerce\: P -> %
+
+    denom\: % -> P
+
+    numer\: % -> P
+
+
+Gosper\ ``'s``\  summation algorithm.
+
+
+.. _l476f7370657253756d6d6174696f6e4d6574686f64-476f73706572734d6574686f64:
+
+.. index::
+   pair: GosperSummationMethod; GospersMethod
+
+:spadfun:`GospersMethod`\: (Q, V, () -> V) -> Union(Q, failed) 
+  \ ``GospersMethod(b, n, new)``\  returns a rational function \ ``rf(n)``\  such that \ ``a(n) * rf(n)``\  is the indefinite sum of \ ``a(n)``\  with respect to upward difference on \ ``n``\ , i.e. \ ``a(n+1) * rf(n+1) - a(n) * rf(n) = a(n)``\ , where \ ``b(n) = a(n)/a(n-1)``\  is a rational function. Returns "failed" if no such rational function \ ``rf(n)``\  exists. Note: \ ``new``\  is a nullary function returning a new \ ``V``\  every time. The condition on \ ``a(n)``\  is that \ ``a(n)/a(n-1)``\  is a rational function of \ ``n``\ .
+
+

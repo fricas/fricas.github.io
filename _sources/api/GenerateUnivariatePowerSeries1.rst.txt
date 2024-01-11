@@ -1,0 +1,47 @@
+.. index:: GenerateUnivariatePowerSeries1
+
+.. _l47656e6572617465556e6976617269617465506f77657253657269657331:
+
+GenerateUnivariatePowerSeries1 R
+================================
+
+:viewcode:`genups.spad line 1 <genups.spad#L1>` :editcode:`[edit on github] <genups.spad#L1>`
+
+* R: \ :ref:`Ring <l52696e67>`\ 
+
+
+\ :ref:`GenerateUnivariatePowerSeries <l47656e6572617465556e6976617269617465506f776572536572696573>`\  provides functions that create power series from explicit formulas for their \ ``n``\ th coefficient.
+
+
+.. _l47656e6572617465556e6976617269617465506f77657253657269657331-6c617572656e74:
+
+.. index::
+   pair: GenerateUnivariatePowerSeries1; laurent
+
+:spadfun:`laurent`\: (\ :ref:`Integer <l496e7465676572>`\  -> R, \ :ref:`Symbol <l53796d626f6c>`\ , R, \ :ref:`UniversalSegment <l556e6976657273616c5365676d656e74>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Any <l416e79>`\  
+  \ ``laurent(n +-> a(n), x, a, n0..)``\  returns \ ``sum(n = n0.., a(n) * (x - a)^n)``\ ; \ ``laurent(n +-> a(n), x, a, n0..n1)``\  returns \ ``sum(n = n0..n1, a(n) * (x - a)^n)``\ .
+
+.. _l47656e6572617465556e6976617269617465506f77657253657269657331-70756973657578:
+
+.. index::
+   pair: GenerateUnivariatePowerSeries1; puiseux
+
+:spadfun:`puiseux`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  -> R, \ :ref:`Symbol <l53796d626f6c>`\ , R, \ :ref:`UniversalSegment <l556e6976657273616c5365676d656e74>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Any <l416e79>`\  
+  \ ``puiseux(n +-> a(n), x, a, r0.., r)``\  returns \ ``sum(n = r0, r0 + r, r0 + 2*r..., a(n) * (x - a)^n)``\ ; \ ``puiseux(n +-> a(n), x = a, r0..r1, r)``\  returns \ ``sum(n = r0 + k*r while n <= r1, a(n) * (x - a)^n)``\ .
+
+.. _l47656e6572617465556e6976617269617465506f77657253657269657331-7461796c6f72:
+
+.. index::
+   pair: GenerateUnivariatePowerSeries1; taylor
+
+:spadfun:`taylor`\: (\ :ref:`Integer <l496e7465676572>`\  -> R, \ :ref:`Symbol <l53796d626f6c>`\ , R) -> \ :ref:`Any <l416e79>`\  
+  \ ``taylor(n +-> a(n), x, a)``\  returns \ ``sum(n = 0.., a(n)*(x-a)^n)``\ .
+
+
+.. index::
+   pair: GenerateUnivariatePowerSeries1; taylor
+
+:spadfun:`taylor`\: (\ :ref:`Integer <l496e7465676572>`\  -> R, \ :ref:`Symbol <l53796d626f6c>`\ , R, \ :ref:`UniversalSegment <l556e6976657273616c5365676d656e74>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Any <l416e79>`\  
+  \ ``taylor(n +-> a(n), x, a, n0..)``\  returns \ ``sum(n=n0.., a(n)*(x-a)^n)``\ ; \ ``taylor(n +-> a(n), x, a, n0..n1)``\  returns \ ``sum(n = n0.., a(n)*(x-a)^n)``\ .
+
+

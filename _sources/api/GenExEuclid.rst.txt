@@ -1,0 +1,58 @@
+.. index:: GenExEuclid
+
+.. _l47656e45784575636c6964:
+
+GenExEuclid(R, BP)
+==================
+
+:viewcode:`geneez.spad line 1 <geneez.spad#L1>` :editcode:`[edit on github] <geneez.spad#L1>`
+
+* R: \ :ref:`EuclideanDomain <l4575636c696465616e446f6d61696e>`\ 
+
+* BP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  R
+
+
+Author : \ ``P``\ .Gianni. January 1990 The equation \ ``Af+Bg=h``\  and its generalization to \ ``n``\  polynomials is solved for solutions over the \ ``R``\ , euclidean domain. A table containing the solutions of \ ``Af+Bg=x^k``\  is used. The operations are performed modulus a prime which are in principle big enough, but the solutions are tested and, in case of failure, a hensel lifting process is used to get to the right solutions. It will be used in the factorization of multivariate polynomials over finite field, with \ ``R=F[x]``\ .
+
+
+.. _l47656e45784575636c6964-636f6d70426f756e64:
+
+.. index::
+   pair: GenExEuclid; compBound
+
+:spadfun:`compBound`\: (BP, \ :ref:`List <l4c697374>`\  BP) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``compBound(p, lp)``\  computes a bound for the coefficients of the solution polynomials. Given a polynomial right hand side \ ``p``\ , and a list \ ``lp``\  of left hand side polynomials. Exported because it depends on the valuation.
+
+.. _l47656e45784575636c6964-726564756374696f6e:
+
+.. index::
+   pair: GenExEuclid; reduction
+
+:spadfun:`reduction`\: (BP, R) -> BP 
+  \ ``reduction(p, prime)``\  reduces the polynomial \ ``p``\  modulo prime of \ ``R``\ . Note: this function is exported only because it\ ``'s``\  conditional.
+
+.. _l47656e45784575636c6964-736f6c76656964:
+
+.. index::
+   pair: GenExEuclid; solveid
+
+:spadfun:`solveid`\: (BP, R, \ :ref:`Vector <l566563746f72>`\  \ :ref:`List <l4c697374>`\  BP) -> Union(\ :ref:`List <l4c697374>`\  BP, failed) 
+  \ ``solveid(h, prime, table)``\  computes the coefficients of the extended euclidean algorithm for a list of polynomials whose tablePow is table and with right side \ ``h``\ .
+
+.. _l47656e45784575636c6964-7461626c65506f77:
+
+.. index::
+   pair: GenExEuclid; tablePow
+
+:spadfun:`tablePow`\: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , R, \ :ref:`List <l4c697374>`\  BP) -> Union(\ :ref:`Vector <l566563746f72>`\  \ :ref:`List <l4c697374>`\  BP, failed) 
+  \ ``tablePow(maxdeg, prime, lpol)``\  constructs the table with the coefficients of the Extended Euclidean Algorithm for lpol. Here the right side is \ ``x^k``\ , for \ ``k``\  less to \ ``maxdeg``\ . The operation returns "failed" when the elements are not coprime modulo \ ``prime``\ .
+
+.. _l47656e45784575636c6964-746573744d6f64756c7573:
+
+.. index::
+   pair: GenExEuclid; testModulus
+
+:spadfun:`testModulus`\: (R, \ :ref:`List <l4c697374>`\  BP) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``testModulus(p, lp)``\  returns \ ``true``\  if the prime \ ``p``\  is valid for the list of polynomials \ ``lp``\ , i.e. preserves the degree and they remain relatively prime.
+
+

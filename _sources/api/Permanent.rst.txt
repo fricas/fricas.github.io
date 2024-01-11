@@ -1,0 +1,26 @@
+.. index:: Permanent
+
+.. _l5065726d616e656e74:
+
+Permanent(n, R)
+===============
+
+:viewcode:`perman.spad line 73 <perman.spad#L73>` :editcode:`[edit on github] <perman.spad#L73>`
+
+* n: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ 
+
+* R: Join(\ :ref:`Ring <l52696e67>`\ , \ :ref:`CommutativeStar <l436f6d6d7574617469766553746172>`\ )
+
+
+Permanent implements the functions \ *permanent*\ , the permanent for square matrices.
+
+
+.. _l5065726d616e656e74-7065726d616e656e74:
+
+.. index::
+   pair: Permanent; permanent
+
+:spadfun:`permanent`\: \ :ref:`SquareMatrix <l5371756172654d6174726978>`\ (n, R) -> R 
+  \ ``permanent(x)``\  computes the permanent of a square matrix \ ``x``\ . The \ *permanent*\  is equivalent to the \ :spadfun:`determinant`\  except that coefficients have no change of sign. This function is much more difficult to compute than the \ *determinant*\ . The formula used is by \ ``H``\ .\ ``J``\ . Ryser, improved by [Nijenhuis and Wilf, \ ``Ch``\ . 19]. Note: permanent(\ ``x``\ ) choose one of three algorithms, depending on the underlying ring \ ``R``\  and on \ ``n``\ , the number of rows (and columns) of \ ``x:``\  \begin{items} \item 1. if 2 has an inverse in \ ``R``\  we can use the algorithm of [Nijenhuis and Wilf, \ ``ch``\ .19, \ ``p``\ .158]; if 2 has no inverse, some modifications are necessary: \item 2. if \ *n > 6*\  and \ ``R``\  is an integral domain with characteristic different from 2 (the algorithm works if and only 2 is not a zero-divisor of \ ``R``\  and \ *characteristic()\$R ~= 2*\ , but how to check that for any given \ ``R``\  ?), the local function \ *permanent2*\  is called; \item 3. else, the local function \ *permanent3*\  is called (works for all commutative rings \ ``R``\ ). \end{items}
+
+

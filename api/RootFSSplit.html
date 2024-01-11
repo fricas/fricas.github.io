@@ -1,26 +1,22 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>RootFSSplit(R, F) &#8212; FriCAS</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=0034329e"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ScanningUtilities" href="ScanningUtilities.html" />
+    <link rel="next" title="RootSimplification" href="RootSimplification.html" />
     <link rel="prev" title="RetractSolvePackage(Q, R)" href="RetractSolvePackage.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -30,7 +26,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="ScanningUtilities.html" title="ScanningUtilities"
+          <a href="RootSimplification.html" title="RootSimplification"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="RetractSolvePackage.html" title="RetractSolvePackage(Q, R)"
@@ -48,15 +44,18 @@
           <div class="body" role="main">
             
   <section id="rootfssplit-r-f">
-<span id="l526f6f74465353706c6974"></span><span id="index-0"></span><h1>RootFSSplit(R, F)<a class="headerlink" href="#rootfssplit-r-f" title="Permalink to this heading">¶</a></h1>
-<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/intpar.spad#L370">intpar.spad line 370</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/intpar.spad#L370">[edit on github]</a></p>
+<span id="l526f6f74465353706c6974"></span><span id="index-0"></span><h1>RootFSSplit(R, F)<a class="headerlink" href="#rootfssplit-r-f" title="Link to this heading">¶</a></h1>
+<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/intpar.spad#L376">intpar.spad line 376</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/intpar.spad#L376">[edit on github]</a></p>
 <ul class="simple">
 <li><p>R: Join(<a class="reference internal" href="IntegralDomain.html#l496e74656772616c446f6d61696e"><span class="std std-ref">IntegralDomain</span></a>, <a class="reference internal" href="RetractableTo.html#l5265747261637461626c65546f"><span class="std std-ref">RetractableTo</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Comparable.html#l436f6d70617261626c65"><span class="std std-ref">Comparable</span></a>)</p></li>
 <li><p>F: <a class="reference internal" href="FunctionSpace.html#l46756e6374696f6e5370616365"><span class="std std-ref">FunctionSpace</span></a> R</p></li>
 </ul>
-<p>undocumented</p>
-<span class="target" id="l526f6f74465353706c6974-616c675f73706c69745f726f6f7430"></span><p id="index-1"><span class="spadfun">alg_split_root0</span>: (F, <a class="reference internal" href="Kernel.html#l4b65726e656c"><span class="std std-ref">Kernel</span></a> F, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> F</p>
-<span class="target" id="l526f6f74465353706c6974-616c675f73706c69745f726f6f7473"></span><dl class="simple" id="index-2">
+<p>This package implements <code class="docutils literal notranslate"><span class="pre">alg_split_roots</span></code> allowing its reuse.</p>
+<span id="l526f6f74465353706c6974-616c675f73706c69745f726f6f7430"></span><dl class="simple" id="index-1">
+<dt><span class="spadfun">alg_split_root0</span>: (F, <a class="reference internal" href="Kernel.html#l4b65726e656c"><span class="std std-ref">Kernel</span></a> F, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> F</dt><dd><p><code class="docutils literal notranslate"><span class="pre">alg_split_root0(f,</span> <span class="pre">r,</span> <span class="pre">n)</span></code> returns <code class="docutils literal notranslate"><span class="pre">[a1,</span> <span class="pre">...,</span> <span class="pre">an]</span></code> such that <code class="docutils literal notranslate"><span class="pre">f</span> <span class="pre">=</span> <span class="pre">a1</span> <span class="pre">+</span> <span class="pre">a2*r</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">an*r^(n</span> <span class="pre">-</span> <span class="pre">1)</span></code>. <code class="docutils literal notranslate"><span class="pre">r</span></code> must be a root and <code class="docutils literal notranslate"><span class="pre">n</span></code> must be its degree.</p>
+</dd>
+</dl>
+<span id="l526f6f74465353706c6974-616c675f73706c69745f726f6f7473"></span><dl class="simple" id="index-2">
 <dt><span class="spadfun">alg_split_roots</span>: (<a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> F, <a class="reference internal" href="Kernel.html#l4b65726e656c"><span class="std std-ref">Kernel</span></a> F, <a class="reference internal" href="Kernel.html#l4b65726e656c"><span class="std std-ref">Kernel</span></a> F) -&gt; <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> Record(funs: <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> F, nroot: F, npow1: <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, npow2: <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">alg_split_roots(lf,</span> <span class="pre">r1,</span> <span class="pre">r2)</span></code> splits each <code class="docutils literal notranslate"><span class="pre">f</span></code> in <code class="docutils literal notranslate"><span class="pre">lf</span></code> into linear combination of product of powers of <code class="docutils literal notranslate"><span class="pre">r1</span></code> and <code class="docutils literal notranslate"><span class="pre">r2</span></code> which must be independent roots.</p>
 </dd>
 </dl>
@@ -102,7 +101,7 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="ScanningUtilities.html" title="ScanningUtilities"
+          <a href="RootSimplification.html" title="RootSimplification"
              >next</a> |</li>
         <li class="right" >
           <a href="RetractSolvePackage.html" title="RetractSolvePackage(Q, R)"
@@ -114,7 +113,7 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2007-2023, FriCAS Team.
+    &#169; Copyright 2007-2024, FriCAS Team.
     </div>
   </body>
 </html>

@@ -1,0 +1,135 @@
+.. index:: IncidenceAlgebra
+
+.. _l496e636964656e6365416c6765627261:
+
+IncidenceAlgebra(R, S)
+======================
+
+:viewcode:`logic.spad line 287 <logic.spad#L287>` :editcode:`[edit on github] <logic.spad#L287>`
+
+* R: \ :ref:`Ring <l52696e67>`\ 
+
+* S: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+
+A domain for incidence matrices of finite posets.
+
+
+.. _l496e636964656e6365416c6765627261-2a:
+
+.. index::
+   pair: IncidenceAlgebra; *
+
+:spadfun:`\*`\: (%, %) -> % 
+  \ ``x * y``\  is the product of the matrices \ ``x``\  and \ ``y``\ . Error: if the dimensions are incompatible.
+
+
+.. index::
+   pair: IncidenceAlgebra; *
+
+:spadfun:`\*`\: (%, R) -> % 
+  \ ``r*x``\  is the left scalar multiple of the scalar \ ``r``\  and the matrix \ ``x``\ .
+
+
+.. index::
+   pair: IncidenceAlgebra; *
+
+:spadfun:`\*`\: (\ :ref:`Permutation <l5065726d75746174696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , %) -> % 
+  \ ``\pi * A``\  permutes the indices and the matrix according to the permutation \ ``\pi``\ .
+
+
+.. index::
+   pair: IncidenceAlgebra; *
+
+:spadfun:`\*`\: (R, %) -> % 
+  \ ``r*x``\  is the left scalar multiple of the scalar \ ``r``\  and the matrix \ ``x``\ .
+
+.. _l496e636964656e6365416c6765627261-2b:
+
+.. index::
+   pair: IncidenceAlgebra; +
+
+:spadfun:`+`\: (%, %) -> % 
+  \ ``x + y``\  is the sum of the matrices \ ``x``\  and \ ``y``\ . Error: if the dimensions are incompatible.
+
+.. _l496e636964656e6365416c6765627261-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l496e636964656e6365416c6765627261-5e:
+
+.. index::
+   pair: IncidenceAlgebra; ^
+
+:spadfun:`^`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``x ^ n``\  computes a non-negative integral power of the matrix \ ``x``\ . Error: if the matrix is not square.
+
+.. _l496e636964656e6365416c6765627261-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l496e636964656e6365416c6765627261-6170706c79:
+
+.. index::
+   pair: IncidenceAlgebra; apply
+
+:spadfun:`apply`\: (%, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> R 
+  \ ``A(i, j)``\  returns \$A_{\ ``i``\ , \ ``j``\ }\$
+
+
+.. index::
+   pair: IncidenceAlgebra; apply
+
+:spadfun:`apply`\: (%, S, S) -> R 
+  \ ``A(s, t)``\  returns \$A_{\ ``i``\ , \ ``j``\ }\$, where \$\ ``i``\ \$, \$\ ``j``\ \$ are the positions of \$\ ``s``\ \$ and \$\ ``t``\ \$ in the index list.
+
+.. _l496e636964656e6365416c6765627261-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l496e636964656e6365416c6765627261-696e636964656e6365416c6765627261:
+
+.. index::
+   pair: IncidenceAlgebra; incidenceAlgebra
+
+:spadfun:`incidenceAlgebra`\: (\ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`List <l4c697374>`\  S) -> % 
+  \ ``incidenceAlgebra(A, ss)``\  constructs an adjacency matrix with with indices \ ``ss``\  and Matrix A
+
+
+.. index::
+   pair: IncidenceAlgebra; incidenceAlgebra
+
+:spadfun:`incidenceAlgebra`\: (\ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`OneDimensionalArray <l4f6e6544696d656e73696f6e616c4172726179>`\  S) -> % 
+  \ ``incidenceAlgebra(A, ss)``\  constructs an adjacency matrix with with indices \ ``ss``\  and Matrix A
+
+.. _l496e636964656e6365416c6765627261-696e6469636573:
+
+.. index::
+   pair: IncidenceAlgebra; indices
+
+:spadfun:`indices`\: % -> \ :ref:`OneDimensionalArray <l4f6e6544696d656e73696f6e616c4172726179>`\  S 
+  \ ``indices(A)``\  returns the indices of the incidence matrix A
+
+.. _l496e636964656e6365416c6765627261-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l496e636964656e6365416c6765627261-6d6174726978:
+
+.. index::
+   pair: IncidenceAlgebra; matrix
+
+:spadfun:`matrix`\: % -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``matrix(A)``\  returns the underlying matrix of the incidence matrix A
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

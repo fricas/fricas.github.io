@@ -1,0 +1,152 @@
+.. index:: SetOfMIntegersInOneToN
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e:
+
+SetOfMIntegersInOneToN(m, n)
+============================
+
+:viewcode:`lodof.spad line 1 <lodof.spad#L1>` :editcode:`[edit on github] <lodof.spad#L1>`
+
+* m: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ 
+
+* n: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ 
+
+
+\ :ref:`SetOfMIntegersInOneToN <l5365744f664d496e746567657273496e4f6e65546f4e>`\  implements the subsets of \ ``M``\  integers in the interval \ ``[1..n]``\ 
+
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-636f6e76657274:
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`InputForm <l496e707574466f726d>`\  
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-64656c7461:
+
+.. index::
+   pair: SetOfMIntegersInOneToN; delta
+
+:spadfun:`delta`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``delta(S, k, p)``\  returns the number of elements of \ ``S``\  which are strictly between \ ``p``\  and the \ ``k^``\ {th} element of \ ``S``\ .
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-656c656d656e7473:
+
+.. index::
+   pair: SetOfMIntegersInOneToN; elements
+
+:spadfun:`elements`\: % -> \ :ref:`List <l4c697374>`\  \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  
+  \ ``elements(S)``\  returns the list of the elements of \ ``S``\  in increasing order.
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-656e756d6572617465:
+
+\ :ref:`enumerate <l46696e697465-656e756d6572617465>`\ \: () -> \ :ref:`List <l4c697374>`\  % 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+
+.. index::
+   pair: SetOfMIntegersInOneToN; enumerate
+
+:spadfun:`enumerate`\: () -> \ :ref:`Vector <l566563746f72>`\  % 
+  \ ``enumerate()``\  returns a vector of all the sets of \ ``M``\  integers in \ ``1..n``\ .
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-68617368:
+
+\ :ref:`hash <l4861736861626c65-68617368>`\ \: % -> \ :ref:`SingleInteger <l53696e676c65496e7465676572>`\  
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-6861736855706461746521:
+
+\ :ref:`hashUpdate! <l4861736861626c65-6861736855706461746521>`\ \: (\ :ref:`HashState <l486173685374617465>`\ , %) -> \ :ref:`HashState <l486173685374617465>`\  
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-696e6372656d656e744b7468456c656d656e74:
+
+.. index::
+   pair: SetOfMIntegersInOneToN; incrementKthElement
+
+:spadfun:`incrementKthElement`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> Union(%, failed) 
+  \ ``incrementKthElement(S, k)``\  increments the \ ``k^``\ {th} element of \ ``S``\ , and returns "failed" if the result is not a set of \ ``M``\  integers in \ ``1..n``\  any more.
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-696e646578:
+
+\ :ref:`index <l46696e697465-696e646578>`\ \: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> % 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-6c6f6f6b7570:
+
+\ :ref:`lookup <l46696e697465-6c6f6f6b7570>`\ \: % -> \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-6d656d6265723f:
+
+.. index::
+   pair: SetOfMIntegersInOneToN; member?
+
+:spadfun:`member?`\: (\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``member?(p, s)``\  returns \ ``true``\  is \ ``p``\  is in \ ``s``\ , \ ``false``\  otherwise.
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-72616e646f6d:
+
+\ :ref:`random <l46696e697465-72616e646f6d>`\ \: () -> % 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-7265706c6163654b7468456c656d656e74:
+
+.. index::
+   pair: SetOfMIntegersInOneToN; replaceKthElement
+
+:spadfun:`replaceKthElement`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> Union(%, failed) 
+  \ ``replaceKthElement(S, k, p)``\  replaces the \ ``k^``\ {th} element of \ ``S``\  by \ ``p``\ , and returns "failed" if the result is not a set of \ ``M``\  integers in \ ``1..n``\  any more.
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-7365744f664d696e4e:
+
+.. index::
+   pair: SetOfMIntegersInOneToN; setOfMinN
+
+:spadfun:`setOfMinN`\: \ :ref:`List <l4c697374>`\  \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> % 
+  \ ``setOfMinN([a_1, ..., a_m])``\  returns the set {\ ``a_1``\ , ..., a_m}. Error if {\ ``a_1``\ , ..., a_m} is not a set of \ ``M``\  integers in \ ``1..n``\ .
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-73697a65:
+
+\ :ref:`size <l46696e697465-73697a65>`\ \: () -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l5365744f664d496e746567657273496e4f6e65546f4e-736d616c6c65723f:
+
+\ :ref:`smaller? <l436f6d70617261626c65-736d616c6c65723f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`Comparable <l436f6d70617261626c65>`\  
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\  
+
+\ :ref:`Finite <l46696e697465>`\  
+
+\ :ref:`Hashable <l4861736861626c65>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

@@ -1,0 +1,272 @@
+.. index:: IndexedAggregate
+
+.. _l496e6465786564416767726567617465:
+
+IndexedAggregate(Index, Entry)
+==============================
+
+:viewcode:`aggcat.spad line 826 <aggcat.spad#L826>` :editcode:`[edit on github] <aggcat.spad#L826>`
+
+* Index: \ :ref:`Type <l54797065>`\ 
+
+* Entry: \ :ref:`Type <l54797065>`\ 
+
+
+An indexed aggregate is a many-to-one mapping of indices to entries. For example, a one-dimensional-array is an indexed aggregate where the index is an integer. Also, a table is an indexed aggregate where the indices and entries may have any type.
+
+
+.. _l496e6465786564416767726567617465-23:
+
+\ :ref:`# <l416767726567617465-23>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l496e6465786564416767726567617465-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if Entry has \ :ref:`BasicType <l426173696354797065>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  or Entry has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l496e6465786564416767726567617465-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if Entry has \ :ref:`BasicType <l426173696354797065>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  or Entry has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l496e6465786564416767726567617465-616e793f:
+
+\ :ref:`any? <l486f6d6f67656e656f7573416767726567617465-616e793f>`\ \: (Entry -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  Entry
+
+.. _l496e6465786564416767726567617465-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  if Entry has \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l496e6465786564416767726567617465-636f7079:
+
+\ :ref:`copy <l416767726567617465-636f7079>`\ \: % -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l496e6465786564416767726567617465-636f756e74:
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (Entry -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  Entry
+
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (Entry, %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if Entry has \ :ref:`BasicType <l426173696354797065>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  Entry
+
+.. _l496e6465786564416767726567617465-656c74:
+
+\ :ref:`elt <l456c7461626c65-656c74>`\ \: (%, Index) -> Entry 
+  from \ :ref:`Eltable <l456c7461626c65>`\ (Index, Entry)
+
+
+\ :ref:`elt <l456c7461626c65416767726567617465-656c74>`\ \: (%, Index, Entry) -> Entry 
+  from \ :ref:`EltableAggregate <l456c7461626c65416767726567617465>`\ (Index, Entry)
+
+.. _l496e6465786564416767726567617465-656d7074793f:
+
+\ :ref:`empty? <l416767726567617465-656d7074793f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l496e6465786564416767726567617465-656d707479:
+
+\ :ref:`empty <l416767726567617465-656d707479>`\ \: () -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l496e6465786564416767726567617465-656e7472696573:
+
+.. index::
+   pair: IndexedAggregate; entries
+
+:spadfun:`entries`\: % -> \ :ref:`List <l4c697374>`\  Entry 
+  \ ``entries(u)``\  returns a list of all the entries of aggregate \ ``u``\  in no assumed order.
+
+.. _l496e6465786564416767726567617465-656e7472793f:
+
+.. index::
+   pair: IndexedAggregate; entry?
+
+:spadfun:`entry?`\: (Entry, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if Entry has \ :ref:`BasicType <l426173696354797065>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  \ ``entry?(x, u)``\  tests if \ ``x``\  equals \ ``u . i``\  for some index \ ``i``\ .
+
+.. _l496e6465786564416767726567617465-65713f:
+
+\ :ref:`eq? <l416767726567617465-65713f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l496e6465786564416767726567617465-6576616c:
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, Entry, Entry) -> % if Entry has \ :ref:`SetCategory <l53657443617465676f7279>`\  and Entry has \ :ref:`Evalable <l4576616c61626c65>`\  Entry
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (Entry, Entry)
+
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`Equation <l4571756174696f6e>`\  Entry) -> % if Entry has \ :ref:`SetCategory <l53657443617465676f7279>`\  and Entry has \ :ref:`Evalable <l4576616c61626c65>`\  Entry
+  from \ :ref:`Evalable <l4576616c61626c65>`\  Entry
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  Entry, \ :ref:`List <l4c697374>`\  Entry) -> % if Entry has \ :ref:`SetCategory <l53657443617465676f7279>`\  and Entry has \ :ref:`Evalable <l4576616c61626c65>`\  Entry
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (Entry, Entry)
+
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  Entry) -> % if Entry has \ :ref:`SetCategory <l53657443617465676f7279>`\  and Entry has \ :ref:`Evalable <l4576616c61626c65>`\  Entry
+  from \ :ref:`Evalable <l4576616c61626c65>`\  Entry
+
+.. _l496e6465786564416767726567617465-65766572793f:
+
+\ :ref:`every? <l486f6d6f67656e656f7573416767726567617465-65766572793f>`\ \: (Entry -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  Entry
+
+.. _l496e6465786564416767726567617465-66696c6c21:
+
+.. index::
+   pair: IndexedAggregate; fill!
+
+:spadfun:`fill!`\: (%, Entry) -> % if % has \ :ref:`shallowlyMutable <l7368616c6c6f776c794d757461626c65>`\ 
+  \ ``fill!(u, x)``\  replaces each entry in aggregate \ ``u``\  by \ ``x``\ . The modified \ ``u``\  is returned as value.
+
+.. _l496e6465786564416767726567617465-6669727374:
+
+.. index::
+   pair: IndexedAggregate; first
+
+:spadfun:`first`\: % -> Entry if Index has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  \ ``first(u)``\  returns the first element \ ``x``\  of \ ``u``\ . Note: for collections, \ ``first([x, y, ..., z]) = x``\ . Error: if \ ``u``\  is empty.
+
+.. _l496e6465786564416767726567617465-696e6465783f:
+
+.. index::
+   pair: IndexedAggregate; index?
+
+:spadfun:`index?`\: (Index, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``index?(i, u)``\  tests if \ ``i``\  is an index of aggregate \ ``u``\ .
+
+.. _l496e6465786564416767726567617465-696e6469636573:
+
+.. index::
+   pair: IndexedAggregate; indices
+
+:spadfun:`indices`\: % -> \ :ref:`List <l4c697374>`\  Index 
+  \ ``indices(u)``\  returns a list of indices of aggregate \ ``u``\  in no particular order.
+
+.. _l496e6465786564416767726567617465-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  if Entry has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l496e6465786564416767726567617465-6c6573733f:
+
+\ :ref:`less? <l416767726567617465-6c6573733f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l496e6465786564416767726567617465-6d617021:
+
+\ :ref:`map! <l486f6d6f67656e656f7573416767726567617465-6d617021>`\ \: (Entry -> Entry, %) -> % if % has \ :ref:`shallowlyMutable <l7368616c6c6f776c794d757461626c65>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  Entry
+
+.. _l496e6465786564416767726567617465-6d6170:
+
+\ :ref:`map <l486f6d6f67656e656f7573416767726567617465-6d6170>`\ \: (Entry -> Entry, %) -> % 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  Entry
+
+.. _l496e6465786564416767726567617465-6d6178:
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: % -> Entry if Entry has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  Entry
+
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: ((Entry, Entry) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> Entry if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  Entry
+
+.. _l496e6465786564416767726567617465-6d6178496e646578:
+
+.. index::
+   pair: IndexedAggregate; maxIndex
+
+:spadfun:`maxIndex`\: % -> Index if Index has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  \ ``maxIndex(u)``\  returns the maximum index \ ``i``\  of aggregate \ ``u``\ . Note: in general, \ ``maxIndex(u) = reduce(max, indices u)``\ ; for List, \ ``maxIndex(u) = \#u``\ .
+
+.. _l496e6465786564416767726567617465-6d656d6265723f:
+
+\ :ref:`member? <l486f6d6f67656e656f7573416767726567617465-6d656d6265723f>`\ \: (Entry, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if Entry has \ :ref:`BasicType <l426173696354797065>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  Entry
+
+.. _l496e6465786564416767726567617465-6d656d62657273:
+
+\ :ref:`members <l486f6d6f67656e656f7573416767726567617465-6d656d62657273>`\ \: % -> \ :ref:`List <l4c697374>`\  Entry if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  Entry
+
+.. _l496e6465786564416767726567617465-6d696e:
+
+\ :ref:`min <l486f6d6f67656e656f7573416767726567617465-6d696e>`\ \: % -> Entry if Entry has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  Entry
+
+.. _l496e6465786564416767726567617465-6d696e496e646578:
+
+.. index::
+   pair: IndexedAggregate; minIndex
+
+:spadfun:`minIndex`\: % -> Index if Index has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  \ ``minIndex(u)``\  returns the minimum index \ ``i``\  of aggregate \ ``u``\ . Note: in general, \ ``minIndex(a) = reduce(min, indices a)``\ ; for List, \ ``minIndex(a) = 1``\ .
+
+.. _l496e6465786564416767726567617465-6d6f72653f:
+
+\ :ref:`more? <l416767726567617465-6d6f72653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l496e6465786564416767726567617465-7061727473:
+
+\ :ref:`parts <l486f6d6f67656e656f7573416767726567617465-7061727473>`\ \: % -> \ :ref:`List <l4c697374>`\  Entry if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  Entry
+
+.. _l496e6465786564416767726567617465-71656c74:
+
+\ :ref:`qelt <l456c7461626c65416767726567617465-71656c74>`\ \: (%, Index) -> Entry 
+  from \ :ref:`EltableAggregate <l456c7461626c65416767726567617465>`\ (Index, Entry)
+
+.. _l496e6465786564416767726567617465-71736574656c7421:
+
+\ :ref:`qsetelt! <l456c7461626c65416767726567617465-71736574656c7421>`\ \: (%, Index, Entry) -> Entry if % has \ :ref:`shallowlyMutable <l7368616c6c6f776c794d757461626c65>`\ 
+  from \ :ref:`EltableAggregate <l456c7461626c65416767726567617465>`\ (Index, Entry)
+
+.. _l496e6465786564416767726567617465-73616d706c65:
+
+\ :ref:`sample <l416767726567617465-73616d706c65>`\ \: % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l496e6465786564416767726567617465-736574656c7421:
+
+\ :ref:`setelt! <l456c7461626c65416767726567617465-736574656c7421>`\ \: (%, Index, Entry) -> Entry if % has \ :ref:`shallowlyMutable <l7368616c6c6f776c794d757461626c65>`\ 
+  from \ :ref:`EltableAggregate <l456c7461626c65416767726567617465>`\ (Index, Entry)
+
+.. _l496e6465786564416767726567617465-73697a653f:
+
+\ :ref:`size? <l416767726567617465-73697a653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l496e6465786564416767726567617465-7377617021:
+
+.. index::
+   pair: IndexedAggregate; swap!
+
+:spadfun:`swap!`\: (%, Index, Index) -> \ :ref:`Void <l566f6964>`\  if % has \ :ref:`shallowlyMutable <l7368616c6c6f776c794d757461626c65>`\ 
+  \ ``swap!(u, i, j)``\  interchanges elements \ ``i``\  and \ ``j``\  of aggregate \ ``u``\ . No meaningful value is returned.
+
+
+\ :ref:`Aggregate <l416767726567617465>`\  
+
+\ :ref:`BasicType <l426173696354797065>`\  if Entry has \ :ref:`BasicType <l426173696354797065>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  or Entry has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  if Entry has \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+\ :ref:`Eltable <l456c7461626c65>`\ (Index, Entry) 
+
+\ :ref:`EltableAggregate <l456c7461626c65416767726567617465>`\ (Index, Entry) 
+
+\ :ref:`Evalable <l4576616c61626c65>`\  Entry if Entry has \ :ref:`SetCategory <l53657443617465676f7279>`\  and Entry has \ :ref:`Evalable <l4576616c61626c65>`\  Entry
+
+\ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  Entry 
+
+\ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (Entry, Entry) if Entry has \ :ref:`SetCategory <l53657443617465676f7279>`\  and Entry has \ :ref:`Evalable <l4576616c61626c65>`\  Entry
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  if Entry has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+

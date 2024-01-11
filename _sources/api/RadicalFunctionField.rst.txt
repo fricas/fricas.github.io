@@ -1,0 +1,1096 @@
+.. index:: RadicalFunctionField
+
+.. _l5261646963616c46756e6374696f6e4669656c64:
+
+RadicalFunctionField(F, UP, UPUP, radicnd, n)
+=============================================
+
+:viewcode:`curve.spad line 585 <curve.spad#L585>` :editcode:`[edit on github] <curve.spad#L585>`
+
+* F: \ :ref:`UniqueFactorizationDomain <l556e69717565466163746f72697a6174696f6e446f6d61696e>`\ 
+
+* UP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  F
+
+* UPUP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+* radicnd: \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+* n: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ 
+
+
+Function field defined by \ ``y^n``\  = \ ``f``\ (\ ``x``\ ).
+
+
+.. _l5261646963616c46756e6374696f6e4669656c64-30:
+
+\ :ref:`0 <l4162656c69616e4d6f6e6f6964-30>`\ \: % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-31:
+
+\ :ref:`1 <l4d61676d6157697468556e6974-31>`\ \: % 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-2a:
+
+\ :ref:`\* <l4c6566744d6f64756c65-2a>`\ \: (%, %) -> % 
+  from \ :ref:`LeftModule <l4c6566744d6f64756c65>`\  %
+
+
+\ :ref:`\* <l52696768744d6f64756c65-2a>`\ \: (%, \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  from \ :ref:`RightModule <l52696768744d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`\* <l52696768744d6f64756c65-2a>`\ \: (%, \ :ref:`Fraction <l4672616374696f6e>`\  UP) -> % 
+  from \ :ref:`RightModule <l52696768744d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+
+\ :ref:`\* <l52696768744d6f64756c65-2a>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`RightModule <l52696768744d6f64756c65>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`\* <l4c6566744d6f64756c65-2a>`\ \: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , %) -> % 
+  from \ :ref:`LeftModule <l4c6566744d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`\* <l4c6566744d6f64756c65-2a>`\ \: (\ :ref:`Fraction <l4672616374696f6e>`\  UP, %) -> % 
+  from \ :ref:`LeftModule <l4c6566744d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+
+\ :ref:`\* <l4162656c69616e47726f7570-2a>`\ \: (\ :ref:`Integer <l496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`\* <l4162656c69616e4d6f6e6f6964-2a>`\ \: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`\* <l4162656c69616e53656d6947726f7570-2a>`\ \: (\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-2b:
+
+\ :ref:`+ <l4162656c69616e53656d6947726f7570-2b>`\ \: (%, %) -> % 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-2d:
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: % -> % 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: (%, %) -> % 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-2f:
+
+\ :ref:`/ <l4669656c64-2f>`\ \: (%, %) -> % 
+  from \ :ref:`Field <l4669656c64>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-5e:
+
+\ :ref:`^ <l4469766973696f6e52696e67-5e>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  from \ :ref:`DivisionRing <l4469766973696f6e52696e67>`\ 
+
+
+\ :ref:`^ <l4d61676d6157697468556e6974-5e>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+
+\ :ref:`^ <l4d61676d61-5e>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6162736f6c7574656c794972726564756369626c653f:
+
+\ :ref:`absolutelyIrreducible? <l46756e6374696f6e4669656c6443617465676f7279-6162736f6c7574656c794972726564756369626c653f>`\ \: () -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-616c6753706c697453696d706c65:
+
+\ :ref:`algSplitSimple <l46756e6374696f6e4669656c6443617465676f7279-616c6753706c697453696d706c65>`\ \: (%, UP -> UP) -> Record(num: %, den: UP, derivden: UP, gd: UP) 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-616e6e6968696c6174653f:
+
+\ :ref:`annihilate? <l526e67-616e6e6968696c6174653f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Rng <l526e67>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-616e7469436f6d6d757461746f72:
+
+\ :ref:`antiCommutator <l4e6f6e4173736f6369617469766553656d69526e67-616e7469436f6d6d757461746f72>`\ \: (%, %) -> % 
+  from \ :ref:`NonAssociativeSemiRng <l4e6f6e4173736f6369617469766553656d69526e67>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6173736f6369617465733f:
+
+\ :ref:`associates? <l456e7469726552696e67-6173736f6369617465733f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`EntireRing <l456e7469726552696e67>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6173736f636961746f72:
+
+\ :ref:`associator <l4e6f6e4173736f63696174697665526e67-6173736f636961746f72>`\ \: (%, %, %) -> % 
+  from \ :ref:`NonAssociativeRng <l4e6f6e4173736f63696174697665526e67>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6261736973:
+
+\ :ref:`basis <l4672616d65644d6f64756c65-6261736973>`\ \: () -> \ :ref:`Vector <l566563746f72>`\  % 
+  from \ :ref:`FramedModule <l4672616d65644d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6272616e6368506f696e743f:
+
+\ :ref:`branchPoint? <l46756e6374696f6e4669656c6443617465676f7279-6272616e6368506f696e743f>`\ \: F -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+
+\ :ref:`branchPoint? <l46756e6374696f6e4669656c6443617465676f7279-6272616e6368506f696e743f>`\ \: UP -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6272616e6368506f696e744174496e66696e6974793f:
+
+\ :ref:`branchPointAtInfinity? <l46756e6374696f6e4669656c6443617465676f7279-6272616e6368506f696e744174496e66696e6974793f>`\ \: () -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6368617261637465726973746963:
+
+\ :ref:`characteristic <l4e6f6e4173736f6369617469766552696e67-6368617261637465726973746963>`\ \: () -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`NonAssociativeRing <l4e6f6e4173736f6369617469766552696e67>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6368617261637465726973746963506f6c796e6f6d69616c:
+
+\ :ref:`characteristicPolynomial <l46696e69746552616e6b416c6765627261-6368617261637465726973746963506f6c796e6f6d69616c>`\ \: % -> UPUP 
+  from \ :ref:`FiniteRankAlgebra <l46696e69746552616e6b416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-636861727468526f6f74:
+
+\ :ref:`charthRoot <l46696e6974654669656c6443617465676f7279-636861727468526f6f74>`\ \: % -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+
+\ :ref:`charthRoot <l43686172616374657269737469634e6f6e5a65726f-636861727468526f6f74>`\ \: % -> Union(%, failed) if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`CharacteristicNonZero <l43686172616374657269737469634e6f6e5a65726f>`\ 
+  from \ :ref:`CharacteristicNonZero <l43686172616374657269737469634e6f6e5a65726f>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-636f65726365:
+
+\ :ref:`coerce <l416c6765627261-636f65726365>`\ \: % -> % 
+  from \ :ref:`Algebra <l416c6765627261>`\  %
+
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+
+\ :ref:`coerce <l416c6765627261-636f65726365>`\ \: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  -> % 
+  from \ :ref:`Algebra <l416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`coerce <l416c6765627261-636f65726365>`\ \: \ :ref:`Fraction <l4672616374696f6e>`\  UP -> % 
+  from \ :ref:`Algebra <l416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+
+\ :ref:`coerce <l4e6f6e4173736f6369617469766552696e67-636f65726365>`\ \: \ :ref:`Integer <l496e7465676572>`\  -> % 
+  from \ :ref:`NonAssociativeRing <l4e6f6e4173736f6369617469766552696e67>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-636f6d6d757461746f72:
+
+\ :ref:`commutator <l4e6f6e4173736f63696174697665526e67-636f6d6d757461746f72>`\ \: (%, %) -> % 
+  from \ :ref:`NonAssociativeRng <l4e6f6e4173736f63696174697665526e67>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-636f6d706c656d656e746172794261736973:
+
+\ :ref:`complementaryBasis <l46756e6374696f6e4669656c6443617465676f7279-636f6d706c656d656e746172794261736973>`\ \: \ :ref:`Vector <l566563746f72>`\  % -> \ :ref:`Vector <l566563746f72>`\  % 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-636f6e646974696f6e50:
+
+\ :ref:`conditionP <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974-636f6e646974696f6e50>`\ \: \ :ref:`Matrix <l4d6174726978>`\  % -> Union(\ :ref:`Vector <l566563746f72>`\  %, failed) if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`PolynomialFactorizationExplicit <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-636f6e76657274:
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`InputForm <l496e707574466f726d>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> UPUP 
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  UPUP
+
+
+\ :ref:`convert <l4672616d65644d6f64756c65-636f6e76657274>`\ \: % -> \ :ref:`Vector <l566563746f72>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FramedModule <l4672616d65644d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+
+\ :ref:`convert <l4d6f6e6f67656e6963416c6765627261-636f6e76657274>`\ \: UPUP -> % 
+  from \ :ref:`MonogenicAlgebra <l4d6f6e6f67656e6963416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+
+\ :ref:`convert <l4672616d65644d6f64756c65-636f6e76657274>`\ \: \ :ref:`Vector <l566563746f72>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP -> % 
+  from \ :ref:`FramedModule <l4672616d65644d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+.. _l5261646963616c46756e6374696f6e4669656c64-636f6f7264696e61746573:
+
+\ :ref:`coordinates <l4672616d65644d6f64756c65-636f6f7264696e61746573>`\ \: % -> \ :ref:`Vector <l566563746f72>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FramedModule <l4672616d65644d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+
+\ :ref:`coordinates <l46696e69746552616e6b416c6765627261-636f6f7264696e61746573>`\ \: (%, \ :ref:`Vector <l566563746f72>`\  %) -> \ :ref:`Vector <l566563746f72>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FiniteRankAlgebra <l46696e69746552616e6b416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+
+\ :ref:`coordinates <l46696e69746552616e6b416c6765627261-636f6f7264696e61746573>`\ \: (\ :ref:`Vector <l566563746f72>`\  %, \ :ref:`Vector <l566563746f72>`\  %) -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FiniteRankAlgebra <l46696e69746552616e6b416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+
+\ :ref:`coordinates <l4672616d65644d6f64756c65-636f6f7264696e61746573>`\ \: \ :ref:`Vector <l566563746f72>`\  % -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FramedModule <l4672616d65644d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6372656174655072696d6974697665456c656d656e74:
+
+\ :ref:`createPrimitiveElement <l46696e6974654669656c6443617465676f7279-6372656174655072696d6974697665456c656d656e74>`\ \: () -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-44:
+
+\ :ref:`D <l446966666572656e7469616c52696e67-44>`\ \: % -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\ 
+  from \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\ 
+
+
+\ :ref:`D <l446966666572656e7469616c457874656e73696f6e-44>`\ \: (%, \ :ref:`Fraction <l4672616374696f6e>`\  UP -> \ :ref:`Fraction <l4672616374696f6e>`\  UP) -> % 
+  from \ :ref:`DifferentialExtension <l446966666572656e7469616c457874656e73696f6e>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+
+\ :ref:`D <l446966666572656e7469616c457874656e73696f6e-44>`\ \: (%, \ :ref:`Fraction <l4672616374696f6e>`\  UP -> \ :ref:`Fraction <l4672616374696f6e>`\  UP, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  from \ :ref:`DifferentialExtension <l446966666572656e7469616c457874656e73696f6e>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+
+\ :ref:`D <l5061727469616c446966666572656e7469616c52696e67-44>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`D <l5061727469616c446966666572656e7469616c52696e67-44>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`D <l446966666572656e7469616c52696e67-44>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\ 
+  from \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\ 
+
+
+\ :ref:`D <l5061727469616c446966666572656e7469616c52696e67-44>`\ \: (%, \ :ref:`Symbol <l53796d626f6c>`\ ) -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`D <l5061727469616c446966666572656e7469616c52696e67-44>`\ \: (%, \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-646566696e696e67506f6c796e6f6d69616c:
+
+\ :ref:`definingPolynomial <l4d6f6e6f67656e6963416c6765627261-646566696e696e67506f6c796e6f6d69616c>`\ \: () -> UPUP 
+  from \ :ref:`MonogenicAlgebra <l4d6f6e6f67656e6963416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-64657269766174696f6e436f6f7264696e61746573:
+
+\ :ref:`derivationCoordinates <l4d6f6e6f67656e6963416c6765627261-64657269766174696f6e436f6f7264696e61746573>`\ \: (\ :ref:`Vector <l566563746f72>`\  %, \ :ref:`Fraction <l4672616374696f6e>`\  UP -> \ :ref:`Fraction <l4672616374696f6e>`\  UP) -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`MonogenicAlgebra <l4d6f6e6f67656e6963416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-646966666572656e7469617465:
+
+\ :ref:`differentiate <l446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: % -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\ 
+  from \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\ 
+
+
+\ :ref:`differentiate <l446966666572656e7469616c457874656e73696f6e-646966666572656e7469617465>`\ \: (%, \ :ref:`Fraction <l4672616374696f6e>`\  UP -> \ :ref:`Fraction <l4672616374696f6e>`\  UP) -> % 
+  from \ :ref:`DifferentialExtension <l446966666572656e7469616c457874656e73696f6e>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+
+\ :ref:`differentiate <l446966666572656e7469616c457874656e73696f6e-646966666572656e7469617465>`\ \: (%, \ :ref:`Fraction <l4672616374696f6e>`\  UP -> \ :ref:`Fraction <l4672616374696f6e>`\  UP, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  from \ :ref:`DifferentialExtension <l446966666572656e7469616c457874656e73696f6e>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+
+\ :ref:`differentiate <l5061727469616c446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`differentiate <l5061727469616c446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`differentiate <l446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\ 
+  from \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\ 
+
+
+\ :ref:`differentiate <l5061727469616c446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: (%, \ :ref:`Symbol <l53796d626f6c>`\ ) -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`differentiate <l5061727469616c446966666572656e7469616c52696e67-646966666572656e7469617465>`\ \: (%, \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+  from \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+\ :ref:`differentiate <l46756e6374696f6e4669656c6443617465676f7279-646966666572656e7469617465>`\ \: (%, UP -> UP) -> % 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-64697363726574654c6f67:
+
+\ :ref:`discreteLog <l46696e6974654669656c6443617465676f7279-64697363726574654c6f67>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+
+\ :ref:`discreteLog <l4669656c644f665072696d654368617261637465726973746963-64697363726574654c6f67>`\ \: (%, %) -> Union(\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , failed) if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`FieldOfPrimeCharacteristic <l4669656c644f665072696d654368617261637465726973746963>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6469736372696d696e616e74:
+
+\ :ref:`discriminant <l4672616d6564416c6765627261-6469736372696d696e616e74>`\ \: () -> \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FramedAlgebra <l4672616d6564416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+
+\ :ref:`discriminant <l46696e69746552616e6b416c6765627261-6469736372696d696e616e74>`\ \: \ :ref:`Vector <l566563746f72>`\  % -> \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FiniteRankAlgebra <l46696e69746552616e6b416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-646976696465:
+
+\ :ref:`divide <l4575636c696465616e446f6d61696e-646976696465>`\ \: (%, %) -> Record(quotient: %, remainder: %) 
+  from \ :ref:`EuclideanDomain <l4575636c696465616e446f6d61696e>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-656c6c6970746963:
+
+\ :ref:`elliptic <l46756e6374696f6e4669656c6443617465676f7279-656c6c6970746963>`\ \: () -> Union(UP, failed) 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-656c74:
+
+\ :ref:`elt <l46756e6374696f6e4669656c6443617465676f7279-656c74>`\ \: (%, F, F) -> F 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-656e756d6572617465:
+
+\ :ref:`enumerate <l46696e697465-656e756d6572617465>`\ \: () -> \ :ref:`List <l4c697374>`\  % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6575636c696465616e53697a65:
+
+\ :ref:`euclideanSize <l4575636c696465616e446f6d61696e-6575636c696465616e53697a65>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`EuclideanDomain <l4575636c696465616e446f6d61696e>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-65787072657373496465616c4d656d626572:
+
+\ :ref:`expressIdealMember <l5072696e636970616c496465616c446f6d61696e-65787072657373496465616c4d656d626572>`\ \: (\ :ref:`List <l4c697374>`\  %, %) -> Union(\ :ref:`List <l4c697374>`\  %, failed) 
+  from \ :ref:`PrincipalIdealDomain <l5072696e636970616c496465616c446f6d61696e>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-657871756f:
+
+\ :ref:`exquo <l456e7469726552696e67-657871756f>`\ \: (%, %) -> Union(%, failed) 
+  from \ :ref:`EntireRing <l456e7469726552696e67>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-657874656e6465644575636c696465616e:
+
+\ :ref:`extendedEuclidean <l4575636c696465616e446f6d61696e-657874656e6465644575636c696465616e>`\ \: (%, %) -> Record(coef1: %, coef2: %, generator: %) 
+  from \ :ref:`EuclideanDomain <l4575636c696465616e446f6d61696e>`\ 
+
+
+\ :ref:`extendedEuclidean <l4575636c696465616e446f6d61696e-657874656e6465644575636c696465616e>`\ \: (%, %, %) -> Union(Record(coef1: %, coef2: %), failed) 
+  from \ :ref:`EuclideanDomain <l4575636c696465616e446f6d61696e>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-666163746f72:
+
+\ :ref:`factor <l556e69717565466163746f72697a6174696f6e446f6d61696e-666163746f72>`\ \: % -> \ :ref:`Factored <l466163746f726564>`\  % 
+  from \ :ref:`UniqueFactorizationDomain <l556e69717565466163746f72697a6174696f6e446f6d61696e>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-666163746f72506f6c796e6f6d69616c:
+
+\ :ref:`factorPolynomial <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974-666163746f72506f6c796e6f6d69616c>`\ \: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  % -> \ :ref:`Factored <l466163746f726564>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`PolynomialFactorizationExplicit <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-666163746f72734f664379636c696347726f757053697a65:
+
+\ :ref:`factorsOfCyclicGroupSize <l46696e6974654669656c6443617465676f7279-666163746f72734f664379636c696347726f757053697a65>`\ \: () -> \ :ref:`List <l4c697374>`\  Record(factor: \ :ref:`Integer <l496e7465676572>`\ , exponent: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-666163746f7253717561726546726565506f6c796e6f6d69616c:
+
+\ :ref:`factorSquareFreePolynomial <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974-666163746f7253717561726546726565506f6c796e6f6d69616c>`\ \: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  % -> \ :ref:`Factored <l466163746f726564>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`PolynomialFactorizationExplicit <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-676364:
+
+\ :ref:`gcd <l476364446f6d61696e-676364>`\ \: (%, %) -> % 
+  from \ :ref:`GcdDomain <l476364446f6d61696e>`\ 
+
+
+\ :ref:`gcd <l476364446f6d61696e-676364>`\ \: \ :ref:`List <l4c697374>`\  % -> % 
+  from \ :ref:`GcdDomain <l476364446f6d61696e>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-676364506f6c796e6f6d69616c:
+
+\ :ref:`gcdPolynomial <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974-676364506f6c796e6f6d69616c>`\ \: (\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  %, \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  %) -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  % 
+  from \ :ref:`PolynomialFactorizationExplicit <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-67656e657261746f72:
+
+\ :ref:`generator <l4d6f6e6f67656e6963416c6765627261-67656e657261746f72>`\ \: () -> % 
+  from \ :ref:`MonogenicAlgebra <l4d6f6e6f67656e6963416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-67656e7573:
+
+\ :ref:`genus <l46756e6374696f6e4669656c6443617465676f7279-67656e7573>`\ \: () -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-68617368:
+
+\ :ref:`hash <l4861736861626c65-68617368>`\ \: % -> \ :ref:`SingleInteger <l53696e676c65496e7465676572>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`Hashable <l4861736861626c65>`\ 
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6861736855706461746521:
+
+\ :ref:`hashUpdate! <l4861736861626c65-6861736855706461746521>`\ \: (\ :ref:`HashState <l486173685374617465>`\ , %) -> \ :ref:`HashState <l486173685374617465>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`Hashable <l4861736861626c65>`\ 
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6879706572656c6c6970746963:
+
+\ :ref:`hyperelliptic <l46756e6374696f6e4669656c6443617465676f7279-6879706572656c6c6970746963>`\ \: () -> Union(UP, failed) 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-696e646578:
+
+\ :ref:`index <l46696e697465-696e646578>`\ \: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-696e6974:
+
+\ :ref:`init <l537465705468726f756768-696e6974>`\ \: % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`StepThrough <l537465705468726f756768>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-696e74656772616c3f:
+
+\ :ref:`integral? <l46756e6374696f6e4669656c6443617465676f7279-696e74656772616c3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+
+\ :ref:`integral? <l46756e6374696f6e4669656c6443617465676f7279-696e74656772616c3f>`\ \: (%, F) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+
+\ :ref:`integral? <l46756e6374696f6e4669656c6443617465676f7279-696e74656772616c3f>`\ \: (%, UP) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-696e74656772616c4174496e66696e6974793f:
+
+\ :ref:`integralAtInfinity? <l46756e6374696f6e4669656c6443617465676f7279-696e74656772616c4174496e66696e6974793f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-696e74656772616c4261736973:
+
+\ :ref:`integralBasis <l46756e6374696f6e4669656c6443617465676f7279-696e74656772616c4261736973>`\ \: () -> \ :ref:`Vector <l566563746f72>`\  % 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-696e74656772616c42617369734174496e66696e697479:
+
+\ :ref:`integralBasisAtInfinity <l46756e6374696f6e4669656c6443617465676f7279-696e74656772616c42617369734174496e66696e697479>`\ \: () -> \ :ref:`Vector <l566563746f72>`\  % 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-696e74656772616c436f6f7264696e61746573:
+
+\ :ref:`integralCoordinates <l46756e6374696f6e4669656c6443617465676f7279-696e74656772616c436f6f7264696e61746573>`\ \: % -> Record(num: \ :ref:`Vector <l566563746f72>`\  UP, den: UP) 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-696e74656772616c44657269766174696f6e4d6174726978:
+
+\ :ref:`integralDerivationMatrix <l46756e6374696f6e4669656c6443617465676f7279-696e74656772616c44657269766174696f6e4d6174726978>`\ \: (UP -> UP) -> Record(num: \ :ref:`Matrix <l4d6174726978>`\  UP, den: UP) 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-696e74656772616c4d6174726978:
+
+\ :ref:`integralMatrix <l46756e6374696f6e4669656c6443617465676f7279-696e74656772616c4d6174726978>`\ \: () -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-696e74656772616c4d61747269784174496e66696e697479:
+
+\ :ref:`integralMatrixAtInfinity <l46756e6374696f6e4669656c6443617465676f7279-696e74656772616c4d61747269784174496e66696e697479>`\ \: () -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-696e74656772616c526570726573656e7473:
+
+\ :ref:`integralRepresents <l46756e6374696f6e4669656c6443617465676f7279-696e74656772616c526570726573656e7473>`\ \: (\ :ref:`Vector <l566563746f72>`\  UP, UP) -> % 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-696e76:
+
+\ :ref:`inv <l4469766973696f6e52696e67-696e76>`\ \: % -> % 
+  from \ :ref:`DivisionRing <l4469766973696f6e52696e67>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-696e7665727365496e74656772616c4d6174726978:
+
+\ :ref:`inverseIntegralMatrix <l46756e6374696f6e4669656c6443617465676f7279-696e7665727365496e74656772616c4d6174726978>`\ \: () -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-696e7665727365496e74656772616c4d61747269784174496e66696e697479:
+
+\ :ref:`inverseIntegralMatrixAtInfinity <l46756e6374696f6e4669656c6443617465676f7279-696e7665727365496e74656772616c4d61747269784174496e66696e697479>`\ \: () -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6c636d:
+
+\ :ref:`lcm <l476364446f6d61696e-6c636d>`\ \: (%, %) -> % 
+  from \ :ref:`GcdDomain <l476364446f6d61696e>`\ 
+
+
+\ :ref:`lcm <l476364446f6d61696e-6c636d>`\ \: \ :ref:`List <l4c697374>`\  % -> % 
+  from \ :ref:`GcdDomain <l476364446f6d61696e>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6c636d436f6566:
+
+\ :ref:`lcmCoef <l4c6566744f726552696e67-6c636d436f6566>`\ \: (%, %) -> Record(llcm_res: %, coeff1: %, coeff2: %) 
+  from \ :ref:`LeftOreRing <l4c6566744f726552696e67>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6c656674506f776572:
+
+\ :ref:`leftPower <l4d61676d6157697468556e6974-6c656674506f776572>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+
+\ :ref:`leftPower <l4d61676d61-6c656674506f776572>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6c6566745265636970:
+
+\ :ref:`leftRecip <l4d61676d6157697468556e6974-6c6566745265636970>`\ \: % -> Union(%, failed) 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6c696674:
+
+\ :ref:`lift <l4d6f6e6f67656e6963416c6765627261-6c696674>`\ \: % -> UPUP 
+  from \ :ref:`MonogenicAlgebra <l4d6f6e6f67656e6963416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6c6f6f6b7570:
+
+\ :ref:`lookup <l46696e697465-6c6f6f6b7570>`\ \: % -> \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6d696e696d616c506f6c796e6f6d69616c:
+
+\ :ref:`minimalPolynomial <l46696e69746552616e6b416c6765627261-6d696e696d616c506f6c796e6f6d69616c>`\ \: % -> UPUP 
+  from \ :ref:`FiniteRankAlgebra <l46696e69746552616e6b416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6d756c74694575636c696465616e:
+
+\ :ref:`multiEuclidean <l4575636c696465616e446f6d61696e-6d756c74694575636c696465616e>`\ \: (\ :ref:`List <l4c697374>`\  %, %) -> Union(\ :ref:`List <l4c697374>`\  %, failed) 
+  from \ :ref:`EuclideanDomain <l4575636c696465616e446f6d61696e>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6e6578744974656d:
+
+\ :ref:`nextItem <l537465705468726f756768-6e6578744974656d>`\ \: % -> Union(%, failed) if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`StepThrough <l537465705468726f756768>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6e6f6e53696e67756c61724d6f64656c:
+
+\ :ref:`nonSingularModel <l46756e6374696f6e4669656c6443617465676f7279-6e6f6e53696e67756c61724d6f64656c>`\ \: \ :ref:`Symbol <l53796d626f6c>`\  -> \ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  F if F has \ :ref:`Field <l4669656c64>`\ 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6e6f726d:
+
+\ :ref:`norm <l46696e69746552616e6b416c6765627261-6e6f726d>`\ \: % -> \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FiniteRankAlgebra <l46696e69746552616e6b416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6e6f726d616c697a654174496e66696e697479:
+
+\ :ref:`normalizeAtInfinity <l46756e6374696f6e4669656c6443617465676f7279-6e6f726d616c697a654174496e66696e697479>`\ \: \ :ref:`Vector <l566563746f72>`\  % -> \ :ref:`Vector <l566563746f72>`\  % 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6e756d6265724f66436f6d706f6e656e7473:
+
+\ :ref:`numberOfComponents <l46756e6374696f6e4669656c6443617465676f7279-6e756d6265724f66436f6d706f6e656e7473>`\ \: () -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6f6e653f:
+
+\ :ref:`one? <l4d61676d6157697468556e6974-6f6e653f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6f70706f736974653f:
+
+\ :ref:`opposite? <l4162656c69616e4d6f6e6f6964-6f70706f736974653f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-6f72646572:
+
+\ :ref:`order <l4669656c644f665072696d654368617261637465726973746963-6f72646572>`\ \: % -> \ :ref:`OnePointCompletion <l4f6e65506f696e74436f6d706c6574696f6e>`\  \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`FieldOfPrimeCharacteristic <l4669656c644f665072696d654368617261637465726973746963>`\ 
+
+
+\ :ref:`order <l46696e6974654669656c6443617465676f7279-6f72646572>`\ \: % -> \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-706c656e617279506f776572:
+
+\ :ref:`plenaryPower <l4e6f6e4173736f63696174697665416c6765627261-706c656e617279506f776572>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % 
+  from \ :ref:`NonAssociativeAlgebra <l4e6f6e4173736f63696174697665416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7072696d653f:
+
+\ :ref:`prime? <l556e69717565466163746f72697a6174696f6e446f6d61696e-7072696d653f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`UniqueFactorizationDomain <l556e69717565466163746f72697a6174696f6e446f6d61696e>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7072696d6546726f62656e697573:
+
+\ :ref:`primeFrobenius <l4669656c644f665072696d654368617261637465726973746963-7072696d6546726f62656e697573>`\ \: % -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`FieldOfPrimeCharacteristic <l4669656c644f665072696d654368617261637465726973746963>`\ 
+
+
+\ :ref:`primeFrobenius <l4669656c644f665072696d654368617261637465726973746963-7072696d6546726f62656e697573>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`FieldOfPrimeCharacteristic <l4669656c644f665072696d654368617261637465726973746963>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7072696d69746976653f:
+
+\ :ref:`primitive? <l46696e6974654669656c6443617465676f7279-7072696d69746976653f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7072696d6974697665456c656d656e74:
+
+\ :ref:`primitiveElement <l46696e6974654669656c6443617465676f7279-7072696d6974697665456c656d656e74>`\ \: () -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7072696d697469766550617274:
+
+\ :ref:`primitivePart <l46756e6374696f6e4669656c6443617465676f7279-7072696d697469766550617274>`\ \: % -> % 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7072696e636970616c496465616c:
+
+\ :ref:`principalIdeal <l5072696e636970616c496465616c446f6d61696e-7072696e636970616c496465616c>`\ \: \ :ref:`List <l4c697374>`\  % -> Record(coef: \ :ref:`List <l4c697374>`\  %, generator: %) 
+  from \ :ref:`PrincipalIdealDomain <l5072696e636970616c496465616c446f6d61696e>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-71756f:
+
+\ :ref:`quo <l4575636c696465616e446f6d61696e-71756f>`\ \: (%, %) -> % 
+  from \ :ref:`EuclideanDomain <l4575636c696465616e446f6d61696e>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-72616d69666965643f:
+
+\ :ref:`ramified? <l46756e6374696f6e4669656c6443617465676f7279-72616d69666965643f>`\ \: F -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+
+\ :ref:`ramified? <l46756e6374696f6e4669656c6443617465676f7279-72616d69666965643f>`\ \: UP -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-72616d69666965644174496e66696e6974793f:
+
+\ :ref:`ramifiedAtInfinity? <l46756e6374696f6e4669656c6443617465676f7279-72616d69666965644174496e66696e6974793f>`\ \: () -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-72616e646f6d:
+
+\ :ref:`random <l46696e697465-72616e646f6d>`\ \: () -> % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-72616e6b:
+
+\ :ref:`rank <l4672616d65644d6f64756c65-72616e6b>`\ \: () -> \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  
+  from \ :ref:`FramedModule <l4672616d65644d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+.. _l5261646963616c46756e6374696f6e4669656c64-726174696f6e616c506f696e743f:
+
+\ :ref:`rationalPoint? <l46756e6374696f6e4669656c6443617465676f7279-726174696f6e616c506f696e743f>`\ \: (F, F) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-726174696f6e616c506f696e7473:
+
+\ :ref:`rationalPoints <l46756e6374696f6e4669656c6443617465676f7279-726174696f6e616c506f696e7473>`\ \: () -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  F if F has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7265636970:
+
+\ :ref:`recip <l4d61676d6157697468556e6974-7265636970>`\ \: % -> Union(%, failed) 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-726564756365:
+
+\ :ref:`reduce <l4d6f6e6f67656e6963416c6765627261-726564756365>`\ \: \ :ref:`Fraction <l4672616374696f6e>`\  UPUP -> Union(%, failed) 
+  from \ :ref:`MonogenicAlgebra <l4d6f6e6f67656e6963416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+
+\ :ref:`reduce <l4d6f6e6f67656e6963416c6765627261-726564756365>`\ \: UPUP -> % 
+  from \ :ref:`MonogenicAlgebra <l4d6f6e6f67656e6963416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-72656475636542617369734174496e66696e697479:
+
+\ :ref:`reduceBasisAtInfinity <l46756e6374696f6e4669656c6443617465676f7279-72656475636542617369734174496e66696e697479>`\ \: \ :ref:`Vector <l566563746f72>`\  % -> \ :ref:`Vector <l566563746f72>`\  % 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7265647563656453797374656d:
+
+\ :ref:`reducedSystem <l4c696e6561726c794578706c696369744f766572-7265647563656453797374656d>`\ \: (\ :ref:`Matrix <l4d6174726978>`\  %, \ :ref:`Vector <l566563746f72>`\  %) -> Record(mat: \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP, vec: \ :ref:`Vector <l566563746f72>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP) 
+  from \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+
+\ :ref:`reducedSystem <l4c696e6561726c794578706c696369744f766572-7265647563656453797374656d>`\ \: (\ :ref:`Matrix <l4d6174726978>`\  %, \ :ref:`Vector <l566563746f72>`\  %) -> Record(mat: \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Integer <l496e7465676572>`\ , vec: \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ ) if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`reducedSystem <l4c696e6561726c794578706c696369744f766572-7265647563656453797374656d>`\ \: \ :ref:`Matrix <l4d6174726978>`\  % -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+
+\ :ref:`reducedSystem <l4c696e6561726c794578706c696369744f766572-7265647563656453797374656d>`\ \: \ :ref:`Matrix <l4d6174726978>`\  % -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Integer <l496e7465676572>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-726567756c6172526570726573656e746174696f6e:
+
+\ :ref:`regularRepresentation <l4672616d6564416c6765627261-726567756c6172526570726573656e746174696f6e>`\ \: % -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FramedAlgebra <l4672616d6564416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+
+\ :ref:`regularRepresentation <l46696e69746552616e6b416c6765627261-726567756c6172526570726573656e746174696f6e>`\ \: (%, \ :ref:`Vector <l566563746f72>`\  %) -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FiniteRankAlgebra <l46696e69746552616e6b416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-72656d:
+
+\ :ref:`rem <l4575636c696465616e446f6d61696e-72656d>`\ \: (%, %) -> % 
+  from \ :ref:`EuclideanDomain <l4575636c696465616e446f6d61696e>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-726570726573656e746174696f6e54797065:
+
+\ :ref:`representationType <l46696e6974654669656c6443617465676f7279-726570726573656e746174696f6e54797065>`\ \: () -> Union(prime, polynomial, normal, cyclic) if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-726570726573656e7473:
+
+\ :ref:`represents <l46696e69746552616e6b416c6765627261-726570726573656e7473>`\ \: (\ :ref:`Vector <l566563746f72>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP, \ :ref:`Vector <l566563746f72>`\  %) -> % 
+  from \ :ref:`FiniteRankAlgebra <l46696e69746552616e6b416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+
+\ :ref:`represents <l46756e6374696f6e4669656c6443617465676f7279-726570726573656e7473>`\ \: (\ :ref:`Vector <l566563746f72>`\  UP, UP) -> % 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+
+\ :ref:`represents <l4672616d65644d6f64756c65-726570726573656e7473>`\ \: \ :ref:`Vector <l566563746f72>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP -> % 
+  from \ :ref:`FramedModule <l4672616d65644d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+.. _l5261646963616c46756e6374696f6e4669656c64-72657472616374:
+
+\ :ref:`retract <l5265747261637461626c65546f-72657472616374>`\ \: % -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`retract <l5265747261637461626c65546f-72657472616374>`\ \: % -> \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+
+\ :ref:`retract <l5265747261637461626c65546f-72657472616374>`\ \: % -> \ :ref:`Integer <l496e7465676572>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-72657472616374496643616e:
+
+\ :ref:`retractIfCan <l5265747261637461626c65546f-72657472616374496643616e>`\ \: % -> Union(\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , failed) if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+\ :ref:`retractIfCan <l5265747261637461626c65546f-72657472616374496643616e>`\ \: % -> Union(\ :ref:`Fraction <l4672616374696f6e>`\  UP, failed) 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+
+\ :ref:`retractIfCan <l5265747261637461626c65546f-72657472616374496643616e>`\ \: % -> Union(\ :ref:`Integer <l496e7465676572>`\ , failed) if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7269676874506f776572:
+
+\ :ref:`rightPower <l4d61676d6157697468556e6974-7269676874506f776572>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+
+\ :ref:`rightPower <l4d61676d61-7269676874506f776572>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-72696768745265636970:
+
+\ :ref:`rightRecip <l4d61676d6157697468556e6974-72696768745265636970>`\ \: % -> Union(%, failed) 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-73616d706c65:
+
+\ :ref:`sample <l4162656c69616e4d6f6e6f6964-73616d706c65>`\ \: % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-73696e67756c61723f:
+
+\ :ref:`singular? <l46756e6374696f6e4669656c6443617465676f7279-73696e67756c61723f>`\ \: F -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+
+\ :ref:`singular? <l46756e6374696f6e4669656c6443617465676f7279-73696e67756c61723f>`\ \: UP -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-73696e67756c61724174496e66696e6974793f:
+
+\ :ref:`singularAtInfinity? <l46756e6374696f6e4669656c6443617465676f7279-73696e67756c61724174496e66696e6974793f>`\ \: () -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-73697a65:
+
+\ :ref:`size <l46696e697465-73697a65>`\ \: () -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-73697a654c6573733f:
+
+\ :ref:`sizeLess? <l4575636c696465616e446f6d61696e-73697a654c6573733f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`EuclideanDomain <l4575636c696465616e446f6d61696e>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-736d616c6c65723f:
+
+\ :ref:`smaller? <l436f6d70617261626c65-736d616c6c65723f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-736f6c76654c696e656172506f6c796e6f6d69616c4571756174696f6e:
+
+\ :ref:`solveLinearPolynomialEquation <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974-736f6c76654c696e656172506f6c796e6f6d69616c4571756174696f6e>`\ \: (\ :ref:`List <l4c697374>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  %, \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  %) -> Union(\ :ref:`List <l4c697374>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  %, failed) if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`PolynomialFactorizationExplicit <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7370656369616c5f6f72646572:
+
+\ :ref:`special_order <l46756e6374696f6e4669656c6443617465676f7279-7370656369616c5f6f72646572>`\ \: (%, \ :ref:`List <l4c697374>`\  UP) -> \ :ref:`Integer <l496e7465676572>`\  
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-73717561726546726565:
+
+\ :ref:`squareFree <l556e69717565466163746f72697a6174696f6e446f6d61696e-73717561726546726565>`\ \: % -> \ :ref:`Factored <l466163746f726564>`\  % 
+  from \ :ref:`UniqueFactorizationDomain <l556e69717565466163746f72697a6174696f6e446f6d61696e>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7371756172654672656550617274:
+
+\ :ref:`squareFreePart <l556e69717565466163746f72697a6174696f6e446f6d61696e-7371756172654672656550617274>`\ \: % -> % 
+  from \ :ref:`UniqueFactorizationDomain <l556e69717565466163746f72697a6174696f6e446f6d61696e>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-73717561726546726565506f6c796e6f6d69616c:
+
+\ :ref:`squareFreePolynomial <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974-73717561726546726565506f6c796e6f6d69616c>`\ \: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  % -> \ :ref:`Factored <l466163746f726564>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  % if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`PolynomialFactorizationExplicit <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7375627472616374496643616e:
+
+\ :ref:`subtractIfCan <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964-7375627472616374496643616e>`\ \: (%, %) -> Union(%, failed) 
+  from \ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7461626c65466f7244697363726574654c6f6761726974686d:
+
+\ :ref:`tableForDiscreteLogarithm <l46696e6974654669656c6443617465676f7279-7461626c65466f7244697363726574654c6f6761726974686d>`\ \: \ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`Table <l5461626c65>`\ (\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+  from \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7472616365:
+
+\ :ref:`trace <l46696e69746552616e6b416c6765627261-7472616365>`\ \: % -> \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FiniteRankAlgebra <l46696e69746552616e6b416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-74726163654d6174726978:
+
+\ :ref:`traceMatrix <l4672616d6564416c6765627261-74726163654d6174726978>`\ \: () -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FramedAlgebra <l4672616d6564416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+
+\ :ref:`traceMatrix <l46696e69746552616e6b416c6765627261-74726163654d6174726978>`\ \: \ :ref:`Vector <l566563746f72>`\  % -> \ :ref:`Matrix <l4d6174726978>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+  from \ :ref:`FiniteRankAlgebra <l46696e69746552616e6b416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-756e69743f:
+
+\ :ref:`unit? <l456e7469726552696e67-756e69743f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`EntireRing <l456e7469726552696e67>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-756e697443616e6f6e6963616c:
+
+\ :ref:`unitCanonical <l456e7469726552696e67-756e697443616e6f6e6963616c>`\ \: % -> % 
+  from \ :ref:`EntireRing <l456e7469726552696e67>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-756e69744e6f726d616c:
+
+\ :ref:`unitNormal <l456e7469726552696e67-756e69744e6f726d616c>`\ \: % -> Record(unit: %, canonical: %, associate: %) 
+  from \ :ref:`EntireRing <l456e7469726552696e67>`\ 
+
+.. _l5261646963616c46756e6374696f6e4669656c64-79436f6f7264696e61746573:
+
+\ :ref:`yCoordinates <l46756e6374696f6e4669656c6443617465676f7279-79436f6f7264696e61746573>`\ \: % -> Record(num: \ :ref:`Vector <l566563746f72>`\  UP, den: UP) 
+  from \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+.. _l5261646963616c46756e6374696f6e4669656c64-7a65726f3f:
+
+\ :ref:`zero? <l4162656c69616e4d6f6e6f6964-7a65726f3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\  
+
+\ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  
+
+\ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\  
+
+\ :ref:`Algebra <l416c6765627261>`\  % 
+
+\ :ref:`Algebra <l416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  
+
+\ :ref:`Algebra <l416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`BiModule <l42694d6f64756c65>`\ (%, %) 
+
+\ :ref:`BiModule <l42694d6f64756c65>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ) 
+
+\ :ref:`BiModule <l42694d6f64756c65>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, \ :ref:`Fraction <l4672616374696f6e>`\  UP) 
+
+\ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\  
+
+\ :ref:`canonicalsClosed <l63616e6f6e6963616c73436c6f736564>`\  
+
+\ :ref:`canonicalUnitNormal <l63616e6f6e6963616c556e69744e6f726d616c>`\  
+
+\ :ref:`CharacteristicNonZero <l43686172616374657269737469634e6f6e5a65726f>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`CharacteristicNonZero <l43686172616374657269737469634e6f6e5a65726f>`\ 
+
+\ :ref:`CharacteristicZero <l43686172616374657269737469635a65726f>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`CharacteristicZero <l43686172616374657269737469635a65726f>`\ 
+
+\ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+
+\ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  \ :ref:`Integer <l496e7465676572>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\  
+
+\ :ref:`CommutativeStar <l436f6d6d7574617469766553746172>`\  
+
+\ :ref:`Comparable <l436f6d70617261626c65>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`Finite <l46696e697465>`\ 
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`Finite <l46696e697465>`\ 
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  UPUP 
+
+\ :ref:`DifferentialExtension <l446966666572656e7469616c457874656e73696f6e>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+
+\ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`DifferentialRing <l446966666572656e7469616c52696e67>`\ 
+
+\ :ref:`DivisionRing <l4469766973696f6e52696e67>`\  
+
+\ :ref:`EntireRing <l456e7469726552696e67>`\  
+
+\ :ref:`EuclideanDomain <l4575636c696465616e446f6d61696e>`\  
+
+\ :ref:`Field <l4669656c64>`\  
+
+\ :ref:`FieldOfPrimeCharacteristic <l4669656c644f665072696d654368617261637465726973746963>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+\ :ref:`Finite <l46696e697465>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`Finite <l46696e697465>`\ 
+
+\ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+\ :ref:`FiniteRankAlgebra <l46696e69746552616e6b416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP) 
+
+\ :ref:`FramedAlgebra <l4672616d6564416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP) 
+
+\ :ref:`FramedModule <l4672616d65644d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+
+\ :ref:`FullyLinearlyExplicitOver <l46756c6c794c696e6561726c794578706c696369744f766572>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+
+\ :ref:`FullyRetractableTo <l46756c6c795265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+
+\ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP) 
+
+\ :ref:`GcdDomain <l476364446f6d61696e>`\  
+
+\ :ref:`Hashable <l4861736861626c65>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`Hashable <l4861736861626c65>`\ 
+
+\ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\  
+
+\ :ref:`LeftModule <l4c6566744d6f64756c65>`\  % 
+
+\ :ref:`LeftModule <l4c6566744d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  
+
+\ :ref:`LeftModule <l4c6566744d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+
+\ :ref:`LeftOreRing <l4c6566744f726552696e67>`\  
+
+\ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+
+\ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`Magma <l4d61676d61>`\  
+
+\ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\  
+
+\ :ref:`Module <l4d6f64756c65>`\  % 
+
+\ :ref:`Module <l4d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  
+
+\ :ref:`Module <l4d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+
+\ :ref:`MonogenicAlgebra <l4d6f6e6f67656e6963416c6765627261>`\ (\ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP) 
+
+\ :ref:`Monoid <l4d6f6e6f6964>`\  
+
+\ :ref:`NonAssociativeAlgebra <l4e6f6e4173736f63696174697665416c6765627261>`\  % 
+
+\ :ref:`NonAssociativeAlgebra <l4e6f6e4173736f63696174697665416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  
+
+\ :ref:`NonAssociativeAlgebra <l4e6f6e4173736f63696174697665416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+
+\ :ref:`NonAssociativeRing <l4e6f6e4173736f6369617469766552696e67>`\  
+
+\ :ref:`NonAssociativeRng <l4e6f6e4173736f63696174697665526e67>`\  
+
+\ :ref:`NonAssociativeSemiRing <l4e6f6e4173736f6369617469766553656d6952696e67>`\  
+
+\ :ref:`NonAssociativeSemiRng <l4e6f6e4173736f6369617469766553656d69526e67>`\  
+
+\ :ref:`noZeroDivisors <l6e6f5a65726f44697669736f7273>`\  
+
+\ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`PartialDifferentialRing <l5061727469616c446966666572656e7469616c52696e67>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+\ :ref:`PolynomialFactorizationExplicit <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+\ :ref:`PrincipalIdealDomain <l5072696e636970616c496465616c446f6d61696e>`\  
+
+\ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+
+\ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`RightModule <l52696768744d6f64756c65>`\  % 
+
+\ :ref:`RightModule <l52696768744d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  
+
+\ :ref:`RightModule <l52696768744d6f64756c65>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP 
+
+\ :ref:`RightModule <l52696768744d6f64756c65>`\  \ :ref:`Integer <l496e7465676572>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+\ :ref:`Ring <l52696e67>`\  
+
+\ :ref:`Rng <l526e67>`\  
+
+\ :ref:`SemiGroup <l53656d6947726f7570>`\  
+
+\ :ref:`SemiRing <l53656d6952696e67>`\  
+
+\ :ref:`SemiRng <l53656d69526e67>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+
+\ :ref:`StepThrough <l537465705468726f756768>`\  if \ :ref:`Fraction <l4672616374696f6e>`\  UP has \ :ref:`FiniteFieldCategory <l46696e6974654669656c6443617465676f7279>`\ 
+
+\ :ref:`TwoSidedRecip <l54776f53696465645265636970>`\  
+
+\ :ref:`UniqueFactorizationDomain <l556e69717565466163746f72697a6174696f6e446f6d61696e>`\  
+
+\ :ref:`unitsKnown <l756e6974734b6e6f776e>`\  
+

@@ -1,0 +1,83 @@
+.. index:: NaiveBeckermannLabahnModular
+
+.. _l4e616976654265636b65726d616e6e4c616261686e4d6f64756c6172:
+
+NaiveBeckermannLabahnModular
+============================
+
+:viewcode:`modhpsol.spad line 1 <modhpsol.spad#L1>` :editcode:`[edit on github] <modhpsol.spad#L1>`
+
+
+This package solves (multipoint) Hermite-Pade interpolation problem over \$\ ``Z_p``\ \$, where \$\ ``p``\ \$ is machine sized prime. We use quadratic algorithm from 94 Beckermann and Labahn paper (with modification to handle multipoint case).
+
+
+.. _l4e616976654265636b65726d616e6e4c616261686e4d6f64756c6172-6e616976654265636b65726d616e6e4c616261686e30:
+
+.. index::
+   pair: NaiveBeckermannLabahnModular; naiveBeckermannLabahn0
+
+:spadfun:`naiveBeckermannLabahn0`\: (\ :ref:`Vector <l566563746f72>`\  \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Vector <l566563746f72>`\  \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`Integer <l496e7465676572>`\ , (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\ , (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  main solver routine
+
+.. _l4e616976654265636b65726d616e6e4c616261686e4d6f64756c6172-6e616976654265636b65726d616e6e4c616261686e31:
+
+.. index::
+   pair: NaiveBeckermannLabahnModular; naiveBeckermannLabahn1
+
+:spadfun:`naiveBeckermannLabahn1`\: (\ :ref:`Vector <l566563746f72>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`Integer <l496e7465676572>`\ , (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\ , (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Any <l416e79>`\  
+  
+
+
+.. index::
+   pair: NaiveBeckermannLabahnModular; naiveBeckermannLabahn1
+
+:spadfun:`naiveBeckermannLabahn1`\: (\ :ref:`Vector <l566563746f72>`\  \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`Integer <l496e7465676572>`\ , (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\ , (\ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Any <l416e79>`\  
+  
+
+.. _l4e616976654265636b65726d616e6e4c616261686e4d6f64756c6172-6e616976654265636b65726d616e6e4c616261686e:
+
+.. index::
+   pair: NaiveBeckermannLabahnModular; naiveBeckermannLabahn
+
+:spadfun:`naiveBeckermannLabahn`\: (\ :ref:`Vector <l566563746f72>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Any <l416e79>`\  
+  \ ``naiveBeckermannLabahn(f, degs, sigma, p)``\  solves modulo \$\ ``p``\ \$ Hermite-Pade interpolation problem of order \$\ ``sigma``\ \$. \$\ ``degs``\ \$ specifies degree bounds for solution. The first element of result contains \ ``sigma``\ -basis. The second gives defects of elements of \ ``sigma``\ -basis. The third one contains residuals \ ``--``\  we stop updating solution if this would violate degree bounds, so residual is zero for elements of \ ``sigma``\ -basis which are within bounds, but non-zero otherwise.
+
+
+.. index::
+   pair: NaiveBeckermannLabahnModular; naiveBeckermannLabahn
+
+:spadfun:`naiveBeckermannLabahn`\: (\ :ref:`Vector <l566563746f72>`\  \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Any <l416e79>`\  
+  \ ``naiveBeckermannLabahn(f, degs, sigma, p)``\  solves modulo \$\ ``p``\ \$ Hermite-Pade interpolation problem of order \$\ ``sigma``\ \$. \$\ ``degs``\ \$ specifies degree bounds for solution. The first element of result contains \ ``sigma``\ -basis. The second gives defects of elements of \ ``sigma``\ -basis. The third one contains residuals \ ``--``\  we stop updating solution if this would violate degree bounds, so residual is zero for elements of \ ``sigma``\ -basis which are within bounds, but non-zero otherwise.
+
+.. _l4e616976654265636b65726d616e6e4c616261686e4d6f64756c6172-6e616976654265636b65726d616e6e4c616261686e4d756c7469706f696e74:
+
+.. index::
+   pair: NaiveBeckermannLabahnModular; naiveBeckermannLabahnMultipoint
+
+:spadfun:`naiveBeckermannLabahnMultipoint`\: (\ :ref:`Vector <l566563746f72>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Any <l416e79>`\  
+  \ ``naiveBeckermannLabahnMultipoint(f, degs, sigma, p)``\  solves modulo \$\ ``p``\ \$ multipoint Hermite-Pade interpolation problem of order \$\ ``sigma``\ \$. \$\ ``degs``\ \$ specifies degree bounds for solution. The first element of result contains \ ``sigma``\ -basis. The second gives defects of elements of \ ``sigma``\ -basis. The third one contains residuals \ ``--``\  we stop updating solution if this would violate degree bounds, so residual is zero for elements of \ ``sigma``\ -basis which are within bounds, but non-zero otherwise.
+
+
+.. index::
+   pair: NaiveBeckermannLabahnModular; naiveBeckermannLabahnMultipoint
+
+:spadfun:`naiveBeckermannLabahnMultipoint`\: (\ :ref:`Vector <l566563746f72>`\  \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Any <l416e79>`\  
+  \ ``naiveBeckermannLabahnMultipoint(f, degs, sigma, p)``\  solves modulo \$\ ``p``\ \$ multipoint Hermite-Pade interpolation problem of order \$\ ``sigma``\ \$. \$\ ``degs``\ \$ specifies degree bounds for solution. The first element of result contains \ ``sigma``\ -basis. The second gives defects of elements of \ ``sigma``\ -basis. The third one contains residuals \ ``--``\  we stop updating solution if this would violate degree bounds, so residual is zero for elements of \ ``sigma``\ -basis which are within bounds, but non-zero otherwise.
+
+.. _l4e616976654265636b65726d616e6e4c616261686e4d6f64756c6172-726564756365426173697330:
+
+.. index::
+   pair: NaiveBeckermannLabahnModular; reduceBasis0
+
+:spadfun:`reduceBasis0`\: (\ :ref:`TwoDimensionalArray <l54776f44696d656e73696f6e616c4172726179>`\  \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> Record(basis: \ :ref:`TwoDimensionalArray <l54776f44696d656e73696f6e616c4172726179>`\  \ :ref:`U32Vector <l553332566563746f72>`\ , defects: \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , cinds: \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ ) 
+  
+
+.. _l4e616976654265636b65726d616e6e4c616261686e4d6f64756c6172-7265647563654261736973:
+
+.. index::
+   pair: NaiveBeckermannLabahnModular; reduceBasis
+
+:spadfun:`reduceBasis`\: (\ :ref:`Vector <l566563746f72>`\  \ :ref:`U32Vector <l553332566563746f72>`\ , \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> Record(basis: \ :ref:`TwoDimensionalArray <l54776f44696d656e73696f6e616c4172726179>`\  \ :ref:`U32Vector <l553332566563746f72>`\ , defects: \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , cinds: \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ ) 
+  Skips elements of sigma basis which does not satisfy degree bounds and puts sigma-basis into canonical form.
+
+

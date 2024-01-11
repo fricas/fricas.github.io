@@ -1,0 +1,192 @@
+.. index:: JetDifferentialEquation
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e:
+
+JetDifferentialEquation(JB, D)
+==============================
+
+:viewcode:`jet.spad line 3759 <jet.spad#L3759>` :editcode:`[edit on github] <jet.spad#L3759>`
+
+* JB: \ :ref:`JetBundleCategory <l4a657442756e646c6543617465676f7279>`\ 
+
+* D: \ :ref:`JetBundleFunctionCategory <l4a657442756e646c6546756e6374696f6e43617465676f7279>`\  JB
+
+
+\ :ref:`JetDifferentialEquation <l4a6574446966666572656e7469616c4571756174696f6e>`\  provides the basic data structures and procedures for differential equations as needed in the geometric theory. Differential equation means here always a submanifold in the jet bundle. The concrete equations which define this submanifold are called system. In an object of the type \ :ref:`JetDifferentialEquation <l4a6574446966666572656e7469616c4571756174696f6e>`\  much more than only the system is stored. \ ``D``\  denotes the class of functions allowed as equations. It is assumed that the \ ``simplify``\  procedure of \ ``D``\  returns only independent equations and a system with symbol in row echelon form.
+
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-616e616c79736553796d626f6c:
+
+.. index::
+   pair: JetDifferentialEquation; analyseSymbol
+
+:spadfun:`analyseSymbol`\: \ :ref:`SparseEchelonMatrix <l537061727365456368656c6f6e4d6174726978>`\ (JB, D) -> Record(Rank: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , NumMultVar: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , Betas: \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) 
+  \ ``analyseSymbol(symb)``\  computes the multiplicative variables of the symbol \ ``symb``\ .
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-636f65726365:
+
+.. index::
+   pair: JetDifferentialEquation; coerce
+
+:spadfun:`coerce`\: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  \ ``coerce(de)``\  transforms the differential equation \ ``de``\  to \ :ref:`OutputForm <l4f7574707574466f726d>`\ .
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-636f7079:
+
+.. index::
+   pair: JetDifferentialEquation; copy
+
+:spadfun:`copy`\: % -> % 
+  \ ``copy(De)``\  returns a copy of the equation \ ``De``\ .
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-64696d656e73696f6e:
+
+.. index::
+   pair: JetDifferentialEquation; dimension
+
+:spadfun:`dimension`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``dimension(de, q)``\  computes the dimension of the differential equation \ ``de``\  as a submanifold of the \ ``q``\ \ ``-``\ th order jet bundle. The result is correct only, if \ ``de``\  is simplified.
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-646973706c6179:
+
+.. index::
+   pair: JetDifferentialEquation; display
+
+:spadfun:`display`\: % -> \ :ref:`Void <l566f6964>`\  
+  \ ``display(de)``\  prints all information stored about the differential equation \ ``de``\ . This comprises the system ordered by the order of the equations, the Jacobi matrices separately for each order and the index of the independent variable with respect to which the equation was lastly differentiated (1 for not prolonged equations).
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-6578747261637453796d626f6c:
+
+.. index::
+   pair: JetDifferentialEquation; extractSymbol
+
+:spadfun:`extractSymbol`\: (%, \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`SparseEchelonMatrix <l537061727365456368656c6f6e4d6174726978>`\ (JB, D) 
+  \ ``extractSymbol(de, solved?)``\  computes the symbol of the differential equation \ ``de``\ . If \ ``solved?``\  is \ ``true``\ , the row echelon form of the symbol is computed at once.
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-696e73657274:
+
+.. index::
+   pair: JetDifferentialEquation; insert
+
+:spadfun:`insert`\: (\ :ref:`List <l4c697374>`\  D, %) -> % 
+  \ ``insert(sys, de)``\  adds the system \ ``sys = 0``\  to the differential equation \ ``de``\ .
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-6a61636f62694d6174726978:
+
+.. index::
+   pair: JetDifferentialEquation; jacobiMatrix
+
+:spadfun:`jacobiMatrix`\: % -> \ :ref:`List <l4c697374>`\  \ :ref:`SparseEchelonMatrix <l537061727365456368656c6f6e4d6174726978>`\ (JB, D) 
+  \ ``jacobiMatrix(De)``\  returns a list of Jacobi matrices sorted by the order of the equations.
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-6a6f696e:
+
+.. index::
+   pair: JetDifferentialEquation; join
+
+:spadfun:`join`\: (%, %) -> % 
+  \ ``join(de1, de2)``\  combines \ ``de1``\  and \ ``de2``\  to a single differential equation.
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-6d616b6553797374656d:
+
+.. index::
+   pair: JetDifferentialEquation; makeSystem
+
+:spadfun:`makeSystem`\: \ :ref:`List <l4c697374>`\  D -> % 
+  \ ``makeSystem(sys)``\  creates a differential equation from a system.
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-6f72646572:
+
+.. index::
+   pair: JetDifferentialEquation; order
+
+:spadfun:`order`\: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``order(de)``\  yields the order of the differential equation \ ``de``\ .
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-7072696e74537973:
+
+.. index::
+   pair: JetDifferentialEquation; printSys
+
+:spadfun:`printSys`\: \ :ref:`List <l4c697374>`\  D -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  \ ``printSys(sys)``\  writes a list of functions as a vector of equations (with right hand side 0) and coerces the result to \ :ref:`OutputForm <l4f7574707574466f726d>`\ .
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-70726f6a656374:
+
+.. index::
+   pair: JetDifferentialEquation; project
+
+:spadfun:`project`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``project(de, q)``\  projects the differential equation \ ``de``\  of order higher than \ ``q``\  into the \ ``q``\ \ ``-``\ th order jet bundle.
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-70726f6c6f6e67:
+
+.. index::
+   pair: JetDifferentialEquation; prolong
+
+:spadfun:`prolong`\: % -> Record(SDe: %, IC: \ :ref:`List <l4c697374>`\  D) 
+  \ ``prolong(de)``\  prolongs the differential equation \ ``de``\ . Additionally the arising integrability conditions are returned.
+
+
+.. index::
+   pair: JetDifferentialEquation; prolong
+
+:spadfun:`prolong`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> Record(SDe: %, IC: \ :ref:`List <l4c697374>`\  D) 
+  \ ``prolong(de, q)``\  is like \ ``prolong(de)``\ . However, only equations of lower order than \ ``q``\  are prolonged.
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-70726f6c6f6e674d56:
+
+.. index::
+   pair: JetDifferentialEquation; prolongMV
+
+:spadfun:`prolongMV`\: Record(Rank: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , NumMultVar: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , Betas: \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> Record(Rank: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , NumMultVar: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , Betas: \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) 
+  \ ``prolongMV(mv)``\  calculates the number of multiplicative variables for the prolongation of an involutive symbol.
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-70726f6c6f6e6753796d626f6c:
+
+.. index::
+   pair: JetDifferentialEquation; prolongSymbol
+
+:spadfun:`prolongSymbol`\: \ :ref:`SparseEchelonMatrix <l537061727365456368656c6f6e4d6174726978>`\ (JB, D) -> \ :ref:`SparseEchelonMatrix <l537061727365456368656c6f6e4d6174726978>`\ (JB, D) 
+  \ ``prolongSymbol(symb)``\  prolongs directly the symbol \ ``symb``\ .
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-72657472616374:
+
+.. index::
+   pair: JetDifferentialEquation; retract
+
+:spadfun:`retract`\: % -> \ :ref:`List <l4c697374>`\  D 
+  \ ``retract(de)``\  returns the system defining the differential equation \ ``de``\ .
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-73657453696d704d6f6465:
+
+.. index::
+   pair: JetDifferentialEquation; setSimpMode
+
+:spadfun:`setSimpMode`\: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``setSimpMode(i)``\  sets the flag controlling the used simplifications and returns the old value. Current values are: \ ``i = 0``\  \ ``->``\  No simplification modulo lower order equations. \ ``i = 1``\  \ ``->``\  Simplification modulo lower order equations. Default is 0.
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-73696d706c696679:
+
+.. index::
+   pair: JetDifferentialEquation; simplify
+
+:spadfun:`simplify`\: % -> Record(SDe: %, IC: \ :ref:`List <l4c697374>`\  D) 
+  \ ``simplify(de)``\  simplifies the equations of each order separately using the procedure \ ``simplify``\  from \ ``D``\ . Found integrability conditions are also returned separately.
+
+.. _l4a6574446966666572656e7469616c4571756174696f6e-7461626c656175:
+
+.. index::
+   pair: JetDifferentialEquation; tableau
+
+:spadfun:`tableau`\: (\ :ref:`SparseEchelonMatrix <l537061727365456368656c6f6e4d6174726978>`\ (JB, D), \ :ref:`JetDifferential <l4a6574446966666572656e7469616c>`\ (JB, D)) -> \ :ref:`SparseEchelonMatrix <l537061727365456368656c6f6e4d6174726978>`\ (JB, D) 
+  \ ``tableau(symb, chi)``\  computes the tableau parametrized by a given one-form.
+
+
+.. index::
+   pair: JetDifferentialEquation; tableau
+
+:spadfun:`tableau`\: (\ :ref:`SparseEchelonMatrix <l537061727365456368656c6f6e4d6174726978>`\ (JB, D), \ :ref:`List <l4c697374>`\  \ :ref:`JetDifferential <l4a6574446966666572656e7469616c>`\ (JB, D)) -> \ :ref:`SparseEchelonMatrix <l537061727365456368656c6f6e4d6174726978>`\ (JB, D) 
+  \ ``tableau(symb, lchi)``\  computes the extended tableau parametrized by a given list of one-forms.
+
+

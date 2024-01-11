@@ -1,0 +1,187 @@
+.. index:: ZeroDimensionalSolvePackage
+
+.. _l5a65726f44696d656e73696f6e616c536f6c76655061636b616765:
+
+ZeroDimensionalSolvePackage(R, ls, ls2)
+=======================================
+
+:viewcode:`zerodim.spad line 647 <zerodim.spad#L647>` :editcode:`[edit on github] <zerodim.spad#L647>`
+
+* R: Join(\ :ref:`OrderedRing <l4f72646572656452696e67>`\ , \ :ref:`PolynomialFactorizationExplicit <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974>`\ , \ :ref:`CharacteristicZero <l43686172616374657269737469635a65726f>`\ , \ :ref:`RealConstant <l5265616c436f6e7374616e74>`\ )
+
+* ls: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+* ls2: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ 
+
+
+A package for computing symbolically the complex and real roots of zero-dimensional algebraic systems over the integer or rational numbers. Complex roots are given by means of univariate representations of irreducible regular chains. Real roots are given by means of tuples of coordinates lying in the \ :ref:`RealClosure <l5265616c436c6f73757265>`\  of the coefficient ring. This constructor takes three arguments. The first one \ ``R``\  is the coefficient ring. The second one \ ``ls``\  is the list of variables involved in the systems to solve. The third one must be \ ``concat(ls, s)``\  where \ ``s``\  is an additional symbol used for the univariate representations. WARNING: The third argument is not checked. All operations are based on triangular decompositions. The default is to compute these decompositions directly from the input system by using the \ :ref:`RegularChain <l526567756c6172436861696e>`\  domain constructor. The lexTriangular algorithm can also be used for computing these decompositions (see the \ :ref:`LexTriangularPackage <l4c6578547269616e67756c61725061636b616765>`\  package constructor). For that purpose, the operations \ :ref:`univariateSolve <l5a65726f44696d656e73696f6e616c536f6c76655061636b616765-756e6976617269617465536f6c7665>`\ , \ :ref:`realSolve <l5a65726f44696d656e73696f6e616c536f6c76655061636b616765-7265616c536f6c7665>`\  and \ :ref:`positiveSolve <l5a65726f44696d656e73696f6e616c536f6c76655061636b616765-706f736974697665536f6c7665>`\  admit an optional argument.   Author: Marc Moreno Maza.
+
+
+.. _l5a65726f44696d656e73696f6e616c536f6c76655061636b616765-636f6e76657274:
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; convert
+
+:spadfun:`convert`\: \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls) -> \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls2) 
+  \ ``convert(q)``\  converts \ ``q``\ .
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; convert
+
+:spadfun:`convert`\: \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls2) -> \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`RealClosure <l5265616c436c6f73757265>`\  \ :ref:`Fraction <l4672616374696f6e>`\  R 
+  \ ``convert(q)``\  converts \ ``q``\ .
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; convert
+
+:spadfun:`convert`\: \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R -> \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`RealClosure <l5265616c436c6f73757265>`\  \ :ref:`Fraction <l4672616374696f6e>`\  R 
+  \ ``convert(p)``\  converts \ ``p``\ .
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; convert
+
+:spadfun:`convert`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  R -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`RealClosure <l5265616c436c6f73757265>`\  \ :ref:`Fraction <l4672616374696f6e>`\  R 
+  \ ``convert(u)``\  converts \ ``u``\ .
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; convert
+
+:spadfun:`convert`\: \ :ref:`SquareFreeRegularTriangularSet <l53717561726546726565526567756c6172547269616e67756c6172536574>`\ (R, \ :ref:`IndexedExponents <l496e64657865644578706f6e656e7473>`\  \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls2, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls2, \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls2)) -> \ :ref:`List <l4c697374>`\  \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls2) 
+  \ ``convert(st)``\  returns the members of \ ``st``\ .
+
+.. _l5a65726f44696d656e73696f6e616c536f6c76655061636b616765-706f736974697665536f6c7665:
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; positiveSolve
+
+:spadfun:`positiveSolve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`RealClosure <l5265616c436c6f73757265>`\  \ :ref:`Fraction <l4672616374696f6e>`\  R 
+  \ ``positiveSolve(lp)``\  returns the same as \ ``positiveSolve(lp, info?, false)``\ .
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; positiveSolve
+
+:spadfun:`positiveSolve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Boolean <l426f6f6c65616e>`\ , \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`RealClosure <l5265616c436c6f73757265>`\  \ :ref:`Fraction <l4672616374696f6e>`\  R 
+  \ ``positiveSolve(lp, info?, lextri?)``\  returns the set of the points in the variety associated with \ ``lp``\  whose coordinates are (real) strictly positive. Moreover, if \ ``info?``\  is \ ``true``\  then some information is displayed during decomposition into regular chains. If \ ``lextri?``\  is \ ``true``\  then the lexTriangular algorithm is called from the \ :ref:`LexTriangularPackage <l4c6578547269616e67756c61725061636b616765>`\  constructor (see \ :ref:`zeroSetSplit <l4c6578547269616e67756c61725061636b616765-7a65726f53657453706c6974>`\ (\ ``lp``\ , \ ``false``\ )). Otherwise, the triangular decomposition is computed directly from the input system by using the \ :ref:`zeroSetSplit <l526567756c6172436861696e-7a65726f53657453706c6974>`\  from \ :ref:`RegularChain <l526567756c6172436861696e>`\ . WARNING: For each set of coordinates given by \ ``positiveSolve(lp, info?, lextri?)``\  the ordering of the indeterminates is reversed \ ``w``\ .\ ``r``\ .\ ``t``\ . \ ``ls``\ .
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; positiveSolve
+
+:spadfun:`positiveSolve`\: \ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`RealClosure <l5265616c436c6f73757265>`\  \ :ref:`Fraction <l4672616374696f6e>`\  R 
+  \ ``positiveSolve(lp)``\  returns the same as \ ``positiveSolve(lp, false, false)``\ .
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; positiveSolve
+
+:spadfun:`positiveSolve`\: \ :ref:`RegularChain <l526567756c6172436861696e>`\ (R, ls) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`RealClosure <l5265616c436c6f73757265>`\  \ :ref:`Fraction <l4672616374696f6e>`\  R 
+  \ ``positiveSolve(ts)``\  returns the points of the regular set of \ ``ts``\  with (real) strictly positive coordinates.
+
+.. _l5a65726f44696d656e73696f6e616c536f6c76655061636b616765-7265616c536f6c7665:
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; realSolve
+
+:spadfun:`realSolve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`RealClosure <l5265616c436c6f73757265>`\  \ :ref:`Fraction <l4672616374696f6e>`\  R 
+  \ ``realSolve(ts, info?)``\  returns the same as \ ``realSolve(ts, info?, false, false)``\ .
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; realSolve
+
+:spadfun:`realSolve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Boolean <l426f6f6c65616e>`\ , \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`RealClosure <l5265616c436c6f73757265>`\  \ :ref:`Fraction <l4672616374696f6e>`\  R 
+  \ ``realSolve(ts, info?, check?)``\  returns the same as \ ``realSolve(ts, info?, check?, false)``\ .
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; realSolve
+
+:spadfun:`realSolve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Boolean <l426f6f6c65616e>`\ , \ :ref:`Boolean <l426f6f6c65616e>`\ , \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`RealClosure <l5265616c436c6f73757265>`\  \ :ref:`Fraction <l4672616374696f6e>`\  R 
+  \ ``realSolve(ts, info?, check?, lextri?)``\  returns the set of the points in the variety associated with \ ``lp``\  whose coordinates are all real. Moreover, if \ ``info?``\  is \ ``true``\  then some information is displayed during decomposition into regular chains. If \ ``check?``\  is \ ``true``\  then the result is checked. If \ ``lextri?``\  is \ ``true``\  then the lexTriangular algorithm is called from the \ :ref:`LexTriangularPackage <l4c6578547269616e67756c61725061636b616765>`\  constructor (see \ :ref:`zeroSetSplit <l4c6578547269616e67756c61725061636b616765-7a65726f53657453706c6974>`\ (\ ``lp``\ , \ ``false``\ )). Otherwise, the triangular decomposition is computed directly from the input system by using the \ :ref:`zeroSetSplit <l526567756c6172436861696e-7a65726f53657453706c6974>`\  from \ :ref:`RegularChain <l526567756c6172436861696e>`\ . WARNING: For each set of coordinates given by \ ``realSolve(ts, info?, check?, lextri?)``\  the ordering of the indeterminates is reversed \ ``w``\ .\ ``r``\ .\ ``t``\ . \ ``ls``\ .
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; realSolve
+
+:spadfun:`realSolve`\: \ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`RealClosure <l5265616c436c6f73757265>`\  \ :ref:`Fraction <l4672616374696f6e>`\  R 
+  \ ``realSolve(lp)``\  returns the same as \ ``realSolve(ts, false, false, false)``\ 
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; realSolve
+
+:spadfun:`realSolve`\: \ :ref:`RegularChain <l526567756c6172436861696e>`\ (R, ls) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`RealClosure <l5265616c436c6f73757265>`\  \ :ref:`Fraction <l4672616374696f6e>`\  R 
+  \ ``realSolve(ts)``\  returns the set of the points in the regular zero set of \ ``ts``\  whose coordinates are all real. WARNING: For each set of coordinates given by \ ``realSolve(ts)``\  the ordering of the indeterminates is reversed \ ``w``\ .\ ``r``\ .\ ``t``\ . \ ``ls``\ .
+
+.. _l5a65726f44696d656e73696f6e616c536f6c76655061636b616765-73717561726546726565:
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; squareFree
+
+:spadfun:`squareFree`\: \ :ref:`RegularChain <l526567756c6172436861696e>`\ (R, ls) -> \ :ref:`List <l4c697374>`\  \ :ref:`SquareFreeRegularTriangularSet <l53717561726546726565526567756c6172547269616e67756c6172536574>`\ (R, \ :ref:`IndexedExponents <l496e64657865644578706f6e656e7473>`\  \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls2, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls2, \ :ref:`NewSparseMultivariatePolynomial <l4e65775370617273654d756c746976617269617465506f6c796e6f6d69616c>`\ (R, \ :ref:`OrderedVariableList <l4f7264657265645661726961626c654c697374>`\  ls2)) 
+  \ ``squareFree(ts)``\  returns the square-free factorization of \ ``ts``\ . Moreover, each factor is a Lazard triangular set and the decomposition is a Kalkbrener split of \ ``ts``\ , which is enough here for the matter of solving zero-dimensional algebraic systems. WARNING: \ ``ts``\  is not checked to be zero-dimensional.
+
+.. _l5a65726f44696d656e73696f6e616c536f6c76655061636b616765-747269616e67536f6c7665:
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; triangSolve
+
+:spadfun:`triangSolve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`RegularChain <l526567756c6172436861696e>`\ (R, ls) 
+  \ ``triangSolve(lp, info?)``\  returns the same as \ ``triangSolve(lp, false)``\ 
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; triangSolve
+
+:spadfun:`triangSolve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Boolean <l426f6f6c65616e>`\ , \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`RegularChain <l526567756c6172436861696e>`\ (R, ls) 
+  \ ``triangSolve(lp, info?, lextri?)``\  decomposes the variety associated with \ ``lp``\  into regular chains. Thus a point belongs to this variety iff it is a regular zero of a regular set in in the output. Note that \ ``lp``\  needs to generate a zero-dimensional ideal. If \ ``lp``\  is not zero-dimensional then the result is only a decomposition of its zero-set in the sense of the closure (\ ``w``\ .\ ``r``\ .\ ``t``\ . Zarisky topology). Moreover, if \ ``info?``\  is \ ``true``\  then some information is displayed during the computations. See \ :ref:`zeroSetSplit <l526567756c6172547269616e67756c617253657443617465676f7279-7a65726f53657453706c6974>`\ (\ ``lp``\ , \ ``true``\ , \ ``info?``\ ). If \ ``lextri?``\  is \ ``true``\  then the lexTriangular algorithm is called from the \ :ref:`LexTriangularPackage <l4c6578547269616e67756c61725061636b616765>`\  constructor (see \ :ref:`zeroSetSplit <l4c6578547269616e67756c61725061636b616765-7a65726f53657453706c6974>`\ (\ ``lp``\ , \ ``false``\ )). Otherwise, the triangular decomposition is computed directly from the input system by using the \ :ref:`zeroSetSplit <l526567756c6172436861696e-7a65726f53657453706c6974>`\  from \ :ref:`RegularChain <l526567756c6172436861696e>`\ .
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; triangSolve
+
+:spadfun:`triangSolve`\: \ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R -> \ :ref:`List <l4c697374>`\  \ :ref:`RegularChain <l526567756c6172436861696e>`\ (R, ls) 
+  \ ``triangSolve(lp)``\  returns the same as \ ``triangSolve(lp, false, false)``\ 
+
+.. _l5a65726f44696d656e73696f6e616c536f6c76655061636b616765-756e6976617269617465536f6c7665:
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; univariateSolve
+
+:spadfun:`univariateSolve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  Record(complexRoots: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  R, coordinates: \ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R) 
+  \ ``univariateSolve(lp, info?)``\  returns the same as \ ``univariateSolve(lp, info?, false, false)``\ .
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; univariateSolve
+
+:spadfun:`univariateSolve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Boolean <l426f6f6c65616e>`\ , \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  Record(complexRoots: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  R, coordinates: \ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R) 
+  \ ``univariateSolve(lp, info?, check?)``\  returns the same as \ ``univariateSolve(lp, info?, check?, false)``\ .
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; univariateSolve
+
+:spadfun:`univariateSolve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Boolean <l426f6f6c65616e>`\ , \ :ref:`Boolean <l426f6f6c65616e>`\ , \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  Record(complexRoots: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  R, coordinates: \ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R) 
+  \ ``univariateSolve(lp, info?, check?, lextri?)``\  returns a univariate representation of the variety associated with \ ``lp``\ . Moreover, if \ ``info?``\  is \ ``true``\  then some information is displayed during the decomposition into regular chains. If \ ``check?``\  is \ ``true``\  then the result is checked. See \ :ref:`rur <l526174696f6e616c556e6976617269617465526570726573656e746174696f6e5061636b616765-727572>`\ (\ ``lp``\ , \ ``true``\ ). If \ ``lextri?``\  is \ ``true``\  then the lexTriangular algorithm is called from the \ :ref:`LexTriangularPackage <l4c6578547269616e67756c61725061636b616765>`\  constructor (see \ :ref:`zeroSetSplit <l4c6578547269616e67756c61725061636b616765-7a65726f53657453706c6974>`\ (\ ``lp``\ , \ ``false``\ )). Otherwise, the triangular decomposition is computed directly from the input system by using the \ :ref:`zeroSetSplit <l526567756c6172436861696e-7a65726f53657453706c6974>`\  from \ :ref:`RegularChain <l526567756c6172436861696e>`\ .
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; univariateSolve
+
+:spadfun:`univariateSolve`\: \ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R -> \ :ref:`List <l4c697374>`\  Record(complexRoots: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  R, coordinates: \ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R) 
+  \ ``univariateSolve(lp)``\  returns the same as \ ``univariateSolve(lp, false, false, false)``\ .
+
+
+.. index::
+   pair: ZeroDimensionalSolvePackage; univariateSolve
+
+:spadfun:`univariateSolve`\: \ :ref:`RegularChain <l526567756c6172436861696e>`\ (R, ls) -> \ :ref:`List <l4c697374>`\  Record(complexRoots: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  R, coordinates: \ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R) 
+  \ ``univariateSolve(ts)``\  returns a univariate representation of \ ``ts``\ . See \ :ref:`rur <l526174696f6e616c556e6976617269617465526570726573656e746174696f6e5061636b616765-727572>`\ (\ ``lp``\ , \ ``true``\ ).
+
+

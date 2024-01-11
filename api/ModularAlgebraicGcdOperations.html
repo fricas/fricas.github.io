@@ -1,22 +1,18 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>ModularAlgebraicGcdOperations(MP, MPT, MD) &#8212; FriCAS</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=0034329e"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -48,7 +44,7 @@
           <div class="body" role="main">
             
   <section id="modularalgebraicgcdoperations-mp-mpt-md">
-<span id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73"></span><span id="index-0"></span><h1>ModularAlgebraicGcdOperations(MP, MPT, MD)<a class="headerlink" href="#modularalgebraicgcdoperations-mp-mpt-md" title="Permalink to this heading">¶</a></h1>
+<span id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73"></span><span id="index-0"></span><h1>ModularAlgebraicGcdOperations(MP, MPT, MD)<a class="headerlink" href="#modularalgebraicgcdoperations-mp-mpt-md" title="Link to this heading">¶</a></h1>
 <p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/amodgcd.spad#L23">amodgcd.spad line 23</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/amodgcd.spad#L23">[edit on github]</a></p>
 <ul class="simple">
 <li><p>MP: <a class="reference internal" href="Type.html#l54797065"><span class="std std-ref">Type</span></a></p></li>
@@ -56,35 +52,35 @@
 <li><p>MD: <a class="reference internal" href="Type.html#l54797065"><span class="std std-ref">Type</span></a></p></li>
 </ul>
 <p>This category specifies operations needed by ModularAlgebraicGcd package. Since we have multiple implementations we specify interface here and put implementations in separate packages. Most operations are done using special purpose abstract representation. Appropriate types are passed as parameters: <code class="docutils literal notranslate"><span class="pre">MPT</span></code> is type of modular polynomials in one variable with coefficients in some algebraic extension. <code class="docutils literal notranslate"><span class="pre">MD</span></code> is type of modulus. Final results are converted to packed representation, with coefficients (from prime field) stored in one array and exponents (in main variable and in auxiliary variables representing generators of algebrac extension) stored in parallel array.</p>
-<span class="target" id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-63616e6f6e6963616c496643616e"></span><dl class="simple" id="index-1">
+<span id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-63616e6f6e6963616c496643616e"></span><dl class="simple" id="index-1">
 <dt><span class="spadfun">canonicalIfCan</span>: (MPT, MD) -&gt; Union(MPT, failed)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">canonicalIfCan(x,</span> <span class="pre">m)</span></code> tries to divide <code class="docutils literal notranslate"><span class="pre">x</span></code> by its leading coefficient modulo <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p>
 </dd>
 </dl>
-<span class="target" id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-646567726565"></span><dl class="simple" id="index-2">
+<span id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-646567726565"></span><dl class="simple" id="index-2">
 <dt><span class="spadfun">degree</span>: MPT -&gt; <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">degree(x)</span></code> gives degree of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
 </dd>
 </dl>
-<span class="target" id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-4d50746f4d5054"></span><dl class="simple" id="index-3">
+<span id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-4d50746f4d5054"></span><dl class="simple" id="index-3">
 <dt><span class="spadfun">MPtoMPT</span>: (MP, <a class="reference internal" href="Symbol.html#l53796d626f6c"><span class="std std-ref">Symbol</span></a>, <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> <a class="reference internal" href="Symbol.html#l53796d626f6c"><span class="std std-ref">Symbol</span></a>, MD) -&gt; Union(MPT, failed)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">MPtoMPT(p,</span> <span class="pre">s,</span> <span class="pre">ls,</span> <span class="pre">m)</span></code> converts <code class="docutils literal notranslate"><span class="pre">p</span></code> to packed representation.</p>
 </dd>
 </dl>
-<span class="target" id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-7061636b5f65787073"></span><dl class="simple" id="index-4">
+<span id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-7061636b5f65787073"></span><dl class="simple" id="index-4">
 <dt><span class="spadfun">pack_exps</span>: (<a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, MD) -&gt; <a class="reference internal" href="SortedExponentVector.html#l536f727465644578706f6e656e74566563746f72"><span class="std std-ref">SortedExponentVector</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">pack_exps(d,</span> <span class="pre">s,</span> <span class="pre">m)</span></code> produces vector of exponents up to degree <code class="docutils literal notranslate"><span class="pre">d</span></code>. <code class="docutils literal notranslate"><span class="pre">s</span></code> is size (degree) of algebraic extension. Use together with <code class="docutils literal notranslate"><span class="pre">repack1</span></code>.</p>
 </dd>
 </dl>
-<span class="target" id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-7061636b5f6d6f64756c7573"></span><dl class="simple" id="index-5">
+<span id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-7061636b5f6d6f64756c7573"></span><dl class="simple" id="index-5">
 <dt><span class="spadfun">pack_modulus</span>: (<a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> MP, <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> <a class="reference internal" href="Symbol.html#l53796d626f6c"><span class="std std-ref">Symbol</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; Union(MD, failed)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">pack_modulus(lp,</span> <span class="pre">ls,</span> <span class="pre">p)</span></code> converts <code class="docutils literal notranslate"><span class="pre">lp</span></code>, <code class="docutils literal notranslate"><span class="pre">ls</span></code> and prime <code class="docutils literal notranslate"><span class="pre">p</span></code> which together describe algebraic extension to packed representation.</p>
 </dd>
 </dl>
-<span class="target" id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-70736575646f52656d"></span><dl class="simple" id="index-6">
+<span id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-70736575646f52656d"></span><dl class="simple" id="index-6">
 <dt><span class="spadfun">pseudoRem</span>: (MPT, MPT, MD) -&gt; MPT</dt><dd><p><code class="docutils literal notranslate"><span class="pre">pseudoRem(x,</span> <span class="pre">y,</span> <span class="pre">m)</span></code> computes pseudoremainder of <code class="docutils literal notranslate"><span class="pre">x</span></code> by <code class="docutils literal notranslate"><span class="pre">y</span></code> modulo <code class="docutils literal notranslate"><span class="pre">m</span></code>.</p>
 </dd>
 </dl>
-<span class="target" id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-72657061636b31"></span><dl class="simple" id="index-7">
+<span id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-72657061636b31"></span><dl class="simple" id="index-7">
 <dt><span class="spadfun">repack1</span>: (MPT, <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, MD) -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">repack1(x,</span> <span class="pre">a,</span> <span class="pre">d,</span> <span class="pre">m)</span></code> stores coefficients of <code class="docutils literal notranslate"><span class="pre">x</span></code> in a. <code class="docutils literal notranslate"><span class="pre">d</span></code> is degree of <code class="docutils literal notranslate"><span class="pre">x</span></code>. Corresponding exponents are given by pack_exps.</p>
 </dd>
 </dl>
-<span class="target" id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-7a65726f3f"></span><dl class="simple" id="index-8">
+<span id="l4d6f64756c6172416c676562726169634763644f7065726174696f6e73-7a65726f3f"></span><dl class="simple" id="index-8">
 <dt><span class="spadfun">zero?</span>: MPT -&gt; <a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">zero?(x)</span></code> checks if <code class="docutils literal notranslate"><span class="pre">x</span></code> is zero.</p>
 </dd>
 </dl>
@@ -142,7 +138,7 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2007-2023, FriCAS Team.
+    &#169; Copyright 2007-2024, FriCAS Team.
     </div>
   </body>
 </html>

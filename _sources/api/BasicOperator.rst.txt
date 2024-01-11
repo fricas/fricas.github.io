@@ -1,0 +1,276 @@
+.. index:: BasicOperator
+
+.. _l42617369634f70657261746f72:
+
+BasicOperator
+=============
+
+:viewcode:`op.spad line 1 <op.spad#L1>` :editcode:`[edit on github] <op.spad#L1>`
+
+
+A basic operator is an object that can be applied to a list of arguments from a set, the result being a kernel over that set.
+
+
+.. _l42617369634f70657261746f72-3c3d:
+
+\ :ref:`<= <l5061727469616c4f72646572-3c3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l42617369634f70657261746f72-3c:
+
+\ :ref:`< <l5061727469616c4f72646572-3c>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l42617369634f70657261746f72-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l42617369634f70657261746f72-3e3d:
+
+\ :ref:`>= <l5061727469616c4f72646572-3e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l42617369634f70657261746f72-3e:
+
+\ :ref:`> <l5061727469616c4f72646572-3e>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`PartialOrder <l5061727469616c4f72646572>`\ 
+
+.. _l42617369634f70657261746f72-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l42617369634f70657261746f72-6172697479:
+
+.. index::
+   pair: BasicOperator; arity
+
+:spadfun:`arity`\: % -> Union(\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , failed) 
+  \ ``arity(op)``\  returns \ ``n``\  if \ ``op``\  is \ ``n``\ -ary, and "failed" if \ ``op``\  has arbitrary arity.
+
+.. _l42617369634f70657261746f72-617373657274:
+
+.. index::
+   pair: BasicOperator; assert
+
+:spadfun:`assert`\: (%, \ :ref:`Symbol <l53796d626f6c>`\ ) -> % 
+  \ ``assert(op, s)``\  attaches property \ ``s``\  to \ ``op``\ . Argument \ ``op``\  is modified "in place", i.e. no copy is made.
+
+.. _l42617369634f70657261746f72-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l42617369634f70657261746f72-636f6d70617269736f6e:
+
+.. index::
+   pair: BasicOperator; comparison
+
+:spadfun:`comparison`\: (%, (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> % 
+  \ ``comparison(op, foo?)``\  attaches foo? as the "\%less?" property to \ ``op``\ . If \ ``op1``\  and \ ``op2``\  have the same name, and one of them has a "\%less?" property \ ``f``\ , then \ ``f(op1, op2)``\  is called to decide whether \ ``op1 < op2``\ .
+
+.. _l42617369634f70657261746f72-636f7079:
+
+.. index::
+   pair: BasicOperator; copy
+
+:spadfun:`copy`\: % -> % 
+  \ ``copy(op)``\  returns a copy of \ ``op``\ .
+
+.. _l42617369634f70657261746f72-64656c65746550726f706572747921:
+
+.. index::
+   pair: BasicOperator; deleteProperty!
+
+:spadfun:`deleteProperty!`\: (%, \ :ref:`Symbol <l53796d626f6c>`\ ) -> % 
+  \ ``deleteProperty!(op, s)``\  unattaches property \ ``s``\  from \ ``op``\ . Argument \ ``op``\  is modified "in place", i.e. no copy is made.
+
+.. _l42617369634f70657261746f72-646973706c6179:
+
+.. index::
+   pair: BasicOperator; display
+
+:spadfun:`display`\: % -> Union(\ :ref:`List <l4c697374>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  -> \ :ref:`OutputForm <l4f7574707574466f726d>`\ , failed) 
+  \ ``display(op)``\  returns the "\%display" property of \ ``op``\  if it has one attached, and "failed" otherwise.
+
+
+.. index::
+   pair: BasicOperator; display
+
+:spadfun:`display`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  -> \ :ref:`OutputForm <l4f7574707574466f726d>`\ ) -> % 
+  \ ``display(op, foo)``\  attaches foo as the "\%display" property of \ ``op``\ . If \ ``op``\  has a "\%display" property \ ``f``\ , then \ ``op(a1,...,an)``\  gets converted to OutputForm as \ ``f(a1, ..., an)``\ .
+
+
+.. index::
+   pair: BasicOperator; display
+
+:spadfun:`display`\: (%, \ :ref:`OutputForm <l4f7574707574466f726d>`\  -> \ :ref:`OutputForm <l4f7574707574466f726d>`\ ) -> % 
+  \ ``display(op, foo)``\  attaches foo as the "\%display" property of \ ``op``\ . If \ ``op``\  has a "\%display" property \ ``f``\ , then \ ``op(a)``\  gets converted to OutputForm as \ ``f(a)``\ . Argument \ ``op``\  must be unary.
+
+.. _l42617369634f70657261746f72-657175616c697479:
+
+.. index::
+   pair: BasicOperator; equality
+
+:spadfun:`equality`\: (%, (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> % 
+  \ ``equality(op, foo?)``\  attaches foo? as the "\%equal?" property to \ ``op``\ . If \ ``op1``\  and \ ``op2``\  have the same name, and one of them has an "\%equal?" property \ ``f``\ , then \ ``f(op1, op2)``\  is called to decide whether \ ``op1``\  and \ ``op2``\  should be considered equal.
+
+.. _l42617369634f70657261746f72-6861733f:
+
+.. index::
+   pair: BasicOperator; has?
+
+:spadfun:`has?`\: (%, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``has?(op, s)``\  tests if property \ ``s``\  is attached to \ ``op``\ .
+
+.. _l42617369634f70657261746f72-696e707574:
+
+.. index::
+   pair: BasicOperator; input
+
+:spadfun:`input`\: % -> Union(\ :ref:`List <l4c697374>`\  \ :ref:`InputForm <l496e707574466f726d>`\  -> \ :ref:`InputForm <l496e707574466f726d>`\ , failed) 
+  \ ``input(op)``\  returns the "\%input" property of \ ``op``\  if it has one attached, "failed" otherwise.
+
+
+.. index::
+   pair: BasicOperator; input
+
+:spadfun:`input`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`InputForm <l496e707574466f726d>`\  -> \ :ref:`InputForm <l496e707574466f726d>`\ ) -> % 
+  \ ``input(op, foo)``\  attaches foo as the "\%input" property of \ ``op``\ . If \ ``op``\  has a "\%input" property \ ``f``\ , then \ ``op(a1,...,an)``\  gets converted to InputForm as \ ``f(a1, ..., an)``\ .
+
+.. _l42617369634f70657261746f72-69733f:
+
+.. index::
+   pair: BasicOperator; is?
+
+:spadfun:`is?`\: (%, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``is?(op, s)``\  tests if the name of \ ``op``\  is \ ``s``\ .
+
+.. _l42617369634f70657261746f72-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l42617369634f70657261746f72-6d6178:
+
+\ :ref:`max <l4f726465726564536574-6d6178>`\ \: (%, %) -> % 
+  from \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+.. _l42617369634f70657261746f72-6d696e:
+
+\ :ref:`min <l4f726465726564536574-6d696e>`\ \: (%, %) -> % 
+  from \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+.. _l42617369634f70657261746f72-6e616d65:
+
+.. index::
+   pair: BasicOperator; name
+
+:spadfun:`name`\: % -> \ :ref:`Symbol <l53796d626f6c>`\  
+  \ ``name(op)``\  returns the name of \ ``op``\ .
+
+.. _l42617369634f70657261746f72-6e6172793f:
+
+.. index::
+   pair: BasicOperator; nary?
+
+:spadfun:`nary?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``nary?(op)``\  tests if \ ``op``\  has arbitrary arity.
+
+.. _l42617369634f70657261746f72-6e756c6c6172793f:
+
+.. index::
+   pair: BasicOperator; nullary?
+
+:spadfun:`nullary?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``nullary?(op)``\  tests if \ ``op``\  is nullary.
+
+.. _l42617369634f70657261746f72-6f70657261746f72:
+
+.. index::
+   pair: BasicOperator; operator
+
+:spadfun:`operator`\: (\ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``operator(f, n)``\  makes \ ``f``\  into an \ ``n``\ -ary operator.
+
+
+.. index::
+   pair: BasicOperator; operator
+
+:spadfun:`operator`\: \ :ref:`Symbol <l53796d626f6c>`\  -> % 
+  \ ``operator(f)``\  makes \ ``f``\  into an operator with arbitrary arity.
+
+.. _l42617369634f70657261746f72-70726f70657274696573:
+
+.. index::
+   pair: BasicOperator; properties
+
+:spadfun:`properties`\: % -> \ :ref:`AssociationList <l4173736f63696174696f6e4c697374>`\ (\ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`None <l4e6f6e65>`\ ) 
+  \ ``properties(op)``\  returns the list of all the properties currently attached to \ ``op``\ .
+
+.. _l42617369634f70657261746f72-70726f7065727479:
+
+.. index::
+   pair: BasicOperator; property
+
+:spadfun:`property`\: (%, \ :ref:`Symbol <l53796d626f6c>`\ ) -> Union(\ :ref:`None <l4e6f6e65>`\ , failed) 
+  \ ``property(op, s)``\  returns the value of property \ ``s``\  if it is attached to \ ``op``\ , and "failed" otherwise.
+
+.. _l42617369634f70657261746f72-73657450726f70657274696573:
+
+.. index::
+   pair: BasicOperator; setProperties
+
+:spadfun:`setProperties`\: (%, \ :ref:`AssociationList <l4173736f63696174696f6e4c697374>`\ (\ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`None <l4e6f6e65>`\ )) -> % 
+  \ ``setProperties(op, l)``\  sets the property list of \ ``op``\  to \ ``l``\ . Argument \ ``op``\  is modified "in place", i.e. no copy is made.
+
+.. _l42617369634f70657261746f72-73657450726f7065727479:
+
+.. index::
+   pair: BasicOperator; setProperty
+
+:spadfun:`setProperty`\: (%, \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`None <l4e6f6e65>`\ ) -> % 
+  \ ``setProperty(op, s, v)``\  attaches property \ ``s``\  to \ ``op``\ , and sets its value to \ ``v``\ . Argument \ ``op``\  is modified "in place", i.e. no copy is made.
+
+.. _l42617369634f70657261746f72-736d616c6c65723f:
+
+\ :ref:`smaller? <l436f6d70617261626c65-736d616c6c65723f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+
+.. _l42617369634f70657261746f72-756e6172793f:
+
+.. index::
+   pair: BasicOperator; unary?
+
+:spadfun:`unary?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``unary?(op)``\  tests if \ ``op``\  is unary.
+
+.. _l42617369634f70657261746f72-776569676874:
+
+.. index::
+   pair: BasicOperator; weight
+
+:spadfun:`weight`\: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``weight(op)``\  returns the weight attached to \ ``op``\ .
+
+
+.. index::
+   pair: BasicOperator; weight
+
+:spadfun:`weight`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``weight(op, n)``\  attaches the weight \ ``n``\  to \ ``op``\ .
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`Comparable <l436f6d70617261626c65>`\  
+
+\ :ref:`OrderedSet <l4f726465726564536574>`\  
+
+\ :ref:`PartialOrder <l5061727469616c4f72646572>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

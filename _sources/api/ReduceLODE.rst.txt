@@ -1,0 +1,39 @@
+.. index:: ReduceLODE
+
+.. _l5265647563654c4f4445:
+
+ReduceLODE(F, L, UP, A, LO)
+===========================
+
+:viewcode:`odeef.spad line 189 <odeef.spad#L189>` :editcode:`[edit on github] <odeef.spad#L189>`
+
+* F: \ :ref:`Field <l4669656c64>`\ 
+
+* L: \ :ref:`LinearOrdinaryDifferentialOperatorCategory <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7243617465676f7279>`\  F
+
+* UP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  F
+
+* A: \ :ref:`MonogenicAlgebra <l4d6f6e6f67656e6963416c6765627261>`\ (F, UP)
+
+* LO: \ :ref:`LinearOrdinaryDifferentialOperatorCategory <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7243617465676f7279>`\  A
+
+
+Elimination of an algebraic from the coefficients of a linear ordinary differential equation.
+
+
+.. _l5265647563654c4f4445-7265647563654c4f4445:
+
+.. index::
+   pair: ReduceLODE; reduceLODE
+
+:spadfun:`reduceLODE`\: (LO, A) -> Record(mat: \ :ref:`Matrix <l4d6174726978>`\  L, vec: \ :ref:`Vector <l566563746f72>`\  F) 
+  \ ``reduceLODE(op, g)``\  returns \ ``[m, v]``\  such that any solution in \ ``A``\  of \ ``op z = g``\  is of the form \ ``z = (z_1, ..., z_m) . (b_1, ..., b_m)``\  where the \ ``b_i's``\  are the basis of \ ``A``\  over \ ``F``\  returned by \ :spadfun:`basis`\ () from \ ``A``\ , and the \ ``z_i's``\  satisfy the differential system \ ``M.z = v``\ .
+
+
+.. index::
+   pair: ReduceLODE; reduceLODE
+
+:spadfun:`reduceLODE`\: (LO, \ :ref:`List <l4c697374>`\  A) -> Record(mat: \ :ref:`Matrix <l4d6174726978>`\  L, vecs: \ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  F) 
+  \ ``reduceLODE(op, [g1, ..., gn])``\  returns \ ``[m, [v1, ..., vn]]``\  such that any solution in \ ``A``\  of \ ``op z = c1*g1 + ... + cn*gn``\  where \ ``ci``\  are constants satisfy the differential system \ ``M.z = c1*v1 + ... + cn*vn``\ 
+
+

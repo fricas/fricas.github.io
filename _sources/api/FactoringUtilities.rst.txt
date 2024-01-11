@@ -1,0 +1,78 @@
+.. index:: FactoringUtilities
+
+.. _l466163746f72696e675574696c6974696573:
+
+FactoringUtilities(E, OV, R, P)
+===============================
+
+:viewcode:`facutil.spad line 1 <facutil.spad#L1>` :editcode:`[edit on github] <facutil.spad#L1>`
+
+* E: \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+* OV: \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+* R: \ :ref:`Ring <l52696e67>`\ 
+
+* P: \ :ref:`PolynomialCategory <l506f6c796e6f6d69616c43617465676f7279>`\ (R, E, OV)
+
+
+This package provides utilities used by the factorizers which operate on polynomials represented as univariate polynomials with multivariate coefficients.
+
+
+.. _l466163746f72696e675574696c6974696573-636f6d706c6574654576616c:
+
+.. index::
+   pair: FactoringUtilities; completeEval
+
+:spadfun:`completeEval`\: (\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  P, \ :ref:`List <l4c697374>`\  OV, \ :ref:`List <l4c697374>`\  R) -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  R 
+  \ ``completeEval(upoly, lvar, lval)``\  evaluates the polynomial \ ``upoly``\  with each variable in \ ``lvar``\  replaced by the corresponding value in lval. Substitutions are done for all variables in \ ``upoly``\  producing a univariate polynomial over \ ``R``\ .
+
+.. _l466163746f72696e675574696c6974696573-646567726565:
+
+.. index::
+   pair: FactoringUtilities; degree
+
+:spadfun:`degree`\: (\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  P, \ :ref:`List <l4c697374>`\  OV) -> \ :ref:`List <l4c697374>`\  \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``degree(upoly, lvar)``\  returns a list containing the maximum degree for each variable in lvar.
+
+.. _l466163746f72696e675574696c6974696573-6c6f776572506f6c796e6f6d69616c:
+
+.. index::
+   pair: FactoringUtilities; lowerPolynomial
+
+:spadfun:`lowerPolynomial`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  P -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  R 
+  \ ``lowerPolynomial(upoly)``\  converts \ ``upoly``\  to be a univariate polynomial over \ ``R``\ . An error if the coefficients contain variables.
+
+.. _l466163746f72696e675574696c6974696573-6e6f726d616c4465726976:
+
+.. index::
+   pair: FactoringUtilities; normalDeriv
+
+:spadfun:`normalDeriv`\: (\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  P, \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  P 
+  \ ``normalDeriv(poly, i)``\  computes the \ ``i``\ th derivative of \ ``poly``\  divided by i!.
+
+.. _l466163746f72696e675574696c6974696573-7261697365506f6c796e6f6d69616c:
+
+.. index::
+   pair: FactoringUtilities; raisePolynomial
+
+:spadfun:`raisePolynomial`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  R -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  P 
+  \ ``raisePolynomial(rpoly)``\  converts \ ``rpoly``\  from a univariate polynomial over \ ``r``\  to be a univariate polynomial with polynomial coefficients.
+
+.. _l466163746f72696e675574696c6974696573-72616e:
+
+.. index::
+   pair: FactoringUtilities; ran
+
+:spadfun:`ran`\: \ :ref:`Integer <l496e7465676572>`\  -> R 
+  \ ``ran(k)``\  computes a random integer between \ ``-k``\  and \ ``k``\  as a member of \ ``R``\ .
+
+.. _l466163746f72696e675574696c6974696573-7661726961626c6573:
+
+.. index::
+   pair: FactoringUtilities; variables
+
+:spadfun:`variables`\: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  P -> \ :ref:`List <l4c697374>`\  OV 
+  \ ``variables(upoly)``\  returns the list of variables for the coefficients of \ ``upoly``\ .
+
+

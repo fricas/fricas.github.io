@@ -1,0 +1,114 @@
+.. index:: MrvLimitPackage
+
+.. _l4d72764c696d69745061636b616765:
+
+MrvLimitPackage
+===============
+
+:viewcode:`mrv_limit.spad line 26 <mrv_limit.spad#L26>` :editcode:`[edit on github] <mrv_limit.spad#L26>`
+
+
+Compute limits using Gruntz-Gonnet \ ``MRV``\  algorithm
+
+
+.. _l4d72764c696d69745061636b616765-657870725f746f5f736572696573:
+
+.. index::
+   pair: MrvLimitPackage; expr_to_series
+
+:spadfun:`expr_to_series`\: (\ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , Record(tan_syms: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , atan_syms: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , tan_kers: \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , atan_kers: \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ )) -> Union(Record(degree: \ :ref:`OrderedExpression <l4f72646572656445787072657373696f6e>`\ , coeff: \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ), failed) 
+  Compute degree and leading coefficinet of series expansion
+
+.. _l4d72764c696d69745061636b616765-6d72765f636d70:
+
+.. index::
+   pair: MrvLimitPackage; mrv_cmp
+
+:spadfun:`mrv_cmp`\: (\ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , Record(tan_syms: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , atan_syms: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , tan_kers: \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , atan_kers: \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ )) -> Union(Record(sign: \ :ref:`Integer <l496e7465676572>`\ , coeff: \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ), failed) 
+  Compare kernels
+
+.. _l4d72764c696d69745061636b616765-6d72765f6c696d697431:
+
+.. index::
+   pair: MrvLimitPackage; mrv_limit1
+
+:spadfun:`mrv_limit1`\: (\ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ) -> Union(\ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , failed) 
+  normalize and compute limit.
+
+.. _l4d72764c696d69745061636b616765-6d72765f6c696d6974:
+
+.. index::
+   pair: MrvLimitPackage; mrv_limit
+
+:spadfun:`mrv_limit`\: (\ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`String <l537472696e67>`\ ) -> Union(\ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , failed) 
+  Compute limit(\ ``f``\ (\ ``x``\ ), x=a) for a strictly finite limit point a This function computes one-sided limits from the left or right
+
+
+.. index::
+   pair: MrvLimitPackage; mrv_limit
+
+:spadfun:`mrv_limit`\: (\ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> Union(\ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , Record(leftHandLimit: Union(\ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , failed), rightHandLimit: Union(\ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , failed)), failed) 
+  Compute limit(\ ``f``\ (\ ``x``\ ), x=a) for a finite or infinite limit point a
+
+
+.. index::
+   pair: MrvLimitPackage; mrv_limit
+
+:spadfun:`mrv_limit`\: (\ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`String <l537472696e67>`\ ) -> Union(\ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , failed) 
+  \ ``mrv_limit(f, x, a, str)``\  is like mrv_limit(\ ``f``\ , \ ``x``\  = a, \ ``str``\ )
+
+
+.. index::
+   pair: MrvLimitPackage; mrv_limit
+
+:spadfun:`mrv_limit`\: (\ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> Union(\ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , Record(leftHandLimit: Union(\ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , failed), rightHandLimit: Union(\ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , failed)), failed) 
+  \ ``mrv_limit(f, x, a)``\  is like mrv_limit(\ ``f``\ , \ ``x``\  = a)
+
+
+.. index::
+   pair: MrvLimitPackage; mrv_limit
+
+:spadfun:`mrv_limit`\: (\ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , Record(tan_syms: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , atan_syms: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , tan_kers: \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , atan_kers: \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ )) -> Union(\ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , failed) 
+  Compute limit.
+
+.. _l4d72764c696d69745061636b616765-6d72765f6e6f726d616c697a65:
+
+.. index::
+   pair: MrvLimitPackage; mrv_normalize
+
+:spadfun:`mrv_normalize`\: (\ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , Record(tan_syms: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , atan_syms: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , tan_kers: \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , atan_kers: \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ )) -> \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``mrv_normalize(f, x)``\  transform \ ``f``\  to the form acceptable by core variant of mrv_limit.
+
+.. _l4d72764c696d69745061636b616765-6d72765f7265777269746530:
+
+.. index::
+   pair: MrvLimitPackage; mrv_rewrite0
+
+:spadfun:`mrv_rewrite0`\: (\ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``mrv_rewrite0``\ 
+
+.. _l4d72764c696d69745061636b616765-6d72765f72657772697465:
+
+.. index::
+   pair: MrvLimitPackage; mrv_rewrite
+
+:spadfun:`mrv_rewrite`\: (\ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , Record(tan_syms: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , atan_syms: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , tan_kers: \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , atan_kers: \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ )) -> Union(Record(degree: \ :ref:`OrderedExpression <l4f72646572656445787072657373696f6e>`\ , coeff: \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ), failed) 
+  rewrite
+
+.. _l4d72764c696d69745061636b616765-6d72765f736574:
+
+.. index::
+   pair: MrvLimitPackage; mrv_set
+
+:spadfun:`mrv_set`\: (\ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , Record(tan_syms: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , atan_syms: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , tan_kers: \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , atan_kers: \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ )) -> Union(Record(lk: \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , lc: \ :ref:`List <l4c697374>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ), failed) 
+  Compute \ ``MRV``\  set
+
+.. _l4d72764c696d69745061636b616765-6d72765f7369676e:
+
+.. index::
+   pair: MrvLimitPackage; mrv_sign
+
+:spadfun:`mrv_sign`\: (\ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , Record(tan_syms: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , atan_syms: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , tan_kers: \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , atan_kers: \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ )) -> Union(\ :ref:`Integer <l496e7465676572>`\ , failed) 
+  
+
+

@@ -1,0 +1,42 @@
+.. index:: AssociatedEquations
+
+.. _l4173736f6369617465644571756174696f6e73:
+
+AssociatedEquations(R, L)
+=========================
+
+:viewcode:`lodof.spad line 236 <lodof.spad#L236>` :editcode:`[edit on github] <lodof.spad#L236>`
+
+* R: \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+
+* L: \ :ref:`LinearOrdinaryDifferentialOperatorCategory <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7243617465676f7279>`\  R
+
+
+\ :ref:`AssociatedEquations <l4173736f6369617465644571756174696f6e73>`\  provides functions to compute the associated equations needed for factoring operators
+
+
+.. _l4173736f6369617465644571756174696f6e73-6173736f6369617465644571756174696f6e73:
+
+.. index::
+   pair: AssociatedEquations; associatedEquations
+
+:spadfun:`associatedEquations`\: (L, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> Record(minor: \ :ref:`List <l4c697374>`\  \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , eq: L, minors: \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , ops: \ :ref:`List <l4c697374>`\  L) if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``associatedEquations(op, m)``\  returns \ ``[w, eq, lw, lop]``\  such that \ ``eq(w) = 0``\  where \ ``w``\  is the given minor, and \ ``lw_i = lop_i(w)``\  for all the other minors.
+
+.. _l4173736f6369617465644571756174696f6e73-6173736f63696174656453797374656d:
+
+.. index::
+   pair: AssociatedEquations; associatedSystem
+
+:spadfun:`associatedSystem`\: (L, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> Record(mat: \ :ref:`Matrix <l4d6174726978>`\  R, vec: \ :ref:`Vector <l566563746f72>`\  \ :ref:`List <l4c697374>`\  \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) 
+  \ ``associatedSystem(op, m)``\  returns \ ``[M, w]``\  such that the \ ``m``\ -th associated equation system to \ ``L``\  is \ ``w' = M w``\ .
+
+.. _l4173736f6369617465644571756174696f6e73-756e636f75706c696e674d61747269636573:
+
+.. index::
+   pair: AssociatedEquations; uncouplingMatrices
+
+:spadfun:`uncouplingMatrices`\: \ :ref:`Matrix <l4d6174726978>`\  R -> \ :ref:`Vector <l566563746f72>`\  \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``uncouplingMatrices(M)``\  returns \ ``[A_1, ..., A_n]``\  such that if \ ``y = [y_1, ..., y_n]``\  is a solution of \ ``y' = M y``\ , then \ ``[\$y_j', y_j'', ..., y_j^{(n)}\$] = \$A_j y\$``\  for all \ ``j``\ \ ``'s``\ .
+
+

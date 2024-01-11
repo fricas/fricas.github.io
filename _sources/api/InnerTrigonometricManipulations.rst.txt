@@ -1,0 +1,68 @@
+.. index:: InnerTrigonometricManipulations
+
+.. _l496e6e6572547269676f6e6f6d65747269634d616e6970756c6174696f6e73:
+
+InnerTrigonometricManipulations(R, F, FG)
+=========================================
+
+:viewcode:`efstruc.spad line 815 <efstruc.spad#L815>` :editcode:`[edit on github] <efstruc.spad#L815>`
+
+* R: Join(\ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ , \ :ref:`Comparable <l436f6d70617261626c65>`\ )
+
+* F: Join(\ :ref:`FunctionSpace <l46756e6374696f6e5370616365>`\  R, \ :ref:`RadicalCategory <l5261646963616c43617465676f7279>`\ , \ :ref:`TranscendentalFunctionCategory <l5472616e7363656e64656e74616c46756e6374696f6e43617465676f7279>`\ )
+
+* FG: Join(\ :ref:`FunctionSpace <l46756e6374696f6e5370616365>`\  \ :ref:`Complex <l436f6d706c6578>`\  R, \ :ref:`RadicalCategory <l5261646963616c43617465676f7279>`\ , \ :ref:`TranscendentalFunctionCategory <l5472616e7363656e64656e74616c46756e6374696f6e43617465676f7279>`\ )
+
+
+This package provides transformations from trigonometric functions to exponentials and logarithms, and back. \ ``F``\  and \ ``FG``\  should be the same type of function space.
+
+
+.. _l496e6e6572547269676f6e6f6d65747269634d616e6970756c6174696f6e73-646f5f6c696f75:
+
+.. index::
+   pair: InnerTrigonometricManipulations; do_liou
+
+:spadfun:`do_liou`\: (\ :ref:`BasicOperator <l42617369634f70657261746f72>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`Complex <l436f6d706c6578>`\  F) -> \ :ref:`Complex <l436f6d706c6578>`\  F 
+  \ ``do_liou(op, lf)``\  should be local but conditional.
+
+.. _l496e6e6572547269676f6e6f6d65747269634d616e6970756c6174696f6e73-6578706c6f6773327472696773:
+
+.. index::
+   pair: InnerTrigonometricManipulations; explogs2trigs
+
+:spadfun:`explogs2trigs`\: FG -> \ :ref:`Complex <l436f6d706c6578>`\  F 
+  \ ``explogs2trigs(f)``\  rewrites all the complex logs and exponentials appearing in \ ``f``\  in terms of trigonometric functions.
+
+.. _l496e6e6572547269676f6e6f6d65747269634d616e6970756c6174696f6e73-46324647:
+
+.. index::
+   pair: InnerTrigonometricManipulations; F2FG
+
+:spadfun:`F2FG`\: F -> FG 
+  \ ``F2FG(a + sqrt(-1) b)``\  returns \ ``a + i b``\ .
+
+.. _l496e6e6572547269676f6e6f6d65747269634d616e6970756c6174696f6e73-46473246:
+
+.. index::
+   pair: InnerTrigonometricManipulations; FG2F
+
+:spadfun:`FG2F`\: FG -> F 
+  \ ``FG2F(a + i b)``\  returns \ ``a + sqrt(-1) b``\ .
+
+.. _l496e6e6572547269676f6e6f6d65747269634d616e6970756c6174696f6e73-4746324647:
+
+.. index::
+   pair: InnerTrigonometricManipulations; GF2FG
+
+:spadfun:`GF2FG`\: \ :ref:`Complex <l436f6d706c6578>`\  F -> FG 
+  \ ``GF2FG(a + i b)``\  returns \ ``a + i b``\  viewed as a function with the \ ``i``\  pushed down into the coefficient domain.
+
+.. _l496e6e6572547269676f6e6f6d65747269634d616e6970756c6174696f6e73-7472696773326578706c6f6773:
+
+.. index::
+   pair: InnerTrigonometricManipulations; trigs2explogs
+
+:spadfun:`trigs2explogs`\: (FG, \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  FG) -> FG 
+  \ ``trigs2explogs(f, [k1, ..., kn])``\  rewrites all the trigonometric functions appearing in \ ``f``\  in terms of complex logarithms and exponentials. A kernel of the form \ ``tan(u)``\  is expressed using \ ``exp(u)^2``\  if it is one of the \ ``ki's``\ , in terms of \ ``exp(2*u)``\  otherwise.
+
+

@@ -1,0 +1,309 @@
+.. index:: StreamTaylorSeriesOperations
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73:
+
+StreamTaylorSeriesOperations A
+==============================
+
+:viewcode:`sttaylor.spad line 1 <sttaylor.spad#L1>` :editcode:`[edit on github] <sttaylor.spad#L1>`
+
+* A: \ :ref:`Ring <l52696e67>`\ 
+
+
+StreamTaylorSeriesOperations implements Taylor series arithmetic, where a Taylor series is represented by a stream of its coefficients.
+
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-2a:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; *
+
+:spadfun:`\*`\: (A, \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``r * a``\  returns the power series scalar multiplication of \ ``r``\  by \ ``a``\ : \ ``r * [a0, a1, ...] = [r * a0, r * a1, ...]``\ 
+
+
+.. index::
+   pair: StreamTaylorSeriesOperations; *
+
+:spadfun:`\*`\: (\ :ref:`Stream <l53747265616d>`\  A, A) -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``a * r``\  returns the power series scalar multiplication of \ ``a``\  by \ ``r:``\  \ ``[a0, a1, ...] * r = [a0 * r, a1 * r, ...]``\ 
+
+
+.. index::
+   pair: StreamTaylorSeriesOperations; *
+
+:spadfun:`\*`\: (\ :ref:`Stream <l53747265616d>`\  A, \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``a * b``\  returns the power series (Cauchy) product of \ ``a``\  and \ ``b:``\  \ ``[a0, a1, ...] * [b0, b1, ...] = [c0, c1, ...]``\  where \ ``ck = sum(i + j = k, ai * bk)``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-2b:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; +
+
+:spadfun:`+`\: (\ :ref:`Stream <l53747265616d>`\  A, \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``a + b``\  returns the power series sum of \ ``a``\  and \ ``b``\ : \ ``[a0, a1, ..] + [b0, b1, ..] = [a0 + b0, a1 + b1, ..]``\ 
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-2d:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; -
+
+:spadfun:`-`\: (\ :ref:`Stream <l53747265616d>`\  A, \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``a - b``\  returns the power series difference of \ ``a``\  and \ ``b``\ : \ ``[a0, a1, ..] - [b0, b1, ..] = [a0 - b0, a1 - b1, ..]``\ 
+
+
+.. index::
+   pair: StreamTaylorSeriesOperations; -
+
+:spadfun:`-`\: \ :ref:`Stream <l53747265616d>`\  A -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``- a``\  returns the power series negative of \ ``a``\ : \ ``- [a0, a1, ...] = [- a0, - a1, ...]``\ 
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-2f:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; /
+
+:spadfun:`/`\: (\ :ref:`Stream <l53747265616d>`\  A, \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``a / b``\  returns the power series quotient of \ ``a``\  by \ ``b``\ . An error message is returned if \ ``b``\  is not invertible. This function is used in fixed point computations.
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-616464696167:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; addiag
+
+:spadfun:`addiag`\: \ :ref:`Stream <l53747265616d>`\  \ :ref:`Stream <l53747265616d>`\  A -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``addiag(x)``\  performs diagonal addition of a stream of streams. if \ ``x``\  = \ ``[[a<0, 0>, a<0, 1>, ..], [a<1, 0>, a<1, 1>, ..], [a<2, 0>, a<2, 1>, ..], ..]``\  and \ ``addiag(x) = [b<0, b<1>, ...], then b<k> = sum(i+j=k, a<i, j>)``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-636f65726365:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; coerce
+
+:spadfun:`coerce`\: A -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``coerce(r)``\  converts a ring element \ ``r``\  to a stream with one element.
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-636f6d706f7365:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; compose
+
+:spadfun:`compose`\: (\ :ref:`Stream <l53747265616d>`\  A, \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``compose(a, b)``\  composes the power series \ ``a``\  with the power series \ ``b``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-6465726976:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; deriv
+
+:spadfun:`deriv`\: \ :ref:`Stream <l53747265616d>`\  A -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``deriv(a)``\  returns the derivative of the power series with respect to the power series variable. Thus \ ``deriv([a0, a1, a2, ...])``\  returns \ ``[a1, 2 a2, 3 a3, ...]``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-6576616c:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; eval
+
+:spadfun:`eval`\: (\ :ref:`Stream <l53747265616d>`\  A, A) -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``eval(a, r)``\  returns a stream of partial sums of the power series \ ``a``\  evaluated at the power series variable equal to \ ``r``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-6576656e6c616d62657274:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; evenlambert
+
+:spadfun:`evenlambert`\: \ :ref:`Stream <l53747265616d>`\  A -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``evenlambert(st)``\  computes \ ``f(x^2) + f(x^4) + f(x^6) + ...``\  if \ ``st``\  is a stream representing \ ``f(x)``\ . This function is used for computing infinite products. If \ ``f(x)``\  is a power series with constant coefficient 1, then \ ``prod(f(x^(2*n)), n=1..infinity) = exp(evenlambert(log(f(x))))``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-657871756f:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; exquo
+
+:spadfun:`exquo`\: (\ :ref:`Stream <l53747265616d>`\  A, \ :ref:`Stream <l53747265616d>`\  A) -> Union(\ :ref:`Stream <l53747265616d>`\  A, failed) 
+  \ ``exquo(a, b)``\  returns the power series quotient of \ ``a``\  by \ ``b``\ , if the quotient exists, and "failed" otherwise
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-676465726976:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; gderiv
+
+:spadfun:`gderiv`\: (\ :ref:`Integer <l496e7465676572>`\  -> A, \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``gderiv(f, [a0, a1, a2, ..])``\  returns \ ``[f(0)*a0, f(1)*a1, f(2)*a2, ..]``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-67656e6572616c5f4c616d626572745f70726f64756374:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; general_Lambert_product
+
+:spadfun:`general_Lambert_product`\: (\ :ref:`Stream <l53747265616d>`\  A, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``general_Lambert_product(f(x), a, d)``\  returns \ ``f(x^a)*f(x^(a + d))*f(x^(a + 2 d))* ...``\ . \ ``f(x)``\  should have constant coefficient equal to one and \ ``a``\  and \ ``d``\  should be positive.
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-67656e6572616c4c616d62657274:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; generalLambert
+
+:spadfun:`generalLambert`\: (\ :ref:`Stream <l53747265616d>`\  A, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``generalLambert(f(x), a, d)``\  returns \ ``f(x^a) + f(x^(a + d)) + f(x^(a + 2 d)) + ...``\ . \ ``f(x)``\  should have zero constant coefficient and \ ``a``\  and \ ``d``\  should be positive.
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-696e74:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; int
+
+:spadfun:`int`\: A -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``int(r)``\  returns [\ ``r``\ , \ ``r+1``\ , \ ``r+2``\ , ...], where \ ``r``\  is a ring element.
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-696e746567657273:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; integers
+
+:spadfun:`integers`\: \ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`Stream <l53747265616d>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``integers(n)``\  returns \ ``[n, n+1, n+2, ...]``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-696e74656772617465:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; integrate
+
+:spadfun:`integrate`\: (A, \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A if A has \ :ref:`Algebra <l416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  \ ``integrate(r, a)``\  returns the integral of the power series \ ``a``\  with respect to the power series variable where \ ``r``\  denotes the constant of integration. Thus \ ``integrate(a, [a0, a1, a2, ...]) = [a, a0, a1/2, a2/3, ...]``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-696e766d756c746973656374:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; invmultisect
+
+:spadfun:`invmultisect`\: (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``invmultisect(a, b, st)``\  substitutes \ ``x^((a+b)*n)``\  for \ ``x^n``\  and multiplies by \ ``x^b``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-6c616772616e6765:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; lagrange
+
+:spadfun:`lagrange`\: \ :ref:`Stream <l53747265616d>`\  A -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``lagrange(g)``\  produces the power series for \ ``f``\  where \ ``f``\  is implicitly defined as \ ``f(z) = z*g(f(z))``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-6c616d62657274:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; lambert
+
+:spadfun:`lambert`\: \ :ref:`Stream <l53747265616d>`\  A -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``lambert(st)``\  computes \ ``f(x) + f(x^2) + f(x^3) + ...``\  if \ ``st``\  is a stream representing \ ``f(x)``\ . This function is used for computing infinite products. If \ ``f(x)``\  is a power series with constant coefficient 1 then \ ``prod(f(x^n), n = 1..infinity) = exp(lambert(log(f(x))))``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-6c617a7947696e74656772617465:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; lazyGintegrate
+
+:spadfun:`lazyGintegrate`\: (\ :ref:`Integer <l496e7465676572>`\  -> A, A, () -> \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A if A has \ :ref:`Field <l4669656c64>`\ 
+  \ ``lazyGintegrate(f, r, g)``\  is used for fixed point computations.
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-6c617a79496e74656772617465:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; lazyIntegrate
+
+:spadfun:`lazyIntegrate`\: (A, () -> \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A if A has \ :ref:`Algebra <l416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  \ ``lazyIntegrate(r, f)``\  is a version of integrate used for fixed point computations.
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-6d6170646976:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; mapdiv
+
+:spadfun:`mapdiv`\: (\ :ref:`Stream <l53747265616d>`\  A, \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A if A has \ :ref:`Field <l4669656c64>`\ 
+  \ ``mapdiv([a0, a1, ..], [b0, b1, ..])``\  returns \ ``[a0/b0, a1/b1, ..]``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-6d61706d756c74:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; mapmult
+
+:spadfun:`mapmult`\: (\ :ref:`Stream <l53747265616d>`\  A, \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``mapmult([a0, a1, ..], [b0, b1, ..])``\  returns \ ``[a0*b0, a1*b1, ..]``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-6d6f6e6f6d:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; monom
+
+:spadfun:`monom`\: (A, \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``monom(deg, coef)``\  is a monomial of degree \ ``deg``\  with coefficient coef.
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-6d756c746973656374:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; multisect
+
+:spadfun:`multisect`\: (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``multisect(a, b, st)``\  selects the coefficients of \ ``x^((a+b)*n+a)``\ , and changes them to \ ``x^n``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-6e6c6465:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; nlde
+
+:spadfun:`nlde`\: \ :ref:`Stream <l53747265616d>`\  \ :ref:`Stream <l53747265616d>`\  A -> \ :ref:`Stream <l53747265616d>`\  A if A has \ :ref:`Algebra <l416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  \ ``nlde(u)``\  solves a first order non-linear differential equation described by \ ``u``\  of the form \ ``[[b<0, 0>, b<0, 1>, ...], [b<1, 0>, b<1, 1>, .], ...]``\ . the differential equation has the form \ ``y' = sum(i=0 to infinity, j=0 to infinity, b<i, j>*(x^i)*(y^j))``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-6f6464696e746567657273:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; oddintegers
+
+:spadfun:`oddintegers`\: \ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`Stream <l53747265616d>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``oddintegers(n)``\  returns \ ``[n, n+2, n+4, ...]``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-6f64646c616d62657274:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; oddlambert
+
+:spadfun:`oddlambert`\: \ :ref:`Stream <l53747265616d>`\  A -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``oddlambert(st)``\  computes \ ``f(x) + f(x^3) + f(x^5) + ...``\  if \ ``st``\  is a stream representing \ ``f(x)``\ . This function is used for computing infinite products. If \ ``f``\ (\ ``x``\ ) is a power series with constant coefficient 1 then \ ``prod(f(x^(2*n-1)), n=1..infinity) = exp(oddlambert(log(f(x))))``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-706f776572:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; power
+
+:spadfun:`power`\: (A, \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A if A has \ :ref:`Field <l4669656c64>`\ 
+  \ ``power(a, f)``\  returns the power series \ ``f``\  raised to the power \ ``a``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-706f7765726e:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; powern
+
+:spadfun:`powern`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Stream <l53747265616d>`\  A) -> \ :ref:`Stream <l53747265616d>`\  A if A has \ :ref:`Algebra <l416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  \ ``powern(r, f)``\  raises power series \ ``f``\  to the power \ ``r``\ .
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-70726f64696167:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; prodiag
+
+:spadfun:`prodiag`\: \ :ref:`Stream <l53747265616d>`\  \ :ref:`Stream <l53747265616d>`\  A -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``prodiag(x)``\  performs "diagonal" infinite product of a stream of streams. When \ ``x(i)``\  is interpreted as stream of coefficients of series \ ``f_i(z), i=1,...``\ , then \ ``prodiag(x) = (1 + z*f_1(z))*(1 + z^2*f_2(x))*...``\ 
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-7265636970:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; recip
+
+:spadfun:`recip`\: \ :ref:`Stream <l53747265616d>`\  A -> Union(\ :ref:`Stream <l53747265616d>`\  A, failed) 
+  \ ``recip(a)``\  returns the power series reciprocal of \ ``a``\ , or "failed" if not possible.
+
+.. _l53747265616d5461796c6f725365726965734f7065726174696f6e73-726576657274:
+
+.. index::
+   pair: StreamTaylorSeriesOperations; revert
+
+:spadfun:`revert`\: \ :ref:`Stream <l53747265616d>`\  A -> \ :ref:`Stream <l53747265616d>`\  A 
+  \ ``revert(a)``\  computes the inverse of a power series \ ``a``\  with respect to composition. the series should have constant coefficient 0 and invertible first order coefficient.
+
+

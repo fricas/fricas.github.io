@@ -1,0 +1,49 @@
+.. index:: ODETools
+
+.. _l4f4445546f6f6c73:
+
+ODETools(F, LODO)
+=================
+
+:viewcode:`oderf.spad line 535 <oderf.spad#L535>` :editcode:`[edit on github] <oderf.spad#L535>`
+
+* F: \ :ref:`Field <l4669656c64>`\ 
+
+* LODO: \ :ref:`LinearOrdinaryDifferentialOperatorCategory <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7243617465676f7279>`\  F
+
+
+\ ``ODETools``\  provides tools for the linear ODE solver.
+
+
+.. _l4f4445546f6f6c73-706172746963756c6172536f6c7574696f6e:
+
+.. index::
+   pair: ODETools; particularSolution
+
+:spadfun:`particularSolution`\: (LODO, F, \ :ref:`List <l4c697374>`\  F, F -> F) -> Union(F, failed) 
+  \ ``particularSolution(op, g, [f1, ..., fm], I)``\  returns a particular solution \ ``h``\  of the equation \ ``op y = g``\  where \ ``[f1, ..., fm]``\  are linearly independent and \ ``op(fi)=0``\ . The value "failed" is returned if no particular solution is found. Note: the method of variations of parameters is used.
+
+.. _l4f4445546f6f6c73-766172696174696f6e4f66506172616d6574657273:
+
+.. index::
+   pair: ODETools; variationOfParameters
+
+:spadfun:`variationOfParameters`\: (LODO, F, \ :ref:`List <l4c697374>`\  F) -> Union(\ :ref:`Vector <l566563746f72>`\  F, failed) 
+  \ ``variationOfParameters(op, g, [f1, ..., fm])``\  returns \ ``[u1, ..., um]``\  such that a particular solution of the equation \ ``op y = g``\  is \ ``f1 int(u1) + ... + fm int(um)``\  where \ ``[f1, ..., fm]``\  are linearly independent and \ ``op(fi)=0``\ . The value "failed" is returned if \ ``m < n``\  and no particular solution is found.
+
+.. _l4f4445546f6f6c73-77726f6e736b69616e4d6174726978:
+
+.. index::
+   pair: ODETools; wronskianMatrix
+
+:spadfun:`wronskianMatrix`\: (\ :ref:`List <l4c697374>`\  F, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Matrix <l4d6174726978>`\  F 
+  \ ``wronskianMatrix([f1, ..., fn], q)``\  returns the \ ``q x n``\  matrix \ ``m``\  whose i^th row is \ ``[f1^(i-1), ..., fn^(i-1)]``\ .
+
+
+.. index::
+   pair: ODETools; wronskianMatrix
+
+:spadfun:`wronskianMatrix`\: \ :ref:`List <l4c697374>`\  F -> \ :ref:`Matrix <l4d6174726978>`\  F 
+  \ ``wronskianMatrix([f1, ..., fn])``\  returns the \ ``n x n``\  matrix \ ``m``\  whose i^th row is \ ``[f1^(i-1), ..., fn^(i-1)]``\ .
+
+

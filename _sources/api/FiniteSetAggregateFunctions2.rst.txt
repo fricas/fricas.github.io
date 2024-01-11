@@ -1,0 +1,46 @@
+.. index:: FiniteSetAggregateFunctions2
+
+.. _l46696e69746553657441676772656761746546756e6374696f6e7332:
+
+FiniteSetAggregateFunctions2(S, A, R, B)
+========================================
+
+:viewcode:`aggcat2.spad line 122 <aggcat2.spad#L122>` :editcode:`[edit on github] <aggcat2.spad#L122>`
+
+* S: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+* A: \ :ref:`FiniteSetAggregate <l46696e697465536574416767726567617465>`\  S
+
+* R: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+* B: \ :ref:`FiniteSetAggregate <l46696e697465536574416767726567617465>`\  R
+
+
+\ ``FiniteSetAggregateFunctions2``\  provides functions involving two finite set aggregates where the underlying domains might be different. An example of this is to create a set of rational numbers by mapping a function across a set of integers, where the function divides each integer by 1000.
+
+
+.. _l46696e69746553657441676772656761746546756e6374696f6e7332-6d6170:
+
+.. index::
+   pair: FiniteSetAggregateFunctions2; map
+
+:spadfun:`map`\: (S -> R, A) -> B 
+  \ ``map(f, a)``\  applies function \ ``f``\  to each member of aggregate \ ``a``\ , creating a new aggregate with a possibly different underlying domain.
+
+.. _l46696e69746553657441676772656761746546756e6374696f6e7332-726564756365:
+
+.. index::
+   pair: FiniteSetAggregateFunctions2; reduce
+
+:spadfun:`reduce`\: ((S, R) -> R, A, R) -> R 
+  \ ``reduce(f, a, r)``\  applies function \ ``f``\  to each successive element of the aggregate \ ``a``\  and an accumulant initialised to \ ``r``\ . For example, \ ``reduce(_+\$Integer, [1, 2, 3], 0)``\  does a \ ``3+(2+(1+0))``\ . Note: third argument \ ``r``\  may be regarded as an identity element for the function.
+
+.. _l46696e69746553657441676772656761746546756e6374696f6e7332-7363616e:
+
+.. index::
+   pair: FiniteSetAggregateFunctions2; scan
+
+:spadfun:`scan`\: ((S, R) -> R, A, R) -> B 
+  \ ``scan(f, a, r)``\  successively applies \ ``reduce(f, x, r)``\  to more and more leading sub-aggregates \ ``x``\  of aggregate \ ``a``\ . More precisely, if \ ``a``\  is \ ``[a1, a2, ...]``\ , then \ ``scan(f, a, r)``\  returns \spad {[reduce(f, [a1], r), reduce(f, [a1, a2], r), ...]}.
+
+

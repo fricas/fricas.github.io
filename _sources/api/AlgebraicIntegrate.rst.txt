@@ -1,0 +1,40 @@
+.. index:: AlgebraicIntegrate
+
+.. _l416c67656272616963496e74656772617465:
+
+AlgebraicIntegrate(R0, F, UP, UPUP, R)
+======================================
+
+:viewcode:`intalg.spad line 133 <intalg.spad#L133>` :editcode:`[edit on github] <intalg.spad#L133>`
+
+* R0: Join(\ :ref:`GcdDomain <l476364446f6d61696e>`\ , \ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ )
+
+* F: Join(\ :ref:`AlgebraicallyClosedField <l416c67656272616963616c6c79436c6f7365644669656c64>`\ , \ :ref:`FunctionSpace <l46756e6374696f6e5370616365>`\  R0)
+
+* UP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  F
+
+* UPUP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+* R: \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+
+This package provides functions for integrating a function on an algebraic curve.
+
+
+.. _l416c67656272616963496e74656772617465-616c67696e74656772617465:
+
+.. index::
+   pair: AlgebraicIntegrate; algintegrate
+
+:spadfun:`algintegrate`\: (R, UP -> UP, F -> \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  F) -> \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  R 
+  \ ``algintegrate(f, d, rec)``\  integrates \ ``f``\  with respect to the derivation \ ``d``\ .
+
+.. _l416c67656272616963496e74656772617465-70616c67696e74656772617465:
+
+.. index::
+   pair: AlgebraicIntegrate; palgintegrate
+
+:spadfun:`palgintegrate`\: (R, F, UP -> UP) -> Record(result1: \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  R, result2: F) 
+  \ ``palgintegrate(f, x, d)``\  integrates \ ``f``\  with respect to the derivation \ ``d``\ . Argument \ ``f``\  must be a pure algebraic function.
+
+

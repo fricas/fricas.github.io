@@ -1,0 +1,176 @@
+.. index:: ListMonoidOps
+
+.. _l4c6973744d6f6e6f69644f7073:
+
+ListMonoidOps(S, E, un)
+=======================
+
+:viewcode:`free.spad line 1 <free.spad#L1>` :editcode:`[edit on github] <free.spad#L1>`
+
+* S: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+* E: \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+* un: E
+
+
+This internal package represents monoid (abelian or not, with or without inverses) as lists and provides some common operations to the various flavors of monoids.
+
+
+.. _l4c6973744d6f6e6f69644f7073-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4c6973744d6f6e6f69644f7073-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4c6973744d6f6e6f69644f7073-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+
+\ :ref:`coerce <l436f65726369626c6546726f6d-636f65726365>`\ \: S -> % 
+  from \ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  S
+
+.. _l4c6973744d6f6e6f69644f7073-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l4c6973744d6f6e6f69644f7073-6c6566744d756c74:
+
+.. index::
+   pair: ListMonoidOps; leftMult
+
+:spadfun:`leftMult`\: (S, %) -> % 
+  \ ``leftMult(s, a)``\  returns \ ``s * a``\  where \ ``*``\  is the monoid operation, which is assumed non-commutative.
+
+.. _l4c6973744d6f6e6f69644f7073-6c6973744f664d6f6e6f6d73:
+
+.. index::
+   pair: ListMonoidOps; listOfMonoms
+
+:spadfun:`listOfMonoms`\: % -> \ :ref:`List <l4c697374>`\  Record(gen: S, exp: E) 
+  \ ``listOfMonoms(l)``\  returns the list of the monomials forming \ ``l``\ .
+
+.. _l4c6973744d6f6e6f69644f7073-6d616b654d756c7469:
+
+.. index::
+   pair: ListMonoidOps; makeMulti
+
+:spadfun:`makeMulti`\: \ :ref:`List <l4c697374>`\  Record(gen: S, exp: E) -> % 
+  \ ``makeMulti(l)``\  returns the element whose list of monomials is \ ``l``\ .
+
+.. _l4c6973744d6f6e6f69644f7073-6d616b655465726d:
+
+.. index::
+   pair: ListMonoidOps; makeTerm
+
+:spadfun:`makeTerm`\: (S, E) -> % 
+  \ ``makeTerm(s, e)``\  returns the monomial \ ``s``\  exponentiated by \ ``e``\  (e.g. s^e or \ ``e``\  * \ ``s``\ ).
+
+.. _l4c6973744d6f6e6f69644f7073-6d616b65556e6974:
+
+.. index::
+   pair: ListMonoidOps; makeUnit
+
+:spadfun:`makeUnit`\: () -> % 
+  \ ``makeUnit()``\  returns the unit element of the monomial.
+
+.. _l4c6973744d6f6e6f69644f7073-6d61704578706f6e:
+
+.. index::
+   pair: ListMonoidOps; mapExpon
+
+:spadfun:`mapExpon`\: (E -> E, %) -> % 
+  \ ``mapExpon(f, a1\^e1 ... an\^en)``\  returns \ ``a1\^f(e1) ... an\^f(en)``\ .
+
+.. _l4c6973744d6f6e6f69644f7073-6d617047656e:
+
+.. index::
+   pair: ListMonoidOps; mapGen
+
+:spadfun:`mapGen`\: (S -> S, %) -> % 
+  \ ``mapGen(f, a1\^e1 ... an\^en)``\  returns \ ``f(a1)\^e1 ... f(an)\^en``\ .
+
+.. _l4c6973744d6f6e6f69644f7073-6e74684578706f6e:
+
+.. index::
+   pair: ListMonoidOps; nthExpon
+
+:spadfun:`nthExpon`\: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> E 
+  \ ``nthExpon(l, n)``\  returns the exponent of the n^th monomial of \ ``l``\ .
+
+.. _l4c6973744d6f6e6f69644f7073-6e7468466163746f72:
+
+.. index::
+   pair: ListMonoidOps; nthFactor
+
+:spadfun:`nthFactor`\: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> S 
+  \ ``nthFactor(l, n)``\  returns the factor of the n^th monomial of \ ``l``\ .
+
+.. _l4c6973744d6f6e6f69644f7073-6f7574707574466f726d:
+
+.. index::
+   pair: ListMonoidOps; outputForm
+
+:spadfun:`outputForm`\: (%, (\ :ref:`OutputForm <l4f7574707574466f726d>`\ , \ :ref:`OutputForm <l4f7574707574466f726d>`\ ) -> \ :ref:`OutputForm <l4f7574707574466f726d>`\ , (\ :ref:`OutputForm <l4f7574707574466f726d>`\ , \ :ref:`OutputForm <l4f7574707574466f726d>`\ ) -> \ :ref:`OutputForm <l4f7574707574466f726d>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  \ ``outputForm(l, fop, fexp, unit)``\  converts the monoid element represented by \ ``l``\  to an \ :ref:`OutputForm <l4f7574707574466f726d>`\ . Argument unit is the output form for the unit of the monoid (e.g. 0 or 1), \ ``fop(a, b)``\  is the output form for the monoid operation applied to \ ``a``\  and \ ``b``\  (e.g. \ ``a + b``\ , \ ``a * b``\ , \ ``ab``\ ), and \ ``fexp(a, n)``\  is the output form for the exponentiation operation applied to \ ``a``\  and \ ``n``\  (e.g. \ ``n a``\ , \ ``n * a``\ , \ ``a ^ n``\ , \ ``a\^n``\ ).
+
+.. _l4c6973744d6f6e6f69644f7073-72657472616374:
+
+\ :ref:`retract <l5265747261637461626c65546f-72657472616374>`\ \: % -> S 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  S
+
+.. _l4c6973744d6f6e6f69644f7073-72657472616374496643616e:
+
+\ :ref:`retractIfCan <l5265747261637461626c65546f-72657472616374496643616e>`\ \: % -> Union(S, failed) 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  S
+
+.. _l4c6973744d6f6e6f69644f7073-7265766572736521:
+
+.. index::
+   pair: ListMonoidOps; reverse!
+
+:spadfun:`reverse!`\: % -> % 
+  \ ``reverse!(l)``\  reverses the list of monomials forming \ ``l``\ , destroying the element \ ``l``\ .
+
+.. _l4c6973744d6f6e6f69644f7073-72657665727365:
+
+.. index::
+   pair: ListMonoidOps; reverse
+
+:spadfun:`reverse`\: % -> % 
+  \ ``reverse(l)``\  reverses the list of monomials forming \ ``l``\ . This has some effect if the monoid is non-abelian, i.e. \ ``reverse(a1\^e1 ... an\^en) = an\^en ... a1\^e1``\  which is different.
+
+.. _l4c6973744d6f6e6f69644f7073-72696768744d756c74:
+
+.. index::
+   pair: ListMonoidOps; rightMult
+
+:spadfun:`rightMult`\: (%, S) -> % 
+  \ ``rightMult(a, s)``\  returns \ ``a * s``\  where \ ``*``\  is the monoid operation, which is assumed non-commutative.
+
+.. _l4c6973744d6f6e6f69644f7073-73697a65:
+
+.. index::
+   pair: ListMonoidOps; size
+
+:spadfun:`size`\: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``size(l)``\  returns the number of monomials forming \ ``l``\ .
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  S 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`RetractableTo <l5265747261637461626c65546f>`\  S 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

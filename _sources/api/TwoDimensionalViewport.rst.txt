@@ -1,0 +1,301 @@
+.. index:: TwoDimensionalViewport
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274:
+
+TwoDimensionalViewport
+======================
+
+:viewcode:`view2D.spad line 397 <view2D.spad#L397>` :editcode:`[edit on github] <view2D.spad#L397>`
+
+
+TwoDimensionalViewport creates viewports to display graphs.
+
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-61786573:
+
+.. index::
+   pair: TwoDimensionalViewport; axes
+
+:spadfun:`axes`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`Palette <l50616c65747465>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``axes(v, n, c)``\  displays the axes of the graph in field \ ``n``\  of the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , with the axes color set to the given palette color \ ``c``\ .
+
+
+.. index::
+   pair: TwoDimensionalViewport; axes
+
+:spadfun:`axes`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``axes(v, n, s)``\  displays the axes of the graph in field \ ``n``\  of the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , if \ ``s``\  is "on", or does not display the axes if \ ``s``\  is "off".
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-636c6f7365:
+
+.. index::
+   pair: TwoDimensionalViewport; close
+
+:spadfun:`close`\: % -> \ :ref:`Void <l566f6964>`\  
+  \ ``close(v)``\  closes the viewport window of the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , and terminates the corresponding process ID.
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-636f65726365:
+
+.. index::
+   pair: TwoDimensionalViewport; coerce
+
+:spadfun:`coerce`\: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  \ ``coerce(v)``\  returns the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\  as output of the domain \ :ref:`OutputForm <l4f7574707574466f726d>`\ .
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-636f6e6e656374:
+
+.. index::
+   pair: TwoDimensionalViewport; connect
+
+:spadfun:`connect`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``connect(v, n, s)``\  displays the lines connecting the graph points in field \ ``n``\  of the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , if \ ``s``\  is "on", or does not display the lines if \ ``s``\  is "off".
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-636f6e74726f6c50616e656c:
+
+.. index::
+   pair: TwoDimensionalViewport; controlPanel
+
+:spadfun:`controlPanel`\: (%, \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``controlPanel(v, s)``\  displays the control panel of the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , if \ ``s``\  is "on", or hides the control panel if \ ``s``\  is "off".
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-64696d656e73696f6e73:
+
+.. index::
+   pair: TwoDimensionalViewport; dimensions
+
+:spadfun:`dimensions`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``dimensions(v, x, y, width, height)``\  sets the position of the upper left-hand corner of the two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , to the window coordinate \ ``x``\ , \ ``y``\ , and sets the dimensions of the window to that of \ ``width``\ , \ ``height``\ . The new dimensions are not displayed until the function \ :spadfun:`makeViewport2D`\  is executed again for \ ``v``\ .
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-6765744772617068:
+
+.. index::
+   pair: TwoDimensionalViewport; getGraph
+
+:spadfun:`getGraph`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> \ :ref:`GraphImage <l4772617068496d616765>`\  
+  \ ``getGraph(v, n)``\  returns the graph which is of the domain \ :ref:`GraphImage <l4772617068496d616765>`\  which is located in graph field \ ``n``\  of the given two-dimensional viewport, \ ``v``\ , which is of the domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ .
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-6765745069636b6564506f696e7473:
+
+.. index::
+   pair: TwoDimensionalViewport; getPickedPoints
+
+:spadfun:`getPickedPoints`\: % -> \ :ref:`List <l4c697374>`\  \ :ref:`Point <l506f696e74>`\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  
+  \ ``getPickedPoints(x)``\  returns a list of small floats for the points the user interactively picked on the viewport for full integration into the system, some design issues need to be addressed: e.g. how to go through the GraphImage interface, how to default to graphs, etc.
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-677261706873:
+
+.. index::
+   pair: TwoDimensionalViewport; graphs
+
+:spadfun:`graphs`\: % -> \ :ref:`Vector <l566563746f72>`\  Union(\ :ref:`GraphImage <l4772617068496d616765>`\ , undefined) 
+  \ ``graphs(v)``\  returns a vector, or list, which is a union of all the graphs, of the domain \ :ref:`GraphImage <l4772617068496d616765>`\ , which are allocated for the two-dimensional viewport, \ ``v``\ , of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ . Those graphs which have no data are labeled "undefined", otherwise their contents are shown.
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-67726170685374617465:
+
+.. index::
+   pair: TwoDimensionalViewport; graphState
+
+:spadfun:`graphState`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Palette <l50616c65747465>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Palette <l50616c65747465>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``graphState(v, num, sX, sY, dX, dY, pts, lns, box, axes, axesC, un, unC, cP)``\  sets the state of the characteristics for the graph indicated by \ ``num``\  in the given two-dimensional viewport \ ``v``\ , of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , to the values given as parameters. The scaling of the graph in the \ ``x``\  and \ ``y``\  component directions is set to be \ ``sX``\  and \ ``sY``\ ; the window translation in the \ ``x``\  and \ ``y``\  component directions is set to be \ ``dX``\  and \ ``dY``\ ; The graph points, lines, bounding \ ``box``\ , \ ``axes``\ , or units will be shown in the viewport if their given parameters \ ``pts``\ , \ ``lns``\ , \ ``box``\ , \ ``axes``\  or \ ``un``\  are set to be \ ``1``\ , but will not be shown if they are set to \ ``0``\ . The color of the \ ``axes``\  and the color of the units are indicated by the palette colors \ ``axesC``\  and \ ``unC``\  respectively. To display the control panel when the viewport window is displayed, set \ ``cP``\  to \ ``1``\ , otherwise set it to \ ``0``\ .
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-6772617068537461746573:
+
+.. index::
+   pair: TwoDimensionalViewport; graphStates
+
+:spadfun:`graphStates`\: % -> \ :ref:`Vector <l566563746f72>`\  Record(scaleX: \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , scaleY: \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , deltaX: \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , deltaY: \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\ , points: \ :ref:`Integer <l496e7465676572>`\ , connect: \ :ref:`Integer <l496e7465676572>`\ , spline: \ :ref:`Integer <l496e7465676572>`\ , axes: \ :ref:`Integer <l496e7465676572>`\ , axesColor: \ :ref:`Palette <l50616c65747465>`\ , units: \ :ref:`Integer <l496e7465676572>`\ , unitsColor: \ :ref:`Palette <l50616c65747465>`\ , showing: \ :ref:`Integer <l496e7465676572>`\ ) 
+  \ ``graphStates(v)``\  returns and shows a listing of a record containing the current state of the characteristics of each of the ten graph records in the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ .
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-6b6579:
+
+.. index::
+   pair: TwoDimensionalViewport; key
+
+:spadfun:`key`\: % -> \ :ref:`Integer <l496e7465676572>`\  
+  \ ``key(v)``\  returns the process ID number of the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ .
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-6d616b6556696577706f72743244:
+
+.. index::
+   pair: TwoDimensionalViewport; makeViewport2D
+
+:spadfun:`makeViewport2D`\: % -> % 
+  \ ``makeViewport2D(v)``\  takes the given two-dimensional viewport, \ ``v``\ , of the domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\  and displays a viewport window on the screen which contains the contents of \ ``v``\ .
+
+
+.. index::
+   pair: TwoDimensionalViewport; makeViewport2D
+
+:spadfun:`makeViewport2D`\: (\ :ref:`GraphImage <l4772617068496d616765>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`DrawOption <l447261774f7074696f6e>`\ ) -> % 
+  \ ``makeViewport2D(gi, lopt)``\  creates and displays a viewport window of the domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\  whose graph field is assigned to be the given graph, \ ``gi``\ , of domain \ :ref:`GraphImage <l4772617068496d616765>`\ , and whose options field is set to be the list of options, \ ``lopt``\  of domain \ :ref:`DrawOption <l447261774f7074696f6e>`\ .
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-6d6f7665:
+
+.. index::
+   pair: TwoDimensionalViewport; move
+
+:spadfun:`move`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``move(v, x, y)``\  displays the two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , with the upper left-hand corner of the viewport window at the screen coordinate position \ ``x``\ , \ ``y``\ .
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-6f7074696f6e73:
+
+.. index::
+   pair: TwoDimensionalViewport; options
+
+:spadfun:`options`\: % -> \ :ref:`List <l4c697374>`\  \ :ref:`DrawOption <l447261774f7074696f6e>`\  
+  \ ``options(v)``\  takes the given two-dimensional viewport, \ ``v``\ , of the domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\  and returns a list containing the draw options from the domain \ :ref:`DrawOption <l447261774f7074696f6e>`\  for \ ``v``\ .
+
+
+.. index::
+   pair: TwoDimensionalViewport; options
+
+:spadfun:`options`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`DrawOption <l447261774f7074696f6e>`\ ) -> % 
+  \ ``options(v, lopt)``\  takes the given two-dimensional viewport, \ ``v``\ , of the domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\  and returns \ ``v``\  with it\ ``'s``\  draw options modified to be those which are indicated in the given list, \ ``lopt``\  of domain \ :ref:`DrawOption <l447261774f7074696f6e>`\ .
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-706f696e7473:
+
+.. index::
+   pair: TwoDimensionalViewport; points
+
+:spadfun:`points`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``points(v, n, s)``\  displays the points of the graph in field \ ``n``\  of the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , if \ ``s``\  is "on", or does not display the points if \ ``s``\  is "off".
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-7075744772617068:
+
+.. index::
+   pair: TwoDimensionalViewport; putGraph
+
+:spadfun:`putGraph`\: (%, \ :ref:`GraphImage <l4772617068496d616765>`\ , \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``putGraph(v, gi, n)``\  sets the graph field indicated by \ ``n``\ , of the indicated two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , to be the graph, \ ``gi``\  of domain \ :ref:`GraphImage <l4772617068496d616765>`\ . The contents of viewport, \ ``v``\ , will contain \ ``gi``\  when the function \ :spadfun:`makeViewport2D`\  is called to create the an updated viewport \ ``v``\ .
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-726567696f6e:
+
+.. index::
+   pair: TwoDimensionalViewport; region
+
+:spadfun:`region`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``region(v, n, s)``\  displays the bounding box of the graph in field \ ``n``\  of the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , if \ ``s``\  is "on", or does not display the bounding box if \ ``s``\  is "off".
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-7265736574:
+
+.. index::
+   pair: TwoDimensionalViewport; reset
+
+:spadfun:`reset`\: % -> \ :ref:`Void <l566f6964>`\  
+  \ ``reset(v)``\  sets the current state of the graph characteristics of the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , back to their initial settings.
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-726573697a65:
+
+.. index::
+   pair: TwoDimensionalViewport; resize
+
+:spadfun:`resize`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``resize(v, w, h)``\  displays the two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , with a width of \ ``w``\  and a height of \ ``h``\ , keeping the upper left-hand corner position unchanged.
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-7363616c65:
+
+.. index::
+   pair: TwoDimensionalViewport; scale
+
+:spadfun:`scale`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`Float <l466c6f6174>`\ , \ :ref:`Float <l466c6f6174>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``scale(v, n, sx, sy)``\  displays the graph in field \ ``n``\  of the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , scaled by the factor \ ``sx``\  in the \ ``x``\ -coordinate direction and by the factor \ ``sy``\  in the \ ``y``\ -coordinate direction.
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-73686f77:
+
+.. index::
+   pair: TwoDimensionalViewport; show
+
+:spadfun:`show`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``show(v, n, s)``\  displays the graph in field \ ``n``\  of the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , if \ ``s``\  is "on", or does not display the graph if \ ``s``\  is "off".
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-7469746c65:
+
+.. index::
+   pair: TwoDimensionalViewport; title
+
+:spadfun:`title`\: (%, \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``title(v, s)``\  changes the title which is shown in the two-dimensional viewport window, \ ``v``\  of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ .
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-7472616e736c617465:
+
+.. index::
+   pair: TwoDimensionalViewport; translate
+
+:spadfun:`translate`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`Float <l466c6f6174>`\ , \ :ref:`Float <l466c6f6174>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``translate(v, n, dx, dy)``\  displays the graph in field \ ``n``\  of the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , translated by \ ``dx``\  in the \ ``x``\ -coordinate direction from the center of the viewport, and by \ ``dy``\  in the \ ``y``\ -coordinate direction from the center. Setting \ ``dx``\  and \ ``dy``\  to \ ``0``\  places the center of the graph at the center of the viewport.
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-756e697473:
+
+.. index::
+   pair: TwoDimensionalViewport; units
+
+:spadfun:`units`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`Palette <l50616c65747465>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``units(v, n, c)``\  displays the units of the graph in field \ ``n``\  of the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , with the units color set to the given palette color \ ``c``\ .
+
+
+.. index::
+   pair: TwoDimensionalViewport; units
+
+:spadfun:`units`\: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``units(v, n, s)``\  displays the units of the graph in field \ ``n``\  of the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , if \ ``s``\  is "on", or does not display the units if \ ``s``\  is "off".
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-757064617465:
+
+.. index::
+   pair: TwoDimensionalViewport; update
+
+:spadfun:`update`\: (%, \ :ref:`GraphImage <l4772617068496d616765>`\ , \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``update(v, gr, n)``\  drops the graph \ ``gr``\  in slot \ ``n``\  of viewport \ ``v``\ . The graph \ ``gr``\  must have been transmitted already and acquired an integer key.
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-76696577706f72743244:
+
+.. index::
+   pair: TwoDimensionalViewport; viewport2D
+
+:spadfun:`viewport2D`\: () -> % 
+  \ ``viewport2D()``\  returns an undefined two-dimensional viewport of the domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\  whose contents are empty.
+
+.. _l54776f44696d656e73696f6e616c56696577706f7274-7772697465:
+
+.. index::
+   pair: TwoDimensionalViewport; write
+
+:spadfun:`write`\: (%, \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`String <l537472696e67>`\  
+  \ ``write(v, s)``\  takes the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , and creates a directory indicated by \ ``s``\ , which contains the graph data files for \ ``v``\ .
+
+
+.. index::
+   pair: TwoDimensionalViewport; write
+
+:spadfun:`write`\: (%, \ :ref:`String <l537472696e67>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`String <l537472696e67>`\  
+  \ ``write(v, s, lf)``\  takes the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , and creates a directory indicated by \ ``s``\ , which contains the graph data files for \ ``v``\  and the optional file types indicated by the list \ ``lf``\ .
+
+
+.. index::
+   pair: TwoDimensionalViewport; write
+
+:spadfun:`write`\: (%, \ :ref:`String <l537472696e67>`\ , \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`String <l537472696e67>`\  
+  \ ``write(v, s, f)``\  takes the given two-dimensional viewport, \ ``v``\ , which is of domain \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\ , and creates a directory indicated by \ ``s``\ , which contains the graph data files for \ ``v``\  and an optional file type \ ``f``\ .
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

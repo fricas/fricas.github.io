@@ -1,0 +1,94 @@
+.. index:: InnerMatrixLinearAlgebraFunctions
+
+.. _l496e6e65724d61747269784c696e656172416c676562726146756e6374696f6e73:
+
+InnerMatrixLinearAlgebraFunctions(R, Row, Col, M)
+=================================================
+
+:viewcode:`matfuns.spad line 1 <matfuns.spad#L1>` :editcode:`[edit on github] <matfuns.spad#L1>`
+
+* R: \ :ref:`DivisionRing <l4469766973696f6e52696e67>`\ 
+
+* Row: \ :ref:`FiniteLinearAggregate <l46696e6974654c696e656172416767726567617465>`\  R
+
+* Col: \ :ref:`FiniteLinearAggregate <l46696e6974654c696e656172416767726567617465>`\  R
+
+* M: \ :ref:`MatrixCategory <l4d617472697843617465676f7279>`\ (R, Row, Col)
+
+
+\ :ref:`InnerMatrixLinearAlgebraFunctions <l496e6e65724d61747269784c696e656172416c676562726146756e6374696f6e73>`\  is an internal package which provides standard linear algebra functions on domains in \ ``MatrixCategory``\ 
+
+
+.. _l496e6e65724d61747269784c696e656172416c676562726146756e6374696f6e73-64657465726d696e616e74:
+
+.. index::
+   pair: InnerMatrixLinearAlgebraFunctions; determinant
+
+:spadfun:`determinant`\: M -> R if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``determinant(m)``\  returns the determinant of the matrix \ ``m``\ . an error message is returned if the matrix is not square.
+
+.. _l496e6e65724d61747269784c696e656172416c676562726146756e6374696f6e73-67656e6572616c697a6564496e7665727365:
+
+.. index::
+   pair: InnerMatrixLinearAlgebraFunctions; generalizedInverse
+
+:spadfun:`generalizedInverse`\: M -> M if R has \ :ref:`Field <l4669656c64>`\ 
+  \ ``generalizedInverse(m)``\  returns the generalized (Moore--Penrose) inverse of the matrix \ ``m``\ , i.e. the matrix \ ``h``\  such that m*h*m=h, h*m*h=m, \ ``m*h``\  and \ ``h*m``\  are both symmetric matrices.
+
+.. _l496e6e65724d61747269784c696e656172416c676562726146756e6374696f6e73-696e7665727365:
+
+.. index::
+   pair: InnerMatrixLinearAlgebraFunctions; inverse
+
+:spadfun:`inverse`\: M -> Union(M, failed) 
+  \ ``inverse(m)``\  returns the inverse of the matrix \ ``m``\ . If the matrix is not invertible, "failed" is returned. Error: if the matrix is not square.
+
+.. _l496e6e65724d61747269784c696e656172416c676562726146756e6374696f6e73-6e756c6c697479:
+
+.. index::
+   pair: InnerMatrixLinearAlgebraFunctions; nullity
+
+:spadfun:`nullity`\: M -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``nullity(m)``\  returns the mullity of the matrix \ ``m``\ . This is the dimension of the null space of the matrix \ ``m``\ .
+
+.. _l496e6e65724d61747269784c696e656172416c676562726146756e6374696f6e73-6e756c6c5370616365:
+
+.. index::
+   pair: InnerMatrixLinearAlgebraFunctions; nullSpace
+
+:spadfun:`nullSpace`\: M -> \ :ref:`List <l4c697374>`\  Col if Col has \ :ref:`shallowlyMutable <l7368616c6c6f776c794d757461626c65>`\ 
+  \ ``nullSpace(m)``\  returns a basis for the null space of the matrix \ ``m``\ .
+
+.. _l496e6e65724d61747269784c696e656172416c676562726146756e6374696f6e73-72616e6b:
+
+.. index::
+   pair: InnerMatrixLinearAlgebraFunctions; rank
+
+:spadfun:`rank`\: M -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``rank(m)``\  returns the rank of the matrix \ ``m``\ .
+
+.. _l496e6e65724d61747269784c696e656172416c676562726146756e6374696f6e73-726f775f6f7065726174696f6e5f62617365:
+
+.. index::
+   pair: InnerMatrixLinearAlgebraFunctions; row_operation_base
+
+:spadfun:`row_operation_base`\: (M, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , R) -> \ :ref:`Void <l566f6964>`\  
+  \ ``row_operation_base should``\  be local, but conditional
+
+.. _l496e6e65724d61747269784c696e656172416c676562726146756e6374696f6e73-726f775f6f7065726174696f6e5f6d6f64756c6172:
+
+.. index::
+   pair: InnerMatrixLinearAlgebraFunctions; row_operation_modular
+
+:spadfun:`row_operation_modular`\: (M, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , R, \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``row_operation_modular should``\  be local, but conditional
+
+.. _l496e6e65724d61747269784c696e656172416c676562726146756e6374696f6e73-726f77456368656c6f6e:
+
+.. index::
+   pair: InnerMatrixLinearAlgebraFunctions; rowEchelon
+
+:spadfun:`rowEchelon`\: M -> M 
+  \ ``rowEchelon(m)``\  returns the row echelon form of the matrix \ ``m``\ .
+
+

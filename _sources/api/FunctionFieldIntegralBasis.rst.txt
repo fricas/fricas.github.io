@@ -1,0 +1,38 @@
+.. index:: FunctionFieldIntegralBasis
+
+.. _l46756e6374696f6e4669656c64496e74656772616c4261736973:
+
+FunctionFieldIntegralBasis(R, UP, F)
+====================================
+
+:viewcode:`intclos.spad line 199 <intclos.spad#L199>` :editcode:`[edit on github] <intclos.spad#L199>`
+
+* R: \ :ref:`EuclideanDomain <l4575636c696465616e446f6d61696e>`\  with
+
+    squareFree\: % -> \ :ref:`Factored <l466163746f726564>`\  %
+
+* UP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  R
+
+* F: \ :ref:`FramedAlgebra <l4672616d6564416c6765627261>`\ (R, UP)
+
+
+In this package \ ``R``\  is a Euclidean domain and \ ``F``\  is a framed algebra over \ ``R``\ . The package provides functions to compute the integral closure of \ ``R``\  in the quotient field of \ ``F``\ . It is assumed that \ ``char(R/P) = char(R)``\  for any prime \ ``P``\  of \ ``R``\ . A typical instance of this is when \ ``R = K[x]``\  and \ ``F``\  is a function field over \ ``R``\ .
+
+
+.. _l46756e6374696f6e4669656c64496e74656772616c4261736973-696e74656772616c4261736973:
+
+.. index::
+   pair: FunctionFieldIntegralBasis; integralBasis
+
+:spadfun:`integralBasis`\: () -> Record(basis: \ :ref:`Matrix <l4d6174726978>`\  R, basisDen: R, basisInv: \ :ref:`Matrix <l4d6174726978>`\  R) 
+  \ ``integralBasis()``\  returns a record \ ``[basis, basisDen, basisInv]``\  containing information regarding the integral closure of \ ``R``\  in the quotient field of \ ``F``\ , where \ ``F``\  is a framed algebra with \ ``R``\ -module basis \ ``w1, w2, ..., wn``\ . If \ ``basis``\  is the matrix \ ``(aij, i = 1..n, j = 1..n)``\ , then the \ ``i``\ th element of the integral basis is \ ``vi = (1/basisDen) * sum(aij * wj, j = 1..n)``\ , i.e. the \ ``i``\ th row of \ ``basis``\  contains the coordinates of the \ ``i``\ th basis vector. Similarly, the \ ``i``\ th row of the matrix \ ``basisInv``\  contains the coordinates of \ ``wi``\  with respect to the basis \ ``v1, ..., vn``\ : if \ ``basisInv``\  is the matrix \ ``(bij, i = 1..n, j = 1..n)``\ , then \ ``wi = sum(bij * vj, j = 1..n)``\ .
+
+.. _l46756e6374696f6e4669656c64496e74656772616c4261736973-6c6f63616c496e74656772616c4261736973:
+
+.. index::
+   pair: FunctionFieldIntegralBasis; localIntegralBasis
+
+:spadfun:`localIntegralBasis`\: R -> Record(basis: \ :ref:`Matrix <l4d6174726978>`\  R, basisDen: R, basisInv: \ :ref:`Matrix <l4d6174726978>`\  R) 
+  \ ``integralBasis(p)``\  returns a record \ ``[basis, basisDen, basisInv]``\  containing information regarding the local integral closure of \ ``R``\  at the prime \ ``p``\  in the quotient field of \ ``F``\ , where \ ``F``\  is a framed algebra with \ ``R``\ -module basis \ ``w1, w2, ..., wn``\ . If \ ``basis``\  is the matrix \ ``(aij, i = 1..n, j = 1..n)``\ , then the \ ``i``\ th element of the local integral basis is \ ``vi = (1/basisDen) * sum(aij * wj, j = 1..n)``\ , i.e. the \ ``i``\ th row of \ ``basis``\  contains the coordinates of the \ ``i``\ th basis vector. Similarly, the \ ``i``\ th row of the matrix \ ``basisInv``\  contains the coordinates of \ ``wi``\  with respect to the basis \ ``v1, ..., vn``\ : if \ ``basisInv``\  is the matrix \ ``(bij, i = 1..n, j = 1..n)``\ , then \ ``wi = sum(bij * vj, j = 1..n)``\ .
+
+

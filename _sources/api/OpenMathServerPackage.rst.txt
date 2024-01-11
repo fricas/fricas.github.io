@@ -1,0 +1,38 @@
+.. index:: OpenMathServerPackage
+
+.. _l4f70656e4d6174685365727665725061636b616765:
+
+OpenMathServerPackage
+=====================
+
+:viewcode:`omserver.spad line 1 <omserver.spad#L1>` :editcode:`[edit on github] <omserver.spad#L1>`
+
+
+\ :ref:`OpenMathServerPackage <l4f70656e4d6174685365727665725061636b616765>`\  provides the necessary operations to run FriCAS as an OpenMath server, reading/writing objects to/from a port. Please note the facilities available here are very basic. The idea is that a user calls e.g. \ ``Omserve(4000, 60)``\  and then another process sends OpenMath objects to port 4000 and reads the result.
+
+
+.. _l4f70656e4d6174685365727665725061636b616765-4f4d72656365697665:
+
+.. index::
+   pair: OpenMathServerPackage; OMreceive
+
+:spadfun:`OMreceive`\: \ :ref:`OpenMathConnection <l4f70656e4d617468436f6e6e656374696f6e>`\  -> \ :ref:`Any <l416e79>`\  
+  \ ``OMreceive(c)``\  reads an OpenMath object from connection \ ``c``\  and returns the appropriate FriCAS object.
+
+.. _l4f70656e4d6174685365727665725061636b616765-4f4d73656e64:
+
+.. index::
+   pair: OpenMathServerPackage; OMsend
+
+:spadfun:`OMsend`\: (\ :ref:`OpenMathConnection <l4f70656e4d617468436f6e6e656374696f6e>`\ , \ :ref:`Any <l416e79>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``OMsend(c, u)``\  attempts to output \ ``u``\  on \ ``c``\  in OpenMath.
+
+.. _l4f70656e4d6174685365727665725061636b616765-4f4d7365727665:
+
+.. index::
+   pair: OpenMathServerPackage; OMserve
+
+:spadfun:`OMserve`\: (\ :ref:`SingleInteger <l53696e676c65496e7465676572>`\ , \ :ref:`SingleInteger <l53696e676c65496e7465676572>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``OMserve(portnum, timeout)``\  puts FriCAS into server mode on port number \ ``portnum``\ . The parameter \ ``timeout``\  specifies the timeout period for the connection.
+
+

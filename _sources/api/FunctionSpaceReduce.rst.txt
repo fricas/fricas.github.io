@@ -1,0 +1,41 @@
+.. index:: FunctionSpaceReduce
+
+.. _l46756e6374696f6e5370616365526564756365:
+
+FunctionSpaceReduce(R, F)
+=========================
+
+:viewcode:`pfo.spad line 195 <pfo.spad#L195>` :editcode:`[edit on github] <pfo.spad#L195>`
+
+* R: Join(\ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ )
+
+* F: \ :ref:`FunctionSpace <l46756e6374696f6e5370616365>`\  R
+
+
+This package provides function which replaces transcendental kernels in a function space by random integers. The correspondence between the kernels and the integers is fixed between calls to newReduc().
+
+
+.. _l46756e6374696f6e5370616365526564756365-6272696e67446f776e:
+
+.. index::
+   pair: FunctionSpaceReduce; bringDown
+
+:spadfun:`bringDown`\: (F, \ :ref:`Kernel <l4b65726e656c>`\  F) -> \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``bringDown(f, k)``\  is like bringDown(\ ``f``\ ) but \ ``k``\  is algebraic kernel and the result is reduced modulo minimal polynomial of \ ``k``\ .
+
+
+.. index::
+   pair: FunctionSpaceReduce; bringDown
+
+:spadfun:`bringDown`\: F -> \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``bringDown(f)``\  replaces transcendental kernels in \ ``f``\  by random integers. Error if \ ``f``\  contains algebraic kernel.
+
+.. _l46756e6374696f6e5370616365526564756365-6e65775265647563:
+
+.. index::
+   pair: FunctionSpaceReduce; newReduc
+
+:spadfun:`newReduc`\: \ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`Void <l566f6964>`\  
+  \ ``newReduc(n)``\  empties reduction state. \ ``n``\  is size of random integers to use during next reduction.
+
+

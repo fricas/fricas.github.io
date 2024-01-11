@@ -1,0 +1,85 @@
+.. index:: UserDefinedPartialOrdering
+
+.. _l55736572446566696e65645061727469616c4f72646572696e67:
+
+UserDefinedPartialOrdering S
+============================
+
+:viewcode:`setorder.spad line 1 <setorder.spad#L1>` :editcode:`[edit on github] <setorder.spad#L1>`
+
+* S: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+
+Provides functions to force a partial ordering on any set.
+
+
+.. _l55736572446566696e65645061727469616c4f72646572696e67-6765744f72646572:
+
+.. index::
+   pair: UserDefinedPartialOrdering; getOrder
+
+:spadfun:`getOrder`\: () -> Record(low: \ :ref:`List <l4c697374>`\  S, high: \ :ref:`List <l4c697374>`\  S) 
+  \ ``getOrder()``\  returns \ ``[[b1, ..., bm], [a1, ..., an]]``\  such that the partial ordering on \ ``S``\  was given by \ ``setOrder([b1, ..., bm], [a1, ..., an])``\ .
+
+.. _l55736572446566696e65645061727469616c4f72646572696e67-6c617267657374:
+
+.. index::
+   pair: UserDefinedPartialOrdering; largest
+
+:spadfun:`largest`\: (\ :ref:`List <l4c697374>`\  S, (S, S) -> \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> S 
+  \ ``largest(l, fn)``\  returns the largest element of \ ``l``\  where the partial ordering induced by setOrder is completed into a total one by \ ``fn``\ .
+
+
+.. index::
+   pair: UserDefinedPartialOrdering; largest
+
+:spadfun:`largest`\: \ :ref:`List <l4c697374>`\  S -> S if S has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  \ ``largest l``\  returns the largest element of \ ``l``\  where the partial ordering induced by setOrder is completed into a total one by the ordering on \ ``S``\ .
+
+.. _l55736572446566696e65645061727469616c4f72646572696e67-6c6573733f:
+
+.. index::
+   pair: UserDefinedPartialOrdering; less?
+
+:spadfun:`less?`\: (S, S) -> Union(\ :ref:`Boolean <l426f6f6c65616e>`\ , failed) 
+  \ ``less?(a, b)``\  compares \ ``a``\  and \ ``b``\  in the partial ordering induced by setOrder.
+
+
+.. index::
+   pair: UserDefinedPartialOrdering; less?
+
+:spadfun:`less?`\: (S, S, (S, S) -> \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``less?(a, b, fn)``\  compares \ ``a``\  and \ ``b``\  in the partial ordering induced by setOrder, and returns \ ``fn(a, b)``\  if \ ``a``\  and \ ``b``\  are not comparable in that ordering.
+
+.. _l55736572446566696e65645061727469616c4f72646572696e67-6d6f72653f:
+
+.. index::
+   pair: UserDefinedPartialOrdering; more?
+
+:spadfun:`more?`\: (S, S) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  \ ``more?(a, b)``\  compares \ ``a``\  and \ ``b``\  in the partial ordering induced by setOrder, and uses the ordering on \ ``S``\  if \ ``a``\  and \ ``b``\  are not comparable in the partial ordering.
+
+.. _l55736572446566696e65645061727469616c4f72646572696e67-7365744f72646572:
+
+.. index::
+   pair: UserDefinedPartialOrdering; setOrder
+
+:spadfun:`setOrder`\: (\ :ref:`List <l4c697374>`\  S, \ :ref:`List <l4c697374>`\  S) -> \ :ref:`Void <l566f6964>`\  
+  \ ``setOrder([b1, ..., bm], [a1, ..., an])``\  defines a partial ordering on \ ``S``\  given \ ``by:``\  (1) \ ``b1 < b2 < ... < bm < a1 < a2 < ... < an``\ . (2) \ ``bj < c < ai``\  for \ ``c``\  not among the \ ``ai``\ \ ``'s``\  and \ ``bj``\ \ ``'s``\ . (3) undefined on \ ``(c, d)``\  if neither is among the \ ``ai``\ \ ``'s``\ , \ ``bj``\ \ ``'s``\ .
+
+
+.. index::
+   pair: UserDefinedPartialOrdering; setOrder
+
+:spadfun:`setOrder`\: \ :ref:`List <l4c697374>`\  S -> \ :ref:`Void <l566f6964>`\  
+  \ ``setOrder([a1, ..., an])``\  defines a partial ordering on \ ``S``\  given \ ``by:``\  (1) \ ``a1 < a2 < ... < an``\ . (2) \ ``b < ai for i = 1..n``\  and \ ``b``\  not among the \ ``ai``\ \ ``'s``\ . (3) undefined on \ ``(b, c)``\  if neither is among the \ ``ai``\ \ ``'s``\ .
+
+.. _l55736572446566696e65645061727469616c4f72646572696e67-757365724f7264657265643f:
+
+.. index::
+   pair: UserDefinedPartialOrdering; userOrdered?
+
+:spadfun:`userOrdered?`\: () -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``userOrdered?()``\  tests if the partial ordering induced by \ :ref:`setOrder <l55736572446566696e65645061727469616c4f72646572696e67-7365744f72646572>`\  is not empty.
+
+

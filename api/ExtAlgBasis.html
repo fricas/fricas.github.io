@@ -1,22 +1,18 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>ExtAlgBasis &#8212; FriCAS</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=0034329e"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -48,7 +44,7 @@
           <div class="body" role="main">
             
   <section id="extalgbasis">
-<span id="l457874416c674261736973"></span><span id="index-0"></span><h1>ExtAlgBasis<a class="headerlink" href="#extalgbasis" title="Permalink to this heading">¶</a></h1>
+<span id="l457874416c674261736973"></span><span id="index-0"></span><h1>ExtAlgBasis<a class="headerlink" href="#extalgbasis" title="Link to this heading">¶</a></h1>
 <p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/derham.spad#L14">derham.spad line 14</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/derham.spad#L14">[edit on github]</a></p>
 <p>A domain used in the construction of the exterior algebra on a set <code class="docutils literal notranslate"><span class="pre">X</span></code> over a ring <code class="docutils literal notranslate"><span class="pre">R</span></code>. This domain represents the set of all ordered subsets of the set <code class="docutils literal notranslate"><span class="pre">X</span></code>, assumed to be in correspondance with {1, 2, 3, …}. The ordered subsets are themselves ordered lexicographically and are in bijective correspondance with an ordered basis of the exterior algebra. In this domain we are dealing strictly with the exponents of basis elements which can only be 0 or 1.   The multiplicative identity element of the exterior algebra corresponds to the empty subset of <code class="docutils literal notranslate"><span class="pre">X</span></code>. A coerce from List Integer to an ordered basis element is provided to allow the convenient input of expressions. Another exported function forgets the ordered structure and simply returns the list corresponding to an ordered subset.</p>
 <dl class="simple" id="l457874416c674261736973-3c3d">
@@ -83,11 +79,11 @@
 <dt><span class="spadfun">coerce</span>: <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a> -&gt; %</dt><dd><p><code class="docutils literal notranslate"><span class="pre">coerce(l)</span></code> converts a list of 0<code class="docutils literal notranslate"><span class="pre">'s</span></code> and 1<code class="docutils literal notranslate"><span class="pre">'s</span></code> into a basis element, where 1 (respectively 0) designates that the variable of the corresponding index of <code class="docutils literal notranslate"><span class="pre">l</span></code> is (respectively, is not) present. Error: if an element of <code class="docutils literal notranslate"><span class="pre">l</span></code> is not 0 or 1.</p>
 </dd>
 </dl>
-<span class="target" id="l457874416c674261736973-646567726565"></span><dl class="simple" id="index-2">
+<span id="l457874416c674261736973-646567726565"></span><dl class="simple" id="index-2">
 <dt><span class="spadfun">degree</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">degree(x)</span></code> gives the numbers of 1<code class="docutils literal notranslate"><span class="pre">'s</span></code> in <code class="docutils literal notranslate"><span class="pre">x</span></code>, i.e. the number of non-zero exponents in the basis element that <code class="docutils literal notranslate"><span class="pre">x</span></code> represents.</p>
 </dd>
 </dl>
-<span class="target" id="l457874416c674261736973-6578706f6e656e7473"></span><dl class="simple" id="index-3">
+<span id="l457874416c674261736973-6578706f6e656e7473"></span><dl class="simple" id="index-3">
 <dt><span class="spadfun">exponents</span>: % -&gt; <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">exponents(x)</span></code> converts a domain element into a list of zeros and ones corresponding to the exponents in the basis element that <code class="docutils literal notranslate"><span class="pre">x</span></code> represents.</p>
 </dd>
 </dl>
@@ -103,7 +99,7 @@
 <dt><a class="reference internal" href="OrderedSet.html#l4f726465726564536574-6d696e"><span class="std std-ref">min</span></a>: (%, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="OrderedSet.html#l4f726465726564536574"><span class="std std-ref">OrderedSet</span></a></p>
 </dd>
 </dl>
-<span class="target" id="l457874416c674261736973-4e756c"></span><dl class="simple" id="index-4">
+<span id="l457874416c674261736973-4e756c"></span><dl class="simple" id="index-4">
 <dt><span class="spadfun">Nul</span>: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a> -&gt; %</dt><dd><p><code class="docutils literal notranslate"><span class="pre">Nul()</span></code> gives the basis element 1 for the algebra generated by <code class="docutils literal notranslate"><span class="pre">n</span></code> generators.</p>
 </dd>
 </dl>
@@ -171,7 +167,7 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2007-2023, FriCAS Team.
+    &#169; Copyright 2007-2024, FriCAS Team.
     </div>
   </body>
 </html>

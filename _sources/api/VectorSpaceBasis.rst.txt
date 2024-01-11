@@ -1,0 +1,240 @@
+.. index:: VectorSpaceBasis
+
+.. _l566563746f7253706163654261736973:
+
+VectorSpaceBasis R
+==================
+
+:viewcode:`vsbasis.spad line 1 <vsbasis.spad#L1>` :editcode:`[edit on github] <vsbasis.spad#L1>`
+
+* R: \ :ref:`Field <l4669656c64>`\ 
+
+
+The domain \ ``VectorSpaceBasis F``\  implements subspaces of finite dimensional vector spaces over a field \ ``F``\ . A subspace is represented by a list of linearly independent coordinate vectors which constitute a basis. The empty list represents the space of dimension 0.
+
+
+.. _l566563746f7253706163654261736973-30:
+
+.. index::
+   pair: VectorSpaceBasis; 0
+
+:spadfun:`0`\: % 
+  \ ``0``\  creates the empty basis describing the space with the zero vector. The length of this zero vector is undefined.
+
+.. _l566563746f7253706163654261736973-2a:
+
+.. index::
+   pair: VectorSpaceBasis; *
+
+:spadfun:`\*`\: (%, %) -> % 
+  \ ``b1*b2``\  computes a basis of the intersection of two subspaces.
+
+.. _l566563746f7253706163654261736973-2b:
+
+.. index::
+   pair: VectorSpaceBasis; +
+
+:spadfun:`+`\: (%, %) -> % 
+  \ ``B1+B2``\  computes a basis of the sum of two subspaces.
+
+.. _l566563746f7253706163654261736973-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l566563746f7253706163654261736973-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l566563746f7253706163654261736973-6261736973:
+
+.. index::
+   pair: VectorSpaceBasis; basis
+
+:spadfun:`basis`\: \ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  R -> % 
+  \ ``basis LV``\  extracts a basis of the subspace spanned by the list of vectors \ ``LV``\ .
+
+.. _l566563746f7253706163654261736973-63616e6f6e6963616c4261736973:
+
+.. index::
+   pair: VectorSpaceBasis; canonicalBasis
+
+:spadfun:`canonicalBasis`\: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  -> % 
+  \ ``canonicalBasis n``\  builds the canonical basis of the vector space of dimension \ ``n``\ .
+
+.. _l566563746f7253706163654261736973-636f65726365:
+
+.. index::
+   pair: VectorSpaceBasis; coerce
+
+:spadfun:`coerce`\: % -> \ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  R 
+  \ ``coerce b``\  returns the basis as a list of vectors.
+
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l566563746f7253706163654261736973-636f6c756d6e5370616365:
+
+.. index::
+   pair: VectorSpaceBasis; columnSpace
+
+:spadfun:`columnSpace`\: \ :ref:`Matrix <l4d6174726978>`\  R -> % 
+  \ ``columnSpace M``\  builds a basis of the image space of the linear transformation defined by the matrix \ ``M``\ . This function calls the \ ``columnSpace``\  from the \ ``Matrix``\  domain. Only the signature changes.
+
+.. _l566563746f7253706163654261736973-636f6d706c656d656e745370616365:
+
+.. index::
+   pair: VectorSpaceBasis; complementSpace
+
+:spadfun:`complementSpace`\: % -> % 
+  \ ``complementSpace B``\  builds a complement space of the basis \ ``B``\  from some vectors of the canonical basis. This function fails with the empty basis.
+
+
+.. index::
+   pair: VectorSpaceBasis; complementSpace
+
+:spadfun:`complementSpace`\: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``complementSpace(B, n)``\  builds a complement space of the basis \ ``B``\  from some vectors of the canonical basis \ ``B``\ . The integer \ ``n``\  provides the length of the vectors in the case of the empty basis.
+
+
+.. index::
+   pair: VectorSpaceBasis; complementSpace
+
+:spadfun:`complementSpace`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  R, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  \ ``complementSpace(Lv, n)``\  builds a complement space of the subspace spanned by the list of vectors \ ``LV``\ . The integer \ ``n``\  provides the length of the vectors in the case of the empty basis.
+
+
+.. index::
+   pair: VectorSpaceBasis; complementSpace
+
+:spadfun:`complementSpace`\: \ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  R -> % 
+  \ ``complementSpace Lv``\  builds a complement space of the subspace spanned by the list of vectors \ ``LV``\ . This function fails with the empty basis.
+
+.. _l566563746f7253706163654261736973-636f6f7264696e61746573:
+
+.. index::
+   pair: VectorSpaceBasis; coordinates
+
+:spadfun:`coordinates`\: (\ :ref:`Vector <l566563746f72>`\  R, %) -> \ :ref:`Vector <l566563746f72>`\  R 
+  \ ``coordinates(v, B)``\  computes the coordinates of the vector \ ``v``\  in the basis \ ``B``\  if possible and produces an error otherwise.
+
+.. _l566563746f7253706163654261736973-636f6f7264696e61746573496643616e:
+
+.. index::
+   pair: VectorSpaceBasis; coordinatesIfCan
+
+:spadfun:`coordinatesIfCan`\: (\ :ref:`Vector <l566563746f72>`\  R, %) -> Union(\ :ref:`Vector <l566563746f72>`\  R, failed) 
+  \ ``coordinatesIfCan(v, B)``\  computes the coordinates of the vector \ ``v``\  in the basis \ ``B``\  if possible and returns \ ``"failed"``\  otherwise.
+
+.. _l566563746f7253706163654261736973-696e744261736973:
+
+.. index::
+   pair: VectorSpaceBasis; intBasis
+
+:spadfun:`intBasis`\: (%, %) -> % 
+  \ ``intBasis(B1, B2)``\  computes a basis of the intersection of the two subspaces.
+
+
+.. index::
+   pair: VectorSpaceBasis; intBasis
+
+:spadfun:`intBasis`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  R, \ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  R) -> % 
+  \ ``intBasis(Lv1, Lv2)``\  computes a basis of the intersection of the two subspaces spanned by the vectors of \ ``Lv1``\  and \ ``Lv2``\ .
+
+
+.. index::
+   pair: VectorSpaceBasis; intBasis
+
+:spadfun:`intBasis`\: \ :ref:`List <l4c697374>`\  % -> % 
+  \ ``intBasis Lb``\  computes a basis of the intersection of the list of subspaces represented by \ ``LLv``\ .
+
+
+.. index::
+   pair: VectorSpaceBasis; intBasis
+
+:spadfun:`intBasis`\: \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  R -> % 
+  \ ``intBasis LLv``\  computes a basis of the intersection of the list of subspaces represented by \ ``LLv``\ .
+
+.. _l566563746f7253706163654261736973-697342617369733f:
+
+.. index::
+   pair: VectorSpaceBasis; isBasis?
+
+:spadfun:`isBasis?`\: \ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  R -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``isBasis? Lv``\  tests for linear independence of a list of vectors.
+
+.. _l566563746f7253706163654261736973-6d656d6265723f:
+
+.. index::
+   pair: VectorSpaceBasis; member?
+
+:spadfun:`member?`\: (\ :ref:`Vector <l566563746f72>`\  R, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``member?(v, B)``\  tests if the vector \ ``v``\  is in the subspace spanned by \ ``B``\ .
+
+.. _l566563746f7253706163654261736973-6e756c6c5370616365:
+
+.. index::
+   pair: VectorSpaceBasis; nullSpace
+
+:spadfun:`nullSpace`\: \ :ref:`Matrix <l4d6174726978>`\  R -> % 
+  \ ``nullSpace M``\  builds a basis of the kernel of the linear transformation defined by the matrix \ ``M``\ . This function calls the function \ ``nullSpace``\  from the \ ``Matrix``\  domain. Only the signature changes.
+
+.. _l566563746f7253706163654261736973-72616e6b:
+
+.. index::
+   pair: VectorSpaceBasis; rank
+
+:spadfun:`rank`\: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``rank b``\  computes the rank of a basis, i.e. the number of vectors in the basis.
+
+
+.. index::
+   pair: VectorSpaceBasis; rank
+
+:spadfun:`rank`\: \ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  R -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``rank Lv``\  computes the rank of a list of vectors.
+
+.. _l566563746f7253706163654261736973-73756273706163653f:
+
+.. index::
+   pair: VectorSpaceBasis; subspace?
+
+:spadfun:`subspace?`\: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``subspace?(B1, B2)``\  tests if the first space is included in the second.
+
+.. _l566563746f7253706163654261736973-73756d4261736973:
+
+.. index::
+   pair: VectorSpaceBasis; sumBasis
+
+:spadfun:`sumBasis`\: (%, %) -> % 
+  \ ``sumBasis(B1, B2)``\  computes a basis of the sum of the two subspaces.
+
+
+.. index::
+   pair: VectorSpaceBasis; sumBasis
+
+:spadfun:`sumBasis`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  R, \ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  R) -> % 
+  \ ``sumBasis(Lv1, Lv2)``\  computes a basis of the sum of the two subspaces spanned by the vectors of \ ``Lv1``\  and \ ``Lv2``\ .
+
+
+.. index::
+   pair: VectorSpaceBasis; sumBasis
+
+:spadfun:`sumBasis`\: \ :ref:`List <l4c697374>`\  % -> % 
+  \ ``sumBasis Lb``\  computes a basis of the sum of list of subspaces. This function is slightly more efficient than \ ``reduce(sumBasis, Lb)``\ .
+
+
+.. index::
+   pair: VectorSpaceBasis; sumBasis
+
+:spadfun:`sumBasis`\: \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  R -> % 
+  \ ``sumBasis LLv``\  computes a basis of the sum of the list of subspaces represented by \ ``LLv``\ . This function is slightly more efficient than \ ``reduce(sumBasis, LLv)``\ .
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+

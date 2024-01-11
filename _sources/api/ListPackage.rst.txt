@@ -1,0 +1,79 @@
+.. index:: ListPackage
+
+.. _l4c6973745061636b616765:
+
+ListPackage T
+=============
+
+:viewcode:`logic.spad line 129 <logic.spad#L129>` :editcode:`[edit on github] <logic.spad#L129>`
+
+* T: \ :ref:`BasicType <l426173696354797065>`\ 
+
+
+splitting lists
+
+
+.. _l4c6973745061636b616765-63617274657369616e:
+
+.. index::
+   pair: ListPackage; cartesian
+
+:spadfun:`cartesian`\: \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  T -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  T 
+  \ ``cartesian([S1, S2, ...])``\  returns the set of lists [\ ``s1``\ , \ ``s2``\ , ...] with \ ``si``\  in \ ``Si``\ 
+
+.. _l4c6973745061636b616765-63617274657369616e506f776572:
+
+.. index::
+   pair: ListPackage; cartesianPower
+
+:spadfun:`cartesianPower`\: (\ :ref:`List <l4c697374>`\  T, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  T 
+  \ ``cartesianPower(S, n)``\  returns the \ ``n``\ -th cartesian power of the list \ ``S``\ 
+
+.. _l4c6973745061636b616765-6d696e5368696674:
+
+.. index::
+   pair: ListPackage; minShift
+
+:spadfun:`minShift`\: \ :ref:`List <l4c697374>`\  T -> \ :ref:`List <l4c697374>`\  T if T has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  \ ``minShift(l)``\  returns the lexicographically minimal cyclic rotation of the list \ ``l``\ 
+
+.. _l4c6973745061636b616765-73686966744c656674:
+
+.. index::
+   pair: ListPackage; shiftLeft
+
+:spadfun:`shiftLeft`\: \ :ref:`List <l4c697374>`\  T -> \ :ref:`List <l4c697374>`\  T 
+  \ ``leftShift(l)``\  rotates the list \ ``l``\  to the left and inserts the first element at the end
+
+.. _l4c6973745061636b616765-73706c69744c697374:
+
+.. index::
+   pair: ListPackage; splitList
+
+:spadfun:`splitList`\: (T -> \ :ref:`Boolean <l426f6f6c65616e>`\ , \ :ref:`List <l4c697374>`\  T) -> Record(yes: \ :ref:`List <l4c697374>`\  T, no: \ :ref:`List <l4c697374>`\  T) 
+  \ ``splitList(f, x)``\  splits the list \ ``x``\  into a yes part and a no part according to the boolean function \ ``f``\ 
+
+.. _l4c6973745061636b616765-746f706f6c6f676963616c536f727421:
+
+.. index::
+   pair: ListPackage; topologicalSort!
+
+:spadfun:`topologicalSort!`\: ((T, T) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , \ :ref:`List <l4c697374>`\  T) -> \ :ref:`List <l4c697374>`\  T 
+  \ ``topologicalSort(xx)``\  returns a rearrangement of the elements which is compatible with the partial order. The argument list \ ``xx``\  is destroyed.
+
+.. _l4c6973745061636b616765-746f706f6c6f676963616c536f7274:
+
+.. index::
+   pair: ListPackage; topologicalSort
+
+:spadfun:`topologicalSort`\: ((T, T) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , \ :ref:`List <l4c697374>`\  T) -> \ :ref:`List <l4c697374>`\  T 
+  \ ``topologicalSort(xx)``\  returns a rearrangement of the elements which is compatible with the partial order.
+
+
+.. index::
+   pair: ListPackage; topologicalSort
+
+:spadfun:`topologicalSort`\: (\ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Boolean <l426f6f6c65616e>`\ , \ :ref:`List <l4c697374>`\  T) -> \ :ref:`List <l4c697374>`\  T 
+  \ ``topologicalSort(xx)``\  returns a rearrangement of the elements which is compatible with the partial order. (Martin Baker) \ ``I``\  added this version because predicate function can be difficult to work with so use table instead.
+
+

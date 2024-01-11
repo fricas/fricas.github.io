@@ -1,0 +1,196 @@
+.. index:: Lambda
+
+.. _l4c616d626461:
+
+Lambda UT
+=========
+
+:viewcode:`computation.spad line 856 <computation.spad#L856>` :editcode:`[edit on github] <computation.spad#L856>`
+
+* UT: \ :ref:`VarCat <l566172436174>`\ 
+
+
+macro to simplify output
+
+
+.. _l4c616d626461-3d:
+
+.. index::
+   pair: Lambda; =
+
+:spadfun:`=`\: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  return \ ``true``\  if equal (deep search) that is: all terms at all levels in tree must be alpha-equivalent to return \ ``true``\  That is the names, but not the deBruijn index, of the bound variables can be different. beta-equivalence is not implemented because it is not decidable.
+
+.. _l4c616d626461-61746f6d3f:
+
+.. index::
+   pair: Lambda; atom?
+
+:spadfun:`atom?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  returns \ ``true``\  if this is an atom, that is free or bound variable otherwise return \ ``false``\  if this is a compound or lambda definition
+
+.. _l4c616d626461-62696e64:
+
+.. index::
+   pair: Lambda; bind
+
+:spadfun:`bind`\: % -> % 
+  if this is a lambda term then replace string name in sub-nodes with De Bruijn index
+
+.. _l4c616d626461-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l4c616d626461-667265653f:
+
+.. index::
+   pair: Lambda; free?
+
+:spadfun:`free?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  if this is a lambda term then is it free, that is does its variable appear in its expression
+
+.. _l4c616d626461-676574426f756e6456616c7565:
+
+.. index::
+   pair: Lambda; getBoundValue
+
+:spadfun:`getBoundValue`\: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  introspection: returns deBruijn index of bound variable in bound leaf node
+
+.. _l4c616d626461-6765744368696c6472656e:
+
+.. index::
+   pair: Lambda; getChildren
+
+:spadfun:`getChildren`\: % -> \ :ref:`List <l4c697374>`\  % 
+  returns 2 child nodes if this is a compound term returns 1 child node if this is a lamda term otherwise returns []
+
+.. _l4c616d626461-6765745661726961626c65:
+
+.. index::
+   pair: Lambda; getVariable
+
+:spadfun:`getVariable`\: % -> UT 
+  introspection: returns value of unbound variable in unbound leaf node or bound variable in lambda term
+
+.. _l4c616d626461-6973426f756e644e6f64653f:
+
+.. index::
+   pair: Lambda; isBoundNode?
+
+:spadfun:`isBoundNode?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  introspection: returns \ ``true``\  if this is a bound leaf node
+
+.. _l4c616d626461-6973436f6d706f756e643f:
+
+.. index::
+   pair: Lambda; isCompound?
+
+:spadfun:`isCompound?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  introspection: returns \ ``true``\  if this is a compound term containing two nodes
+
+.. _l4c616d626461-6973467265654e6f64653f:
+
+.. index::
+   pair: Lambda; isFreeNode?
+
+:spadfun:`isFreeNode?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  introspection: returns \ ``true``\  if this is a unbound leaf node
+
+.. _l4c616d626461-69734c616d6264613f:
+
+.. index::
+   pair: Lambda; isLambda?
+
+:spadfun:`isLambda?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  introspection: returns \ ``true``\  if this is a lambda definition
+
+.. _l4c616d626461-6c616d626461:
+
+.. index::
+   pair: Lambda; lambda
+
+:spadfun:`lambda`\: (%, %) -> % 
+  Constructs a node containing multiple terms
+
+
+.. index::
+   pair: Lambda; lambda
+
+:spadfun:`lambda`\: (%, UT) -> % 
+  Constructs lambda term and bind any variables with the name provided
+
+
+.. index::
+   pair: Lambda; lambda
+
+:spadfun:`lambda`\: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  -> % 
+  Constructs a reference to a bound variable from its deBruijn index
+
+
+.. index::
+   pair: Lambda; lambda
+
+:spadfun:`lambda`\: UT -> % 
+  Constructs a reference to a free variable
+
+.. _l4c616d626461-70617273654c616d626461:
+
+.. index::
+   pair: Lambda; parseLambda
+
+:spadfun:`parseLambda`\: \ :ref:`String <l537472696e67>`\  -> % 
+  Constructs nested lambda terms from a string notation assumes format like this: <term> : \ ``:=``\  "\ ``\"``\  var "."<term> | \ ``n``\  | <term><term> | "("<term>")" where: \\ = lambda (\ ``I``\  would like to use unicode lambda symbol but \ ``I``\  would also like to keep maximum compatibility with non-unicode versions of Lisp) \ ``n``\  = De Bruijn index which is a integer where, 1=inside inner lambda term, 2= next outer lambda term, 3= next outer and so on. brackets can be used around whole terms.
+
+.. _l4c616d626461-70617273655465726d:
+
+.. index::
+   pair: Lambda; parseTerm
+
+:spadfun:`parseTerm`\: (\ :ref:`String <l537472696e67>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> Record(rft: %, pout: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) 
+  parseTerm is used by parseLambda. It would rarely be called externally but it is here to allow it to call parseLambda that is to allow circular calls
+
+.. _l4c616d626461-7265647578:
+
+.. index::
+   pair: Lambda; redux
+
+:spadfun:`redux`\: % -> % 
+  beta reduction - apply beta reduction recusivly to all subnodes
+
+.. _l4c616d626461-7375627374:
+
+.. index::
+   pair: Lambda; subst
+
+:spadfun:`subst`\: (%, %, %) -> % 
+  substitution of 'a' for \ ``'b'``\  in \ ``'n'``\ 
+
+.. _l4c616d626461-746f537472696e67:
+
+.. index::
+   pair: Lambda; toString
+
+:spadfun:`toString`\: % -> \ :ref:`String <l537472696e67>`\  
+  return string representation using deBruijn index for bound variables. notation assumes association to the left, in the absence of brackets, the term to the left binds more tightly than the one on the right.
+
+.. _l4c616d626461-746f537472696e67436f6e76656e:
+
+.. index::
+   pair: Lambda; toStringConven
+
+:spadfun:`toStringConven`\: (%, \ :ref:`List <l4c697374>`\  \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`String <l537472696e67>`\  
+  return string representation using conventional notation, that is deBruijn index is replaced by name using String value for bound variables. notation assumes association to the left, in the absence of brackets, the term to the left binds more tightly than the one on the right.
+
+.. _l4c616d626461-756e62696e64:
+
+.. index::
+   pair: Lambda; unbind
+
+:spadfun:`unbind`\: % -> % 
+  if this is a lambda term then replace De Bruijn index in sub-nodes with string name
+
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+

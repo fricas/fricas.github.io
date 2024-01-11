@@ -1,0 +1,38 @@
+.. index:: HallBasis
+
+.. _l48616c6c4261736973:
+
+HallBasis
+=========
+
+:viewcode:`fnla.spad line 70 <fnla.spad#L70>` :editcode:`[edit on github] <fnla.spad#L70>`
+
+
+Author : Larry Lambe Date Created : August 1988 Related Constructors: OrderedSetInts, Commutator, FreeNilpotentLie AMS Classification: Primary 17B05, 17B30; Secondary 17A50 Keywords: free Lie algebra, Hall basis, basic commutators Description : Generate a basis for the free Lie algebra on \ ``n``\  generators over a ring \ ``R``\  with identity up to basic commutators of length \ ``c``\  using the algorithm of \ ``P``\ . Hall as given in Serre\ ``'s``\  book Lie Groups \ ``--``\  Lie Algebras
+
+
+.. _l48616c6c4261736973-6261736973:
+
+.. index::
+   pair: HallBasis; basis
+
+:spadfun:`basis`\: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Vector <l566563746f72>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``basis(numberOfGens, maximalWeight)``\  generates a vector of elements of the form [left, weight, right] which represents a \ ``P``\ . Hall basis element for the free lie algebra on \ ``numberOfGens``\  generators. We only generate those basis elements of weight less than or equal to maximalWeight
+
+.. _l48616c6c4261736973-696e48616c6c42617369733f:
+
+.. index::
+   pair: HallBasis; inHallBasis?
+
+:spadfun:`inHallBasis?`\: (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``inHallBasis?(numberOfGens, leftCandidate, rightCandidate, left)``\  tests to see if a new element should be added to the \ ``P``\ . Hall basis being constructed. The list \ ``[leftCandidate, wt, rightCandidate]``\  is included in the basis if in the unique factorization of \ ``rightCandidate``\ , we have left factor leftOfRight, and leftOfRight \ ``<=``\  \ ``leftCandidate``\ 
+
+.. _l48616c6c4261736973-6c66756e63:
+
+.. index::
+   pair: HallBasis; lfunc
+
+:spadfun:`lfunc`\: (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Integer <l496e7465676572>`\  
+  \ ``lfunc(d, n)``\  computes the rank of the \ ``n``\ th factor in the lower central series of the free \ ``d``\ -generated free Lie algebra; This rank is \ ``d``\  if \ ``n``\  = 1 and binom(\ ``d``\ , 2) if \ ``n``\  = 2
+
+

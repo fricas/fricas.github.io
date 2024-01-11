@@ -1,0 +1,296 @@
+.. index:: Distribution
+
+.. _l446973747269627574696f6e:
+
+Distribution R
+==============
+
+:viewcode:`distro.spad line 694 <distro.spad#L694>` :editcode:`[edit on github] <distro.spad#L694>`
+
+* R: \ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\ 
+
+
+Domain for distributions formally given by moments. moments and different kinds of cumulants are stored in streams and computed on demand.
+
+
+.. _l446973747269627574696f6e-30:
+
+\ :ref:`0 <l446973747269627574696f6e43617465676f7279-30>`\ \: % 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l446973747269627574696f6e-5e:
+
+\ :ref:`^ <l446973747269627574696f6e43617465676f7279-5e>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l446973747269627574696f6e-626f6f6c65616e436f6e766f6c7574696f6e:
+
+\ :ref:`booleanConvolution <l446973747269627574696f6e43617465676f7279-626f6f6c65616e436f6e766f6c7574696f6e>`\ \: (%, %) -> % 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-626f6f6c65616e43756d756c616e74:
+
+\ :ref:`booleanCumulant <l446973747269627574696f6e43617465676f7279-626f6f6c65616e43756d756c616e74>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> R 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-626f6f6c65616e43756d756c616e7446726f6d4a61636f6269:
+
+.. index::
+   pair: Distribution; booleanCumulantFromJacobi
+
+:spadfun:`booleanCumulantFromJacobi`\: (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Sequence <l53657175656e6365>`\  R, \ :ref:`Sequence <l53657175656e6365>`\  R) -> R 
+  \ ``booleanCumulantFromJacobi(n, aa, bb)``\  computes the \ ``n``\ th Boolean cumulant from the given Jacobiparameters \ ``aa``\  and \ ``bb``\ .
+
+.. _l446973747269627574696f6e-626f6f6c65616e43756d756c616e7473:
+
+\ :ref:`booleanCumulants <l446973747269627574696f6e43617465676f7279-626f6f6c65616e43756d756c616e7473>`\ \: % -> \ :ref:`Sequence <l53657175656e6365>`\  R 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-636c6173736963616c436f6e766f6c7574696f6e:
+
+\ :ref:`classicalConvolution <l446973747269627574696f6e43617465676f7279-636c6173736963616c436f6e766f6c7574696f6e>`\ \: (%, %) -> % 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-636c6173736963616c43756d756c616e74:
+
+\ :ref:`classicalCumulant <l446973747269627574696f6e43617465676f7279-636c6173736963616c43756d756c616e74>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> R 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-636c6173736963616c43756d756c616e7473:
+
+\ :ref:`classicalCumulants <l446973747269627574696f6e43617465676f7279-636c6173736963616c43756d756c616e7473>`\ \: % -> \ :ref:`Sequence <l53657175656e6365>`\  R 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l446973747269627574696f6e-636f6e737472756374:
+
+.. index::
+   pair: Distribution; construct
+
+:spadfun:`construct`\: (\ :ref:`Sequence <l53657175656e6365>`\  R, \ :ref:`Sequence <l53657175656e6365>`\  R, \ :ref:`Sequence <l53657175656e6365>`\  R, \ :ref:`Sequence <l53657175656e6365>`\  R) -> % 
+  \ ``construct(mom, ccum, fcum, bcum)``\  constructs a distribution with moments \ ``mom``\ , classical cumulants \ ``ccum``\ , free cumulants \ ``fcum``\  and boolean cumulants \ ``bcum``\ . The user must make sure that these are consistent, otherwise the results are unpredictable!
+
+.. _l446973747269627574696f6e-646973747269627574696f6e4279426f6f6c65616e43756d756c616e7473:
+
+.. index::
+   pair: Distribution; distributionByBooleanCumulants
+
+:spadfun:`distributionByBooleanCumulants`\: \ :ref:`Sequence <l53657175656e6365>`\  R -> % 
+  \ ``distributionByBooleanCumulants(bb)``\  initiates a distribution with given Boolean cumulants \ ``bb``\ .
+
+
+.. index::
+   pair: Distribution; distributionByBooleanCumulants
+
+:spadfun:`distributionByBooleanCumulants`\: \ :ref:`Stream <l53747265616d>`\  R -> % 
+  \ ``distributionByBooleanCumulants(bb)``\  initiates a distribution with given Boolean cumulants \ ``bb``\ .
+
+.. _l446973747269627574696f6e-646973747269627574696f6e4279436c6173736963616c43756d756c616e7473:
+
+.. index::
+   pair: Distribution; distributionByClassicalCumulants
+
+:spadfun:`distributionByClassicalCumulants`\: \ :ref:`Sequence <l53657175656e6365>`\  R -> % 
+  \ ``distributionByEvenMoments(kk)``\  initiates a distribution with given classical cumulants \ ``kk``\ .
+
+
+.. index::
+   pair: Distribution; distributionByClassicalCumulants
+
+:spadfun:`distributionByClassicalCumulants`\: \ :ref:`Stream <l53747265616d>`\  R -> % 
+  \ ``distributionByEvenMoments(kk)``\  initiates a distribution with given classical cumulants \ ``kk``\ .
+
+.. _l446973747269627574696f6e-646973747269627574696f6e42794576656e4d6f6d656e7473:
+
+.. index::
+   pair: Distribution; distributionByEvenMoments
+
+:spadfun:`distributionByEvenMoments`\: \ :ref:`Sequence <l53657175656e6365>`\  R -> % 
+  \ ``distributionByEvenMoments(mm)``\  initiates a distribution with given even moments \ ``mm``\  and odd moments zero.
+
+
+.. index::
+   pair: Distribution; distributionByEvenMoments
+
+:spadfun:`distributionByEvenMoments`\: \ :ref:`Stream <l53747265616d>`\  R -> % 
+  \ ``distributionByEvenMoments(mm)``\  initiates a distribution with given even moments \ ``mm``\  and odd moments zero.
+
+.. _l446973747269627574696f6e-646973747269627574696f6e42794672656543756d756c616e7473:
+
+.. index::
+   pair: Distribution; distributionByFreeCumulants
+
+:spadfun:`distributionByFreeCumulants`\: \ :ref:`Sequence <l53657175656e6365>`\  R -> % 
+  \ ``distributionByFreeCumulants(cc)``\  initiates a distribution with given free cumulants \ ``cc``\ .
+
+
+.. index::
+   pair: Distribution; distributionByFreeCumulants
+
+:spadfun:`distributionByFreeCumulants`\: \ :ref:`Stream <l53747265616d>`\  R -> % 
+  \ ``distributionByFreeCumulants(cc)``\  initiates a distribution with given free cumulants \ ``cc``\ .
+
+.. _l446973747269627574696f6e-646973747269627574696f6e42794a61636f6269506172616d6574657273:
+
+.. index::
+   pair: Distribution; distributionByJacobiParameters
+
+:spadfun:`distributionByJacobiParameters`\: (\ :ref:`Sequence <l53657175656e6365>`\  R, \ :ref:`Sequence <l53657175656e6365>`\  R) -> % 
+  \ ``distributionByJacobiParameters(aa, bb)``\  initiates a distribution with given Jacobi parameters \ ``[aa, bb]``\ .
+
+
+.. index::
+   pair: Distribution; distributionByJacobiParameters
+
+:spadfun:`distributionByJacobiParameters`\: (\ :ref:`Stream <l53747265616d>`\  R, \ :ref:`Stream <l53747265616d>`\  R) -> % 
+  \ ``distributionByJacobiParameters(aa, bb)``\  initiates a distribution with given Jacobi parameters \ ``[aa, bb]``\ .
+
+.. _l446973747269627574696f6e-646973747269627574696f6e42794d6f6d656e7473:
+
+.. index::
+   pair: Distribution; distributionByMoments
+
+:spadfun:`distributionByMoments`\: \ :ref:`Sequence <l53657175656e6365>`\  R -> % 
+  \ ``distributionByMoments(mm)``\  initiates a distribution with given moments \ ``mm``\ .
+
+
+.. index::
+   pair: Distribution; distributionByMoments
+
+:spadfun:`distributionByMoments`\: \ :ref:`Stream <l53747265616d>`\  R -> % 
+  \ ``distributionByMoments(mm)``\  initiates a distribution with given moments \ ``mm``\ .
+
+.. _l446973747269627574696f6e-646973747269627574696f6e42794d6f6e6f746f6e6543756d756c616e7473:
+
+.. index::
+   pair: Distribution; distributionByMonotoneCumulants
+
+:spadfun:`distributionByMonotoneCumulants`\: \ :ref:`Sequence <l53657175656e6365>`\  R -> % if R has \ :ref:`Algebra <l416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  \ ``distributionByMonotoneCumulants(hh)``\  initiates a distribution with given monotone cumulants \ ``hh``\ .
+
+
+.. index::
+   pair: Distribution; distributionByMonotoneCumulants
+
+:spadfun:`distributionByMonotoneCumulants`\: \ :ref:`Stream <l53747265616d>`\  R -> % if R has \ :ref:`Algebra <l416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  \ ``distributionByMonotoneCumulants(hh)``\  initiates a distribution with given monotone cumulants \ ``hh``\ .
+
+.. _l446973747269627574696f6e-646973747269627574696f6e4279535472616e73666f726d:
+
+.. index::
+   pair: Distribution; distributionBySTransform
+
+:spadfun:`distributionBySTransform`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Sequence <l53657175656e6365>`\  R) -> % if R has \ :ref:`Algebra <l416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  \ ``distributionBySTransform(series)``\  initiates a distribution with given \ ``S``\ -transform \ ``series``\ .
+
+
+.. index::
+   pair: Distribution; distributionBySTransform
+
+:spadfun:`distributionBySTransform`\: Record(puiseux: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , laurent: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , coef: \ :ref:`Sequence <l53657175656e6365>`\  R) -> % if R has \ :ref:`Algebra <l416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  \ ``distributionBySTransform(series)``\  initiates a distribution with given \ ``S``\ -transform \ ``series``\ .
+
+.. _l446973747269627574696f6e-66726565436f6e766f6c7574696f6e:
+
+\ :ref:`freeConvolution <l446973747269627574696f6e43617465676f7279-66726565436f6e766f6c7574696f6e>`\ \: (%, %) -> % 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-6672656543756d756c616e74:
+
+\ :ref:`freeCumulant <l446973747269627574696f6e43617465676f7279-6672656543756d756c616e74>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> R 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-6672656543756d756c616e7473:
+
+\ :ref:`freeCumulants <l446973747269627574696f6e43617465676f7279-6672656543756d756c616e7473>`\ \: % -> \ :ref:`Sequence <l53657175656e6365>`\  R 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-667265654d756c7469706c69636174697665436f6e766f6c7574696f6e:
+
+.. index::
+   pair: Distribution; freeMultiplicativeConvolution
+
+:spadfun:`freeMultiplicativeConvolution`\: (%, %) -> % if R has \ :ref:`Algebra <l416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  \ ``freeMultiplicativeConvolution(mu, nu)``\  computes the free multiplicative convolution of the distributions \ ``mu``\  and \ ``nu``\ .
+
+.. _l446973747269627574696f6e-68616e6b656c44657465726d696e616e7473:
+
+\ :ref:`hankelDeterminants <l446973747269627574696f6e43617465676f7279-68616e6b656c44657465726d696e616e7473>`\ \: % -> \ :ref:`Stream <l53747265616d>`\  R 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-6a61636f6269506172616d6574657273:
+
+\ :ref:`jacobiParameters <l446973747269627574696f6e43617465676f7279-6a61636f6269506172616d6574657273>`\ \: % -> Record(an: \ :ref:`Stream <l53747265616d>`\  \ :ref:`Fraction <l4672616374696f6e>`\  R, bn: \ :ref:`Stream <l53747265616d>`\  \ :ref:`Fraction <l4672616374696f6e>`\  R) if R hasn't \ :ref:`Field <l4669656c64>`\  and R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+
+\ :ref:`jacobiParameters <l446973747269627574696f6e43617465676f7279-6a61636f6269506172616d6574657273>`\ \: % -> Record(an: \ :ref:`Stream <l53747265616d>`\  R, bn: \ :ref:`Stream <l53747265616d>`\  R) if R has \ :ref:`Field <l4669656c64>`\ 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l446973747269627574696f6e-6d6f6d656e74:
+
+\ :ref:`moment <l446973747269627574696f6e43617465676f7279-6d6f6d656e74>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> R 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-6d6f6d656e7473:
+
+\ :ref:`moments <l446973747269627574696f6e43617465676f7279-6d6f6d656e7473>`\ \: % -> \ :ref:`Sequence <l53657175656e6365>`\  R 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-6d6f6e6f746f6e65436f6e766f6c7574696f6e:
+
+\ :ref:`monotoneConvolution <l446973747269627574696f6e43617465676f7279-6d6f6e6f746f6e65436f6e766f6c7574696f6e>`\ \: (%, %) -> % 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-6d6f6e6f746f6e6543756d756c616e7473:
+
+\ :ref:`monotoneCumulants <l446973747269627574696f6e43617465676f7279-6d6f6e6f746f6e6543756d756c616e7473>`\ \: % -> \ :ref:`Sequence <l53657175656e6365>`\  R if R has \ :ref:`Algebra <l416c6765627261>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-6f7274686f676f6e616c436f6e766f6c7574696f6e:
+
+\ :ref:`orthogonalConvolution <l446973747269627574696f6e43617465676f7279-6f7274686f676f6e616c436f6e766f6c7574696f6e>`\ \: (%, %) -> % 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-6f7274686f676f6e616c506f6c796e6f6d69616c73:
+
+\ :ref:`orthogonalPolynomials <l446973747269627574696f6e43617465676f7279-6f7274686f676f6e616c506f6c796e6f6d69616c73>`\ \: % -> \ :ref:`Stream <l53747265616d>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  \ :ref:`Fraction <l4672616374696f6e>`\  R if R hasn't \ :ref:`Field <l4669656c64>`\  and R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+
+\ :ref:`orthogonalPolynomials <l446973747269627574696f6e43617465676f7279-6f7274686f676f6e616c506f6c796e6f6d69616c73>`\ \: % -> \ :ref:`Stream <l53747265616d>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  R if R has \ :ref:`Field <l4669656c64>`\ 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+.. _l446973747269627574696f6e-7375626f7264696e6174696f6e436f6e766f6c7574696f6e:
+
+\ :ref:`subordinationConvolution <l446973747269627574696f6e43617465676f7279-7375626f7264696e6174696f6e436f6e766f6c7574696f6e>`\ \: (%, %) -> % 
+  from \ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`DistributionCategory <l446973747269627574696f6e43617465676f7279>`\  R 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

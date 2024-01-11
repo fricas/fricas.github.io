@@ -1,0 +1,236 @@
+.. index:: FreeGroup
+
+.. _l4672656547726f7570:
+
+FreeGroup S
+===========
+
+:viewcode:`free.spad line 383 <free.spad#L383>` :editcode:`[edit on github] <free.spad#L383>`
+
+* S: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+
+The free group on a set \ ``S``\  is the group of finite products of the form \ ``reduce(*, [si ^ ni])``\  where the \ ``si``\ \ ``'s``\  are in \ ``S``\ , and the \ ``ni``\ \ ``'s``\  are integers. The multiplication is not commutative.
+
+
+.. _l4672656547726f7570-31:
+
+\ :ref:`1 <l4d61676d6157697468556e6974-31>`\ \: % 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l4672656547726f7570-2a:
+
+\ :ref:`\* <l4d61676d61-2a>`\ \: (%, %) -> % 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+
+.. index::
+   pair: FreeGroup; *
+
+:spadfun:`\*`\: (%, S) -> % 
+  \ ``x * s``\  returns the product of \ ``x``\  by \ ``s``\  on the right.
+
+
+.. index::
+   pair: FreeGroup; *
+
+:spadfun:`\*`\: (S, %) -> % 
+  \ ``s * x``\  returns the product of \ ``x``\  by \ ``s``\  on the left.
+
+.. _l4672656547726f7570-2f:
+
+\ :ref:`/ <l47726f7570-2f>`\ \: (%, %) -> % 
+  from \ :ref:`Group <l47726f7570>`\ 
+
+.. _l4672656547726f7570-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4672656547726f7570-5e:
+
+\ :ref:`^ <l47726f7570-5e>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  from \ :ref:`Group <l47726f7570>`\ 
+
+
+\ :ref:`^ <l4d61676d6157697468556e6974-5e>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+
+\ :ref:`^ <l4d61676d61-5e>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+
+.. index::
+   pair: FreeGroup; ^
+
+:spadfun:`^`\: (S, \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  \ ``s ^ n``\  returns the product of \ ``s``\  by itself \ ``n``\  times.
+
+.. _l4672656547726f7570-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l4672656547726f7570-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+
+\ :ref:`coerce <l436f65726369626c6546726f6d-636f65726365>`\ \: S -> % 
+  from \ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  S
+
+.. _l4672656547726f7570-636f6d6d757461746f72:
+
+\ :ref:`commutator <l47726f7570-636f6d6d757461746f72>`\ \: (%, %) -> % 
+  from \ :ref:`Group <l47726f7570>`\ 
+
+.. _l4672656547726f7570-636f6e6a7567617465:
+
+\ :ref:`conjugate <l47726f7570-636f6e6a7567617465>`\ \: (%, %) -> % 
+  from \ :ref:`Group <l47726f7570>`\ 
+
+.. _l4672656547726f7570-666163746f7273:
+
+.. index::
+   pair: FreeGroup; factors
+
+:spadfun:`factors`\: % -> \ :ref:`List <l4c697374>`\  Record(gen: S, exp: \ :ref:`Integer <l496e7465676572>`\ ) 
+  \ ``factors(a1\^e1, ..., an\^en)``\  returns \ ``[[a1, e1], ..., [an, en]]``\ .
+
+.. _l4672656547726f7570-696e76:
+
+\ :ref:`inv <l47726f7570-696e76>`\ \: % -> % 
+  from \ :ref:`Group <l47726f7570>`\ 
+
+.. _l4672656547726f7570-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l4672656547726f7570-6c656674506f776572:
+
+\ :ref:`leftPower <l4d61676d6157697468556e6974-6c656674506f776572>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+
+\ :ref:`leftPower <l4d61676d61-6c656674506f776572>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+.. _l4672656547726f7570-6c6566745265636970:
+
+\ :ref:`leftRecip <l4d61676d6157697468556e6974-6c6566745265636970>`\ \: % -> Union(%, failed) 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l4672656547726f7570-6d61704578706f6e:
+
+.. index::
+   pair: FreeGroup; mapExpon
+
+:spadfun:`mapExpon`\: (\ :ref:`Integer <l496e7465676572>`\  -> \ :ref:`Integer <l496e7465676572>`\ , %) -> % 
+  \ ``mapExpon(f, a1\^e1 ... an\^en)``\  returns \ ``a1\^f(e1) ... an\^f(en)``\ .
+
+.. _l4672656547726f7570-6d617047656e:
+
+.. index::
+   pair: FreeGroup; mapGen
+
+:spadfun:`mapGen`\: (S -> S, %) -> % 
+  \ ``mapGen(f, a1\^e1 ... an\^en)``\  returns \ ``f(a1)\^e1 ... f(an)\^en``\ .
+
+.. _l4672656547726f7570-6e74684578706f6e:
+
+.. index::
+   pair: FreeGroup; nthExpon
+
+:spadfun:`nthExpon`\: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Integer <l496e7465676572>`\  
+  \ ``nthExpon(x, n)``\  returns the exponent of the n^th monomial of \ ``x``\ .
+
+.. _l4672656547726f7570-6e7468466163746f72:
+
+.. index::
+   pair: FreeGroup; nthFactor
+
+:spadfun:`nthFactor`\: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> S 
+  \ ``nthFactor(x, n)``\  returns the factor of the n^th monomial of \ ``x``\ .
+
+.. _l4672656547726f7570-6f6e653f:
+
+\ :ref:`one? <l4d61676d6157697468556e6974-6f6e653f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l4672656547726f7570-7265636970:
+
+\ :ref:`recip <l4d61676d6157697468556e6974-7265636970>`\ \: % -> Union(%, failed) 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l4672656547726f7570-72657472616374:
+
+\ :ref:`retract <l5265747261637461626c65546f-72657472616374>`\ \: % -> S 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  S
+
+.. _l4672656547726f7570-72657472616374496643616e:
+
+\ :ref:`retractIfCan <l5265747261637461626c65546f-72657472616374496643616e>`\ \: % -> Union(S, failed) 
+  from \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  S
+
+.. _l4672656547726f7570-7269676874506f776572:
+
+\ :ref:`rightPower <l4d61676d6157697468556e6974-7269676874506f776572>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> % 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+
+\ :ref:`rightPower <l4d61676d61-7269676874506f776572>`\ \: (%, \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> % 
+  from \ :ref:`Magma <l4d61676d61>`\ 
+
+.. _l4672656547726f7570-72696768745265636970:
+
+\ :ref:`rightRecip <l4d61676d6157697468556e6974-72696768745265636970>`\ \: % -> Union(%, failed) 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l4672656547726f7570-73616d706c65:
+
+\ :ref:`sample <l4d61676d6157697468556e6974-73616d706c65>`\ \: % 
+  from \ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\ 
+
+.. _l4672656547726f7570-73697a65:
+
+.. index::
+   pair: FreeGroup; size
+
+:spadfun:`size`\: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  \ ``size(x)``\  returns the number of monomials in \ ``x``\ .
+
+.. _l4672656547726f7570-736d616c6c65723f:
+
+\ :ref:`smaller? <l436f6d70617261626c65-736d616c6c65723f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  from \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CoercibleFrom <l436f65726369626c6546726f6d>`\  S 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`Comparable <l436f6d70617261626c65>`\  if S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+
+\ :ref:`Group <l47726f7570>`\  
+
+\ :ref:`Magma <l4d61676d61>`\  
+
+\ :ref:`MagmaWithUnit <l4d61676d6157697468556e6974>`\  
+
+\ :ref:`Monoid <l4d6f6e6f6964>`\  
+
+\ :ref:`RetractableTo <l5265747261637461626c65546f>`\  S 
+
+\ :ref:`SemiGroup <l53656d6947726f7570>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+
+\ :ref:`TwoSidedRecip <l54776f53696465645265636970>`\  
+
+\ :ref:`unitsKnown <l756e6974734b6e6f776e>`\  
+

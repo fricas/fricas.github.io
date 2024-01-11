@@ -1,0 +1,30 @@
+.. index:: GrayCode
+
+.. _l47726179436f6465:
+
+GrayCode
+========
+
+:viewcode:`perman.spad line 1 <perman.spad#L1>` :editcode:`[edit on github] <perman.spad#L1>`
+
+
+GrayCode provides a function for efficiently running through all subsets of a finite set, only changing one element by another one.
+
+
+.. _l47726179436f6465-666972737453756273657447726179:
+
+.. index::
+   pair: GrayCode; firstSubsetGray
+
+:spadfun:`firstSubsetGray`\: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> \ :ref:`Vector <l566563746f72>`\  \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``firstSubsetGray(n)``\  creates the first vector \ *ww*\  to start a loop using \ *nextSubsetGray(ww, n)*\ 
+
+.. _l47726179436f6465-6e65787453756273657447726179:
+
+.. index::
+   pair: GrayCode; nextSubsetGray
+
+:spadfun:`nextSubsetGray`\: (\ :ref:`Vector <l566563746f72>`\  \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ ) -> \ :ref:`Vector <l566563746f72>`\  \ :ref:`Vector <l566563746f72>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``nextSubsetGray(ww, n)``\  returns a vector \ *vv*\  whose components have the following meanings: \begin{items} \item \ *vv.1*\ : a vector of length \ ``n``\  whose entries are 0 or 1. This can be interpreted as a code for a subset of the set 1, ..., \ ``n``\ ; \ *vv.1*\  differs from \ *ww.1*\  by exactly one entry; \item \ *vv.2.1*\  is the number of the entry of \ *vv.1*\  which will be changed next time; \item \ *vv.2.1 = n+1*\  means that \ *vv.1*\  is the last subset; trying to compute nextSubsetGray(\ ``vv``\ ) if \ *vv.2.1 = n+1*\  will produce an error! \end{items} The other components of \ *vv.2*\  are needed to compute nextSubsetGray efficiently. Note: this is an implementation of [Williamson, Topic II, 3.54, \ ``p``\ . 112] for the special case \ *r1 = r2 = ... = rn = 2*\ ; Note: nextSubsetGray produces a side-effect, i.e. \ *nextSubsetGray(vv)*\  and \ *vv := nextSubsetGray(vv)*\  will have the same effect.
+
+

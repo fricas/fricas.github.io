@@ -1,0 +1,49 @@
+.. index:: VectorFunctions2
+
+.. _l566563746f7246756e6374696f6e7332:
+
+VectorFunctions2(A, B)
+======================
+
+:viewcode:`vector.spad line 192 <vector.spad#L192>` :editcode:`[edit on github] <vector.spad#L192>`
+
+* A: \ :ref:`Type <l54797065>`\ 
+
+* B: \ :ref:`Type <l54797065>`\ 
+
+
+This package provides operations which all take as arguments vectors of elements of some type \ ``A``\  and functions from \ ``A``\  to another of type \ ``B``\ . The operations all iterate over their vector argument and either return a value of type \ ``B``\  or a vector over \ ``B``\ .
+
+
+.. _l566563746f7246756e6374696f6e7332-6d6170:
+
+.. index::
+   pair: VectorFunctions2; map
+
+:spadfun:`map`\: (A -> B, \ :ref:`Vector <l566563746f72>`\  A) -> \ :ref:`Vector <l566563746f72>`\  B 
+  \ ``map(f, v)``\  applies the function \ ``f``\  to every element of the vector \ ``v``\  producing a new vector containing the values.
+
+
+.. index::
+   pair: VectorFunctions2; map
+
+:spadfun:`map`\: (A -> Union(B, failed), \ :ref:`Vector <l566563746f72>`\  A) -> Union(\ :ref:`Vector <l566563746f72>`\  B, failed) 
+  \ ``map(f, v)``\  applies the function \ ``f``\  to every element of the vector \ ``v``\  producing a new vector containing the values or \ ``"failed"``\ .
+
+.. _l566563746f7246756e6374696f6e7332-726564756365:
+
+.. index::
+   pair: VectorFunctions2; reduce
+
+:spadfun:`reduce`\: ((A, B) -> B, \ :ref:`Vector <l566563746f72>`\  A, B) -> B 
+  \ ``reduce(func, vec, ident)``\  combines the elements in \ ``vec``\  using the binary function \ ``func``\ . Argument ident is returned if \ ``vec``\  is empty.
+
+.. _l566563746f7246756e6374696f6e7332-7363616e:
+
+.. index::
+   pair: VectorFunctions2; scan
+
+:spadfun:`scan`\: ((A, B) -> B, \ :ref:`Vector <l566563746f72>`\  A, B) -> \ :ref:`Vector <l566563746f72>`\  B 
+  \ ``scan(func, vec, ident)``\  creates a new vector whose elements are the result of applying reduce to the binary function \ ``func``\ , increasing initial subsequences of the vector \ ``vec``\ , and the element ident.
+
+

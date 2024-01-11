@@ -1,0 +1,38 @@
+.. index:: PrimitiveElement
+
+.. _l5072696d6974697665456c656d656e74:
+
+PrimitiveElement F
+==================
+
+:viewcode:`primelt.spad line 1 <primelt.spad#L1>` :editcode:`[edit on github] <primelt.spad#L1>`
+
+* F: Join(\ :ref:`Field <l4669656c64>`\ , \ :ref:`CharacteristicZero <l43686172616374657269737469635a65726f>`\ )
+
+
+PrimitiveElement provides functions to compute primitive elements in algebraic extensions.
+
+
+.. _l5072696d6974697665456c656d656e74-7072696d6974697665456c656d656e74:
+
+.. index::
+   pair: PrimitiveElement; primitiveElement
+
+:spadfun:`primitiveElement`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  F, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> Record(coef: \ :ref:`List <l4c697374>`\  \ :ref:`Integer <l496e7465676572>`\ , poly: \ :ref:`List <l4c697374>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, prim: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F) 
+  \ ``primitiveElement([p1, ..., pn], [a1, ..., an])``\  returns \ ``[[c1, ..., cn], [q1, ..., qn], q]``\  such that then \ ``k(a1, ..., an) = k(a)``\ , where \ ``a = a1 c1 + ... + an cn``\ , \ ``ai = qi(a)``\ , and \ ``q(a) = 0``\ . The \ ``pi``\ \ ``'s``\  are the defining polynomials for the \ ``ai``\ \ ``'s``\ . This operation uses the technique of \spadglossSee{groebner bases}{Groebner basis}.
+
+
+.. index::
+   pair: PrimitiveElement; primitiveElement
+
+:spadfun:`primitiveElement`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  F, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Symbol <l53796d626f6c>`\ ) -> Record(coef: \ :ref:`List <l4c697374>`\  \ :ref:`Integer <l496e7465676572>`\ , poly: \ :ref:`List <l4c697374>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, prim: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F) 
+  \ ``primitiveElement([p1, ..., pn], [a1, ..., an], a)``\  returns \ ``[[c1, ..., cn], [q1, ..., qn], q]``\  such that then \ ``k(a1, ..., an) = k(a)``\ , where \ ``a = a1 c1 + ... + an cn``\ , \ ``ai = qi(a)``\ , and \ ``q(a) = 0``\ . The \ ``pi``\ \ ``'s``\  are the defining polynomials for the \ ``ai``\ \ ``'s``\ . This operation uses the technique of \spadglossSee{groebner bases}{Groebner basis}.
+
+
+.. index::
+   pair: PrimitiveElement; primitiveElement
+
+:spadfun:`primitiveElement`\: (\ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  F, \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  F, \ :ref:`Symbol <l53796d626f6c>`\ ) -> Record(coef1: \ :ref:`Integer <l496e7465676572>`\ , coef2: \ :ref:`Integer <l496e7465676572>`\ , prim: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F) 
+  \ ``primitiveElement(p1, a1, p2, a2)``\  returns \ ``[c1, c2, q]``\  such that \ ``k(a1, a2) = k(a)``\  where \ ``a = c1 a1 + c2 a2, and q(a) = 0``\ . The \ ``pi``\ \ ``'s``\  are the defining polynomials for the \ ``ai``\ \ ``'s``\ . The \ ``p2``\  may involve \ ``a1``\ , but \ ``p1``\  must not involve \ ``a2``\ . This operation uses \ :spadfun:`resultant`\ .
+
+

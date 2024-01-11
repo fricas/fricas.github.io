@@ -1,0 +1,60 @@
+.. index:: RealZeroPackageQ
+
+.. _l5265616c5a65726f5061636b61676551:
+
+RealZeroPackageQ Pol
+====================
+
+:viewcode:`real0q.spad line 1 <real0q.spad#L1>` :editcode:`[edit on github] <real0q.spad#L1>`
+
+* Pol: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ 
+
+
+This package provides functions for finding the real zeros of univariate polynomials over the rational numbers to arbitrary user-specified precision. The results are returned as a list of isolating intervals, expressed as records with "left" and "right" rational number components.
+
+
+.. _l5265616c5a65726f5061636b61676551-7265616c5a65726f73:
+
+.. index::
+   pair: RealZeroPackageQ; realZeros
+
+:spadfun:`realZeros`\: (Pol, \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  Record(left: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , right: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ) 
+  \ ``realZeros(pol, eps)``\  returns a list of intervals of length less than the rational number eps for all the real roots of the polynomial \ ``pol``\ .
+
+
+.. index::
+   pair: RealZeroPackageQ; realZeros
+
+:spadfun:`realZeros`\: (Pol, Record(left: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , right: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ )) -> \ :ref:`List <l4c697374>`\  Record(left: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , right: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ) 
+  \ ``realZeros(pol, range)``\  returns a list of isolating intervals for all the real zeros of the univariate polynomial \ ``pol``\  which lie in the interval expressed by the record range.
+
+
+.. index::
+   pair: RealZeroPackageQ; realZeros
+
+:spadfun:`realZeros`\: (Pol, Record(left: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , right: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ), \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`List <l4c697374>`\  Record(left: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , right: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ) 
+  \ ``realZeros(pol, int, eps)``\  returns a list of intervals of length less than the rational number eps for all the real roots of the polynomial \ ``pol``\  which lie in the interval expressed by the record \ ``int``\ .
+
+
+.. index::
+   pair: RealZeroPackageQ; realZeros
+
+:spadfun:`realZeros`\: Pol -> \ :ref:`List <l4c697374>`\  Record(left: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , right: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ) 
+  \ ``realZeros(pol)``\  returns a list of isolating intervals for all the real zeros of the univariate polynomial \ ``pol``\ .
+
+.. _l5265616c5a65726f5061636b61676551-726566696e65:
+
+.. index::
+   pair: RealZeroPackageQ; refine
+
+:spadfun:`refine`\: (Pol, Record(left: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , right: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ), \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ) -> Record(left: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , right: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ) 
+  \ ``refine(pol, int, eps)``\  refines the interval \ ``int``\  containing exactly one root of the univariate polynomial \ ``pol``\  to size less than the rational number eps.
+
+
+.. index::
+   pair: RealZeroPackageQ; refine
+
+:spadfun:`refine`\: (Pol, Record(left: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , right: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ), Record(left: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , right: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ )) -> Union(Record(left: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ , right: \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ ), failed) 
+  \ ``refine(pol, int, range)``\  takes a univariate polynomial \ ``pol``\  and and isolating interval \ ``int``\  which must contain exactly one real root of \ ``pol``\ , and returns an isolating interval which is contained within range, or "failed" if no such isolating interval exists.
+
+

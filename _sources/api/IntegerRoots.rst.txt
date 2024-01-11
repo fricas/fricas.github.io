@@ -1,0 +1,71 @@
+.. index:: IntegerRoots
+
+.. _l496e7465676572526f6f7473:
+
+IntegerRoots I
+==============
+
+:viewcode:`intfact.spad line 201 <intfact.spad#L201>` :editcode:`[edit on github] <intfact.spad#L201>`
+
+* I: \ :ref:`IntegerNumberSystem <l496e74656765724e756d62657253797374656d>`\ 
+
+
+The \ :ref:`IntegerRoots <l496e7465676572526f6f7473>`\  package computes square roots and \ ``n``\ th roots of integers efficiently.
+
+
+.. _l496e7465676572526f6f7473-617070726f784e7468526f6f74:
+
+.. index::
+   pair: IntegerRoots; approxNthRoot
+
+:spadfun:`approxNthRoot`\: (I, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> I 
+  \ ``approxRoot(n, r)``\  returns an approximation \ ``x``\  to \ ``n^(1/r)``\  such that \ ``-1 < x - n^(1/r) < 1``\ 
+
+.. _l496e7465676572526f6f7473-617070726f7853717274:
+
+.. index::
+   pair: IntegerRoots; approxSqrt
+
+:spadfun:`approxSqrt`\: I -> I 
+  \ ``approxSqrt(n)``\  returns an approximation \ ``x``\  to \ ``sqrt(n)``\  such that \ ``-1 < x - sqrt(n) < 1``\ . Returns 0 if \ ``n``\  is negative. A variable precision Newton iteration is used. The running time is \ ``O( log(n)^2 )``\ .
+
+.. _l496e7465676572526f6f7473-706572666563744e7468506f7765723f:
+
+.. index::
+   pair: IntegerRoots; perfectNthPower?
+
+:spadfun:`perfectNthPower?`\: (I, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``perfectNthPower?(n, r)``\  returns \ ``true``\  if \ ``n``\  is an \ ``r``\ th power and \ ``false``\  otherwise
+
+.. _l496e7465676572526f6f7473-706572666563744e7468526f6f74:
+
+.. index::
+   pair: IntegerRoots; perfectNthRoot
+
+:spadfun:`perfectNthRoot`\: (I, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> Union(I, failed) 
+  \ ``perfectNthRoot(n, r)``\  returns the \ ``r``\ th root of \ ``n``\  if \ ``n``\  is an \ ``r``\ th power and returns "failed" otherwise
+
+
+.. index::
+   pair: IntegerRoots; perfectNthRoot
+
+:spadfun:`perfectNthRoot`\: I -> Record(base: I, exponent: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) 
+  \ ``perfectNthRoot(n)``\  returns \ ``[x, r]``\ , where \ ``n = x\^r``\  and \ ``r``\  is the largest integer such that \ ``n``\  is a perfect \ ``r``\ th power
+
+.. _l496e7465676572526f6f7473-7065726665637453717274:
+
+.. index::
+   pair: IntegerRoots; perfectSqrt
+
+:spadfun:`perfectSqrt`\: I -> Union(I, failed) 
+  \ ``perfectSqrt(n)``\  returns the square root of \ ``n``\  if \ ``n``\  is a perfect square and returns "failed" otherwise
+
+.. _l496e7465676572526f6f7473-706572666563745371756172653f:
+
+.. index::
+   pair: IntegerRoots; perfectSquare?
+
+:spadfun:`perfectSquare?`\: I -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``perfectSquare?(n)``\  returns \ ``true``\  if \ ``n``\  is a perfect square and \ ``false``\  otherwise
+
+

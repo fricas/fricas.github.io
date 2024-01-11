@@ -1,0 +1,38 @@
+.. index:: TriangularMatrixOperations
+
+.. _l547269616e67756c61724d61747269784f7065726174696f6e73:
+
+TriangularMatrixOperations(R, Row, Col, M)
+==========================================
+
+:viewcode:`intclos.spad line 1 <intclos.spad#L1>` :editcode:`[edit on github] <intclos.spad#L1>`
+
+* R: \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+
+* Row: \ :ref:`FiniteLinearAggregate <l46696e6974654c696e656172416767726567617465>`\  R
+
+* Col: \ :ref:`FiniteLinearAggregate <l46696e6974654c696e656172416767726567617465>`\  R
+
+* M: \ :ref:`MatrixCategory <l4d617472697843617465676f7279>`\ (R, Row, Col)
+
+
+This package provides functions that compute "fraction-free" inverses of upper and lower triangular matrices over a integral domain. By "fraction-free inverses" we mean the following: given a matrix \ ``B``\  with entries in \ ``R``\  and an element \ ``d``\  of \ ``R``\  such that \ ``d``\  * inv(\ ``B``\ ) also has entries in \ ``R``\ , we return \ ``d``\  * inv(\ ``B``\ ). Thus, it is not necessary to pass to the quotient field in any of our computations.
+
+
+.. _l547269616e67756c61724d61747269784f7065726174696f6e73-4c6f7754726942646444656e6f6d496e76:
+
+.. index::
+   pair: TriangularMatrixOperations; LowTriBddDenomInv
+
+:spadfun:`LowTriBddDenomInv`\: (M, R) -> M 
+  \ ``LowTriBddDenomInv(B, d)``\  returns \ ``M``\ , where \ ``B``\  is a non-singular lower triangular matrix and \ ``d``\  is an element of \ ``R``\  such that \ ``M = d * inv(B)``\  has entries in \ ``R``\ .
+
+.. _l547269616e67756c61724d61747269784f7065726174696f6e73-557054726942646444656e6f6d496e76:
+
+.. index::
+   pair: TriangularMatrixOperations; UpTriBddDenomInv
+
+:spadfun:`UpTriBddDenomInv`\: (M, R) -> M 
+  \ ``UpTriBddDenomInv(B, d)``\  returns \ ``M``\ , where \ ``B``\  is a non-singular upper triangular matrix and \ ``d``\  is an element of \ ``R``\  such that \ ``M = d * inv(B)``\  has entries in \ ``R``\ .
+
+

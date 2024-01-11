@@ -1,22 +1,18 @@
-
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" data-content_root="../">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>MultiVariableCalculusFunctions(S, F, FLAF, FLAS) &#8212; FriCAS</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/documentation_options.js?v=0034329e"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -48,7 +44,7 @@
           <div class="body" role="main">
             
   <section id="multivariablecalculusfunctions-s-f-flaf-flas">
-<span id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73"></span><span id="index-0"></span><h1>MultiVariableCalculusFunctions(S, F, FLAF, FLAS)<a class="headerlink" href="#multivariablecalculusfunctions-s-f-flaf-flas" title="Permalink to this heading">¶</a></h1>
+<span id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73"></span><span id="index-0"></span><h1>MultiVariableCalculusFunctions(S, F, FLAF, FLAS)<a class="headerlink" href="#multivariablecalculusfunctions-s-f-flaf-flas" title="Link to this heading">¶</a></h1>
 <p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/fortpak.spad#L245">fortpak.spad line 245</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/fortpak.spad#L245">[edit on github]</a></p>
 <ul class="simple">
 <li><p>S: <a class="reference internal" href="SetCategory.html#l53657443617465676f7279"><span class="std std-ref">SetCategory</span></a></p></li>
@@ -57,31 +53,31 @@
 <li><p>FLAS: <a class="reference internal" href="FiniteLinearAggregate.html#l46696e6974654c696e656172416767726567617465"><span class="std std-ref">FiniteLinearAggregate</span></a> S</p></li>
 </ul>
 <p><a class="reference internal" href="#l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73"><span class="std std-ref">MultiVariableCalculusFunctions</span></a> Package provides several functions for multivariable calculus. These include gradient, hessian and jacobian, divergence and laplacian. Various forms for banded and sparse storage of matrices are included.</p>
-<span class="target" id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-62616e6465644865737369616e"></span><dl class="simple" id="index-1">
+<span id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-62616e6465644865737369616e"></span><dl class="simple" id="index-1">
 <dt><span class="spadfun">bandedHessian</span>: (F, FLAS, <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Matrix.html#l4d6174726978"><span class="std std-ref">Matrix</span></a> F</dt><dd><p><code class="docutils literal notranslate"><span class="pre">bandedHessian(v,</span> <span class="pre">xlist,</span> <span class="pre">k)</span></code> computes the hessian, the matrix of second partial derivatives, of the scalar field <code class="docutils literal notranslate"><span class="pre">v</span></code>, <code class="docutils literal notranslate"><span class="pre">v</span></code> a function of the variables listed in <code class="docutils literal notranslate"><span class="pre">xlist</span></code>, <code class="docutils literal notranslate"><span class="pre">k</span></code> is the semi-bandwidth, the number of nonzero subdiagonals, 2*k+1 being actual bandwidth. Stores the nonzero band in lower triangle in a matrix, dimensions <code class="docutils literal notranslate"><span class="pre">k+1</span></code> by #xlist, whose rows are the vectors formed by diagonal, subdiagonal, etc. of the real, full-matrix, hessian. (The notation conforms to LAPACK/NAG-<code class="docutils literal notranslate"><span class="pre">F07</span></code> conventions.)</p>
 </dd>
 </dl>
-<span class="target" id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-62616e6465644a61636f6269616e"></span><dl class="simple" id="index-2">
+<span id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-62616e6465644a61636f6269616e"></span><dl class="simple" id="index-2">
 <dt><span class="spadfun">bandedJacobian</span>: (FLAF, FLAS, <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>, <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Matrix.html#l4d6174726978"><span class="std std-ref">Matrix</span></a> F</dt><dd><p><code class="docutils literal notranslate"><span class="pre">bandedJacobian(vf,</span> <span class="pre">xlist,</span> <span class="pre">kl,</span> <span class="pre">ku)</span></code> computes the jacobian, the matrix of first partial derivatives, of the vector field <code class="docutils literal notranslate"><span class="pre">vf</span></code>, <code class="docutils literal notranslate"><span class="pre">vf</span></code> a vector function of the variables listed in <code class="docutils literal notranslate"><span class="pre">xlist</span></code>, <code class="docutils literal notranslate"><span class="pre">kl</span></code> is the number of nonzero subdiagonals, ku is the number of nonzero superdiagonals, <code class="docutils literal notranslate"><span class="pre">kl+ku+1</span></code> being actual bandwidth. Stores the nonzero band in a matrix, dimensions <code class="docutils literal notranslate"><span class="pre">kl+ku+1</span></code> by #xlist. The upper triangle is in the top ku rows, the diagonal is in row <code class="docutils literal notranslate"><span class="pre">ku+1</span></code>, the lower triangle in the last <code class="docutils literal notranslate"><span class="pre">kl</span></code> rows. Entries in a column in the band store correspond to entries in same column of full store. (The notation conforms to LAPACK/NAG-<code class="docutils literal notranslate"><span class="pre">F07</span></code> conventions.)</p>
 </dd>
 </dl>
-<span class="target" id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-646976657267656e6365"></span><dl class="simple" id="index-3">
+<span id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-646976657267656e6365"></span><dl class="simple" id="index-3">
 <dt><span class="spadfun">divergence</span>: (FLAF, FLAS) -&gt; F</dt><dd><p><code class="docutils literal notranslate"><span class="pre">divergence(vf,</span> <span class="pre">xlist)</span></code> computes the divergence of the vector field <code class="docutils literal notranslate"><span class="pre">vf</span></code>, <code class="docutils literal notranslate"><span class="pre">vf</span></code> a vector function of the variables listed in xlist.</p>
 </dd>
 </dl>
-<span class="target" id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-6772616469656e74"></span><dl class="simple" id="index-4">
+<span id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-6772616469656e74"></span><dl class="simple" id="index-4">
 <dt><span class="spadfun">gradient</span>: (F, FLAS) -&gt; <a class="reference internal" href="Vector.html#l566563746f72"><span class="std std-ref">Vector</span></a> F</dt><dd><p><code class="docutils literal notranslate"><span class="pre">gradient(v,</span> <span class="pre">xlist)</span></code> computes the gradient, the vector of first partial derivatives, of the scalar field <code class="docutils literal notranslate"><span class="pre">v</span></code>, <code class="docutils literal notranslate"><span class="pre">v</span></code> a function of the variables listed in xlist.</p>
 </dd>
 </dl>
-<span class="target" id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-6865737369616e"></span><dl class="simple" id="index-5">
+<span id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-6865737369616e"></span><dl class="simple" id="index-5">
 <dt><span class="spadfun">hessian</span>: (F, FLAS) -&gt; <a class="reference internal" href="Matrix.html#l4d6174726978"><span class="std std-ref">Matrix</span></a> F</dt><dd><p><code class="docutils literal notranslate"><span class="pre">hessian(v,</span> <span class="pre">xlist)</span></code> computes the hessian, the matrix of second partial derivatives, of the scalar field <code class="docutils literal notranslate"><span class="pre">v</span></code>, <code class="docutils literal notranslate"><span class="pre">v</span></code> a function of the variables listed in xlist.</p>
 </dd>
 </dl>
-<span class="target" id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-6a61636f6269616e"></span><dl class="simple" id="index-6">
+<span id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-6a61636f6269616e"></span><dl class="simple" id="index-6">
 <dt><span class="spadfun">jacobian</span>: (FLAF, FLAS) -&gt; <a class="reference internal" href="Matrix.html#l4d6174726978"><span class="std std-ref">Matrix</span></a> F</dt><dd><p><code class="docutils literal notranslate"><span class="pre">jacobian(vf,</span> <span class="pre">xlist)</span></code> computes the jacobian, the matrix of first partial derivatives, of the vector field <code class="docutils literal notranslate"><span class="pre">vf</span></code>, <code class="docutils literal notranslate"><span class="pre">vf</span></code> a vector function of the variables listed in xlist.</p>
 </dd>
 </dl>
-<span class="target" id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-6c61706c616369616e"></span><dl class="simple" id="index-7">
+<span id="l4d756c74695661726961626c6543616c63756c757346756e6374696f6e73-6c61706c616369616e"></span><dl class="simple" id="index-7">
 <dt><span class="spadfun">laplacian</span>: (F, FLAS) -&gt; F</dt><dd><p><code class="docutils literal notranslate"><span class="pre">laplacian(v,</span> <span class="pre">xlist)</span></code> computes the laplacian of the scalar field <code class="docutils literal notranslate"><span class="pre">v</span></code>, <code class="docutils literal notranslate"><span class="pre">v</span></code> a function of the variables listed in xlist.</p>
 </dd>
 </dl>
@@ -139,7 +135,7 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2007-2023, FriCAS Team.
+    &#169; Copyright 2007-2024, FriCAS Team.
     </div>
   </body>
 </html>

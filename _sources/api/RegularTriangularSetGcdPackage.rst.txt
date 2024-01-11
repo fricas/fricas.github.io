@@ -1,0 +1,126 @@
+.. index:: RegularTriangularSetGcdPackage
+
+.. _l526567756c6172547269616e67756c61725365744763645061636b616765:
+
+RegularTriangularSetGcdPackage(R, E, V, P, TS)
+==============================================
+
+:viewcode:`regset.spad line 717 <regset.spad#L717>` :editcode:`[edit on github] <regset.spad#L717>`
+
+* R: \ :ref:`GcdDomain <l476364446f6d61696e>`\ 
+
+* E: \ :ref:`OrderedAbelianMonoidSup <l4f7264657265644162656c69616e4d6f6e6f6964537570>`\ 
+
+* V: \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+
+* P: \ :ref:`RecursivePolynomialCategory <l526563757273697665506f6c796e6f6d69616c43617465676f7279>`\ (R, E, V)
+
+* TS: \ :ref:`RegularTriangularSetCategory <l526567756c6172547269616e67756c617253657443617465676f7279>`\ (R, E, V, P)
+
+
+An internal package for computing gcds and resultants of univariate polynomials with coefficients in a tower of simple extensions of a field. 
+
+
+.. _l526567756c6172547269616e67756c61725365744763645061636b616765-696e74656772616c4c617374537562526573756c74616e74:
+
+.. index::
+   pair: RegularTriangularSetGcdPackage; integralLastSubResultant
+
+:spadfun:`integralLastSubResultant`\: (P, P, TS) -> \ :ref:`List <l4c697374>`\  Record(val: P, tower: TS) 
+  \ ``integralLastSubResultant(p1, p2, ts)``\  is an internal subroutine, exported only for developement.
+
+.. _l526567756c6172547269616e67756c61725365744763645061636b616765-696e7465726e616c4c617374537562526573756c74616e74:
+
+.. index::
+   pair: RegularTriangularSetGcdPackage; internalLastSubResultant
+
+:spadfun:`internalLastSubResultant`\: (\ :ref:`List <l4c697374>`\  Record(val: \ :ref:`List <l4c697374>`\  P, tower: TS), V, \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  Record(val: P, tower: TS) 
+  \ ``internalLastSubResultant(lpwt, v, flag)``\  is an internal subroutine, exported only for developement.
+
+
+.. index::
+   pair: RegularTriangularSetGcdPackage; internalLastSubResultant
+
+:spadfun:`internalLastSubResultant`\: (P, P, TS, \ :ref:`Boolean <l426f6f6c65616e>`\ , \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> \ :ref:`List <l4c697374>`\  Record(val: P, tower: TS) 
+  \ ``internalLastSubResultant(p1, p2, ts, inv?, break?)``\  is an internal subroutine, exported only for developement.
+
+.. _l526567756c6172547269616e67756c61725365744763645061636b616765-70726570617265537562526573416c676f:
+
+.. index::
+   pair: RegularTriangularSetGcdPackage; prepareSubResAlgo
+
+:spadfun:`prepareSubResAlgo`\: (P, P, TS) -> \ :ref:`List <l4c697374>`\  Record(val: \ :ref:`List <l4c697374>`\  P, tower: TS) 
+  \ ``prepareSubResAlgo(p1, p2, ts)``\  is an internal subroutine, exported only for developement.
+
+.. _l526567756c6172547269616e67756c61725365744763645061636b616765-73746172745461626c6547636421:
+
+.. index::
+   pair: RegularTriangularSetGcdPackage; startTableGcd!
+
+:spadfun:`startTableGcd!`\: (\ :ref:`String <l537472696e67>`\ , \ :ref:`String <l537472696e67>`\ , \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``startTableGcd!(s1, s2, s3)``\  is an internal subroutine, exported only for developement.
+
+.. _l526567756c6172547269616e67756c61725365744763645061636b616765-73746172745461626c65496e7653657421:
+
+.. index::
+   pair: RegularTriangularSetGcdPackage; startTableInvSet!
+
+:spadfun:`startTableInvSet!`\: (\ :ref:`String <l537472696e67>`\ , \ :ref:`String <l537472696e67>`\ , \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``startTableInvSet!(s1, s2, s3)``\  is an internal subroutine, exported only for developement.
+
+.. _l526567756c6172547269616e67756c61725365744763645061636b616765-73746f705461626c6547636421:
+
+.. index::
+   pair: RegularTriangularSetGcdPackage; stopTableGcd!
+
+:spadfun:`stopTableGcd!`\: () -> \ :ref:`Void <l566f6964>`\  
+  \ ``stopTableGcd!()``\  is an internal subroutine, exported only for developement.
+
+.. _l526567756c6172547269616e67756c61725365744763645061636b616765-73746f705461626c65496e7653657421:
+
+.. index::
+   pair: RegularTriangularSetGcdPackage; stopTableInvSet!
+
+:spadfun:`stopTableInvSet!`\: () -> \ :ref:`Void <l566f6964>`\  
+  \ ``stopTableInvSet!()``\  is an internal subroutine, exported only for developement.
+
+.. _l526567756c6172547269616e67756c61725365744763645061636b616765-746f7365496e7665727469626c653f:
+
+.. index::
+   pair: RegularTriangularSetGcdPackage; toseInvertible?
+
+:spadfun:`toseInvertible?`\: (P, TS) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``toseInvertible?(p1, p2, ts)``\  has the same specifications as \ :ref:`invertible? <l526567756c6172547269616e67756c617253657443617465676f7279-696e7665727469626c653f>`\ .
+
+
+.. index::
+   pair: RegularTriangularSetGcdPackage; toseInvertible?
+
+:spadfun:`toseInvertible?`\: (P, TS) -> \ :ref:`List <l4c697374>`\  Record(val: \ :ref:`Boolean <l426f6f6c65616e>`\ , tower: TS) 
+  \ ``toseInvertible?(p1, p2, ts)``\  has the same specifications as \ :ref:`invertible? <l526567756c6172547269616e67756c617253657443617465676f7279-696e7665727469626c653f>`\ .
+
+.. _l526567756c6172547269616e67756c61725365744763645061636b616765-746f7365496e7665727469626c65536574:
+
+.. index::
+   pair: RegularTriangularSetGcdPackage; toseInvertibleSet
+
+:spadfun:`toseInvertibleSet`\: (P, TS) -> \ :ref:`List <l4c697374>`\  TS 
+  \ ``toseInvertibleSet(p1, p2, ts)``\  has the same specifications as \ :ref:`invertibleSet <l526567756c6172547269616e67756c617253657443617465676f7279-696e7665727469626c65536574>`\ .
+
+.. _l526567756c6172547269616e67756c61725365744763645061636b616765-746f73654c617374537562526573756c74616e74:
+
+.. index::
+   pair: RegularTriangularSetGcdPackage; toseLastSubResultant
+
+:spadfun:`toseLastSubResultant`\: (P, P, TS) -> \ :ref:`List <l4c697374>`\  Record(val: P, tower: TS) 
+  \ ``toseLastSubResultant(p1, p2, ts)``\  has the same specifications as \ :ref:`lastSubResultant <l526567756c6172547269616e67756c617253657443617465676f7279-6c617374537562526573756c74616e74>`\ .
+
+.. _l526567756c6172547269616e67756c61725365744763645061636b616765-746f73655371756172654672656550617274:
+
+.. index::
+   pair: RegularTriangularSetGcdPackage; toseSquareFreePart
+
+:spadfun:`toseSquareFreePart`\: (P, TS) -> \ :ref:`List <l4c697374>`\  Record(val: P, tower: TS) 
+  \ ``toseSquareFreePart(p, ts)``\  has the same specifications as \ :ref:`squareFreePart <l526567756c6172547269616e67756c617253657443617465676f7279-7371756172654672656550617274>`\ .
+
+

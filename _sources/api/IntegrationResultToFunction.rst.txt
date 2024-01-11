@@ -1,0 +1,42 @@
+.. index:: IntegrationResultToFunction
+
+.. _l496e746567726174696f6e526573756c74546f46756e6374696f6e:
+
+IntegrationResultToFunction(R, F)
+=================================
+
+:viewcode:`irexpand.spad line 1 <irexpand.spad#L1>` :editcode:`[edit on github] <irexpand.spad#L1>`
+
+* R: Join(\ :ref:`GcdDomain <l476364446f6d61696e>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ )
+
+* F: Join(\ :ref:`AlgebraicallyClosedFunctionSpace <l416c67656272616963616c6c79436c6f73656446756e6374696f6e5370616365>`\  R, \ :ref:`TranscendentalFunctionCategory <l5472616e7363656e64656e74616c46756e6374696f6e43617465676f7279>`\ )
+
+
+This package allows a sum of logs over the roots of a polynomial to be expressed as explicit logarithms and arc tangents, provided that the indexing polynomial can be factored into quadratics.
+
+
+.. _l496e746567726174696f6e526573756c74546f46756e6374696f6e-636f6d706c6578457870616e64:
+
+.. index::
+   pair: IntegrationResultToFunction; complexExpand
+
+:spadfun:`complexExpand`\: \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  F -> F 
+  \ ``complexExpand(i)``\  returns the expanded complex function corresponding to \ ``i``\ .
+
+.. _l496e746567726174696f6e526573756c74546f46756e6374696f6e-657870616e64:
+
+.. index::
+   pair: IntegrationResultToFunction; expand
+
+:spadfun:`expand`\: (\ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  F, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`List <l4c697374>`\  F 
+  \ ``expand(i, x)``\  returns the list of possible real functions of \ ``x``\  corresponding to \ ``i``\ .
+
+.. _l496e746567726174696f6e526573756c74546f46756e6374696f6e-73706c6974:
+
+.. index::
+   pair: IntegrationResultToFunction; split
+
+:spadfun:`split`\: \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  F -> \ :ref:`IntegrationResult <l496e746567726174696f6e526573756c74>`\  F 
+  \ ``split(u(x) + sum_{P(a)=0} Q(a, x))``\  returns \ ``u(x) + sum_{P1(a)=0} Q(a, x) + ... + sum_{Pn(a)=0} Q(a, x)``\  where \ ``P1``\ , ..., \ ``Pn``\  are the factors of \ ``P``\ .
+
+

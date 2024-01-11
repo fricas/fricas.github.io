@@ -1,0 +1,70 @@
+.. index:: RationalLODE
+
+.. _l526174696f6e616c4c4f4445:
+
+RationalLODE(F, UP)
+===================
+
+:viewcode:`oderf.spad line 302 <oderf.spad#L302>` :editcode:`[edit on github] <oderf.spad#L302>`
+
+* F: Join(\ :ref:`Field <l4669656c64>`\ , \ :ref:`CharacteristicZero <l43686172616374657269737469635a65726f>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Integer <l496e7465676572>`\ )
+
+* UP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  F
+
+
+\ ``RationalLODE``\  provides functions for in-field solutions of linear ordinary differential equations, in the rational case.
+
+
+.. _l526174696f6e616c4c4f4445-696e64696369616c4571756174696f6e4174496e66696e697479:
+
+.. index::
+   pair: RationalLODE; indicialEquationAtInfinity
+
+:spadfun:`indicialEquationAtInfinity`\: \ :ref:`LinearOrdinaryDifferentialOperator1 <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7231>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP -> UP 
+  \ ``indicialEquationAtInfinity op``\  returns the indicial equation of \ ``op``\  at infinity.
+
+
+.. index::
+   pair: RationalLODE; indicialEquationAtInfinity
+
+:spadfun:`indicialEquationAtInfinity`\: \ :ref:`LinearOrdinaryDifferentialOperator2 <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7232>`\ (UP, \ :ref:`Fraction <l4672616374696f6e>`\  UP) -> UP 
+  \ ``indicialEquationAtInfinity op``\  returns the indicial equation of \ ``op``\  at infinity.
+
+.. _l526174696f6e616c4c4f4445-696e746567726174655f736f6c73:
+
+.. index::
+   pair: RationalLODE; integrate_sols
+
+:spadfun:`integrate_sols`\: \ :ref:`LinearOrdinaryDifferentialOperator1 <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7231>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP -> Record(ltilde: \ :ref:`LinearOrdinaryDifferentialOperator1 <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7231>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP, r: Union(\ :ref:`LinearOrdinaryDifferentialOperator1 <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7231>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP, failed)) 
+  \ ``integrate_sols(l)``\  integrates the solutions of an operator \ ``l``\ .
+
+.. _l526174696f6e616c4c4f4445-72617444736f6c7665:
+
+.. index::
+   pair: RationalLODE; ratDsolve
+
+:spadfun:`ratDsolve`\: (\ :ref:`LinearOrdinaryDifferentialOperator1 <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7231>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP, \ :ref:`Fraction <l4672616374696f6e>`\  UP) -> Record(particular: Union(\ :ref:`Fraction <l4672616374696f6e>`\  UP, failed), basis: \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP) 
+  \ ``ratDsolve(op, g)``\  returns \ ``["failed", []]``\  if the equation \ ``op y = g``\  has no rational solution. Otherwise, it returns \ ``[f, [y1, ..., ym]]``\  where \ ``f``\  is a particular rational solution and the \ ``yi``\ \ ``'s``\  form a basis for the rational solutions of the homogeneous equation.
+
+
+.. index::
+   pair: RationalLODE; ratDsolve
+
+:spadfun:`ratDsolve`\: (\ :ref:`LinearOrdinaryDifferentialOperator1 <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7231>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP, \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP) -> Record(basis: \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP, mat: \ :ref:`Matrix <l4d6174726978>`\  F) 
+  \ ``ratDsolve(op, [g1, ..., gm])``\  returns \ ``[[h1, ..., hq], M]``\  such that any rational solution of \ ``op y = c1 g1 + ... + cm gm``\  is of the form \ ``c1 h1 + ... + cq hq``\  where \ ``M [c1, ..., cq] = 0``\  and \ ``q >= m``\ .
+
+
+.. index::
+   pair: RationalLODE; ratDsolve
+
+:spadfun:`ratDsolve`\: (\ :ref:`LinearOrdinaryDifferentialOperator2 <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7232>`\ (UP, \ :ref:`Fraction <l4672616374696f6e>`\  UP), \ :ref:`Fraction <l4672616374696f6e>`\  UP) -> Record(particular: Union(\ :ref:`Fraction <l4672616374696f6e>`\  UP, failed), basis: \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP) 
+  \ ``ratDsolve(op, g)``\  returns \ ``["failed", []]``\  if the equation \ ``op y = g``\  has no rational solution. Otherwise, it returns \ ``[f, [y1, ..., ym]]``\  where \ ``f``\  is a particular rational solution and the \ ``yi``\ \ ``'s``\  form a basis for the rational solutions of the homogeneous equation.
+
+
+.. index::
+   pair: RationalLODE; ratDsolve
+
+:spadfun:`ratDsolve`\: (\ :ref:`LinearOrdinaryDifferentialOperator2 <l4c696e6561724f7264696e617279446966666572656e7469616c4f70657261746f7232>`\ (UP, \ :ref:`Fraction <l4672616374696f6e>`\  UP), \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP) -> Record(basis: \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP, mat: \ :ref:`Matrix <l4d6174726978>`\  F) 
+  \ ``ratDsolve(op, [g1, ..., gm])``\  returns \ ``[[h1, ..., hq], M]``\  such that any rational solution of \ ``op y = c1 g1 + ... + cm gm``\  is of the form \ ``c1 h1 + ... + cq hq``\  where \ ``M [c1, ..., cq] = 0``\  and \ ``q >= m``\ .
+
+

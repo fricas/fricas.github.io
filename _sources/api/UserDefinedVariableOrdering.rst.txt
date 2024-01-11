@@ -1,0 +1,45 @@
+.. index:: UserDefinedVariableOrdering
+
+.. _l55736572446566696e65645661726961626c654f72646572696e67:
+
+UserDefinedVariableOrdering
+===========================
+
+:viewcode:`setorder.spad line 90 <setorder.spad#L90>` :editcode:`[edit on github] <setorder.spad#L90>`
+
+
+This packages provides functions to allow the user to select the ordering on the variables and operators for displaying polynomials, fractions and expressions. The ordering affects the display only and not the computations.
+
+
+.. _l55736572446566696e65645661726961626c654f72646572696e67-6765745661726961626c654f72646572:
+
+.. index::
+   pair: UserDefinedVariableOrdering; getVariableOrder
+
+:spadfun:`getVariableOrder`\: () -> Record(high: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , low: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) 
+  \ ``getVariableOrder()``\  returns \ ``[[b1, ..., bm], [a1, ..., an]]``\  such that the ordering on the variables was given by \ ``setVariableOrder([b1, ..., bm], [a1, ..., an])``\ .
+
+.. _l55736572446566696e65645661726961626c654f72646572696e67-72657365745661726961626c654f72646572:
+
+.. index::
+   pair: UserDefinedVariableOrdering; resetVariableOrder
+
+:spadfun:`resetVariableOrder`\: () -> \ :ref:`Void <l566f6964>`\  
+  \ ``resetVariableOrder()``\  cancels any previous use of setVariableOrder and returns to the default system ordering.
+
+.. _l55736572446566696e65645661726961626c654f72646572696e67-7365745661726961626c654f72646572:
+
+.. index::
+   pair: UserDefinedVariableOrdering; setVariableOrder
+
+:spadfun:`setVariableOrder`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``setVariableOrder([b1, ..., bm], [a1, ..., an])``\  defines an ordering on the variables given by \ ``b1 > b2 > ... > bm >``\  other variables \ ``> a1 > a2 > ... > an``\ .
+
+
+.. index::
+   pair: UserDefinedVariableOrdering; setVariableOrder
+
+:spadfun:`setVariableOrder`\: \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\  -> \ :ref:`Void <l566f6964>`\  
+  \ ``setVariableOrder([a1, ..., an])``\  defines an ordering on the variables given by \ ``a1 > a2 > ... > an > other variables``\ .
+
+

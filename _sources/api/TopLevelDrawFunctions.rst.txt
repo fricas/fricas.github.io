@@ -1,0 +1,165 @@
+.. index:: TopLevelDrawFunctions
+
+.. _l546f704c6576656c4472617746756e6374696f6e73:
+
+TopLevelDrawFunctions Ex
+========================
+
+:viewcode:`draw.spad line 629 <draw.spad#L629>` :editcode:`[edit on github] <draw.spad#L629>`
+
+* Ex: Join(\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ , \ :ref:`SetCategory <l53657443617465676f7279>`\ )
+
+
+TopLevelDrawFunctions provides top level functions for drawing graphics of expressions.
+
+
+.. _l546f704c6576656c4472617746756e6374696f6e73-64726177:
+
+.. index::
+   pair: TopLevelDrawFunctions; draw
+
+:spadfun:`draw`\: (Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ ) -> \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\  
+  \ ``draw(f(x), x = a..b)``\  draws the graph of \ ``y = f(x)``\  as \ ``x``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\ ; \ ``f(x)``\  appears in the title bar.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; draw
+
+:spadfun:`draw`\: (Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`DrawOption <l447261774f7074696f6e>`\ ) -> \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\  
+  \ ``draw(f(x), x = a..b, l)``\  draws the graph of \ ``y = f(x)``\  as \ ``x``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\ ; \ ``f(x)``\  is the default title, and the options contained in the list \ ``l``\  of the domain \ ``DrawOption``\  are applied.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; draw
+
+:spadfun:`draw`\: (Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ ) -> \ :ref:`ThreeDimensionalViewport <l546872656544696d656e73696f6e616c56696577706f7274>`\  
+  \ ``draw(f(x, y), x = a..b, y = c..d)``\  draws the graph of \ ``z = f(x, y)``\  as \ ``x``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\  and \ ``y``\  ranges from \ ``min(c, d)``\  to \ ``max(c, d)``\ ; \ ``f(x, y)``\  appears in the title bar.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; draw
+
+:spadfun:`draw`\: (Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`DrawOption <l447261774f7074696f6e>`\ ) -> \ :ref:`ThreeDimensionalViewport <l546872656544696d656e73696f6e616c56696577706f7274>`\  
+  \ ``draw(f(x, y), x = a..b, y = c..d, l)``\  draws the graph of \ ``z = f(x, y)``\  as \ ``x``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\  and \ ``y``\  ranges from \ ``min(c, d)``\  to \ ``max(c, d)``\ ; \ ``f(x, y)``\  is the default title, and the options contained in the list \ ``l``\  of the domain \ ``DrawOption``\  are applied.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; draw
+
+:spadfun:`draw`\: (\ :ref:`ParametricComplexCurve <l506172616d6574726963436f6d706c65784375727665>`\  Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ ) -> \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\  
+  \ ``draw(c, b)``\  is like version for plane curves, but uses complex curve.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; draw
+
+:spadfun:`draw`\: (\ :ref:`ParametricComplexCurve <l506172616d6574726963436f6d706c65784375727665>`\  Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`DrawOption <l447261774f7074696f6e>`\ ) -> \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\  
+  \ ``draw(c, b, l)``\  is like version for plane curves, but uses complex curve.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; draw
+
+:spadfun:`draw`\: (\ :ref:`ParametricPlaneCurve <l506172616d6574726963506c616e654375727665>`\  Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ ) -> \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\  
+  \ ``draw(curve(f(t), g(t)), t = a..b)``\  draws the graph of the parametric curve \ ``x = f(t), y = g(t)``\  as \ ``t``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\ ; \ ``(f(t), g(t))``\  appears in the title bar.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; draw
+
+:spadfun:`draw`\: (\ :ref:`ParametricPlaneCurve <l506172616d6574726963506c616e654375727665>`\  Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`DrawOption <l447261774f7074696f6e>`\ ) -> \ :ref:`TwoDimensionalViewport <l54776f44696d656e73696f6e616c56696577706f7274>`\  
+  \ ``draw(curve(f(t), g(t)), t = a..b, l)``\  draws the graph of the parametric curve \ ``x = f(t), y = g(t)``\  as \ ``t``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\ ; \ ``(f(t), g(t))``\  is the default title, and the options contained in the list \ ``l``\  of the domain \ ``DrawOption``\  are applied.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; draw
+
+:spadfun:`draw`\: (\ :ref:`ParametricSpaceCurve <l506172616d657472696353706163654375727665>`\  Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ ) -> \ :ref:`ThreeDimensionalViewport <l546872656544696d656e73696f6e616c56696577706f7274>`\  
+  \ ``draw(curve(f(t), g(t), h(t)), t = a..b)``\  draws the graph of the parametric curve \ ``x = f(t)``\ , \ ``y = g(t)``\ , \ ``z = h(t)``\  as \ ``t``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\ ; \ ``h(t)``\  is the default title.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; draw
+
+:spadfun:`draw`\: (\ :ref:`ParametricSpaceCurve <l506172616d657472696353706163654375727665>`\  Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`DrawOption <l447261774f7074696f6e>`\ ) -> \ :ref:`ThreeDimensionalViewport <l546872656544696d656e73696f6e616c56696577706f7274>`\  
+  \ ``draw(curve(f(t), g(t), h(t)), t = a..b, l)``\  draws the graph of the parametric curve \ ``x = f(t)``\ , \ ``y = g(t)``\ , \ ``z = h(t)``\  as \ ``t``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\ ; \ ``h(t)``\  is the default title, and the options contained in the list \ ``l``\  of the domain \ ``DrawOption``\  are applied.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; draw
+
+:spadfun:`draw`\: (\ :ref:`ParametricSurface <l506172616d657472696353757266616365>`\  Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ ) -> \ :ref:`ThreeDimensionalViewport <l546872656544696d656e73696f6e616c56696577706f7274>`\  
+  \ ``draw(surface(f(u, v), g(u, v), h(u, v)), u = a..b, v = c..d)``\  draws the graph of the parametric surface \ ``x = f(u, v)``\ , \ ``y = g(u, v)``\ , \ ``z = h(u, v)``\  as \ ``u``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\  and \ ``v``\  ranges from \ ``min(c, d)``\  to \ ``max(c, d)``\ ; \ ``h(t)``\  is the default title.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; draw
+
+:spadfun:`draw`\: (\ :ref:`ParametricSurface <l506172616d657472696353757266616365>`\  Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`DrawOption <l447261774f7074696f6e>`\ ) -> \ :ref:`ThreeDimensionalViewport <l546872656544696d656e73696f6e616c56696577706f7274>`\  
+  \ ``draw(surface(f(u, v), g(u, v), h(u, v)), u = a..b, v = c..d, l)``\  draws the graph of the parametric surface \ ``x = f(u, v)``\ , \ ``y = g(u, v)``\ , \ ``z = h(u, v)``\  as \ ``u``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\  and \ ``v``\  ranges from \ ``min(c, d)``\  to \ ``max(c, d)``\ ; \ ``h(t)``\  is the default title, and the options contained in the list \ ``l``\  of the domain \ ``DrawOption``\  are applied.
+
+.. _l546f704c6576656c4472617746756e6374696f6e73-6d616b654f626a656374:
+
+.. index::
+   pair: TopLevelDrawFunctions; makeObject
+
+:spadfun:`makeObject`\: (Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`DrawOption <l447261774f7074696f6e>`\ ) -> \ :ref:`GraphImage <l4772617068496d616765>`\  
+  \ ``makeObject(f(x), x = a..b, l)``\  creates the graph of \ ``y = f(x)``\  as \ ``x``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\ ; the options contained in the list \ ``l``\  of the domain \ ``DrawOption``\  are applied.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; makeObject
+
+:spadfun:`makeObject`\: (Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ ) -> \ :ref:`ThreeSpace <l54687265655370616365>`\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  
+  \ ``makeObject(f(x, y), x = a..b, y = c..d)``\  returns a space of the domain \ :ref:`ThreeSpace <l54687265655370616365>`\  which contains the graph of \ ``z = f(x, y)``\  as \ ``x``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\  and \ ``y``\  ranges from \ ``min(c, d)``\  to \ ``max(c, d)``\ ; \ ``f(x, y)``\  appears as the default title.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; makeObject
+
+:spadfun:`makeObject`\: (Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`DrawOption <l447261774f7074696f6e>`\ ) -> \ :ref:`ThreeSpace <l54687265655370616365>`\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  
+  \ ``makeObject(f(x, y), x = a..b, y = c..d, l)``\  returns a space of the domain \ :ref:`ThreeSpace <l54687265655370616365>`\  which contains the graph of \ ``z = f(x, y)``\  as \ ``x``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\  and \ ``y``\  ranges from \ ``min(c, d)``\  to \ ``max(c, d)``\ ; \ ``f(x, y)``\  is the default title, and the options contained in the list \ ``l``\  of the domain \ ``DrawOption``\  are applied.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; makeObject
+
+:spadfun:`makeObject`\: (\ :ref:`ParametricComplexCurve <l506172616d6574726963436f6d706c65784375727665>`\  Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`DrawOption <l447261774f7074696f6e>`\ ) -> \ :ref:`GraphImage <l4772617068496d616765>`\  
+  \ ``makeObject(c, b, l)``\  is like version for plane curves, but uses complex curve.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; makeObject
+
+:spadfun:`makeObject`\: (\ :ref:`ParametricPlaneCurve <l506172616d6574726963506c616e654375727665>`\  Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`DrawOption <l447261774f7074696f6e>`\ ) -> \ :ref:`GraphImage <l4772617068496d616765>`\  
+  \ ``makeObject(curve(f(t), g(t)), t = a..b, l)``\  creates the graph of the parametric curve \ ``x = f(t), y = g(t)``\  as \ ``t``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\ ; the options contained in the list \ ``l``\  of the domain \ ``DrawOption``\  are applied.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; makeObject
+
+:spadfun:`makeObject`\: (\ :ref:`ParametricSpaceCurve <l506172616d657472696353706163654375727665>`\  Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ ) -> \ :ref:`ThreeSpace <l54687265655370616365>`\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  
+  \ ``makeObject(curve(f(t), g(t), h(t)), t = a..b)``\  returns a space of the domain \ :ref:`ThreeSpace <l54687265655370616365>`\  which contains the graph of the parametric curve \ ``x = f(t)``\ , \ ``y = g(t)``\ , \ ``z = h(t)``\  as \ ``t``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\ ; \ ``h(t)``\  is the default title.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; makeObject
+
+:spadfun:`makeObject`\: (\ :ref:`ParametricSpaceCurve <l506172616d657472696353706163654375727665>`\  Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`DrawOption <l447261774f7074696f6e>`\ ) -> \ :ref:`ThreeSpace <l54687265655370616365>`\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  
+  \ ``makeObject(curve(f(t), g(t), h(t)), t = a..b, l)``\  returns a space of the domain \ :ref:`ThreeSpace <l54687265655370616365>`\  which contains the graph of the parametric curve \ ``x = f(t)``\ , \ ``y = g(t)``\ , \ ``z = h(t)``\  as \ ``t``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\ ; \ ``h(t)``\  is the default title, and the options contained in the list \ ``l``\  of the domain \ ``DrawOption``\  are applied.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; makeObject
+
+:spadfun:`makeObject`\: (\ :ref:`ParametricSurface <l506172616d657472696353757266616365>`\  Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ ) -> \ :ref:`ThreeSpace <l54687265655370616365>`\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  
+  \ ``makeObject(surface(f(u, v), g(u, v), h(u, v)), u = a..b, v = c..d)``\  returns a space of the domain \ :ref:`ThreeSpace <l54687265655370616365>`\  which contains the graph of the parametric surface \ ``x = f(u, v)``\ , \ ``y = g(u, v)``\ , \ ``z = h(u, v)``\  as \ ``u``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\  and \ ``v``\  ranges from \ ``min(c, d)``\  to \ ``max(c, d)``\ ; \ ``h(t)``\  is the default title.
+
+
+.. index::
+   pair: TopLevelDrawFunctions; makeObject
+
+:spadfun:`makeObject`\: (\ :ref:`ParametricSurface <l506172616d657472696353757266616365>`\  Ex, \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`SegmentBinding <l5365676d656e7442696e64696e67>`\  \ :ref:`Float <l466c6f6174>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`DrawOption <l447261774f7074696f6e>`\ ) -> \ :ref:`ThreeSpace <l54687265655370616365>`\  \ :ref:`DoubleFloat <l446f75626c65466c6f6174>`\  
+  \ ``makeObject(surface(f(u, v), g(u, v), h(u, v)), u = a..b, v = c..d, l)``\  returns a space of the domain \ :ref:`ThreeSpace <l54687265655370616365>`\  which contains the graph of the parametric surface \ ``x = f(u, v)``\ , \ ``y = g(u, v)``\ , \ ``z = h(u, v)``\  as \ ``u``\  ranges from \ ``min(a, b)``\  to \ ``max(a, b)``\  and \ ``v``\  ranges from \ ``min(c, d)``\  to \ ``max(c, d)``\ ; \ ``h(t)``\  is the default title, and the options contained in the list \ ``l``\  of the domain \ ``DrawOption``\  are applied.
+
+

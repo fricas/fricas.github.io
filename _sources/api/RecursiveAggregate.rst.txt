@@ -1,0 +1,274 @@
+.. index:: RecursiveAggregate
+
+.. _l526563757273697665416767726567617465:
+
+RecursiveAggregate S
+====================
+
+:viewcode:`aggcat.spad line 1046 <aggcat.spad#L1046>` :editcode:`[edit on github] <aggcat.spad#L1046>`
+
+* S: \ :ref:`Type <l54797065>`\ 
+
+
+A recursive aggregate over a type \ ``S``\  is a model for a a directed graph containing values of type \ ``S``\ . Recursively, a recursive aggregate is either empty or a \ *node*\  consisting of a \ :spadfun:`value`\  from \ ``S``\  and 0 or more \ :spadfun:`children`\  which are also nodes. A node with no children is called a \ :spadfun:`leaf`\  node. A recursive aggregate may be cyclic for which some operations as noted may go into an infinite loop.
+
+
+.. _l526563757273697665416767726567617465-23:
+
+\ :ref:`# <l416767726567617465-23>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l526563757273697665416767726567617465-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\  or S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l526563757273697665416767726567617465-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\  or S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l526563757273697665416767726567617465-616e793f:
+
+\ :ref:`any? <l486f6d6f67656e656f7573416767726567617465-616e793f>`\ \: (S -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l526563757273697665416767726567617465-6368696c643f:
+
+.. index::
+   pair: RecursiveAggregate; child?
+
+:spadfun:`child?`\: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`BasicType <l426173696354797065>`\ 
+  \ ``child?(u, v)``\  tests if node \ ``u``\  is a child of node \ ``v``\ .
+
+.. _l526563757273697665416767726567617465-6368696c6472656e:
+
+.. index::
+   pair: RecursiveAggregate; children
+
+:spadfun:`children`\: % -> \ :ref:`List <l4c697374>`\  % 
+  \ ``children(u)``\  returns a list of the children of aggregate \ ``u``\ . Error: if \ ``u``\  is empty.
+
+.. _l526563757273697665416767726567617465-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  if S has \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l526563757273697665416767726567617465-636f7079:
+
+\ :ref:`copy <l416767726567617465-636f7079>`\ \: % -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l526563757273697665416767726567617465-636f756e74:
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (S -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (S, %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l526563757273697665416767726567617465-6379636c69633f:
+
+.. index::
+   pair: RecursiveAggregate; cyclic?
+
+:spadfun:`cyclic?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``cyclic?(u)``\  tests if \ ``u``\  has a cycle.
+
+.. _l526563757273697665416767726567617465-64697374616e6365:
+
+.. index::
+   pair: RecursiveAggregate; distance
+
+:spadfun:`distance`\: (%, %) -> \ :ref:`Integer <l496e7465676572>`\  
+  \ ``distance(u, v)``\  returns the path length (an integer) from node \ ``u``\  to \ ``v``\ .
+
+.. _l526563757273697665416767726567617465-656c74:
+
+.. index::
+   pair: RecursiveAggregate; elt
+
+:spadfun:`elt`\: (%, value) -> S 
+  \ ``elt(u, "value")``\  (also written: \ ``u.value``\ ) is equivalent to \ ``value(u)``\ .
+
+.. _l526563757273697665416767726567617465-656d7074793f:
+
+\ :ref:`empty? <l416767726567617465-656d7074793f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l526563757273697665416767726567617465-656d707479:
+
+\ :ref:`empty <l416767726567617465-656d707479>`\ \: () -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l526563757273697665416767726567617465-65713f:
+
+\ :ref:`eq? <l416767726567617465-65713f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l526563757273697665416767726567617465-6576616c:
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`Equation <l4571756174696f6e>`\  S) -> % if S has \ :ref:`SetCategory <l53657443617465676f7279>`\  and S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+  from \ :ref:`Evalable <l4576616c61626c65>`\  S
+
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  S) -> % if S has \ :ref:`SetCategory <l53657443617465676f7279>`\  and S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+  from \ :ref:`Evalable <l4576616c61626c65>`\  S
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  S, \ :ref:`List <l4c697374>`\  S) -> % if S has \ :ref:`SetCategory <l53657443617465676f7279>`\  and S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (S, S)
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, S, S) -> % if S has \ :ref:`SetCategory <l53657443617465676f7279>`\  and S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (S, S)
+
+.. _l526563757273697665416767726567617465-65766572793f:
+
+\ :ref:`every? <l486f6d6f67656e656f7573416767726567617465-65766572793f>`\ \: (S -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l526563757273697665416767726567617465-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  if S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l526563757273697665416767726567617465-6c6561663f:
+
+.. index::
+   pair: RecursiveAggregate; leaf?
+
+:spadfun:`leaf?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``leaf?(u)``\  tests if \ ``u``\  is a terminal node.
+
+.. _l526563757273697665416767726567617465-6c6561766573:
+
+.. index::
+   pair: RecursiveAggregate; leaves
+
+:spadfun:`leaves`\: % -> \ :ref:`List <l4c697374>`\  S 
+  \ ``leaves(u)``\  returns the list of leaves in aggregate \ ``u``\ .
+
+.. _l526563757273697665416767726567617465-6c6573733f:
+
+\ :ref:`less? <l416767726567617465-6c6573733f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l526563757273697665416767726567617465-6d617021:
+
+\ :ref:`map! <l486f6d6f67656e656f7573416767726567617465-6d617021>`\ \: (S -> S, %) -> % if % has \ :ref:`shallowlyMutable <l7368616c6c6f776c794d757461626c65>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l526563757273697665416767726567617465-6d6170:
+
+\ :ref:`map <l486f6d6f67656e656f7573416767726567617465-6d6170>`\ \: (S -> S, %) -> % 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l526563757273697665416767726567617465-6d6178:
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: % -> S if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: ((S, S) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> S if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l526563757273697665416767726567617465-6d656d6265723f:
+
+\ :ref:`member? <l486f6d6f67656e656f7573416767726567617465-6d656d6265723f>`\ \: (S, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l526563757273697665416767726567617465-6d656d62657273:
+
+\ :ref:`members <l486f6d6f67656e656f7573416767726567617465-6d656d62657273>`\ \: % -> \ :ref:`List <l4c697374>`\  S if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l526563757273697665416767726567617465-6d696e:
+
+\ :ref:`min <l486f6d6f67656e656f7573416767726567617465-6d696e>`\ \: % -> S if S has \ :ref:`OrderedSet <l4f726465726564536574>`\  and % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l526563757273697665416767726567617465-6d6f72653f:
+
+\ :ref:`more? <l416767726567617465-6d6f72653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l526563757273697665416767726567617465-6e6f64653f:
+
+.. index::
+   pair: RecursiveAggregate; node?
+
+:spadfun:`node?`\: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if S has \ :ref:`BasicType <l426173696354797065>`\ 
+  \ ``node?(u, v)``\  tests if node \ ``u``\  is contained in node \ ``v``\  (either as a child, a child of a child, etc.).
+
+.. _l526563757273697665416767726567617465-6e6f646573:
+
+.. index::
+   pair: RecursiveAggregate; nodes
+
+:spadfun:`nodes`\: % -> \ :ref:`List <l4c697374>`\  % 
+  \ ``nodes(u)``\  returns a list of all of the nodes of aggregate \ ``u``\ .
+
+.. _l526563757273697665416767726567617465-7061727473:
+
+\ :ref:`parts <l486f6d6f67656e656f7573416767726567617465-7061727473>`\ \: % -> \ :ref:`List <l4c697374>`\  S if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S
+
+.. _l526563757273697665416767726567617465-73616d706c65:
+
+\ :ref:`sample <l416767726567617465-73616d706c65>`\ \: % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l526563757273697665416767726567617465-7365746368696c6472656e21:
+
+.. index::
+   pair: RecursiveAggregate; setchildren!
+
+:spadfun:`setchildren!`\: (%, \ :ref:`List <l4c697374>`\  %) -> % if % has \ :ref:`shallowlyMutable <l7368616c6c6f776c794d757461626c65>`\ 
+  \ ``setchildren!(u, v)``\  replaces the current children of node \ ``u``\  with the members of \ ``v``\  in left-to-right order.
+
+.. _l526563757273697665416767726567617465-736574656c7421:
+
+.. index::
+   pair: RecursiveAggregate; setelt!
+
+:spadfun:`setelt!`\: (%, value, S) -> S if % has \ :ref:`shallowlyMutable <l7368616c6c6f776c794d757461626c65>`\ 
+  \ ``setelt!(u, "value", x)``\  (also written \ ``u.value := x``\ ) is equivalent to \ ``setvalue!(u, x)``\ 
+
+.. _l526563757273697665416767726567617465-73657476616c756521:
+
+.. index::
+   pair: RecursiveAggregate; setvalue!
+
+:spadfun:`setvalue!`\: (%, S) -> S if % has \ :ref:`shallowlyMutable <l7368616c6c6f776c794d757461626c65>`\ 
+  \ ``setvalue!(u, x)``\  sets the value of node \ ``u``\  to \ ``x``\ .
+
+.. _l526563757273697665416767726567617465-73697a653f:
+
+\ :ref:`size? <l416767726567617465-73697a653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l526563757273697665416767726567617465-76616c7565:
+
+.. index::
+   pair: RecursiveAggregate; value
+
+:spadfun:`value`\: % -> S 
+  \ ``value(u)``\  returns the value of the node \ ``u``\ .
+
+
+\ :ref:`Aggregate <l416767726567617465>`\  
+
+\ :ref:`BasicType <l426173696354797065>`\  if % has \ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  and S has \ :ref:`BasicType <l426173696354797065>`\  or S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  if S has \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+\ :ref:`Evalable <l4576616c61626c65>`\  S if S has \ :ref:`SetCategory <l53657443617465676f7279>`\  and S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+
+\ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  S 
+
+\ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (S, S) if S has \ :ref:`SetCategory <l53657443617465676f7279>`\  and S has \ :ref:`Evalable <l4576616c61626c65>`\  S
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  if S has \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+

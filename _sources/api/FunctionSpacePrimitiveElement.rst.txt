@@ -1,0 +1,33 @@
+.. index:: FunctionSpacePrimitiveElement
+
+.. _l46756e6374696f6e53706163655072696d6974697665456c656d656e74:
+
+FunctionSpacePrimitiveElement(R, F)
+===================================
+
+:viewcode:`primelt.spad line 101 <primelt.spad#L101>` :editcode:`[edit on github] <primelt.spad#L101>`
+
+* R: Join(\ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ , \ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`CharacteristicZero <l43686172616374657269737469635a65726f>`\ )
+
+* F: \ :ref:`FunctionSpace <l46756e6374696f6e5370616365>`\  R
+
+
+FunctionsSpacePrimitiveElement provides functions to compute primitive elements in functions spaces.
+
+
+.. _l46756e6374696f6e53706163655072696d6974697665456c656d656e74-7072696d6974697665456c656d656e74:
+
+.. index::
+   pair: FunctionSpacePrimitiveElement; primitiveElement
+
+:spadfun:`primitiveElement`\: (F, F) -> Record(primelt: F, pol1: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, pol2: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, prim: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F) if F has \ :ref:`AlgebraicallyClosedField <l416c67656272616963616c6c79436c6f7365644669656c64>`\ 
+  \ ``primitiveElement(a1, a2)``\  returns \ ``[a, q1, q2, q]``\  such that \ ``k(a1, a2) = k(a)``\ , \ ``ai = qi(a)``\ , and \ ``q(a) = 0``\ . The minimal polynomial for \ ``a2``\  may involve \ ``a1``\ , but the minimal polynomial for \ ``a1``\  may not involve \ ``a2``\ ; This operations uses \ :spadfun:`resultant`\ .
+
+
+.. index::
+   pair: FunctionSpacePrimitiveElement; primitiveElement
+
+:spadfun:`primitiveElement`\: \ :ref:`List <l4c697374>`\  F -> Record(primelt: F, poly: \ :ref:`List <l4c697374>`\  \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, prim: \ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F) 
+  \ ``primitiveElement([a1, ..., an])``\  returns \ ``[a, [q1, ..., qn], q]``\  such that then \ ``k(a1, ..., an) = k(a)``\ , \ ``ai = qi(a)``\ , and \ ``q(a) = 0``\ . This operation uses the technique of \spadglossSee{groebner bases}{Groebner basis}.
+
+

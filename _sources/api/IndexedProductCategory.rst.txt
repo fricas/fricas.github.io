@@ -1,0 +1,186 @@
+.. index:: IndexedProductCategory
+
+.. _l496e646578656450726f6475637443617465676f7279:
+
+IndexedProductCategory(A, S)
+============================
+
+:viewcode:`indexedp.spad line 12 <indexedp.spad#L12>` :editcode:`[edit on github] <indexedp.spad#L12>`
+
+* A: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+* S: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+
+This category represents the product of some set with respect to an indexing set. The set \ ``S``\  is considered as the ``basis elements\ ``''``\  and the elements from \ ``A``\  as ``coefficients\ ``''``\ . Elements may have infinite support. For \ ``Comparable``\  (ordered) \ ``S``\  we assume that support of each element is well-orderd.
+
+
+.. _l496e646578656450726f6475637443617465676f7279-30:
+
+\ :ref:`0 <l4162656c69616e4d6f6e6f6964-30>`\ \: % if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l496e646578656450726f6475637443617465676f7279-2a:
+
+\ :ref:`\* <l4162656c69616e47726f7570-2a>`\ \: (\ :ref:`Integer <l496e7465676572>`\ , %) -> % if A has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`\* <l4162656c69616e4d6f6e6f6964-2a>`\ \: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , %) -> % if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`\* <l4162656c69616e53656d6947726f7570-2a>`\ \: (\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , %) -> % if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l496e646578656450726f6475637443617465676f7279-2b:
+
+\ :ref:`+ <l4162656c69616e53656d6947726f7570-2b>`\ \: (%, %) -> % if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l496e646578656450726f6475637443617465676f7279-2d:
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: % -> % if A has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: (%, %) -> % if A has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+.. _l496e646578656450726f6475637443617465676f7279-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l496e646578656450726f6475637443617465676f7279-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l496e646578656450726f6475637443617465676f7279-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l496e646578656450726f6475637443617465676f7279-636f6e737472756374:
+
+.. index::
+   pair: IndexedProductCategory; construct
+
+:spadfun:`construct`\: \ :ref:`List <l4c697374>`\  Record(k: S, c: A) -> % 
+  \ ``construct(l)``\  takes a list of terms and creates the object with these components. First components of elements of \ ``l``\  should be different.
+
+.. _l496e646578656450726f6475637443617465676f7279-636f6e7374727563744f726465726564:
+
+.. index::
+   pair: IndexedProductCategory; constructOrdered
+
+:spadfun:`constructOrdered`\: \ :ref:`List <l4c697374>`\  Record(k: S, c: A) -> % if S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  \ ``constructOrdered(l)``\  takes a list of terms and creates the object with these components. The list is assumed to be sorted (in reverse order) with respect to the ordering of \ ``S``\ . If \ ``R``\  is a monoid, then the list is assumend to contain no zero elements. Caution: No checking is performed, so this should only be used in cases where those conditions are assured. If in doubt use \ ``construct``\ .
+
+.. _l496e646578656450726f6475637443617465676f7279-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l496e646578656450726f6475637443617465676f7279-6c656164696e67436f656666696369656e74:
+
+.. index::
+   pair: IndexedProductCategory; leadingCoefficient
+
+:spadfun:`leadingCoefficient`\: % -> A if S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  \ ``leadingCoefficient(z)``\  returns the coefficient of the leading (with respect to the ordering on the indexing set) monomial of \ ``z``\ . Error: if \ ``z``\  has no support.
+
+.. _l496e646578656450726f6475637443617465676f7279-6c656164696e674d6f6e6f6d69616c:
+
+.. index::
+   pair: IndexedProductCategory; leadingMonomial
+
+:spadfun:`leadingMonomial`\: % -> % if S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  \ ``leadingMonomial(x)``\  returns the monomial supported by the first element from \ ``S``\ . Error: if \ ``x``\  has no support.
+
+.. _l496e646578656450726f6475637443617465676f7279-6c656164696e67537570706f7274:
+
+.. index::
+   pair: IndexedProductCategory; leadingSupport
+
+:spadfun:`leadingSupport`\: % -> S if S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  \ ``leadingSupport(z)``\  returns the index of leading (with respect to the ordering on the indexing set) monomial of \ ``z``\ . Error: if \ ``z``\  has no support.
+
+.. _l496e646578656450726f6475637443617465676f7279-6c656164696e675465726d:
+
+.. index::
+   pair: IndexedProductCategory; leadingTerm
+
+:spadfun:`leadingTerm`\: % -> Record(k: S, c: A) if S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  \ ``leadingTerm(x)``\  returns the leading (with respect to the ordering on the indexing set) term of \ ``z``\ . Error: if \ ``z``\  has no support.
+
+.. _l496e646578656450726f6475637443617465676f7279-6d6170:
+
+.. index::
+   pair: IndexedProductCategory; map
+
+:spadfun:`map`\: (A -> A, %) -> % 
+  \ ``map(f, z)``\  returns the new element created by applying the function \ ``f``\  to each component of the direct product element \ ``z``\ .
+
+.. _l496e646578656450726f6475637443617465676f7279-6d6f6e6f6d69616c3f:
+
+.. index::
+   pair: IndexedProductCategory; monomial?
+
+:spadfun:`monomial?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``monomial?(x)``\  returns \ ``true``\  if \ ``x``\  is a single monomial, that is support of \ ``x``\  consists of a single element.
+
+.. _l496e646578656450726f6475637443617465676f7279-6d6f6e6f6d69616c:
+
+.. index::
+   pair: IndexedProductCategory; monomial
+
+:spadfun:`monomial`\: (A, S) -> % 
+  \ ``monomial(a, s)``\  constructs a direct product element with the \ ``s``\  component set to \ ``a``\ 
+
+.. _l496e646578656450726f6475637443617465676f7279-6f70706f736974653f:
+
+\ :ref:`opposite? <l4162656c69616e4d6f6e6f6964-6f70706f736974653f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l496e646578656450726f6475637443617465676f7279-726564756374756d:
+
+.. index::
+   pair: IndexedProductCategory; reductum
+
+:spadfun:`reductum`\: % -> % if S has \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+  \ ``reductum(z)``\  returns a new element created by removing the leading coefficient/support pair from the element \ ``z``\ . Error: if \ ``z``\  has no support.
+
+.. _l496e646578656450726f6475637443617465676f7279-73616d706c65:
+
+\ :ref:`sample <l4162656c69616e4d6f6e6f6964-73616d706c65>`\ \: % if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l496e646578656450726f6475637443617465676f7279-7375627472616374496643616e:
+
+\ :ref:`subtractIfCan <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964-7375627472616374496643616e>`\ \: (%, %) -> Union(%, failed) if A has \ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l496e646578656450726f6475637443617465676f7279-7a65726f3f:
+
+\ :ref:`zero? <l4162656c69616e4d6f6e6f6964-7a65726f3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\  if A has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+\ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+\ :ref:`AbelianProductCategory <l4162656c69616e50726f6475637443617465676f7279>`\  A 
+
+\ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+\ :ref:`BasicType <l426173696354797065>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+\ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\  if A has \ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\ 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  if A has \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+

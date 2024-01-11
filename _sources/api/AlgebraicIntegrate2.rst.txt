@@ -1,0 +1,40 @@
+.. index:: AlgebraicIntegrate2
+
+.. _l416c67656272616963496e7465677261746532:
+
+AlgebraicIntegrate2(R0, F, UP, UPUP, R)
+=======================================
+
+:viewcode:`intpar.spad line 1441 <intpar.spad#L1441>` :editcode:`[edit on github] <intpar.spad#L1441>`
+
+* R0: Join(\ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ )
+
+* F: Join(\ :ref:`AlgebraicallyClosedField <l416c67656272616963616c6c79436c6f7365644669656c64>`\ , \ :ref:`FunctionSpace <l46756e6374696f6e5370616365>`\  R0)
+
+* UP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  F
+
+* UPUP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+* R: \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+
+This package implements parametric integration in algebraic case. Some cases remain unimplemented and the code throws errors when they appear as the input.
+
+
+.. _l416c67656272616963496e7465677261746532-616c67657874696e74:
+
+.. index::
+   pair: AlgebraicIntegrate2; algextint
+
+:spadfun:`algextint`\: (UP -> UP, \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP -> \ :ref:`List <l4c697374>`\  Record(ratpart: \ :ref:`Fraction <l4672616374696f6e>`\  UP, coeffs: \ :ref:`Vector <l566563746f72>`\  F), (\ :ref:`Fraction <l4672616374696f6e>`\  UP, \ :ref:`List <l4c697374>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP) -> \ :ref:`List <l4c697374>`\  Record(ratpart: \ :ref:`Fraction <l4672616374696f6e>`\  UP, coeffs: \ :ref:`Vector <l566563746f72>`\  F), \ :ref:`Matrix <l4d6174726978>`\  F -> \ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  F, \ :ref:`List <l4c697374>`\  R) -> \ :ref:`List <l4c697374>`\  Record(ratpart: R, coeffs: \ :ref:`Vector <l566563746f72>`\  F) 
+  \ ``algextint(der, ext, rde, csolve, [g1, ..., gn])``\  returns a basis of solutions of the homogeneous system \ ``h' + c1*g1 + ... + cn*gn = 0``\ . Argument \ ``ext``\  is an extended integration function on \ ``F``\ , \ ``rde``\  is RDE solver, \ ``csolve``\  is linear solver over constants.
+
+.. _l416c67656272616963496e7465677261746532-616c67657874696e745f62617365:
+
+.. index::
+   pair: AlgebraicIntegrate2; algextint_base
+
+:spadfun:`algextint_base`\: (UP -> UP, \ :ref:`Matrix <l4d6174726978>`\  F -> \ :ref:`List <l4c697374>`\  \ :ref:`Vector <l566563746f72>`\  F, \ :ref:`List <l4c697374>`\  R) -> \ :ref:`List <l4c697374>`\  Record(ratpart: R, coeffs: \ :ref:`Vector <l566563746f72>`\  F) 
+  \ ``algextint_base(der, csolve, [g1, ..., gn])``\  is like algextint(\ ``der``\ , ext, rde, \ ``csolve``\ , [\ ``g1``\ , ..., \ ``gn``\ ]), but assumes that field is algebraic extension of rational functions and that \ ``gi``\ -\ ``s``\  have no poles at infinity.
+
+

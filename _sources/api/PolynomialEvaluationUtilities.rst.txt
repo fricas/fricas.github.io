@@ -1,0 +1,60 @@
+.. index:: PolynomialEvaluationUtilities
+
+.. _l506f6c796e6f6d69616c4576616c756174696f6e5574696c6974696573:
+
+PolynomialEvaluationUtilities
+=============================
+
+:viewcode:`evalut.spad line 1 <evalut.spad#L1>` :editcode:`[edit on github] <evalut.spad#L1>`
+
+
+This package implements evaluation functions useful for modular algorithms. Computations work on integer polynomials, but most is done modulo a prime which is provided via parameters, either explicitly or through a state parameter (state also caches needed buffers). Some functions work on fractions. To avoid useless \ ``GCD``\  computations during evaluation fractions may be represented as a record.
+
+
+.. _l506f6c796e6f6d69616c4576616c756174696f6e5574696c6974696573-6576616c31:
+
+.. index::
+   pair: PolynomialEvaluationUtilities; eval1
+
+:spadfun:`eval1`\: (\ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , Record(prime: \ :ref:`Integer <l496e7465676572>`\ , eval1coeffbuf: \ :ref:`U32Vector <l553332566563746f72>`\ , eval1expbuf: \ :ref:`SortedExponentVector <l536f727465644578706f6e656e74566563746f72>`\ )) -> \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``eval1(pol, v, pt, pss)``\  evaluates \ ``pol``\  in variable \ ``v``\  at \ ``pt``\ , using global state form \ ``pss``\ . Computations are done modulo a prime contained in \ ``pss``\ .
+
+
+.. index::
+   pair: PolynomialEvaluationUtilities; eval1
+
+:spadfun:`eval1`\: (Record(numer: \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , denom: \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ ), \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`Integer <l496e7465676572>`\ , Record(prime: \ :ref:`Integer <l496e7465676572>`\ , eval1coeffbuf: \ :ref:`U32Vector <l553332566563746f72>`\ , eval1expbuf: \ :ref:`SortedExponentVector <l536f727465644578706f6e656e74566563746f72>`\ )) -> Union(Record(numer: \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , denom: \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ ), failed) 
+  \ ``eval1(pq, v, pt, pss)``\  evaluates fraction of polynomial \ ``pq``\  in variable \ ``v``\  at \ ``pt``\ , using global state form \ ``pss``\ . Computations are done modulo a prime contained in \ ``pss``\ .
+
+.. _l506f6c796e6f6d69616c4576616c756174696f6e5574696c6974696573-6576616c3161:
+
+.. index::
+   pair: PolynomialEvaluationUtilities; eval1a
+
+:spadfun:`eval1a`\: (\ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , Record(prime: \ :ref:`Integer <l496e7465676572>`\ , eval1coeffbuf: \ :ref:`U32Vector <l553332566563746f72>`\ , eval1expbuf: \ :ref:`SortedExponentVector <l536f727465644578706f6e656e74566563746f72>`\ )) -> \ :ref:`Integer <l496e7465676572>`\  
+  \ ``eval1a(pol, pt, pss)``\  evaluates polynomial \ ``pol``\  at point \ ``pt``\  using global state form \ ``pss``\ . Computations are done modulo a prime contained in \ ``pss``\ . Note: \ ``pol``\  must have at most one variable.
+
+.. _l506f6c796e6f6d69616c4576616c756174696f6e5574696c6974696573-6d6f64706576616c:
+
+.. index::
+   pair: PolynomialEvaluationUtilities; modpeval
+
+:spadfun:`modpeval`\: (\ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Integer <l496e7465676572>`\  
+  \ ``modpeval(pol, lv, lpt, p)``\  evaluates polynomial \ ``pol``\  in variables form \ ``lv``\  at point from \ ``lpt``\  modulo a prime \ ``p``\ 
+
+.. _l506f6c796e6f6d69616c4576616c756174696f6e5574696c6974696573-6d6f6470726564756374696f6e:
+
+.. index::
+   pair: PolynomialEvaluationUtilities; modpreduction
+
+:spadfun:`modpreduction`\: (\ :ref:`Fraction <l4672616374696f6e>`\  \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> Union(Record(numer: \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , denom: \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ ), failed) 
+  \ ``modpreduction(r, p)``\  reduces a rational function \ ``r``\  modulo prime \ ``p``\ .
+
+
+.. index::
+   pair: PolynomialEvaluationUtilities; modpreduction
+
+:spadfun:`modpreduction`\: (\ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  \ :ref:`Integer <l496e7465676572>`\  
+  \ ``modpreduction(pol, p)``\  reduces polynomial \ ``pol``\  modulo prime \ ``p``\ .
+
+

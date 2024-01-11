@@ -1,0 +1,49 @@
+.. index:: DefiniteIntegrationTools
+
+.. _l446566696e697465496e746567726174696f6e546f6f6c73:
+
+DefiniteIntegrationTools(R, F)
+==============================
+
+:viewcode:`defintrf.spad line 1 <defintrf.spad#L1>` :editcode:`[edit on github] <defintrf.spad#L1>`
+
+* R: Join(\ :ref:`GcdDomain <l476364446f6d61696e>`\ , \ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ )
+
+* F: Join(\ :ref:`TranscendentalFunctionCategory <l5472616e7363656e64656e74616c46756e6374696f6e43617465676f7279>`\ , \ :ref:`AlgebraicallyClosedField <l416c67656272616963616c6c79436c6f7365644669656c64>`\ , \ :ref:`FunctionSpace <l46756e6374696f6e5370616365>`\  R)
+
+
+\ :ref:`DefiniteIntegrationTools <l446566696e697465496e746567726174696f6e546f6f6c73>`\  provides common tools used by the definite integration of both rational and elementary functions.
+
+
+.. _l446566696e697465496e746567726174696f6e546f6f6c73-636865636b466f725a65726f:
+
+.. index::
+   pair: DefiniteIntegrationTools; checkForZero
+
+:spadfun:`checkForZero`\: (\ :ref:`Polynomial <l506f6c796e6f6d69616c>`\  R, \ :ref:`Symbol <l53796d626f6c>`\ , \ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  F, \ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  F, \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> Union(\ :ref:`Boolean <l426f6f6c65616e>`\ , failed) 
+  \ ``checkForZero(p, x, a, b, incl?)``\  is \ ``true``\  if \ ``p``\  has a zero for \ ``x``\  between a and \ ``b``\ , \ ``false``\  otherwise, "failed" if this cannot be determined. Check for a and \ ``b``\  inclusive if incl? is \ ``true``\ , exclusive otherwise.
+
+
+.. index::
+   pair: DefiniteIntegrationTools; checkForZero
+
+:spadfun:`checkForZero`\: (\ :ref:`SparseUnivariatePolynomial <l537061727365556e6976617269617465506f6c796e6f6d69616c>`\  F, \ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  F, \ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  F, \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> Union(\ :ref:`Boolean <l426f6f6c65616e>`\ , failed) 
+  \ ``checkForZero(p, a, b, incl?)``\  is \ ``true``\  if \ ``p``\  has a zero between a and \ ``b``\ , \ ``false``\  otherwise, "failed" if this cannot be determined. Check for a and \ ``b``\  inclusive if incl? is \ ``true``\ , exclusive otherwise.
+
+.. _l446566696e697465496e746567726174696f6e546f6f6c73-636f6d70757465496e74:
+
+.. index::
+   pair: DefiniteIntegrationTools; computeInt
+
+:spadfun:`computeInt`\: (\ :ref:`Kernel <l4b65726e656c>`\  F, F, \ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  F, \ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  F, \ :ref:`Boolean <l426f6f6c65616e>`\ ) -> Union(\ :ref:`OrderedCompletion <l4f726465726564436f6d706c6574696f6e>`\  F, failed) 
+  \ ``computeInt(x, g, a, b, eval?)``\  returns the integral of \ ``f``\  for \ ``x``\  between a and \ ``b``\ , assuming that \ ``g``\  is an indefinite integral of \ ``f``\  and \ ``f``\  has no pole between a and \ ``b``\ . If \ ``eval?``\  is \ ``true``\ , then \ ``g``\  can be evaluated safely at \ ``a``\  and \ ``b``\ , provided that they are finite values. Otherwise, limits must be computed.
+
+.. _l446566696e697465496e746567726174696f6e546f6f6c73-69676e6f72653f:
+
+.. index::
+   pair: DefiniteIntegrationTools; ignore?
+
+:spadfun:`ignore?`\: \ :ref:`String <l537472696e67>`\  -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``ignore?(s)``\  is \ ``true``\  if \ ``s``\  is the string that tells the integrator to assume that the function has no pole in the integration interval.
+
+

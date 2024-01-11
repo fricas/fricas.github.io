@@ -1,0 +1,87 @@
+.. index:: StorageEfficientMatrixOperations
+
+.. _l53746f72616765456666696369656e744d61747269784f7065726174696f6e73:
+
+StorageEfficientMatrixOperations R
+==================================
+
+:viewcode:`matstor.spad line 1 <matstor.spad#L1>` :editcode:`[edit on github] <matstor.spad#L1>`
+
+* R: \ :ref:`Ring <l52696e67>`\ 
+
+
+This package provides standard arithmetic operations on matrices. The functions in this package store the results of computations in existing matrices, rather than creating new matrices. This package works only for matrices of type Matrix and uses the internal representation of this type.
+
+
+.. _l53746f72616765456666696369656e744d61747269784f7065726174696f6e73-5e:
+
+.. index::
+   pair: StorageEfficientMatrixOperations; ^
+
+:spadfun:`^`\: (\ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``x ^ n``\  computes the \ ``n``\ -th power of a square matrix. The power \ ``n``\  is assumed greater than 1.
+
+.. _l53746f72616765456666696369656e744d61747269784f7065726174696f6e73-636f707921:
+
+.. index::
+   pair: StorageEfficientMatrixOperations; copy!
+
+:spadfun:`copy!`\: (\ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`Matrix <l4d6174726978>`\  R) -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``copy!(c, a)``\  copies the matrix \ ``a``\  into the matrix \ ``c``\ . Error: if \ ``a``\  and \ ``c``\  do not have the same dimensions.
+
+.. _l53746f72616765456666696369656e744d61747269784f7065726174696f6e73-6c6566745363616c617254696d657321:
+
+.. index::
+   pair: StorageEfficientMatrixOperations; leftScalarTimes!
+
+:spadfun:`leftScalarTimes!`\: (\ :ref:`Matrix <l4d6174726978>`\  R, R, \ :ref:`Matrix <l4d6174726978>`\  R) -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``leftScalarTimes!(c, r, a)``\  computes the scalar product \ ``r * a``\  and stores the result in the matrix \ ``c``\ . Error: if \ ``a``\  and \ ``c``\  do not have the same dimensions.
+
+.. _l53746f72616765456666696369656e744d61747269784f7065726174696f6e73-6d696e757321:
+
+.. index::
+   pair: StorageEfficientMatrixOperations; minus!
+
+:spadfun:`minus!`\: (\ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`Matrix <l4d6174726978>`\  R) -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``minus!(c, a)``\  computes \ ``-a``\  and stores the result in the matrix \ ``c``\ . Error: if a and \ ``c``\  do not have the same dimensions.
+
+
+.. index::
+   pair: StorageEfficientMatrixOperations; minus!
+
+:spadfun:`minus!`\: (\ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`Matrix <l4d6174726978>`\  R) -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``!minus!(c, a, b)``\  computes the matrix difference \ ``a - b``\  and stores the result in the matrix \ ``c``\ . Error: if \ ``a``\ , \ ``b``\ , and \ ``c``\  do not have the same dimensions.
+
+.. _l53746f72616765456666696369656e744d61747269784f7065726174696f6e73-706c757321:
+
+.. index::
+   pair: StorageEfficientMatrixOperations; plus!
+
+:spadfun:`plus!`\: (\ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`Matrix <l4d6174726978>`\  R) -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``plus!(c, a, b)``\  computes the matrix sum \ ``a + b``\  and stores the result in the matrix \ ``c``\ . Error: if \ ``a``\ , \ ``b``\ , and \ ``c``\  do not have the same dimensions.
+
+.. _l53746f72616765456666696369656e744d61747269784f7065726174696f6e73-706f77657221:
+
+.. index::
+   pair: StorageEfficientMatrixOperations; power!
+
+:spadfun:`power!`\: (\ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``power!(a, b, c, m, n)``\  computes \ ``m``\  ^ \ ``n``\  and stores the result in \ ``a``\ . The matrices \ ``b``\  and \ ``c``\  are used to store intermediate results. Error: if \ ``a``\ , \ ``b``\ , \ ``c``\ , and \ ``m``\  are not square and of the same dimensions.
+
+.. _l53746f72616765456666696369656e744d61747269784f7065726174696f6e73-72696768745363616c617254696d657321:
+
+.. index::
+   pair: StorageEfficientMatrixOperations; rightScalarTimes!
+
+:spadfun:`rightScalarTimes!`\: (\ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`Matrix <l4d6174726978>`\  R, R) -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``rightScalarTimes!(c, a, r)``\  computes the scalar product \ ``a * r``\  and stores the result in the matrix \ ``c``\ . Error: if \ ``a``\  and \ ``c``\  do not have the same dimensions.
+
+.. _l53746f72616765456666696369656e744d61747269784f7065726174696f6e73-74696d657321:
+
+.. index::
+   pair: StorageEfficientMatrixOperations; times!
+
+:spadfun:`times!`\: (\ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`Matrix <l4d6174726978>`\  R, \ :ref:`Matrix <l4d6174726978>`\  R) -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``times!(c, a, b)``\  computes the matrix product \ ``a * b``\  and stores the result in the matrix \ ``c``\ . Error: if \ ``a``\ , \ ``b``\ , and \ ``c``\  do not have compatible dimensions.
+
+

@@ -1,0 +1,98 @@
+.. index:: TabulatedComputationPackage
+
+.. _l546162756c61746564436f6d7075746174696f6e5061636b616765:
+
+TabulatedComputationPackage(Key, Entry)
+=======================================
+
+:viewcode:`newdata.spad line 25 <newdata.spad#L25>` :editcode:`[edit on github] <newdata.spad#L25>`
+
+* Key: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+* Entry: \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+
+\ ``TabulatedComputationPackage(Key , Entry)``\  provides some modest support for dealing with operations with type \ ``Key -> Entry``\ . The result of such operations can be stored and retrieved with this package by using a hash-table. The user does not need to worry about the management of this hash-table. However, only one hash-table is built by calling \ ``TabulatedComputationPackage(Key , Entry)``\ .
+
+
+.. _l546162756c61746564436f6d7075746174696f6e5061636b616765-636c6561725461626c6521:
+
+.. index::
+   pair: TabulatedComputationPackage; clearTable!
+
+:spadfun:`clearTable!`\: () -> \ :ref:`Void <l566f6964>`\  
+  \ ``clearTable!()``\  clears the hash-table and assumes that it will no longer be used.
+
+.. _l546162756c61746564436f6d7075746174696f6e5061636b616765-65787472616374496643616e:
+
+.. index::
+   pair: TabulatedComputationPackage; extractIfCan
+
+:spadfun:`extractIfCan`\: Key -> Union(Entry, failed) 
+  \ ``extractIfCan(x)``\  searches the item whose key is \ ``x``\ .
+
+.. _l546162756c61746564436f6d7075746174696f6e5061636b616765-696e69745461626c6521:
+
+.. index::
+   pair: TabulatedComputationPackage; initTable!
+
+:spadfun:`initTable!`\: () -> \ :ref:`Void <l566f6964>`\  
+  \ ``initTable!()``\  initializes the hash-table.
+
+.. _l546162756c61746564436f6d7075746174696f6e5061636b616765-696e7365727421:
+
+.. index::
+   pair: TabulatedComputationPackage; insert!
+
+:spadfun:`insert!`\: (Key, Entry) -> \ :ref:`Void <l566f6964>`\  
+  \ ``insert!(x, y)``\  stores the item whose key is \ ``x``\  and whose entry is \ ``y``\ .
+
+.. _l546162756c61746564436f6d7075746174696f6e5061636b616765-6d616b696e6753746174733f:
+
+.. index::
+   pair: TabulatedComputationPackage; makingStats?
+
+:spadfun:`makingStats?`\: () -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``makingStats?()``\  returns \ ``true``\  iff the statistics process is running.
+
+.. _l546162756c61746564436f6d7075746174696f6e5061636b616765-7072696e74496e666f21:
+
+.. index::
+   pair: TabulatedComputationPackage; printInfo!
+
+:spadfun:`printInfo!`\: (\ :ref:`String <l537472696e67>`\ , \ :ref:`String <l537472696e67>`\ ) -> \ :ref:`Void <l566f6964>`\  
+  \ ``printInfo!(x, y)``\  initializes the messages to be printed when manipulating items from the hash-table. If a key is retrieved then \ ``x``\  is displayed. If an item is stored then \ ``y``\  is displayed.
+
+.. _l546162756c61746564436f6d7075746174696f6e5061636b616765-7072696e74696e67496e666f3f:
+
+.. index::
+   pair: TabulatedComputationPackage; printingInfo?
+
+:spadfun:`printingInfo?`\: () -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``printingInfo?()``\  returns \ ``true``\  iff messages are printed when manipulating items from the hash-table.
+
+.. _l546162756c61746564436f6d7075746174696f6e5061636b616765-7072696e74537461747321:
+
+.. index::
+   pair: TabulatedComputationPackage; printStats!
+
+:spadfun:`printStats!`\: () -> \ :ref:`Void <l566f6964>`\  
+  \ ``printStats!()``\  prints the statistics.
+
+.. _l546162756c61746564436f6d7075746174696f6e5061636b616765-7374617274537461747321:
+
+.. index::
+   pair: TabulatedComputationPackage; startStats!
+
+:spadfun:`startStats!`\: \ :ref:`String <l537472696e67>`\  -> \ :ref:`Void <l566f6964>`\  
+  \ ``startStats!(x)``\  initializes the statistics process and sets the comments to display when statistics are printed
+
+.. _l546162756c61746564436f6d7075746174696f6e5061636b616765-7573696e675461626c653f:
+
+.. index::
+   pair: TabulatedComputationPackage; usingTable?
+
+:spadfun:`usingTable?`\: () -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``usingTable?()``\  returns \ ``true``\  iff the hash-table is used
+
+

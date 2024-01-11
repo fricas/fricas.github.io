@@ -1,0 +1,66 @@
+.. index:: TransSolvePackage
+
+.. _l5472616e73536f6c76655061636b616765:
+
+TransSolvePackage R
+===================
+
+:viewcode:`transsolve.spad line 1 <transsolve.spad#L1>` :editcode:`[edit on github] <transsolve.spad#L1>`
+
+* R: Join(\ :ref:`Comparable <l436f6d70617261626c65>`\ , \ :ref:`PolynomialFactorizationExplicit <l506f6c796e6f6d69616c466163746f72697a6174696f6e4578706c69636974>`\ , \ :ref:`RetractableTo <l5265747261637461626c65546f>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`LinearlyExplicitOver <l4c696e6561726c794578706c696369744f766572>`\  \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`CharacteristicZero <l43686172616374657269737469635a65726f>`\ )
+
+
+This package tries to find solutions of equations of type Expression(\ ``R``\ ). This means expressions involving transcendental, exponential, logarithmic and nthRoot functions. After trying to transform different kernels to one kernel by applying several rules, it calls zerosOf for the SparseUnivariatePolynomial in the remaining kernel. For example the expression \ ``sin(x)*cos(x)-2``\  will be transformed to \ ``-2 tan(x/2)^4 -2 tan(x/2)^3 -4 tan(x/2)^2 +2 tan(x/2) -2``\  by using the function normalize and then to \ ``-2 tan(x)^2 + tan(x) -2``\  with help of subsTan. This function tries to express the given function in terms of \ ``tan(x/2)``\  to express in terms of \ ``tan(x)``\  . Other examples are the expressions \ ``sqrt(x+1)+sqrt(x+7)+1``\  or \ ``sqrt(sin(x))+1``\  .
+
+
+.. _l5472616e73536f6c76655061636b616765-736f6c7665:
+
+.. index::
+   pair: TransSolvePackage; solve
+
+:spadfun:`solve`\: (\ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``solve(eq, x)``\  finds the solutions of the equation \ ``eq``\  where \ ``eq``\  is an equation of functions of type Expression(\ ``R``\ ) with respect to the symbol \ ``x``\ .
+
+
+.. index::
+   pair: TransSolvePackage; solve
+
+:spadfun:`solve`\: (\ :ref:`Expression <l45787072657373696f6e>`\  R, \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``solve(expr, x)``\  finds the solutions of the equation \ ``expr``\  = 0 with respect to the symbol \ ``x``\  where \ ``expr``\  is a function of type Expression(\ ``R``\ ).
+
+
+.. index::
+   pair: TransSolvePackage; solve
+
+:spadfun:`solve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R, \ :ref:`List <l4c697374>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``solve(leqs, lexpr)``\  returns a list of solutions to the list of equations \ ``leqs``\  with respect to the list of expressions lexpr. Each expression in lexpr is treated as a variable and must be a single kernel.
+
+
+.. index::
+   pair: TransSolvePackage; solve
+
+:spadfun:`solve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R, \ :ref:`List <l4c697374>`\  \ :ref:`Kernel <l4b65726e656c>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``solve(leqs, lker)``\  returns a list of solutions to the list of equations \ ``leqs``\  with respect to the list of kernels lker.
+
+
+.. index::
+   pair: TransSolvePackage; solve
+
+:spadfun:`solve`\: (\ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R, \ :ref:`List <l4c697374>`\  \ :ref:`Symbol <l53796d626f6c>`\ ) -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``solve(leqs, lvar)``\  returns a list of solutions to the list of equations \ ``leqs``\  with respect to the list of symbols lvar.
+
+
+.. index::
+   pair: TransSolvePackage; solve
+
+:spadfun:`solve`\: \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R -> \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``solve(eq)``\  finds the solutions of the equation \ ``eq``\  where \ ``eq``\  is an equation of functions of type Expression(\ ``R``\ ) with respect to the unique symbol \ ``x``\  appearing in \ ``eq``\ .
+
+
+.. index::
+   pair: TransSolvePackage; solve
+
+:spadfun:`solve`\: \ :ref:`Expression <l45787072657373696f6e>`\  R -> \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  \ :ref:`Expression <l45787072657373696f6e>`\  R 
+  \ ``solve(expr)``\  finds the solutions of the equation \ ``expr``\  = 0 where \ ``expr``\  is a function of type Expression(\ ``R``\ ) with respect to the unique symbol \ ``x``\  appearing in eq.
+
+

@@ -1,0 +1,198 @@
+.. index:: FiniteDivisorCategory
+
+.. _l46696e69746544697669736f7243617465676f7279:
+
+FiniteDivisorCategory(F, UP, UPUP, R)
+=====================================
+
+:viewcode:`divisor.spad line 565 <divisor.spad#L565>` :editcode:`[edit on github] <divisor.spad#L565>`
+
+* F: \ :ref:`Field <l4669656c64>`\ 
+
+* UP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  F
+
+* UPUP: \ :ref:`UnivariatePolynomialCategory <l556e6976617269617465506f6c796e6f6d69616c43617465676f7279>`\  \ :ref:`Fraction <l4672616374696f6e>`\  UP
+
+* R: \ :ref:`FunctionFieldCategory <l46756e6374696f6e4669656c6443617465676f7279>`\ (F, UP, UPUP)
+
+
+This category describes finite rational divisors on a curve, that is finite formal sums SUM(\ ``n``\  * \ ``P``\ ) where the \ ``n``\ \ ``'s``\  are integers and the \ ``P``\ \ ``'s``\  are finite rational points on the curve.
+
+
+.. _l46696e69746544697669736f7243617465676f7279-30:
+
+\ :ref:`0 <l4162656c69616e4d6f6e6f6964-30>`\ \: % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l46696e69746544697669736f7243617465676f7279-2a:
+
+\ :ref:`\* <l4162656c69616e47726f7570-2a>`\ \: (\ :ref:`Integer <l496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`\* <l4162656c69616e4d6f6e6f6964-2a>`\ \: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`\* <l4162656c69616e53656d6947726f7570-2a>`\ \: (\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l46696e69746544697669736f7243617465676f7279-2b:
+
+\ :ref:`+ <l4162656c69616e53656d6947726f7570-2b>`\ \: (%, %) -> % 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l46696e69746544697669736f7243617465676f7279-2d:
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: % -> % 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: (%, %) -> % 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+.. _l46696e69746544697669736f7243617465676f7279-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l46696e69746544697669736f7243617465676f7279-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l46696e69746544697669736f7243617465676f7279-636f65726365:
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l46696e69746544697669736f7243617465676f7279-6465636f6d706f7365:
+
+.. index::
+   pair: FiniteDivisorCategory; decompose
+
+:spadfun:`decompose`\: % -> Record(id: \ :ref:`FractionalIdeal <l4672616374696f6e616c496465616c>`\ (UP, \ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP, R), principalPart: R) 
+  \ ``decompose(d)``\  returns \ ``[id, f]``\  where \ ``d = (id) + div(f)``\ .
+
+.. _l46696e69746544697669736f7243617465676f7279-64697669736f72:
+
+.. index::
+   pair: FiniteDivisorCategory; divisor
+
+:spadfun:`divisor`\: (F, F) -> % 
+  \ ``divisor(a, b)``\  makes the divisor \ ``P:``\  \ ``(x = a, y = b)``\ . Error: if \ ``P``\  is singular.
+
+
+.. index::
+   pair: FiniteDivisorCategory; divisor
+
+:spadfun:`divisor`\: (F, F, \ :ref:`Integer <l496e7465676572>`\ ) -> % 
+  \ ``divisor(a, b, n)``\  makes the divisor \ ``nP``\  where \ ``P:``\  \ ``(x = a, y = b)``\ . \ ``P``\  is allowed to be singular if \ ``n``\  is a multiple of the rank.
+
+
+.. index::
+   pair: FiniteDivisorCategory; divisor
+
+:spadfun:`divisor`\: (R, UP, UP) -> % 
+  \ ``divisor(h, d, g)``\  returns \ ``gcd``\  of divisor of zeros of \ ``h``\  and divisor of zeros of \ ``d``\ . \ ``d``\  must be squarefree. All ramified zeros of \ ``d``\  must be contained in zeros of \ ``g``\ .
+
+
+.. index::
+   pair: FiniteDivisorCategory; divisor
+
+:spadfun:`divisor`\: (R, UP, UP, UP, F) -> % 
+  \ ``divisor(h, d, d', g, r)``\  returns the sum of all the finite points where \ ``h/d``\  has residue \ ``r``\ . \ ``h``\  must be integral. \ ``d``\  must be squarefree. \ ``d'``\  is some derivative of \ ``d``\  (not necessarily dd/dx). \ ``g = gcd(d, discriminant)``\  contains the ramified zeros of \ ``d``\ 
+
+
+.. index::
+   pair: FiniteDivisorCategory; divisor
+
+:spadfun:`divisor`\: \ :ref:`FractionalIdeal <l4672616374696f6e616c496465616c>`\ (UP, \ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP, R) -> % 
+  \ ``divisor(I)``\  makes a divisor \ ``D``\  from an ideal \ ``I``\ .
+
+
+.. index::
+   pair: FiniteDivisorCategory; divisor
+
+:spadfun:`divisor`\: R -> % 
+  \ ``divisor(g)``\  returns the divisor of the function \ ``g``\ .
+
+.. _l46696e69746544697669736f7243617465676f7279-67656e657261746f72:
+
+.. index::
+   pair: FiniteDivisorCategory; generator
+
+:spadfun:`generator`\: % -> Union(R, failed) 
+  \ ``generator(d)``\  returns \ ``f``\  if \ ``(f) = d``\ , "failed" if \ ``d``\  is not principal. \ ``d``\  is assumed to be of degree 0.
+
+
+.. index::
+   pair: FiniteDivisorCategory; generator
+
+:spadfun:`generator`\: (%, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`List <l4c697374>`\  UP) -> Union(R, failed) 
+  \ ``generator(d, k, lp)``\  returns \ ``f``\  if \ ``(f) = d``\ , "failed" if \ ``d``\  is not principal. \ ``k``\  is sum of orders of \ ``d``\  at special places. Special places are places over infinity and over zeros of polynomials in \ ``lp``\ . Elements of \ ``lp``\  are assumed to be relatively prime.
+
+.. _l46696e69746544697669736f7243617465676f7279-696465616c:
+
+.. index::
+   pair: FiniteDivisorCategory; ideal
+
+:spadfun:`ideal`\: % -> \ :ref:`FractionalIdeal <l4672616374696f6e616c496465616c>`\ (UP, \ :ref:`Fraction <l4672616374696f6e>`\  UP, UPUP, R) 
+  \ ``ideal(D)``\  returns the ideal corresponding to a divisor \ ``D``\ .
+
+.. _l46696e69746544697669736f7243617465676f7279-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l46696e69746544697669736f7243617465676f7279-6f70706f736974653f:
+
+\ :ref:`opposite? <l4162656c69616e4d6f6e6f6964-6f70706f736974653f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l46696e69746544697669736f7243617465676f7279-7072696e636970616c3f:
+
+.. index::
+   pair: FiniteDivisorCategory; principal?
+
+:spadfun:`principal?`\: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  \ ``principal?(D)``\  tests if the argument is the divisor of a function.
+
+.. _l46696e69746544697669736f7243617465676f7279-726564756365:
+
+.. index::
+   pair: FiniteDivisorCategory; reduce
+
+:spadfun:`reduce`\: % -> % 
+  \ ``reduce(D)``\  converts \ ``D``\  to some reduced form (the reduced forms can be different in different implementations).
+
+.. _l46696e69746544697669736f7243617465676f7279-73616d706c65:
+
+\ :ref:`sample <l4162656c69616e4d6f6e6f6964-73616d706c65>`\ \: % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l46696e69746544697669736f7243617465676f7279-7375627472616374496643616e:
+
+\ :ref:`subtractIfCan <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964-7375627472616374496643616e>`\ \: (%, %) -> Union(%, failed) 
+  from \ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l46696e69746544697669736f7243617465676f7279-7a65726f3f:
+
+\ :ref:`zero? <l4162656c69616e4d6f6e6f6964-7a65726f3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\  
+
+\ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  
+
+\ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\  
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\  
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+

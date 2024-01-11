@@ -1,0 +1,437 @@
+.. index:: RectangularMatrix
+
+.. _l52656374616e67756c61724d6174726978:
+
+RectangularMatrix(m, n, R)
+==========================
+
+:viewcode:`matrix.spad line 230 <matrix.spad#L230>` :editcode:`[edit on github] <matrix.spad#L230>`
+
+* m: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ 
+
+* n: \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ 
+
+* R: Join(\ :ref:`SemiRng <l53656d69526e67>`\ , \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ )
+
+
+\ :ref:`RectangularMatrix <l52656374616e67756c61724d6174726978>`\  is a matrix domain where the number of rows and the number of columns are parameters of the domain.
+
+
+.. _l52656374616e67756c61724d6174726978-30:
+
+\ :ref:`0 <l4162656c69616e4d6f6e6f6964-30>`\ \: % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l52656374616e67756c61724d6174726978-23:
+
+\ :ref:`# <l416767726567617465-23>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l52656374616e67756c61724d6174726978-2a:
+
+\ :ref:`\* <l52696768744d6f64756c65-2a>`\ \: (%, R) -> % 
+  from \ :ref:`RightModule <l52696768744d6f64756c65>`\  R
+
+
+\ :ref:`\* <l4162656c69616e47726f7570-2a>`\ \: (\ :ref:`Integer <l496e7465676572>`\ , %) -> % if R has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`\* <l4162656c69616e4d6f6e6f6964-2a>`\ \: (\ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`\* <l4162656c69616e53656d6947726f7570-2a>`\ \: (\ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\ , %) -> % 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+
+\ :ref:`\* <l4c6566744d6f64756c65-2a>`\ \: (R, %) -> % 
+  from \ :ref:`LeftModule <l4c6566744d6f64756c65>`\  R
+
+.. _l52656374616e67756c61724d6174726978-2b:
+
+\ :ref:`+ <l4162656c69616e53656d6947726f7570-2b>`\ \: (%, %) -> % 
+  from \ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\ 
+
+.. _l52656374616e67756c61724d6174726978-2d:
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: % -> % if R has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+
+\ :ref:`- <l4162656c69616e47726f7570-2d>`\ \: (%, %) -> % if R has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+.. _l52656374616e67756c61724d6174726978-2f:
+
+\ :ref:`/ <l52656374616e67756c61724d617472697843617465676f7279-2f>`\ \: (%, R) -> % if R has \ :ref:`Field <l4669656c64>`\ 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-3d:
+
+\ :ref:`= <l426173696354797065-3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l52656374616e67756c61724d6174726978-7e3d:
+
+\ :ref:`~= <l426173696354797065-7e3d>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`BasicType <l426173696354797065>`\ 
+
+.. _l52656374616e67756c61724d6174726978-616e746973796d6d65747269633f:
+
+\ :ref:`antisymmetric? <l52656374616e67756c61724d617472697843617465676f7279-616e746973796d6d65747269633f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-616e793f:
+
+\ :ref:`any? <l486f6d6f67656e656f7573416767726567617465-616e793f>`\ \: (R -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  R
+
+.. _l52656374616e67756c61724d6174726978-636f65726365:
+
+.. index::
+   pair: RectangularMatrix; coerce
+
+:spadfun:`coerce`\: % -> \ :ref:`Matrix <l4d6174726978>`\  R 
+  \ ``coerce(m)``\  converts a matrix of type \ :ref:`RectangularMatrix <l52656374616e67756c61724d6174726978>`\  to a matrix of type \ ``Matrix``\ .
+
+
+\ :ref:`coerce <l436f65726369626c65546f-636f65726365>`\ \: % -> \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+  from \ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ 
+
+.. _l52656374616e67756c61724d6174726978-636f6c756d6e:
+
+\ :ref:`column <l52656374616e67756c61724d617472697843617465676f7279-636f6c756d6e>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R) 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-636f6c756d6e5370616365:
+
+\ :ref:`columnSpace <l52656374616e67756c61724d617472697843617465676f7279-636f6c756d6e5370616365>`\ \: % -> \ :ref:`List <l4c697374>`\  \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R) if R has \ :ref:`EuclideanDomain <l4575636c696465616e446f6d61696e>`\ 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-636f6e76657274:
+
+\ :ref:`convert <l436f6e7665727469626c65546f-636f6e76657274>`\ \: % -> \ :ref:`InputForm <l496e707574466f726d>`\  if R has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+  from \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+.. _l52656374616e67756c61724d6174726978-636f7079:
+
+\ :ref:`copy <l416767726567617465-636f7079>`\ \: % -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l52656374616e67756c61724d6174726978-636f756e74:
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (R -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  R
+
+
+\ :ref:`count <l486f6d6f67656e656f7573416767726567617465-636f756e74>`\ \: (R, %) -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  R
+
+.. _l52656374616e67756c61724d6174726978-646961676f6e616c3f:
+
+\ :ref:`diagonal? <l52656374616e67756c61724d617472697843617465676f7279-646961676f6e616c3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-656c74:
+
+\ :ref:`elt <l52656374616e67756c61724d617472697843617465676f7279-656c74>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> R 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+
+\ :ref:`elt <l52656374616e67756c61724d617472697843617465676f7279-656c74>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ , R) -> R 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-656d7074793f:
+
+\ :ref:`empty? <l416767726567617465-656d7074793f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l52656374616e67756c61724d6174726978-656d707479:
+
+\ :ref:`empty <l416767726567617465-656d707479>`\ \: () -> % 
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l52656374616e67756c61724d6174726978-656e756d6572617465:
+
+\ :ref:`enumerate <l46696e697465-656e756d6572617465>`\ \: () -> \ :ref:`List <l4c697374>`\  % if R has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l52656374616e67756c61724d6174726978-65713f:
+
+\ :ref:`eq? <l416767726567617465-65713f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l52656374616e67756c61724d6174726978-6576616c:
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`Equation <l4571756174696f6e>`\  R) -> % if R has \ :ref:`Evalable <l4576616c61626c65>`\  R
+  from \ :ref:`Evalable <l4576616c61626c65>`\  R
+
+
+\ :ref:`eval <l4576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  \ :ref:`Equation <l4571756174696f6e>`\  R) -> % if R has \ :ref:`Evalable <l4576616c61626c65>`\  R
+  from \ :ref:`Evalable <l4576616c61626c65>`\  R
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, \ :ref:`List <l4c697374>`\  R, \ :ref:`List <l4c697374>`\  R) -> % if R has \ :ref:`Evalable <l4576616c61626c65>`\  R
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (R, R)
+
+
+\ :ref:`eval <l496e6e65724576616c61626c65-6576616c>`\ \: (%, R, R) -> % if R has \ :ref:`Evalable <l4576616c61626c65>`\  R
+  from \ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (R, R)
+
+.. _l52656374616e67756c61724d6174726978-65766572793f:
+
+\ :ref:`every? <l486f6d6f67656e656f7573416767726567617465-65766572793f>`\ \: (R -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  R
+
+.. _l52656374616e67756c61724d6174726978-657871756f:
+
+\ :ref:`exquo <l52656374616e67756c61724d617472697843617465676f7279-657871756f>`\ \: (%, R) -> Union(%, failed) if R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-68617368:
+
+\ :ref:`hash <l4861736861626c65-68617368>`\ \: % -> \ :ref:`SingleInteger <l53696e676c65496e7465676572>`\  if R has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l52656374616e67756c61724d6174726978-6861736855706461746521:
+
+\ :ref:`hashUpdate! <l4861736861626c65-6861736855706461746521>`\ \: (\ :ref:`HashState <l486173685374617465>`\ , %) -> \ :ref:`HashState <l486173685374617465>`\  if R has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Hashable <l4861736861626c65>`\ 
+
+.. _l52656374616e67756c61724d6174726978-696e646578:
+
+\ :ref:`index <l46696e697465-696e646578>`\ \: \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  -> % if R has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l52656374616e67756c61724d6174726978-6c61746578:
+
+\ :ref:`latex <l53657443617465676f7279-6c61746578>`\ \: % -> \ :ref:`String <l537472696e67>`\  
+  from \ :ref:`SetCategory <l53657443617465676f7279>`\ 
+
+.. _l52656374616e67756c61724d6174726978-6c6573733f:
+
+\ :ref:`less? <l416767726567617465-6c6573733f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l52656374616e67756c61724d6174726978-6c6973744f664c69737473:
+
+\ :ref:`listOfLists <l52656374616e67756c61724d617472697843617465676f7279-6c6973744f664c69737473>`\ \: % -> \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  R 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-6c6f6f6b7570:
+
+\ :ref:`lookup <l46696e697465-6c6f6f6b7570>`\ \: % -> \ :ref:`PositiveInteger <l506f736974697665496e7465676572>`\  if R has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l52656374616e67756c61724d6174726978-6d6170:
+
+\ :ref:`map <l52656374616e67756c61724d617472697843617465676f7279-6d6170>`\ \: ((R, R) -> R, %, %) -> % 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+
+\ :ref:`map <l52656374616e67756c61724d617472697843617465676f7279-6d6170>`\ \: (R -> R, %) -> % 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-6d6174726978:
+
+\ :ref:`matrix <l52656374616e67756c61724d617472697843617465676f7279-6d6174726978>`\ \: \ :ref:`List <l4c697374>`\  \ :ref:`List <l4c697374>`\  R -> % 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-6d6178:
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: % -> R if R has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  R
+
+
+\ :ref:`max <l486f6d6f67656e656f7573416767726567617465-6d6178>`\ \: ((R, R) -> \ :ref:`Boolean <l426f6f6c65616e>`\ , %) -> R 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  R
+
+.. _l52656374616e67756c61724d6174726978-6d6178436f6c496e646578:
+
+\ :ref:`maxColIndex <l52656374616e67756c61724d617472697843617465676f7279-6d6178436f6c496e646578>`\ \: % -> \ :ref:`Integer <l496e7465676572>`\  
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-6d6178526f77496e646578:
+
+\ :ref:`maxRowIndex <l52656374616e67756c61724d617472697843617465676f7279-6d6178526f77496e646578>`\ \: % -> \ :ref:`Integer <l496e7465676572>`\  
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-6d656d6265723f:
+
+\ :ref:`member? <l486f6d6f67656e656f7573416767726567617465-6d656d6265723f>`\ \: (R, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  R
+
+.. _l52656374616e67756c61724d6174726978-6d656d62657273:
+
+\ :ref:`members <l486f6d6f67656e656f7573416767726567617465-6d656d62657273>`\ \: % -> \ :ref:`List <l4c697374>`\  R 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  R
+
+.. _l52656374616e67756c61724d6174726978-6d696e:
+
+\ :ref:`min <l486f6d6f67656e656f7573416767726567617465-6d696e>`\ \: % -> R if R has \ :ref:`OrderedSet <l4f726465726564536574>`\ 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  R
+
+.. _l52656374616e67756c61724d6174726978-6d696e436f6c496e646578:
+
+\ :ref:`minColIndex <l52656374616e67756c61724d617472697843617465676f7279-6d696e436f6c496e646578>`\ \: % -> \ :ref:`Integer <l496e7465676572>`\  
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-6d696e526f77496e646578:
+
+\ :ref:`minRowIndex <l52656374616e67756c61724d617472697843617465676f7279-6d696e526f77496e646578>`\ \: % -> \ :ref:`Integer <l496e7465676572>`\  
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-6d6f72653f:
+
+\ :ref:`more? <l416767726567617465-6d6f72653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l52656374616e67756c61724d6174726978-6e636f6c73:
+
+\ :ref:`ncols <l52656374616e67756c61724d617472697843617465676f7279-6e636f6c73>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-6e726f7773:
+
+\ :ref:`nrows <l52656374616e67756c61724d617472697843617465676f7279-6e726f7773>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-6e756c6c697479:
+
+\ :ref:`nullity <l52656374616e67756c61724d617472697843617465676f7279-6e756c6c697479>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-6e756c6c5370616365:
+
+\ :ref:`nullSpace <l52656374616e67756c61724d617472697843617465676f7279-6e756c6c5370616365>`\ \: % -> \ :ref:`List <l4c697374>`\  \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R) if R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-6f70706f736974653f:
+
+\ :ref:`opposite? <l4162656c69616e4d6f6e6f6964-6f70706f736974653f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l52656374616e67756c61724d6174726978-7061727473:
+
+\ :ref:`parts <l486f6d6f67656e656f7573416767726567617465-7061727473>`\ \: % -> \ :ref:`List <l4c697374>`\  R 
+  from \ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  R
+
+.. _l52656374616e67756c61724d6174726978-71656c74:
+
+\ :ref:`qelt <l52656374616e67756c61724d617472697843617465676f7279-71656c74>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ , \ :ref:`Integer <l496e7465676572>`\ ) -> R 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-72616e646f6d:
+
+\ :ref:`random <l46696e697465-72616e646f6d>`\ \: () -> % if R has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l52656374616e67756c61724d6174726978-72616e6b:
+
+\ :ref:`rank <l52656374616e67756c61724d617472697843617465676f7279-72616e6b>`\ \: % -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if R has \ :ref:`IntegralDomain <l496e74656772616c446f6d61696e>`\ 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-72656374616e67756c61724d6174726978:
+
+.. index::
+   pair: RectangularMatrix; rectangularMatrix
+
+:spadfun:`rectangularMatrix`\: \ :ref:`Matrix <l4d6174726978>`\  R -> % 
+  \ ``rectangularMatrix(m)``\  converts a matrix of type \ :ref:`Matrix <l4d6174726978>`\  to a matrix of type \ ``RectangularMatrix``\ .
+
+.. _l52656374616e67756c61724d6174726978-726f77:
+
+\ :ref:`row <l52656374616e67756c61724d617472697843617465676f7279-726f77>`\ \: (%, \ :ref:`Integer <l496e7465676572>`\ ) -> \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R) 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-726f77456368656c6f6e:
+
+\ :ref:`rowEchelon <l52656374616e67756c61724d617472697843617465676f7279-726f77456368656c6f6e>`\ \: % -> % if R has \ :ref:`EuclideanDomain <l4575636c696465616e446f6d61696e>`\ 
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-73616d706c65:
+
+\ :ref:`sample <l4162656c69616e4d6f6e6f6964-73616d706c65>`\ \: % 
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l52656374616e67756c61724d6174726978-73697a653f:
+
+\ :ref:`size? <l416767726567617465-73697a653f>`\ \: (%, \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\ ) -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`Aggregate <l416767726567617465>`\ 
+
+.. _l52656374616e67756c61724d6174726978-73697a65:
+
+\ :ref:`size <l46696e697465-73697a65>`\ \: () -> \ :ref:`NonNegativeInteger <l4e6f6e4e65676174697665496e7465676572>`\  if R has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Finite <l46696e697465>`\ 
+
+.. _l52656374616e67756c61724d6174726978-736d616c6c65723f:
+
+\ :ref:`smaller? <l436f6d70617261626c65-736d616c6c65723f>`\ \: (%, %) -> \ :ref:`Boolean <l426f6f6c65616e>`\  if R has \ :ref:`Finite <l46696e697465>`\ 
+  from \ :ref:`Comparable <l436f6d70617261626c65>`\ 
+
+.. _l52656374616e67756c61724d6174726978-7371756172653f:
+
+\ :ref:`square? <l52656374616e67756c61724d617472697843617465676f7279-7371756172653f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-7375627472616374496643616e:
+
+\ :ref:`subtractIfCan <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964-7375627472616374496643616e>`\ \: (%, %) -> Union(%, failed) if R has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+  from \ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\ 
+
+.. _l52656374616e67756c61724d6174726978-73796d6d65747269633f:
+
+\ :ref:`symmetric? <l52656374616e67756c61724d617472697843617465676f7279-73796d6d65747269633f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R))
+
+.. _l52656374616e67756c61724d6174726978-7a65726f3f:
+
+\ :ref:`zero? <l4162656c69616e4d6f6e6f6964-7a65726f3f>`\ \: % -> \ :ref:`Boolean <l426f6f6c65616e>`\  
+  from \ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\ 
+
+
+\ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\  if R has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+\ :ref:`AbelianMonoid <l4162656c69616e4d6f6e6f6964>`\  
+
+\ :ref:`AbelianSemiGroup <l4162656c69616e53656d6947726f7570>`\  
+
+\ :ref:`Aggregate <l416767726567617465>`\  
+
+\ :ref:`BasicType <l426173696354797065>`\  
+
+\ :ref:`BiModule <l42694d6f64756c65>`\ (R, R) 
+
+\ :ref:`CancellationAbelianMonoid <l43616e63656c6c6174696f6e4162656c69616e4d6f6e6f6964>`\  if R has \ :ref:`AbelianGroup <l4162656c69616e47726f7570>`\ 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`Matrix <l4d6174726978>`\  R 
+
+\ :ref:`CoercibleTo <l436f65726369626c65546f>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\  
+
+\ :ref:`Comparable <l436f6d70617261626c65>`\  if R has \ :ref:`Finite <l46696e697465>`\ 
+
+\ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\  if R has \ :ref:`ConvertibleTo <l436f6e7665727469626c65546f>`\  \ :ref:`InputForm <l496e707574466f726d>`\ 
+
+\ :ref:`Evalable <l4576616c61626c65>`\  R if R has \ :ref:`Evalable <l4576616c61626c65>`\  R
+
+\ :ref:`Finite <l46696e697465>`\  if R has \ :ref:`Finite <l46696e697465>`\ 
+
+\ :ref:`finiteAggregate <l66696e697465416767726567617465>`\  
+
+\ :ref:`Hashable <l4861736861626c65>`\  if R has \ :ref:`Finite <l46696e697465>`\ 
+
+\ :ref:`HomogeneousAggregate <l486f6d6f67656e656f7573416767726567617465>`\  R 
+
+\ :ref:`InnerEvalable <l496e6e65724576616c61626c65>`\ (R, R) if R has \ :ref:`Evalable <l4576616c61626c65>`\  R
+
+\ :ref:`LeftModule <l4c6566744d6f64756c65>`\  R 
+
+\ :ref:`Module <l4d6f64756c65>`\  R if R has \ :ref:`CommutativeRing <l436f6d6d7574617469766552696e67>`\ 
+
+\ :ref:`RectangularMatrixCategory <l52656374616e67756c61724d617472697843617465676f7279>`\ (m, n, R, \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (n, R), \ :ref:`DirectProduct <l44697265637450726f64756374>`\ (m, R)) 
+
+\ :ref:`RightModule <l52696768744d6f64756c65>`\  R 
+
+\ :ref:`SetCategory <l53657443617465676f7279>`\  
+
