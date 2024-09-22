@@ -110,6 +110,14 @@ undocumented
 :spadfun:`formatFloat`\: \ :ref:`String <l537472696e67>`\  -> \ :ref:`OutputBox <l4f7574707574426f78>`\  
   \ ``formatFloat(s)``\  formats a floating point number from it string representation in \ :ref:`OutputForm <l4f7574707574466f726d>`\ .
 
+.. _l466f726d617474657243617465676f7279-666f726d617446756e6374696f6e:
+
+.. index::
+   pair: FormatterCategory; formatFunction
+
+:spadfun:`formatFunction`\: (\ :ref:`OutputBox <l4f7574707574426f78>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`OutputBox <l4f7574707574426f78>`\ ) -> \ :ref:`OutputBox <l4f7574707574426f78>`\  
+  \ ``formatFunction(b, args)``\  is supposed to create a box for \ ``"b``\ (args)", i.e. format the list of arguments given by args an put it into a format that represents a function application.
+
 .. _l466f726d617474657243617465676f7279-666f726d617446756e6374696f6e53796d626f6c:
 
 .. index::
@@ -149,6 +157,14 @@ undocumented
 
 :spadfun:`fraction`\: (\ :ref:`Integer <l496e7465676572>`\ , (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ ) -> \ :ref:`OutputBox <l4f7574707574426f78>`\ , (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ ) -> \ :ref:`OutputBox <l4f7574707574426f78>`\ ) -> (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ ) -> \ :ref:`OutputBox <l4f7574707574426f78>`\  
   Format a fraction. \ ``fraction(p, h1, h2)``\  returns a handler \ ``h``\  such that \ ``h(prec, args)``\  formats the first argument by \ ``h1``\  and the second argument by \ ``h2``\ . Outer parentheses are added if \ ``p < prec``\ .
+
+.. _l466f726d617474657243617465676f7279-66756e6374696f6e:
+
+.. index::
+   pair: FormatterCategory; function
+
+:spadfun:`function`\: (\ :ref:`String <l537472696e67>`\ , \ :ref:`Integer <l496e7465676572>`\ , (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ ) -> \ :ref:`OutputBox <l4f7574707574426f78>`\ ) -> (\ :ref:`Integer <l496e7465676572>`\ , \ :ref:`List <l4c697374>`\  \ :ref:`OutputForm <l4f7574707574466f726d>`\ ) -> \ :ref:`OutputBox <l4f7574707574426f78>`\  
+  \ ``function(s, p, hh)``\  is meant to typeset function applications. It defaults to prefix(\ ``s``\ ,\ ``p``\ ,bracket("(",")",\ ``hh``\ )).
 
 .. _l466f726d617474657243617465676f7279-696e666978:
 

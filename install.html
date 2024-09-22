@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="_static/classic.css?v=514cf933" />
     <link rel="stylesheet" href="_static/style.css" type="text/css" />
     
-    <script src="_static/documentation_options.js?v=0034329e"></script>
+    <script src="_static/documentation_options.js?v=a44cb687"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     
@@ -211,17 +211,19 @@ except for Clozure CL on Power PC.</p>
 <p>In order to build the <a class="reference external" href="https://fricas.github.io/book.pdf">FriCAS Book</a>, you also need the following
 LaTeX packages (available from <a class="reference external" href="https://www.ctan.org/">CTAN</a>).</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>amsmath
+amssymb
 breqn
-tensor
-mleftright
-epsf
-verbatim
-hyperref
 color
+epstopdf
+framed
+graphicx
+hyperref
 listings
 makeidx
-xparse
+tensor
 tikz
+verbatim
+xparse
 </pre></div>
 </div>
 </section>
@@ -441,16 +443,6 @@ respectively).</p>
 <p>After a build of FriCAS, (suppose your build directory is under
 <code class="docutils literal notranslate"><span class="pre">$BUILD</span></code>), you can build the documentation provided at
 the <a class="reference external" href="https://fricas.github.io/index.html">FriCAS home page</a> on your local installation.</p>
-<p>To build the extra documentation you need a working <code class="docutils literal notranslate"><span class="pre">convert</span></code> program
-from <a class="reference external" href="https://imagemagick.org/">ImageMagick</a>.  Note that several Linux distribution currently disable
-the ability to create <code class="docutils literal notranslate"><span class="pre">.ps</span></code> files via <code class="docutils literal notranslate"><span class="pre">convert</span></code>.  If your distribution
-is doing this, then the build of extra documentation will fail.</p>
-<p>In Ubuntu you can allow the creation of <code class="docutils literal notranslate"><span class="pre">.ps</span></code> files by editing
-<code class="docutils literal notranslate"><span class="pre">/etc/ImageMagick-6/policy.xml</span></code> as <code class="docutils literal notranslate"><span class="pre">root</span></code> and changing the
-respective line to</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;policy domain=&quot;coder&quot; rights=&quot;read|write&quot; pattern=&quot;PS&quot; /&gt;
-</pre></div>
-</div>
 <p>The <a class="reference external" href="https://fricas.github.io/index.html">FriCAS home page</a> can be built via</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd $BUILD/src/doc
 make doc
@@ -704,7 +696,7 @@ _SCRIPT_EXTENSIONS = {
 </section>
 <section id="make-jupytext-available">
 <h4>Make Jupytext available<a class="headerlink" href="#make-jupytext-available" title="Link to this heading">¶</a></h4>
-<p>In Ubuntu 22.04 you need not run the commands from this section.
+<p>In Ubuntu 22.04 you do not need to run the commands from this section.
 It seemingly works without having to change something in the
 configuration file.  There were even reports that <a class="reference external" href="https://jfricas.readthedocs.io">jFriCAS</a> stopped
 working if <code class="docutils literal notranslate"><span class="pre">c.NotebookApp.contents_manager_class</span></code> was set.  However,
