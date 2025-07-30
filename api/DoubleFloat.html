@@ -7,11 +7,11 @@
 
     <title>DoubleFloat &#8212; FriCAS</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script src="../_static/documentation_options.js?v=a44cb687"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/documentation_options.js?v=93b43ced"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
@@ -19,7 +19,7 @@
     <link rel="next" title="DoubleFloatMatrix" href="DoubleFloatMatrix.html" />
     <link rel="prev" title="Distribution R" href="Distribution.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -45,7 +45,7 @@
             
   <section id="doublefloat">
 <span id="l446f75626c65466c6f6174"></span><span id="index-0"></span><h1>DoubleFloat<a class="headerlink" href="#doublefloat" title="Link to this heading">¶</a></h1>
-<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/sf.spad#L303">sf.spad line 303</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/sf.spad#L303">[edit on github]</a></p>
+<p><a class="extlink-viewcode reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/sf.spad#L302">sf.spad line 302</a> <a class="extlink-editcode reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/sf.spad#L302">[edit on github]</a></p>
 <p><a class="reference internal" href="#l446f75626c65466c6f6174"><span class="std std-ref">DoubleFloat</span></a> is intended to make accessible hardware floating point arithmetic in Language{}, either native double precision, or IEEE. On most machines, there will be hardware support for the arithmetic operations: <a class="reference internal" href="#l446f75626c65466c6f6174-2b"><span class="std std-ref">+</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-2a"><span class="std std-ref">*</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-2f"><span class="std std-ref">/</span></a> and possibly also the <a class="reference internal" href="#l446f75626c65466c6f6174-73717274"><span class="std std-ref">sqrt</span></a> operation. The operations <a class="reference internal" href="#l446f75626c65466c6f6174-657870"><span class="std std-ref">exp</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-6c6f67"><span class="std std-ref">log</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-73696e"><span class="std std-ref">sin</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-636f73"><span class="std std-ref">cos</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-6174616e"><span class="std std-ref">atan</span></a> are normally coded in software based on minimax polynomial/rational approximations. Some general comments about the accuracy of the operations: the operations <a class="reference internal" href="#l446f75626c65466c6f6174-2b"><span class="std std-ref">+</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-2a"><span class="std std-ref">*</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-2f"><span class="std std-ref">/</span></a> and <a class="reference internal" href="#l446f75626c65466c6f6174-73717274"><span class="std std-ref">sqrt</span></a> are expected to be fully accurate. The operations <a class="reference internal" href="#l446f75626c65466c6f6174-657870"><span class="std std-ref">exp</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-6c6f67"><span class="std std-ref">log</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-73696e"><span class="std std-ref">sin</span></a>, <a class="reference internal" href="#l446f75626c65466c6f6174-636f73"><span class="std std-ref">cos</span></a> and <a class="reference internal" href="#l446f75626c65466c6f6174-6174616e"><span class="std std-ref">atan</span></a> are not expected to be fully accurate. In particular, <a class="reference internal" href="#l446f75626c65466c6f6174-73696e"><span class="std std-ref">sin</span></a> and <a class="reference internal" href="#l446f75626c65466c6f6174-636f73"><span class="std std-ref">cos</span></a> will lose all precision for large arguments.   The <a class="reference internal" href="Float.html#l466c6f6174"><span class="std std-ref">Float</span></a> domain provides an alternative to the <code class="docutils literal notranslate"><span class="pre">DoubleFloat</span></code> domain. It provides an arbitrary precision model of floating point arithmetic. This means that accuracy problems like those above are eliminated by increasing the working precision where necessary. <a class="reference internal" href="Float.html#l466c6f6174"><span class="std std-ref">Float</span></a> provides some special functions such as erf, the error function in addition to the elementary functions. The disadvantage of <a class="reference internal" href="Float.html#l466c6f6174"><span class="std std-ref">Float</span></a> is that it is much more expensive than small floats when the latter can be used.</p>
 <dl class="simple" id="l446f75626c65466c6f6174-30">
 <dt><a class="reference internal" href="AbelianMonoid.html#l4162656c69616e4d6f6e6f6964-30"><span class="std std-ref">0</span></a>: %</dt><dd><p>from <a class="reference internal" href="AbelianMonoid.html#l4162656c69616e4d6f6e6f6964"><span class="std std-ref">AbelianMonoid</span></a></p>
@@ -56,7 +56,7 @@
 </dd>
 </dl>
 <dl class="simple" id="l446f75626c65466c6f6174-2a">
-<dt><a class="reference internal" href="LeftModule.html#l4c6566744d6f64756c65-2a"><span class="std std-ref">*</span></a>: (%, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="LeftModule.html#l4c6566744d6f64756c65"><span class="std std-ref">LeftModule</span></a> %</p>
+<dt><a class="reference internal" href="Magma.html#l4d61676d61-2a"><span class="std std-ref">*</span></a>: (%, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="Magma.html#l4d61676d61"><span class="std std-ref">Magma</span></a></p>
 </dd>
 <dt><a class="reference internal" href="RightModule.html#l52696768744d6f64756c65-2a"><span class="std std-ref">*</span></a>: (%, <a class="reference internal" href="Fraction.html#l4672616374696f6e"><span class="std std-ref">Fraction</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; %</dt><dd><p>from <a class="reference internal" href="RightModule.html#l52696768744d6f64756c65"><span class="std std-ref">RightModule</span></a> <a class="reference internal" href="Fraction.html#l4672616374696f6e"><span class="std std-ref">Fraction</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a></p>
 </dd>
@@ -260,9 +260,9 @@
 </dd>
 <dt><a class="reference internal" href="CoercibleTo.html#l436f65726369626c65546f-636f65726365"><span class="std std-ref">coerce</span></a>: % -&gt; <a class="reference internal" href="OutputForm.html#l4f7574707574466f726d"><span class="std std-ref">OutputForm</span></a></dt><dd><p>from <a class="reference internal" href="CoercibleTo.html#l436f65726369626c65546f"><span class="std std-ref">CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l4f7574707574466f726d"><span class="std std-ref">OutputForm</span></a></p>
 </dd>
-<dt><a class="reference internal" href="CoercibleFrom.html#l436f65726369626c6546726f6d-636f65726365"><span class="std std-ref">coerce</span></a>: <a class="reference internal" href="Fraction.html#l4672616374696f6e"><span class="std std-ref">Fraction</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a> -&gt; %</dt><dd><p>from <a class="reference internal" href="CoercibleFrom.html#l436f65726369626c6546726f6d"><span class="std std-ref">CoercibleFrom</span></a> <a class="reference internal" href="Fraction.html#l4672616374696f6e"><span class="std std-ref">Fraction</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a></p>
+<dt><a class="reference internal" href="Algebra.html#l416c6765627261-636f65726365"><span class="std std-ref">coerce</span></a>: <a class="reference internal" href="Fraction.html#l4672616374696f6e"><span class="std std-ref">Fraction</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a> -&gt; %</dt><dd><p>from <a class="reference internal" href="Algebra.html#l416c6765627261"><span class="std std-ref">Algebra</span></a> <a class="reference internal" href="Fraction.html#l4672616374696f6e"><span class="std std-ref">Fraction</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a></p>
 </dd>
-<dt><a class="reference internal" href="CoercibleFrom.html#l436f65726369626c6546726f6d-636f65726365"><span class="std std-ref">coerce</span></a>: <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a> -&gt; %</dt><dd><p>from <a class="reference internal" href="CoercibleFrom.html#l436f65726369626c6546726f6d"><span class="std std-ref">CoercibleFrom</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a></p>
+<dt><a class="reference internal" href="NonAssociativeRing.html#l4e6f6e4173736f6369617469766552696e67-636f65726365"><span class="std std-ref">coerce</span></a>: <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a> -&gt; %</dt><dd><p>from <a class="reference internal" href="NonAssociativeRing.html#l4e6f6e4173736f6369617469766552696e67"><span class="std std-ref">NonAssociativeRing</span></a></p>
 </dd>
 </dl>
 <dl class="simple" id="l446f75626c65466c6f6174-636f6d6d757461746f72">
@@ -423,6 +423,22 @@
 <dt><a class="reference internal" href="GcdDomain.html#l476364446f6d61696e-676364506f6c796e6f6d69616c"><span class="std std-ref">gcdPolynomial</span></a>: (<a class="reference internal" href="SparseUnivariatePolynomial.html#l537061727365556e6976617269617465506f6c796e6f6d69616c"><span class="std std-ref">SparseUnivariatePolynomial</span></a> %, <a class="reference internal" href="SparseUnivariatePolynomial.html#l537061727365556e6976617269617465506f6c796e6f6d69616c"><span class="std std-ref">SparseUnivariatePolynomial</span></a> %) -&gt; <a class="reference internal" href="SparseUnivariatePolynomial.html#l537061727365556e6976617269617465506f6c796e6f6d69616c"><span class="std std-ref">SparseUnivariatePolynomial</span></a> %</dt><dd><p>from <a class="reference internal" href="GcdDomain.html#l476364446f6d61696e"><span class="std std-ref">GcdDomain</span></a></p>
 </dd>
 </dl>
+<dl class="simple" id="l446f75626c65466c6f6174-6861686e5f70">
+<dt><a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279-6861686e5f70"><span class="std std-ref">hahn_p</span></a>: (%, %, %, %, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279"><span class="std std-ref">SpecialFunctionCategory</span></a></p>
+</dd>
+</dl>
+<dl class="simple" id="l446f75626c65466c6f6174-6861686e51">
+<dt><a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279-6861686e51"><span class="std std-ref">hahnQ</span></a>: (%, %, %, %, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279"><span class="std std-ref">SpecialFunctionCategory</span></a></p>
+</dd>
+</dl>
+<dl class="simple" id="l446f75626c65466c6f6174-6861686e52">
+<dt><a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279-6861686e52"><span class="std std-ref">hahnR</span></a>: (%, %, %, %, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279"><span class="std std-ref">SpecialFunctionCategory</span></a></p>
+</dd>
+</dl>
+<dl class="simple" id="l446f75626c65466c6f6174-6861686e53">
+<dt><a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279-6861686e53"><span class="std std-ref">hahnS</span></a>: (%, %, %, %, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279"><span class="std std-ref">SpecialFunctionCategory</span></a></p>
+</dd>
+</dl>
 <dl class="simple" id="l446f75626c65466c6f6174-68616e6b656c4831">
 <dt><a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279-68616e6b656c4831"><span class="std std-ref">hankelH1</span></a>: (%, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279"><span class="std std-ref">SpecialFunctionCategory</span></a></p>
 </dd>
@@ -489,6 +505,10 @@
 </dl>
 <dl class="simple" id="l446f75626c65466c6f6174-6b656c76696e4b6572">
 <dt><a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279-6b656c76696e4b6572"><span class="std std-ref">kelvinKer</span></a>: (%, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279"><span class="std std-ref">SpecialFunctionCategory</span></a></p>
+</dd>
+</dl>
+<dl class="simple" id="l446f75626c65466c6f6174-6b7261777463686f756b4b">
+<dt><a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279-6b7261777463686f756b4b"><span class="std std-ref">krawtchoukK</span></a>: (%, %, %, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279"><span class="std std-ref">SpecialFunctionCategory</span></a></p>
 </dd>
 </dl>
 <dl class="simple" id="l446f75626c65466c6f6174-6b756d6d65724d">
@@ -581,6 +601,10 @@
 <dt><a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279-6d6569786e65724d"><span class="std std-ref">meixnerM</span></a>: (%, %, %, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279"><span class="std std-ref">SpecialFunctionCategory</span></a></p>
 </dd>
 </dl>
+<dl class="simple" id="l446f75626c65466c6f6174-6d6569786e657250">
+<dt><a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279-6d6569786e657250"><span class="std std-ref">meixnerP</span></a>: (%, %, %, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279"><span class="std std-ref">SpecialFunctionCategory</span></a></p>
+</dd>
+</dl>
 <dl class="simple" id="l446f75626c65466c6f6174-6d696e">
 <dt><a class="reference internal" href="OrderedSet.html#l4f726465726564536574-6d696e"><span class="std std-ref">min</span></a>: (%, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="OrderedSet.html#l4f726465726564536574"><span class="std std-ref">OrderedSet</span></a></p>
 </dd>
@@ -671,6 +695,10 @@
 </dl>
 <dl class="simple" id="l446f75626c65466c6f6174-71756f">
 <dt><a class="reference internal" href="EuclideanDomain.html#l4575636c696465616e446f6d61696e-71756f"><span class="std std-ref">quo</span></a>: (%, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="EuclideanDomain.html#l4575636c696465616e446f6d61696e"><span class="std std-ref">EuclideanDomain</span></a></p>
+</dd>
+</dl>
+<dl class="simple" id="l446f75626c65466c6f6174-726163616852">
+<dt><a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279-726163616852"><span class="std std-ref">racahR</span></a>: (%, %, %, %, %, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279"><span class="std std-ref">SpecialFunctionCategory</span></a></p>
 </dd>
 </dl>
 <span id="l446f75626c65466c6f6174-726174696f6e616c417070726f78696d6174696f6e"></span><dl class="simple" id="index-8">
@@ -847,6 +875,10 @@
 <dt><a class="reference internal" href="RealNumberSystem.html#l5265616c4e756d62657253797374656d-77686f6c6550617274"><span class="std std-ref">wholePart</span></a>: % -&gt; <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a></dt><dd><p>from <a class="reference internal" href="RealNumberSystem.html#l5265616c4e756d62657253797374656d"><span class="std std-ref">RealNumberSystem</span></a></p>
 </dd>
 </dl>
+<dl class="simple" id="l446f75626c65466c6f6174-77696c736f6e57">
+<dt><a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279-77696c736f6e57"><span class="std std-ref">wilsonW</span></a>: (%, %, %, %, %, %) -&gt; %</dt><dd><p>from <a class="reference internal" href="SpecialFunctionCategory.html#l5370656369616c46756e6374696f6e43617465676f7279"><span class="std std-ref">SpecialFunctionCategory</span></a></p>
+</dd>
+</dl>
 <dl class="simple" id="l446f75626c65466c6f6174-7a65726f3f">
 <dt><a class="reference internal" href="AbelianMonoid.html#l4162656c69616e4d6f6e6f6964-7a65726f3f"><span class="std std-ref">zero?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a></dt><dd><p>from <a class="reference internal" href="AbelianMonoid.html#l4162656c69616e4d6f6e6f6964"><span class="std std-ref">AbelianMonoid</span></a></p>
 </dd>
@@ -939,7 +971,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h3><a href="../index.html">Table of Contents</a></h3>
 <ul class="current">
@@ -953,7 +985,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../history.html">History</a></li>
 </ul>
 
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -961,13 +993,13 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -986,7 +1018,7 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2007-2024, FriCAS Team.
+    &#169; Copyright 2007-2025, FriCAS Team.
     </div>
   </body>
 </html>

@@ -7,11 +7,11 @@
 
     <title>VectorModularReconstructor &#8212; FriCAS</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=514cf933" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script src="../_static/documentation_options.js?v=a44cb687"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/documentation_options.js?v=93b43ced"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
@@ -19,7 +19,7 @@
     <link rel="next" title="VectorSpaceBasis R" href="VectorSpaceBasis.html" />
     <link rel="prev" title="VectorIntegerReconstructor" href="VectorIntegerReconstructor.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -45,7 +45,7 @@
             
   <section id="vectormodularreconstructor">
 <span id="l566563746f724d6f64756c61725265636f6e7374727563746f72"></span><span id="index-0"></span><h1>VectorModularReconstructor<a class="headerlink" href="#vectormodularreconstructor" title="Link to this heading">¶</a></h1>
-<p><a class="reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/vecrec.spad#L7">vecrec.spad line 7</a> <a class="reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/vecrec.spad#L7">[edit on github]</a></p>
+<p><a class="extlink-viewcode reference external" href="https://github.com/fricas/fricas/blob/master/src/algebra/vecrec.spad#L7">vecrec.spad line 7</a> <a class="extlink-editcode reference external" href="https://github.com/fricas/fricas/edit/master/src/algebra/vecrec.spad#L7">[edit on github]</a></p>
 <p>This domain supports modular methods based on evaluation and rational reconstruction. All computation are done on polynomials modulo machine sized prime <code class="docutils literal notranslate"><span class="pre">p</span></code> <code class="docutils literal notranslate"><span class="pre">--</span></code> <code class="docutils literal notranslate"><span class="pre">p</span></code> must be chosen small enough to avoid overflow in intermediate calculations. Each evaluation is supposed to produce vector of values. Once enough evaluations are known rational reconstruction produces vector of rational functions or multivariate polynomials.</p>
 <span id="l566563746f724d6f64756c61725265636f6e7374727563746f72-6164645f736c6f7473"></span><dl class="simple" id="index-1">
 <dt><span class="spadfun">add_slots</span>: (<a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, %) -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">add_slots(li)</span></code> extend reconstructor adding zeros at positions in <code class="docutils literal notranslate"><span class="pre">li</span></code>.</p>
@@ -64,7 +64,7 @@
 </dd>
 </dl>
 <dl class="simple" id="index-5">
-<dt><span class="spadfun">rational_reconstruction</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; Union(Record(numer: <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, denom: <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>), failed)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">rational_reconstruction(x,</span> <span class="pre">y,</span> <span class="pre">i,</span> <span class="pre">j)</span></code> finds rational function <code class="docutils literal notranslate"><span class="pre">r/s</span></code> such that <code class="docutils literal notranslate"><span class="pre">r/s</span> <span class="pre">=</span> <span class="pre">y</span></code> modulo <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">degre(r)</span> <span class="pre">&lt;=</span> <span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">degree(s)</span> <span class="pre">\leq</span> <span class="pre">j</span></code>. Returs “failed” when such <code class="docutils literal notranslate"><span class="pre">r/s</span></code> does not exist.</p>
+<dt><span class="spadfun">rational_reconstruction</span>: (<a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>, <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a>) -&gt; Union(Record(numer: <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>, denom: <a class="reference internal" href="U32Vector.html#l553332566563746f72"><span class="std std-ref">U32Vector</span></a>), failed)</dt><dd><p><code class="docutils literal notranslate"><span class="pre">rational_reconstruction(x,</span> <span class="pre">y,</span> <span class="pre">i,</span> <span class="pre">j)</span></code> finds rational function <code class="docutils literal notranslate"><span class="pre">r/s</span></code> such that <code class="docutils literal notranslate"><span class="pre">r/s</span> <span class="pre">=</span> <span class="pre">y</span></code> modulo <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">degre(r)</span> <span class="pre">&lt;=</span> <span class="pre">i</span></code>, <code class="docutils literal notranslate"><span class="pre">degree(s)</span> <span class="pre">\leq</span> <span class="pre">j</span></code>. Returns “failed” when such <code class="docutils literal notranslate"><span class="pre">r/s</span></code> does not exist.</p>
 </dd>
 </dl>
 <span id="l566563746f724d6f64756c61725265636f6e7374727563746f72-7265636f6e737472756374"></span><dl class="simple" id="index-6">
@@ -90,7 +90,7 @@
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
         <div class="sphinxsidebarwrapper">
 <h3><a href="../index.html">Table of Contents</a></h3>
 <ul class="current">
@@ -104,7 +104,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../history.html">History</a></li>
 </ul>
 
-<div id="searchbox" style="display: none" role="search">
+<search id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
@@ -112,13 +112,13 @@
       <input type="submit" value="Go" />
     </form>
     </div>
-</div>
+</search>
 <script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
+    <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -137,7 +137,7 @@
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2007-2024, FriCAS Team.
+    &#169; Copyright 2007-2025, FriCAS Team.
     </div>
   </body>
 </html>

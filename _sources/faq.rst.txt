@@ -79,7 +79,7 @@ the `FriCAS wiki <`http://wiki.fricas.org/IssueTracker>`_
 should not be used anymore.
 
 
-How one can use FriCAS in a pipe or in batch mode?
+How can one use FriCAS in a pipe or in batch mode?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Currently trying to run plain ``fricas`` command in a pipe hangs
@@ -93,11 +93,11 @@ There several ways to let FriCAS process commands from a file.
    cat tst.input | fricas -nosman > tst.output
    echo ')read tst.input' | fricas -nosman > tst.output
 
-Whereas the first two versions do not show the input in ``tst.ouput``,
+Whereas the first two versions do not show the input in ``tst.output``,
 the last command does. However, in the latter case it is hard to
 distinguish input from output.
 
-Note: Similarly to the commandline, pipe mode requires each function
+Note: Similarly to the command line, pipe mode requires each function
 to be defined in a single line.
 
 
@@ -272,12 +272,12 @@ will tell you the signatures that the interpreter is trying to use.
 Another method is to do
 ::
 
-   )boot $monitorNewWorld := t
+   )boot $monitorNewWorld := true
 
 and you can view database calls with
 ::
 
-   )lisp (setq *miss* t)
+   )boot $miss := true
 
 
 How can I record console output?
@@ -296,8 +296,8 @@ starts sending output to the file called ``filename`` and
 stops sending output to the file.
 
 
-Graphics doesn't work or sman fails to start ?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Graphics doesn't work or sman fails to start?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 First try running ``sman`` as
 ::
@@ -336,7 +336,7 @@ Why do .fricas.input defined functions fail in fricas?
 You write this in your ``.fricas.input`` file:
 ::
 
-   mrd(x:Integer,v:Integer):Integer == x+y
+   mrandom(x:Integer,y:Integer,z:Integer):Integer == x+y+z
 
 You can't see this function even though it appears to be defined. That's
 because FriCAS is working in a new frame.
@@ -610,7 +610,6 @@ and now you are talking only to lisp at a lisp command prompt in
 the BOOT package. To restart FriCAS type
 ::
 
-   BOOT>(restart)
+   BOOT> (|runspad|)
 
-Note: ')fin' does not work when using Clozure CL or ECL.  Due to
-this do not use it in portable scripts.
+Note: for ECL you need to type ``(in-package "BOOT")`` before ``(|runspad|)``.
