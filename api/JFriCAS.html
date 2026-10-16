@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>JFriCAS &#8212; FriCAS</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script src="../_static/documentation_options.js?v=9172181d"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="JFriCASSupport" href="JFriCASSupport.html" />
+    <link rel="prev" title="JetGroebner(R, JB, LJV, P, E)" href="JetGroebner.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="JFriCASSupport.html" title="JFriCASSupport"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="JetGroebner.html" title="JetGroebner(R, JB, LJV, P, E)"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">FriCAS</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >FriCAS API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="Packages.html" accesskey="U">Packages</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">JFriCAS</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="jfricas">
+<span id="l4a467269434153"></span><span id="index-0"></span><h1>JFriCAS<a class="headerlink" href="#jfricas" title="Link to this heading">¶</a></h1>
+<p><a class="extlink-viewcode reference external" href="https://github.com/fricas/fricas/blob/r1.4.0/src/algebra/jfricas.spad#L87">jfricas.spad line 87</a> <a class="extlink-editcode reference external" href="https://github.com/fricas/fricas/edit/r1.4.0/src/algebra/jfricas.spad#L87">[edit on github]</a></p>
+<p>The JFriCAS package contains functions to start a webserver and to initialize ioHooks for the communication between FriCAS and the Jupyter frontend. It also manages the communication between FriCAS (via the Hunchentoot webserver) and the Jupyter notebook.</p>
+<span id="l4a467269434153-6164644c696e6b73"></span><dl class="simple" id="index-1">
+<dt><span class="spadfun">addLinks</span>: <a class="reference internal" href="XHashTable.html#l58486173685461626c65"><span class="std std-ref">XHashTable</span></a>(<a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a>, <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a>) -&gt; <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a> -&gt; <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">addLinks(ht)</span></code>(type) returns a string that for every constructor <code class="code docutils literal notranslate"><span class="pre">c</span></code> that appears as a string in the keys of <code class="code docutils literal notranslate"><span class="pre">ht</span></code> a link to the online API constructor documentation of <code class="code docutils literal notranslate"><span class="pre">c</span></code>.</p>
+</dd>
+</dl>
+<span id="l4a467269434153-657874656e64436f6e7374727563746f7255524c73"></span><dl class="simple" id="index-2">
+<dt><span class="spadfun">extendConstructorURLs</span>: (<a class="reference internal" href="XHashTable.html#l58486173685461626c65"><span class="std std-ref">XHashTable</span></a>(<a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a>, <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a>), <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a>) -&gt; <a class="reference internal" href="XHashTable.html#l58486173685461626c65"><span class="std std-ref">XHashTable</span></a>(<a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a>, <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a>)</dt><dd><p><code class="code docutils literal notranslate"><span class="pre">extendConstructorURLs(h,url)</span></code> creates a copy of <code class="code docutils literal notranslate"><span class="pre">h</span></code> where each constructor name that is not yet existing in <code class="code docutils literal notranslate"><span class="pre">h</span></code> gets an entry with value <code class="code docutils literal notranslate"><span class="pre">url</span></code>.</p>
+</dd>
+</dl>
+<span id="l4a467269434153-6672696361736b65726e656c"></span><dl class="simple" id="index-3">
+<dt><span class="spadfun">fricaskernel</span>: () -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">fricaskernel()</span></code> writes out a file fricaskernel.py to the current directory. This file should be installed together kernel.json (generated by the kernel() function call) in your jupyter/python environment.</p>
+</dd>
+</dl>
+<span id="l4a467269434153-68616e646c654f7574707574"></span><dl class="simple" id="index-4">
+<dt><span class="spadfun">handleOutput</span>: (<a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a>, <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a>) -&gt; <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">handleOutput(err?,</span> <span class="pre">out)</span></code> translates the output out into a string that contains a JSON structure that is to be understood by fricaskernel.py. The function interprets the “–FORMAT:BEG:”/”–FORMAT:END:” pairs, in particular reads off the step number from their end and groups the output into substructures indexed by the step number of FriCAS. The JSON record looks like {“error?”: <code class="code docutils literal notranslate"><span class="pre">true</span></code>, “souts”: [<code class="code docutils literal notranslate"><span class="pre">s1</span></code>,…, <code class="code docutils literal notranslate"><span class="pre">sn</span></code>]} where ‘error?’ is either True or False (depending on whether or not the evaluation produced an error) and the responses <code class="code docutils literal notranslate"><span class="pre">si</span></code> are dictionaries that represent stepped outputs, <code class="code docutils literal notranslate"><span class="pre">i</span></code>.<code class="code docutils literal notranslate"><span class="pre">e</span></code> are of the form {“step”: step, “outs”: [<code class="code docutils literal notranslate"><span class="pre">o1</span></code>, …, om]} and the <code class="code docutils literal notranslate"><span class="pre">oi</span></code> are of the form {content_type: content}. Note that content_type can be “ERROR”, which means that the respective content is an error message or is content that was outside of <code class="code docutils literal notranslate"><span class="pre">e</span></code> “–FORMAT:BEG:”/”–FORMAT:END:” pair.</p>
+</dd>
+</dl>
+<span id="l4a467269434153-696e697469616c697a65"></span><dl class="simple" id="index-5">
+<dt><span class="spadfun">initialize</span>: () -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">initialize()</span></code> defines a number of functions for jFriCAS to work.</p>
+</dd>
+</dl>
+<span id="l4a467269434153-6a667269636173494f48616e646c6572"></span><dl class="simple" id="index-6">
+<dt><span class="spadfun">jfricasIOHandler</span>: (<a class="reference internal" href="Symbol.html#l53796d626f6c"><span class="std std-ref">Symbol</span></a>, <a class="reference internal" href="SExpression.html#l5345787072657373696f6e"><span class="std std-ref">SExpression</span></a>) -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">jfricasIOHandler(s)</span></code> reacts on certain ioHooks and writes out begin and end markers to stdout so that the corresponding fricaskernel.py can single out the various kinds of messages that comes from FriCAS.</p>
+</dd>
+</dl>
+<span id="l4a467269434153-6b65726e656c"></span><dl class="simple" id="index-7">
+<dt><span class="spadfun">kernel</span>: () -&gt; <a class="reference internal" href="Void.html#l566f6964"><span class="std std-ref">Void</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">kernel()</span></code> writes out a file kernel.json to the current directory. This file should be installed together fricaskernel.py (generated by the fricaskernel() function call) in your jupyter/python environment.</p>
+</dd>
+</dl>
+<span id="l4a467269434153-7365745472616e736c6174655479706521"></span><dl class="simple" id="index-8">
+<dt><span class="spadfun">setTranslateType!</span>: (<a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a> -&gt; <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a>) -&gt; <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a> -&gt; <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">setTranslateType!(fun)</span></code> sets the function <code class="code docutils literal notranslate"><span class="pre">fun</span></code> that is used in <code class="code docutils literal notranslate"><span class="pre">handleOutput</span></code> to translate the type returnd by FriCAS into something more pleasing to the user. A good candidate for <code class="code docutils literal notranslate"><span class="pre">fun</span></code> is <code class="code docutils literal notranslate"><span class="pre">addLinks(h)</span></code> for a respective hashtable constructed via <code class="code docutils literal notranslate"><span class="pre">extendConstructorURLs</span></code>.</p>
+</dd>
+</dl>
+<span id="l4a467269434153-7374617274"></span><dl class="simple" id="index-9">
+<dt><span class="spadfun">start</span>: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a> -&gt; <a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">start(p)</span></code> initializes jFriCAS and starts a new webserver instance on port <code class="code docutils literal notranslate"><span class="pre">p</span></code>. It returns <code class="code docutils literal notranslate"><span class="pre">true</span></code> if successful and <code class="code docutils literal notranslate"><span class="pre">false</span></code> if the hunchentoot webserver is not available.</p>
+</dd>
+</dl>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FriCAS API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help.html">Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../citation.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">History</a></li>
+</ul>
+
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="JFriCASSupport.html" title="JFriCASSupport"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="JetGroebner.html" title="JetGroebner(R, JB, LJV, P, E)"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">FriCAS</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >FriCAS API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="Packages.html" >Packages</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">JFriCAS</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2007-2026, FriCAS Team.
+    </div>
+  </body>
+</html>

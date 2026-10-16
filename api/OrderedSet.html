@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>OrderedSet &#8212; FriCAS</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script src="../_static/documentation_options.js?v=37ccb8f4"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/documentation_options.js?v=9172181d"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="OutputFormatterCategory" href="OutputFormatterCategory.html" />
-    <link rel="prev" title="OrderedSemiGroup" href="OrderedSemiGroup.html" /> 
+    <link rel="prev" title="OrderedRing" href="OrderedRing.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="Related">
       <h3>Navigation</h3>
@@ -29,7 +29,7 @@
           <a href="OutputFormatterCategory.html" title="OutputFormatterCategory"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="OrderedSemiGroup.html" title="OrderedSemiGroup"
+          <a href="OrderedRing.html" title="OrderedRing"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">FriCAS</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >FriCAS API</a> &#187;</li>
@@ -45,7 +45,7 @@
             
   <section id="orderedset">
 <span id="l4f726465726564536574"></span><span id="index-0"></span><h1>OrderedSet<a class="headerlink" href="#orderedset" title="Link to this heading">¶</a></h1>
-<p><a class="extlink-viewcode reference external" href="https://github.com/fricas/fricas/blob/r1.3.13/src/algebra/catdef.spad#L1126">catdef.spad line 1126</a> <a class="extlink-editcode reference external" href="https://github.com/fricas/fricas/edit/r1.3.13/src/algebra/catdef.spad#L1126">[edit on github]</a></p>
+<p><a class="extlink-viewcode reference external" href="https://github.com/fricas/fricas/blob/r1.4.0/src/algebra/catdef.spad#L1048">catdef.spad line 1048</a> <a class="extlink-editcode reference external" href="https://github.com/fricas/fricas/edit/r1.4.0/src/algebra/catdef.spad#L1048">[edit on github]</a></p>
 <p>The class of totally ordered sets, that is, sets such that for each pair of elements <code class="code docutils literal notranslate"><span class="pre">(a,</span> <span class="pre">b)</span></code> exactly one of the following relations holds <code class="code docutils literal notranslate"><span class="pre">a&lt;b</span> <span class="pre">or</span> <span class="pre">a=b</span> <span class="pre">or</span> <span class="pre">b&lt;a</span></code> and the relation is transitive, i.e. <code class="code docutils literal notranslate"><span class="pre">a&lt;b</span> <span class="pre">and</span> <span class="pre">b&lt;c</span> <span class="pre">=&gt;</span> <span class="pre">a&lt;c</span></code>. This order should be the natural order on given structure.</p>
 <dl class="simple" id="l4f726465726564536574-3c3d">
 <dt><a class="reference internal" href="PartialOrder.html#l5061727469616c4f72646572-3c3d"><span class="std std-ref">&lt;=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a></dt><dd><p>from <a class="reference internal" href="PartialOrder.html#l5061727469616c4f72646572"><span class="std std-ref">PartialOrder</span></a></p>
@@ -87,13 +87,26 @@
 <dt><span class="spadfun">min</span>: (%, %) -&gt; %</dt><dd><p><code class="code docutils literal notranslate"><span class="pre">min(x,y)</span></code> returns the minimum of <code class="code docutils literal notranslate"><span class="pre">x</span></code> and <code class="code docutils literal notranslate"><span class="pre">y</span></code> relative to <code class="code docutils literal notranslate"><span class="pre">&quot;&lt;&quot;</span></code>.</p>
 </dd>
 </dl>
+<span id="l4f726465726564536574-6e656761746976653f"></span><dl class="simple" id="index-3">
+<dt><span class="spadfun">negative?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a> if % has <a class="reference internal" href="SetWithZero.html#l536574576974685a65726f"><span class="std std-ref">SetWithZero</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">negative?(x)</span></code> tests whether <code class="code docutils literal notranslate"><span class="pre">x</span></code> is strictly less than 0.</p>
+</dd>
+</dl>
+<span id="l4f726465726564536574-706f7369746976653f"></span><dl class="simple" id="index-4">
+<dt><span class="spadfun">positive?</span>: % -&gt; <a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a> if % has <a class="reference internal" href="SetWithZero.html#l536574576974685a65726f"><span class="std std-ref">SetWithZero</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">positive?(x)</span></code> tests whether <code class="code docutils literal notranslate"><span class="pre">x</span></code> is strictly greater than 0.</p>
+</dd>
+</dl>
+<span id="l4f726465726564536574-7369676e"></span><dl class="simple" id="index-5">
+<dt><span class="spadfun">sign</span>: % -&gt; <a class="reference internal" href="Integer.html#l496e7465676572"><span class="std std-ref">Integer</span></a> if % has <a class="reference internal" href="SetWithZero.html#l536574576974685a65726f"><span class="std std-ref">SetWithZero</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">sign(x)</span></code> is 1 if <code class="code docutils literal notranslate"><span class="pre">x</span></code> is positive, <code class="code docutils literal notranslate"><span class="pre">-1</span></code> if <code class="code docutils literal notranslate"><span class="pre">x</span></code> is negative, 0 if <code class="code docutils literal notranslate"><span class="pre">x</span></code> equals 0.</p>
+</dd>
+</dl>
 <dl class="simple" id="l4f726465726564536574-736d616c6c65723f">
-<dt><a class="reference internal" href="Comparable.html#l436f6d70617261626c65-736d616c6c65723f"><span class="std std-ref">smaller?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a></dt><dd><p>from <a class="reference internal" href="Comparable.html#l436f6d70617261626c65"><span class="std std-ref">Comparable</span></a></p>
+<dt><a class="reference internal" href="ComparableRepresentation.html#l436f6d70617261626c65526570726573656e746174696f6e-736d616c6c65723f"><span class="std std-ref">smaller?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a></dt><dd><p>from <a class="reference internal" href="ComparableRepresentation.html#l436f6d70617261626c65526570726573656e746174696f6e"><span class="std std-ref">ComparableRepresentation</span></a></p>
 </dd>
 </dl>
 <p><a class="reference internal" href="BasicType.html#l426173696354797065"><span class="std std-ref">BasicType</span></a></p>
 <p><a class="reference internal" href="CoercibleTo.html#l436f65726369626c65546f"><span class="std std-ref">CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l4f7574707574466f726d"><span class="std std-ref">OutputForm</span></a></p>
 <p><a class="reference internal" href="Comparable.html#l436f6d70617261626c65"><span class="std std-ref">Comparable</span></a></p>
+<p><a class="reference internal" href="ComparableRepresentation.html#l436f6d70617261626c65526570726573656e746174696f6e"><span class="std std-ref">ComparableRepresentation</span></a></p>
 <p><a class="reference internal" href="PartialOrder.html#l5061727469616c4f72646572"><span class="std std-ref">PartialOrder</span></a></p>
 <p><a class="reference internal" href="SetCategory.html#l53657443617465676f7279"><span class="std std-ref">SetCategory</span></a></p>
 </section>
@@ -142,7 +155,7 @@
           <a href="OutputFormatterCategory.html" title="OutputFormatterCategory"
              >next</a> |</li>
         <li class="right" >
-          <a href="OrderedSemiGroup.html" title="OrderedSemiGroup"
+          <a href="OrderedRing.html" title="OrderedRing"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="../index.html">FriCAS</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >FriCAS API</a> &#187;</li>

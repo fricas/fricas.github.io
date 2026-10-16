@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>TreeOutput S &#8212; FriCAS</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
+    <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+    
+    <script src="../_static/documentation_options.js?v=9172181d"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="TriangularMatrixOperations(R, Row, Col, M)" href="TriangularMatrixOperations.html" />
+    <link rel="prev" title="TransSolvePackageService R" href="TransSolvePackageService.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="TriangularMatrixOperations.html" title="TriangularMatrixOperations(R, Row, Col, M)"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="TransSolvePackageService.html" title="TransSolvePackageService R"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">FriCAS</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >FriCAS API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="Packages.html" accesskey="U">Packages</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">TreeOutput S</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="treeoutput-s">
+<span id="l547265654f7574707574"></span><span id="index-0"></span><h1>TreeOutput S<a class="headerlink" href="#treeoutput-s" title="Link to this heading">¶</a></h1>
+<p><a class="extlink-viewcode reference external" href="https://github.com/fricas/fricas/blob/r1.4.0/src/algebra/tree.spad#L494">tree.spad line 494</a> <a class="extlink-editcode reference external" href="https://github.com/fricas/fricas/edit/r1.4.0/src/algebra/tree.spad#L494">[edit on github]</a></p>
+<ul class="simple">
+<li><p>S: <a class="reference internal" href="SetCategory.html#l53657443617465676f7279"><span class="std std-ref">SetCategory</span></a></p></li>
+</ul>
+<p>This package implements new output for trees. Output depends on two paramenters, maximal depth and maximal number of leaves. Maximal depth can be queried using <code class="code docutils literal notranslate"><span class="pre">outputDepth()</span></code> and set to <code class="code docutils literal notranslate"><span class="pre">d</span></code> using <code class="code docutils literal notranslate"><span class="pre">outputDepth(d)</span></code>. Similarly maximal number of leaves can be queried using <code class="code docutils literal notranslate"><span class="pre">outputNofLeaves()</span></code> and set to <code class="code docutils literal notranslate"><span class="pre">n</span></code> using <code class="code docutils literal notranslate"><span class="pre">outputNofLeaves(n)</span></code>. Default depth is 2 and default number of leaves is 1000. The trees are output until reaching maximal depth <code class="code docutils literal notranslate"><span class="pre">d</span></code>. Leaves are depicted by <code class="code docutils literal notranslate"><span class="pre">&lt;v&gt;</span></code> while the other nodes of depth <code class="code docutils literal notranslate"><span class="pre">d</span></code> list the labels of their children: <code class="code docutils literal notranslate"><span class="pre">v-</span></code>[<code class="code docutils literal notranslate"><span class="pre">v1</span></code> <code class="code docutils literal notranslate"><span class="pre">v2</span></code> … <code class="code docutils literal notranslate"><span class="pre">vk</span></code>]. Note further, that the tree grows from left to right and for the edges left to right is depicted from top to bottom. Also, maximal number of leaves that are output is restriced by <code class="code docutils literal notranslate"><span class="pre">outputNofLeaves()</span></code>.</p>
+<span id="l547265654f7574707574-6f75747075744465707468"></span><dl class="simple" id="index-1">
+<dt><span class="spadfun">outputDepth</span>: () -&gt; <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">outputDepth()</span></code> gives the depth until which a tree is depicted.</p>
+</dd>
+</dl>
+<dl class="simple" id="index-2">
+<dt><span class="spadfun">outputDepth</span>: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a> -&gt; <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">outputDepth(d)</span></code> sets the depth until which a tree is depicted to <code class="code docutils literal notranslate"><span class="pre">d</span></code>. It overwrites the default value 2.</p>
+</dd>
+</dl>
+<span id="l547265654f7574707574-6f75747075744e6f664c6561766573"></span><dl class="simple" id="index-3">
+<dt><span class="spadfun">outputNofLeaves</span>: () -&gt; <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">outputNofLeaves()</span></code> gives the maximal number of leaves, up to then a tree is depicted.</p>
+</dd>
+</dl>
+<dl class="simple" id="index-4">
+<dt><span class="spadfun">outputNofLeaves</span>: <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a> -&gt; <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">outputNofLeaves(d)</span></code> sets internal <code class="code docutils literal notranslate"><span class="pre">nofLeaves</span></code> up to then a tree is depicted. It overwrites the default value 1000.</p>
+</dd>
+</dl>
+<span id="l547265654f7574707574-746f5f6f7574707574"></span><dl class="simple" id="index-5">
+<dt><span class="spadfun">to_output</span>: <a class="reference internal" href="Tree.html#l54726565"><span class="std std-ref">Tree</span></a> S -&gt; <a class="reference internal" href="OutputForm.html#l4f7574707574466f726d"><span class="std std-ref">OutputForm</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">to_output(t)</span></code> convert tree <code class="code docutils literal notranslate"><span class="pre">t</span></code> to <a class="reference internal" href="OutputForm.html#l4f7574707574466f726d"><span class="std std-ref">OutputForm</span></a>.</p>
+</dd>
+</dl>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../index.html">Table of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">FriCAS API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download.html">Download</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../install.html">Installation Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help.html">Help</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../development.html">Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../citation.html">Citation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../history.html">History</a></li>
+</ul>
+
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="TriangularMatrixOperations.html" title="TriangularMatrixOperations(R, Row, Col, M)"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="TransSolvePackageService.html" title="TransSolvePackageService R"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">FriCAS</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >FriCAS API</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="Packages.html" >Packages</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">TreeOutput S</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2007-2026, FriCAS Team.
+    </div>
+  </body>
+</html>

@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Comparable &#8212; FriCAS</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script src="../_static/documentation_options.js?v=37ccb8f4"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/documentation_options.js?v=9172181d"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="ComplexCategory R" href="ComplexCategory.html" />
+    <link rel="next" title="ComparableRepresentation" href="ComparableRepresentation.html" />
     <link rel="prev" title="CommutativeStar" href="CommutativeStar.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="Related">
@@ -26,7 +26,7 @@
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="ComplexCategory.html" title="ComplexCategory R"
+          <a href="ComparableRepresentation.html" title="ComparableRepresentation"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="CommutativeStar.html" title="CommutativeStar"
@@ -45,8 +45,8 @@
             
   <section id="comparable">
 <span id="l436f6d70617261626c65"></span><span id="index-0"></span><h1>Comparable<a class="headerlink" href="#comparable" title="Link to this heading">¶</a></h1>
-<p><a class="extlink-viewcode reference external" href="https://github.com/fricas/fricas/blob/r1.3.13/src/algebra/catdef.spad#L1092">catdef.spad line 1092</a> <a class="extlink-editcode reference external" href="https://github.com/fricas/fricas/edit/r1.3.13/src/algebra/catdef.spad#L1092">[edit on github]</a></p>
-<p>The class of sets equipped with possibly unnatural linear order (needed for technical reasons).</p>
+<p><a class="extlink-viewcode reference external" href="https://github.com/fricas/fricas/blob/r1.4.0/src/algebra/catdef.spad#L991">catdef.spad line 991</a> <a class="extlink-editcode reference external" href="https://github.com/fricas/fricas/edit/r1.4.0/src/algebra/catdef.spad#L991">[edit on github]</a></p>
+<p>The class of sets where ordering predicate provided by <a class="reference internal" href="ComparableRepresentation.html#l436f6d70617261626c65526570726573656e746174696f6e"><span class="std std-ref">ComparableRepresentation</span></a> gives mathematical linear order. That is, if <code class="code docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">y</span></code> then for all <code class="code docutils literal notranslate"><span class="pre">z</span></code>, <code class="code docutils literal notranslate"><span class="pre">smaller?(x,</span> <span class="pre">z)</span></code> is equivalent to <code class="code docutils literal notranslate"><span class="pre">smaller?(y,</span> <span class="pre">z)</span></code> and <code class="code docutils literal notranslate"><span class="pre">smaller?(z,</span> <span class="pre">x)</span></code> is equivalent to <code class="code docutils literal notranslate"><span class="pre">smaller?(z,</span> <span class="pre">y)</span></code>. This category exist because declaring <a class="reference internal" href="OrderedSet.html#l4f726465726564536574"><span class="std std-ref">OrderedSet</span></a> may have undesirable consequences, but we still want to use ordering predicate.</p>
 <dl class="simple" id="l436f6d70617261626c65-3d">
 <dt><a class="reference internal" href="BasicType.html#l426173696354797065-3d"><span class="std std-ref">=</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a></dt><dd><p>from <a class="reference internal" href="BasicType.html#l426173696354797065"><span class="std std-ref">BasicType</span></a></p>
 </dd>
@@ -63,12 +63,13 @@
 <dt><a class="reference internal" href="SetCategory.html#l53657443617465676f7279-6c61746578"><span class="std std-ref">latex</span></a>: % -&gt; <a class="reference internal" href="String.html#l537472696e67"><span class="std std-ref">String</span></a></dt><dd><p>from <a class="reference internal" href="SetCategory.html#l53657443617465676f7279"><span class="std std-ref">SetCategory</span></a></p>
 </dd>
 </dl>
-<span id="l436f6d70617261626c65-736d616c6c65723f"></span><dl class="simple" id="index-1">
-<dt><span class="spadfun">smaller?</span>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">smaller?(x,</span> <span class="pre">y)</span></code> is a strict total ordering on the elements of the set.</p>
+<dl class="simple" id="l436f6d70617261626c65-736d616c6c65723f">
+<dt><a class="reference internal" href="ComparableRepresentation.html#l436f6d70617261626c65526570726573656e746174696f6e-736d616c6c65723f"><span class="std std-ref">smaller?</span></a>: (%, %) -&gt; <a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a></dt><dd><p>from <a class="reference internal" href="ComparableRepresentation.html#l436f6d70617261626c65526570726573656e746174696f6e"><span class="std std-ref">ComparableRepresentation</span></a></p>
 </dd>
 </dl>
 <p><a class="reference internal" href="BasicType.html#l426173696354797065"><span class="std std-ref">BasicType</span></a></p>
 <p><a class="reference internal" href="CoercibleTo.html#l436f65726369626c65546f"><span class="std std-ref">CoercibleTo</span></a> <a class="reference internal" href="OutputForm.html#l4f7574707574466f726d"><span class="std std-ref">OutputForm</span></a></p>
+<p><a class="reference internal" href="ComparableRepresentation.html#l436f6d70617261626c65526570726573656e746174696f6e"><span class="std std-ref">ComparableRepresentation</span></a></p>
 <p><a class="reference internal" href="SetCategory.html#l53657443617465676f7279"><span class="std std-ref">SetCategory</span></a></p>
 </section>
 
@@ -113,7 +114,7 @@
           <a href="../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="ComplexCategory.html" title="ComplexCategory R"
+          <a href="ComparableRepresentation.html" title="ComparableRepresentation"
              >next</a> |</li>
         <li class="right" >
           <a href="CommutativeStar.html" title="CommutativeStar"

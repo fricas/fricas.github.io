@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Tree S &#8212; FriCAS</title>
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/classic.css?v=2bf1fcf8" />
     <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     
-    <script src="../_static/documentation_options.js?v=37ccb8f4"></script>
-    <script src="../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/documentation_options.js?v=9172181d"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -45,11 +45,11 @@
             
   <section id="tree-s">
 <span id="l54726565"></span><span id="index-0"></span><h1>Tree S<a class="headerlink" href="#tree-s" title="Link to this heading">¶</a></h1>
-<p><a class="extlink-viewcode reference external" href="https://github.com/fricas/fricas/blob/r1.3.13/src/algebra/tree.spad#L1">tree.spad line 1</a> <a class="extlink-editcode reference external" href="https://github.com/fricas/fricas/edit/r1.3.13/src/algebra/tree.spad#L1">[edit on github]</a></p>
+<p><a class="extlink-viewcode reference external" href="https://github.com/fricas/fricas/blob/r1.4.0/src/algebra/tree.spad#L1">tree.spad line 1</a> <a class="extlink-editcode reference external" href="https://github.com/fricas/fricas/edit/r1.4.0/src/algebra/tree.spad#L1">[edit on github]</a></p>
 <ul class="simple">
 <li><p>S: <a class="reference internal" href="SetCategory.html#l53657443617465676f7279"><span class="std std-ref">SetCategory</span></a></p></li>
 </ul>
-<p>Tree(S) is a basic domain of tree structures. Each tree is either empty or has a <em>node</em> consisting of a value and a list of (sub)trees.</p>
+<p>Tree(S) is a basic domain of tree structures. Each tree is either empty or has a <em>node</em> consisting of a value and a list of (sub)trees. Corecion to <a class="reference internal" href="OutputForm.html#l4f7574707574466f726d"><span class="std std-ref">OutputForm</span></a> is provided by the package <a class="reference internal" href="TreeOutput.html#l547265654f7574707574"><span class="std std-ref">TreeOutput</span></a>, see it for more documentation.</p>
 <dl class="simple" id="l54726565-23">
 <dt><a class="reference internal" href="Aggregate.html#l416767726567617465-23"><span class="std std-ref">#</span></a>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a></dt><dd><p>from <a class="reference internal" href="Aggregate.html#l416767726567617465"><span class="std std-ref">Aggregate</span></a></p>
 </dd>
@@ -90,6 +90,10 @@
 </dl>
 <dl class="simple" id="l54726565-6379636c69633f">
 <dt><a class="reference internal" href="RecursiveAggregate.html#l526563757273697665416767726567617465-6379636c69633f"><span class="std std-ref">cyclic?</span></a>: % -&gt; <a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a></dt><dd><p>from <a class="reference internal" href="RecursiveAggregate.html#l526563757273697665416767726567617465"><span class="std std-ref">RecursiveAggregate</span></a> S</p>
+</dd>
+</dl>
+<span id="l54726565-6465707468"></span><dl class="simple" id="index-1">
+<dt><span class="spadfun">depth</span>: % -&gt; <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a></dt><dd><p><code class="code docutils literal notranslate"><span class="pre">depth(t)</span></code> returns the length of the longest path from root to a leaf. Should be moved to <code class="code docutils literal notranslate"><span class="pre">RecursiveAggregate</span></code>.</p>
 </dd>
 </dl>
 <dl class="simple" id="l54726565-64697374616e6365">
@@ -188,6 +192,10 @@
 <dt><a class="reference internal" href="RecursiveAggregate.html#l526563757273697665416767726567617465-6e6f646573"><span class="std std-ref">nodes</span></a>: % -&gt; <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> %</dt><dd><p>from <a class="reference internal" href="RecursiveAggregate.html#l526563757273697665416767726567617465"><span class="std std-ref">RecursiveAggregate</span></a> S</p>
 </dd>
 </dl>
+<span id="l54726565-6e756d6265724f664e6f646573"></span><dl class="simple" id="index-2">
+<dt><span class="spadfun">numberOfNodes</span>: (%, <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a></dt><dd><p>numberOfNode(<code class="code docutils literal notranslate"><span class="pre">t</span></code>,<code class="code docutils literal notranslate"><span class="pre">d</span></code>) counts the number of nodes of <code class="code docutils literal notranslate"><span class="pre">t</span></code> with depth <code class="code docutils literal notranslate"><span class="pre">d</span></code> including leaves with smaller depth.</p>
+</dd>
+</dl>
 <dl class="simple" id="l54726565-7061727473">
 <dt><a class="reference internal" href="HomogeneousAggregate.html#l486f6d6f67656e656f7573416767726567617465-7061727473"><span class="std std-ref">parts</span></a>: % -&gt; <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> S</dt><dd><p>from <a class="reference internal" href="HomogeneousAggregate.html#l486f6d6f67656e656f7573416767726567617465"><span class="std std-ref">HomogeneousAggregate</span></a> S</p>
 </dd>
@@ -212,15 +220,15 @@
 <dt><a class="reference internal" href="Aggregate.html#l416767726567617465-73697a653f"><span class="std std-ref">size?</span></a>: (%, <a class="reference internal" href="NonNegativeInteger.html#l4e6f6e4e65676174697665496e7465676572"><span class="std std-ref">NonNegativeInteger</span></a>) -&gt; <a class="reference internal" href="Boolean.html#l426f6f6c65616e"><span class="std std-ref">Boolean</span></a></dt><dd><p>from <a class="reference internal" href="Aggregate.html#l416767726567617465"><span class="std std-ref">Aggregate</span></a></p>
 </dd>
 </dl>
-<span id="l54726565-74726565"></span><dl class="simple" id="index-1">
+<span id="l54726565-74726565"></span><dl class="simple" id="index-3">
 <dt><span class="spadfun">tree</span>: (S, <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> %) -&gt; %</dt><dd><p><code class="code docutils literal notranslate"><span class="pre">tree(nd,</span> <span class="pre">ls)</span></code> creates a tree with value <code class="code docutils literal notranslate"><span class="pre">nd</span></code>, and children <code class="code docutils literal notranslate"><span class="pre">ls</span></code>.</p>
 </dd>
 </dl>
-<dl class="simple" id="index-2">
+<dl class="simple" id="index-4">
 <dt><span class="spadfun">tree</span>: <a class="reference internal" href="List.html#l4c697374"><span class="std std-ref">List</span></a> S -&gt; %</dt><dd><p><code class="code docutils literal notranslate"><span class="pre">tree(ls)</span></code> creates a tree from a list of elements of <code class="code docutils literal notranslate"><span class="pre">s</span></code>.</p>
 </dd>
 </dl>
-<dl class="simple" id="index-3">
+<dl class="simple" id="index-5">
 <dt><span class="spadfun">tree</span>: S -&gt; %</dt><dd><p><code class="code docutils literal notranslate"><span class="pre">tree(nd)</span></code> creates a tree with value <code class="code docutils literal notranslate"><span class="pre">nd</span></code>, and no children.</p>
 </dd>
 </dl>
